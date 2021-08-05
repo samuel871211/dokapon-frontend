@@ -42,14 +42,10 @@ const battleField = joint.shapes.standard.Circle.define('battleField', {
 			fill: '#eee',
 			strokeWidth: 3
 		}
-	},
-	top: undefined,
-	left: undefined,
-	right: undefined,
-	bottom: undefined
+	}
 })
 const a = new battleField()
-a.attributes.top
+// a.attributes.top
 
 const magicField = joint.dia.Element.define('magicField', {
 	markup: [{
@@ -66,11 +62,7 @@ const magicField = joint.dia.Element.define('magicField', {
 			height: 80,
 			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.magicField)
 		}
-	},
-	top: undefined,
-	left: undefined,
-	right: undefined,
-	bottom: undefined
+	}
 })
 
 const treasureField = joint.dia.Element.define('treasureField', {
@@ -88,11 +80,7 @@ const treasureField = joint.dia.Element.define('treasureField', {
 			height: 80,
 			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.treasureField)
 		}
-	},
-	top: undefined,
-	left: undefined,
-	right: undefined,
-	bottom: undefined
+	}
 })
 
 const oneWayHLink = joint.shapes.standard.Link.define('oneWayHLink', {
@@ -104,9 +92,7 @@ const oneWayHLink = joint.shapes.standard.Link.define('oneWayHLink', {
             	d: 'M -5 0 L 10 10 L 10 -10 Z'
             }
         }
-    },
-	left: undefined,
-	right: undefined
+    }
 })
 
 const twoWayHLink = joint.shapes.standard.Link.define('twoWayHLink', {
@@ -116,9 +102,7 @@ const twoWayHLink = joint.shapes.standard.Link.define('twoWayHLink', {
             strokeWidth: 4,
             targetMarker: 'none'
         }
-    },
-	left: undefined,
-	right: undefined
+    }
 })
 
 const oneWayVLink = joint.shapes.standard.Link.define('oneWayVLink', {
@@ -130,9 +114,7 @@ const oneWayVLink = joint.shapes.standard.Link.define('oneWayVLink', {
             	d: 'M -5 0 L 10 10 L 10 -10 Z'
             }
         }
-    },
-	top: undefined,
-	bottom: undefined
+    }
 })
 
 const twoWayVLink = joint.shapes.standard.Link.define('twoWayVLink', {
@@ -142,9 +124,7 @@ const twoWayVLink = joint.shapes.standard.Link.define('twoWayVLink', {
             strokeWidth: 4,
             targetMarker: 'none'
         }
-    },
-	top: undefined,
-	bottom: undefined
+    }
 })
 
 // interface HLink extends joint.dia.Link {

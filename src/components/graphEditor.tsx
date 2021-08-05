@@ -1,13 +1,19 @@
 import * as shapes from './shapes'
 import { useState, useEffect, Fragment } from 'react'
 import Box from '@material-ui/core/Box'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import IconButton from '@material-ui/core/IconButton'
+import CloudUploadIcon from '@material-ui/icons/CloudUpload'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
+import Tooltip from '@material-ui/core/Tooltip'
 import $ from "jquery"
 import _ from 'lodash'
 // import * as Backbone from 'backbone'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
+import Graph from '../API/graph'
 
 export default function GraphEditor () {
     // data
@@ -84,100 +90,111 @@ export default function GraphEditor () {
             'link:mouseleave': function (linkView, evt) {
                 linkView.removeTools()
             },
-            'link:connect': function (linkView, evt, elementViewConnected, magnet, arrowhead) {
-                console.log(linkView)
-                // const type = linkView.model.attributes.type
-                // const sourcePoint = linkView.sourcePoint
-                // const targetPoint = linkView.targetPoint
-                // const sourceCell = linkView.model.getSourceCell()
-                // const targetCell = linkView.model.getTargetCell()
-                // if (!sourceCell || !targetCell) return
-                // switch (type.toLowerCase()) {
-                // case 'onewayhlink':
-                //     if (sourcePoint.x >= targetPoint.x) {
-                //         sourceCell.attributes.left = targetCell.id
-                //     } else if (sourcePoint.x < targetPoint.x) {
-                //         sourceCell.attributes.right = targetCell.id
-                //     }
-                //     break
-                // case 'twowayhlink':
-                //     if (sourcePoint.x >= targetPoint.x) {
-                //         sourceCell.attributes.left = targetCell.id
-                //         targetCell.attributes.right = sourceCell.id
-                //     } else if (sourcePoint.x < targetPoint.x) {
-                //         sourceCell.attributes.right = targetCell.id
-                //         targetCell.attributes.left = sourceCell.id
-                //     }
-                //     break
-                // case 'onewayvlink':
-                //     if (sourcePoint.y >= targetPoint.y) {
-                //         sourceCell.attributes.bottom = targetCell.id
-                //     } else if (sourcePoint.y < targetPoint.y) {
-                //         sourceCell.attributes.top = targetCell.id
-                //     }
-                //     break
-                // case 'twowayvlink':
-                //     if (sourcePoint.y >= targetPoint.y) {
-                //         sourceCell.top = targetCell.id
-                //         targetCell.bottom = sourceCell.id
-                //     } else if (sourcePoint.y < targetPoint.y) {
-                //         sourceCell.bottom = targetCell.id
-                //         targetCell.top = sourceCell.id
-                //     }
-                //     break
-                // default:
-                //     console.log('unknown link type')
-                //     break
-                // }
-                // console.log(sourceCell.attributes)
-                // console.log(targetCell.attributes)
+            'link:connect': function (
+                linkView: joint.dia.LinkView,
+                evt: JQuery.Event,
+                elementViewConnected: joint.dia.ElementView,
+                magnet: HTMLElement,
+                arrowhead: 'source' | 'target'
+            ) {
+                const type: string = linkView.model.attributes.type
+                const sourcePoint = linkView.model.getSourcePoint()
+                const targetPoint = linkView.model.getTargetPoint()
+                const sourceCell = linkView.model.getSourceCell()
+                const targetCell = linkView.model.getTargetCell()
+                if (!sourceCell || !targetCell) return
+                switch (type.toLowerCase()) {
+                case 'onewayhlink':
+                    if (sourcePoint.x >= targetPoint.x) {
+                        sourceCell.attributes.left = targetCell.id
+                    } else if (sourcePoint.x < targetPoint.x) {
+                        sourceCell.attributes.right = targetCell.id
+                    }
+                    break
+                case 'twowayhlink':
+                    if (sourcePoint.x >= targetPoint.x) {
+                        sourceCell.attributes.left = targetCell.id
+                        targetCell.attributes.right = sourceCell.id
+                    } else if (sourcePoint.x < targetPoint.x) {
+                        sourceCell.attributes.right = targetCell.id
+                        targetCell.attributes.left = sourceCell.id
+                    }
+                    break
+                case 'onewayvlink':
+                    if (sourcePoint.y >= targetPoint.y) {
+                        sourceCell.attributes.top = targetCell.id
+                    } else if (sourcePoint.y < targetPoint.y) {
+                        sourceCell.attributes.bottom = targetCell.id
+                    }
+                    break
+                case 'twowayvlink':
+                    if (sourcePoint.y >= targetPoint.y) {
+                        sourceCell.attributes.top = targetCell.id
+                        targetCell.attributes.bottom = sourceCell.id
+                    } else if (sourcePoint.y < targetPoint.y) {
+                        sourceCell.attributes.bottom = targetCell.id
+                        targetCell.attributes.top = sourceCell.id
+                    }
+                    break
+                default:
+                    console.warn(`unknown link type ${type}`)
+                    break
+                }
+                console.log(sourceCell.attributes)
+                console.log(targetCell.attributes)
             },
-            'link:disconnect': function (linkView, evt, elementViewConnected, magnet, arrowhead) {
-                // const type: string = linkView.model.attributes.type
-                // const sourcePoint: joint.dia.Point = linkView.sourcePoint
-                // const targetPoint: joint.dia.Point = linkView.targetPoint
-                // const sourceCell: joint.dia.Cell = arrowhead === 'source' ? elementViewConnected.model : linkView.model.getSourceCell()
-                // const targetCell: joint.dia.Cell = arrowhead === 'target' ? elementViewConnected.model : linkView.model.getTargetCell()
-                // if (!sourceCell && !targetCell) return
-                // switch (type) {
-                //     case 'oneWayHLink':
-                //         if (sourcePoint.x >= targetPoint.x) {
-                //             delete sourceCell.attributes.left
-                //         } else if (sourcePoint.x < targetPoint.x) {
-                //             delete sourceCell.attributes.right
-                //         }
-                //         break
-                //     case 'twoWayHLink':
-                //         if (sourcePoint.x >= targetPoint.x) {
-                //             delete sourceCell.attributes.left
-                //             delete targetCell.attributes.right
-                //         } else if (sourcePoint.x < targetPoint.x) {
-                //             delete sourceCell.attributes.right
-                //             delete targetCell.attributes.left
-                //         }
-                //         break
-                //     case 'oneWayVLink':
-                //         if (sourcePoint.y >= targetPoint.y) {
-                //             delete sourceCell.attributes.bottom
-                //         } else if (sourcePoint.y < targetPoint.y) {
-                //             delete sourceCell.attributes.top
-                //         }
-                //         break
-                //     case 'twoWayVLink':
-                //         if (sourcePoint.y >= targetPoint.y) {
-                //             delete sourceCell.top
-                //             delete targetCell.bottom
-                //         } else if (sourcePoint.y < targetPoint.y) {
-                //             delete sourceCell.bottom
-                //             delete targetCell.top
-                //         }
-                //         break
-                //     default:
-                //         console.log('unknown link type')
-                //         break
-                // }
-                // console.log(sourceCell.attributes)
-                // console.log(targetCell.attributes)
+            'link:disconnect': function (
+                linkView: joint.dia.LinkView,
+                evt: JQuery.Event,
+                elementViewConnected: joint.dia.ElementView,
+                magnet: HTMLElement,
+                arrowhead: 'source' | 'target'
+            ) {
+                const type: string = linkView.model.attributes.type
+                const sourcePoint = linkView.model.getSourcePoint()
+                const targetPoint = linkView.model.getTargetPoint()
+                const sourceCell = arrowhead === 'source' ? elementViewConnected.model : linkView.model.getSourceCell()
+                const targetCell = arrowhead === 'target' ? elementViewConnected.model : linkView.model.getTargetCell()
+                if (!sourceCell || !targetCell) return
+                switch (type.toLowerCase()) {
+                case 'onewayhlink':
+                    if (sourcePoint.x >= targetPoint.x) {
+                        delete sourceCell.attributes.left
+                    } else if (sourcePoint.x < targetPoint.x) {
+                        delete sourceCell.attributes.right
+                    }
+                    break
+                case 'twowayhlink':
+                    if (sourcePoint.x >= targetPoint.x) {
+                        delete sourceCell.attributes.left
+                        delete targetCell.attributes.right
+                    } else if (sourcePoint.x < targetPoint.x) {
+                        delete sourceCell.attributes.right
+                        delete targetCell.attributes.left
+                    }
+                    break
+                case 'onewayvlink':
+                    if (sourcePoint.y >= targetPoint.y) {
+                        delete sourceCell.attributes.top
+                    } else if (sourcePoint.y < targetPoint.y) {
+                        delete sourceCell.attributes.bottom
+                    }
+                    break
+                case 'twowayvlink':
+                    if (sourcePoint.y >= targetPoint.y) {
+                        delete sourceCell.attributes.top
+                        delete targetCell.attributes.bottom
+                    } else if (sourcePoint.y < targetPoint.y) {
+                        delete targetCell.attributes.top
+                        delete sourceCell.attributes.bottom
+                    }
+                    break
+                default:
+                    console.warn(`unknown link type ${type}`)
+                    break
+                }
+                console.log(sourceCell?.attributes)
+                console.log(targetCell?.attributes)
             },
             'blank:contextmenu': function (evt, x, y) {
                 setAddCellCtxMenuPos({x, y})
@@ -246,6 +263,10 @@ export default function GraphEditor () {
         closeCtrlCellCtxMenu()
     }
 
+    function uploadGraph (): void {
+        Graph.update(graph.toJSON())
+    }
+
     // watch && mounted
     useEffect(initCanvas, [graph])
     useEffect(registerPaperEventHandler, [paper])
@@ -253,6 +274,15 @@ export default function GraphEditor () {
     // template
     return (
         <Fragment>
+            <AppBar position="sticky">
+                <Toolbar>
+                    <Tooltip title="儲存">
+                        <IconButton onClick={uploadGraph}>
+                            <CloudUploadIcon></CloudUploadIcon>
+                        </IconButton>
+                    </Tooltip>
+                </Toolbar>
+            </AppBar>
             <Box id="canvas" onContextMenu={(e) => e.preventDefault()}>
                 <Menu
                     keepMounted

@@ -1,9 +1,10 @@
 {
-  "name": "dokapon",
+  "name": "www-dokapon",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.2",
+    "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -14,6 +15,7 @@
     "@types/node": "^12.20.17",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
+    "dotenv": "^10.0.0",
     "jointjs": "^3.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

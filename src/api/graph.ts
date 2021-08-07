@@ -1,16 +1,19 @@
-import dotenv from 'dotenv'
-dotenv.config()
-const baseUrl = `${process.env.BASEURL}/graph`
+const baseUrl = `${process.env.REACT_APP_BACKEND_BASEURL}/graph`
 
 class Graph {
     async get () {
-        return await (await fetch(baseUrl)).json()
+        const res = await fetch(baseUrl)
+        const resJson = await res.json()
+        return resJson
     }
 
-    async update (cells: any) {
+    async update (cells: { cells: Array<joint.dia.Cell> }) {
         const res = await fetch(baseUrl, {
             method: 'PUT',
-            body: cells
+            body: JSON.stringify(cells),
+            headers: {
+                'content-type': 'application/json'
+            },
         })
         const resJson = await res.json()
         return resJson

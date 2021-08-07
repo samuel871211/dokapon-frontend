@@ -32,100 +32,103 @@ const SVG = {
 		'</svg>',
 }
 
-const battleField = joint.shapes.standard.Circle.define('battleField', {
-	size: {
-		width: 80,
-		height: 80
-	},
-	attrs: {
-		body: {
-			fill: '#eee',
-			strokeWidth: 3
-		}
-	}
-})
-const a = new battleField()
-// a.attributes.top
-
-const magicField = joint.dia.Element.define('magicField', {
+const battleField = joint.dia.Element.define('dokapon.battleField', {
+	name: 'battleField',
 	markup: [{
 		selector: 'body',
-		tagName: 'image'
+		tagName: 'circle',
+		attributes: {
+			fill: "#eee",
+			strokeWidth: 3,
+			stroke: "#333333",
+			cx: 40,
+			cy: 40,
+			r: 40
+		}
 	}],
 	size: {
 		width: 80,
 		height: 80
-	},
-	attrs: {
-		body: {
+	}
+})
+
+const magicField = joint.dia.Element.define('dokapon.magicField', {
+	name: 'magicField',
+	markup: [{
+		selector: 'body',
+		tagName: 'image',
+		attributes: {
 			width: 80,
 			height: 80,
 			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.magicField)
 		}
-	}
-})
-
-const treasureField = joint.dia.Element.define('treasureField', {
-	markup: [{
-		selector: 'body',
-		tagName: 'image'
 	}],
 	size: {
 		width: 80,
 		height: 80
-	},
-	attrs: {
-		body: {
+	}
+})
+
+const treasureField = joint.dia.Element.define('dokapon.treasureField', {
+	name: 'treasureField',
+	markup: [{
+		selector: 'body',
+		tagName: 'image',
+		attributes: {
 			width: 80,
 			height: 80,
 			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.treasureField)
 		}
+	}],
+	size: {
+		width: 80,
+		height: 80
 	}
 })
 
-const oneWayHLink = joint.shapes.standard.Link.define('oneWayHLink', {
-	attrs: {
-        line: {
-            stroke: 'white',
-            strokeWidth: 4,
-            targetMarker: {
-            	d: 'M -5 0 L 10 10 L 10 -10 Z'
-            }
-        }
-    }
-})
+function oneWayHLink (): joint.shapes.standard.Link {
+	const link = new joint.shapes.standard.Link()
+	link.attr('line', {
+		stroke: 'white',
+		strokeWidth: 4,
+		targetMarker: { d: 'M -5 0 L 10 10 L 10 -10 Z' }
+	})
+	link.prop('name', 'oneWayHLink')
+	return link
+}
 
-const twoWayHLink = joint.shapes.standard.Link.define('twoWayHLink', {
-	attrs: {
-        line: {
-            stroke: 'white',
-            strokeWidth: 4,
-            targetMarker: 'none'
-        }
-    }
-})
+function twoWayHLink (): joint.shapes.standard.Link {
+	const link = new joint.shapes.standard.Link()
+	link.attr('line', {
+		stroke: 'white',
+		strokeWidth: 4,
+		targetMarker: 'none'
+	})
+	link.prop('name', 'twoWayHLink')
+	return link
+}
 
-const oneWayVLink = joint.shapes.standard.Link.define('oneWayVLink', {
-	attrs: {
-        line: {
-            stroke: 'white',
-            strokeWidth: 4,
-            targetMarker: {
-            	d: 'M -5 0 L 10 10 L 10 -10 Z'
-            }
-        }
-    }
-})
+function oneWayVLink (): joint.shapes.standard.Link {
+	const link = new joint.shapes.standard.Link()
+	link.attr('line', {
+		stroke: 'white',
+		strokeWidth: 4,
+		targetMarker: { d: 'M -5 0 L 10 10 L 10 -10 Z' }
+	})
+	link.prop('name', 'oneWayVLink')
+	return link
+}
 
-const twoWayVLink = joint.shapes.standard.Link.define('twoWayVLink', {
-	attrs: {
-        line: {
-            stroke: 'white',
-            strokeWidth: 4,
-            targetMarker: 'none'
-        }
-    }
-})
+function twoWayVLink (): joint.shapes.standard.Link {
+	const link = new joint.shapes.standard.Link()
+	link.attr('line', {
+		stroke: 'white',
+		strokeWidth: 4,
+		targetMarker: 'none'
+	})
+	link.prop('name', 'twoWayVLink')
+	return link
+}
 
 // interface HLink extends joint.dia.Link {
 // 	left: joint.dia.Element | undefined
@@ -137,8 +140,8 @@ const twoWayVLink = joint.shapes.standard.Link.define('twoWayVLink', {
 // 	bottom: joint.dia.Element | undefined
 // }
 
-export function createElement (type: string): joint.dia.Element {
-	switch (type.toLowerCase()) {
+export function createElement (name: string): joint.dia.Element {
+	switch (name.toLowerCase()) {
     case 'battlefield':
         return new battleField()
     case 'magicfield':
@@ -150,18 +153,18 @@ export function createElement (type: string): joint.dia.Element {
 	}
 }
 
-export function createLink (type: string): joint.dia.Link {
-	switch (type.toLowerCase()) {
+export function createLink (name: string): joint.dia.Link {
+	switch (name.toLowerCase()) {
     case 'onewayhlink':
-        return new oneWayHLink()
+        return oneWayHLink()
     case 'twowayhlink':
-        return new twoWayHLink()
+        return twoWayHLink()
     case 'onewayvlink':
-        return new oneWayVLink()
+        return oneWayVLink()
     case 'twowayvlink':
-        return new twoWayVLink()
+        return twoWayVLink()
     default:
-        return new oneWayHLink()
+        return oneWayHLink()
 	}
 }
 

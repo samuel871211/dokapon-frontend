@@ -1,5 +1,6 @@
 import * as shapes from './shapes'
 import { useState, useEffect, Fragment } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -8,15 +9,21 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import Tooltip from '@material-ui/core/Tooltip'
+import Snackbar from '@material-ui/core/Snackbar'
+import MuiAlert, { Color } from '@material-ui/lab/Alert'
 import $ from "jquery"
 import _ from 'lodash'
 // import * as Backbone from 'backbone'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
-import Graph from '../API/graph'
+import Graph from '../api/graph'
 
 export default function GraphEditor () {
     // data
+    const [addCellPos, setAddCellPos] = useState({
+        x: -1,
+        y: -1
+    })
     const [addCellCtxMenuPos, setAddCellCtxMenuPos] = useState({
         x: -1,
         y: -1
@@ -25,15 +32,23 @@ export default function GraphEditor () {
         x: -1,
         y: -1
     })
-    const [graph] = useState(new joint.dia.Graph())
+    const [graph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
     const [paper, initPaper] = useState<joint.dia.Paper>()
-    const [selectedCell, setSelectedCell] = useState<joint.dia.Cell>()
+    // <joint.dia.Link | joint.dia.Element>
+    const [selectedLink, setSelectedLink] = useState<joint.dia.Link>()
+    const [selectedElement, setSelectedElement] = useState<joint.dia.Element>()
+    const [snackbar, setSnackbar] = useState<{ open: boolean, severity: Color, text: string }>({
+        open: false,
+        severity: 'success',
+        text: ''
+    })
 
     // methods
     function initCanvas (): void {
         // paper should be initialized after #canvas is being mounted
         const Paper = new joint.dia.Paper({
-            el: $('#canvas'),
+            el: $('#paper'),
+            cellViewNamespace: { standard: joint.shapes.standard },
             width: 6000,
             height: 6000,
             model: graph,
@@ -68,7 +83,7 @@ export default function GraphEditor () {
                         }
                     }, {
                         tagName: 'text',
-                        textContent: linkView.model.attributes.type[6],
+                        textContent: linkView.model.attributes.name[6],
                         attributes: {
                             fill: 'white',
                             x: -5,
@@ -97,13 +112,13 @@ export default function GraphEditor () {
                 magnet: HTMLElement,
                 arrowhead: 'source' | 'target'
             ) {
-                const type: string = linkView.model.attributes.type
+                const name: string = linkView.model.attributes.name
                 const sourcePoint = linkView.model.getSourcePoint()
                 const targetPoint = linkView.model.getTargetPoint()
                 const sourceCell = linkView.model.getSourceCell()
                 const targetCell = linkView.model.getTargetCell()
                 if (!sourceCell || !targetCell) return
-                switch (type.toLowerCase()) {
+                switch (name.toLowerCase()) {
                 case 'onewayhlink':
                     if (sourcePoint.x >= targetPoint.x) {
                         sourceCell.attributes.left = targetCell.id
@@ -137,11 +152,13 @@ export default function GraphEditor () {
                     }
                     break
                 default:
-                    console.warn(`unknown link type ${type}`)
+                    console.warn(`unknown link name ${name}`)
                     break
                 }
-                console.log(sourceCell.attributes)
-                console.log(targetCell.attributes)
+                graph.getNeighbors(sourceCell)
+                graph.getNeighbors(targetCell)
+                // console.log(sourceCell.attributes)
+                // console.log(targetCell.attributes)
             },
             'link:disconnect': function (
                 linkView: joint.dia.LinkView,
@@ -150,13 +167,13 @@ export default function GraphEditor () {
                 magnet: HTMLElement,
                 arrowhead: 'source' | 'target'
             ) {
-                const type: string = linkView.model.attributes.type
+                const name: string = linkView.model.attributes.name
                 const sourcePoint = linkView.model.getSourcePoint()
                 const targetPoint = linkView.model.getTargetPoint()
                 const sourceCell = arrowhead === 'source' ? elementViewConnected.model : linkView.model.getSourceCell()
                 const targetCell = arrowhead === 'target' ? elementViewConnected.model : linkView.model.getTargetCell()
                 if (!sourceCell || !targetCell) return
-                switch (type.toLowerCase()) {
+                switch (name.toLowerCase()) {
                 case 'onewayhlink':
                     if (sourcePoint.x >= targetPoint.x) {
                         delete sourceCell.attributes.left
@@ -190,39 +207,41 @@ export default function GraphEditor () {
                     }
                     break
                 default:
-                    console.warn(`unknown link type ${type}`)
+                    console.warn(`unknown link name ${name}`)
                     break
                 }
                 console.log(sourceCell?.attributes)
                 console.log(targetCell?.attributes)
             },
             'blank:contextmenu': function (evt, x, y) {
-                setAddCellCtxMenuPos({x, y})
+                setAddCellPos({ x, y })
+                setAddCellCtxMenuPos({ x: evt.clientX, y: evt.clientY })
             },
             'cell:contextmenu': function (cellView, evt, x, y) {
-                setSelectedCell(cellView)
-                setCtrlCellCtxMenuPos({x, y})
+                if (cellView.model.isLink()) setSelectedLink(cellView.model)
+                if (cellView.model.isElement()) setSelectedElement(cellView.model)
+                setCtrlCellCtxMenuPos({ x: evt.clientX, y: evt.clientY })
             }
         })
     }
 
-    function addElement (type: string): void {
-        const element = shapes.createElement(type)
-        element.position(addCellCtxMenuPos.x, addCellCtxMenuPos.y)
+    function addElement (name: string): void {
+        const element = shapes.createElement(name)
+        element.position(addCellPos.x, addCellPos.y)
         element.addTo(graph)
         closeAddCellCtxMenu()
     }
 
-    function addLink (type: string): void {
-        const link = shapes.createLink(type)
+    function addLink (name: string): void {
+        const link = shapes.createLink(name)
         const sourceAxis = {
-            x: addCellCtxMenuPos.x,
-            y: addCellCtxMenuPos.y
+            x: addCellPos.x,
+            y: addCellPos.y
         }
         link.source(sourceAxis)
 
         // 依據水平、垂直，來決定線段要怎麼長
-        switch (type.toLowerCase()) {
+        switch (name.toLowerCase()) {
         case 'onewayhlink':
         case 'twowayhlink':
             link.target({
@@ -243,6 +262,10 @@ export default function GraphEditor () {
     }
 
     function closeAddCellCtxMenu (): void {
+        setAddCellPos({
+            x: -1,
+            y: -1
+        })
         setAddCellCtxMenuPos({
             x: -1,
             y: -1
@@ -257,19 +280,72 @@ export default function GraphEditor () {
     }
 
     function deleteCell (): void {
-        if (!selectedCell) return
+        if (selectedLink && !selectedLink.source().id && !selectedLink.target().id) {
+            selectedLink.remove()
+            setSelectedLink(undefined)
+            closeCtrlCellCtxMenu()
+            return
+        } 
+        
+        if (selectedElement && graph.getConnectedLinks(selectedElement).length === 0) {
+            selectedElement.remove()
+            setSelectedElement(undefined)
+            closeCtrlCellCtxMenu()
+            return
+        }
 
-        graph.removeCells([selectedCell])
+        setSnackbar({
+            open: true,
+            severity: 'error',
+            text: '請先解除線段與物體的連線'
+        })
         closeCtrlCellCtxMenu()
+    }
+
+    function loadGraph (): void {
+        Graph.get().then(response => {
+            graph.fromJSON(response)
+            console.log(response)
+        })
     }
 
     function uploadGraph (): void {
         Graph.update(graph.toJSON())
+        .then(response => {
+            setSnackbar({
+                open: true,
+                severity: 'success',
+                text: '儲存成功'
+            })
+        })
+    }
+
+    function closeSnackbar (): void {
+        setSnackbar({
+            open: false,
+            severity: snackbar.severity,
+            text: snackbar.text
+        })
     }
 
     // watch && mounted
     useEffect(initCanvas, [graph])
     useEffect(registerPaperEventHandler, [paper])
+    useEffect(loadGraph, [paper])
+
+    // css style
+    const styles = makeStyles(theme => ({
+        paperParent: {
+            overflow: 'scroll',
+            [theme.breakpoints.down('sm')]: {
+                height: 'calc(100vh - 56px)'
+            },
+            [theme.breakpoints.up('sm')]: {
+                height: 'calc(100vh - 64px)'
+            }
+        }
+    }))
+    const classes = styles()
 
     // template
     return (
@@ -283,47 +359,60 @@ export default function GraphEditor () {
                     </Tooltip>
                 </Toolbar>
             </AppBar>
-            <Box id="canvas" onContextMenu={(e) => e.preventDefault()}>
-                <Menu
-                    keepMounted
-                    open={addCellCtxMenuPos.x !== -1}
-                    onClose={closeAddCellCtxMenu}
-                    anchorReference="anchorPosition"
-                    anchorPosition={{
-                        top: addCellCtxMenuPos.y,
-                        left: addCellCtxMenuPos.x
-                    }}
-                >   
-                    {shapes.ELEMENTS.map((type, index) =>
-                        <MenuItem 
-                            onClick={() => addElement(type)} 
-                            key={index}
-                        >
-                            {type}
-                        </MenuItem>
-                    )}
-                    {shapes.LINKS.map((type, index) =>
-                        <MenuItem 
-                            onClick={() => addLink(type)} 
-                            key={index}
-                        >
-                            {type}
-                        </MenuItem>
-                    )}
-                </Menu>
-                <Menu
-                    keepMounted
-                    open={ctrlCellCtxMenuPos.x !== -1}
-                    onClose={closeCtrlCellCtxMenu}
-                    anchorReference="anchorPosition"
-                    anchorPosition={{
-                        top: ctrlCellCtxMenuPos.y,
-                        left: ctrlCellCtxMenuPos.x
-                    }}
-                >   
-                    <MenuItem onClick={deleteCell}>刪除</MenuItem>
-                </Menu>
+            <Box className={classes.paperParent}>
+                <Box id="paper" onContextMenu={(e) => e.preventDefault()}>
+                    <Menu
+                        keepMounted
+                        open={addCellPos.x !== -1}
+                        onClose={closeAddCellCtxMenu}
+                        anchorReference="anchorPosition"
+                        anchorPosition={{
+                            top: addCellCtxMenuPos.y,
+                            left: addCellCtxMenuPos.x
+                        }}
+                    >   
+                        {shapes.ELEMENTS.map((name, index) =>
+                            <MenuItem 
+                                onClick={() => addElement(name)} 
+                                key={index}
+                            >
+                                {name}
+                            </MenuItem>
+                        )}
+                        {shapes.LINKS.map((name, index) =>
+                            <MenuItem 
+                                onClick={() => addLink(name)} 
+                                key={index}
+                            >
+                                {name}
+                            </MenuItem>
+                        )}
+                    </Menu>
+                    <Menu
+                        keepMounted
+                        open={ctrlCellCtxMenuPos.x !== -1}
+                        onClose={closeCtrlCellCtxMenu}
+                        anchorReference="anchorPosition"
+                        anchorPosition={{
+                            top: ctrlCellCtxMenuPos.y,
+                            left: ctrlCellCtxMenuPos.x
+                        }}
+                    >   
+                        <MenuItem onClick={deleteCell}>刪除</MenuItem>
+                    </Menu>
+                </Box>
             </Box>
+            <Snackbar 
+                open={snackbar.open}
+                autoHideDuration={3000}
+                onClose={closeSnackbar}
+            >
+                <MuiAlert
+                    severity={snackbar.severity}
+                    variant="filled"
+                    children={ snackbar.text }
+                />
+            </Snackbar>
         </Fragment>
     )
 }

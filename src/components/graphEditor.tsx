@@ -5,21 +5,33 @@ import Box from '@material-ui/core/Box'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
+import ZoomInIcon from '@material-ui/icons/ZoomIn'
+import ZoomOutIcon from '@material-ui/icons/ZoomOut'
 import CloudUploadIcon from '@material-ui/icons/CloudUpload'
+import SwapHorizIcon from '@material-ui/icons/SwapHoriz'
+import ImportExportIcon from '@material-ui/icons/ImportExport'
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
+import SvgIcon from '@material-ui/core/SvgIcon'
+// import Paper from '@material-ui/core/Paper'
+// import Avatar from '@material-ui/core/Avatar'
+import Grid from '@material-ui/core/Grid'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
+// import MenuList from '@material-ui/core/MenuList'
 import Tooltip from '@material-ui/core/Tooltip'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert, { Color } from '@material-ui/lab/Alert'
-import $ from "jquery"
-import _ from 'lodash'
+import $ from 'jquery'
+// import _ from 'lodash'
 // import * as Backbone from 'backbone'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
-import Graph from '../api/graph'
+import { getCells, updateCells } from '../api/graph'
 
 export default function GraphEditor () {
     // data
+    const [paperComplete, setPaperComplete] = useState(false)
     const [addCellPos, setAddCellPos] = useState({
         x: -1,
         y: -1
@@ -32,9 +44,9 @@ export default function GraphEditor () {
         x: -1,
         y: -1
     })
+    const [paperScale, setPaperScale] = useState(1)
     const [graph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
-    const [paper, initPaper] = useState<joint.dia.Paper>()
-    // <joint.dia.Link | joint.dia.Element>
+    const [paper, setPaper] = useState<joint.dia.Paper>()
     const [selectedLink, setSelectedLink] = useState<joint.dia.Link>()
     const [selectedElement, setSelectedElement] = useState<joint.dia.Element>()
     const [snackbar, setSnackbar] = useState<{ open: boolean, severity: Color, text: string }>({
@@ -44,187 +56,6 @@ export default function GraphEditor () {
     })
 
     // methods
-    function initCanvas (): void {
-        // paper should be initialized after #canvas is being mounted
-        const Paper = new joint.dia.Paper({
-            el: $('#paper'),
-            cellViewNamespace: { standard: joint.shapes.standard },
-            width: 6000,
-            height: 6000,
-            model: graph,
-            restrictTranslate: true,
-            background: {
-                color: '#111'
-            },
-            gridSize: 20,
-            drawGrid: true
-        })
-        initPaper(Paper)
-    }
-
-    function registerPaperEventHandler (): void {
-        paper?.on({
-            'element:mouseenter': function (cellView, evt, x, y) {
-                cellView.highlight()
-            },
-            'element:mouseout': function (cellView, evt, x, y) {
-                cellView.unhighlight()
-            },
-            'link:mouseenter': function (linkView, evt) {
-                const sourceArrowheadTool = new joint.linkTools.SourceArrowhead()
-                const targetArrowheadTool = new joint.linkTools.TargetArrowhead()
-                const boundaryTool = new joint.linkTools.Boundary()
-                const infoButton = new joint.linkTools.Button({
-                    markup: [{
-                        tagName: 'circle',
-                        attributes: {
-                            r: 15,
-                            fill: 'green'
-                        }
-                    }, {
-                        tagName: 'text',
-                        textContent: linkView.model.attributes.name[6],
-                        attributes: {
-                            fill: 'white',
-                            x: -5,
-                            y: 5
-                        }
-                    }],
-                    offset: 20
-                })
-                const toolsView = new joint.dia.ToolsView({
-                    tools: [
-                        sourceArrowheadTool,
-                        targetArrowheadTool,
-                        boundaryTool,
-                        infoButton
-                    ]
-                })
-                linkView.addTools(toolsView)
-            },
-            'link:mouseleave': function (linkView, evt) {
-                linkView.removeTools()
-            },
-            'link:connect': function (
-                linkView: joint.dia.LinkView,
-                evt: JQuery.Event,
-                elementViewConnected: joint.dia.ElementView,
-                magnet: HTMLElement,
-                arrowhead: 'source' | 'target'
-            ) {
-                const name: string = linkView.model.attributes.name
-                const sourcePoint = linkView.model.getSourcePoint()
-                const targetPoint = linkView.model.getTargetPoint()
-                const sourceCell = linkView.model.getSourceCell()
-                const targetCell = linkView.model.getTargetCell()
-                if (!sourceCell || !targetCell) return
-                switch (name.toLowerCase()) {
-                case 'onewayhlink':
-                    if (sourcePoint.x >= targetPoint.x) {
-                        sourceCell.attributes.left = targetCell.id
-                    } else if (sourcePoint.x < targetPoint.x) {
-                        sourceCell.attributes.right = targetCell.id
-                    }
-                    break
-                case 'twowayhlink':
-                    if (sourcePoint.x >= targetPoint.x) {
-                        sourceCell.attributes.left = targetCell.id
-                        targetCell.attributes.right = sourceCell.id
-                    } else if (sourcePoint.x < targetPoint.x) {
-                        sourceCell.attributes.right = targetCell.id
-                        targetCell.attributes.left = sourceCell.id
-                    }
-                    break
-                case 'onewayvlink':
-                    if (sourcePoint.y >= targetPoint.y) {
-                        sourceCell.attributes.top = targetCell.id
-                    } else if (sourcePoint.y < targetPoint.y) {
-                        sourceCell.attributes.bottom = targetCell.id
-                    }
-                    break
-                case 'twowayvlink':
-                    if (sourcePoint.y >= targetPoint.y) {
-                        sourceCell.attributes.top = targetCell.id
-                        targetCell.attributes.bottom = sourceCell.id
-                    } else if (sourcePoint.y < targetPoint.y) {
-                        sourceCell.attributes.bottom = targetCell.id
-                        targetCell.attributes.top = sourceCell.id
-                    }
-                    break
-                default:
-                    console.warn(`unknown link name ${name}`)
-                    break
-                }
-                graph.getNeighbors(sourceCell)
-                graph.getNeighbors(targetCell)
-                // console.log(sourceCell.attributes)
-                // console.log(targetCell.attributes)
-            },
-            'link:disconnect': function (
-                linkView: joint.dia.LinkView,
-                evt: JQuery.Event,
-                elementViewConnected: joint.dia.ElementView,
-                magnet: HTMLElement,
-                arrowhead: 'source' | 'target'
-            ) {
-                const name: string = linkView.model.attributes.name
-                const sourcePoint = linkView.model.getSourcePoint()
-                const targetPoint = linkView.model.getTargetPoint()
-                const sourceCell = arrowhead === 'source' ? elementViewConnected.model : linkView.model.getSourceCell()
-                const targetCell = arrowhead === 'target' ? elementViewConnected.model : linkView.model.getTargetCell()
-                if (!sourceCell || !targetCell) return
-                switch (name.toLowerCase()) {
-                case 'onewayhlink':
-                    if (sourcePoint.x >= targetPoint.x) {
-                        delete sourceCell.attributes.left
-                    } else if (sourcePoint.x < targetPoint.x) {
-                        delete sourceCell.attributes.right
-                    }
-                    break
-                case 'twowayhlink':
-                    if (sourcePoint.x >= targetPoint.x) {
-                        delete sourceCell.attributes.left
-                        delete targetCell.attributes.right
-                    } else if (sourcePoint.x < targetPoint.x) {
-                        delete sourceCell.attributes.right
-                        delete targetCell.attributes.left
-                    }
-                    break
-                case 'onewayvlink':
-                    if (sourcePoint.y >= targetPoint.y) {
-                        delete sourceCell.attributes.top
-                    } else if (sourcePoint.y < targetPoint.y) {
-                        delete sourceCell.attributes.bottom
-                    }
-                    break
-                case 'twowayvlink':
-                    if (sourcePoint.y >= targetPoint.y) {
-                        delete sourceCell.attributes.top
-                        delete targetCell.attributes.bottom
-                    } else if (sourcePoint.y < targetPoint.y) {
-                        delete targetCell.attributes.top
-                        delete sourceCell.attributes.bottom
-                    }
-                    break
-                default:
-                    console.warn(`unknown link name ${name}`)
-                    break
-                }
-                console.log(sourceCell?.attributes)
-                console.log(targetCell?.attributes)
-            },
-            'blank:contextmenu': function (evt, x, y) {
-                setAddCellPos({ x, y })
-                setAddCellCtxMenuPos({ x: evt.clientX, y: evt.clientY })
-            },
-            'cell:contextmenu': function (cellView, evt, x, y) {
-                if (cellView.model.isLink()) setSelectedLink(cellView.model)
-                if (cellView.model.isElement()) setSelectedElement(cellView.model)
-                setCtrlCellCtxMenuPos({ x: evt.clientX, y: evt.clientY })
-            }
-        })
-    }
-
     function addElement (name: string): void {
         const element = shapes.createElement(name)
         element.position(addCellPos.x, addCellPos.y)
@@ -302,15 +133,8 @@ export default function GraphEditor () {
         closeCtrlCellCtxMenu()
     }
 
-    function loadGraph (): void {
-        Graph.get().then(response => {
-            graph.fromJSON(response)
-            console.log(response)
-        })
-    }
-
-    function uploadGraph (): void {
-        Graph.update(graph.toJSON())
+    function saveGraph (): void {
+        updateCells(graph.toJSON())
         .then(response => {
             setSnackbar({
                 open: true,
@@ -328,10 +152,251 @@ export default function GraphEditor () {
         })
     }
 
+    function zoomIn (): void {
+        const newValue = paperScale + 0.2
+        if (newValue > 9.8) return
+        setPaperScale(newValue)
+        paper?.scale(newValue)
+    }
+
+    function zoomOut (): void {
+        const newValue = paperScale - 0.2
+        if (newValue < 0.2) return
+        setPaperScale(newValue)
+        paper?.scale(newValue)
+    }
+
+    function ElementSvgIcon (props: { type: string }) {
+        const { type } = props
+        return (
+            <IconButton onClick={() => addElement(type)}>
+                <SvgIcon fontSize="large">
+                    <image
+                        width="24" height="24"
+                        href={'data:image/svg+xml;utf8,' + encodeURIComponent(shapes.SVG[type])}
+                    />
+                </SvgIcon>
+            </IconButton>
+        )
+    }
+
+    function LinkSvgIcon (props: { type: string }) {
+        const { type } = props
+        let icon
+        switch (type) {
+        case 'oneWayHLink':
+            icon = <ArrowForwardIcon fontSize="large"/>
+            break
+        case 'twoWayHLink':
+            icon = <SwapHorizIcon fontSize="large"/>
+            break
+        case 'oneWayVLink':
+            icon = <ArrowDownwardIcon fontSize="large"/>
+            break
+        case 'twoWayVLink':
+            icon = <ImportExportIcon fontSize="large"/>
+            break
+        }
+        return (
+            <IconButton children={icon} onClick={() => addLink(type)}/>
+        )
+    }
+
     // watch && mounted
-    useEffect(initCanvas, [graph])
-    useEffect(registerPaperEventHandler, [paper])
-    useEffect(loadGraph, [paper])
+    useEffect(() => {
+        if (paperComplete) return console.log('paper Completed!!!')
+
+        function initPaper () {
+            // paper should be initialized after #canvas is being mounted
+            const Paper = new joint.dia.Paper({
+                el: $('#paper'),
+                cellViewNamespace: { standard: joint.shapes.standard },
+                width: 6000,
+                height: 6000,
+                model: graph,
+                restrictTranslate: true,
+                background: {
+                    color: '#111'
+                },
+                gridSize: 20,
+                drawGrid: true
+            })
+            return Paper
+        }
+        function registerPaperEventHandler (Paper: joint.dia.Paper): void {
+            Paper.on({
+                'element:mouseenter': function (cellView, evt, x, y) {
+                    cellView.highlight()
+                },
+                'element:mouseout': function (cellView, evt, x, y) {
+                    cellView.unhighlight()
+                },
+                'link:mouseenter': function (linkView, evt) {
+                    const sourceArrowheadTool = new joint.linkTools.SourceArrowhead()
+                    const targetArrowheadTool = new joint.linkTools.TargetArrowhead()
+                    const boundaryTool = new joint.linkTools.Boundary()
+                    const infoButton = new joint.linkTools.Button({
+                        markup: [{
+                            tagName: 'circle',
+                            attributes: {
+                                r: 15,
+                                fill: 'green'
+                            }
+                        }, {
+                            tagName: 'text',
+                            textContent: linkView.model.attributes.name[6],
+                            attributes: {
+                                fill: 'white',
+                                x: -5,
+                                y: 5
+                            }
+                        }],
+                        offset: 20
+                    })
+                    const toolsView = new joint.dia.ToolsView({
+                        tools: [
+                            sourceArrowheadTool,
+                            targetArrowheadTool,
+                            boundaryTool,
+                            infoButton
+                        ]
+                    })
+                    linkView.addTools(toolsView)
+                },
+                'link:mouseleave': function (linkView, evt) {
+                    linkView.removeTools()
+                },
+                'link:connect': function (
+                    linkView: joint.dia.LinkView,
+                    evt: JQuery.Event,
+                    elementViewConnected: joint.dia.ElementView,
+                    magnet: HTMLElement,
+                    arrowhead: 'source' | 'target'
+                ) {
+                    const name: string = linkView.model.attributes.name
+                    const sourcePoint = linkView.model.getSourcePoint()
+                    const targetPoint = linkView.model.getTargetPoint()
+                    const sourceElement = linkView.model.getSourceElement()
+                    const targetElement = linkView.model.getTargetElement()
+                    if (!sourceElement || !targetElement) return
+                    switch (name.toLowerCase()) {
+                    case 'onewayhlink':
+                        if (sourcePoint.x >= targetPoint.x) {
+                            sourceElement.attributes.left = targetElement.id
+                        } else if (sourcePoint.x < targetPoint.x) {
+                            sourceElement.attributes.right = targetElement.id
+                        }
+                        break
+                    case 'twowayhlink':
+                        if (sourcePoint.x >= targetPoint.x) {
+                            sourceElement.attributes.left = targetElement.id
+                            targetElement.attributes.right = sourceElement.id
+                        } else if (sourcePoint.x < targetPoint.x) {
+                            sourceElement.attributes.right = targetElement.id
+                            targetElement.attributes.left = sourceElement.id
+                        }
+                        break
+                    case 'onewayvlink':
+                        if (sourcePoint.y >= targetPoint.y) {
+                            sourceElement.attributes.top = targetElement.id
+                        } else if (sourcePoint.y < targetPoint.y) {
+                            sourceElement.attributes.bottom = targetElement.id
+                        }
+                        break
+                    case 'twowayvlink':
+                        if (sourcePoint.y >= targetPoint.y) {
+                            sourceElement.attributes.top = targetElement.id
+                            targetElement.attributes.bottom = sourceElement.id
+                        } else if (sourcePoint.y < targetPoint.y) {
+                            sourceElement.attributes.bottom = targetElement.id
+                            targetElement.attributes.top = sourceElement.id
+                        }
+                        break
+                    default:
+                        console.warn(`unknown link name ${name}`)
+                        break
+                    }
+                    console.log(sourceElement.attributes)
+                    console.log(targetElement.attributes)
+                },
+                'link:disconnect': function (
+                    linkView: joint.dia.LinkView,
+                    evt: JQuery.Event,
+                    elementViewConnected: joint.dia.ElementView,
+                    magnet: HTMLElement,
+                    arrowhead: 'source' | 'target'
+                ) {
+                    const name: string = linkView.model.attributes.name
+                    const sourcePoint = linkView.model.getSourcePoint()
+                    const targetPoint = linkView.model.getTargetPoint()
+                    const sourceElement = arrowhead === 'source' ? elementViewConnected.model : linkView.model.getSourceElement()
+                    const targetElement = arrowhead === 'target' ? elementViewConnected.model : linkView.model.getTargetElement()
+                    if (!sourceElement || !targetElement) return
+                    switch (name.toLowerCase()) {
+                    case 'onewayhlink':
+                        if (sourcePoint.x >= targetPoint.x) {
+                            delete sourceElement.attributes.left
+                        } else if (sourcePoint.x < targetPoint.x) {
+                            delete sourceElement.attributes.right
+                        }
+                        break
+                    case 'twowayhlink':
+                        if (sourcePoint.x >= targetPoint.x) {
+                            delete sourceElement.attributes.left
+                            delete targetElement.attributes.right
+                        } else if (sourcePoint.x < targetPoint.x) {
+                            delete sourceElement.attributes.right
+                            delete targetElement.attributes.left
+                        }
+                        break
+                    case 'onewayvlink':
+                        if (sourcePoint.y >= targetPoint.y) {
+                            delete sourceElement.attributes.top
+                        } else if (sourcePoint.y < targetPoint.y) {
+                            delete sourceElement.attributes.bottom
+                        }
+                        break
+                    case 'twowayvlink':
+                        if (sourcePoint.y >= targetPoint.y) {
+                            delete sourceElement.attributes.top
+                            delete targetElement.attributes.bottom
+                        } else if (sourcePoint.y < targetPoint.y) {
+                            delete targetElement.attributes.top
+                            delete sourceElement.attributes.bottom
+                        }
+                        break
+                    default:
+                        console.warn(`unknown link name ${name}`)
+                        break
+                    }
+                    console.log(sourceElement?.attributes)
+                    console.log(targetElement?.attributes)
+                },
+                'blank:contextmenu': function (evt, x, y) {
+                    setAddCellPos({ x, y })
+                    setAddCellCtxMenuPos({ x: evt.clientX, y: evt.clientY })
+                },
+                'cell:contextmenu': function (cellView, evt, x, y) {
+                    if (cellView.model.isLink()) setSelectedLink(cellView.model)
+                    if (cellView.model.isElement()) setSelectedElement(cellView.model)
+                    setCtrlCellCtxMenuPos({ x: evt.clientX, y: evt.clientY })
+                }
+            })
+        }
+        async function loadCells () {
+            const cells = await getCells()
+            graph.fromJSON(cells)
+        }
+
+        // initial data
+        const Paper = initPaper()
+        registerPaperEventHandler(Paper)
+        setPaper(Paper)
+        setPaperComplete(true)
+        loadCells()
+    }, [graph, paperComplete])
+
+
 
     // css style
     const styles = makeStyles(theme => ({
@@ -343,6 +408,9 @@ export default function GraphEditor () {
             [theme.breakpoints.up('sm')]: {
                 height: 'calc(100vh - 64px)'
             }
+        },
+        gridItem: {
+            textAlign: 'center'
         }
     }))
     const classes = styles()
@@ -353,10 +421,23 @@ export default function GraphEditor () {
             <AppBar position="sticky">
                 <Toolbar>
                     <Tooltip title="儲存">
-                        <IconButton onClick={uploadGraph}>
-                            <CloudUploadIcon></CloudUploadIcon>
+                        <IconButton onClick={saveGraph}>
+                            <CloudUploadIcon/>
                         </IconButton>
                     </Tooltip>
+                    <Tooltip title="縮小">
+                        <IconButton onClick={zoomOut}>
+                            <ZoomOutIcon/>
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip title="放大">
+                        <IconButton onClick={zoomIn}>
+                            <ZoomInIcon/>
+                        </IconButton>
+                    </Tooltip>
+                    <Box color="white" display="flex">
+                        {(paperScale * 100).toFixed(0) + '%'}
+                    </Box>
                 </Toolbar>
             </AppBar>
             <Box className={classes.paperParent}>
@@ -370,26 +451,32 @@ export default function GraphEditor () {
                             top: addCellCtxMenuPos.y,
                             left: addCellCtxMenuPos.x
                         }}
+
                     >   
-                        {shapes.ELEMENTS.map((name, index) =>
-                            <MenuItem 
-                                onClick={() => addElement(name)} 
-                                key={index}
-                            >
-                                {name}
-                            </MenuItem>
-                        )}
-                        {shapes.LINKS.map((name, index) =>
-                            <MenuItem 
-                                onClick={() => addLink(name)} 
-                                key={index}
-                            >
-                                {name}
-                            </MenuItem>
-                        )}
+                        <Box style={{ width: '200px' }}>
+                            <Grid container>
+                                {shapes.ELEMENTS.map((type, index) =>
+                                    <Grid
+                                        item xs={4}
+                                        key={index}
+                                        className={classes.gridItem}
+                                    >
+                                        <ElementSvgIcon type={type}/>
+                                    </Grid>
+                                )}
+                                {shapes.LINKS.map((type, index) =>
+                                    <Grid
+                                        item xs={4}
+                                        key={index}
+                                        className={classes.gridItem}
+                                    >
+                                        <LinkSvgIcon type={type}/>
+                                    </Grid>
+                                )}
+                            </Grid>
+                        </Box>
                     </Menu>
                     <Menu
-                        keepMounted
                         open={ctrlCellCtxMenuPos.x !== -1}
                         onClose={closeCtrlCellCtxMenu}
                         anchorReference="anchorPosition"

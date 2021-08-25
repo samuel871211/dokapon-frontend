@@ -122,6 +122,7 @@ export default function GraphEditor () {
             }
             break
         }
+        closeAddElementCtxMenu()
         
         // // 單獨新增element，暫時不支援
         // const element = shapes.createElement(name)
@@ -140,11 +141,11 @@ export default function GraphEditor () {
         }
         switch (direction) {
         case 'top':
-            link.source({
+            link.source({ id: selectedElement.id })
+            link.target({
                 x: centerPoint.x,
                 y: centerPoint.y - 100 - selectedElement.size().height / 2
             })
-            link.target({ id: selectedElement.id })
             selectedElement.attributes.top = link.id
             break
         case 'bottom':
@@ -156,11 +157,11 @@ export default function GraphEditor () {
             selectedElement.attributes.bottom = link.id
             break
         case 'left':
-            link.source({
+            link.source({ id: selectedElement.id })
+            link.target({
                 x: centerPoint.x - 100 - selectedElement.size().width / 2,
                 y: centerPoint.y
             })
-            link.target({ id: selectedElement.id })
             selectedElement.attributes.left = link.id
             break
         case 'right':
@@ -228,8 +229,27 @@ export default function GraphEditor () {
 
     function deleteCell (): void {
         if (selectedLink) {
-            const bothConnected = selectedLink.source().id && selectedLink.target().id
+            const sourceId = selectedLink.source().id
+            const targetId = selectedLink.target().id
+            const bothConnected = sourceId && targetId
             if (!bothConnected) {
+                const elementId = sourceId || targetId
+                if (elementId) {
+                    const element = graph.getCell(elementId)
+                    const linkName = selectedLink.attributes.name
+                    switch (linkName.toLowerCase()) {
+                    case 'onewayvlink':
+                    case 'twowayvlink':
+                        if (element.attributes.top === selectedLink.id) delete element.attributes.top
+                        if (element.attributes.bottom === selectedLink.id) delete element.attributes.bottom
+                        break
+                    case 'onewayhlink':
+                    case 'twowayhlink':
+                        if (element.attributes.right === selectedLink.id) delete element.attributes.right
+                        if (element.attributes.left === selectedLink.id) delete element.attributes.left
+                        break
+                    }
+                }
                 closeAddElementCtxMenu()
                 selectedLink.remove()
                 setSelectedLink(undefined)
@@ -462,8 +482,8 @@ export default function GraphEditor () {
                     setAddElementCtxMenuPos({ x: evt.clientX, y: evt.clientY })
                 },
                 'link:mouseenter': function (linkView, evt) {
-                    // const sourceArrowheadTool = new joint.linkTools.SourceArrowhead()
-                    // const targetArrowheadTool = new joint.linkTools.TargetArrowhead()
+                    const sourceArrowheadTool = new joint.linkTools.SourceArrowhead()
+                    const targetArrowheadTool = new joint.linkTools.TargetArrowhead()
                     const boundaryTool = new joint.linkTools.Boundary()
                     const infoButton = new joint.linkTools.Button({
                         markup: [{
@@ -485,8 +505,8 @@ export default function GraphEditor () {
                     })
                     const toolsView = new joint.dia.ToolsView({
                         tools: [
-                            // sourceArrowheadTool,
-                            // targetArrowheadTool,
+                            sourceArrowheadTool,
+                            targetArrowheadTool,
                             boundaryTool,
                             infoButton
                         ]
@@ -496,66 +516,66 @@ export default function GraphEditor () {
                 'link:mouseleave': function (linkView, evt) {
                     linkView.removeTools()
                 },
-                // 'link:connect': function (
-                //     linkView: joint.dia.LinkView,
-                //     evt: JQuery.Event,
-                //     elementViewConnected: joint.dia.ElementView,
-                //     magnet: HTMLElement,
-                //     arrowhead: 'source' | 'target'
-                // ) {
-                //     switch (arrowhead) {
-                //     case 'source':
-                //         linkView.model.source(linkView.model.getSourcePoint())
-                //         break
-                //     case 'target':
-                //         linkView.model.target(linkView.model.getTargetPoint())
-                //         break
-                //     }
+                'link:connect': function (
+                    linkView: joint.dia.LinkView,
+                    evt: JQuery.Event,
+                    elementViewConnected: joint.dia.ElementView,
+                    magnet: HTMLElement,
+                    arrowhead: 'source' | 'target'
+                ) {
+                    // switch (arrowhead) {
+                    // case 'source':
+                    //     linkView.model.source(linkView.model.getSourcePoint())
+                    //     break
+                    // case 'target':
+                    //     linkView.model.target(linkView.model.getTargetPoint())
+                    //     break
+                    // }
 
-                //     const name: string = linkView.model.attributes.name
-                //     const sourcePoint = linkView.model.getSourcePoint()
-                //     const targetPoint = linkView.model.getTargetPoint()
-                //     const sourceElement = linkView.model.getSourceElement()
-                //     const targetElement = linkView.model.getTargetElement()
-                //     if (!sourceElement || !targetElement) return
-                //     switch (name.toLowerCase()) {
-                //     case 'onewayhlink':
-                //         if (sourcePoint.x >= targetPoint.x) {
-                //             sourceElement.attributes.left = targetElement.id
-                //         } else if (sourcePoint.x < targetPoint.x) {
-                //             sourceElement.attributes.right = targetElement.id
-                //         }
-                //         break
-                //     case 'twowayhlink':
-                //         if (sourcePoint.x >= targetPoint.x) {
-                //             sourceElement.attributes.left = targetElement.id
-                //             targetElement.attributes.right = sourceElement.id
-                //         } else if (sourcePoint.x < targetPoint.x) {
-                //             sourceElement.attributes.right = targetElement.id
-                //             targetElement.attributes.left = sourceElement.id
-                //         }
-                //         break
-                //     case 'onewayvlink':
-                //         if (sourcePoint.y >= targetPoint.y) {
-                //             sourceElement.attributes.top = targetElement.id
-                //         } else if (sourcePoint.y < targetPoint.y) {
-                //             sourceElement.attributes.bottom = targetElement.id
-                //         }
-                //         break
-                //     case 'twowayvlink':
-                //         if (sourcePoint.y >= targetPoint.y) {
-                //             sourceElement.attributes.top = targetElement.id
-                //             targetElement.attributes.bottom = sourceElement.id
-                //         } else if (sourcePoint.y < targetPoint.y) {
-                //             sourceElement.attributes.bottom = targetElement.id
-                //             targetElement.attributes.top = sourceElement.id
-                //         }
-                //         break
-                //     default:
-                //         console.warn(`unknown link name ${name}`)
-                //         break
-                //     }
-                // },
+                    const name: string = linkView.model.attributes.name
+                    const sourcePoint = linkView.model.getSourcePoint()
+                    const targetPoint = linkView.model.getTargetPoint()
+                    const sourceElement = linkView.model.getSourceElement()
+                    const targetElement = linkView.model.getTargetElement()
+                    if (!sourceElement || !targetElement) return
+                    switch (name.toLowerCase()) {
+                    case 'onewayhlink':
+                        if (sourcePoint.x >= targetPoint.x) {
+                            sourceElement.attributes.left = targetElement.id
+                        } else if (sourcePoint.x < targetPoint.x) {
+                            sourceElement.attributes.right = targetElement.id
+                        }
+                        break
+                    case 'twowayhlink':
+                        if (sourcePoint.x >= targetPoint.x) {
+                            sourceElement.attributes.left = targetElement.id
+                            targetElement.attributes.right = sourceElement.id
+                        } else if (sourcePoint.x < targetPoint.x) {
+                            sourceElement.attributes.right = targetElement.id
+                            targetElement.attributes.left = sourceElement.id
+                        }
+                        break
+                    case 'onewayvlink':
+                        if (sourcePoint.y >= targetPoint.y) {
+                            sourceElement.attributes.top = targetElement.id
+                        } else if (sourcePoint.y < targetPoint.y) {
+                            sourceElement.attributes.bottom = targetElement.id
+                        }
+                        break
+                    case 'twowayvlink':
+                        if (sourcePoint.y >= targetPoint.y) {
+                            sourceElement.attributes.top = targetElement.id
+                            targetElement.attributes.bottom = sourceElement.id
+                        } else if (sourcePoint.y < targetPoint.y) {
+                            sourceElement.attributes.bottom = targetElement.id
+                            targetElement.attributes.top = sourceElement.id
+                        }
+                        break
+                    default:
+                        console.warn(`unknown link name ${name}`)
+                        break
+                    }
+                },
                 // 'link:disconnect': function (
                 //     linkView: joint.dia.LinkView,
                 //     evt: JQuery.Event,

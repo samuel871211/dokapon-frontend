@@ -143,7 +143,18 @@ export const SVG: { [key: string]: string } = {
 		'<line fill="none" x1="7.875" y1="32.88064" x2="29.625" y2="41.88064" stroke="#2f0205"/>' +
 		'<path fill="none" stroke="#2f0205" d="m19.07366,33.07848l0.00164,-0.00109l-0.10539,-0.16572c0.30055,-0.40449 0.34089,-0.96653 0.05451,-1.41737c-0.37124,-0.58385 -1.14534,-0.75611 -1.72919,-0.38487c-0.58366,0.37106 -0.75647,1.14516 -0.38523,1.72937c0.27766,0.43648 0.78137,0.64272 1.26182,0.56368l0.07705,0.12157l0.03743,0.00818l0.14155,-0.08123l-0.05542,0.25022l0.45119,0.10031l-0.05379,0.24077l0.3458,0.07705l-0.12357,0.55604l0.25549,0.05688l-0.07705,0.34635l0.75139,0.16681l0.13774,-0.61637l-0.98598,-1.55056l0.00001,-0.00002zm-1.34286,-1.28381c-0.12447,0.07923 -0.28947,0.04234 -0.3687,-0.08213c-0.07905,-0.12447 -0.04252,-0.28965 0.08195,-0.3687s0.28965,-0.04234 0.36852,0.08213c0.07941,0.12447 0.04252,0.28965 -0.08177,0.3687z"/>' +
 		'</g>' +
-		'</svg>'
+		'</svg>',
+	worldTransferField:
+		'<?xml version="1.0" standalone="no"?>' +
+		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" version="1.0" preserveAspectRatio="xMidYMid meet">' +
+		'<g>' +
+		'<circle fill="#4089d8" strokeWidth="3" stroke="#333333" cx="30.125" cy="30" r="30"/>' +
+		'<path transform="rotate(-135 17.6823 17.7818)" stroke="#bf0000" d="m16.55274,24.42757l3.93966,-4.10475l-7.61715,0l-7.61714,0l0,-2.54104l0,-2.54104l7.52976,0c4.14136,0 7.52975,-0.12878 7.52975,-0.2862c0,-0.15741 -1.64867,-2.00455 -3.66369,-4.10475l-3.66371,-3.81855l3.38638,0l3.38636,0l5.17175,5.38042l5.17175,5.38041l-5.18167,5.37013l-5.18166,5.37012l-3.56504,0l-3.56504,0l3.93968,-4.10475l0,0z" fill="#bf0000"/>' +
+		'<path transform="rotate(-45 42.5573 18.0318)" stroke="#bf0000" d="m41.42774,24.67757l3.93966,-4.10475l-7.61715,0l-7.61714,0l0,-2.54104l0,-2.54104l7.52976,0c4.14136,0 7.52975,-0.12878 7.52975,-0.2862c0,-0.15741 -1.64867,-2.00455 -3.66369,-4.10475l-3.66371,-3.81855l3.38638,0l3.38637,0l5.17175,5.38042l5.17175,5.38041l-5.18167,5.37013l-5.18167,5.37012l-3.56503,0l-3.56504,0l3.93968,-4.10475l0,0z" fill="#bf0000"/>' +
+		'<path transform="rotate(135 17.4323 41.9068)" stroke="#bf0000" d="m16.30274,48.55257l3.93966,-4.10475l-7.61715,0l-7.61714,0l0,-2.54104l0,-2.54104l7.52976,0c4.14136,0 7.52975,-0.12878 7.52975,-0.2862c0,-0.15741 -1.64867,-2.00455 -3.66369,-4.10475l-3.66371,-3.81855l3.38638,0l3.38637,0l5.17175,5.38042l5.17175,5.38041l-5.18167,5.37013l-5.18167,5.37012l-3.56503,0l-3.56504,0l3.93968,-4.10475l0,0z" fill="#bf0000"/>' +
+		'<path transform="rotate(45 42.1823 42.0318)" stroke="#bf0000" d="m41.05274,48.67757l3.93966,-4.10475l-7.61715,0l-7.61714,0l0,-2.54104l0,-2.54104l7.52976,0c4.14136,0 7.52975,-0.12878 7.52975,-0.2862c0,-0.15741 -1.64867,-2.00455 -3.66369,-4.10475l-3.66371,-3.81855l3.38638,0l3.38637,0l5.17175,5.38042l5.17175,5.38041l-5.18167,5.37013l-5.18167,5.37012l-3.56503,0l-3.56504,0l3.93968,-4.10475l0,0z" fill="#bf0000"/>' +
+		'</g>' +
+		'</svg>',
 
 }
 
@@ -317,6 +328,23 @@ const keyTreasureField = joint.dia.Element.define('dokapon.keyTreasureField', {
 	}
 })
 
+const worldTransferField = joint.dia.Element.define('dokapon.worldTransferField', {
+	name: 'worldTransferField',
+	markup: [{
+		selector: 'body',
+		tagName: 'image',
+		attributes: {
+			width: 80,
+			height: 80,
+			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.worldTransferField)
+		}
+	}],
+	size: {
+		width: 80,
+		height: 80
+	}
+})
+
 // joint.shapes.standard.Link.define(): joint.dia.Link
 // will cause error "markup required"
 function oneWayHLink (): joint.shapes.standard.Link {
@@ -385,6 +413,8 @@ export function createElement (name: string): joint.dia.Element {
 		return new whiteTreasureField()
 	case 'keytreasurefield':
 		return new keyTreasureField()
+	case 'worldtransferfield':
+		return new worldTransferField()
     default:
 		console.error(`unknown element name ${name}`)
         return new battleField()
@@ -411,7 +441,8 @@ export const ELEMENTS: Array<string> = [
 	'treasureField', 'specialField',
 	'collectMoneyField', 'collectAllMoneyField',
 	'goldTreasureField', 'redTreasureField',
-	'whiteTreasureField', 'keyTreasureField'
+	'whiteTreasureField', 'keyTreasureField',
+	'worldTransferField'
 ]
 
 export const LINKS: Array<string> = [

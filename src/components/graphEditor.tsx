@@ -5,8 +5,9 @@ import Box from '@material-ui/core/Box'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
-import ZoomInIcon from '@material-ui/icons/ZoomIn'
-import ZoomOutIcon from '@material-ui/icons/ZoomOut'
+import Divider from '@material-ui/core/Divider'
+// import ZoomInIcon from '@material-ui/icons/ZoomIn'
+// import ZoomOutIcon from '@material-ui/icons/ZoomOut'
 import CloudUploadIcon from '@material-ui/icons/CloudUpload'
 import SwapHorizIcon from '@material-ui/icons/SwapHoriz'
 import ImportExportIcon from '@material-ui/icons/ImportExport'
@@ -17,6 +18,8 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
 import SvgIcon from '@material-ui/core/SvgIcon'
 // import Paper from '@material-ui/core/Paper'
 // import Avatar from '@material-ui/core/Avatar'
+import PanToolIcon from '@material-ui/icons/PanTool'
+import EditIcon from '@material-ui/icons/Edit'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
 // import { spacing } from '@material-ui/system'
@@ -25,6 +28,7 @@ import Grid from '@material-ui/core/Grid'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 // import MenuList from '@material-ui/core/MenuList'
+import ZoomInIcon from '@material-ui/icons/ZoomIn'
 import Tooltip from '@material-ui/core/Tooltip'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert, { Color } from '@material-ui/lab/Alert'
@@ -34,6 +38,7 @@ import $ from 'jquery'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
 import { getCells, updateCells } from '../api/graph'
+// import Draggable from 'react-draggable'
 
 export default function GraphEditor () {
     // data
@@ -42,14 +47,11 @@ export default function GraphEditor () {
     //     x: -1,
     //     y: -1
     // })
-    const [addElementCtxMenuPos, setAddElementCtxMenuPos] = useState({
-        x: -1,
-        y: -1
-    })
-    const [addLinkCtxMenuPos, setAddLinkCtxMenuPos] = useState({
-        x: -1,
-        y: -1
-    })
+    // const [dragAnchorPos, setDragAnchorPos] = useState([0, 0])
+    // const [dragCurrentPos, setDragCurrentPos] = useState([0, 0])
+    const [IsDragMode, toggleDragMode] = useState(false)
+    const [addElementCtxMenuPos, setAddElementCtxMenuPos] = useState({ x: -1, y: -1 })
+    const [addLinkCtxMenuPos, setAddLinkCtxMenuPos] = useState({ x: -1, y: -1 })
     const [groupArea, setGroupArea] = useState<joint.dia.Element | null>()
     const [groupViews, setGroupViews] = useState<Array<joint.dia.CellView>>([])
     const [paperScale, setPaperScale] = useState(1)
@@ -88,37 +90,37 @@ export default function GraphEditor () {
         // const sourceElement = selectedLink.getSourceElement()
         // const targetElement = selectedLink.getTargetElement()
         // const connectedElement = sourceElement || targetElement
-        switch (selectedLink.attributes.name.toLowerCase()) {
+        switch (selectedLink.prop('name').toLowerCase()) {
         case 'onewayhlink':
-            if (connectedElement?.attributes.left === selectedLink.id) {
-                connectedElement.attributes.left = newElement.id
-            } else if (connectedElement?.attributes.right === selectedLink.id) {
-                connectedElement.attributes.right = newElement.id
+            if (connectedElement?.prop('left') === selectedLink.id) {
+                connectedElement.prop('left', newElement.id)
+            } else if (connectedElement?.prop('right') === selectedLink.id) {
+                connectedElement.prop('right', newElement.id)
             }
             break
         case 'twowayhlink':
-            if (connectedElement?.attributes.left === selectedLink.id) {
-                connectedElement.attributes.left = newElement.id
-                newElement.attributes.right = connectedElement.id
-            } else if (connectedElement?.attributes.right === selectedLink.id) {
-                connectedElement.attributes.right = newElement.id
-                newElement.attributes.left = connectedElement.id
+            if (connectedElement?.prop('left') === selectedLink.id) {
+                connectedElement.prop('left', newElement.id)
+                newElement.prop('right', connectedElement.id)
+            } else if (connectedElement?.prop('right') === selectedLink.id) {
+                connectedElement.prop('right', newElement.id)
+                newElement.prop('left', connectedElement.id)
             }
             break
         case 'onewayvlink':
-            if (connectedElement?.attributes.top === selectedLink.id) {
-                connectedElement.attributes.top = newElement.id
-            } else if (connectedElement?.attributes.bottom === selectedLink.id) {
-                connectedElement.attributes.bottom = newElement.id
+            if (connectedElement?.prop('top') === selectedLink.id) {
+                connectedElement.prop('top', newElement.id)
+            } else if (connectedElement?.prop('bottom') === selectedLink.id) {
+                connectedElement.prop('bottom', newElement.id)
             }
             break
         case 'twowayvlink':
-            if (connectedElement?.attributes.top === selectedLink.id) {
-                connectedElement.attributes.top = newElement.id
-                newElement.attributes.bottom = connectedElement.id
-            } else if (connectedElement?.attributes.bottom === selectedLink.id) {
-                connectedElement.attributes.bottom = newElement.id
-                newElement.attributes.top = connectedElement.id
+            if (connectedElement?.prop('top') === selectedLink.id) {
+                connectedElement.prop('top', newElement.id)
+                newElement.prop('bottom', connectedElement.id)
+            } else if (connectedElement?.prop('bottom') === selectedLink.id) {
+                connectedElement.prop('bottom', newElement.id)
+                newElement.prop('top', connectedElement.id) 
             }
             break
         }
@@ -146,7 +148,7 @@ export default function GraphEditor () {
                 x: centerPoint.x,
                 y: centerPoint.y - 100 - selectedElement.size().height / 2
             })
-            selectedElement.attributes.top = link.id
+            selectedElement.prop('top', link.id)
             break
         case 'bottom':
             link.source({ id: selectedElement.id })
@@ -154,7 +156,7 @@ export default function GraphEditor () {
                 x: centerPoint.x,
                 y: centerPoint.y + 100 + selectedElement.size().height / 2
             })
-            selectedElement.attributes.bottom = link.id
+            selectedElement.prop('bottom', link.id)
             break
         case 'left':
             link.source({ id: selectedElement.id })
@@ -162,7 +164,7 @@ export default function GraphEditor () {
                 x: centerPoint.x - 100 - selectedElement.size().width / 2,
                 y: centerPoint.y
             })
-            selectedElement.attributes.left = link.id
+            selectedElement.prop('left', link.id)
             break
         case 'right':
             link.source({ id: selectedElement.id })
@@ -170,7 +172,7 @@ export default function GraphEditor () {
                 x: centerPoint.x + 100 + selectedElement.size().width / 2,
                 y: centerPoint.y
             })
-            selectedElement.attributes.right = link.id
+            selectedElement.prop('right', link.id)
             break
         }
         link.addTo(graph)
@@ -236,17 +238,17 @@ export default function GraphEditor () {
                 const elementId = sourceId || targetId
                 if (elementId) {
                     const element = graph.getCell(elementId)
-                    const linkName = selectedLink.attributes.name
+                    const linkName = selectedLink.prop('name')
                     switch (linkName.toLowerCase()) {
                     case 'onewayvlink':
                     case 'twowayvlink':
-                        if (element.attributes.top === selectedLink.id) delete element.attributes.top
-                        if (element.attributes.bottom === selectedLink.id) delete element.attributes.bottom
+                        if (element.prop('top') === selectedLink.id) delete element.attributes.top
+                        if (element.prop('bottom') === selectedLink.id) delete element.attributes.bottom
                         break
                     case 'onewayhlink':
                     case 'twowayhlink':
-                        if (element.attributes.right === selectedLink.id) delete element.attributes.right
-                        if (element.attributes.left === selectedLink.id) delete element.attributes.left
+                        if (element.prop('right') === selectedLink.id) delete element.attributes.right
+                        if (element.prop('left') === selectedLink.id) delete element.attributes.left
                         break
                     }
                 }
@@ -261,13 +263,13 @@ export default function GraphEditor () {
             const connectedLinks = graph.getConnectedLinks(selectedElement)
             if (connectedLinks.length <= 1) {
                 let direction: string = ''
-                if (selectedElement.attributes.top) direction = 'top'
-                if (selectedElement.attributes.left) direction = 'left'
-                if (selectedElement.attributes.right) direction = 'right'
-                if (selectedElement.attributes.bottom) direction = 'bottom'
+                if (selectedElement.prop('top')) direction = 'top'
+                if (selectedElement.prop('left')) direction = 'left'
+                if (selectedElement.prop('right')) direction = 'right'
+                if (selectedElement.prop('bottom')) direction = 'bottom'
                 
                 const neighborElement = graph.getNeighbors(selectedElement)[0]
-                const linkName = connectedLinks[0].attributes.name
+                const linkName = connectedLinks[0].prop('name')
                 switch (linkName.toLowerCase()) {
                 case 'onewayhlink':
                 case 'twowayhlink':
@@ -330,19 +332,19 @@ export default function GraphEditor () {
         })
     }
 
-    function zoomIn (): void {
-        const newValue = paperScale + 0.2
-        if (newValue > 9.8) return
-        setPaperScale(newValue)
-        paper?.scale(newValue)
-    }
+    // function zoomIn (): void {
+    //     const newValue = paperScale + 0.2
+    //     if (newValue > 9.8) return
+    //     setPaperScale(newValue)
+    //     paper?.scale(newValue)
+    // }
 
-    function zoomOut (): void {
-        const newValue = paperScale - 0.2
-        if (newValue < 0.2) return
-        setPaperScale(newValue)
-        paper?.scale(newValue)
-    }
+    // function zoomOut (): void {
+    //     const newValue = paperScale - 0.2
+    //     if (newValue < 0.2) return
+    //     setPaperScale(newValue)
+    //     paper?.scale(newValue)
+    // }
 
     function ElementSvgIcon (props: { type: string, disabled: boolean }) {
         const { type, disabled } = props
@@ -400,14 +402,14 @@ export default function GraphEditor () {
             const Paper = new joint.dia.Paper({
                 el: $('#paper'),
                 cellViewNamespace: { standard: joint.shapes.standard },
-                width: 20000,
-                height: 20000,
+                width: '100%',
+                height: 'calc(100vh - 48px)',
                 model: graph,
                 restrictTranslate: true,
                 background: {
                     color: '#111'
                 },
-                gridSize: 20,
+                gridSize: 1,
                 drawGrid: true
             })
             return Paper
@@ -415,6 +417,9 @@ export default function GraphEditor () {
         function registerPaperEventHandler (Paper: joint.dia.Paper): void {
             let selectedArea: joint.dia.Element
             let selectedViews: Array<joint.dia.CellView> = []
+            let dragMouseDownPos = { x: 0, y: 0 }
+            let dragAnchorPos = { x: 0, y: 0 }
+            let dragMode = false
             Paper.on({
                 'element:pointermove': function (elementView, evt, x, y) {
                     if (selectedViews.length < 1) return
@@ -422,7 +427,7 @@ export default function GraphEditor () {
                     // 群組移動
                     const AreaBBox = selectedArea.getBBox()
                     for (const view of selectedViews) {
-                        const groupOffset = view.model.attributes.groupOffset
+                        const groupOffset = view.model.prop('groupOffset')
                         if (!groupOffset) continue
 
                         if (view instanceof joint.dia.ElementView) {
@@ -461,27 +466,32 @@ export default function GraphEditor () {
                     }
                 },
                 'element:mouseenter': function (elementView, evt, x, y) {
+                    if (dragMode) return
+
                     elementView.highlight()
                     console.table({
-                        top: elementView.model.attributes.top,
-                        left: elementView.model.attributes.left,
-                        right: elementView.model.attributes.right,
-                        bottom: elementView.model.attributes.bottom
+                        top: elementView.model.prop('top'),
+                        left: elementView.model.prop('left'),
+                        right: elementView.model.prop('right'),
+                        bottom: elementView.model.prop('bottom')
                     })
                 },
                 'element:mouseout': function (elementView, evt, x, y) {
                     elementView.unhighlight()
                 },
                 'element:contextmenu': function (elementView, evt, x, y) {
+                    if (dragMode) return
                     if (elementView.model === selectedArea) return
                     setSelectedElement(elementView.model)
                     setAddLinkCtxMenuPos({ x: evt.clientX, y: evt.clientY })
                 },
                 'link:contextmenu': function (linkView, evt, x, y) {
+                    if (dragMode) return
                     setSelectedLink(linkView.model)
                     setAddElementCtxMenuPos({ x: evt.clientX, y: evt.clientY })
                 },
                 'link:mouseenter': function (linkView, evt) {
+                    if (dragMode) return
                     const sourceArrowheadTool = new joint.linkTools.SourceArrowhead()
                     const targetArrowheadTool = new joint.linkTools.TargetArrowhead()
                     const boundaryTool = new joint.linkTools.Boundary()
@@ -494,7 +504,7 @@ export default function GraphEditor () {
                             }
                         }, {
                             tagName: 'text',
-                            textContent: linkView.model.attributes.name[6],
+                            textContent: linkView.model.prop('name')[6],
                             attributes: {
                                 fill: 'white',
                                 x: -5,
@@ -532,7 +542,7 @@ export default function GraphEditor () {
                     //     break
                     // }
 
-                    const name: string = linkView.model.attributes.name
+                    const name: string = linkView.model.prop('name')
                     const sourcePoint = linkView.model.getSourcePoint()
                     const targetPoint = linkView.model.getTargetPoint()
                     const sourceElement = linkView.model.getSourceElement()
@@ -541,34 +551,34 @@ export default function GraphEditor () {
                     switch (name.toLowerCase()) {
                     case 'onewayhlink':
                         if (sourcePoint.x >= targetPoint.x) {
-                            sourceElement.attributes.left = targetElement.id
+                            sourceElement.prop('left', targetElement.id)
                         } else if (sourcePoint.x < targetPoint.x) {
-                            sourceElement.attributes.right = targetElement.id
+                            sourceElement.prop('right', targetElement.id)
                         }
                         break
                     case 'twowayhlink':
                         if (sourcePoint.x >= targetPoint.x) {
-                            sourceElement.attributes.left = targetElement.id
-                            targetElement.attributes.right = sourceElement.id
+                            sourceElement.prop('left', targetElement.id)
+                            targetElement.prop('right', sourceElement.id)
                         } else if (sourcePoint.x < targetPoint.x) {
-                            sourceElement.attributes.right = targetElement.id
-                            targetElement.attributes.left = sourceElement.id
+                            sourceElement.prop('right', targetElement.id)
+                            targetElement.prop('left', sourceElement.id) 
                         }
                         break
                     case 'onewayvlink':
                         if (sourcePoint.y >= targetPoint.y) {
-                            sourceElement.attributes.top = targetElement.id
+                            sourceElement.prop('top', targetElement.id)
                         } else if (sourcePoint.y < targetPoint.y) {
-                            sourceElement.attributes.bottom = targetElement.id
+                            sourceElement.prop('bottom', targetElement.id)
                         }
                         break
                     case 'twowayvlink':
                         if (sourcePoint.y >= targetPoint.y) {
-                            sourceElement.attributes.top = targetElement.id
-                            targetElement.attributes.bottom = sourceElement.id
+                            sourceElement.prop('top', targetElement.id)
+                            targetElement.prop('bottom', sourceElement.id)
                         } else if (sourcePoint.y < targetPoint.y) {
-                            sourceElement.attributes.bottom = targetElement.id
-                            targetElement.attributes.top = sourceElement.id
+                            sourceElement.prop('bottom', targetElement.id)
+                            targetElement.prop('top', sourceElement.id)
                         }
                         break
                     default:
@@ -592,34 +602,34 @@ export default function GraphEditor () {
                 //     switch (name.toLowerCase()) {
                 //     case 'onewayhlink':
                 //         if (sourcePoint.x >= targetPoint.x) {
-                //             delete sourceElement.attributes.left
+                //             delete sourceElement.prop('left')
                 //         } else if (sourcePoint.x < targetPoint.x) {
-                //             delete sourceElement.attributes.right
+                //             delete sourceElement.prop('right')
                 //         }
                 //         break
                 //     case 'twowayhlink':
                 //         if (sourcePoint.x >= targetPoint.x) {
-                //             delete sourceElement.attributes.left
-                //             delete targetElement.attributes.right
+                //             delete sourceElement.prop('left')
+                //             delete targetElement.prop('right')
                 //         } else if (sourcePoint.x < targetPoint.x) {
-                //             delete sourceElement.attributes.right
-                //             delete targetElement.attributes.left
+                //             delete sourceElement.prop('right')
+                //             delete targetElement.prop('left')
                 //         }
                 //         break
                 //     case 'onewayvlink':
                 //         if (sourcePoint.y >= targetPoint.y) {
-                //             delete sourceElement.attributes.top
+                //             delete sourceElement.prop('top')
                 //         } else if (sourcePoint.y < targetPoint.y) {
-                //             delete sourceElement.attributes.bottom
+                //             delete sourceElement.prop('bottom')
                 //         }
                 //         break
                 //     case 'twowayvlink':
                 //         if (sourcePoint.y >= targetPoint.y) {
-                //             delete sourceElement.attributes.top
-                //             delete targetElement.attributes.bottom
+                //             delete sourceElement.prop('top')
+                //             delete targetElement.prop('bottom')
                 //         } else if (sourcePoint.y < targetPoint.y) {
-                //             delete targetElement.attributes.top
-                //             delete sourceElement.attributes.bottom
+                //             delete targetElement.prop('top')
+                //             delete sourceElement.prop('bottom')
                 //         }
                 //         break
                 //     default:
@@ -627,141 +637,242 @@ export default function GraphEditor () {
                 //         break
                 //     }
                 // },
-                // 'blank:contextmenu': function (evt, x, y) {
-                //     setAddCellPos({ x, y })
-                //     setAddElementCtxMenuPos({ x: evt.clientX, y: evt.clientY })
-                // },
-                'blank:pointerdown': function (evt, x, y) {
-                    // 清除上次的選取
-                    if (selectedArea) selectedArea.remove()
-                    for (const cellView of selectedViews) {
-                        cellView.unhighlight()
-                        delete cellView.model.attributes.groupOffset
+                'cell:mousewheel': function (cellView, evt, x, y, delta) {
+                    const oldScale = Paper.scale().sx
+                    const { tx, ty } = Paper.translate()
+                    delta = delta === 1 ? 0.1 : -0.1
+                    const newScale = parseFloat((oldScale + delta).toFixed(1))
+                    if (newScale > 9.9 || newScale < 0.1) return
+
+                    if (oldScale === 1) {
+                        Paper.scale(newScale, newScale, x, y)
+                    } else if (oldScale !== 1) {
+                        Paper.translate(
+                            parseInt((tx - x * (1 - oldScale)).toFixed(0)),
+                            parseInt((ty - y * (1 - oldScale)).toFixed(0))
+                        )
+                        Paper.scale(1)
+                        Paper.scale(newScale, newScale, x, y)
                     }
-                    selectedViews = []
-                    setGroupViews([])
 
-                    // 添加新的selectedArea
-                    const area = new joint.shapes.standard.Rectangle()
-                    area.position(x, y)
-                    area.attr('body/fill', 'rgba(254, 182, 99, 0.2)')
-                    area.attr('body/stroke', 'rgba(254, 182, 99, 1)')
-                    area.attr('body/strokeWidth', 3)
-                    area.prop('originX', x)
-                    area.prop('originY', y)
-                    area.addTo(graph)
-                    selectedArea = area
-                    setGroupArea(selectedArea)
+                    setPaperScale(newScale)
+                },
+                'blank:mousewheel': function (evt, x, y, delta) {
+                    const oldScale = Paper.scale().sx
+                    const { tx, ty } = Paper.translate()
+                    delta = delta === 1 ? 0.1 : -0.1
+                    const newScale = parseFloat((oldScale + delta).toFixed(1))
+                    if (newScale > 9.9 || newScale < 0.1) return
 
+                    if (oldScale === 1) {
+                        Paper.scale(newScale, newScale, x, y)
+                    } else if (oldScale !== 1) {
+                        Paper.translate(
+                            parseInt((tx - x * (1 - oldScale)).toFixed(0)),
+                            parseInt((ty - y * (1 - oldScale)).toFixed(0))
+                        )
+                        Paper.scale(1)
+                        Paper.scale(newScale, newScale, x, y)
+                    }
+
+                    setPaperScale(newScale)
+                },
+                'blank:contextmenu': function (evt, x, y) {
+                    dragMode = !dragMode
+                    toggleDragMode(dragMode)
+                    Paper.setInteractivity(!dragMode)
+                    setSnackbar({
+                        open: true,
+                        severity: 'success',
+                        text: `切換為${dragMode ? '拖曳' : '編輯'}模式`
+                    })
+                },
+                'cell:pointerdown': function (cellView, evt, x, y) {
+                    if (dragMode) {
+                        dragMouseDownPos = {
+                            x: evt.screenX,
+                            y: evt.screenY
+                        }
+                        dragAnchorPos = {
+                            x: Paper.translate().tx,
+                            y: Paper.translate().ty
+                        }
+                        return
+                    }
+                },
+                'cell:pointermove': function (cellView, evt, x, y) {
+                    if (dragMode) {
+                        const deltaX = evt.screenX - dragMouseDownPos.x
+                        const deltaY = evt.screenY - dragMouseDownPos.y
+                        Paper.translate(
+                            dragAnchorPos.x + deltaX,
+                            dragAnchorPos.y + deltaY
+                        )
+                        return
+                    }
+                },
+                'blank:pointerdown': function (evt, x, y) {
+                    if (dragMode) {
+                        dragMouseDownPos = {
+                            x: evt.screenX,
+                            y: evt.screenY
+                        }
+                        dragAnchorPos = {
+                            x: Paper.translate().tx,
+                            y: Paper.translate().ty
+                        }
+                        return
+                    }
+
+                    if (!dragMode) {
+                        // 清除上次的選取
+                        if (selectedArea) selectedArea.remove()
+                        for (const cellView of selectedViews) {
+                            cellView.unhighlight()
+                            delete cellView.model.attributes.groupOffset
+                        }
+                        selectedViews = []
+                        setGroupViews([])
+
+                        // 添加新的selectedArea
+                        const area = new joint.shapes.standard.Rectangle()
+                        area.position(x, y)
+                        area.attr('body/fill', 'rgba(254, 182, 99, 0.2)')
+                        area.attr('body/stroke', 'rgba(254, 182, 99, 1)')
+                        area.attr('body/strokeWidth', 3)
+                        area.prop('originX', x)
+                        area.prop('originY', y)
+                        area.addTo(graph)
+                        selectedArea = area
+                        setGroupArea(selectedArea)
+                    }
                 },
                 'blank:pointermove': function (evt, x, y) {
-                    const originX = selectedArea.prop('originX')
-                    const originY = selectedArea.prop('originY')
-                    const deltaX = Math.abs(x - originX)
-                    const deltaY = Math.abs(y - originY)
-                    selectedArea.resize(deltaX, deltaY)
-                    if (x >= originX && y < originY) {
-                        selectedArea.position(originX, y)
-                    } else if (x < originX && y >= originY) {
-                        selectedArea.position(x, originY)
-                    } else if (x < originX && y < originY) {
-                        selectedArea.position(x, y)
+                    if (dragMode) {
+                        const deltaX = evt.screenX - dragMouseDownPos.x
+                        const deltaY = evt.screenY - dragMouseDownPos.y
+                        Paper.translate(
+                            dragAnchorPos.x + deltaX,
+                            dragAnchorPos.y + deltaY
+                        )
+                        return
+                    }
+
+                    if (!dragMode) {
+                        const originX = selectedArea.prop('originX')
+                        const originY = selectedArea.prop('originY')
+                        const deltaX = Math.abs(x - originX)
+                        const deltaY = Math.abs(y - originY)
+                        selectedArea.resize(deltaX, deltaY)
+                        if (x >= originX && y < originY) {
+                            selectedArea.position(originX, y)
+                        } else if (x < originX && y >= originY) {
+                            selectedArea.position(x, originY)
+                        } else if (x < originX && y < originY) {
+                            selectedArea.position(x, y)
+                        }
                     }
                 },
                 'blank:pointerup': function (evt, x, y) {
-                    // 獲取selectedArea內的cells
-                    const cells: Array<joint.dia.Cell> = []
-                    let AreaBBox = selectedArea.getBBox()
-                    for (const cell of graph.getCells()) {
-                        const BBox = cell.getBBox()
-                        const left = BBox.x >= AreaBBox.x
-                        const top = BBox.y >= AreaBBox.y
-                        const right = BBox.x + BBox.width <= AreaBBox.x + AreaBBox.width
-                        const bottom = BBox.y + BBox.height <= AreaBBox.y + AreaBBox.height
-                        if (left && top && right && bottom) cells.push(cell)
-                    }
-                    
-                    // 把selectedArea移除
-                    cells.pop()
-                    
-                    // highLight、push
-                    for (const cell of cells) {
-                        const view = Paper.findViewByModel(cell)
-                        if (!view) continue
-                        view.highlight()
-                        selectedViews.push(view)
-                    }
-                    setGroupViews(selectedViews)
-
-                    // 修正選取區域
-                    let left = Number.MAX_SAFE_INTEGER
-                    let top = Number.MAX_SAFE_INTEGER
-                    let right = 0
-                    let bottom = 0
-                    for (const view of selectedViews) {
-                        const BBox = view.model.getBBox()
-                        left = Math.min(left, BBox.x)
-                        top = Math.min(top, BBox.y)
-                        right = Math.max(right, BBox.x + BBox.width)
-                        bottom = Math.max(bottom, BBox.y + BBox.height)
-                    }
-                    
-                    // 修正水平垂直的link無法選取
-                    if (bottom === top) {
-                        top -= 8
-                        bottom += 8
-                    } else if (left === right) {
-                        left -= 8
-                        right += 8
+                    if (dragMode) {
+                        return
                     }
 
-                    // resize
-                    selectedArea.position(left, top)
-                    if (right > left && bottom - top) {
-                        selectedArea.resize(right - left, bottom - top)
-                    }
+                    if (!dragMode) {
+                        // 獲取selectedArea內的cells
+                        const cells: Array<joint.dia.Cell> = []
+                        let AreaBBox = selectedArea.getBBox()
+                        for (const cell of graph.getCells()) {
+                            const BBox = cell.getBBox()
+                            const left = BBox.x >= AreaBBox.x
+                            const top = BBox.y >= AreaBBox.y
+                            const right = BBox.x + BBox.width <= AreaBBox.x + AreaBBox.width
+                            const bottom = BBox.y + BBox.height <= AreaBBox.y + AreaBBox.height
+                            if (left && top && right && bottom) cells.push(cell)
+                        }
+                        
+                        // 把selectedArea移除
+                        cells.pop()
+                        
+                        // highLight、push
+                        for (const cell of cells) {
+                            const view = Paper.findViewByModel(cell)
+                            if (!view) continue
+                            view.highlight()
+                            selectedViews.push(view)
+                        }
+                        setGroupViews(selectedViews)
 
-                    // 計算群體偏移
-                    AreaBBox = selectedArea.getBBox()
-                    for (const view of selectedViews) {
-                        if (view instanceof joint.dia.ElementView) {
-                            const BBox = view.model.position()
-                            view.model.attributes.groupOffset = {
-                                x: BBox.x - AreaBBox.x,
-                                y: BBox.y - AreaBBox.y
-                            }
-                        } else if (view instanceof joint.dia.LinkView) {
-                            view.model.attributes.groupOffset = []
-                            // 順序：source、vertices、target
-                            view.model.attributes.groupOffset.push({
-                                x: view.model.getSourcePoint().x - AreaBBox.x,
-                                y: view.model.getSourcePoint().y - AreaBBox.y,
-                                origin: 'source'
-                            })
-                            view.model.vertices().forEach((vertex, idx) => {
-                                view.model.attributes.groupOffset.push({
-                                    x: vertex.x - AreaBBox.x,
-                                    y: vertex.y - AreaBBox.y,
-                                    origin: 'vertex',
-                                    idx: idx
+                        // 修正選取區域
+                        let left = Number.MAX_SAFE_INTEGER
+                        let top = Number.MAX_SAFE_INTEGER
+                        let right = 0
+                        let bottom = 0
+                        for (const view of selectedViews) {
+                            const BBox = view.model.getBBox()
+                            left = Math.min(left, BBox.x)
+                            top = Math.min(top, BBox.y)
+                            right = Math.max(right, BBox.x + BBox.width)
+                            bottom = Math.max(bottom, BBox.y + BBox.height)
+                        }
+                        
+                        // 修正水平垂直的link無法選取
+                        if (bottom === top) {
+                            top -= 8
+                            bottom += 8
+                        } else if (left === right) {
+                            left -= 8
+                            right += 8
+                        }
+
+                        // resize
+                        selectedArea.position(left, top)
+                        if (right > left && bottom - top) {
+                            selectedArea.resize(right - left, bottom - top)
+                        }
+
+                        // 計算群體偏移
+                        AreaBBox = selectedArea.getBBox()
+                        for (const view of selectedViews) {
+                            if (view instanceof joint.dia.ElementView) {
+                                const BBox = view.model.position()
+                                view.model.prop('groupOffset', {
+                                    x: BBox.x - AreaBBox.x,
+                                    y: BBox.y - AreaBBox.y
                                 })
-                            })
-                            view.model.attributes.groupOffset.push({
-                                x: view.model.getTargetPoint().x - AreaBBox.x,
-                                y: view.model.getTargetPoint().y - AreaBBox.y,
-                                origin: 'target'
-                            })
+                            } else if (view instanceof joint.dia.LinkView) {
+                                const groupOffset = []
+                                // 順序：source、vertices、target
+                                groupOffset.push({
+                                    x: view.model.getSourcePoint().x - AreaBBox.x,
+                                    y: view.model.getSourcePoint().y - AreaBBox.y,
+                                    origin: 'source'
+                                })
+                                view.model.vertices().forEach((vertex, idx) => {
+                                    groupOffset.push({
+                                        x: vertex.x - AreaBBox.x,
+                                        y: vertex.y - AreaBBox.y,
+                                        origin: 'vertex',
+                                        idx: idx
+                                    })
+                                })
+                                groupOffset.push({
+                                    x: view.model.getTargetPoint().x - AreaBBox.x,
+                                    y: view.model.getTargetPoint().y - AreaBBox.y,
+                                    origin: 'target'
+                                })
+                                view.model.prop('groupOffset', groupOffset)
+                            }
+                        }
+                        selectedArea.prop('originX', selectedArea.position().x)
+                        selectedArea.prop('originY', selectedArea.position().y)
+
+                        // 沒有cell被選取
+                        if (selectedViews.length === 0) {
+                            selectedArea.remove()
+                            setGroupArea(null)
                         }
                     }
-                    selectedArea.prop('originX', selectedArea.position().x)
-                    selectedArea.prop('originY', selectedArea.position().y)
-
-                    // 沒有cell被選取
-                    if (selectedViews.length === 0) {
-                        selectedArea.remove()
-                        setGroupArea(null)
-                    }
-
                 }
             })
         }
@@ -782,17 +893,28 @@ export default function GraphEditor () {
 
     // css style
     const styles = makeStyles(theme => ({
-        paperParent: {
-            overflow: 'scroll',
-            [theme.breakpoints.down('sm')]: {
-                height: 'calc(100vh - 56px)'
-            },
-            [theme.breakpoints.up('sm')]: {
-                height: 'calc(100vh - 64px)'
-            }
+        // paperParent: {
+        //     overflow: 'hidden',
+        //     [theme.breakpoints.down('sm')]: {
+        //         height: 'calc(100vh - 56px)'
+        //     },
+        //     [theme.breakpoints.up('sm')]: {
+        //         height: 'calc(100vh - 64px)'
+        //     }
+        // },
+        AppBar: {
+            backgroundColor: theme.palette.background.default,
+            maxHeight: '56px'
         },
-        gridItem: {
+        GridItem: {
             textAlign: 'center'
+        },
+        mx12: {
+            marginRight: '12px',
+            marginLeft: '12px'
+        },
+        ml12: {
+            marginLeft: '12px'
         }
     }))
     const classes = styles()
@@ -800,14 +922,45 @@ export default function GraphEditor () {
     // template
     return (
         <Fragment>
-            <AppBar position="sticky">
-                <Toolbar>
+            <AppBar className={classes.AppBar} position="sticky">
+                <Toolbar variant="dense" disableGutters>
                     <Tooltip title="儲存">
                         <IconButton onClick={saveGraph}>
                             <CloudUploadIcon/>
                         </IconButton>
                     </Tooltip>
-                    <Tooltip title="縮小">
+                    <Divider
+                        orientation="vertical"
+                        flexItem
+                    />
+                    <PanToolIcon
+                        htmlColor={IsDragMode ? '#ffa000' : '#cccccc'}
+                        className={classes.mx12}
+                    />
+                    <Divider
+                        orientation="vertical"
+                        flexItem
+                    />
+                    <EditIcon
+                        htmlColor={IsDragMode ? '#cccccc' : '#ffa000'}
+                        className={classes.mx12}
+                    />
+                    <Divider
+                        orientation="vertical"
+                        flexItem
+                    />
+                    <ZoomInIcon
+                        htmlColor="white"
+                        className={classes.ml12}
+                    />
+                    <Box color="white" display="flex" mr={1.5}>
+                        {(paperScale * 100).toFixed(0) + '%'}
+                    </Box>
+                    <Divider
+                        orientation="vertical"
+                        flexItem
+                    />
+                    {/* <Tooltip title="縮小">
                         <IconButton onClick={zoomOut}>
                             <ZoomOutIcon/>
                         </IconButton>
@@ -816,14 +969,14 @@ export default function GraphEditor () {
                         <IconButton onClick={zoomIn}>
                             <ZoomInIcon/>
                         </IconButton>
-                    </Tooltip>
-                    <Box color="white" display="flex">
-                        {(paperScale * 100).toFixed(0) + '%'}
-                    </Box>
+                    </Tooltip> */}
                 </Toolbar>
             </AppBar>
-            <Box className={classes.paperParent}>
-                <Box id="paper" onContextMenu={(e) => e.preventDefault()}>
+            {/* <Box className={classes.paperParent}> */}
+                <Box
+                    id="paper"
+                    onContextMenu={(e) => e.preventDefault()}
+                >
                     <Menu
                         keepMounted
                         open={addElementCtxMenuPos.x !== -1}
@@ -842,7 +995,7 @@ export default function GraphEditor () {
                                     <Grid
                                         item xs={4}
                                         key={index}
-                                        className={classes.gridItem}
+                                        className={classes.GridItem}
                                     >
                                         <ElementSvgIcon
                                             type={type}
@@ -857,7 +1010,7 @@ export default function GraphEditor () {
                                     <Grid
                                         item xs={4}
                                         key={index}
-                                        className={classes.gridItem}
+                                        className={classes.GridItem}
                                     >
                                         <LinkSvgIcon type={type}/>
                                     </Grid>
@@ -894,11 +1047,11 @@ export default function GraphEditor () {
                                 <Grid 
                                     item
                                     xs={4}
-                                    className={classes.gridItem}
+                                    className={classes.GridItem}
                                 >   
                                     <LinkSvgIcon
                                         direction='top'
-                                        disabled={selectedElement?.attributes.top !== undefined}
+                                        disabled={selectedElement?.prop('top') !== undefined}
                                         type={twoWayLinkEnabled ? 'twoWayVLink' : 'oneWayVLink'}
                                     />
                                 </Grid>
@@ -906,32 +1059,32 @@ export default function GraphEditor () {
                                 <Grid 
                                     item
                                     xs={4}
-                                    className={classes.gridItem}
+                                    className={classes.GridItem}
                                 >
                                     <LinkSvgIcon
                                         direction='left'
-                                        disabled={selectedElement?.attributes.left !== undefined}
+                                        disabled={selectedElement?.prop('left') !== undefined}
                                         type={twoWayLinkEnabled ? 'twoWayHLink' : 'oneWayHLink'}
                                     />
                                 </Grid>
                                 <Grid 
                                     item
                                     xs={4}
-                                    className={classes.gridItem}
+                                    className={classes.GridItem}
                                 >
                                     <ElementSvgIcon
                                         disabled={true}
-                                        type={selectedElement?.attributes.name}
+                                        type={selectedElement?.prop('name')}
                                     />
                                 </Grid>
                                 <Grid 
                                     item
                                     xs={4}
-                                    className={classes.gridItem}
+                                    className={classes.GridItem}
                                 >
                                     <LinkSvgIcon
                                         direction='right'
-                                        disabled={selectedElement?.attributes.right !== undefined}
+                                        disabled={selectedElement?.prop('right') !== undefined}
                                         type={twoWayLinkEnabled ? 'twoWayHLink' : 'oneWayHLink'}
                                     />
                                 </Grid>
@@ -939,11 +1092,11 @@ export default function GraphEditor () {
                                 <Grid 
                                     item
                                     xs={4}
-                                    className={classes.gridItem}
+                                    className={classes.GridItem}
                                 >
                                     <LinkSvgIcon
                                         direction='bottom'
-                                        disabled={selectedElement?.attributes.bottom !== undefined}
+                                        disabled={selectedElement?.prop('bottom') !== undefined}
                                         type={twoWayLinkEnabled ? 'twoWayVLink' : 'oneWayVLink'}
                                     />
                                 </Grid>
@@ -953,7 +1106,7 @@ export default function GraphEditor () {
                         <MenuItem onClick={deleteCell}>刪除</MenuItem>
                     </Menu>
                 </Box>
-            </Box>
+            {/* </Box> */}
             <Snackbar 
                 open={snackbar.open}
                 autoHideDuration={3000}

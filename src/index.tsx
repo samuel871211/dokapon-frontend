@@ -1,22 +1,16 @@
 // import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './index.css'
-import GraphEditor from './components/graphEditor'
+import GraphEditor from './views/GraphEditor'
+import StoryMode from './views/StoryMode'
+import BattleMode from './views/BattleMode'
+import HomePage from './views/HomePage'
 import { createTheme, ThemeProvider } from '@material-ui/core/styles'
 
 const darkTheme = createTheme({
     palette: {
         type: 'dark',
-        // primary: {
-        //     light: '#b1c4bc',
-        //     main: '#9fb0a9',
-        //     dark: '#8d9c96'
-        // },
-        // secondary: {
-        //     light: '#99bfaa',
-        //     main: '#89ab99',
-        //     dark: '#7a9888'
-        // }
         primary: {
             light: '#ffa919',
             main: '#ffa000',
@@ -31,11 +25,15 @@ const darkTheme = createTheme({
 })
 
 ReactDOM.render(
-    // <React.StrictMode>
-    //     <GraphEditor/>
-    // </React.StrictMode>,
     <ThemeProvider theme={darkTheme}>
-        <GraphEditor/>
+        <Router>
+            <Switch>
+                <Route path='/' exact component={HomePage}/>
+                <Route path='/GraphEditor' exact sensitive component={GraphEditor}/>
+                <Route path='/StoryMode' exact sensitive component={StoryMode}/>
+                <Route path='/BattleMode' exact sensitive component={BattleMode}/>
+            </Switch>
+        </Router>
     </ThemeProvider>,
     document.getElementById('root')
 )

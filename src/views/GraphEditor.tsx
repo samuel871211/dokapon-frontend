@@ -1,4 +1,4 @@
-import * as shapes from './shapes'
+import * as shapes from '../components/shapes'
 import { useState, useEffect, Fragment } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
@@ -261,7 +261,13 @@ export default function GraphEditor () {
         
         if (selectedElement) {
             const connectedLinks = graph.getConnectedLinks(selectedElement)
-            if (connectedLinks.length <= 1) {
+            if (connectedLinks.length === 0) {
+                closeAddLinkCtxMenu()
+                selectedElement.remove()
+                setSelectedElement(undefined)
+                return
+            }
+            if (connectedLinks.length === 1) {
                 let direction: string = ''
                 if (selectedElement.prop('top')) direction = 'top'
                 if (selectedElement.prop('left')) direction = 'left'
@@ -285,7 +291,6 @@ export default function GraphEditor () {
                 closeAddLinkCtxMenu()
                 selectedElement.remove()
                 setSelectedElement(undefined)
-                return
             }
         }
 
@@ -409,7 +414,7 @@ export default function GraphEditor () {
                 background: {
                     color: '#111'
                 },
-                gridSize: 1,
+                gridSize: 20,
                 drawGrid: true
             })
             return Paper

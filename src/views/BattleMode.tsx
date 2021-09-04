@@ -12,14 +12,11 @@ import { getCells } from '../api/graph'
 
 export default function BattleMode () {
     // data
-    const [paperComplete, setPaperComplete] = useState(false)
     const [paperScale, setPaperScale] = useState(1)
     const [graph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
 
     // watch && mounted
     useEffect(() => {
-        if (paperComplete) return console.log('paper Completed!!!')
-
         function initPaper () {
             // paper should be initialized after #canvas is being mounted
             const Paper = new joint.dia.Paper({
@@ -127,10 +124,14 @@ export default function BattleMode () {
 
         // initial data
         const Paper = initPaper()
-        setPaperComplete(true)
         loadCells()
         registerPaperEventHandler(Paper)
-    }, [graph, paperComplete])
+
+        return () => {
+            $('#paper').off()
+        }
+
+    }, [graph])
 
 
 

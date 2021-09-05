@@ -5,6 +5,7 @@ import './index.css'
 import GraphEditor from './views/GraphEditor'
 import StoryMode from './views/StoryMode'
 import BattleMode from './views/BattleMode'
+import SelectCharacter from './views/SelectCharacter'
 import HomePage from './views/HomePage'
 import { createTheme, ThemeProvider } from '@material-ui/core/styles'
 
@@ -23,6 +24,7 @@ const darkTheme = createTheme({
         }
     }
 })
+console.log(darkTheme)
 
 ReactDOM.render(
     <ThemeProvider theme={darkTheme}>
@@ -30,6 +32,7 @@ ReactDOM.render(
             <Switch>
                 <Route path='/' exact component={HomePage}/>
                 <Route path='/GraphEditor' exact sensitive component={GraphEditor}/>
+                <Route path='/SelectCharacter' exact sensitive component={SelectCharacter}/>
                 <Route path='/StoryMode' exact sensitive component={StoryMode}/>
                 <Route path='/BattleMode' exact sensitive component={BattleMode}/>
             </Switch>

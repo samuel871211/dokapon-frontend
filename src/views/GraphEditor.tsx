@@ -398,7 +398,7 @@ export default function GraphEditor () {
         )
     }
 
-    // watch && mounted
+    // watch && mounted && unmount
     useEffect(() => {
         if (paperComplete) return console.log('paper Completed!!!')
 

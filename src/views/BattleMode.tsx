@@ -9,6 +9,7 @@ import $ from 'jquery'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
 import { getCells } from '../api/graph'
+import * as characters from '../components/characters'
 
 export default function BattleMode () {
     // data
@@ -39,31 +40,21 @@ export default function BattleMode () {
             let dragMouseDownPos = { x: 0, y: 0 }
             let dragAnchorPos = { x: 0, y: 0 }
             Paper.on({
+                'element:contextmenu': function (cellView, evt, x, y) {
+                    const character = characters.createCharacter({
+                        job: '',
+                        gender: '',
+                        color: ''
+                    })
+                    character.position(x, y)
+                    character.addTo(graph)
+                    console.log('element added')
+                },
                 'cell:mousewheel': function (cellView, evt, x, y, delta) {
                     const oldScale = Paper.scale().sx
                     const { tx, ty } = Paper.translate()
-                    delta = delta === 1 ? 0.1 : -0.1
-                    const newScale = parseFloat((oldScale + delta).toFixed(1))
-                    if (newScale > 9.9 || newScale < 0.1) return
-
-                    if (oldScale === 1) {
-                        Paper.scale(newScale, newScale, x, y)
-                    } else if (oldScale !== 1) {
-                        Paper.translate(
-                            parseInt((tx - x * (1 - oldScale)).toFixed(0)),
-                            parseInt((ty - y * (1 - oldScale)).toFixed(0))
-                        )
-                        Paper.scale(1)
-                        Paper.scale(newScale, newScale, x, y)
-                    }
-
-                    setPaperScale(newScale)
-                },
-                'blank:mousewheel': function (evt, x, y, delta) {
-                    const oldScale = Paper.scale().sx
-                    const { tx, ty } = Paper.translate()
-                    delta = delta === 1 ? 0.1 : -0.1
-                    const newScale = parseFloat((oldScale + delta).toFixed(1))
+                    delta = delta === 1 ? 0.05 : -0.05
+                    const newScale = parseFloat((oldScale + delta).toFixed(2))
                     if (newScale > 9.9 || newScale < 0.1) return
 
                     if (oldScale === 1) {
@@ -97,6 +88,26 @@ export default function BattleMode () {
                         dragAnchorPos.y + deltaY
                     )
                 },
+                'blank:mousewheel': function (evt, x, y, delta) {
+                    const oldScale = Paper.scale().sx
+                    const { tx, ty } = Paper.translate()
+                    delta = delta === 1 ? 0.05 : -0.05
+                    const newScale = parseFloat((oldScale + delta).toFixed(2))
+                    if (newScale > 9.9 || newScale < 0.1) return
+
+                    if (oldScale === 1) {
+                        Paper.scale(newScale, newScale, x, y)
+                    } else if (oldScale !== 1) {
+                        Paper.translate(
+                            parseInt((tx - x * (1 - oldScale)).toFixed(0)),
+                            parseInt((ty - y * (1 - oldScale)).toFixed(0))
+                        )
+                        Paper.scale(1)
+                        Paper.scale(newScale, newScale, x, y)
+                    }
+
+                    setPaperScale(newScale)
+                },
                 'blank:pointerdown': function (evt, x, y) {
                     dragMouseDownPos = {
                         x: evt.screenX,
@@ -126,6 +137,7 @@ export default function BattleMode () {
         const Paper = initPaper()
         loadCells()
         registerPaperEventHandler(Paper)
+        Paper.translate(-6085, -4606) // center of the world
 
         return () => {
             $('#paper').off()

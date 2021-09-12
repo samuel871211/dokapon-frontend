@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import { Fragment } from 'react'
 
-export default function HomePage () {
+export default function HomePage (): JSX.Element {
     // data
 
     // methods
@@ -13,7 +13,7 @@ export default function HomePage () {
     // watch && mounted && unmount
 
     // styles
-    const styles = makeStyles(theme => ({
+    const styles = makeStyles(() => ({
         title: {
             marginTop: '32px',
             marginBottom: '32px'
@@ -86,13 +86,6 @@ export default function HomePage () {
                     />
                 </Box>
             </Box>
-            <Typography
-                variant="h2"
-                color="textPrimary"
-                align="center"
-                children="Just a personal practice"
-                className={classes.title}
-            />
         </Fragment>
     )
 }

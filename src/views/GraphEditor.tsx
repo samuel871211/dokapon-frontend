@@ -1,4 +1,4 @@
-import * as shapes from '../components/shapes'
+import * as shapes from '../global/shapes'
 import { useState, useEffect, Fragment } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
@@ -6,49 +6,50 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import Divider from '@material-ui/core/Divider'
-// import ZoomInIcon from '@material-ui/icons/ZoomIn'
-// import ZoomOutIcon from '@material-ui/icons/ZoomOut'
 import CloudUploadIcon from '@material-ui/icons/CloudUpload'
 import SwapHorizIcon from '@material-ui/icons/SwapHoriz'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import Dialog from '@material-ui/core/Dialog'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogContentText from '@material-ui/core/DialogContentText'
+import InfoIcon from '@material-ui/icons/Info'
 import ImportExportIcon from '@material-ui/icons/ImportExport'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
 import SvgIcon from '@material-ui/core/SvgIcon'
-// import Paper from '@material-ui/core/Paper'
-// import Avatar from '@material-ui/core/Avatar'
 import PanToolIcon from '@material-ui/icons/PanTool'
 import EditIcon from '@material-ui/icons/Edit'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
-// import { spacing } from '@material-ui/system'
-// import Switch from '@material-ui/core/Switch'
 import Grid from '@material-ui/core/Grid'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-// import MenuList from '@material-ui/core/MenuList'
 import ZoomInIcon from '@material-ui/icons/ZoomIn'
 import Tooltip from '@material-ui/core/Tooltip'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert, { Color } from '@material-ui/lab/Alert'
 import $ from 'jquery'
-// import _ from 'lodash'
-// import * as Backbone from 'backbone'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
 import { getCells, updateCells } from '../api/graph'
-// import Draggable from 'react-draggable'
 
-export default function GraphEditor () {
+type groupOffset = Array<{
+    origin?: 'source' | 'vertex' | 'target',
+    idx?: number,
+    x: number,
+    y: number
+}>
+type snackbarState = {
+    open: boolean
+    severity: Color,
+    text: string
+}
+
+export default function GraphEditor (): JSX.Element {
     // data
-    const [paperComplete, setPaperComplete] = useState(false)
-    // const [addCellPos, setAddCellPos] = useState({
-    //     x: -1,
-    //     y: -1
-    // })
-    // const [dragAnchorPos, setDragAnchorPos] = useState([0, 0])
-    // const [dragCurrentPos, setDragCurrentPos] = useState([0, 0])
+    const [infoDialog, toggleInfoDialog] = useState(false)
     const [IsDragMode, toggleDragMode] = useState(false)
     const [addElementCtxMenuPos, setAddElementCtxMenuPos] = useState({ x: -1, y: -1 })
     const [addLinkCtxMenuPos, setAddLinkCtxMenuPos] = useState({ x: -1, y: -1 })
@@ -56,11 +57,10 @@ export default function GraphEditor () {
     const [groupViews, setGroupViews] = useState<Array<joint.dia.CellView>>([])
     const [paperScale, setPaperScale] = useState(1)
     const [graph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
-    const [paper, setPaper] = useState<joint.dia.Paper>()
     const [selectedLink, setSelectedLink] = useState<joint.dia.Link>()
     const [selectedElement, setSelectedElement] = useState<joint.dia.Element>()
     const [twoWayLinkEnabled, toggleTwoWayLinkEnabled] = useState(true) 
-    const [snackbar, setSnackbar] = useState<{ open: boolean, severity: Color, text: string }>({
+    const [snackbar, setSnackbar] = useState<snackbarState>({
         open: false,
         severity: 'success',
         text: ''
@@ -90,7 +90,8 @@ export default function GraphEditor () {
         // const sourceElement = selectedLink.getSourceElement()
         // const targetElement = selectedLink.getTargetElement()
         // const connectedElement = sourceElement || targetElement
-        switch (selectedLink.prop('name').toLowerCase()) {
+        const linkName = selectedLink.prop('name') as string
+        switch (linkName.toLowerCase()) {
         case 'onewayhlink':
             if (connectedElement?.prop('left') === selectedLink.id) {
                 connectedElement.prop('left', newElement.id)
@@ -238,7 +239,7 @@ export default function GraphEditor () {
                 const elementId = sourceId || targetId
                 if (elementId) {
                     const element = graph.getCell(elementId)
-                    const linkName = selectedLink.prop('name')
+                    const linkName = selectedLink.prop('name') as string
                     switch (linkName.toLowerCase()) {
                     case 'onewayvlink':
                     case 'twowayvlink':
@@ -268,14 +269,14 @@ export default function GraphEditor () {
                 return
             }
             if (connectedLinks.length === 1) {
-                let direction: string = ''
+                let direction = ''
                 if (selectedElement.prop('top')) direction = 'top'
                 if (selectedElement.prop('left')) direction = 'left'
                 if (selectedElement.prop('right')) direction = 'right'
                 if (selectedElement.prop('bottom')) direction = 'bottom'
                 
                 const neighborElement = graph.getNeighbors(selectedElement)[0]
-                const linkName = connectedLinks[0].prop('name')
+                const linkName = connectedLinks[0].prop('name') as string
                 switch (linkName.toLowerCase()) {
                 case 'onewayhlink':
                 case 'twowayhlink':
@@ -327,6 +328,13 @@ export default function GraphEditor () {
                 text: '儲存成功'
             })
         })
+        .catch(error => {
+            setSnackbar({
+                open: true,
+                severity: 'error',
+                text: '儲存失敗'
+            })
+        })
     }
 
     function closeSnackbar (): void {
@@ -336,20 +344,6 @@ export default function GraphEditor () {
             text: snackbar.text
         })
     }
-
-    // function zoomIn (): void {
-    //     const newValue = paperScale + 0.2
-    //     if (newValue > 9.8) return
-    //     setPaperScale(newValue)
-    //     paper?.scale(newValue)
-    // }
-
-    // function zoomOut (): void {
-    //     const newValue = paperScale - 0.2
-    //     if (newValue < 0.2) return
-    //     setPaperScale(newValue)
-    //     paper?.scale(newValue)
-    // }
 
     function ElementSvgIcon (props: { type: string, disabled: boolean }) {
         const { type, disabled } = props
@@ -400,8 +394,6 @@ export default function GraphEditor () {
 
     // watch && mounted && unmount
     useEffect(() => {
-        if (paperComplete) return console.log('paper Completed!!!')
-
         function initPaper () {
             // paper should be initialized after #canvas is being mounted
             const Paper = new joint.dia.Paper({
@@ -426,19 +418,24 @@ export default function GraphEditor () {
             let dragAnchorPos = { x: 0, y: 0 }
             let dragMode = false
             Paper.on({
-                'element:pointermove': function (elementView, evt, x, y) {
+                'element:pointermove': function (
+                    elementView: joint.dia.ElementView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     if (selectedViews.length < 1) return
 
                     // 群組移動
                     const AreaBBox = selectedArea.getBBox()
                     for (const view of selectedViews) {
-                        const groupOffset = view.model.prop('groupOffset')
+                        const groupOffset = view.model.prop('groupOffset') as undefined | groupOffset
                         if (!groupOffset) continue
 
                         if (view instanceof joint.dia.ElementView) {
                             view.model.position(
-                                AreaBBox.x + groupOffset.x,
-                                AreaBBox.y + groupOffset.y
+                                AreaBBox.x + groupOffset[0].x,
+                                AreaBBox.y + groupOffset[0].y
                             )
                         } else if (view instanceof joint.dia.LinkView) {
                             for (const offset of groupOffset) {
@@ -451,6 +448,7 @@ export default function GraphEditor () {
                                     })
                                     break
                                 case 'vertex':
+                                    if (!offset.idx) break
                                     view.model.vertex(offset.idx, {
                                         x: AreaBBox.x + offset.x,
                                         y: AreaBBox.y + offset.y
@@ -470,33 +468,63 @@ export default function GraphEditor () {
                         }
                     }
                 },
-                'element:mouseenter': function (elementView, evt, x, y) {
+                'element:mouseenter': function (
+                    elementView: joint.dia.ElementView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     if (dragMode) return
 
                     elementView.highlight()
                     console.table({
-                        top: elementView.model.prop('top'),
-                        left: elementView.model.prop('left'),
-                        right: elementView.model.prop('right'),
-                        bottom: elementView.model.prop('bottom')
+                        top: elementView.model.prop('top') as string,
+                        left: elementView.model.prop('left') as string,
+                        right: elementView.model.prop('right') as string,
+                        bottom: elementView.model.prop('bottom') as string
                     })
                 },
-                'element:mouseout': function (elementView, evt, x, y) {
+                'element:mouseout': function (
+                    elementView: joint.dia.ElementView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     elementView.unhighlight()
                 },
-                'element:contextmenu': function (elementView, evt, x, y) {
+                'element:contextmenu': function (
+                    elementView: joint.dia.ElementView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     if (dragMode) return
                     if (elementView.model === selectedArea) return
                     setSelectedElement(elementView.model)
-                    setAddLinkCtxMenuPos({ x: evt.clientX, y: evt.clientY })
+                    setAddLinkCtxMenuPos({
+                        x: evt.clientX || 0,
+                        y: evt.clientY || 0
+                    })
                 },
-                'link:contextmenu': function (linkView, evt, x, y) {
+                'link:contextmenu': function (
+                    linkView: joint.dia.LinkView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     if (dragMode) return
                     setSelectedLink(linkView.model)
-                    setAddElementCtxMenuPos({ x: evt.clientX, y: evt.clientY })
+                    setAddElementCtxMenuPos({
+                        x: evt.clientX || 0,
+                        y: evt.clientY || 0
+                    })
                 },
-                'link:mouseenter': function (linkView, evt) {
+                'link:mouseenter': function (
+                    linkView: joint.dia.LinkView,
+                    evt: JQuery.Event
+                ) {
                     if (dragMode) return
+                    const linkName = linkView.model.prop('name') as string
                     const sourceArrowheadTool = new joint.linkTools.SourceArrowhead()
                     const targetArrowheadTool = new joint.linkTools.TargetArrowhead()
                     const boundaryTool = new joint.linkTools.Boundary()
@@ -509,7 +537,7 @@ export default function GraphEditor () {
                             }
                         }, {
                             tagName: 'text',
-                            textContent: linkView.model.prop('name')[6],
+                            textContent: linkName[6] || '',
                             attributes: {
                                 fill: 'white',
                                 x: -5,
@@ -528,7 +556,10 @@ export default function GraphEditor () {
                     })
                     linkView.addTools(toolsView)
                 },
-                'link:mouseleave': function (linkView, evt) {
+                'link:mouseleave': function (
+                    linkView: joint.dia.LinkView,
+                    evt: JQuery.Event
+                ) {
                     linkView.removeTools()
                 },
                 'link:connect': function (
@@ -547,7 +578,7 @@ export default function GraphEditor () {
                     //     break
                     // }
 
-                    const name: string = linkView.model.prop('name')
+                    const name = linkView.model.prop('name') as string
                     const sourcePoint = linkView.model.getSourcePoint()
                     const targetPoint = linkView.model.getTargetPoint()
                     const sourceElement = linkView.model.getSourceElement()
@@ -642,7 +673,13 @@ export default function GraphEditor () {
                 //         break
                 //     }
                 // },
-                'cell:mousewheel': function (cellView, evt, x, y, delta) {
+                'cell:mousewheel': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number,
+                    delta: number
+                ) {
                     const oldScale = Paper.scale().sx
                     const { tx, ty } = Paper.translate()
                     delta = delta === 1 ? 0.1 : -0.1
@@ -662,7 +699,12 @@ export default function GraphEditor () {
 
                     setPaperScale(newScale)
                 },
-                'blank:mousewheel': function (evt, x, y, delta) {
+                'blank:mousewheel': function (
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number,
+                    delta: number
+                ) {
                     const oldScale = Paper.scale().sx
                     const { tx, ty } = Paper.translate()
                     delta = delta === 1 ? 0.1 : -0.1
@@ -682,7 +724,11 @@ export default function GraphEditor () {
 
                     setPaperScale(newScale)
                 },
-                'blank:contextmenu': function (evt, x, y) {
+                'blank:contextmenu': function (
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     dragMode = !dragMode
                     toggleDragMode(dragMode)
                     Paper.setInteractivity(!dragMode)
@@ -692,11 +738,16 @@ export default function GraphEditor () {
                         text: `切換為${dragMode ? '拖曳' : '編輯'}模式`
                     })
                 },
-                'cell:pointerdown': function (cellView, evt, x, y) {
+                'cell:pointerdown': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     if (dragMode) {
                         dragMouseDownPos = {
-                            x: evt.screenX,
-                            y: evt.screenY
+                            x: evt.screenX || 0,
+                            y: evt.screenY || 0
                         }
                         dragAnchorPos = {
                             x: Paper.translate().tx,
@@ -705,10 +756,15 @@ export default function GraphEditor () {
                         return
                     }
                 },
-                'cell:pointermove': function (cellView, evt, x, y) {
+                'cell:pointermove': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     if (dragMode) {
-                        const deltaX = evt.screenX - dragMouseDownPos.x
-                        const deltaY = evt.screenY - dragMouseDownPos.y
+                        const deltaX = (evt.screenX || 0) - dragMouseDownPos.x
+                        const deltaY = (evt.screenY || 0) - dragMouseDownPos.y
                         Paper.translate(
                             dragAnchorPos.x + deltaX,
                             dragAnchorPos.y + deltaY
@@ -716,11 +772,15 @@ export default function GraphEditor () {
                         return
                     }
                 },
-                'blank:pointerdown': function (evt, x, y) {
+                'blank:pointerdown': function (
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     if (dragMode) {
                         dragMouseDownPos = {
-                            x: evt.screenX,
-                            y: evt.screenY
+                            x: evt.screenX || 0,
+                            y: evt.screenY || 0
                         }
                         dragAnchorPos = {
                             x: Paper.translate().tx,
@@ -752,10 +812,14 @@ export default function GraphEditor () {
                         setGroupArea(selectedArea)
                     }
                 },
-                'blank:pointermove': function (evt, x, y) {
+                'blank:pointermove': function (
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     if (dragMode) {
-                        const deltaX = evt.screenX - dragMouseDownPos.x
-                        const deltaY = evt.screenY - dragMouseDownPos.y
+                        const deltaX = (evt.screenX || 0) - dragMouseDownPos.x
+                        const deltaY = (evt.screenY || 0) - dragMouseDownPos.y
                         Paper.translate(
                             dragAnchorPos.x + deltaX,
                             dragAnchorPos.y + deltaY
@@ -764,8 +828,8 @@ export default function GraphEditor () {
                     }
 
                     if (!dragMode) {
-                        const originX = selectedArea.prop('originX')
-                        const originY = selectedArea.prop('originY')
+                        const originX = selectedArea.prop('originX') as number
+                        const originY = selectedArea.prop('originY') as number
                         const deltaX = Math.abs(x - originX)
                         const deltaY = Math.abs(y - originY)
                         selectedArea.resize(deltaX, deltaY)
@@ -778,7 +842,11 @@ export default function GraphEditor () {
                         }
                     }
                 },
-                'blank:pointerup': function (evt, x, y) {
+                'blank:pointerup': function (
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     if (dragMode) {
                         return
                     }
@@ -841,10 +909,10 @@ export default function GraphEditor () {
                         for (const view of selectedViews) {
                             if (view instanceof joint.dia.ElementView) {
                                 const BBox = view.model.position()
-                                view.model.prop('groupOffset', {
+                                view.model.prop('groupOffset', [{
                                     x: BBox.x - AreaBBox.x,
                                     y: BBox.y - AreaBBox.y
-                                })
+                                }])
                             } else if (view instanceof joint.dia.LinkView) {
                                 const groupOffset = []
                                 // 順序：source、vertices、target
@@ -882,31 +950,47 @@ export default function GraphEditor () {
             })
         }
         async function loadCells () {
-            const cells = await getCells()
-            graph.fromJSON(cells)
+            const response = await getCells()
+            switch (response.status) {
+            case 200:
+                setSnackbar({
+                    open: true,
+                    severity: 'success',
+                    text: '圖面初始化成功'
+                })
+                graph.fromJSON(response.data)
+                if (graph.getCells().length === 0) {
+                    const firstCell = shapes.createElement('battleField')
+                    firstCell.position(0, 0)
+                    firstCell.addTo(graph)
+                }
+                break
+            case 500:
+            case 499:
+            default:
+                setSnackbar({
+                    open: true,
+                    severity: 'error',
+                    text: '圖面初始化失敗'
+                })
+                break
+            }
         }
 
         // initial data
         const Paper = initPaper()
-        setPaper(Paper)
-        setPaperComplete(true)
-        loadCells()
+        void loadCells()
         registerPaperEventHandler(Paper)
-    }, [graph, paperComplete])
+
+        return (() => {
+            $('#paper').off()
+        })
+    }, [graph])
 
 
 
     // css style
     const styles = makeStyles(theme => ({
-        // paperParent: {
-        //     overflow: 'hidden',
-        //     [theme.breakpoints.down('sm')]: {
-        //         height: 'calc(100vh - 56px)'
-        //     },
-        //     [theme.breakpoints.up('sm')]: {
-        //         height: 'calc(100vh - 64px)'
-        //     }
-        // },
         AppBar: {
             backgroundColor: theme.palette.background.default,
             maxHeight: '56px'
@@ -965,153 +1049,140 @@ export default function GraphEditor () {
                         orientation="vertical"
                         flexItem
                     />
-                    {/* <Tooltip title="縮小">
-                        <IconButton onClick={zoomOut}>
-                            <ZoomOutIcon/>
+                    <Box flexGrow={1}></Box>
+                    <Tooltip title="提示">
+                        <IconButton onClick={() => {toggleInfoDialog(true)}}>
+                            <InfoIcon
+                                htmlColor="white"
+                            />
                         </IconButton>
                     </Tooltip>
-                    <Tooltip title="放大">
-                        <IconButton onClick={zoomIn}>
-                            <ZoomInIcon/>
-                        </IconButton>
-                    </Tooltip> */}
                 </Toolbar>
             </AppBar>
-            {/* <Box className={classes.paperParent}> */}
-                <Box
-                    id="paper"
-                    onContextMenu={(e) => e.preventDefault()}
-                >
-                    <Menu
-                        keepMounted
-                        open={addElementCtxMenuPos.x !== -1}
-                        onClose={closeAddElementCtxMenu}
-                        anchorReference="anchorPosition"
-                        anchorPosition={{
-                            top: addElementCtxMenuPos.y,
-                            left: addElementCtxMenuPos.x
-                        }}
+            <Box
+                id="paper"
+                onContextMenu={(e) => e.preventDefault()}
+            >
+                <Menu
+                    keepMounted
+                    open={addElementCtxMenuPos.x !== -1}
+                    onClose={closeAddElementCtxMenu}
+                    anchorReference="anchorPosition"
+                    anchorPosition={{
+                        top: addElementCtxMenuPos.y,
+                        left: addElementCtxMenuPos.x
+                    }}
 
-                    >   
-                        <MenuItem disabled>新增元件</MenuItem>
-                        <Box style={{ width: '200px' }}>
-                            <Grid container>
-                                {shapes.ELEMENTS.map((type, index) =>
-                                    <Grid
-                                        item xs={4}
-                                        key={index}
-                                        className={classes.GridItem}
-                                    >
-                                        <ElementSvgIcon
-                                            type={type}
-                                            disabled={
-                                                selectedLink?.source().id !== undefined &&
-                                                selectedLink?.target().id !== undefined
-                                            }
-                                        />
-                                    </Grid>
-                                )}
-                                {/* {shapes.LINKS.map((type, index) =>
-                                    <Grid
-                                        item xs={4}
-                                        key={index}
-                                        className={classes.GridItem}
-                                    >
-                                        <LinkSvgIcon type={type}/>
-                                    </Grid>
-                                )} */}
-                            </Grid>
-                            <MenuItem onClick={deleteCell}>刪除</MenuItem>
-                        </Box>
-                    </Menu>
-                    <Menu
-                        open={addLinkCtxMenuPos.x !== -1}
-                        onClose={closeAddLinkCtxMenu}
-                        anchorReference="anchorPosition"
-                        anchorPosition={{
-                            top: addLinkCtxMenuPos.y,
-                            left: addLinkCtxMenuPos.x
-                        }}
-                    >
-                        <MenuItem disabled>新增線段</MenuItem>
-                        <MenuItem>
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        checked={twoWayLinkEnabled}
-                                        onChange={(evt) => toggleTwoWayLinkEnabled(evt.target.checked)}
-                                    />
-                                }
-                                label='twoWayLink'
-                                labelPlacement="end"
-                            />
-                        </MenuItem>
-                        <Box style={{ width: '200px' }}>
-                            <Grid container>
-                                <Grid item xs={4}></Grid>
-                                <Grid 
-                                    item
-                                    xs={4}
-                                    className={classes.GridItem}
-                                >   
-                                    <LinkSvgIcon
-                                        direction='top'
-                                        disabled={selectedElement?.prop('top') !== undefined}
-                                        type={twoWayLinkEnabled ? 'twoWayVLink' : 'oneWayVLink'}
-                                    />
-                                </Grid>
-                                <Grid item xs={4}></Grid>
-                                <Grid 
-                                    item
-                                    xs={4}
-                                    className={classes.GridItem}
-                                >
-                                    <LinkSvgIcon
-                                        direction='left'
-                                        disabled={selectedElement?.prop('left') !== undefined}
-                                        type={twoWayLinkEnabled ? 'twoWayHLink' : 'oneWayHLink'}
-                                    />
-                                </Grid>
-                                <Grid 
-                                    item
-                                    xs={4}
+                >   
+                    <MenuItem disabled>新增元件</MenuItem>
+                    <Box style={{ width: '200px' }}>
+                        <Grid container>
+                            {shapes.ELEMENTS.map((type, index) =>
+                                <Grid
+                                    item xs={4}
+                                    key={index}
                                     className={classes.GridItem}
                                 >
                                     <ElementSvgIcon
-                                        disabled={true}
-                                        type={selectedElement?.prop('name')}
+                                        type={type}
+                                        disabled={
+                                            selectedLink?.source().id !== undefined &&
+                                            selectedLink?.target().id !== undefined
+                                        }
                                     />
                                 </Grid>
-                                <Grid 
-                                    item
-                                    xs={4}
-                                    className={classes.GridItem}
-                                >
-                                    <LinkSvgIcon
-                                        direction='right'
-                                        disabled={selectedElement?.prop('right') !== undefined}
-                                        type={twoWayLinkEnabled ? 'twoWayHLink' : 'oneWayHLink'}
-                                    />
-                                </Grid>
-                                <Grid item xs={4}></Grid>
-                                <Grid 
-                                    item
-                                    xs={4}
-                                    className={classes.GridItem}
-                                >
-                                    <LinkSvgIcon
-                                        direction='bottom'
-                                        disabled={selectedElement?.prop('bottom') !== undefined}
-                                        type={twoWayLinkEnabled ? 'twoWayVLink' : 'oneWayVLink'}
-                                    />
-                                </Grid>
-                                <Grid item xs={4}></Grid>
-                            </Grid>
-                        </Box>
+                            )}
+                        </Grid>
                         <MenuItem onClick={deleteCell}>刪除</MenuItem>
-                    </Menu>
-                </Box>
-            {/* </Box> */}
+                    </Box>
+                </Menu>
+                <Menu
+                    open={addLinkCtxMenuPos.x !== -1}
+                    onClose={closeAddLinkCtxMenu}
+                    anchorReference="anchorPosition"
+                    anchorPosition={{
+                        top: addLinkCtxMenuPos.y,
+                        left: addLinkCtxMenuPos.x
+                    }}
+                >
+                    <MenuItem disabled>新增線段</MenuItem>
+                    <MenuItem>
+                        <FormControlLabel
+                            control={
+                                <Checkbox
+                                    checked={twoWayLinkEnabled}
+                                    onChange={(evt) => toggleTwoWayLinkEnabled(evt.target.checked)}
+                                />
+                            }
+                            label='twoWayLink'
+                            labelPlacement="end"
+                        />
+                    </MenuItem>
+                    <Box style={{ width: '200px' }}>
+                        <Grid container>
+                            <Grid item xs={4}></Grid>
+                            <Grid 
+                                item
+                                xs={4}
+                                className={classes.GridItem}
+                            >   
+                                <LinkSvgIcon
+                                    direction='top'
+                                    disabled={selectedElement?.prop('top') !== undefined}
+                                    type={twoWayLinkEnabled ? 'twoWayVLink' : 'oneWayVLink'}
+                                />
+                            </Grid>
+                            <Grid item xs={4}></Grid>
+                            <Grid 
+                                item
+                                xs={4}
+                                className={classes.GridItem}
+                            >
+                                <LinkSvgIcon
+                                    direction='left'
+                                    disabled={selectedElement?.prop('left') !== undefined}
+                                    type={twoWayLinkEnabled ? 'twoWayHLink' : 'oneWayHLink'}
+                                />
+                            </Grid>
+                            <Grid 
+                                item
+                                xs={4}
+                                className={classes.GridItem}
+                            >
+                                <ElementSvgIcon
+                                    disabled={true}
+                                    type={selectedElement?.prop('name') as string}
+                                />
+                            </Grid>
+                            <Grid 
+                                item
+                                xs={4}
+                                className={classes.GridItem}
+                            >
+                                <LinkSvgIcon
+                                    direction='right'
+                                    disabled={selectedElement?.prop('right') !== undefined}
+                                    type={twoWayLinkEnabled ? 'twoWayHLink' : 'oneWayHLink'}
+                                />
+                            </Grid>
+                            <Grid item xs={4}></Grid>
+                            <Grid 
+                                item
+                                xs={4}
+                                className={classes.GridItem}
+                            >
+                                <LinkSvgIcon
+                                    direction='bottom'
+                                    disabled={selectedElement?.prop('bottom') !== undefined}
+                                    type={twoWayLinkEnabled ? 'twoWayVLink' : 'oneWayVLink'}
+                                />
+                            </Grid>
+                            <Grid item xs={4}></Grid>
+                        </Grid>
+                    </Box>
+                    <MenuItem onClick={deleteCell}>刪除</MenuItem>
+                </Menu>
+            </Box>
             <Snackbar 
                 open={snackbar.open}
                 autoHideDuration={3000}
@@ -1123,6 +1194,23 @@ export default function GraphEditor () {
                     children={ snackbar.text }
                 />
             </Snackbar>
+            <Dialog
+                open={infoDialog}
+                onClose={() => {toggleInfoDialog(false)}}
+            >
+                <DialogTitle>繪圖提示</DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        1. 使用右鍵切換編輯模式/拖曳模式
+                    </DialogContentText>
+                    <DialogContentText>
+                        2. 在物體上點選右鍵，可新增線段；在線段上點選右鍵，可新增物體
+                    </DialogContentText>
+                    <DialogContentText>
+                        3. 線段分成水平/垂直，且分成單向/雙向
+                    </DialogContentText>
+                </DialogContent>
+            </Dialog>
         </Fragment>
     )
 }

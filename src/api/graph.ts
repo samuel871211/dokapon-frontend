@@ -1,19 +1,46 @@
-const baseUrl = `${process.env.REACT_APP_BACKEND_BASEURL}/graph`
+import axios, { AxiosResponse, AxiosError } from 'axios'
 
-export async function getCells () {
-    const res = await fetch(baseUrl)
-    const resJson = await res.json()
-    return resJson
+const graphAPI = axios.create({
+    baseURL: `${process.env.REACT_APP_BACKEND_BASEURL || ''}/graph`,
+    timeout: 3000,
+    headers: { 'content-type': 'application/json' }
+})
+type cells = {
+    cells: Array<joint.dia.Cell>
+}
+type customResponse = {
+    status: number,
+    data: cells
 }
 
-export async function updateCells (cells: { cells: Array<joint.dia.Cell> }) {
-    const res = await fetch(baseUrl, {
-        method: 'PUT',
-        body: JSON.stringify(cells),
-        headers: {
-            'content-type': 'application/json'
-        },
-    })
-    const resJson = await res.json()
-    return resJson
+export async function getCells(): Promise<customResponse | AxiosResponse> {
+    try {
+        const response = await graphAPI.get('/')
+        return response
+    } catch (e: any) {
+        const error = e as AxiosError
+        if (error.response === undefined) {
+            return {
+                status: 499,
+                data: { cells: [] }
+            }
+        }
+        return error.response
+    }
+}
+
+export async function updateCells(cells: cells): Promise<customResponse | AxiosResponse> {
+    try {
+        const response = await graphAPI.put('/', cells)
+        return response
+    } catch (e: any) {
+        const error = e as AxiosError
+        if (error.response === undefined) {
+            return {
+                status: 499,
+                data: { cells: [] }
+            }
+        }
+        return error.response
+    }
 }

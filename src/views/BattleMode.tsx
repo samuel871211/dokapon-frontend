@@ -9,9 +9,9 @@ import $ from 'jquery'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
 import { getCells } from '../api/graph'
-import * as characters from '../components/characters'
+import * as characters from '../global/characters'
 
-export default function BattleMode () {
+export default function BattleMode (): JSX.Element {
     // data
     const [paperScale, setPaperScale] = useState(1)
     const [graph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
@@ -40,7 +40,12 @@ export default function BattleMode () {
             let dragMouseDownPos = { x: 0, y: 0 }
             let dragAnchorPos = { x: 0, y: 0 }
             Paper.on({
-                'element:contextmenu': function (cellView, evt, x, y) {
+                'element:contextmenu': function (
+                    elementView: joint.dia.ElementView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     const character = characters.createCharacter({
                         job: '',
                         gender: '',
@@ -50,7 +55,13 @@ export default function BattleMode () {
                     character.addTo(graph)
                     console.log('element added')
                 },
-                'cell:mousewheel': function (cellView, evt, x, y, delta) {
+                'cell:mousewheel': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number,
+                    delta: number
+                ) {
                     const oldScale = Paper.scale().sx
                     const { tx, ty } = Paper.translate()
                     delta = delta === 1 ? 0.05 : -0.05
@@ -70,25 +81,40 @@ export default function BattleMode () {
 
                     setPaperScale(newScale)
                 },
-                'cell:pointerdown': function (cellView, evt, x, y) {
+                'cell:pointerdown': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     dragMouseDownPos = {
-                        x: evt.screenX,
-                        y: evt.screenY
+                        x: evt.screenX || 0,
+                        y: evt.screenY || 0
                     }
                     dragAnchorPos = {
                         x: Paper.translate().tx,
                         y: Paper.translate().ty
                     }
                 },
-                'cell:pointermove': function (cellView, evt, x, y) {
-                    const deltaX = evt.screenX - dragMouseDownPos.x
-                    const deltaY = evt.screenY - dragMouseDownPos.y
+                'cell:pointermove': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
+                    const deltaX = (evt.screenX || 0) - dragMouseDownPos.x
+                    const deltaY = (evt.screenY || 0) - dragMouseDownPos.y
                     Paper.translate(
                         dragAnchorPos.x + deltaX,
                         dragAnchorPos.y + deltaY
                     )
                 },
-                'blank:mousewheel': function (evt, x, y, delta) {
+                'blank:mousewheel': function (
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number,
+                    delta: number
+                ) {
                     const oldScale = Paper.scale().sx
                     const { tx, ty } = Paper.translate()
                     delta = delta === 1 ? 0.05 : -0.05
@@ -108,19 +134,27 @@ export default function BattleMode () {
 
                     setPaperScale(newScale)
                 },
-                'blank:pointerdown': function (evt, x, y) {
+                'blank:pointerdown': function (
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
                     dragMouseDownPos = {
-                        x: evt.screenX,
-                        y: evt.screenY
+                        x: evt.screenX || 0,
+                        y: evt.screenY || 0
                     }
                     dragAnchorPos = {
                         x: Paper.translate().tx,
                         y: Paper.translate().ty
                     }
                 },
-                'blank:pointermove': function (evt, x, y) {
-                    const deltaX = evt.screenX - dragMouseDownPos.x
-                    const deltaY = evt.screenY - dragMouseDownPos.y
+                'blank:pointermove': function (
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
+                    const deltaX = (evt.screenX || 0) - dragMouseDownPos.x
+                    const deltaY = (evt.screenY || 0) - dragMouseDownPos.y
                     Paper.translate(
                         dragAnchorPos.x + deltaX,
                         dragAnchorPos.y + deltaY
@@ -129,13 +163,13 @@ export default function BattleMode () {
             })
         }
         async function loadCells () {
-            const cells = await getCells()
-            graph.fromJSON(cells)
+            const response = await getCells()
+            graph.fromJSON(response.data)
         }
 
         // initial data
         const Paper = initPaper()
-        loadCells()
+        void loadCells()
         registerPaperEventHandler(Paper)
         Paper.translate(-6085, -4606) // center of the world
 

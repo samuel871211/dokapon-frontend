@@ -6,7 +6,11 @@ import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Slide from '@material-ui/core/Slide'
 import CustomBorderBottom from '../components/CustomBorderBottom'
-import { useEffect } from 'react'
+import PersonIcon from '@material-ui/icons/Person'
+import AdbIcon from '@material-ui/icons/Adb'
+// import Divider from '@material-ui/core/Divider'
+import { useEffect, useState } from 'react'
+import AISpeakingDialog from '../components/AISpeakingDialog'
 // import { SVG } from '../global/shapes'
 
 // 目標 => 人數 => 性別 => 名字 => 顏色 => 職業
@@ -14,6 +18,7 @@ import { useEffect } from 'react'
 
 export default function SelectCharacter (): JSX.Element {
     // data
+    const [selectedGoal, setSelectedGoal] = useState<'期間' | '金額'>('期間')
 
     // methods
     function handleKeyDown (e: React.KeyboardEvent) {
@@ -72,44 +77,44 @@ export default function SelectCharacter (): JSX.Element {
         topRightArea: {
             height: '65%'
         },
-        bottomArea: {
-            height: '35%'
-        },
-        nameArea: {
-            width: '35%',
-            height: '20%',
-            marginLeft: '5%',
-            borderRadius: '30px',
-            border: '3px outset #222222',
-            backgroundColor: '#fee59a',
-            position: 'relative',
-            top: '7.5%'
-        },
-        name: {
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100%",
-            fontWeight: 'bold',
-            fontSize: '2rem',
-        },
-        messageArea: {
-            width: '95%',
-            height: '75%',
-            marginLeft: '2.5%',
-            borderRadius: '30px',
-            border: '3px outset #222222',
-            backgroundColor: '#fee59a'
-        },
-        message: {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%',
-            fontWeight: 'bold',
-            fontSize: '2rem',
-            letterSpacing: '1px'
-        },
+        // bottomArea: {
+        //     height: '35%'
+        // },
+        // nameArea: {
+        //     width: '35%',
+        //     height: '20%',
+        //     marginLeft: '5%',
+        //     borderRadius: '30px',
+        //     border: '3px outset #222222',
+        //     backgroundColor: '#fee59a',
+        //     position: 'relative',
+        //     top: '7.5%'
+        // },
+        // name: {
+        //     display: "flex",
+        //     justifyContent: "center",
+        //     alignItems: "center",
+        //     height: "100%",
+        //     fontWeight: 'bold',
+        //     fontSize: '2rem',
+        // },
+        // messageArea: {
+        //     width: '95%',
+        //     height: '75%',
+        //     marginLeft: '2.5%',
+        //     borderRadius: '30px',
+        //     border: '3px outset #222222',
+        //     backgroundColor: '#fee59a'
+        // },
+        // message: {
+        //     display: 'flex',
+        //     justifyContent: 'center',
+        //     alignItems: 'center',
+        //     height: '100%',
+        //     fontWeight: 'bold',
+        //     fontSize: '2rem',
+        //     letterSpacing: '1px'
+        // },
         settingTitleArea: {
             width: '80%',
             height: '15%',
@@ -134,9 +139,6 @@ export default function SelectCharacter (): JSX.Element {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center'
-            // borderRadius: '30px',
-            // border: '3px outset #222222',
-            // backgroundColor: '#fee59a'
         },
         chooseBtn: {
             width: '80%',
@@ -145,36 +147,33 @@ export default function SelectCharacter (): JSX.Element {
             borderRadius: '30px',
             border: '3px outset #222222',
             backgroundColor: '#fee59a',
-            cursor: 'pointer',
             display: 'flex',
             paddingLeft: '5%',
-            // justifyContent: 'center',
             alignItems: 'center',
             fontWeight: 'bold',
             fontSize: '2rem',
             letterSpacing: '1px',
-            '&:hover': {
-                animation: `$btnHoverFrom 500ms, $btnHoverTo 500ms`,
-                animationIterationCount: 'infinite',
-                animationDirection: 'alternate',
-                animationTimingFunction: 'ease-in-out'
-            }
+            // '&:hover': {
+            //     animation: `$btnHoverFrom 500ms, $btnHoverTo 500ms`,
+            //     animationIterationCount: 'infinite',
+            //     animationDirection: 'alternate',
+            //     animationTimingFunction: 'ease-in-out'
+            // }
         },
         topRightFlexBox: {
             display: 'flex',
-            // justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
             height: '100%'
         },
-        targetArea: {
+        goalArea: {
             width: '80%',
             height: '40%',
             borderRadius: '30px',
             border: '3px outset #222222',
             backgroundColor: '#fee59a'
         },
-        targetTitle: {
+        goalTitle: {
             width: '100%',
             height: '50px',
             display: 'flex',
@@ -184,13 +183,13 @@ export default function SelectCharacter (): JSX.Element {
             fontWeight: 'bold',
             fontSize: '2rem',
         },
-        targetInputArea: {
+        goalInputArea: {
             display: 'flex',
             justifyContent: 'center',
             height: 'calc(100% - 60px)',
             alignItems: 'center'
         },
-        targetBtnGroup: {
+        goalBtnGroup: {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -199,7 +198,7 @@ export default function SelectCharacter (): JSX.Element {
             backgroundColor: '#fee59a',
             padding: '8px'
         },
-        targetBtn: {
+        goalBtn: {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -214,7 +213,7 @@ export default function SelectCharacter (): JSX.Element {
             animationDirection: 'alternate',
             animationTimingFunction: 'ease-in-out'
         },
-        targetUnit: {
+        goalUnit: {
             textAlign: 'center',
             fontWeight: 'bold',
             fontSize: '2rem',
@@ -224,6 +223,13 @@ export default function SelectCharacter (): JSX.Element {
             clipPath: 'polygon(0% 0%, 33.3% 0%, 33.3% 33.3%, 0% 33.3%)',
             width: '300%',
             height: '300%'
+        },
+        playerNum: {
+            display: 'flex',
+            flexGrow: 1,
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            paddingRight: '5%'
         },
         '@keyframes btnHoverFrom': {
             '0%': {
@@ -243,6 +249,58 @@ export default function SelectCharacter (): JSX.Element {
         }
     }))
     const classes = styles()
+
+    // components
+    function SelectPlayerNumberBtn (props: { playerNum: number }): JSX.Element {
+        const { playerNum } = props
+        const rows = []
+        for (let i = 0; i < 4; i++) {
+            if (i >= playerNum) {
+                rows.push(<AdbIcon fontSize="large" key={i}/>)
+            } else {
+                rows.push(<PersonIcon fontSize="large" key={i}/>)
+            }
+        }
+        return (
+            <Box className={classes.chooseBtn}>
+                {rows}
+                <Box className={classes.playerNum}>
+                    {playerNum}人
+                </Box>
+            </Box>
+        )
+    }
+
+    function SelectGoalBtn (props: { type: '期間' | '金額' }): JSX.Element {
+        const { type } = props
+        return (
+            <Box className={classes.chooseBtn}>
+                <img width="30px" height="30px"/>
+                {type}目標
+            </Box>
+        )
+    }
+
+    function GoalArea (): JSX.Element {
+        const inputBlocks = []
+        const goalUnit = selectedGoal === '期間' ? '週' : '¥'
+        const inputLen = selectedGoal === '期間' ? 3 : 9
+        for (let i = 0; i < inputLen; i++) {
+            inputBlocks.push(<Box className={classes.goalBtn} key={i}>0</Box>)
+        }
+        return (
+            <Box className={classes.goalArea}>
+                <Box className={classes.goalTitle}>目標{selectedGoal}</Box>
+                <CustomBorderBottom/>
+                <Box className={classes.goalInputArea}>
+                    <Box className={classes.goalBtnGroup}>
+                        {inputBlocks}
+                    </Box>
+                    <Box className={classes.goalUnit}>{goalUnit}</Box>
+                </Box>
+            </Box>
+        )
+    }
 
     // mount
     useEffect(() => {
@@ -274,50 +332,22 @@ export default function SelectCharacter (): JSX.Element {
                 </Slide>
                 <Slide direction="left" in={true} timeout={800}>
                     <Box className={classes.chooseArea}>
-                        <Box className={classes.chooseBtn}>
-                            <img width="30px" height="30px"/>
-                            期間目標
-                        </Box>
-                        <Box className={classes.chooseBtn}>
-                            <img width="30px" height="30px"/>
-                            金額目標
-                        </Box>
+                        <SelectGoalBtn type="期間"/>
+                        <SelectGoalBtn type="金額"/>
+                        <SelectPlayerNumberBtn playerNum={1}/>
+                        <SelectPlayerNumberBtn playerNum={2}/>
+                        <SelectPlayerNumberBtn playerNum={3}/>
+                        <SelectPlayerNumberBtn playerNum={4}/>
                     </Box>
                 </Slide> */}
 
                 <Slide direction="left" in={true} timeout={800}>
                     <Box className={classes.topRightFlexBox}>
-                        <Box className={classes.targetArea}>
-                            <Box className={classes.targetTitle}>目標期間</Box>
-                            <CustomBorderBottom/>
-                            <Box className={classes.targetInputArea}>
-                                <Box className={classes.targetBtnGroup}>
-                                    <Box className={classes.targetBtn}>1</Box>
-                                    <Box className={classes.targetBtn}>2</Box>
-                                    <Box className={classes.targetBtn}>3</Box>
-                                    <Box className={classes.targetBtn}>4</Box>
-                                    <Box className={classes.targetBtn}>5</Box>
-                                    <Box className={classes.targetBtn}>6</Box>
-                                    <Box className={classes.targetBtn}>7</Box>
-                                    <Box className={classes.targetBtn}>8</Box>
-                                    <Box className={classes.targetBtn}>9</Box>
-                                </Box>
-                                <Box className={classes.targetUnit}>周</Box>
-                            </Box>
-                        </Box>
+                        <GoalArea/>
                     </Box>
                 </Slide>
             </Grid>
-            <Slide direction="up" in={true} timeout={800}>
-                <Grid item xs={12} className={classes.bottomArea}>
-                    <Box className={classes.nameArea}>
-                        <Box className={classes.name}>ナビイ</Box>
-                    </Box>
-                    <Box className={classes.messageArea}>
-                        <Box className={classes.message}>要選擇什麼遊戲模式呢？</Box>
-                    </Box>
-                </Grid>
-            </Slide>
+            <AISpeakingDialog name="ナビイ" message="要選擇什麼遊戲模式呢？"/>
         </Grid>
     )
 }

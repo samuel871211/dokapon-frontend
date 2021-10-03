@@ -69,14 +69,14 @@ export default function HomePage (): JSX.Element {
                         className={classes.buttons}
                         onClick={() => {window.location.assign('/SelectCharacter')}}
                     />
-                    <Button
+                    {/* <Button
                         fullWidth
                         variant="contained"
                         color="primary"
                         children="繪圖"
                         className={classes.buttons}
                         onClick={() => {window.location.assign('/GraphEditor')}}
-                    />
+                    /> */}
                     <Button
                         fullWidth
                         variant="contained"

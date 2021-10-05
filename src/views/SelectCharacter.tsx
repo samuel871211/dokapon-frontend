@@ -5,16 +5,20 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Slide from '@material-ui/core/Slide'
+// slide裡面只能允許單一children，且不可包裝成component，
 import CustomBorderBottom from '../components/CustomBorderBottom'
 import PersonIcon from '@material-ui/icons/Person'
 import AdbIcon from '@material-ui/icons/Adb'
 // import Divider from '@material-ui/core/Divider'
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
+import SettingTitleArea from '../components/SettingTitleArea'
 import AISpeakingDialog from '../components/AISpeakingDialog'
+import AITopLeftImgArea from '../components/AITopLeftImgArea'
 // import { SVG } from '../global/shapes'
 
 // 目標 => 人數 => 性別 => 名字 => 顏色 => 職業
 
+const backendUrl = process.env.REACT_APP_BACKEND_BASEURL || ''
 
 export default function SelectCharacter (): JSX.Element {
     // data
@@ -63,80 +67,13 @@ export default function SelectCharacter (): JSX.Element {
             backgroundSize: '100% auto',
             overflow: 'hidden'
         },
-        topLeftArea: {
-            height: '65%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            overflow: 'hidden'
-        },
-        biggestSquare: {
-            width: "min(41.6vw, 65vh)",
-            height: "min(41.6vw, 65vh)"
-        },
         topRightArea: {
             height: '65%'
-        },
-        // bottomArea: {
-        //     height: '35%'
-        // },
-        // nameArea: {
-        //     width: '35%',
-        //     height: '20%',
-        //     marginLeft: '5%',
-        //     borderRadius: '30px',
-        //     border: '3px outset #222222',
-        //     backgroundColor: '#fee59a',
-        //     position: 'relative',
-        //     top: '7.5%'
-        // },
-        // name: {
-        //     display: "flex",
-        //     justifyContent: "center",
-        //     alignItems: "center",
-        //     height: "100%",
-        //     fontWeight: 'bold',
-        //     fontSize: '2rem',
-        // },
-        // messageArea: {
-        //     width: '95%',
-        //     height: '75%',
-        //     marginLeft: '2.5%',
-        //     borderRadius: '30px',
-        //     border: '3px outset #222222',
-        //     backgroundColor: '#fee59a'
-        // },
-        // message: {
-        //     display: 'flex',
-        //     justifyContent: 'center',
-        //     alignItems: 'center',
-        //     height: '100%',
-        //     fontWeight: 'bold',
-        //     fontSize: '2rem',
-        //     letterSpacing: '1px'
-        // },
-        settingTitleArea: {
-            width: '80%',
-            height: '15%',
-            marginTop: '5%',
-            borderRadius: '30px',
-            border: '3px outset #222222',
-            backgroundColor: '#fee59a'
-        },
-        settingTitle: {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%',
-            fontWeight: 'bold',
-            fontSize: '2rem',
-            letterSpacing: '1px'
         },
         chooseArea: {
             width: '80%',
             height: '80%',
             display: 'flex',
-            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center'
         },
@@ -159,6 +96,13 @@ export default function SelectCharacter (): JSX.Element {
             //     animationDirection: 'alternate',
             //     animationTimingFunction: 'ease-in-out'
             // }
+        },
+        topLeftArea: {
+            height: '65%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            overflow: 'hidden'
         },
         topRightFlexBox: {
             display: 'flex',
@@ -219,17 +163,21 @@ export default function SelectCharacter (): JSX.Element {
             fontSize: '2rem',
             marginLeft: '8px'
         },
-        guideImg: {
-            clipPath: 'polygon(0% 0%, 33.3% 0%, 33.3% 33.3%, 0% 33.3%)',
-            width: '300%',
-            height: '300%'
-        },
-        playerNum: {
+        flexEnd: {
             display: 'flex',
             flexGrow: 1,
             justifyContent: 'flex-end',
-            alignItems: 'center',
-            paddingRight: '5%'
+            alignItems: 'center'
+        },
+        selectGenderBlock: {
+            width: '50%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column'
+        },
+        biggestSquare: {
+            width: "min(20vw, 41.6vh)",
+            margin: 'auto'
         },
         '@keyframes btnHoverFrom': {
             '0%': {
@@ -251,33 +199,87 @@ export default function SelectCharacter (): JSX.Element {
     const classes = styles()
 
     // components
-    function SelectPlayerNumberBtn (props: { playerNum: number }): JSX.Element {
-        const { playerNum } = props
-        const rows = []
-        for (let i = 0; i < 4; i++) {
-            if (i >= playerNum) {
-                rows.push(<AdbIcon fontSize="large" key={i}/>)
-            } else {
-                rows.push(<PersonIcon fontSize="large" key={i}/>)
-            }
-        }
+    function SelectGoal (): JSX.Element {
         return (
-            <Box className={classes.chooseBtn}>
-                {rows}
-                <Box className={classes.playerNum}>
-                    {playerNum}人
+            <Slide direction="left" in={true} timeout={800}>
+                <Box className={classes.chooseArea} flexDirection="column">
+                    <Box className={classes.chooseBtn}>
+                        <img width="30px" height="30px"/>
+                        期間目標
+                    </Box>
+                    <Box className={classes.chooseBtn}>
+                        <img width="30px" height="30px"/>
+                        金額目標
+                    </Box>
                 </Box>
-            </Box>
+            </Slide>
         )
     }
 
-    function SelectGoalBtn (props: { type: '期間' | '金額' }): JSX.Element {
-        const { type } = props
+    function SelectNumberOfPlayers (): JSX.Element {
+        
+        function SelectNumberOfPlayersBtn (props: { playerNum: number }): JSX.Element {
+            const { playerNum } = props
+            const icons = []
+            for (let i = 0; i <= 4; i++) {
+                if (i < playerNum) icons.push(<PersonIcon fontSize="large"/>)
+                else icons.push(<AdbIcon fontSize="large"/>)
+            }
+            return (
+                <Box className={classes.chooseBtn}>
+                    {icons}
+                    <Box className={classes.flexEnd} pr="5%">1人</Box>
+                </Box>
+            )
+        }
         return (
-            <Box className={classes.chooseBtn}>
-                <img width="30px" height="30px"/>
-                {type}目標
-            </Box>
+            <Slide direction="left" in={true} timeout={800}>
+                <Box className={classes.chooseArea} flexDirection="column">
+                    <SelectNumberOfPlayersBtn playerNum={1}/>
+                    <SelectNumberOfPlayersBtn playerNum={2}/>
+                    <SelectNumberOfPlayersBtn playerNum={3}/>
+                    <SelectNumberOfPlayersBtn playerNum={4}/>
+                </Box>
+            </Slide>
+        )
+    }
+
+    function SelectGender (): JSX.Element {
+        const suffixMale = '/imgs/beginner_male_red_front.png'
+        const suffixFemale = '/imgs/beginner_female_red_front.png'
+        return (
+            <Slide direction="left" in={true} timeout={800}>
+                <Box className={classes.chooseArea}>
+                    <Box className={classes.selectGenderBlock}>
+                        <Box flexGrow={1}></Box>
+                        <Box className={classes.biggestSquare}>
+                            <img 
+                                src={`${backendUrl}${suffixMale}`}
+                                width="100%"
+                                alt="男"
+                            />
+                        </Box>
+                        <Box className={classes.chooseBtn} m="auto">
+                            <img src="" width="30px" height="30px"/>
+                            <Box className={classes.flexEnd} pr="15%">男</Box>
+                        </Box>
+                    </Box>
+                    <Box className={classes.selectGenderBlock}>
+                        <Box flexGrow={1}></Box>
+                        <Box className={classes.biggestSquare}>
+                            <img 
+                                src={`${backendUrl}${suffixFemale}`}
+                                width="100%"
+                                alt="女"
+                            />
+                        </Box>
+                        <Box className={classes.chooseBtn} m="auto">
+                            <img src="" width="30px" height="30px"/>
+                            <Box className={classes.flexEnd} pr="15%">女</Box>
+                        </Box>
+                    </Box>
+                </Box>
+            </Slide>
         )
     }
 
@@ -317,37 +319,30 @@ export default function SelectCharacter (): JSX.Element {
             onKeyDown={handleKeyDown}
             tabIndex={0}
         >
-            <Slide direction="right" in={true} timeout={800}>
-                <Grid item xs={5} className={classes.topLeftArea}>
-                    <Box className={classes.biggestSquare}>
-                        <img src={guide} alt='ナビイ' className={classes.guideImg}></img>
-                    </Box>
-                </Grid>
-            </Slide>
-            <Grid item xs={7} className={classes.topRightArea}>
-                {/* <Slide direction="down" in={true} timeout={800}>
-                    <Box className={classes.settingTitleArea}>
-                        <Box className={classes.settingTitle}>自由模式設定</Box>
-                    </Box>
-                </Slide>
-                <Slide direction="left" in={true} timeout={800}>
-                    <Box className={classes.chooseArea}>
-                        <SelectGoalBtn type="期間"/>
-                        <SelectGoalBtn type="金額"/>
-                        <SelectPlayerNumberBtn playerNum={1}/>
-                        <SelectPlayerNumberBtn playerNum={2}/>
-                        <SelectPlayerNumberBtn playerNum={3}/>
-                        <SelectPlayerNumberBtn playerNum={4}/>
-                    </Box>
-                </Slide> */}
+            <Grid item xs={5} className={classes.topLeftArea}>
+                <AITopLeftImgArea
+                    src={guide}
+                    alt='ナビイ'
+                />
+            </Grid>
 
-                <Slide direction="left" in={true} timeout={800}>
+            <Grid item xs={7} className={classes.topRightArea}>
+                <SettingTitleArea title="自由模式設定"/>
+                {/* <SelectGoal/>
+                <SelectNumberOfPlayers/> */}
+                <SelectGender/>
+
+                {/* <Slide direction="left" in={true} timeout={800}>
                     <Box className={classes.topRightFlexBox}>
                         <GoalArea/>
                     </Box>
-                </Slide>
+                </Slide> */}
             </Grid>
-            <AISpeakingDialog name="ナビイ" message="要選擇什麼遊戲模式呢？"/>
+            
+            <AISpeakingDialog
+                name="ナビイ"
+                message="要選擇什麼遊戲模式呢？"
+            />
         </Grid>
     )
 }

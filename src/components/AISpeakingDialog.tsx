@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Slide from '@material-ui/core/Slide'
 
-export default function AISpeakingDialog (props: {
+export default function AISpeakingDialog(props: {
     name: string,
     message: string
 }): JSX.Element {
@@ -24,10 +24,10 @@ export default function AISpeakingDialog (props: {
             top: '7.5%'
         },
         name: {
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100%",
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100%',
             fontWeight: 'bold',
             fontSize: '2rem',
         },
@@ -50,10 +50,10 @@ export default function AISpeakingDialog (props: {
         }
     }))
     const classes = styles()
-    
+
     // template
     return (
-        <Slide direction="up" in={true} timeout={800}>
+        <Slide direction='up' in={true} timeout={800}>
             <Grid item xs={12} className={classes.bottomArea}>
                 <Box className={classes.nameArea}>
                     <Box className={classes.name}>{name}</Box>

@@ -31,7 +31,7 @@ export default function AISpeakingDialog (props: {
     
     // template
     return (
-        <Slide direction="down" in={true} timeout={800}>
+        <Slide direction='down' in={true} timeout={800}>
             <Box className={classes.settingTitleArea}>
                 <Box className={classes.settingTitle}>{title}</Box>
             </Box>

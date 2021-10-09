@@ -40,48 +40,48 @@ export default function HomePage (): JSX.Element {
     return (
         <Fragment>
             <Typography
-                variant="h2"
-                color="textPrimary"
-                align="center"
-                children="DOKAPON THE WORLD"
+                variant='h2'
+                color='textPrimary'
+                align='center'
+                children='DOKAPON THE WORLD'
                 className={classes.title}
             />
             <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
+                display='flex'
+                justifyContent='center'
+                alignItems='center'
                 className={classes.container}
             >
                 <Box className={classes.buttonGroup}>
                     <Button
                         fullWidth
-                        variant="contained"
-                        color="primary"
-                        children="故事模式"
+                        variant='contained'
+                        color='primary'
+                        children='故事模式'
                         className={classes.buttons}
                         onClick={() => {window.location.assign('/StoryMode')}}
                     />
                     <Button
                         fullWidth
-                        variant="contained"
-                        color="primary"
-                        children="對戰模式"
+                        variant='contained'
+                        color='primary'
+                        children='對戰模式'
                         className={classes.buttons}
                         onClick={() => {window.location.assign('/SelectCharacter')}}
                     />
                     {/* <Button
                         fullWidth
-                        variant="contained"
-                        color="primary"
-                        children="繪圖"
+                        variant='contained'
+                        color='primary'
+                        children='繪圖'
                         className={classes.buttons}
                         onClick={() => {window.location.assign('/GraphEditor')}}
                     /> */}
                     <Button
                         fullWidth
-                        variant="contained"
-                        color="primary"
-                        children="設定"
+                        variant='contained'
+                        color='primary'
+                        children='設定'
                         className={classes.buttons}
                     />
                 </Box>

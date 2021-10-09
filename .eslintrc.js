@@ -2,7 +2,7 @@ module.exports = {
     root: true,
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        project: ["./tsconfig.json"]
+        project: ['./tsconfig.json']
     },
     plugins: [
         '@typescript-eslint',
@@ -10,15 +10,18 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        'plugin:@typescript-eslint/recommended-requiring-type-checking'
     ],
     rules: {
-        "@typescript-eslint/no-unused-vars": [
-            "warn", {
-                "vars": "all", // check all global vars that should be used
-                "args": "none", // don't check function args
-                "ignoreRestSiblings": false
+        '@typescript-eslint/no-unused-vars': [
+            'warn', {
+                'vars': 'all', // check all global vars that should be used
+                'args': 'none', // don't check function args
+                'ignoreRestSiblings': false
             }
+        ],
+        '@typescript-eslint/quotes': [
+            'error', 'single', { 'allowTemplateLiterals' : true }
         ]
     }
 }

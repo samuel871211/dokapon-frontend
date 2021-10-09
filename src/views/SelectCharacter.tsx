@@ -176,8 +176,29 @@ export default function SelectCharacter (): JSX.Element {
             flexDirection: 'column'
         },
         biggestSquare: {
-            width: "min(20vw, 41.6vh)",
+            width: 'min(20vw, 41.6vh)',
             margin: 'auto'
+        },
+        nameInputArea: {
+            height: '100vh'
+        },
+        nameDisplayArea: {
+            width: '40%',
+            height: '10%',
+            borderRadius: '30px',
+            border: '3px outset #222222',
+            backgroundColor: '#fee59a',
+            position: 'relative',
+            top: '5%',
+            left: '56%'
+        },
+        keyboardArea: {
+            width: '90%',
+            height: '80%',
+            margin: 'auto',
+            borderRadius: '30px',
+            border: '3px outset #222222',
+            backgroundColor: '#fee59a'
         },
         '@keyframes btnHoverFrom': {
             '0%': {
@@ -201,14 +222,14 @@ export default function SelectCharacter (): JSX.Element {
     // components
     function SelectGoal (): JSX.Element {
         return (
-            <Slide direction="left" in={true} timeout={800}>
-                <Box className={classes.chooseArea} flexDirection="column">
+            <Slide direction='left' in={true} timeout={800}>
+                <Box className={classes.chooseArea} flexDirection='column'>
                     <Box className={classes.chooseBtn}>
-                        <img width="30px" height="30px"/>
+                        <img width='30px' height='30px'/>
                         期間目標
                     </Box>
                     <Box className={classes.chooseBtn}>
-                        <img width="30px" height="30px"/>
+                        <img width='30px' height='30px'/>
                         金額目標
                     </Box>
                 </Box>
@@ -222,19 +243,19 @@ export default function SelectCharacter (): JSX.Element {
             const { playerNum } = props
             const icons = []
             for (let i = 0; i <= 4; i++) {
-                if (i < playerNum) icons.push(<PersonIcon fontSize="large"/>)
-                else icons.push(<AdbIcon fontSize="large"/>)
+                if (i < playerNum) icons.push(<PersonIcon fontSize='large'/>)
+                else icons.push(<AdbIcon fontSize='large'/>)
             }
             return (
                 <Box className={classes.chooseBtn}>
                     {icons}
-                    <Box className={classes.flexEnd} pr="5%">1人</Box>
+                    <Box className={classes.flexEnd} pr='5%'>1人</Box>
                 </Box>
             )
         }
         return (
-            <Slide direction="left" in={true} timeout={800}>
-                <Box className={classes.chooseArea} flexDirection="column">
+            <Slide direction='left' in={true} timeout={800}>
+                <Box className={classes.chooseArea} flexDirection='column'>
                     <SelectNumberOfPlayersBtn playerNum={1}/>
                     <SelectNumberOfPlayersBtn playerNum={2}/>
                     <SelectNumberOfPlayersBtn playerNum={3}/>
@@ -248,20 +269,20 @@ export default function SelectCharacter (): JSX.Element {
         const suffixMale = '/imgs/beginner_male_red_front.png'
         const suffixFemale = '/imgs/beginner_female_red_front.png'
         return (
-            <Slide direction="left" in={true} timeout={800}>
+            <Slide direction='left' in={true} timeout={800}>
                 <Box className={classes.chooseArea}>
                     <Box className={classes.selectGenderBlock}>
                         <Box flexGrow={1}></Box>
                         <Box className={classes.biggestSquare}>
                             <img 
                                 src={`${backendUrl}${suffixMale}`}
-                                width="100%"
-                                alt="男"
+                                width='100%'
+                                alt='男'
                             />
                         </Box>
-                        <Box className={classes.chooseBtn} m="auto">
-                            <img src="" width="30px" height="30px"/>
-                            <Box className={classes.flexEnd} pr="15%">男</Box>
+                        <Box className={classes.chooseBtn} m='auto'>
+                            <img src='' width='30px' height='30px'/>
+                            <Box className={classes.flexEnd} pr='15%'>男</Box>
                         </Box>
                     </Box>
                     <Box className={classes.selectGenderBlock}>
@@ -269,13 +290,13 @@ export default function SelectCharacter (): JSX.Element {
                         <Box className={classes.biggestSquare}>
                             <img 
                                 src={`${backendUrl}${suffixFemale}`}
-                                width="100%"
-                                alt="女"
+                                width='100%'
+                                alt='女'
                             />
                         </Box>
-                        <Box className={classes.chooseBtn} m="auto">
-                            <img src="" width="30px" height="30px"/>
-                            <Box className={classes.flexEnd} pr="15%">女</Box>
+                        <Box className={classes.chooseBtn} m='auto'>
+                            <img src='' width='30px' height='30px'/>
+                            <Box className={classes.flexEnd} pr='15%'>女</Box>
                         </Box>
                     </Box>
                 </Box>
@@ -304,6 +325,19 @@ export default function SelectCharacter (): JSX.Element {
         )
     }
 
+    function NameInputArea (): JSX.Element {
+        return (
+            <Slide direction='up' in={true} timeout={800}>
+                <Grid item xs={12} className={classes.nameInputArea}>
+                    <Box className={classes.nameDisplayArea}>
+                    </Box>
+                    <Box className={classes.keyboardArea}>
+                    </Box>
+                </Grid>
+            </Slide>
+        )
+    }
+
     // mount
     useEffect(() => {
         // focus on this HTML Element so that it can handle key down
@@ -313,36 +347,37 @@ export default function SelectCharacter (): JSX.Element {
     // template
     return (
         <Grid
-            id="gridContainer"
+            id='gridContainer'
             container
             className={classes.container}
             onKeyDown={handleKeyDown}
             tabIndex={0}
         >
-            <Grid item xs={5} className={classes.topLeftArea}>
+            <NameInputArea/>
+            {/* <Grid item xs={5} className={classes.topLeftArea}>
                 <AITopLeftImgArea
                     src={guide}
                     alt='ナビイ'
                 />
-            </Grid>
+            </Grid> */}
 
-            <Grid item xs={7} className={classes.topRightArea}>
-                <SettingTitleArea title="自由模式設定"/>
-                {/* <SelectGoal/>
-                <SelectNumberOfPlayers/> */}
+            {/* <Grid item xs={7} className={classes.topRightArea}>
+                <SettingTitleArea title='自由模式設定'/>
+                <SelectGoal/>
+                <SelectNumberOfPlayers/>
                 <SelectGender/>
 
-                {/* <Slide direction="left" in={true} timeout={800}>
+                <Slide direction='left' in={true} timeout={800}>
                     <Box className={classes.topRightFlexBox}>
                         <GoalArea/>
                     </Box>
-                </Slide> */}
-            </Grid>
+                </Slide>
+            </Grid> */}
             
-            <AISpeakingDialog
-                name="ナビイ"
-                message="要選擇什麼遊戲模式呢？"
-            />
+            {/* <AISpeakingDialog
+                name='ナビイ'
+                message='要選擇什麼遊戲模式呢？'
+            /> */}
         </Grid>
     )
 }

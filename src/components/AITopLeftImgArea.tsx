@@ -11,8 +11,8 @@ export default function AISpeakingDialog (props: {
     // styles
     const styles = makeStyles(() => ({
         biggestSquare: {
-            width: "min(41.6vw, 65vh)",
-            height: "min(41.6vw, 65vh)"
+            width: 'min(41.6vw, 65vh)',
+            height: 'min(41.6vw, 65vh)'
         },
         guideImg: {
             clipPath: 'polygon(0% 0%, 33.3% 0%, 33.3% 33.3%, 0% 33.3%)',
@@ -24,7 +24,7 @@ export default function AISpeakingDialog (props: {
     
     // template
     return (
-        <Slide direction="right" in={true} timeout={800}>
+        <Slide direction='right' in={true} timeout={800}>
             <Box className={classes.biggestSquare}>
                 <img src={src} alt={alt} className={classes.guideImg}></img>
             </Box>

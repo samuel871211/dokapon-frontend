@@ -1,9 +1,10 @@
 import guide from '../imgs/guide.png'
-import selectCharacterBackground from '../imgs/selectCharacterBackground.png'
+// import selectCharacterBackground from '../imgs/selectCharacterBackground.png'
 // import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
+import Fade from '@material-ui/core/Fade'
 import Slide from '@material-ui/core/Slide'
 // slide裡面只能允許單一children，且不可包裝成component，
 import CustomBorderBottom from '../components/CustomBorderBottom'
@@ -14,6 +15,8 @@ import { Fragment, useEffect, useState } from 'react'
 import SettingTitleArea from '../components/SettingTitleArea'
 import AISpeakingDialog from '../components/AISpeakingDialog'
 import AITopLeftImgArea from '../components/AITopLeftImgArea'
+import JAPAN_WORDS from '../global/JAPAN_WORDS'
+import STYLE from '../global/STYLE'
 // import { SVG } from '../global/shapes'
 
 // 目標 => 人數 => 性別 => 名字 => 顏色 => 職業
@@ -58,13 +61,11 @@ export default function SelectCharacter (): JSX.Element {
     }
 
     // styles
+    const globalStyle = STYLE()
     const styles = makeStyles(() => ({
         container: {
             width: '100%',
             height: '100%',
-            backgroundImage: `url(${selectCharacterBackground})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '100% auto',
             overflow: 'hidden'
         },
         topRightArea: {
@@ -73,35 +74,21 @@ export default function SelectCharacter (): JSX.Element {
         chooseArea: {
             width: '80%',
             height: '80%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
+            margin: 'auto'
         },
         chooseBtn: {
             width: '80%',
             height: '15%',
             marginTop: '5%',
-            borderRadius: '30px',
-            border: '3px outset #222222',
-            backgroundColor: '#fee59a',
             display: 'flex',
             paddingLeft: '5%',
             alignItems: 'center',
             fontWeight: 'bold',
             fontSize: '2rem',
-            letterSpacing: '1px',
-            // '&:hover': {
-            //     animation: `$btnHoverFrom 500ms, $btnHoverTo 500ms`,
-            //     animationIterationCount: 'infinite',
-            //     animationDirection: 'alternate',
-            //     animationTimingFunction: 'ease-in-out'
-            // }
+            letterSpacing: '1px'
         },
         topLeftArea: {
             height: '65%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
             overflow: 'hidden'
         },
         topRightFlexBox: {
@@ -112,50 +99,28 @@ export default function SelectCharacter (): JSX.Element {
         },
         goalArea: {
             width: '80%',
-            height: '40%',
-            borderRadius: '30px',
-            border: '3px outset #222222',
-            backgroundColor: '#fee59a'
+            height: '40%'
         },
         goalTitle: {
             width: '100%',
             height: '50px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
             textAlign: 'center',
             fontWeight: 'bold',
-            fontSize: '2rem',
+            fontSize: '2rem'
         },
         goalInputArea: {
-            display: 'flex',
-            justifyContent: 'center',
-            height: 'calc(100% - 60px)',
-            alignItems: 'center'
+            height: 'calc(100% - 60px)'
         },
         goalBtnGroup: {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderRadius: '30px',
-            border: '3px outset #222222',
-            backgroundColor: '#fee59a',
             padding: '8px'
         },
         goalBtn: {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
             width: '35px',
             height: '35px',
             fontWeight: 'bold',
             fontSize: '2rem',
             marginLeft: '1px',
-            marginRight: '1px',
-            animation: `$btnHoverFrom 500ms, $btnHoverTo 500ms`,
-            animationIterationCount: 'infinite',
-            animationDirection: 'alternate',
-            animationTimingFunction: 'ease-in-out'
+            marginRight: '1px'
         },
         goalUnit: {
             textAlign: 'center',
@@ -185,36 +150,83 @@ export default function SelectCharacter (): JSX.Element {
         nameDisplayArea: {
             width: '40%',
             height: '10%',
-            borderRadius: '30px',
-            border: '3px outset #222222',
-            backgroundColor: '#fee59a',
             position: 'relative',
             top: '5%',
             left: '56%'
+        },
+        nameDisplaySingleWord: {
+            width: 'calc(100% / 10)',
+            flexDirection: 'column',
+            fontWeight: 'bold',
+            fontSize: '2.5rem'
+        },
+        nameDisplayBottomLine: {
+            width: '90%',
+            height: '3px',
+            backgroundColor: 'black'
         },
         keyboardArea: {
             width: '90%',
             height: '80%',
             margin: 'auto',
-            borderRadius: '30px',
-            border: '3px outset #222222',
-            backgroundColor: '#fee59a'
+            padding: '5vh 0%',
+            display: 'flex',
+            justifyContent: 'space-evenly'
         },
-        '@keyframes btnHoverFrom': {
-            '0%': {
-                backgroundColor: '#9bd65b'
-            },
-            '100%': {
-                backgroundColor: '#fee59a'
-            }
+        keyboardSection: {
+            width: '30%',
+            display: 'flex',
+            flexWrap: 'wrap'
         },
-        '@keyframes btnHoverTo': {
-            '0%': {
-                backgroundColor: '#fee59a'
-            },
-            '100%': {
-                backgroundColor: '#9bd65b'
-            }
+        keyboardKey: {
+            width: '20%',
+            height: 'calc(100% / 9)',
+            fontSize: '2.5rem',
+            fontWeight: 'bold'
+        },
+        keyboardMenu: {
+            width: '15%',
+            display: 'flex',
+            flexDirection: 'column'
+        },
+        keyboardMenuBtn: {
+            fontSize: '2.5rem',
+            fontWeight: 'bold',
+            height: 'calc(100% / 9)',
+            display: 'flex',
+            alignItems: 'center'
+        },
+        colorExampleImgContainer: {
+            width: '65%',
+            height: '100%'
+        },
+        colorExampleImg: {
+            width: 'min(calc(100vw / 12 * 7 * 0.8 * 0.65), calc(65vh * 0.8))',
+            height: 'min(calc(100vw / 12 * 7 * 0.8 * 0.65), calc(65vh * 0.8))'
+        },
+        selectColorBtnGroup: {
+            flexDirection: 'column',
+            justifyContent: 'space-around',
+            width: '35%',
+            height: '100%',
+        },
+        selectColorBtn: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-around',
+            width: '90%',
+            height: 'calc(100% / 10)'
+        },
+        selectColorCircle: {
+            borderRadius: '50%',
+            border: '2px solid black',
+            background: 'red',
+            height: '90%',
+            width: '20%'
+        },
+        selectColorName: {
+            fontSize: '1.5rem',
+            fontWeight: 'bold'
         }
     }))
     const classes = styles()
@@ -223,12 +235,12 @@ export default function SelectCharacter (): JSX.Element {
     function SelectGoal (): JSX.Element {
         return (
             <Slide direction='left' in={true} timeout={800}>
-                <Box className={classes.chooseArea} flexDirection='column'>
-                    <Box className={classes.chooseBtn}>
+                <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`} flexDirection='column'>
+                    <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`}>
                         <img width='30px' height='30px'/>
                         期間目標
                     </Box>
-                    <Box className={classes.chooseBtn}>
+                    <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`}>
                         <img width='30px' height='30px'/>
                         金額目標
                     </Box>
@@ -242,12 +254,12 @@ export default function SelectCharacter (): JSX.Element {
         function SelectNumberOfPlayersBtn (props: { playerNum: number }): JSX.Element {
             const { playerNum } = props
             const icons = []
-            for (let i = 0; i <= 4; i++) {
+            for (let i = 0; i < 4; i++) {
                 if (i < playerNum) icons.push(<PersonIcon fontSize='large'/>)
                 else icons.push(<AdbIcon fontSize='large'/>)
             }
             return (
-                <Box className={classes.chooseBtn}>
+                <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`}>
                     {icons}
                     <Box className={classes.flexEnd} pr='5%'>1人</Box>
                 </Box>
@@ -255,7 +267,7 @@ export default function SelectCharacter (): JSX.Element {
         }
         return (
             <Slide direction='left' in={true} timeout={800}>
-                <Box className={classes.chooseArea} flexDirection='column'>
+                <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`} flexDirection='column'>
                     <SelectNumberOfPlayersBtn playerNum={1}/>
                     <SelectNumberOfPlayersBtn playerNum={2}/>
                     <SelectNumberOfPlayersBtn playerNum={3}/>
@@ -270,7 +282,7 @@ export default function SelectCharacter (): JSX.Element {
         const suffixFemale = '/imgs/beginner_female_red_front.png'
         return (
             <Slide direction='left' in={true} timeout={800}>
-                <Box className={classes.chooseArea}>
+                <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
                     <Box className={classes.selectGenderBlock}>
                         <Box flexGrow={1}></Box>
                         <Box className={classes.biggestSquare}>
@@ -280,7 +292,7 @@ export default function SelectCharacter (): JSX.Element {
                                 alt='男'
                             />
                         </Box>
-                        <Box className={classes.chooseBtn} m='auto'>
+                        <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`} m='auto'>
                             <img src='' width='30px' height='30px'/>
                             <Box className={classes.flexEnd} pr='15%'>男</Box>
                         </Box>
@@ -294,7 +306,7 @@ export default function SelectCharacter (): JSX.Element {
                                 alt='女'
                             />
                         </Box>
-                        <Box className={classes.chooseBtn} m='auto'>
+                        <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`} m='auto'>
                             <img src='' width='30px' height='30px'/>
                             <Box className={classes.flexEnd} pr='15%'>女</Box>
                         </Box>
@@ -304,19 +316,73 @@ export default function SelectCharacter (): JSX.Element {
         )
     }
 
+    function SelectColor (): JSX.Element {
+        const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
+        const suffix = 'imgs/warrior_male_red_front.png'
+        return (
+            <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
+                <Fade in={true} timeout={1200}>
+                    <Box className={`${classes.colorExampleImgContainer} ${globalStyle.xyCenter}`}>
+                        <img src={`${prefix}/${suffix}`} className={`${classes.colorExampleImg}`}/>
+                    </Box>
+                </Fade>
+                <Slide direction="up" in={true} timeout={800}>
+                    <Box className={`${classes.selectColorBtnGroup} ${globalStyle.xyCenter}`}>
+                        <Box className={`${classes.selectColorBtn} ${globalStyle.yellowBlock}`}>
+                            <Box className={classes.selectColorCircle}></Box>
+                            <Box className={classes.selectColorName}>紅色</Box>
+                        </Box>
+                        <Box className={`${classes.selectColorBtn} ${globalStyle.yellowBlock}`}>
+                            <Box className={classes.selectColorCircle}></Box>
+                            <Box className={classes.selectColorName}>紅色</Box>
+                        </Box>
+                        <Box className={`${classes.selectColorBtn} ${globalStyle.yellowBlock}`}>
+                            <Box className={classes.selectColorCircle}></Box>
+                            <Box className={classes.selectColorName}>紅色</Box>
+                        </Box>
+                        <Box className={`${classes.selectColorBtn} ${globalStyle.yellowBlock}`}>
+                            <Box className={classes.selectColorCircle}></Box>
+                            <Box className={classes.selectColorName}>紅色</Box>
+                        </Box>
+                        <Box className={`${classes.selectColorBtn} ${globalStyle.yellowBlock}`}>
+                            <Box className={classes.selectColorCircle}></Box>
+                            <Box className={classes.selectColorName}>紅色</Box>
+                        </Box>
+                        <Box className={`${classes.selectColorBtn} ${globalStyle.yellowBlock}`}>
+                            <Box className={classes.selectColorCircle}></Box>
+                            <Box className={classes.selectColorName}>紅色</Box>
+                        </Box>
+                        <Box className={`${classes.selectColorBtn} ${globalStyle.yellowBlock}`}>
+                            <Box className={classes.selectColorCircle}></Box>
+                            <Box className={classes.selectColorName}>紅色</Box>
+                        </Box>
+                        <Box className={`${classes.selectColorBtn} ${globalStyle.yellowBlock}`}>
+                            <Box className={classes.selectColorCircle}></Box>
+                            <Box className={classes.selectColorName}>紅色</Box>
+                        </Box>
+                        <Box className={`${classes.selectColorBtn} ${globalStyle.yellowBlock}`}>
+                            <Box className={classes.selectColorCircle}></Box>
+                            <Box className={classes.selectColorName}>紅色</Box>
+                        </Box>
+                    </Box>
+                </Slide>
+            </Box>
+        )
+    }
+
     function GoalArea (): JSX.Element {
         const inputBlocks = []
         const goalUnit = selectedGoal === '期間' ? '週' : '¥'
         const inputLen = selectedGoal === '期間' ? 3 : 9
         for (let i = 0; i < inputLen; i++) {
-            inputBlocks.push(<Box className={classes.goalBtn} key={i}>0</Box>)
+            inputBlocks.push(<Box className={`${classes.goalBtn} ${globalStyle.xyCenter}`} key={i}>0</Box>)
         }
         return (
-            <Box className={classes.goalArea}>
-                <Box className={classes.goalTitle}>目標{selectedGoal}</Box>
+            <Box className={`${classes.goalArea} ${globalStyle.yellowBlock}`}>
+                <Box className={`${classes.goalTitle} ${globalStyle.xyCenter}`}>目標{selectedGoal}</Box>
                 <CustomBorderBottom/>
-                <Box className={classes.goalInputArea}>
-                    <Box className={classes.goalBtnGroup}>
+                <Box className={`${classes.goalInputArea} ${globalStyle.xyCenter}`}>
+                    <Box className={`${classes.goalBtnGroup} ${globalStyle.xyCenter} ${globalStyle.yellowBlock}`}>
                         {inputBlocks}
                     </Box>
                     <Box className={classes.goalUnit}>{goalUnit}</Box>
@@ -325,13 +391,84 @@ export default function SelectCharacter (): JSX.Element {
         )
     }
 
-    function NameInputArea (): JSX.Element {
+    function NameInputArea (props: { section: 'hiragana' | 'katakana' | 'special' }): JSX.Element {
+        const { section } = props
+        
+        const rows1: Array<JSX.Element> = []
+        const rows2: Array<JSX.Element> = []
+        function KeyBoardKey (props: { word: string }): JSX.Element {
+            const { word } = props
+            return (
+                <Box className={`${classes.keyboardKey} ${globalStyle.xyCenter}`}>
+                    {word}
+                </Box>
+            )
+        }
+        JAPAN_WORDS[section][0].forEach((word, index) => {
+            rows1.push(<KeyBoardKey word={word} key={index}/>)
+        })
+        JAPAN_WORDS[section][1].forEach((word, index) => {
+            rows2.push(<KeyBoardKey word={word} key={index}/>)
+        })
         return (
             <Slide direction='up' in={true} timeout={800}>
                 <Grid item xs={12} className={classes.nameInputArea}>
-                    <Box className={classes.nameDisplayArea}>
+                    <Box className={`${classes.nameDisplayArea} ${globalStyle.xyCenter} ${globalStyle.yellowBlock}`}>
+                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                            我
+                            <Box className={classes.nameDisplayBottomLine}></Box>
+                        </Box>
+                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                            真
+                            <Box className={classes.nameDisplayBottomLine}></Box>
+                        </Box>
+                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                            的
+                            <Box className={classes.nameDisplayBottomLine}></Box>
+                        </Box>
+                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                            是
+                            <Box className={classes.nameDisplayBottomLine}></Box>
+                        </Box>
+                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                            一
+                            <Box className={classes.nameDisplayBottomLine}></Box>
+                        </Box>
+                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                            個
+                            <Box className={classes.nameDisplayBottomLine}></Box>
+                        </Box>
+                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                            帥
+                            <Box className={classes.nameDisplayBottomLine}></Box>
+                        </Box>
+                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                            哥
+                            <Box className={classes.nameDisplayBottomLine}></Box>
+                        </Box>
+                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                            拉
+                            <Box className={classes.nameDisplayBottomLine}></Box>
+                        </Box>
                     </Box>
-                    <Box className={classes.keyboardArea}>
+                    <Box className={`${classes.keyboardArea} ${globalStyle.yellowBlock}`}>
+                        <Box className={classes.keyboardSection}>
+                            {rows1}
+                        </Box>
+                        <Box className={classes.keyboardSection}>
+                            {rows2}
+                        </Box>
+                        <Box className={classes.keyboardMenu}>
+                            <Box className={classes.keyboardMenuBtn}>平假名</Box>
+                            <Box className={classes.keyboardMenuBtn}>片假名</Box>
+                            <Box className={classes.keyboardMenuBtn}>ＡＢＣ</Box>
+                            <Box className={classes.keyboardMenuBtn}></Box>
+                            <Box className={classes.keyboardMenuBtn}>前進</Box>
+                            <Box className={classes.keyboardMenuBtn}>後退</Box>
+                            <Box className={classes.keyboardMenuBtn}>刪除</Box>
+                            <Box className={classes.keyboardMenuBtn}></Box>
+                            <Box className={classes.keyboardMenuBtn}>ＯＫ</Box>
+                        </Box>
                     </Box>
                 </Grid>
             </Slide>
@@ -353,31 +490,32 @@ export default function SelectCharacter (): JSX.Element {
             onKeyDown={handleKeyDown}
             tabIndex={0}
         >
-            <NameInputArea/>
-            {/* <Grid item xs={5} className={classes.topLeftArea}>
+            {/* <NameInputArea section='hiragana'/> */}
+            <Grid item xs={5} className={`${classes.topLeftArea} ${globalStyle.xyCenter}`}>
                 <AITopLeftImgArea
                     src={guide}
                     alt='ナビイ'
                 />
-            </Grid> */}
+            </Grid>
 
-            {/* <Grid item xs={7} className={classes.topRightArea}>
+            <Grid item xs={7} className={classes.topRightArea}>
                 <SettingTitleArea title='自由模式設定'/>
-                <SelectGoal/>
-                <SelectNumberOfPlayers/>
-                <SelectGender/>
+                {/* <SelectGoal/> */}
+                {/* <SelectNumberOfPlayers/> */}
+                {/* <SelectGender/> */}
+                <SelectColor/>
 
-                <Slide direction='left' in={true} timeout={800}>
+                {/* <Slide direction='left' in={true} timeout={800}>
                     <Box className={classes.topRightFlexBox}>
                         <GoalArea/>
                     </Box>
-                </Slide>
-            </Grid> */}
+                </Slide> */}
+            </Grid>
             
-            {/* <AISpeakingDialog
+            <AISpeakingDialog
                 name='ナビイ'
                 message='要選擇什麼遊戲模式呢？'
-            /> */}
+            />
         </Grid>
     )
 }

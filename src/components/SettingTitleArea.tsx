@@ -10,9 +10,9 @@ export default function AISpeakingDialog (props: {
     // styles
     const styles = makeStyles(() => ({
         settingTitleArea: {
-            width: '80%',
+            width: '70%',
             height: '15%',
-            marginTop: '5%',
+            margin: '5% 15% 0% 15%',
             borderRadius: '30px',
             border: '3px outset #222222',
             backgroundColor: '#fee59a'

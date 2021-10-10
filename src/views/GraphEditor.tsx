@@ -1,4 +1,4 @@
-import * as shapes from '../global/shapes'
+import * as SHAPES from '../global/SHAPES'
 import { useState, useEffect, Fragment } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
@@ -70,7 +70,7 @@ export default function GraphEditor (): JSX.Element {
     function addElement (name: string): void {
         if (!selectedLink) return
 
-        const newElement = shapes.createElement(name)
+        const newElement = SHAPES.createElement(name)
         newElement.addTo(graph)
         let connectedElement: joint.dia.Element | null = null
         let endPoint: joint.g.Point = new joint.g.Point()
@@ -128,7 +128,7 @@ export default function GraphEditor (): JSX.Element {
         closeAddElementCtxMenu()
         
         // // 單獨新增element，暫時不支援
-        // const element = shapes.createElement(name)
+        // const element = SHAPES.createElement(name)
         // element.position(addCellPos.x, addCellPos.y)
         // element.addTo(graph)
         // closeAddElementCtxMenu()
@@ -137,7 +137,7 @@ export default function GraphEditor (): JSX.Element {
     function addLink (name: string, direction: string): void {
         if (!selectedElement) return
 
-        const link = shapes.createLink(name)
+        const link = SHAPES.createLink(name)
         const centerPoint = {
             x: selectedElement.position().x + selectedElement.size().width / 2,
             y: selectedElement.position().y + selectedElement.size().height / 2
@@ -180,7 +180,7 @@ export default function GraphEditor (): JSX.Element {
         closeAddLinkCtxMenu()
 
         // // 單獨新增link，暫時不支援
-        // const link = shapes.createLink(name)
+        // const link = SHAPES.createLink(name)
         // const sourceAxis = {
         //     x: addCellPos.x,
         //     y: addCellPos.y
@@ -353,7 +353,7 @@ export default function GraphEditor (): JSX.Element {
                     <image
                         opacity={disabled ? 0.5 : 1}
                         width="24" height="24"
-                        href={'data:image/svg+xml;utf8,' + encodeURIComponent(shapes.SVG[type])}
+                        href={'data:image/svg+xml;utf8,' + encodeURIComponent(SHAPES.SVG[type])}
                     />
                 </SvgIcon>
             </IconButton>
@@ -960,7 +960,7 @@ export default function GraphEditor (): JSX.Element {
                 })
                 graph.fromJSON(response.data)
                 if (graph.getCells().length === 0) {
-                    const firstCell = shapes.createElement('battleField')
+                    const firstCell = SHAPES.createElement('battleField')
                     firstCell.position(0, 0)
                     firstCell.addTo(graph)
                 }
@@ -1077,7 +1077,7 @@ export default function GraphEditor (): JSX.Element {
                     <MenuItem disabled>新增元件</MenuItem>
                     <Box style={{ width: '200px' }}>
                         <Grid container>
-                            {shapes.ELEMENTS.map((type, index) =>
+                            {SHAPES.ELEMENTS.map((type, index) =>
                                 <Grid
                                     item xs={4}
                                     key={index}

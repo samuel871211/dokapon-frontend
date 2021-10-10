@@ -9,7 +9,7 @@ import $ from 'jquery'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
 import { getCells } from '../api/graph'
-import * as characters from '../global/characters'
+import * as CHARACTERS from '../global/CHARACTERS'
 
 export default function BattleMode (): JSX.Element {
     // data
@@ -46,7 +46,7 @@ export default function BattleMode (): JSX.Element {
                     x: number,
                     y: number
                 ) {
-                    const character = characters.createCharacter({
+                    const character = CHARACTERS.createCharacter({
                         job: '',
                         gender: '',
                         color: ''

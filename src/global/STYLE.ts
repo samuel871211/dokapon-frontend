@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles'
-const STYLE = makeStyles(() => ({
+
+const style = makeStyles(() => ({
     yellowBlock: {
         borderRadius: '30px',
         border: '3px outset #222222',
@@ -34,4 +35,4 @@ const STYLE = makeStyles(() => ({
     }
 }))
 
-export default STYLE
+export default style

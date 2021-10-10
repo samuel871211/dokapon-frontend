@@ -1,4 +1,4 @@
-import * as SHAPES from '../global/SHAPES'
+import * as SHAPES from '../global/shapes'
 import { useState, useEffect, Fragment } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'

@@ -87,7 +87,7 @@ export default function SelectCharacter (): JSX.Element {
             height: '65%',
             overflow: 'hidden'
         },
-        goalArea: {
+        goalInputArea: {
             width: '80%',
             height: '40%',
             margin: 'calc(65vh * 0.3) 10%'
@@ -179,23 +179,21 @@ export default function SelectCharacter (): JSX.Element {
             alignItems: 'center'
         },
         colorExampleImgContainer: {
-            width: '65%',
+            width: '55%',
             height: '100%'
         },
         colorExampleImg: {
-            width: 'min(calc(100vw / 12 * 7 * 0.8 * 0.65), calc(65vh * 0.8))',
-            height: 'min(calc(100vw / 12 * 7 * 0.8 * 0.65), calc(65vh * 0.8))'
+            width: 'min(calc(100vw / 12 * 7 * 0.8 * 0.55), calc(65vh * 0.8))',
+            height: 'min(calc(100vw / 12 * 7 * 0.8 * 0.55), calc(65vh * 0.8))'
         },
-        selectColorOrJobBtnGroup: {
+        verticalBtnGroup: {
+            display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-around',
-            width: '35%',
+            alignItems: 'end',
+            width: '45%',
             height: '100%',
         },
-        selectJobBtn: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-around',
+        selectJobOrAILevelBtn: {
             width: '90%',
             height: 'calc(100% / 6)',
             fontSize: '2.5rem',
@@ -204,25 +202,59 @@ export default function SelectCharacter (): JSX.Element {
         selectColorBtn: {
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-around',
-            width: '90%',
+            justifyContent: 'space-between',
+            width: '70%',
             height: 'calc(100% / 11)'
         },
         selectColorCircle: {
             borderRadius: '50%',
             border: '2px solid black',
             height: '90%',
-            width: '20%'
+            width: '20%',
+            marginLeft: '7.5%'
         },
         selectColorName: {
             fontSize: '1.5rem',
+            fontWeight: 'bold',
+            marginRight: '7.5%'
+        },
+        aiGenerateDialog: {
+            width: '85%',
+            height: '100%',
+            position: 'relative',
+            top: '5%',
+            left: '5%',
+            display: 'flex',
+            flexDirection: 'column'
+        },
+        aiGenerateDialogTitle: {
+            fontWeight: 'bold',
+            fontSize: '2.5rem',
+            textAlign: 'center',
+            width: '100%'
+        },
+        aiGenerateDialogBottom: {
+            display: 'flex',
+            flexGrow: 1
+        },
+        aiGenerateDialogBtnGroup: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            width: '50%'
+        },
+        aiGenerateDialogBtn: {
+            height: 'calc(100% / 6)',
+            width: '90%',
+            fontSize: '2.5rem',
             fontWeight: 'bold'
         }
     }))
     const classes = useStyles()
 
     // components
-    function SelectGoal (): JSX.Element {
+    function SelectGoalType (): JSX.Element {
         return (
             <Slide direction='left' in={true} timeout={800}>
                 <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`} flexDirection='column'>
@@ -306,11 +338,20 @@ export default function SelectCharacter (): JSX.Element {
         )
     }
 
-    function SelectColorAndJob (): JSX.Element {
+    function ExampleCharacterImg (): JSX.Element {
         const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
         const suffix = 'imgs/warrior_male_red_front.png'
+        return (
+            <Fade in={true} timeout={1200}>
+                <Box className={`${classes.colorExampleImgContainer} ${globalStyle.xyCenter}`}>
+                    <img src={`${prefix}/${suffix}`} className={`${classes.colorExampleImg}`}/>
+                </Box>
+            </Fade>
+        )
+    }
+
+    function SelectColor (): JSX.Element {
         const colorRows = []
-        const jobRows = []
 
         for (const [color, value] of Object.entries(colors)) {
             const { chinese, rgb } = value
@@ -322,24 +363,41 @@ export default function SelectCharacter (): JSX.Element {
             )
         }
 
+        return (
+            <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
+                <ExampleCharacterImg/>
+                <Slide direction="up" in={true} timeout={800}>
+                    <Box className={`${classes.verticalBtnGroup}`} justifyContent="space-evenly">
+                        {colorRows}
+                    </Box>
+                </Slide>
+            </Box>
+        )
+    }
+
+    function SelectJob (): JSX.Element {
+        const jobRows = []
+
         for (const [job, value] of Object.entries(basicJobs)) {
             const { chinese } = value
             jobRows.push(
-                <Box className={`${classes.selectJobBtn} ${globalStyle.yellowBlock}`} key={chinese}>
-                    {chinese}
-                </Box>
+                <Box
+                    className={`\t
+                        ${classes.selectJobOrAILevelBtn}\t
+                        ${globalStyle.yellowBlock}\t
+                        ${globalStyle.xyCenter}\t
+                    `}
+                    key={chinese}
+                    children={chinese}
+                />
             )
         }
 
         return (
             <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
-                <Fade in={true} timeout={1200}>
-                    <Box className={`${classes.colorExampleImgContainer} ${globalStyle.xyCenter}`}>
-                        <img src={`${prefix}/${suffix}`} className={`${classes.colorExampleImg}`}/>
-                    </Box>
-                </Fade>
+                <ExampleCharacterImg/>
                 <Slide direction="up" in={true} timeout={800}>
-                    <Box className={`${classes.selectColorOrJobBtnGroup} ${globalStyle.xyCenter}`}>
+                    <Box className={`${classes.verticalBtnGroup}`} justifyContent="space-evenly">
                         {jobRows}
                     </Box>
                 </Slide>
@@ -347,7 +405,37 @@ export default function SelectCharacter (): JSX.Element {
         )
     }
 
-    function GoalArea (): JSX.Element {
+    function SelectAILevel (): JSX.Element {
+        const aiLevelRows = []
+
+        for (const aiLevel of ['弱', '普通', '狡猾']) {
+            aiLevelRows.push(
+                <Box
+                    className={`
+                        ${classes.selectJobOrAILevelBtn}
+                        ${globalStyle.yellowBlock}
+                        ${globalStyle.xyCenter}
+                    `}
+                    key={aiLevel}
+                    children={aiLevel}
+                    mb={2}
+                />
+            )
+        }
+
+        return (
+            <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
+                <Box width="65%"></Box>
+                <Slide direction="up" in={true} timeout={800}>
+                    <Box className={`${classes.verticalBtnGroup}`} justifyContent="center">
+                        {aiLevelRows}
+                    </Box>
+                </Slide>
+            </Box>
+        )
+    }
+
+    function GoalInputArea (): JSX.Element {
         const inputBlocks = []
         const goalUnit = selectedGoal === '期間' ? '週' : '¥'
         const inputLen = selectedGoal === '期間' ? 3 : 9
@@ -358,7 +446,7 @@ export default function SelectCharacter (): JSX.Element {
         }
         return (
             <Slide direction='left' in={true} timeout={800}>
-                <Box className={`${classes.goalArea} ${globalStyle.yellowBlock}`}>
+                <Box className={`${classes.goalInputArea} ${globalStyle.yellowBlock}`}>
                     <Box className={`${classes.goalTitle} ${globalStyle.xyCenter}`}>目標{selectedGoal}</Box>
                     <CustomBorderBottom/>
                     <Box height='calc(100% - 60px)' className={globalStyle.xyCenter}>
@@ -369,6 +457,25 @@ export default function SelectCharacter (): JSX.Element {
                     </Box>
                 </Box>
             </Slide>
+        )
+    }
+
+    function AIGenerateDialog (): JSX.Element {
+        return (
+            <Box className={`${classes.aiGenerateDialog} ${globalStyle.yellowBlock}`}>
+                <Box className={classes.aiGenerateDialogTitle}>勇者募集!!</Box>
+                <CustomBorderBottom/>
+                <Box className={`${classes.aiGenerateDialogBottom}`}>
+                    <Box className={globalStyle.xyCenter} width="50%">aaa</Box>
+                    <Box className={`${classes.aiGenerateDialogBtnGroup}`}>
+                        <Box className={`${globalStyle.yellowBlock} ${classes.aiGenerateDialogBtn} ${globalStyle.xyCenter}`}>弱</Box>
+                        <Box className={`${globalStyle.yellowBlock} ${classes.aiGenerateDialogBtn} ${globalStyle.xyCenter}`}>男</Box>
+                        <Box className={`${globalStyle.yellowBlock} ${classes.aiGenerateDialogBtn} ${globalStyle.xyCenter}`}>綠</Box>
+                        <Box className={`${globalStyle.yellowBlock} ${classes.aiGenerateDialogBtn} ${globalStyle.xyCenter}`}>魔法師</Box>
+                        <Box className={`${globalStyle.yellowBlock} ${classes.aiGenerateDialogBtn} ${globalStyle.xyCenter}`}>決定</Box>
+                    </Box>
+                </Box>
+            </Box>
         )
     }
 
@@ -477,13 +584,15 @@ export default function SelectCharacter (): JSX.Element {
 
             <Grid item xs={7}>
                 <SettingTitleArea title='自由模式設定'/>
-                <SelectGoal/>
-                {/* <SelectNumberOfPlayers/>
-                <SelectGender/>
-                <SelectColorAndJob/>
+                {/* <SelectGoalType/> */}
+                {/* <SelectNumberOfPlayers/> */}
+                {/* <SelectGender/> */}
+                {/* <SelectColor/> */}
+                {/* <SelectJob/> */}
+                <SelectAILevel/>
 
-                <GoalArea/>
-                <AIGenerateDialog/> */}
+                {/* <GoalInputArea/> */}
+                {/* <AIGenerateDialog/> */}
             </Grid>
 
             <AISpeakingDialog

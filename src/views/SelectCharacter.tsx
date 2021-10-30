@@ -21,25 +21,181 @@ import { colors, basicJobs } from '../global/characters'
 // 目標 => 人數 => 性別 => 名字 => 顏色 => 職業
 
 const backendUrl = process.env.REACT_APP_BACKEND_BASEURL || ''
+type steps =    
+    'SelectGoalType' |
+    'GoalInputDialog' |
+    'SelectNumberOfPlayers' |
+    'SelectGender' |
+    'NameInputDialog' |
+    'SelectColor' |
+    'SelectJob' |
+    'AIGenerateDialog' |
+    'SelectAILevel'
 
 export default function SelectCharacter (): JSX.Element {
     // data
-    const [selectedGoal, setSelectedGoal] = useState<'期間' | '金額'>('期間')
+    // const [selectGoalType, setSelectGoalType] = useState({
+    //     aiTopLeftImgDisplay: true,
+    //     settingTitleDisplay: true,
+    //     settingTitle: '自由模式設定',
+    //     selectedGoalType: '期間',
+    //     aiMessage: '要選擇什麼遊戲模式呢？'
+    // })
+    // const [goalInput, setGoalInput] = useState({
+    //     aiTopLeftImgDisplay: true,
+    //     settingTitleDisplay: false,
+    //     settingTitle: '',
+    //     goalInput: '',
+    //     aiMessage: '請選擇xxx'
+    // })
+    // const [selectNumberOfPlayers, setSelectNumberOfPlayers] = useState({
+    //     aiTopLeftImgDisplay: true,
+    //     settingTitleDisplay: true,
+    //     settingTitle: '遊玩人數',
+    //     selectedNumberOfPlayers: 1,
+    //     aiMessage: '有幾個勇者呢？'
+    // })
+    // const [selectGender, setSelectGender] = useState({
+    //     aiTopLeftImgDisplay: true,
+    //     settingTitleDisplay: true,
+    //     settingTitle: '性別選擇',
+    //     selectedGender: 'male',
+    //     aiMessage: '第１個勇者<br>勇者的性別為何'
+    // })
+    // const [nameInput, setNameInput] = useState({
+    //     aiTopLeftImgDisplay: false,
+    //     settingTitleDisplay: false,
+    //     settingTitle: '',
+    //     nameInput: '',
+    //     aiMessage: ''
+    // })
+    // const [selectColor, setSelectColor] = useState({
+    //     aiTopLeftImgDisplay: true,
+    //     settingTitleDisplay: true,
+    //     settingTitle: '顏色選擇',
+    //     selectedColor: 'red',
+    //     aiMessage: '想詢問xxx，勇者喜歡什麼顏色'
+    // })
+    // const [selectJob, setSelectJob] = useState({
+    //     aiTopLeftImgDisplay: true,
+    //     settingTitleDisplay: true,
+    //     settingTitle: '職業選擇',
+    //     selectedJob: 'warrior',
+    //     aiMessage: 'xxx，勇者偏好什麼職業'
+    // })
+    // const [aiGenerate, setAIGenerate] = useState({
+    //     aiTopLeftImgDisplay: true,
+    //     settingTitleDisplay: false,
+    //     settingTitle: '',
+    //     selectedLevel: 'weak',
+    //     selectedGender: 'male',
+    //     selectedColor: 'yellow',
+    //     selectedJob: 'warrior',
+    //     aiMessage: '我們打算招募以下這位勇者<br>如果你覺得不喜歡，可以再更改'
+    // })
+    // const [selectAILevel, setSelectAILevel] = useState({
+    //     aiTopLeftImgDisplay: true,
+    //     settingTitleDisplay: true,
+    //     settingTitle: '強度選擇',
+    //     selectedLevel: 'weak',
+    //     aiMessage: '強度要多強呢'
+    // })
+    const [steps, setSteps] = useState({
+        SelectGoalType: {
+            aiTopLeftImgDisplay: true,
+            settingTitleDisplay: true,
+            settingTitle: '自由模式設定',
+            selectedGoalType: '期間',
+            aiMessage: '要選擇什麼遊戲模式呢？'
+        },
+        GoalInputDialog: {
+            aiTopLeftImgDisplay: true,
+            settingTitleDisplay: false,
+            settingTitle: '',
+            goalInput: '',
+            aiMessage: '請選擇xxx'
+        },
+        SelectNumberOfPlayers: {
+            aiTopLeftImgDisplay: true,
+            settingTitleDisplay: true,
+            settingTitle: '遊玩人數',
+            selectedNumberOfPlayers: 1,
+            aiMessage: '有幾個勇者呢？'
+        },
+        SelectGender: {
+            aiTopLeftImgDisplay: true,
+            settingTitleDisplay: true,
+            settingTitle: '性別選擇',
+            selectedGender: 'male',
+            aiMessage: '第１個勇者<br>勇者的性別為何'
+        },
+        NameInputDialog: {
+            aiTopLeftImgDisplay: false,
+            settingTitleDisplay: false,
+            settingTitle: '',
+            nameInput: '',
+            aiMessage: ''
+        },
+        SelectColor: {
+            aiTopLeftImgDisplay: true,
+            settingTitleDisplay: true,
+            settingTitle: '顏色選擇',
+            selectedColor: 'red',
+            aiMessage: '想詢問xxx，勇者喜歡什麼顏色'
+        },
+        SelectJob: {
+            aiTopLeftImgDisplay: true,
+            settingTitleDisplay: true,
+            settingTitle: '職業選擇',
+            selectedJob: 'warrior',
+            aiMessage: 'xxx，勇者偏好什麼職業'
+        },
+        AIGenerateDialog: {
+            aiTopLeftImgDisplay: true,
+            settingTitleDisplay: false,
+            settingTitle: '',
+            selectedLevel: 'weak',
+            selectedGender: 'male',
+            selectedColor: 'yellow',
+            selectedJob: 'warrior',
+            aiMessage: '我們打算招募以下這位勇者<br>如果你覺得不喜歡，可以再更改'
+        },
+        SelectAILevel: {
+            aiTopLeftImgDisplay: true,
+            settingTitleDisplay: true,
+            settingTitle: '強度選擇',
+            selectedLevel: 'weak',
+            aiMessage: '強度要多強呢'
+        }
+    })
+    const [currentStep, setCurrentStep] = useState<steps>('SelectGoalType')
+    const [curIdx, setCurIdx] = useState(0)
+    const curSteps: Array<steps> = [
+        'SelectGoalType',
+        'GoalInputDialog',
+        'SelectNumberOfPlayers',
+        'SelectGender',
+        'NameInputDialog',
+        'SelectColor',
+        'SelectJob',
+        'AIGenerateDialog',
+        'SelectAILevel'
+    ]
 
     // methods
     function handleKeyDown (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
-        case 'arrowup':
-            console.log('arrowup')
+        case 'arrowup': {
+            const temp = { ...steps }
+            temp.SelectGoalType.selectedGoalType = '金額'
+            setSteps(temp)
             break
+        }
         case 'arrowleft':
-            console.log('arrowleft')
             break
         case 'arrowright':
-            console.log('arrowright')
             break
         case 'arrowdown':
-            console.log('arrowdown')
             break
         case 'd':
             console.log('d')
@@ -53,6 +209,22 @@ export default function SelectCharacter (): JSX.Element {
         case 's':
             console.log('s')
             break
+        case '1': {
+            const idx = curIdx - 1
+            if (idx < 0) return
+            setCurIdx(idx)
+            setCurrentStep(curSteps[idx])
+            console.log('arrowdown')
+            break
+        }
+        case '3': {
+            const idx = curIdx + 1
+            if (idx > 8) return
+            setCurIdx(idx)
+            setCurrentStep(curSteps[idx])
+            console.log('arrowup')
+            break
+        }
         default:
             console.log(e.key.toLowerCase())
             break
@@ -87,7 +259,7 @@ export default function SelectCharacter (): JSX.Element {
             height: '65%',
             overflow: 'hidden'
         },
-        goalInputArea: {
+        goalInputDialog: {
             width: '80%',
             height: '40%',
             margin: 'calc(65vh * 0.3) 10%'
@@ -254,15 +426,32 @@ export default function SelectCharacter (): JSX.Element {
     const classes = useStyles()
 
     // components
-    function SelectGoalType (): JSX.Element {
+    function SelectGoalType (props: { selectedGoalType: string }): JSX.Element {
+        const { selectedGoalType } = props
+
         return (
             <Slide direction='left' in={true} timeout={800}>
-                <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`} flexDirection='column'>
-                    <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`}>
+                <Box
+                    className={`
+                    ${classes.chooseArea}
+                    ${globalStyle.xyCenter}`}
+                    flexDirection='column'
+                >
+                    <Box
+                        className={`
+                        ${classes.chooseBtn}
+                        ${globalStyle.yellowBlock}
+                        ${selectedGoalType === '期間' ? globalStyle.hoverEffect : ''}`}
+                    >
                         <img width='30px' height='30px'/>
                         期間目標
                     </Box>
-                    <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`}>
+                    <Box
+                        className={`
+                        ${classes.chooseBtn}
+                        ${globalStyle.yellowBlock}
+                        ${selectedGoalType === '金額' ? globalStyle.hoverEffect : ''}
+                    `}>
                         <img width='30px' height='30px'/>
                         金額目標
                     </Box>
@@ -277,8 +466,8 @@ export default function SelectCharacter (): JSX.Element {
             const { playerNum } = props
             const icons = []
             for (let i = 0; i < 4; i++) {
-                if (i < playerNum) icons.push(<PersonIcon fontSize='large'/>)
-                else icons.push(<AdbIcon fontSize='large'/>)
+                if (i < playerNum) icons.push(<PersonIcon key={i} fontSize='large'/>)
+                else icons.push(<AdbIcon key={i} fontSize='large'/>)
             }
             return (
                 <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`}>
@@ -366,7 +555,7 @@ export default function SelectCharacter (): JSX.Element {
         return (
             <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
                 <ExampleCharacterImg/>
-                <Slide direction="up" in={true} timeout={800}>
+                <Slide direction="left" in={true} timeout={800}>
                     <Box className={`${classes.verticalBtnGroup}`} justifyContent="space-evenly">
                         {colorRows}
                     </Box>
@@ -396,7 +585,7 @@ export default function SelectCharacter (): JSX.Element {
         return (
             <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
                 <ExampleCharacterImg/>
-                <Slide direction="up" in={true} timeout={800}>
+                <Slide direction="left" in={true} timeout={800}>
                     <Box className={`${classes.verticalBtnGroup}`} justifyContent="space-evenly">
                         {jobRows}
                     </Box>
@@ -426,7 +615,7 @@ export default function SelectCharacter (): JSX.Element {
         return (
             <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
                 <Box width="65%"></Box>
-                <Slide direction="up" in={true} timeout={800}>
+                <Slide direction="left" in={true} timeout={800}>
                     <Box className={`${classes.verticalBtnGroup}`} justifyContent="center">
                         {aiLevelRows}
                     </Box>
@@ -435,10 +624,12 @@ export default function SelectCharacter (): JSX.Element {
         )
     }
 
-    function GoalInputArea (): JSX.Element {
+    function GoalInputDialog (): JSX.Element {
         const inputBlocks = []
-        const goalUnit = selectedGoal === '期間' ? '週' : '¥'
-        const inputLen = selectedGoal === '期間' ? 3 : 9
+        const selectedGoalType = steps.SelectGoalType.selectedGoalType
+        const goalUnit = selectedGoalType === '期間' ? '週' : '¥'
+        const inputLen = selectedGoalType === '期間' ? 3 : 9
+
         for (let i = 0; i < inputLen; i++) {
             inputBlocks.push(
                 <Box className={`${classes.goalBtn} ${globalStyle.xyCenter}`} key={i}>0</Box>
@@ -446,8 +637,8 @@ export default function SelectCharacter (): JSX.Element {
         }
         return (
             <Slide direction='left' in={true} timeout={800}>
-                <Box className={`${classes.goalInputArea} ${globalStyle.yellowBlock}`}>
-                    <Box className={`${classes.goalTitle} ${globalStyle.xyCenter}`}>目標{selectedGoal}</Box>
+                <Box className={`${classes.goalInputDialog} ${globalStyle.yellowBlock}`}>
+                    <Box className={`${classes.goalTitle} ${globalStyle.xyCenter}`}>目標{selectedGoalType}</Box>
                     <CustomBorderBottom/>
                     <Box height='calc(100% - 60px)' className={globalStyle.xyCenter}>
                         <Box p={1} className={`${globalStyle.xyCenter} ${globalStyle.yellowBlock}`}>
@@ -466,7 +657,9 @@ export default function SelectCharacter (): JSX.Element {
                 <Box className={classes.aiGenerateDialogTitle}>勇者募集!!</Box>
                 <CustomBorderBottom/>
                 <Box className={`${classes.aiGenerateDialogBottom}`}>
-                    <Box className={globalStyle.xyCenter} width="50%">aaa</Box>
+                    <Box className={globalStyle.xyCenter} width="50%">
+                        <img width="100%" src="aaa"/>
+                    </Box>
                     <Box className={`${classes.aiGenerateDialogBtnGroup}`}>
                         <Box className={`${globalStyle.yellowBlock} ${classes.aiGenerateDialogBtn} ${globalStyle.xyCenter}`}>弱</Box>
                         <Box className={`${globalStyle.yellowBlock} ${classes.aiGenerateDialogBtn} ${globalStyle.xyCenter}`}>男</Box>
@@ -479,7 +672,7 @@ export default function SelectCharacter (): JSX.Element {
         )
     }
 
-    function NameInputArea (props: { section: 'hiragana' | 'katakana' | 'special' }): JSX.Element {
+    function NameInputDialog (props: { section: 'hiragana' | 'katakana' | 'special' }): JSX.Element {
         const { section } = props
         
         const rows1: Array<JSX.Element> = []
@@ -499,7 +692,7 @@ export default function SelectCharacter (): JSX.Element {
             rows2.push(<KeyBoardKey word={word} key={index}/>)
         })
         return (
-            <Slide direction='up' in={true} timeout={800}>
+            <Slide direction='left' in={true} timeout={800}>
                 <Grid item xs={12}>
                     <Box className={`${classes.nameDisplayArea} ${globalStyle.xyCenter} ${globalStyle.yellowBlock}`}>
                         <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
@@ -578,26 +771,28 @@ export default function SelectCharacter (): JSX.Element {
             onKeyDown={handleKeyDown}
             tabIndex={0}
         >
-            {/* <NameInputArea section='hiragana'/> */}
+            {steps[currentStep].aiTopLeftImgDisplay ?
+                <AITopLeftImgArea src={guide} alt='ナビイ'/> :
+                <NameInputDialog section='hiragana'/>
+            }
 
-            <AITopLeftImgArea src={guide} alt='ナビイ'/>
-
-            <Grid item xs={7}>
-                <SettingTitleArea title='自由模式設定'/>
-                {/* <SelectGoalType/> */}
-                {/* <SelectNumberOfPlayers/> */}
-                {/* <SelectGender/> */}
-                {/* <SelectColor/> */}
-                {/* <SelectJob/> */}
-                <SelectAILevel/>
-
-                {/* <GoalInputArea/> */}
-                {/* <AIGenerateDialog/> */}
+            <Grid item xs={7} zeroMinWidth>
+                {steps[currentStep].settingTitleDisplay &&
+                    <SettingTitleArea title={steps[currentStep].settingTitle}/>
+                }
+                {currentStep === 'SelectGoalType' && <SelectGoalType selectedGoalType={steps.SelectGoalType.selectedGoalType}/>}
+                {currentStep === 'SelectNumberOfPlayers' && <SelectNumberOfPlayers/>}
+                {currentStep === 'SelectGender' && <SelectGender/>}
+                {currentStep === 'SelectColor' && <SelectColor/>}
+                {currentStep === 'SelectJob' && <SelectJob/>}
+                {currentStep === 'GoalInputDialog' && <GoalInputDialog/>}
+                {currentStep === 'AIGenerateDialog' && <AIGenerateDialog/>}
+                {currentStep === 'SelectAILevel' && <SelectAILevel/>}
             </Grid>
 
             <AISpeakingDialog
                 name='ナビイ'
-                message='要選擇什麼遊戲模式呢？'
+                message={steps[currentStep].aiMessage}
             />
         </Grid>
     )

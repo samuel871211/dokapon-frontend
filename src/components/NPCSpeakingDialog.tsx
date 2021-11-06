@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Slide from '@material-ui/core/Slide'
 
-export default function AISpeakingDialog(props: {
+export default function NPCSpeakingDialog(props: {
     name: string,
     message: string
 }): JSX.Element {

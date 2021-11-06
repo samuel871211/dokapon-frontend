@@ -1,19 +1,17 @@
-import guide from '../imgs/guide.png'
-// import selectCharacterBackground from '../imgs/selectCharacterBackground.png'
-import Grid from '@material-ui/core/Grid'
+import { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Box from '@material-ui/core/Box'
-import Fade from '@material-ui/core/Fade'
-import Slide from '@material-ui/core/Slide'
-// slide裡面只能允許單一children，且不可包裝成component，
-import CustomBorderBottom from '../components/CustomBorderBottom'
+import { Box, Grid } from '@material-ui/core'
 import PersonIcon from '@material-ui/icons/Person'
 import AdbIcon from '@material-ui/icons/Adb'
-// import Divider from '@material-ui/core/Divider'
-import { Fragment, useEffect, useState } from 'react'
+
+import guide from '../imgs/guide.png'
+import CustomBorderBottom from '../components/CustomBorderBottom'
 import SettingTitleArea from '../components/SettingTitleArea'
-import AISpeakingDialog from '../components/AISpeakingDialog'
-import AITopLeftImgArea from '../components/AITopLeftImgArea'
+import NPCSpeakingDialog from '../components/NPCSpeakingDialog'
+import NPCTopLeftImgArea from '../components/NPCTopLeftImgArea'
+import SelectGoalType from '../components/selectCharacter/SelectGoalType'
+import SelectNumberOfPlayers from '../components/selectCharacter/SelectNumberOfPlayers'
+import SelectGender from '../components/selectCharacter/SelectGender'
 import japanWords from '../global/japanWords'
 import style from '../global/style'
 import { colors, basicJobs } from '../global/characters'
@@ -168,7 +166,7 @@ export default function SelectCharacter (): JSX.Element {
             aiMessage: '強度要多強呢'
         }
     })
-    const [currentStep, setCurrentStep] = useState<steps>('SelectGoalType')
+    const [currentStep, setCurrentStep] = useState<steps>('SelectGender')
     const [curIdx, setCurIdx] = useState(0)
     const curSteps: Array<steps> = [
         'SelectGoalType',
@@ -183,53 +181,6 @@ export default function SelectCharacter (): JSX.Element {
     ]
 
     // methods
-    function handleKeyDown (e: React.KeyboardEvent) {
-        switch (e.key.toLowerCase()) {
-        case 'arrowup': {
-            const temp = { ...steps }
-            temp.SelectGoalType.selectedGoalType = '金額'
-            setSteps(temp)
-            break
-        }
-        case 'arrowleft':
-            break
-        case 'arrowright':
-            break
-        case 'arrowdown':
-            break
-        case 'd':
-            console.log('d')
-            break
-        case 'x':
-            console.log('x')
-            break
-        case 'z':
-            console.log('z')
-            break
-        case 's':
-            console.log('s')
-            break
-        case '1': {
-            const idx = curIdx - 1
-            if (idx < 0) return
-            setCurIdx(idx)
-            setCurrentStep(curSteps[idx])
-            console.log('arrowdown')
-            break
-        }
-        case '3': {
-            const idx = curIdx + 1
-            if (idx > 8) return
-            setCurIdx(idx)
-            setCurrentStep(curSteps[idx])
-            console.log('arrowup')
-            break
-        }
-        default:
-            console.log(e.key.toLowerCase())
-            break
-        }
-    }
 
     // styles
     const globalStyle = style()
@@ -425,117 +376,50 @@ export default function SelectCharacter (): JSX.Element {
     }))
     const classes = useStyles()
 
-    // components
-    function SelectGoalType (props: { selectedGoalType: string }): JSX.Element {
-        const { selectedGoalType } = props
-
-        return (
-            <Slide direction='left' in={true} timeout={800}>
-                <Box
-                    className={`
-                    ${classes.chooseArea}
-                    ${globalStyle.xyCenter}`}
-                    flexDirection='column'
-                >
-                    <Box
-                        className={`
-                        ${classes.chooseBtn}
-                        ${globalStyle.yellowBlock}
-                        ${selectedGoalType === '期間' ? globalStyle.hoverEffect : ''}`}
-                    >
-                        <img width='30px' height='30px'/>
-                        期間目標
-                    </Box>
-                    <Box
-                        className={`
-                        ${classes.chooseBtn}
-                        ${globalStyle.yellowBlock}
-                        ${selectedGoalType === '金額' ? globalStyle.hoverEffect : ''}
-                    `}>
-                        <img width='30px' height='30px'/>
-                        金額目標
-                    </Box>
-                </Box>
-            </Slide>
-        )
-    }
-
-    function SelectNumberOfPlayers (): JSX.Element {
-        
-        function SelectNumberOfPlayersBtn (props: { playerNum: number }): JSX.Element {
-            const { playerNum } = props
-            const icons = []
-            for (let i = 0; i < 4; i++) {
-                if (i < playerNum) icons.push(<PersonIcon key={i} fontSize='large'/>)
-                else icons.push(<AdbIcon key={i} fontSize='large'/>)
-            }
-            return (
-                <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`}>
-                    {icons}
-                    <Box className={classes.flexEnd} pr='5%'>1人</Box>
-                </Box>
-            )
-        }
-        return (
-            <Slide direction='left' in={true} timeout={800}>
-                <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`} flexDirection='column'>
-                    <SelectNumberOfPlayersBtn playerNum={1}/>
-                    <SelectNumberOfPlayersBtn playerNum={2}/>
-                    <SelectNumberOfPlayersBtn playerNum={3}/>
-                    <SelectNumberOfPlayersBtn playerNum={4}/>
-                </Box>
-            </Slide>
-        )
-    }
-
-    function SelectGender (): JSX.Element {
-        const suffixMale = '/imgs/beginner_male_red_front.png'
-        const suffixFemale = '/imgs/beginner_female_red_front.png'
-        return (
-            <Slide direction='left' in={true} timeout={800}>
-                <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
-                    <Box className={classes.selectGenderBlock}>
-                        <Box flexGrow={1}></Box>
-                        <Box className={classes.biggestSquare}>
-                            <img 
-                                src={`${backendUrl}${suffixMale}`}
-                                width='100%'
-                                alt='男'
-                            />
-                        </Box>
-                        <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`} m='auto'>
-                            <img src='' width='30px' height='30px'/>
-                            <Box className={classes.flexEnd} pr='15%'>男</Box>
-                        </Box>
-                    </Box>
-                    <Box className={classes.selectGenderBlock}>
-                        <Box flexGrow={1}></Box>
-                        <Box className={classes.biggestSquare}>
-                            <img 
-                                src={`${backendUrl}${suffixFemale}`}
-                                width='100%'
-                                alt='女'
-                            />
-                        </Box>
-                        <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`} m='auto'>
-                            <img src='' width='30px' height='30px'/>
-                            <Box className={classes.flexEnd} pr='15%'>女</Box>
-                        </Box>
-                    </Box>
-                </Box>
-            </Slide>
-        )
-    }
+    // function SelectGender (): JSX.Element {
+    //     const suffixMale = '/imgs/beginner_male_red_front.png'
+    //     const suffixFemale = '/imgs/beginner_female_red_front.png'
+    //     return (
+    //         <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
+    //             <Box className={classes.selectGenderBlock}>
+    //                 <Box flexGrow={1}></Box>
+    //                 <Box className={classes.biggestSquare}>
+    //                     <img 
+    //                         src={`${backendUrl}${suffixMale}`}
+    //                         width='100%'
+    //                         alt='男'
+    //                     />
+    //                 </Box>
+    //                 <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`} m='auto'>
+    //                     <img src='' width='30px' height='30px'/>
+    //                     <Box className={classes.flexEnd} pr='15%'>男</Box>
+    //                 </Box>
+    //             </Box>
+    //             <Box className={classes.selectGenderBlock}>
+    //                 <Box flexGrow={1}></Box>
+    //                 <Box className={classes.biggestSquare}>
+    //                     <img 
+    //                         src={`${backendUrl}${suffixFemale}`}
+    //                         width='100%'
+    //                         alt='女'
+    //                     />
+    //                 </Box>
+    //                 <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`} m='auto'>
+    //                     <img src='' width='30px' height='30px'/>
+    //                     <Box className={classes.flexEnd} pr='15%'>女</Box>
+    //                 </Box>
+    //             </Box>
+    //         </Box>
+    //     )
+    // }
 
     function ExampleCharacterImg (): JSX.Element {
         const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
         const suffix = 'imgs/warrior_male_red_front.png'
         return (
-            <Fade in={true} timeout={1200}>
-                <Box className={`${classes.colorExampleImgContainer} ${globalStyle.xyCenter}`}>
-                    <img src={`${prefix}/${suffix}`} className={`${classes.colorExampleImg}`}/>
-                </Box>
-            </Fade>
+            <Box className={`${classes.colorExampleImgContainer} ${globalStyle.xyCenter}`}>
+                <img src={`${prefix}/${suffix}`} className={`${classes.colorExampleImg}`}/>
+            </Box>
         )
     }
 
@@ -555,11 +439,9 @@ export default function SelectCharacter (): JSX.Element {
         return (
             <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
                 <ExampleCharacterImg/>
-                <Slide direction="left" in={true} timeout={800}>
-                    <Box className={`${classes.verticalBtnGroup}`} justifyContent="space-evenly">
-                        {colorRows}
-                    </Box>
-                </Slide>
+                <Box className={`${classes.verticalBtnGroup}`} justifyContent="space-evenly">
+                    {colorRows}
+                </Box>
             </Box>
         )
     }
@@ -585,11 +467,9 @@ export default function SelectCharacter (): JSX.Element {
         return (
             <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
                 <ExampleCharacterImg/>
-                <Slide direction="left" in={true} timeout={800}>
-                    <Box className={`${classes.verticalBtnGroup}`} justifyContent="space-evenly">
-                        {jobRows}
-                    </Box>
-                </Slide>
+                <Box className={`${classes.verticalBtnGroup}`} justifyContent="space-evenly">
+                    {jobRows}
+                </Box>
             </Box>
         )
     }
@@ -615,11 +495,9 @@ export default function SelectCharacter (): JSX.Element {
         return (
             <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
                 <Box width="65%"></Box>
-                <Slide direction="left" in={true} timeout={800}>
-                    <Box className={`${classes.verticalBtnGroup}`} justifyContent="center">
-                        {aiLevelRows}
-                    </Box>
-                </Slide>
+                <Box className={`${classes.verticalBtnGroup}`} justifyContent="center">
+                    {aiLevelRows}
+                </Box>
             </Box>
         )
     }
@@ -636,18 +514,16 @@ export default function SelectCharacter (): JSX.Element {
             )
         }
         return (
-            <Slide direction='left' in={true} timeout={800}>
-                <Box className={`${classes.goalInputDialog} ${globalStyle.yellowBlock}`}>
-                    <Box className={`${classes.goalTitle} ${globalStyle.xyCenter}`}>目標{selectedGoalType}</Box>
-                    <CustomBorderBottom/>
-                    <Box height='calc(100% - 60px)' className={globalStyle.xyCenter}>
-                        <Box p={1} className={`${globalStyle.xyCenter} ${globalStyle.yellowBlock}`}>
-                            {inputBlocks}
-                        </Box>
-                        <Box className={classes.goalUnit}>{goalUnit}</Box>
+            <Box className={`${classes.goalInputDialog} ${globalStyle.yellowBlock}`}>
+                <Box className={`${classes.goalTitle} ${globalStyle.xyCenter}`}>目標{selectedGoalType}</Box>
+                <CustomBorderBottom/>
+                <Box height='calc(100% - 60px)' className={globalStyle.xyCenter}>
+                    <Box p={1} className={`${globalStyle.xyCenter} ${globalStyle.yellowBlock}`}>
+                        {inputBlocks}
                     </Box>
+                    <Box className={classes.goalUnit}>{goalUnit}</Box>
                 </Box>
-            </Slide>
+            </Box>
         )
     }
 
@@ -692,75 +568,67 @@ export default function SelectCharacter (): JSX.Element {
             rows2.push(<KeyBoardKey word={word} key={index}/>)
         })
         return (
-            <Slide direction='left' in={true} timeout={800}>
-                <Grid item xs={12}>
-                    <Box className={`${classes.nameDisplayArea} ${globalStyle.xyCenter} ${globalStyle.yellowBlock}`}>
-                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
-                            我
-                            <Box className={classes.nameDisplayBottomLine}></Box>
-                        </Box>
-                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
-                            真
-                            <Box className={classes.nameDisplayBottomLine}></Box>
-                        </Box>
-                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
-                            的
-                            <Box className={classes.nameDisplayBottomLine}></Box>
-                        </Box>
-                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
-                            是
-                            <Box className={classes.nameDisplayBottomLine}></Box>
-                        </Box>
-                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
-                            一
-                            <Box className={classes.nameDisplayBottomLine}></Box>
-                        </Box>
-                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
-                            個
-                            <Box className={classes.nameDisplayBottomLine}></Box>
-                        </Box>
-                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
-                            帥
-                            <Box className={classes.nameDisplayBottomLine}></Box>
-                        </Box>
-                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
-                            哥
-                            <Box className={classes.nameDisplayBottomLine}></Box>
-                        </Box>
-                        <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
-                            拉
-                            <Box className={classes.nameDisplayBottomLine}></Box>
-                        </Box>
+            <Grid item xs={12}>
+                <Box className={`${classes.nameDisplayArea} ${globalStyle.xyCenter} ${globalStyle.yellowBlock}`}>
+                    <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                        我
+                        <Box className={classes.nameDisplayBottomLine}></Box>
                     </Box>
-                    <Box className={`${classes.keyboardArea} ${globalStyle.yellowBlock}`}>
-                        <Box className={classes.keyboardSection}>
-                            {rows1}
-                        </Box>
-                        <Box className={classes.keyboardSection}>
-                            {rows2}
-                        </Box>
-                        <Box className={classes.keyboardMenu}>
-                            <Box className={classes.keyboardMenuBtn}>平假名</Box>
-                            <Box className={classes.keyboardMenuBtn}>片假名</Box>
-                            <Box className={classes.keyboardMenuBtn}>ＡＢＣ</Box>
-                            <Box className={classes.keyboardMenuBtn}></Box>
-                            <Box className={classes.keyboardMenuBtn}>前進</Box>
-                            <Box className={classes.keyboardMenuBtn}>後退</Box>
-                            <Box className={classes.keyboardMenuBtn}>刪除</Box>
-                            <Box className={classes.keyboardMenuBtn}></Box>
-                            <Box className={classes.keyboardMenuBtn}>ＯＫ</Box>
-                        </Box>
+                    <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                        真
+                        <Box className={classes.nameDisplayBottomLine}></Box>
                     </Box>
-                </Grid>
-            </Slide>
+                    <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                        的
+                        <Box className={classes.nameDisplayBottomLine}></Box>
+                    </Box>
+                    <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                        是
+                        <Box className={classes.nameDisplayBottomLine}></Box>
+                    </Box>
+                    <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                        一
+                        <Box className={classes.nameDisplayBottomLine}></Box>
+                    </Box>
+                    <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                        個
+                        <Box className={classes.nameDisplayBottomLine}></Box>
+                    </Box>
+                    <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                        帥
+                        <Box className={classes.nameDisplayBottomLine}></Box>
+                    </Box>
+                    <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                        哥
+                        <Box className={classes.nameDisplayBottomLine}></Box>
+                    </Box>
+                    <Box className={`${classes.nameDisplaySingleWord} ${globalStyle.xyCenter}`}>
+                        拉
+                        <Box className={classes.nameDisplayBottomLine}></Box>
+                    </Box>
+                </Box>
+                <Box className={`${classes.keyboardArea} ${globalStyle.yellowBlock}`}>
+                    <Box className={classes.keyboardSection}>
+                        {rows1}
+                    </Box>
+                    <Box className={classes.keyboardSection}>
+                        {rows2}
+                    </Box>
+                    <Box className={classes.keyboardMenu}>
+                        <Box className={classes.keyboardMenuBtn}>平假名</Box>
+                        <Box className={classes.keyboardMenuBtn}>片假名</Box>
+                        <Box className={classes.keyboardMenuBtn}>ＡＢＣ</Box>
+                        <Box className={classes.keyboardMenuBtn}></Box>
+                        <Box className={classes.keyboardMenuBtn}>前進</Box>
+                        <Box className={classes.keyboardMenuBtn}>後退</Box>
+                        <Box className={classes.keyboardMenuBtn}>刪除</Box>
+                        <Box className={classes.keyboardMenuBtn}></Box>
+                        <Box className={classes.keyboardMenuBtn}>ＯＫ</Box>
+                    </Box>
+                </Box>
+            </Grid>
         )
     }
-
-    // mount
-    useEffect(() => {
-        // focus on this HTML Element so that it can handle key down
-        document.getElementById('gridContainer')?.focus()
-    }, [])
     
     // template
     return (
@@ -768,11 +636,9 @@ export default function SelectCharacter (): JSX.Element {
             id='gridContainer'
             container
             className={classes.container}
-            onKeyDown={handleKeyDown}
-            tabIndex={0}
         >
             {steps[currentStep].aiTopLeftImgDisplay ?
-                <AITopLeftImgArea src={guide} alt='ナビイ'/> :
+                <NPCTopLeftImgArea src={guide} alt='ナビイ'/> :
                 <NameInputDialog section='hiragana'/>
             }
 
@@ -780,7 +646,7 @@ export default function SelectCharacter (): JSX.Element {
                 {steps[currentStep].settingTitleDisplay &&
                     <SettingTitleArea title={steps[currentStep].settingTitle}/>
                 }
-                {currentStep === 'SelectGoalType' && <SelectGoalType selectedGoalType={steps.SelectGoalType.selectedGoalType}/>}
+                {currentStep === 'SelectGoalType' && <SelectGoalType/>}
                 {currentStep === 'SelectNumberOfPlayers' && <SelectNumberOfPlayers/>}
                 {currentStep === 'SelectGender' && <SelectGender/>}
                 {currentStep === 'SelectColor' && <SelectColor/>}
@@ -790,7 +656,7 @@ export default function SelectCharacter (): JSX.Element {
                 {currentStep === 'SelectAILevel' && <SelectAILevel/>}
             </Grid>
 
-            <AISpeakingDialog
+            <NPCSpeakingDialog
                 name='ナビイ'
                 message={steps[currentStep].aiMessage}
             />

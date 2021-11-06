@@ -1,26 +1,18 @@
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
-// import ButtonGroup from '@material-ui/core/ButtonGroup'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import { Fragment } from 'react'
 
 export default function HomePage (): JSX.Element {
-    // data
-
-    // methods
-
-    // watch && mounted && unmount
-
     // styles
-    const styles = makeStyles(() => ({
+    const styles = makeStyles({
         title: {
             marginTop: '32px',
             marginBottom: '32px'
         },
         container: {
             width: '100vw'
-            // height: '100vh'
         },
         buttonGroup: {
             width: '35%'
@@ -31,10 +23,8 @@ export default function HomePage (): JSX.Element {
             fontWeight: 'bold',
             fontSize: '18px'
         }
-    }))
+    })
     const classes = styles()
-
-    // child components
 
     // template
     return (
@@ -77,6 +67,13 @@ export default function HomePage (): JSX.Element {
                         className={classes.buttons}
                         onClick={() => {window.location.assign('/GraphEditor')}}
                     /> */}
+                    <Button
+                        fullWidth
+                        variant='contained'
+                        color='primary'
+                        children='圖鑑'
+                        className={classes.buttons}
+                    />
                     <Button
                         fullWidth
                         variant='contained'

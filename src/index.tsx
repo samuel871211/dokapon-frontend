@@ -7,36 +7,35 @@ import StoryMode from './views/StoryMode'
 import BattleMode from './views/BattleMode'
 import SelectCharacter from './views/SelectCharacter'
 import HomePage from './views/HomePage'
-import { createTheme, ThemeProvider } from '@material-ui/core/styles'
+// import { createTheme, ThemeProvider } from '@material-ui/core/styles'
 
-const darkTheme = createTheme({
-    palette: {
-        type: 'dark',
-        primary: {
-            light: '#ffa919',
-            main: '#ffa000',
-            dark: '#e59000'
-        },
-        secondary: {
-            light: '#ffc919',
-            main: '#ffc400',
-            dark: '#e5b000'
-        }
-    }
-})
-console.log(darkTheme)
+// const theme = createTheme({
+//     palette: {
+//         primary: {
+//             main: '#fee59a',
+//             dark: '#9bd65b'
+//         }
+//     },
+//     overrides: {
+//         MuiButton: {
+//             root: {
+//                 borderRadius: '30px',
+//                 border: '3px outset #222222'
+//             }
+//         }
+//     }
+// })
+// console.log(theme)
 
 ReactDOM.render(
-    <ThemeProvider theme={darkTheme}>
-        <Router>
-            <Switch>
-                <Route path='/' exact component={HomePage}/>
-                <Route path='/GraphEditor' exact sensitive component={GraphEditor}/>
-                <Route path='/SelectCharacter' exact sensitive component={SelectCharacter}/>
-                <Route path='/StoryMode' exact sensitive component={StoryMode}/>
-                <Route path='/BattleMode' exact sensitive component={BattleMode}/>
-            </Switch>
-        </Router>
-    </ThemeProvider>,
+    <Router>
+        <Switch>
+            <Route path='/' exact component={HomePage}/>
+            <Route path='/GraphEditor' exact sensitive component={GraphEditor}/>
+            <Route path='/SelectCharacter' exact sensitive component={SelectCharacter}/>
+            <Route path='/StoryMode' exact sensitive component={StoryMode}/>
+            <Route path='/BattleMode' exact sensitive component={BattleMode}/>
+        </Switch>
+    </Router>,
     document.getElementById('root')
 )

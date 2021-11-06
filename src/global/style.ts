@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles'
 
-const style = makeStyles(() => ({
+const style = makeStyles({
     yellowBlock: {
         borderRadius: '30px',
         border: '3px outset #222222',
@@ -10,6 +10,12 @@ const style = makeStyles(() => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    btnHover: {
+        '&:hover': {
+            backgroundColor: '#9bd65b',
+            cursor: 'pointer'
+        }
     },
     hoverEffect: {
         animation: `$btnHoverFrom 500ms, $btnHoverTo 500ms`,
@@ -33,6 +39,6 @@ const style = makeStyles(() => ({
             backgroundColor: '#9bd65b'
         }
     }
-}))
+})
 
 export default style

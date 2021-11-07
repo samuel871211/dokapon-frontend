@@ -1,0 +1,31 @@
+.bottomArea {
+    height: 35%;
+}
+.nameArea {
+    width: 35%;
+    height: 20%;
+    margin-left: 5%;
+    border-radius: 30px;
+    border: 3px outset #222222;
+    background-color: #fee59a;
+    position: relative;
+    top: 7.5%
+}
+.name {
+    height: 100%;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.messageArea {
+    width: 95%;
+    height: 75%;
+    margin-left: 2.5%;
+    border-radius: 30px;
+    border: 3px outset #222222;
+    background-color: #fee59a;
+    font-weight: bold;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    white-space: pre-wrap;
+    text-align: center;
+}

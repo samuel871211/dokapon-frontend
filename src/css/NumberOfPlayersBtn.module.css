@@ -1,0 +1,18 @@
+.btn {
+    width: 80%;
+    height: 15%;
+    margin-top: 5%;
+    display: flex;
+    padding-left: 5%;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+.btnText {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5%;
+    letter-spacing: 1px;
+}

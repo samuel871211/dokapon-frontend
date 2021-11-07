@@ -1,65 +1,48 @@
-import React, { useEffect } from 'react'
-import { Slide, Box } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import React, { useEffect, useRef, useState } from 'react'
+import { Slide } from '@material-ui/core'
 
 import GenderBlockBtn from './GenderBlockBtn'
-import style from '../../global/style'
+import globalStyles from '../../css/Global.module.css'
+import styles from '../../css/SelectColor.module.css'
+type gender = 'male' | 'female'
 
 export default function SelectGender (): JSX.Element {
-    const useStyles = makeStyles({
-        btnGroup: {
-            width: '80%',
-            height: '80%',
-            margin: 'auto',
-            outline: 'none'
-        }
-    })
-    const classes = useStyles()
-    const globalStyle = style()
+    const focusElement = useRef<HTMLDivElement>(null)
+    const [selectedGender, toggleSelectedGender] = useState<gender>('male')
 
-    useEffect(function focus () {
-        document.getElementById('hello')?.focus()
-    }, [])
+    useEffect(() => focusElement.current?.focus(), [])
 
     function handleKeyDown (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
-        case 'arrowup':
-            break
         case 'arrowleft':
-            
+            toggleSelectedGender(selectedGender === 'male' ? 'female' : 'male')
             break
         case 'arrowright':
-            break
-        case 'arrowdown':
+            toggleSelectedGender(selectedGender === 'male' ? 'female' : 'male')
             break
         case 'd':
             break
         case 'x':
-            break
-        case 'z':
-            break
-        case 's':
             break
         default:
             break
         }
     }
 
-
     return (
-        <Slide in={true} timeout={800}>
-            <Box
-                id='hello'
+        <Slide in={true} timeout={800} direction='left'>
+            <div
+                ref={focusElement}
                 className={`
-                ${classes.btnGroup}
-                ${globalStyle.xyCenter}`}
+                ${styles.btnGroup}
+                ${globalStyles.xyCenter}`}
                 tabIndex={0}
-                onBlur={(event) => { event.target.focus() }}
+                onBlur={(event) => event.target.focus()}
                 onKeyDown={handleKeyDown}
             >
-                <GenderBlockBtn gender='male' selected/>
-                <GenderBlockBtn gender='female'/>
-            </Box>
+                <GenderBlockBtn gender='male' selectedGender={selectedGender}/>
+                <GenderBlockBtn gender='female' selectedGender={selectedGender}/>
+            </div>
         </Slide>
     )
 }

@@ -1,0 +1,17 @@
+.container {
+    width: 95%;
+    height: 10px;
+    display: flex;
+    margin: auto;
+}
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+.line {
+    margin-bottom: 4px;
+    border-bottom: 3px solid black;
+    width: calc(100% - 20px);
+}

@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Box, Grid } from '@material-ui/core'
-import PersonIcon from '@material-ui/icons/Person'
-import AdbIcon from '@material-ui/icons/Adb'
 
 import guide from '../imgs/guide.png'
 import CustomBorderBottom from '../components/CustomBorderBottom'
@@ -12,9 +10,11 @@ import NPCTopLeftImgArea from '../components/NPCTopLeftImgArea'
 import SelectGoalType from '../components/selectCharacter/SelectGoalType'
 import SelectNumberOfPlayers from '../components/selectCharacter/SelectNumberOfPlayers'
 import SelectGender from '../components/selectCharacter/SelectGender'
+import SelectColor from '../components/selectCharacter/SelectColor'
+import SelectJob from '../components/selectCharacter/SelectJob'
 import japanWords from '../global/japanWords'
 import style from '../global/style'
-import { colors, basicJobs } from '../global/characters'
+// import { basicJobs } from '../global/characters'
 
 // 目標 => 人數 => 性別 => 名字 => 顏色 => 職業
 
@@ -125,7 +125,7 @@ export default function SelectCharacter (): JSX.Element {
             settingTitleDisplay: true,
             settingTitle: '性別選擇',
             selectedGender: 'male',
-            aiMessage: '第１個勇者<br>勇者的性別為何'
+            aiMessage: '第１個勇者\n勇者的性別為何'
         },
         NameInputDialog: {
             aiTopLeftImgDisplay: false,
@@ -156,7 +156,7 @@ export default function SelectCharacter (): JSX.Element {
             selectedGender: 'male',
             selectedColor: 'yellow',
             selectedJob: 'warrior',
-            aiMessage: '我們打算招募以下這位勇者<br>如果你覺得不喜歡，可以再更改'
+            aiMessage: '我們打算招募以下這位勇者\n如果你覺得不喜歡，可以再更改'
         },
         SelectAILevel: {
             aiTopLeftImgDisplay: true,
@@ -166,21 +166,7 @@ export default function SelectCharacter (): JSX.Element {
             aiMessage: '強度要多強呢'
         }
     })
-    const [currentStep, setCurrentStep] = useState<steps>('SelectGender')
-    const [curIdx, setCurIdx] = useState(0)
-    const curSteps: Array<steps> = [
-        'SelectGoalType',
-        'GoalInputDialog',
-        'SelectNumberOfPlayers',
-        'SelectGender',
-        'NameInputDialog',
-        'SelectColor',
-        'SelectJob',
-        'AIGenerateDialog',
-        'SelectAILevel'
-    ]
-
-    // methods
+    const [currentStep, setCurrentStep] = useState<steps>('SelectJob')
 
     // styles
     const globalStyle = style()
@@ -194,21 +180,6 @@ export default function SelectCharacter (): JSX.Element {
             width: '80%',
             height: '80%',
             margin: 'auto'
-        },
-        chooseBtn: {
-            width: '80%',
-            height: '15%',
-            marginTop: '5%',
-            display: 'flex',
-            paddingLeft: '5%',
-            alignItems: 'center',
-            fontWeight: 'bold',
-            fontSize: '2rem',
-            letterSpacing: '1px'
-        },
-        topLeftArea: {
-            height: '65%',
-            overflow: 'hidden'
         },
         goalInputDialog: {
             width: '80%',
@@ -235,22 +206,6 @@ export default function SelectCharacter (): JSX.Element {
             fontWeight: 'bold',
             fontSize: '2rem',
             marginLeft: '8px'
-        },
-        flexEnd: {
-            display: 'flex',
-            flexGrow: 1,
-            justifyContent: 'flex-end',
-            alignItems: 'center'
-        },
-        selectGenderBlock: {
-            width: '50%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column'
-        },
-        biggestSquare: {
-            width: 'min(20vw, 41.6vh)',
-            margin: 'auto'
         },
         nameDisplayArea: {
             width: '40%',
@@ -301,14 +256,6 @@ export default function SelectCharacter (): JSX.Element {
             display: 'flex',
             alignItems: 'center'
         },
-        colorExampleImgContainer: {
-            width: '55%',
-            height: '100%'
-        },
-        colorExampleImg: {
-            width: 'min(calc(100vw / 12 * 7 * 0.8 * 0.55), calc(65vh * 0.8))',
-            height: 'min(calc(100vw / 12 * 7 * 0.8 * 0.55), calc(65vh * 0.8))'
-        },
         verticalBtnGroup: {
             display: 'flex',
             flexDirection: 'column',
@@ -321,25 +268,6 @@ export default function SelectCharacter (): JSX.Element {
             height: 'calc(100% / 6)',
             fontSize: '2.5rem',
             fontWeight: 'bold'
-        },
-        selectColorBtn: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            width: '70%',
-            height: 'calc(100% / 11)'
-        },
-        selectColorCircle: {
-            borderRadius: '50%',
-            border: '2px solid black',
-            height: '90%',
-            width: '20%',
-            marginLeft: '7.5%'
-        },
-        selectColorName: {
-            fontSize: '1.5rem',
-            fontWeight: 'bold',
-            marginRight: '7.5%'
         },
         aiGenerateDialog: {
             width: '85%',
@@ -375,104 +303,6 @@ export default function SelectCharacter (): JSX.Element {
         }
     }))
     const classes = useStyles()
-
-    // function SelectGender (): JSX.Element {
-    //     const suffixMale = '/imgs/beginner_male_red_front.png'
-    //     const suffixFemale = '/imgs/beginner_female_red_front.png'
-    //     return (
-    //         <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
-    //             <Box className={classes.selectGenderBlock}>
-    //                 <Box flexGrow={1}></Box>
-    //                 <Box className={classes.biggestSquare}>
-    //                     <img 
-    //                         src={`${backendUrl}${suffixMale}`}
-    //                         width='100%'
-    //                         alt='男'
-    //                     />
-    //                 </Box>
-    //                 <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`} m='auto'>
-    //                     <img src='' width='30px' height='30px'/>
-    //                     <Box className={classes.flexEnd} pr='15%'>男</Box>
-    //                 </Box>
-    //             </Box>
-    //             <Box className={classes.selectGenderBlock}>
-    //                 <Box flexGrow={1}></Box>
-    //                 <Box className={classes.biggestSquare}>
-    //                     <img 
-    //                         src={`${backendUrl}${suffixFemale}`}
-    //                         width='100%'
-    //                         alt='女'
-    //                     />
-    //                 </Box>
-    //                 <Box className={`${classes.chooseBtn} ${globalStyle.yellowBlock}`} m='auto'>
-    //                     <img src='' width='30px' height='30px'/>
-    //                     <Box className={classes.flexEnd} pr='15%'>女</Box>
-    //                 </Box>
-    //             </Box>
-    //         </Box>
-    //     )
-    // }
-
-    function ExampleCharacterImg (): JSX.Element {
-        const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
-        const suffix = 'imgs/warrior_male_red_front.png'
-        return (
-            <Box className={`${classes.colorExampleImgContainer} ${globalStyle.xyCenter}`}>
-                <img src={`${prefix}/${suffix}`} className={`${classes.colorExampleImg}`}/>
-            </Box>
-        )
-    }
-
-    function SelectColor (): JSX.Element {
-        const colorRows = []
-
-        for (const [color, value] of Object.entries(colors)) {
-            const { chinese, rgb } = value
-            colorRows.push( 
-                <Box className={`${classes.selectColorBtn} ${globalStyle.yellowBlock}`} key={chinese}>
-                    <Box className={classes.selectColorCircle} bgcolor={rgb}></Box>
-                    <Box className={classes.selectColorName}>{chinese}</Box>
-                </Box>
-            )
-        }
-
-        return (
-            <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
-                <ExampleCharacterImg/>
-                <Box className={`${classes.verticalBtnGroup}`} justifyContent="space-evenly">
-                    {colorRows}
-                </Box>
-            </Box>
-        )
-    }
-
-    function SelectJob (): JSX.Element {
-        const jobRows = []
-
-        for (const [job, value] of Object.entries(basicJobs)) {
-            const { chinese } = value
-            jobRows.push(
-                <Box
-                    className={`\t
-                        ${classes.selectJobOrAILevelBtn}\t
-                        ${globalStyle.yellowBlock}\t
-                        ${globalStyle.xyCenter}\t
-                    `}
-                    key={chinese}
-                    children={chinese}
-                />
-            )
-        }
-
-        return (
-            <Box className={`${classes.chooseArea} ${globalStyle.xyCenter}`}>
-                <ExampleCharacterImg/>
-                <Box className={`${classes.verticalBtnGroup}`} justifyContent="space-evenly">
-                    {jobRows}
-                </Box>
-            </Box>
-        )
-    }
 
     function SelectAILevel (): JSX.Element {
         const aiLevelRows = []
@@ -633,7 +463,6 @@ export default function SelectCharacter (): JSX.Element {
     // template
     return (
         <Grid
-            id='gridContainer'
             container
             className={classes.container}
         >

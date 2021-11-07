@@ -1,19 +1,13 @@
-import { useState, useEffect, Fragment } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import Box from '@material-ui/core/Box'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Divider from '@material-ui/core/Divider'
-import ZoomInIcon from '@material-ui/icons/ZoomIn'
+import { useState, useEffect } from 'react'
 import $ from 'jquery'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
 import { getCells } from '../api/graph'
-import * as characters from '../global/characters'
 
-export default function BattleMode (): JSX.Element {
+export default BattleMode
+
+function BattleMode (): JSX.Element {
     // data
-    const [paperScale, setPaperScale] = useState(1)
     const [graph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
 
     // watch && mounted
@@ -24,7 +18,7 @@ export default function BattleMode (): JSX.Element {
                 el: $('#paper'),
                 cellViewNamespace: { standard: joint.shapes.standard },
                 width: '100%',
-                height: 'calc(100vh - 48px)',
+                height: '100vh',
                 model: graph,
                 restrictTranslate: true,
                 background: {
@@ -40,21 +34,6 @@ export default function BattleMode (): JSX.Element {
             let dragMouseDownPos = { x: 0, y: 0 }
             let dragAnchorPos = { x: 0, y: 0 }
             Paper.on({
-                'element:contextmenu': function (
-                    elementView: joint.dia.ElementView,
-                    evt: JQuery.Event,
-                    x: number,
-                    y: number
-                ) {
-                    const character = characters.createCharacter({
-                        job: '',
-                        gender: '',
-                        color: ''
-                    })
-                    character.position(x, y)
-                    character.addTo(graph)
-                    console.log('element added')
-                },
                 'cell:mousewheel': function (
                     cellView: joint.dia.CellView,
                     evt: JQuery.Event,
@@ -78,8 +57,6 @@ export default function BattleMode (): JSX.Element {
                         Paper.scale(1)
                         Paper.scale(newScale, newScale, x, y)
                     }
-
-                    setPaperScale(newScale)
                 },
                 'cell:pointerdown': function (
                     cellView: joint.dia.CellView,
@@ -131,8 +108,6 @@ export default function BattleMode (): JSX.Element {
                         Paper.scale(1)
                         Paper.scale(newScale, newScale, x, y)
                     }
-
-                    setPaperScale(newScale)
                 },
                 'blank:pointerdown': function (
                     evt: JQuery.Event,
@@ -179,49 +154,11 @@ export default function BattleMode (): JSX.Element {
 
     }, [graph])
 
-
-
-    // css style
-    const styles = makeStyles(theme => ({
-        AppBar: {
-            backgroundColor: theme.palette.background.default,
-            maxHeight: '56px'
-        },
-        GridItem: {
-            textAlign: 'center'
-        },
-        mx12: {
-            marginRight: '12px',
-            marginLeft: '12px'
-        },
-        ml12: {
-            marginLeft: '12px'
-        }
-    }))
-    const classes = styles()
-
     // template
     return (
-        <Fragment>
-            <AppBar className={classes.AppBar} position="sticky">
-                <Toolbar variant="dense" disableGutters>
-                    <ZoomInIcon
-                        htmlColor="white"
-                        className={classes.ml12}
-                    />
-                    <Box color="white" display="flex" mr={1.5}>
-                        {(paperScale * 100).toFixed(0) + '%'}
-                    </Box>
-                    <Divider
-                        orientation="vertical"
-                        flexItem
-                    />
-                </Toolbar>
-            </AppBar>
-                <Box
-                    id="paper"
-                    onContextMenu={(e) => e.preventDefault()}
-                />
-        </Fragment>
+        <div
+            id='paper'
+            onContextMenu={(e) => e.preventDefault()}
+        ></div>
     )
 }

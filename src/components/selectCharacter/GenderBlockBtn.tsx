@@ -5,8 +5,8 @@ const backendUrl = process.env.REACT_APP_BACKEND_BASEURL || ''
 const genderToCN = { male: '男', female: '女' }
 type gender = 'male' | 'female'
 
-export default function GenderBlockBtn (props: { gender: gender, selected?: boolean }): JSX.Element {
-    const { gender, selected } = props
+export default function GenderBlockBtn (props: { gender: gender, selectedGender: gender }): JSX.Element {
+    const { gender, selectedGender } = props
     const imgSrc = `${backendUrl}/imgs/beginner_${gender}_red_front.png`
 
     const useStyles = makeStyles({
@@ -34,6 +34,9 @@ export default function GenderBlockBtn (props: { gender: gender, selected?: bool
             alignItems: 'center',
             paddingRight: '15%',
             letterSpacing: '1px'
+        },
+        darkenImg: {
+            filter: 'brightness(70%)'
         }
     })
     const classes = useStyles()
@@ -45,13 +48,14 @@ export default function GenderBlockBtn (props: { gender: gender, selected?: bool
                     src={imgSrc}
                     width='100%'
                     alt={genderToCN[gender]}
+                    className={selectedGender === gender ? classes.darkenImg: ''}
                 />
             </Box>
             <Box
                 className={`
                 ${classes.btn}
                 ${globalStyle.yellowBlock}
-                ${selected ? globalStyle.hoverEffect: ''}`}
+                ${selectedGender === gender ? globalStyle.hoverEffect: ''}`}
             >
                 <img src='' width='30px' height='30px'/>
                 <Box className={classes.btnText}>

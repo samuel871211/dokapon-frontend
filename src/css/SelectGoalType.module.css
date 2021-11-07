@@ -1,0 +1,10 @@
+.btnGroup {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    flex-direction: column;
+    outline: none;
+}
+.btn {
+    width: 75%;
+}

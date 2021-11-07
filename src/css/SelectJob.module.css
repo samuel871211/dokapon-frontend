@@ -1,0 +1,23 @@
+.container {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    outline: none;
+    animation: slideLeft 1s;
+}
+.btnGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 45%;
+    height: 100%;
+    justify-content: space-evenly;
+}
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: none;
+    }
+}

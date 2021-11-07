@@ -1,57 +1,58 @@
-import { Slide, Box } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
-import style from '../../global/style'
+import { useState, useRef, useEffect } from 'react'
+import { Slide } from '@material-ui/core'
 
-export default function SelectGoalType (): JSX.Element {
-    const useStyles = makeStyles({
-        btnGroup: {
-            width: '80%',
-            height: '80%',
-            margin: 'auto',
-            flexDirection: 'column'
-        },
-        btn: {
-            width: '80%',
-            height: '15%',
-            marginTop: '5%',
-            display: 'flex',
-            paddingLeft: '5%',
-            alignItems: 'center',
-            fontWeight: 'bold',
-            fontSize: '2rem',
-            letterSpacing: '1px'
+import IconTextBtn from '../IconTextBtn'
+import globalStyles from '../../css/Global.module.css'
+import styles from '../../css/SelectGoalType.module.css'
+type goalType = 'period' | 'money'
+
+export default SelectGoalType
+
+function SelectGoalType (): JSX.Element {
+    const focusElement = useRef<HTMLDivElement>(null)
+    const [selectedGoalType, toggleSelectedGoalType] = useState<goalType>('period')
+
+    function handleKeyDown (e: React.KeyboardEvent) {
+        switch (e.key.toLowerCase()) {
+        case 'arrowup':
+            toggleSelectedGoalType(selectedGoalType === 'period' ? 'money' : 'period')
+            break
+        case 'arrowdown':
+            toggleSelectedGoalType(selectedGoalType === 'period' ? 'money' : 'period')
+            break
+        case 'd':
+            break
+        case 'x':
+            break
+        default:
+            break
         }
-    })
-    const globalStyle = style()
-    const classes = useStyles()
+    }
+
+    useEffect(() => focusElement.current?.focus(), [])
+
     return (
-        <Slide direction="left" in={true} timeout={800}>
-            <Box
+        <Slide direction='left' in={true} timeout={800}>
+            <div
+                ref={focusElement}
                 className={`
-                ${globalStyle.xyCenter}
-                ${classes.btnGroup}`}
+                ${globalStyles.xyCenter}
+                ${styles.btnGroup}`}
+                tabIndex={0}
+                onBlur={(event) => event.target.focus()}
+                onKeyDown={handleKeyDown}
             >
-                <Box
-                    role='button'
-                    className={`
-                    ${classes.btn}
-                    ${globalStyle.yellowBlock}
-                    ${globalStyle.btnHover}`}
-                >
-                    <img width='30px' height='30px'/>
-                    期間目標
-                </Box>
-                <Box
-                    role='button'
-                    className={`
-                    ${classes.btn}
-                    ${globalStyle.yellowBlock}
-                    ${globalStyle.btnHover}`}
-                >
-                    <img width='30px' height='30px'/>
-                    金額目標
-                </Box>
-            </Box>
+                <IconTextBtn
+                    text='期間目標'
+                    selected={selectedGoalType === 'period'}
+                    customClass={styles.btn}
+                />
+                <IconTextBtn
+                    text='金額目標'
+                    selected={selectedGoalType === 'money'}
+                    customClass={styles.btn}
+                />
+            </div>
         </Slide>
     )
 }

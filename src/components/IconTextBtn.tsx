@@ -1,5 +1,5 @@
-import styles from '../css/IconTextBtn.module.css'
-import globalStyles from '../css/Global.module.css'
+import styles from './IconTextBtn.module.css'
+import globalStyles from '../global/styles.module.css'
 
 export default IconTextBtn
 
@@ -11,7 +11,6 @@ function IconTextBtn (props: {
     const { text, selected, customClass } = props
     return (
         <div
-            role='button'
             className={`
             ${globalStyles.yellowBlock}
             ${selected ? globalStyles.hoverEffect : ''}

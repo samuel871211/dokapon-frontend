@@ -1,4 +1,4 @@
-const japanWords = {
+const japaneseChars = {
     'hiragana': [
         [
             'あ', 'い', 'う', 'え', 'お',
@@ -72,4 +72,4 @@ const japanWords = {
         ]
     ]
 }
-export default japanWords
+export default japaneseChars

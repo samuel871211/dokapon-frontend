@@ -2,8 +2,8 @@ import { useRef, useState, useEffect } from 'react'
 
 import JobBtn from './JobBtn'
 import ExampleCharacterImg from './ExampleCharacterImg'
-import globalStyles from '../../css/Global.module.css'
-import styles from '../../css/SelectJob.module.css'
+import globalStyles from '../../global/styles.module.css'
+import styles from './SelectJob.module.css'
 import { basicJobs } from '../../global/characters'
 
 const jobArr = Object.keys(basicJobs)

@@ -3,8 +3,8 @@ import { useEffect, useState, useRef } from 'react'
 import { Slide } from '@material-ui/core'
 
 import NumberOfPlayersBtn from './NumberOfPlayersBtn'
-import styles from '../../css/SelectNumberOfPlayers.module.css'
-import globalStyles from '../../css/Global.module.css'
+import styles from './SelectNumberOfPlayers.module.css'
+import globalStyles from '../../global/styles.module.css'
 
 export default SelectNumberOfPlayers
 

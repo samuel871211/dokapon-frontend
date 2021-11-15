@@ -1,0 +1,13 @@
+.container {
+    width: calc(100% / 9);
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+}
+.bottomLine {
+    width: 90%;
+    height: 3px;
+    margin-top: 4px;
+    background-color: black;
+}

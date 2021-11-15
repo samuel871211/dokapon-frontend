@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import IconTextBtn from '../components/IconTextBtn'
-import styles from '../css/HomePage.module.css'
+import styles from './HomePage.module.css'
 
 const components = ['SelectCharacter', 'SelectCharacter', 'Book', 'Setting']
 

@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Slide } from '@material-ui/core'
 
 import GenderBlockBtn from './GenderBlockBtn'
-import globalStyles from '../../css/Global.module.css'
-import styles from '../../css/SelectColor.module.css'
+import globalStyles from '../../global/styles.module.css'
+import styles from './SelectColor.module.css'
 type gender = 'male' | 'female'
 
 export default function SelectGender (): JSX.Element {
@@ -40,8 +40,8 @@ export default function SelectGender (): JSX.Element {
                 onBlur={(event) => event.target.focus()}
                 onKeyDown={handleKeyDown}
             >
-                <GenderBlockBtn gender='male' selectedGender={selectedGender}/>
-                <GenderBlockBtn gender='female' selectedGender={selectedGender}/>
+                <GenderBlockBtn gender='male' selected={selectedGender === 'male'}/>
+                <GenderBlockBtn gender='female' selected={selectedGender === 'female'}/>
             </div>
         </Slide>
     )

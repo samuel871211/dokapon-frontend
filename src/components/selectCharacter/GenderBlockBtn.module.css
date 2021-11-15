@@ -1,0 +1,31 @@
+.genderBlock {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+.imgContainer {
+    width: min(20vw, 41.6vh);
+}
+.btn {
+    width: 80%;
+    height: 15%;
+    display: flex;
+    padding-left: 5%;
+    align-items: center;
+    font-weight: bold;
+    font-weight: 2rem;
+}
+.btnText {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15%;
+    letter-spacing: 1px;
+}
+.darkenImg {
+    filter: brightness(70%);
+}

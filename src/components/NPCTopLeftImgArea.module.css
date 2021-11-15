@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    animation: slideRight 1s;
+}
+.biggestSquare {
+    width: min(calc(100vw / 12 * 5), 65vh);
+    height: min(calc(100vw / 12 * 5), 65vh);
+}
+.guideImg {
+    width: 100%;
+    height: 100%;
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: none;
+    }
+}

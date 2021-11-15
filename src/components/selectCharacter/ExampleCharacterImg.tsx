@@ -1,5 +1,5 @@
-import globalStyles from '../../css/Global.module.css'
-import styles from '../../css/ExampleCharacterImg.module.css'
+import globalStyles from '../../global/styles.module.css'
+import styles from './ExampleCharacterImg.module.css'
 
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
 

@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from 'react'
 import { Slide } from '@material-ui/core'
 
 import IconTextBtn from '../IconTextBtn'
-import globalStyles from '../../css/Global.module.css'
-import styles from '../../css/SelectGoalType.module.css'
+import globalStyles from '../../global/styles.module.css'
+import styles from './SelectGoalType.module.css'
 type goalType = 'period' | 'money'
 
 export default SelectGoalType

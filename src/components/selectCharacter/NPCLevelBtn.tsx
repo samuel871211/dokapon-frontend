@@ -1,10 +1,10 @@
 import globalStyles from '../../global/styles.module.css'
-import styles from './JobBtn.module.css'
+import styles from './NPCLevelBtn.module.css'
 
-export default JobBtn
+export default NPCLevelBtn
 
-function JobBtn (props: { name: string, selected: boolean }): JSX.Element {
-    const { name, selected } = props
+function NPCLevelBtn (props: { aiLevel: string, selected: boolean }): JSX.Element {
+    const { aiLevel, selected } = props
     return (
         <div
             className={`
@@ -13,7 +13,7 @@ function JobBtn (props: { name: string, selected: boolean }): JSX.Element {
             ${globalStyles.xyCenter}
             ${selected ? globalStyles.hoverEffect : ''}`}
         >
-            {name}
-        </div>
+            {aiLevel}
+        </div> 
     )
 }

@@ -1,5 +1,7 @@
-.bottomArea {
-    height: 35%;
+.container {
+    height: 100%;
+    animation: slideUp 1s;
+    /* overflow: hidden; */
 }
 .nameArea {
     width: 35%;
@@ -9,7 +11,8 @@
     border: 3px outset #222222;
     background-color: #fee59a;
     position: relative;
-    top: 7.5%
+    top: 7.5%;
+    /* animation: slideUp 1s; */
 }
 .name {
     height: 100%;
@@ -28,4 +31,13 @@
     letter-spacing: 1px;
     white-space: pre-wrap;
     text-align: center;
+    /* animation: slideUp 1s; */
+}
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: none;
+    }
 }

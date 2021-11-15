@@ -1,0 +1,14 @@
+.moneyBtn {
+    width: 10%;
+}
+.durationBtn {
+    width: 30%;
+}
+.moneyBtn, .durationBtn {
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+}
+.moneyBtn:empty, .durationBtn:empty {
+    height: 2.5rem;
+}

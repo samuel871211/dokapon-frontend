@@ -1,5 +1,5 @@
-import globalStyles from '../../css/Global.module.css'
-import styles from '../../css/ColorBtn.module.css'
+import globalStyles from '../../global/styles.module.css'
+import styles from './ColorBtn.module.css'
 
 export default ColorBtn
 
@@ -11,7 +11,6 @@ function ColorBtn (props: {
     const { rgb, name, selected } = props
     return (
         <div
-            role='button'
             className={`
             ${styles.btn}
             ${globalStyles.yellowBlock}

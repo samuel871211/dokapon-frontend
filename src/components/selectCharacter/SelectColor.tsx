@@ -1,8 +1,8 @@
 import ExampleCharacterImg from './ExampleCharacterImg'
 import ColorBtn from './ColorBtn'
 
-import globalStyles from '../../css/Global.module.css'
-import styles from '../../css/SelectColor.module.css'
+import globalStyles from '../../global/styles.module.css'
+import styles from './SelectColor.module.css'
 import { colors } from '../../global/characters'
 import { useEffect, useRef, useState } from 'react'
 

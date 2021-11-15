@@ -70,6 +70,17 @@ const japaneseChars = {
             '　', '　', '　', '　', '　',
             '　', '　', '　', '　', '　'
         ]
+    ],
+    'menu': [
+        '平假名',
+        '片假名',
+        'ＡＢＣ',
+        '　　　',
+        '前進',
+        '後退',
+        '刪除',
+        '　　　',
+        'ＯＫ'
     ]
 }
 export default japaneseChars

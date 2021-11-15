@@ -3,6 +3,7 @@ import styles from './NameInputDialog.module.css'
 import globalStyles from '../../global/styles.module.css'
 import NameDisplayWord from './NameDisplayWord'
 import KeyBoardKey from './KeyBoardKey'
+import KeyBoardMenuItem from './KeyBoardMenuItem'
 import { useState, useRef, useEffect } from 'react'
 
 type wordType = 'hiragana' | 'katakana' | 'special'
@@ -13,7 +14,7 @@ function NameInputDialog (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
     const [wordType, setWordType] = useState<wordType>('hiragana')
     const [selectedSection, setSelectedSection] = useState(0)
-    const [selectedWordIdx, setSelectedIdx] = useState(0)
+    const [selectedWordIdx, setSelectedWordIdx] = useState(0)
 
     function generateKeyBoardKeys (section: 0 | 1) {
         const rows: JSX.Element[] = []
@@ -28,20 +29,136 @@ function NameInputDialog (): JSX.Element {
         })
         return rows
     }
+    function generateKeyBoardMenuItems () {
+        const rows: JSX.Element[] = []
+        japaneseChars.menu.forEach((word, index) => {
+            rows.push(
+                <KeyBoardMenuItem
+                    word={word}
+                    key={index}
+                    selected={selectedSection === 2 && selectedWordIdx === index}
+                />
+            )
+        })
+        return rows
+    }
 
     function handleKeyDown (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
-            // setSelectedIdx(selectedIdx)
+            (function handleSelectedWordIdx () {
+                switch (selectedSection) {
+                case 0:
+                case 1:
+                    switch (selectedWordIdx) {
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                        setSelectedWordIdx(selectedWordIdx + 40)
+                        break
+                    default:
+                        setSelectedWordIdx(selectedWordIdx - 5)
+                        break
+                    }
+                    break
+                case 2:
+                    setSelectedWordIdx(selectedWordIdx === 0 ? 8 : selectedWordIdx - 1)
+                    break
+                }
+            })()
             break
         case 'arrowdown':
-            // setSelectedIdx()
+            (function handleSelectedWordIdx () {
+                switch (selectedSection) {
+                case 0:
+                case 1:
+                    switch (selectedWordIdx) {
+                    case 40:
+                    case 41:
+                    case 42:
+                    case 43:
+                    case 44:
+                        setSelectedWordIdx(selectedWordIdx - 40)
+                        break
+                    default:
+                        setSelectedWordIdx(selectedWordIdx + 5)
+                        break
+                    }
+                    break
+                case 2:
+                    setSelectedWordIdx(selectedWordIdx === 8 ? 0 : selectedWordIdx + 1)
+                    break
+                }
+            })()
             break
         case 'arrowleft':
+            (function handleSelectedWordIdx () {
+                switch (selectedSection) {
+                case 0:
+                    if (selectedWordIdx % 5 === 0) {
+                        setSelectedSection(2)
+                        setSelectedWordIdx(Math.floor(selectedWordIdx / 5))
+                    } else if (selectedWordIdx % 5 !== 0) {
+                        setSelectedWordIdx(selectedWordIdx - 1)
+                    }
+                    break
+                case 1:
+                    if (selectedWordIdx % 5 === 0) {
+                        setSelectedSection(0)
+                        setSelectedWordIdx(selectedWordIdx + 4)
+                    } else if (selectedWordIdx % 5 !== 0) {
+                        setSelectedWordIdx(selectedWordIdx - 1)
+                    }
+                    break
+                case 2:
+                    setSelectedSection(1)
+                    setSelectedWordIdx(selectedWordIdx * 5 + 4)
+                    break
+                }
+            })()
             break
         case 'arrowright':
+            (function handleSelectedWordIdx () {
+                switch (selectedSection) {
+                case 0:
+                    if (selectedWordIdx % 5 === 4) {
+                        setSelectedSection(1)
+                        setSelectedWordIdx(selectedWordIdx - 4)
+                    } else if (selectedWordIdx % 5 !== 4) {
+                        setSelectedWordIdx(selectedWordIdx + 1)
+                    }
+                    break
+                case 1:
+                    if (selectedWordIdx % 5 === 4) {
+                        setSelectedSection(2)
+                        setSelectedWordIdx(Math.floor(selectedWordIdx / 5))
+                    } else if (selectedWordIdx % 5 !== 4) {
+                        setSelectedWordIdx(selectedWordIdx + 1)
+                    }
+                    break
+                case 2:
+                    setSelectedSection(0)
+                    setSelectedWordIdx(selectedWordIdx * 5)
+                    break
+                }
+            })()
             break
         case 'd':
+            switch (selectedSection) {
+            case 0:
+            case 1:
+                (function handleNameInput () {
+
+                })()
+                break
+            case 2:
+                (function handleMenuItemClick () {
+                    
+                })()
+                break
+            }
             break
         case 'x':
             break
@@ -87,65 +204,7 @@ function NameInputDialog (): JSX.Element {
                     {generateKeyBoardKeys(1)}
                 </div>
                 <div className={styles.keyboardMenu}>
-                    <div
-                        className={`
-                        ${styles.menuBtn}
-                        ${selectedSection === 2 && selectedWordIdx === 0 ? globalStyles.hoverEffect : ''}`}
-                    >
-                        平假名
-                    </div>
-                    <div
-                        className={`
-                        ${styles.menuBtn}
-                        ${selectedSection === 2 && selectedWordIdx === 1 ? globalStyles.hoverEffect : ''}`}
-                    >
-                        片假名
-                    </div>
-                    <div
-                        className={`
-                        ${styles.menuBtn}
-                        ${selectedSection === 2 && selectedWordIdx === 2 ? globalStyles.hoverEffect : ''}`}
-                    >
-                        ＡＢＣ
-                    </div>
-                    <div
-                        className={`
-                        ${styles.menuBtn}
-                        ${selectedSection === 2 && selectedWordIdx === 3 ? globalStyles.hoverEffect : ''}`}
-                    ></div>
-                    <div
-                        className={`
-                        ${styles.menuBtn}
-                        ${selectedSection === 2 && selectedWordIdx === 4 ? globalStyles.hoverEffect : ''}`}
-                    >
-                        前進
-                    </div>
-                    <div
-                        className={`
-                        ${styles.menuBtn}
-                        ${selectedSection === 2 && selectedWordIdx === 5 ? globalStyles.hoverEffect : ''}`}
-                    >
-                        後退
-                    </div>
-                    <div
-                        className={`
-                        ${styles.menuBtn}
-                        ${selectedSection === 2 && selectedWordIdx === 6 ? globalStyles.hoverEffect : ''}`}
-                    >
-                        刪除
-                    </div>
-                    <div
-                        className={`
-                        ${styles.menuBtn}
-                        ${selectedSection === 2 && selectedWordIdx === 7 ? globalStyles.hoverEffect : ''}`}
-                    ></div>
-                    <div
-                        className={`
-                        ${styles.menuBtn}
-                        ${selectedSection === 2 && selectedWordIdx === 8 ? globalStyles.hoverEffect : ''}`}
-                    >
-                        ＯＫ
-                    </div>
+                    {generateKeyBoardMenuItems()}
                 </div>
             </div>
         </div>

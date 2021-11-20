@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from 'react'
-import { Slide } from '@material-ui/core'
+import { useState, useRef, useEffect, useContext } from 'react'
 
+import { UserSelectDispatch } from '../../reducers/SelectCharacter'
 import IconTextBtn from '../IconTextBtn'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectGoalType.module.css'
@@ -10,6 +10,7 @@ export default SelectGoalType
 
 function SelectGoalType (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
+    const dispatch  = useContext(UserSelectDispatch)
     const [selectedGoalType, toggleSelectedGoalType] = useState<goalType>('period')
 
     function handleKeyDown (e: React.KeyboardEvent) {
@@ -21,6 +22,14 @@ function SelectGoalType (): JSX.Element {
             toggleSelectedGoalType(selectedGoalType === 'period' ? 'money' : 'period')
             break
         case 'd':
+            dispatch({
+                type: 'goalType',
+                payload: selectedGoalType
+            })
+            dispatch({
+                type: 'currentStep',
+                payload: 'GoalInputDialog'
+            })
             break
         case 'x':
             break
@@ -32,27 +41,25 @@ function SelectGoalType (): JSX.Element {
     useEffect(() => focusElement.current?.focus(), [])
 
     return (
-        <Slide direction='left' in={true} timeout={800}>
-            <div
-                ref={focusElement}
-                className={`
-                ${globalStyles.xyCenter}
-                ${styles.btnGroup}`}
-                tabIndex={0}
-                onBlur={(event) => event.target.focus()}
-                onKeyDown={handleKeyDown}
-            >
-                <IconTextBtn
-                    text='期間目標'
-                    selected={selectedGoalType === 'period'}
-                    customClass={styles.btn}
-                />
-                <IconTextBtn
-                    text='金額目標'
-                    selected={selectedGoalType === 'money'}
-                    customClass={styles.btn}
-                />
-            </div>
-        </Slide>
+        <div
+            ref={focusElement}
+            className={`
+            ${globalStyles.xyCenter}
+            ${styles.container}`}
+            tabIndex={0}
+            onBlur={(event) => event.target.focus()}
+            onKeyDown={handleKeyDown}
+        >
+            <IconTextBtn
+                text='期間目標'
+                selected={selectedGoalType === 'period'}
+                customClass={styles.btn}
+            />
+            <IconTextBtn
+                text='金額目標'
+                selected={selectedGoalType === 'money'}
+                customClass={styles.btn}
+            />
+        </div>
     )
 }

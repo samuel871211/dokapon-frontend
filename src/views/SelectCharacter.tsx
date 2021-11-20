@@ -1,4 +1,4 @@
-import { useState, useContext, Fragment, useReducer } from 'react'
+import React, { Fragment, useReducer } from 'react'
 
 import guide from '../imgs/guide.png'
 
@@ -15,7 +15,7 @@ import GoalInputDialog from '../components/selectCharacter/GoalInputDialog'
 import NPCGenerateDialog from '../components/selectCharacter/NPCGenerateDialog'
 import NameInputDialog from '../components/selectCharacter/NameInputDialog'
 
-import { reducer, initState } from '../reducers/SelectCharacter'
+import { reducer, initState, UserSelectDispatch } from '../reducers/SelectCharacter'
 
 import styles from './SelectCharacter.module.css'
 
@@ -23,7 +23,6 @@ const Components = {
     SelectGoalType: <SelectGoalType/>,
     GoalInputDialog: <GoalInputDialog/>,
     SelectNumberOfPlayers: <SelectNumberOfPlayers/>,
-    OnlyOnePlayer: <SelectNumberOfPlayers/>,
     SelectGender: <SelectGender/>,
     NameInputDialog: <NameInputDialog/>,
     SelectColor: <SelectColor/>,
@@ -44,10 +43,6 @@ const steps = {
     SelectNumberOfPlayers: {
         settingTitle: '遊玩人數',
         NPCMessage: '有幾個勇者呢？'
-    },
-    OnlyOnePlayer: {
-        settingTitle: '遊玩人數',
-        NPCMessage: '只有一個人啊...'
     },
     SelectGender: {
         settingTitle: '性別選擇',
@@ -82,34 +77,33 @@ export default function SelectCharacter (): JSX.Element {
     
     // template
     return (
-        <div className={styles.container}>
-            
-            {currentStep === 'NameInputDialog' &&
-                <NameInputDialog/>
-            }
-            
-            {currentStep !== 'NameInputDialog' &&
-                <Fragment>
-                    <div className={styles.topArea}>
-                        <div className={styles.topLeftArea}>
-                            <NPCTopLeftImgArea src={guide} alt='ナビイ'/>
-                        </div>
-                        <div className={styles.topRightArea}>
-                            {currentStep !== 'NPCGenerateDialog' &&
+        <UserSelectDispatch.Provider value={ dispatch }>
+            <div className={styles.container}>
+                
+                {currentStep === 'NameInputDialog' &&
+                    <NameInputDialog/>
+                }
+                
+                {currentStep !== 'NameInputDialog' &&
+                    <Fragment>
+                        <div className={styles.topArea}>
+                            <div className={styles.topLeftArea}>
+                                <NPCTopLeftImgArea src={guide} alt='ナビイ'/>
+                            </div>
+                            <div className={styles.topRightArea}>
                                 <TitleArea title={steps[currentStep].settingTitle}/>
-                            }
-                            
-                            {Components[currentStep]}
+                                {Components[currentStep]}
+                            </div>
                         </div>
-                    </div>
-                    <div className={styles.bottomArea}>
-                        <NPCSpeakingDialog
-                            name='ナビイ'
-                            message={steps[currentStep].NPCMessage}
-                        />
-                    </div>
-                </Fragment>
-            }
-        </div>
+                        <div className={styles.bottomArea}>
+                            <NPCSpeakingDialog
+                                name='ナビイ'
+                                message={steps[currentStep].NPCMessage}
+                            />
+                        </div>
+                    </Fragment>
+                }
+            </div>
+        </UserSelectDispatch.Provider>
     )
 }

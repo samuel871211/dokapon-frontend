@@ -1,3 +1,5 @@
+import React from 'react'
+
 type steps =    
     'SelectGoalType' |
     'GoalInputDialog' |
@@ -10,6 +12,20 @@ type steps =
     'SelectNPCLevel'
 
 type goalType = 'duration' | 'money'
+
+type userSelectAction = {
+    type: 
+        'goalType' |
+        'currentStep' |
+        'goalInput' |
+        'numberOfPlayers' |
+        'gender' |
+        'nameInput' |
+        'color' |
+        'job' |
+        'npcLevel',
+    payload: string
+}
 
 const initState = {
     goalType: <goalType> 'duration',
@@ -44,12 +60,9 @@ const initState = {
     }]
 }
 
-type action = {
-    type: string,
-    payload: string
-}
+const UserSelectDispatch = React.createContext<React.Dispatch<userSelectAction>>({} as React.Dispatch<userSelectAction>)
 
-function reducer (state: typeof initState, action: action) {
+function reducer (state: typeof initState, action: userSelectAction) {
     const { type, payload } = action
 
     switch (type) {
@@ -80,4 +93,4 @@ function reducer (state: typeof initState, action: action) {
     }
 }
 
-export { reducer, initState }
+export { reducer, initState, UserSelectDispatch }

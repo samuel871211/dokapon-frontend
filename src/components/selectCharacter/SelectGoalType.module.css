@@ -1,10 +1,19 @@
-.btnGroup {
+.container {
     width: 80%;
     height: 80%;
     margin: auto;
     flex-direction: column;
     outline: none;
+    animation: slideLeft 1s;
 }
 .btn {
     width: 75%;
+}
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: none;
+    }
 }

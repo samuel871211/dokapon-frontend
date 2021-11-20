@@ -1,15 +1,13 @@
 import styles from './GoalInputBtn.module.css'
 import globalStyles from '../../global/styles.module.css'
-type props = {
-    type: 'duration' | 'money'
-    text: string,
-    selected: boolean,
-
-}
 
 export default GoalInputBtn
 
-function GoalInputBtn (props: props): JSX.Element {
+function GoalInputBtn (props: {
+    type: 'duration' | 'money'
+    text: string,
+    selected: boolean
+}): JSX.Element {
     const { text, selected, type } = props
     return (
         <div

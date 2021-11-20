@@ -1,7 +1,7 @@
 import japaneseChars from '../../global/japaneseChars'
 import styles from './NameInputDialog.module.css'
 import globalStyles from '../../global/styles.module.css'
-import NameDisplayWord from './NameDisplayWord'
+import NameInputWord from './NameInputWord'
 import KeyBoardKey from './KeyBoardKey'
 import KeyBoardMenuItem from './KeyBoardMenuItem'
 import { useState, useRef, useEffect } from 'react'
@@ -13,6 +13,8 @@ export default NameInputDialog
 function NameInputDialog (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
     const [wordType, setWordType] = useState<wordType>('hiragana')
+    const [nameInputWords, setNameInputWords] = useState(['　','　','　','　','　','　','　','　'])
+    const [curNameInputIdx, setCurNameInputIdx] = useState(0)
     const [selectedSection, setSelectedSection] = useState(0)
     const [selectedWordIdx, setSelectedWordIdx] = useState(0)
 
@@ -37,6 +39,20 @@ function NameInputDialog (): JSX.Element {
                     word={word}
                     key={index}
                     selected={selectedSection === 2 && selectedWordIdx === index}
+                />
+            )
+        })
+        return rows
+    }
+
+    function generateNameInputWords () {
+        const rows: JSX.Element[] = []
+        nameInputWords.forEach((word, index) => {
+            rows.push(
+                <NameInputWord
+                    word={word}
+                    current={curNameInputIdx === index}
+                    key={index}
                 />
             )
         })
@@ -150,12 +166,67 @@ function NameInputDialog (): JSX.Element {
             case 0:
             case 1:
                 (function handleNameInput () {
+                    const word = japaneseChars[wordType][selectedSection][selectedWordIdx]
+                    if (word.trim() === '') return
+                    
+                    // replace/add word to current idx
+                    const newNameInputWords = [...nameInputWords]
+                    newNameInputWords[curNameInputIdx] = word
+                    setNameInputWords(newNameInputWords)
 
+                    if (curNameInputIdx === 7) {
+                        // focus to 'ＯＫ' when input complete
+                        setSelectedSection(2)
+                        setSelectedWordIdx(8)
+                    } else {
+                        // otherwise, focus to next idx
+                        setCurNameInputIdx(curNameInputIdx + 1)
+                    }
                 })()
                 break
             case 2:
                 (function handleMenuItemClick () {
-                    
+                    const word = japaneseChars.menu[selectedWordIdx]
+                    switch (word) {
+                    case '平假名':
+                        setWordType('hiragana')
+                        break
+                    case '片假名':
+                        setWordType('katakana')
+                        break
+                    case 'ＡＢＣ':
+                        setWordType('special')
+                        break
+                    case '前進':
+                        if (curNameInputIdx === 7) break
+                        setCurNameInputIdx(curNameInputIdx + 1)
+                        break
+                    case '後退':
+                        if (curNameInputIdx === 0) break
+                        setCurNameInputIdx(curNameInputIdx - 1)
+                        break
+                    case '刪除':
+                        if (nameInputWords[curNameInputIdx].trim() !== '') {
+                            const newNameInputWords = [...nameInputWords]
+                            newNameInputWords[curNameInputIdx] = '　'
+                            setNameInputWords(newNameInputWords)
+                            break
+                        }
+
+                        if (curNameInputIdx === 0) break
+
+                        setCurNameInputIdx(curNameInputIdx - 1)
+                        break
+                    case 'ＯＫ': {
+                        const emptyWords = nameInputWords.filter(word => word.trim() === '')
+                        if (emptyWords.length === nameInputWords.length) break
+
+                        // next component
+                        break
+                    }
+                    default:
+                        break
+                    }
                 })()
                 break
             }
@@ -183,14 +254,7 @@ function NameInputDialog (): JSX.Element {
                 ${globalStyles.xyCenter}
                 ${globalStyles.yellowBlock}`}
             >
-                <NameDisplayWord word='好' current={true}/>
-                <NameDisplayWord word='好' current={false}/>
-                <NameDisplayWord word='好' current={false}/>
-                <NameDisplayWord word='好' current={false}/>
-                <NameDisplayWord word='好' current={false}/>
-                <NameDisplayWord word='好' current={false}/>
-                <NameDisplayWord word='好' current={false}/>
-                <NameDisplayWord word='好' current={false}/>
+                {generateNameInputWords()}
             </div>
             <div
                 className={`

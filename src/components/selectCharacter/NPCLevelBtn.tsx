@@ -1,9 +1,19 @@
 import globalStyles from '../../global/styles.module.css'
 import styles from './NPCLevelBtn.module.css'
 
+const aiLevelToCN = {
+    weak: '弱',
+    normal: '普通',
+    strong: '狡猾'
+}
+
+
 export default NPCLevelBtn
 
-function NPCLevelBtn (props: { aiLevel: string, selected: boolean }): JSX.Element {
+function NPCLevelBtn (props: {
+    aiLevel: 'weak' | 'normal' | 'strong',
+    selected: boolean
+}): JSX.Element {
     const { aiLevel, selected } = props
     return (
         <div
@@ -13,7 +23,7 @@ function NPCLevelBtn (props: { aiLevel: string, selected: boolean }): JSX.Elemen
             ${globalStyles.xyCenter}
             ${selected ? globalStyles.hoverEffect : ''}`}
         >
-            {aiLevel}
+            {aiLevelToCN[aiLevel]}
         </div> 
     )
 }

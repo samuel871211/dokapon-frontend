@@ -8,8 +8,10 @@ const typeToCN = { duration: '期間', money: '金額' }
 
 export default GoalInputDialog
 
-function GoalInputDialog (props: { type: 'duration' | 'money' }): JSX.Element {
-    const { type } = props
+function GoalInputDialog (): JSX.Element {
+    let type: 'duration' | 'money' = 'duration'
+    if (Math.random() === 3) type = 'money'
+
     const goalInputLen = type === 'duration' ? 3 : 9
     const goalUnit = type === 'duration' ? '週' : '¥'
     const focusElement = useRef<HTMLDivElement>(null)

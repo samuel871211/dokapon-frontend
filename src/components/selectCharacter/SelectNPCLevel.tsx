@@ -3,7 +3,8 @@ import NPCLevelBtn from './NPCLevelBtn'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectNPCLevel.module.css'
 
-const aiLevels = ['弱', '普通', '狡猾']
+type aiLevel = 'weak' | 'normal' | 'strong'
+const aiLevels: aiLevel[] = ['weak', 'normal', 'strong']
 
 export default SelectNPCLevel
 

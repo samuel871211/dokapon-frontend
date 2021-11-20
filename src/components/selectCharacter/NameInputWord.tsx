@@ -1,14 +1,12 @@
-import styles from './NameDisplayWord.module.css'
+import styles from './NameInputWord.module.css'
 import globalStyles from '../../global/styles.module.css'
 
-type props = {
+export default NameInputWord
+
+function NameInputWord (props: {
     word: string,
     current: boolean
-}
-
-export default NameDisplayWord
-
-function NameDisplayWord (props: props): JSX.Element {
+}): JSX.Element {
     const { word, current } = props
 
     return (

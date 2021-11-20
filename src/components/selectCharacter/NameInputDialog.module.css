@@ -1,6 +1,9 @@
 .container {
     width: 100%;
     height: 100%;
+    outline: none;
+    position: relative;
+    animation: slideLeft 1s;
 }
 .nameDisplayArea {
     width: 40%;
@@ -29,4 +32,12 @@
     width: 15%;
     display: flex;
     flex-direction: column;
+}
+@keyframes slideLeft {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0%;
+    }
 }

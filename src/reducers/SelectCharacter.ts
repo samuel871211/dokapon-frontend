@@ -5,13 +5,14 @@ type steps =
     'GoalInputDialog' |
     'SelectNumberOfPlayers' |
     'SelectGender' |
+    'BeforeNameInput' |
     'NameInputDialog' |
     'SelectColor' |
     'SelectJob' |
     'NPCGenerateDialog' |
     'SelectNPCLevel'
 
-type goalType = 'duration' | 'money'
+type goalType = 'period' | 'money'
 
 type userSelectAction = {
     type: 
@@ -23,16 +24,18 @@ type userSelectAction = {
         'nameInput' |
         'color' |
         'job' |
-        'npcLevel',
+        'npcLevel' |
+        'toggleTitleAreaLeaving',
     payload: string
 }
 
 const initState = {
-    goalType: <goalType> 'duration',
+    goalType: <goalType> 'period',
     goalInput: 1,
     numberOfPlayers: 1,
     currentPlayer: 1,
     currentStep: <steps> 'SelectGoalType',
+    titleAreaIsLeaving: false,
     playersAttrs: [{
         gender: 'male',
         nameInput: '',
@@ -60,7 +63,12 @@ const initState = {
     }]
 }
 
-const UserSelectDispatch = React.createContext<React.Dispatch<userSelectAction>>({} as React.Dispatch<userSelectAction>)
+type UserSelectContext = {
+    userSelect: typeof initState
+    dispatch: React.Dispatch<userSelectAction>
+}
+
+const UserSelectContext = React.createContext<UserSelectContext>({} as UserSelectContext)
 
 function reducer (state: typeof initState, action: userSelectAction) {
     const { type, payload } = action
@@ -88,9 +96,14 @@ function reducer (state: typeof initState, action: userSelectAction) {
         newState.playersAttrs[index][type] = payload
         return newState
     }
+    case 'toggleTitleAreaLeaving':
+        return {
+            ...state,
+            titleAreaIsLeaving: !state.titleAreaIsLeaving
+        }
     default:
         return state
     }
 }
 
-export { reducer, initState, UserSelectDispatch }
+export { reducer, initState, UserSelectContext }

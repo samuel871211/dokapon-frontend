@@ -23,21 +23,35 @@
     width: 95%;
     height: 75%;
     margin-left: 2.5%;
-    border-radius: 30px;
-    border: 3px outset #222222;
-    background-color: #fee59a;
     font-weight: bold;
     font-size: 2.5rem;
     letter-spacing: 1px;
-    white-space: pre-wrap;
-    text-align: center;
-    /* animation: slideUp 1s; */
+    line-height: 2.5rem;
+    flex-direction: column;
+}
+.message {
+    position: relative;
+}
+.message::after {
+    content: '';
+    color: #fee59a;
+    background-color: #fee59a;
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    line-height: 2.5rem;
+}
+.fadeIn::after {
+    animation: fadeIn 0.1s linear 0s 1 alternate forwards;
 }
 @keyframes slideUp {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: none;
-    }
+    0%   { transform: translateY(100%) }
+    100% { transform: none }
+}
+@keyframes fadeIn {
+    0%   { left: 0% }
+    100% { left: 100% }
 }

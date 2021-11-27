@@ -4,7 +4,7 @@ import globalStyles from '../../global/styles.module.css'
 export default GoalInputBtn
 
 function GoalInputBtn (props: {
-    type: 'duration' | 'money'
+    type: 'period' | 'money'
     text: string,
     selected: boolean
 }): JSX.Element {

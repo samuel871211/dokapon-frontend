@@ -6,6 +6,9 @@
     outline: none;
     animation: slideLeft 1s;
 }
+.leave {
+    animation: slideRight 1s;
+}
 .btn {
     width: 75%;
 }
@@ -15,5 +18,13 @@
     }
     100% {
         transform: none;
+    }
+}
+@keyframes slideRight {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: translateX(200%);
     }
 }

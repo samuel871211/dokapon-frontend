@@ -15,15 +15,18 @@ import GoalInputDialog from '../components/selectCharacter/GoalInputDialog'
 import NPCGenerateDialog from '../components/selectCharacter/NPCGenerateDialog'
 import NameInputDialog from '../components/selectCharacter/NameInputDialog'
 
-import { reducer, initState, UserSelectDispatch } from '../reducers/SelectCharacter'
+import { reducer, initState, UserSelectContext } from '../reducers/SelectCharacter'
 
 import styles from './SelectCharacter.module.css'
+
+const digitToFullWidth = ['', '１', '２', '３', '４']
 
 const Components = {
     SelectGoalType: <SelectGoalType/>,
     GoalInputDialog: <GoalInputDialog/>,
     SelectNumberOfPlayers: <SelectNumberOfPlayers/>,
     SelectGender: <SelectGender/>,
+    BeforeNameInput: '',
     NameInputDialog: <NameInputDialog/>,
     SelectColor: <SelectColor/>,
     SelectJob: <SelectJob/>,
@@ -31,53 +34,70 @@ const Components = {
     SelectNPCLevel: <SelectNPCLevel/>
 }
 
-const steps = {
-    SelectGoalType: {
-        settingTitle: '自由模式設定',
-        NPCMessage: '要選擇什麼遊戲模式呢？'
-    },
-    GoalInputDialog: {
-        settingTitle: '',
-        NPCMessage: '請選擇xxx'
-    },
-    SelectNumberOfPlayers: {
-        settingTitle: '遊玩人數',
-        NPCMessage: '有幾個勇者呢？'
-    },
-    SelectGender: {
-        settingTitle: '性別選擇',
-        NPCMessage: '第１個勇者\n勇者的性別為何'
-    },
-    NameInputDialog: {
-        settingTitle: '',
-        NPCMessage: ''
-    },
-    SelectColor: {
-        settingTitle: '顏色選擇',
-        NPCMessage: '想詢問xxx\n勇者喜歡什麼顏色'
-    },
-    SelectJob: {
-        settingTitle: '職業選擇',
-        NPCMessage: 'xxx\n勇者偏好什麼職業'
-    },
-    NPCGenerateDialog: {
-        settingTitle: '',
-        NPCMessage: '我們打算招募以下這位勇者\n如果你覺得不喜歡，可以再更改'
-    },
-    SelectNPCLevel: {
-        settingTitle: '強度選擇',
-        NPCMessage: '強度要多強呢'
-    }
-}
-
 export default function SelectCharacter (): JSX.Element {
     // data
     const [userSelect, dispatch] = useReducer(reducer, initState)
-    const { currentStep } = userSelect
+    const { currentStep, goalType, playersAttrs, currentPlayer } = userSelect
+    const nameInput = playersAttrs[currentPlayer - 1].nameInput
+
+    function display (step: typeof currentStep) {
+        switch (step) {
+        case 'SelectGoalType':
+            return {
+                title: '自由模式設定',
+                NPCMessage: '要選擇什麼遊戲模式呢？\n我好帥'
+            }
+        case 'GoalInputDialog':
+            return {
+                title: '',
+                NPCMessage: `請選擇${goalType === 'period' ? '期間' : '金額'}`
+            }
+        case 'SelectNumberOfPlayers':
+            return {
+                title: '遊玩人數',
+                NPCMessage: '有幾個勇者呢？'
+            }
+        case 'SelectGender':
+            return {
+                title: '性別選擇',
+                NPCMessage: `第${digitToFullWidth[currentPlayer]}個勇者\n勇者的性別為何？`
+            }
+        case 'BeforeNameInput':
+            return {
+                title: '',
+                NPCMessage: '請教勇者的名字'
+            }
+        case 'NameInputDialog':
+            return {
+                title: '',
+                NPCMessage: ''
+            }
+        case 'SelectColor': 
+            return {
+                title: '顏色選擇',
+                NPCMessage: `想詢問${nameInput}\n勇者喜歡什麼顏色`
+            }
+        case 'SelectJob': 
+            return {
+                title: '職業選擇',
+                NPCMessage: `${nameInput}\n勇者偏好什麼職業`
+            }
+        case 'NPCGenerateDialog':
+            return {
+                title: '',
+                NPCMessage: '我們打算招募以下這位勇者\n如果你覺得不喜歡，可以再更改'
+            }
+        case 'SelectNPCLevel': 
+            return {
+                title: '強度選擇',
+                NPCMessage: '強度要多強呢'
+            }    
+        }
+    }
     
     // template
     return (
-        <UserSelectDispatch.Provider value={ dispatch }>
+        <UserSelectContext.Provider value={{ userSelect, dispatch }}>
             <div className={styles.container}>
                 
                 {currentStep === 'NameInputDialog' &&
@@ -91,19 +111,19 @@ export default function SelectCharacter (): JSX.Element {
                                 <NPCTopLeftImgArea src={guide} alt='ナビイ'/>
                             </div>
                             <div className={styles.topRightArea}>
-                                <TitleArea title={steps[currentStep].settingTitle}/>
+                                <TitleArea title={display(currentStep).title}/>
                                 {Components[currentStep]}
                             </div>
                         </div>
                         <div className={styles.bottomArea}>
                             <NPCSpeakingDialog
                                 name='ナビイ'
-                                message={steps[currentStep].NPCMessage}
+                                message={display(currentStep).NPCMessage}
                             />
                         </div>
                     </Fragment>
                 }
             </div>
-        </UserSelectDispatch.Provider>
+        </UserSelectContext.Provider>
     )
 }

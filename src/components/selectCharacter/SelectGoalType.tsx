@@ -1,17 +1,19 @@
-import { useState, useRef, useEffect, useContext } from 'react'
+import React, { useState, useRef, useEffect, useContext } from 'react'
 
-import { UserSelectDispatch } from '../../reducers/SelectCharacter'
+import { UserSelectContext } from '../../reducers/SelectCharacter'
 import IconTextBtn from '../IconTextBtn'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectGoalType.module.css'
-type goalType = 'period' | 'money'
+// type goalType = 'period' | 'money'
 
 export default SelectGoalType
 
 function SelectGoalType (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const dispatch  = useContext(UserSelectDispatch)
-    const [selectedGoalType, toggleSelectedGoalType] = useState<goalType>('period')
+    const { dispatch, userSelect }  = useContext(UserSelectContext)
+    const { goalType } = userSelect
+    const [isLeave, toggleIsLeave] = useState(false)
+    const [selectedGoalType, toggleSelectedGoalType] = useState(goalType)
 
     function handleKeyDown (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
@@ -22,20 +24,32 @@ function SelectGoalType (): JSX.Element {
             toggleSelectedGoalType(selectedGoalType === 'period' ? 'money' : 'period')
             break
         case 'd':
+            toggleIsLeave(true)
             dispatch({
-                type: 'goalType',
-                payload: selectedGoalType
-            })
-            dispatch({
-                type: 'currentStep',
-                payload: 'GoalInputDialog'
+                type: 'toggleTitleAreaLeaving',
+                payload: ''
             })
             break
         case 'x':
+            // TODO: handle animation
+            window.location.assign('/')
             break
         default:
             break
         }
+    }
+
+    function handleAnimation (e: React.AnimationEvent<HTMLDivElement>) {
+        if (e.animationName.includes('slideLeft')) return
+        
+        dispatch({
+            type: 'goalType',
+            payload: selectedGoalType
+        })
+        dispatch({
+            type: 'currentStep',
+            payload: 'GoalInputDialog'
+        })
     }
 
     useEffect(() => focusElement.current?.focus(), [])
@@ -45,10 +59,12 @@ function SelectGoalType (): JSX.Element {
             ref={focusElement}
             className={`
             ${globalStyles.xyCenter}
-            ${styles.container}`}
+            ${styles.container}
+            ${isLeave ? styles.leave : ''}`}
             tabIndex={0}
             onBlur={(event) => event.target.focus()}
             onKeyDown={handleKeyDown}
+            onAnimationEnd={handleAnimation}
         >
             <IconTextBtn
                 text='期間目標'

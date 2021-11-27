@@ -4,7 +4,8 @@ import globalStyles from '../../global/styles.module.css'
 import NameInputWord from './NameInputWord'
 import KeyBoardKey from './KeyBoardKey'
 import KeyBoardMenuItem from './KeyBoardMenuItem'
-import { useState, useRef, useEffect } from 'react'
+import { UserSelectContext } from '../../reducers/SelectCharacter'
+import { useState, useRef, useEffect, useContext } from 'react'
 
 type wordType = 'hiragana' | 'katakana' | 'special'
 
@@ -12,6 +13,7 @@ export default NameInputDialog
 
 function NameInputDialog (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
+    const { dispatch } = useContext(UserSelectContext)
     const [wordType, setWordType] = useState<wordType>('hiragana')
     const [nameInputWords, setNameInputWords] = useState(['　','　','　','　','　','　','　','　'])
     const [curNameInputIdx, setCurNameInputIdx] = useState(0)
@@ -232,6 +234,10 @@ function NameInputDialog (): JSX.Element {
             }
             break
         case 'x':
+            dispatch({
+                type: 'currentStep',
+                payload: 'SelectGender'
+            })
             break
         default:
             break

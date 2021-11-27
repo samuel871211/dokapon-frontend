@@ -1,14 +1,12 @@
 .container {
     position: relative;
-    top: 10%;
+    top: 30%;
     left: 10%;
     width: 80%;
     height: 40%;
-    /* margin: calc(65vh * 0.3) 10%; */
     display: flex;
     flex-direction: column;
-    animation: slideLeft 1s ease-in;
-    /* transform: translateY(250%); */
+    animation: slideLeft 0.5s linear;
 }
 .title {
     width: 100%;
@@ -40,11 +38,9 @@
 }
 @keyframes slideLeft {
     0% {
-        transform: translateX(250%);
-        /* left: 100%; */
+        transform: translateX(100%);
     }
     100% {
         transform: none;
-        /* left: 10%; */
     }
 }

@@ -1,58 +1,97 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useContext } from 'react'
+import { UserSelectContext } from '../../reducers/SelectCharacter'
 import CustomBorderBottom from '../CustomBorderBottom'
 import GoalInputBtn from './GoalInputBtn'
 import globalStyles from '../../global/styles.module.css'
 import styles from './GoalInputDialog.module.css'
 
-const typeToCN = { duration: '期間', money: '金額' }
+const typeToCN = { period: '期間', money: '金額' }
 
 export default GoalInputDialog
 
 function GoalInputDialog (): JSX.Element {
-    let type: 'duration' | 'money' = 'duration'
-    if (Math.random() === 3) type = 'money'
-
-    const goalInputLen = type === 'duration' ? 3 : 9
-    const goalUnit = type === 'duration' ? '週' : '¥'
+    const { dispatch, userSelect: { goalType: type, goalInput: initGoalInput } } = useContext(UserSelectContext)
+    const goalInputLen = type === 'period' ? 3 : 9
+    const goalUnit = type === 'period' ? '週' : '¥'
     const focusElement = useRef<HTMLDivElement>(null)
-    const [goalInput, setGoalInput] = useState(1)
+    const [goalInput, setGoalInput] = useState(initGoalInput)
     const [selectedIdx, setSelectedIdx] = useState(goalInputLen - 1)
 
-    function handleKeyDown (e: React.KeyboardEvent) {
+    function handleKeyDown (e: React.KeyboardEvent): void {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
-            // setSelectedIdx(selectedIdx === 0 ? 4 : selectedIdx - 1)
+            (function handleAdd () {
+                const fillEmpty = '0'
+                const goalInputArr = transferNumberToArray(goalInput, fillEmpty)
+                let focusNumber = goalInputArr[selectedIdx]
+                if (focusNumber === '') focusNumber = '1'
+                else if (focusNumber === '9') focusNumber = '0'
+                else focusNumber = String(parseInt(focusNumber) + 1)
+                goalInputArr[selectedIdx] = focusNumber
+                setGoalInput(transferArrayToNumber(goalInputArr))
+            }())
             break
         case 'arrowdown':
-            // setSelectedIdx(selectedIdx === 4 ? 0 : selectedIdx + 1)
+            (function handleMinus () {
+                const fillEmpty = '0'
+                const goalInputArr = transferNumberToArray(goalInput, fillEmpty)
+                let focusNumber = goalInputArr[selectedIdx]
+                if (focusNumber === '') focusNumber = '9'
+                else if (focusNumber === '0') focusNumber = '9'
+                else focusNumber = String(parseInt(focusNumber) - 1)
+                goalInputArr[selectedIdx] = focusNumber
+                setGoalInput(transferArrayToNumber(goalInputArr))
+            }())
             break
         case 'arrowleft':
-            setSelectedIdx(selectedIdx === 0 ? 0 : selectedIdx - 1)
+            if (selectedIdx !== 0) return (setSelectedIdx(selectedIdx - 1))
+
+            setGoalInput(Math.pow(10, goalInputLen) - 1)
             break
         case 'arrowright':
-            setSelectedIdx(selectedIdx === goalInputLen - 1 ? goalInputLen - 1 : selectedIdx + 1)
+            if (selectedIdx !== goalInputLen - 1) return (setSelectedIdx(selectedIdx + 1))
+
+            setGoalInput(0)
             break
         case 'd':
+            dispatch({
+                type: 'goalInput',
+                payload: String(goalInput)
+            })
+            dispatch({
+                type: 'currentStep',
+                payload: 'SelectNumberOfPlayers'
+            })
             break
         case 'x':
+            dispatch({
+                type: 'currentStep',
+                payload: 'SelectGoalType'
+            })
             break
         default:
             break
         }
     }
 
+    function transferNumberToArray (num: number, fillEmpty: string) {
+        const result = String(num).split('')
+        const initResultLen = result.length
+        for (let i = 0; i < goalInputLen - initResultLen; i++) {
+            result.unshift(fillEmpty)
+        }
+        return result
+    }
+
+    function transferArrayToNumber (arr: string[]) {
+        return parseInt(arr.join(''))
+    }
+
+
     function generateInputBlocks () {
         const inputBlocks: JSX.Element[] = []
-        const numberToArray = transferNumberToArray()
-        
-        function transferNumberToArray () {
-            const result = String(goalInput).split('')
-            const initResultLen = result.length
-            for (let i = 0; i < goalInputLen - initResultLen; i++) {
-                result.unshift('')
-            }
-            return result
-        }
+        const fillEmpty = ''
+        const numberToArray = transferNumberToArray(goalInput, fillEmpty)
 
         for (let i = 0; i < goalInputLen; i++) {
             inputBlocks.push(

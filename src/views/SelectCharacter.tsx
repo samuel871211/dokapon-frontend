@@ -45,52 +45,62 @@ export default function SelectCharacter (): JSX.Element {
         case 'SelectGoalType':
             return {
                 title: '自由模式設定',
-                NPCMessage: '要選擇什麼遊戲模式呢？\n我好帥'
+                NPCMessage: ['要選擇什麼遊戲模式呢？'],
+                NPCMessageBtnDisplay: false
             }
         case 'GoalInputDialog':
             return {
                 title: '',
-                NPCMessage: `請選擇${goalType === 'period' ? '期間' : '金額'}`
+                NPCMessage: [`請選擇${goalType === 'period' ? '期間' : '金額'}`],
+                NPCMessageBtnDisplay: false
             }
         case 'SelectNumberOfPlayers':
             return {
                 title: '遊玩人數',
-                NPCMessage: '有幾個勇者呢？'
+                NPCMessage: ['有幾個勇者呢？'],
+                NPCMessageBtnDisplay: false
             }
         case 'SelectGender':
             return {
                 title: '性別選擇',
-                NPCMessage: `第${digitToFullWidth[currentPlayer]}個勇者\n勇者的性別為何？`
+                NPCMessage: [`第${digitToFullWidth[currentPlayer]}個勇者\n勇者的性別為何？`],
+                NPCMessageBtnDisplay: false
             }
         case 'BeforeNameInput':
             return {
                 title: '',
-                NPCMessage: '請教勇者的名字'
+                NPCMessage: ['請教勇者的名字', '哈囉妳好帥'],
+                NPCMessageBtnDisplay: true
             }
         case 'NameInputDialog':
             return {
                 title: '',
-                NPCMessage: ''
+                NPCMessage: [''],
+                NPCMessageBtnDisplay: false
             }
         case 'SelectColor': 
             return {
                 title: '顏色選擇',
-                NPCMessage: `想詢問${nameInput}\n勇者喜歡什麼顏色`
+                NPCMessage: [`想詢問${nameInput}\n勇者喜歡什麼顏色`],
+                NPCMessageBtnDisplay: false
             }
         case 'SelectJob': 
             return {
                 title: '職業選擇',
-                NPCMessage: `${nameInput}\n勇者偏好什麼職業`
+                NPCMessage: [`${nameInput}\n勇者偏好什麼職業`],
+                NPCMessageBtnDisplay: false
             }
         case 'NPCGenerateDialog':
             return {
                 title: '',
-                NPCMessage: '我們打算招募以下這位勇者\n如果你覺得不喜歡，可以再更改'
+                NPCMessage: ['我們打算招募以下這位勇者\n如果你覺得不喜歡，可以再更改'],
+                NPCMessageBtnDisplay: false
             }
         case 'SelectNPCLevel': 
             return {
                 title: '強度選擇',
-                NPCMessage: '強度要多強呢'
+                NPCMessage: ['強度要多強呢'],
+                NPCMessageBtnDisplay: false
             }    
         }
     }
@@ -119,6 +129,7 @@ export default function SelectCharacter (): JSX.Element {
                             <NPCSpeakingDialog
                                 name='ナビイ'
                                 message={display(currentStep).NPCMessage}
+                                displayBtn={display(currentStep).NPCMessageBtnDisplay}
                             />
                         </div>
                     </Fragment>

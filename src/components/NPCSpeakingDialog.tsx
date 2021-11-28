@@ -1,33 +1,62 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import globalStyles from '../global/styles.module.css'
 import styles from './NPCSpeakingDialog.module.css'
 
 export default NPCSpeakingDialog
 
-function NPCSpeakingDialog (props: { name: string, message: string }): JSX.Element {
-    const { name, message } = props
+function NPCSpeakingDialog (props: { name: string, message: string[], displayBtn: boolean }): JSX.Element {
+    const { name, message, displayBtn } = props
+    const focusElement = useRef<HTMLDivElement>(null)
+    const handleKeyDownAttrs = message.length === 1 ?
+        {} : {  tabIndex: 0,
+                ref: focusElement,
+                onBlur: reFocus,
+                onKeyDown: handleKeyDown }
+    function reFocus (event: React.SyntheticEvent<HTMLDivElement>): void {
+        event.currentTarget.focus()
+    }
+    function handleKeyDown (): void {
+        if (curMsgIdx !== message.length - 1) {
+            setCurMsgIdx(curMsgIdx + 1)
+            setCurWordIdx(0)
+            return
+        }
+    }
+    function resetWordIdx (): void {
+        setCurWordIdx(0)
+    }
+    function focus (): void {
+        if (displayBtn) focusElement.current?.focus()
+    }
+    function fadeNextWord (e: React.AnimationEvent<HTMLSpanElement>) {
+        setCurWordIdx(curWordIdx + 1)
+        const wordElements = document.getElementsByClassName(`${styles.message}`)
+        wordElements[curWordIdx + 1]?.classList.add(`${styles.fadeIn}`)
+    }
     const [curWordIdx, setCurWordIdx] = useState(0)
+    const [curMsgIdx, setCurMsgIdx] = useState(0)
 
-    useEffect(() => setCurWordIdx(0), [message])
+    useEffect(resetWordIdx, [message])
+    useEffect(focus, [displayBtn])
 
     function splitMessage (): JSX.Element[] {
         const result: JSX.Element[] = []
-        let wordCount = 0
-        for (const sentence of message.split('\n')) {
+        let isFirstWord = true
+        for (const sentence of message[curMsgIdx].split('\n')) {
             const words: JSX.Element[] = []
             for (const word of sentence) {
                 words.push(
                     <span
                         key={word}
-                        onAnimationEnd={() => setCurWordIdx(curWordIdx + 1)}
+                        onAnimationEnd={fadeNextWord}
                         className={`
                         ${styles.message}
-                        ${curWordIdx >= wordCount ?  styles.fadeIn : ''}`}
+                        ${isFirstWord ? styles.fadeIn : ''}`}
                     >
                         {word}
                     </span>
                 )
-                wordCount += 1
+                isFirstWord = false
             }
 
             result.push(
@@ -36,9 +65,12 @@ function NPCSpeakingDialog (props: { name: string, message: string }): JSX.Eleme
         }
         return result
     }
-    // template
+
     return (
-        <div className={styles.container}>
+        <div
+            className={styles.container}
+            { ...handleKeyDownAttrs }
+        >
             <div className={styles.nameArea}>
                 <div
                     className={`
@@ -55,6 +87,7 @@ function NPCSpeakingDialog (props: { name: string, message: string }): JSX.Eleme
                 ${globalStyles.yellowBlock}`}
             >
                 {splitMessage()}
+                {displayBtn && <div className={styles.confirmCircle}></div>}
             </div>
         </div>
     )

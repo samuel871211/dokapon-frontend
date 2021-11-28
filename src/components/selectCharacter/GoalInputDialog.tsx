@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useContext } from 'react'
+import React, { useState, useRef, useEffect, useContext } from 'react'
 import { UserSelectContext } from '../../reducers/SelectCharacter'
 import CustomBorderBottom from '../CustomBorderBottom'
 import GoalInputBtn from './GoalInputBtn'
@@ -10,12 +10,32 @@ const typeToCN = { period: '期間', money: '金額' }
 export default GoalInputDialog
 
 function GoalInputDialog (): JSX.Element {
-    const { dispatch, userSelect: { goalType: type, goalInput: initGoalInput } } = useContext(UserSelectContext)
+    const {
+        dispatch,
+        userSelect:{
+            goalType: type,
+            goalInput: initGoalInput
+        }
+    } = useContext(UserSelectContext)
+    const [isLeave, toggleIsleave] = useState(false)
     const goalInputLen = type === 'period' ? 3 : 9
     const goalUnit = type === 'period' ? '週' : '¥'
     const focusElement = useRef<HTMLDivElement>(null)
     const [goalInput, setGoalInput] = useState(initGoalInput)
     const [selectedIdx, setSelectedIdx] = useState(goalInputLen - 1)
+
+    function handleLeave (e: React.AnimationEvent) {
+        if (e.animationName.includes('slideLeft')) return
+
+        dispatch({
+            type: 'goalInput',
+            payload: String(goalInput)
+        })
+        dispatch({
+            type: 'currentStep',
+            payload: 'SelectNumberOfPlayers'
+        })
+    }
 
     function handleKeyDown (e: React.KeyboardEvent): void {
         switch (e.key.toLowerCase()) {
@@ -54,14 +74,7 @@ function GoalInputDialog (): JSX.Element {
             setGoalInput(0)
             break
         case 'd':
-            dispatch({
-                type: 'goalInput',
-                payload: String(goalInput)
-            })
-            dispatch({
-                type: 'currentStep',
-                payload: 'SelectNumberOfPlayers'
-            })
+            toggleIsleave(true)
             break
         case 'x':
             dispatch({
@@ -112,11 +125,13 @@ function GoalInputDialog (): JSX.Element {
         <div
             className={`
             ${styles.container}
-            ${globalStyles.yellowBlock}`}
+            ${globalStyles.yellowBlock}
+            ${isLeave ? styles.leave : ''}`}
             tabIndex={0}
             ref={focusElement}
             onBlur={(event) => event.target.focus()}
             onKeyDown={handleKeyDown}
+            onAnimationEnd={handleLeave}
         >
             <div
                 className={`

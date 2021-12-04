@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useContext } from 'react'
 
 import GenderBlockBtn from './GenderBlockBtn'
 import { userSelectContext } from '../../reducers/userSelect'
+import { slideControllerContext } from '../../reducers/slideController'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectGender.module.css'
 type gender = 'male' | 'female'
@@ -9,6 +10,8 @@ type gender = 'male' | 'female'
 export default function SelectGender (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
     const { userSelectDispatch } = useContext(userSelectContext)
+    const { slideControllerDispatch } = useContext(slideControllerContext)
+    const [isLeave, toggleIsLeave] = useState(false)
     const [selectedGender, toggleSelectedGender] = useState<gender>('male')
 
     useEffect(() => focusElement.current?.focus(), [])
@@ -22,14 +25,10 @@ export default function SelectGender (): JSX.Element {
             toggleSelectedGender(selectedGender === 'male' ? 'female' : 'male')
             break
         case 'd':
-            userSelectDispatch({
-                type: 'gender',
-                payload: selectedGender
-            })
-            // TODO: NPC Speaking Dialog 請教勇者的名字
-            userSelectDispatch({
-                type: 'currentStep',
-                payload: 'BeforeNameInput'
+            toggleIsLeave(true)
+            slideControllerDispatch({
+                type: 'titleArea',
+                payload: true
             })
             break
         case 'x':
@@ -42,16 +41,35 @@ export default function SelectGender (): JSX.Element {
             break
         }
     }
+    function switchToBeforeNameInput (e: React.AnimationEvent<HTMLDivElement>) {
+        if (!e.animationName.includes('slideRight')) return
+        
+        toggleIsLeave(false)
+        slideControllerDispatch({
+            type: 'titleArea',
+            payload: false
+        })
+        userSelectDispatch({
+            type: 'gender',
+            payload: selectedGender
+        })
+        userSelectDispatch({
+            type: 'currentStep',
+            payload: 'BeforeNameInput'
+        })
+    }
 
     return (
         <div
             ref={focusElement}
             className={`
             ${styles.btnGroup}
-            ${globalStyles.xyCenter}`}
+            ${globalStyles.xyCenter}
+            ${isLeave ? styles.leave : ''}`}
             tabIndex={0}
             onBlur={(event) => event.target.focus()}
             onKeyDown={handleKeyDown}
+            onAnimationEnd={switchToBeforeNameInput}
         >
             <GenderBlockBtn gender='male' selected={selectedGender === 'male'}/>
             <GenderBlockBtn gender='female' selected={selectedGender === 'female'}/>

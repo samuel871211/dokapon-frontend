@@ -5,7 +5,7 @@ import NameInputWord from './NameInputWord'
 import KeyBoardKey from './KeyBoardKey'
 import KeyBoardMenuItem from './KeyBoardMenuItem'
 import { userSelectContext } from '../../reducers/userSelect'
-import { useState, useRef, useEffect, useContext } from 'react'
+import React, { useState, useRef, useEffect, useContext, Fragment } from 'react'
 
 type wordType = 'hiragana' | 'katakana' | 'special'
 
@@ -60,7 +60,11 @@ function NameInputDialog (): JSX.Element {
         })
         return rows
     }
+    function handleAnimation (e: React.AnimationEvent<HTMLDivElement>) {
+        if (!e.animationName.includes('slideLeft')) return
 
+        focusElement.current?.focus()
+    }
     function handleKeyDown (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
@@ -210,8 +214,13 @@ function NameInputDialog (): JSX.Element {
                     case '刪除':
                         if (nameInputWords[curNameInputIdx].trim() !== '') {
                             const newNameInputWords = [...nameInputWords]
-                            newNameInputWords[curNameInputIdx] = '　'
-                            setNameInputWords(newNameInputWords)
+                            for (let idx = 7; idx >= curNameInputIdx; idx--) {
+                                if (newNameInputWords[idx].trim() !== '') {
+                                    newNameInputWords[idx] = '　'
+                                    setNameInputWords(newNameInputWords)
+                                    break
+                                }
+                            }
                             break
                         }
 
@@ -243,40 +252,41 @@ function NameInputDialog (): JSX.Element {
             break
         }
     }
-
-    useEffect(() => focusElement.current?.focus(), [])
     
     return (
-        <div
-            className={styles.container}
-            tabIndex={0}
-            ref={focusElement}
-            onBlur={(event) => event.target.focus()}
-            onKeyDown={handleKeyDown}
-        >
+        <Fragment>
             <div
-                className={`
-                ${styles.nameDisplayArea}
-                ${globalStyles.xyCenter}
-                ${globalStyles.yellowBlock}`}
+                className={styles.container}
+                onAnimationEnd={handleAnimation}
+                tabIndex={0}
+                ref={focusElement}
+                onBlur={(event) => event.target.focus()}
+                onKeyDown={handleKeyDown}
             >
-                {generateNameInputWords()}
+                <div
+                    className={`
+                    ${styles.nameDisplayArea}
+                    ${globalStyles.xyCenter}
+                    ${globalStyles.yellowBlock}`}
+                >
+                    {generateNameInputWords()}
+                </div>
+                <div
+                    className={`
+                    ${styles.keyboardArea}
+                    ${globalStyles.yellowBlock}`}
+                >
+                    <div className={styles.keyboardSection}>
+                        {generateKeyBoardKeys(0)}
+                    </div>
+                    <div className={styles.keyboardSection}>
+                        {generateKeyBoardKeys(1)}
+                    </div>
+                    <div className={styles.keyboardMenu}>
+                        {generateKeyBoardMenuItems()}
+                    </div>
+                </div>
             </div>
-            <div
-                className={`
-                ${styles.keyboardArea}
-                ${globalStyles.yellowBlock}`}
-            >
-                <div className={styles.keyboardSection}>
-                    {generateKeyBoardKeys(0)}
-                </div>
-                <div className={styles.keyboardSection}>
-                    {generateKeyBoardKeys(1)}
-                </div>
-                <div className={styles.keyboardMenu}>
-                    {generateKeyBoardMenuItems()}
-                </div>
-            </div>
-        </div>
+        </Fragment>
     )
 }

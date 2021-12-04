@@ -1,4 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useContext } from 'react'
+import { slideControllerContext } from '../reducers/slideController'
+import { userSelectContext } from '../reducers/userSelect'
 import globalStyles from '../global/styles.module.css'
 import styles from './NPCSpeakingDialog.module.css'
 
@@ -11,6 +13,9 @@ function NPCSpeakingDialog (props: {
 }): JSX.Element {
     const { name, message, displayBtn } = props
     const focusElement = useRef<HTMLDivElement>(null)
+    const { slideState, slideControllerDispatch } = useContext(slideControllerContext)
+    const { userSelectDispatch } = useContext(userSelectContext)
+    const { NPCSpeakingDialog } = slideState
     const handleKeyDownAttrs = displayBtn ? {
         tabIndex: 0,
         ref: focusElement,
@@ -26,7 +31,30 @@ function NPCSpeakingDialog (props: {
             setCurWordIdx(0)
             return
         }
-        console.log('next')
+        slideControllerDispatch({
+            type: 'NPCSpeakingDialog',
+            payload: true
+        })
+        slideControllerDispatch({
+            type: 'NPCTopLeftImgArea',
+            payload: true
+        })
+    }
+    function switchToNameInputDialog (e: React.AnimationEvent<HTMLDivElement>) {
+        if (!e.animationName.includes('slideDown')) return
+        
+        slideControllerDispatch({
+            type: 'NPCSpeakingDialog',
+            payload: false
+        })
+        slideControllerDispatch({
+            type: 'NPCTopLeftImgArea',
+            payload: false
+        })
+        userSelectDispatch({
+            type: 'currentStep',
+            payload: 'NameInputDialog'
+        })
     }
     function resetWordIdx (): void {
         setCurWordIdx(0)
@@ -74,7 +102,11 @@ function NPCSpeakingDialog (props: {
 
     return (
         <div
-            className={styles.container}
+            className={`
+            ${styles.container}
+            ${NPCSpeakingDialog ? styles.leave : ''}`}
+            onAnimationEnd={switchToNameInputDialog}
+            
             { ...handleKeyDownAttrs }
         >
             <div className={styles.nameArea}>

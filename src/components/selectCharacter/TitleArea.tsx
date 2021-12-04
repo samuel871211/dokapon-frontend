@@ -14,7 +14,7 @@ function TitleArea (props: { title: string }): JSX.Element {
 
         slideControllerDispatch({
             type: 'titleArea',
-            payload: true
+            payload: false
         })
     }
     

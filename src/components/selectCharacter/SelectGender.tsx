@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useContext } from 'react'
+import React, { useRef, useState, useContext } from 'react'
 
 import GenderBlockBtn from './GenderBlockBtn'
 import { userSelectContext } from '../../reducers/userSelect'
@@ -13,8 +13,6 @@ export default function SelectGender (): JSX.Element {
     const { slideControllerDispatch } = useContext(slideControllerContext)
     const [isLeave, toggleIsLeave] = useState(false)
     const [selectedGender, toggleSelectedGender] = useState<gender>('male')
-
-    useEffect(() => focusElement.current?.focus(), [])
 
     function handleKeyDown (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
@@ -41,22 +39,27 @@ export default function SelectGender (): JSX.Element {
             break
         }
     }
-    function switchToBeforeNameInput (e: React.AnimationEvent<HTMLDivElement>) {
-        if (!e.animationName.includes('slideRight')) return
-        
-        toggleIsLeave(false)
-        slideControllerDispatch({
-            type: 'titleArea',
-            payload: false
-        })
-        userSelectDispatch({
-            type: 'gender',
-            payload: selectedGender
-        })
-        userSelectDispatch({
-            type: 'currentStep',
-            payload: 'BeforeNameInput'
-        })
+    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
+        if (e.animationName.includes('slideLeft')) {
+            focusElement.current?.focus()
+            return
+        }
+
+        if (e.animationName.includes('slideRight')) {
+            toggleIsLeave(false)
+            slideControllerDispatch({
+                type: 'titleArea',
+                payload: false
+            })
+            userSelectDispatch({
+                type: 'gender',
+                payload: selectedGender
+            })
+            userSelectDispatch({
+                type: 'currentStep',
+                payload: 'BeforeNameInput'
+            })
+        }
     }
 
     return (
@@ -69,7 +72,7 @@ export default function SelectGender (): JSX.Element {
             tabIndex={0}
             onBlur={(event) => event.target.focus()}
             onKeyDown={handleKeyDown}
-            onAnimationEnd={switchToBeforeNameInput}
+            onAnimationEnd={handleAnimationEnd}
         >
             <GenderBlockBtn gender='male' selected={selectedGender === 'male'}/>
             <GenderBlockBtn gender='female' selected={selectedGender === 'female'}/>

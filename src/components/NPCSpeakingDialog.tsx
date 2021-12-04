@@ -14,7 +14,7 @@ function NPCSpeakingDialog (props: {
     const { name, message, displayBtn } = props
     const focusElement = useRef<HTMLDivElement>(null)
     const { slideState, slideControllerDispatch } = useContext(slideControllerContext)
-    const { userSelectDispatch } = useContext(userSelectContext)
+    const { userSelectDispatch, userSelect: { currentStep} } = useContext(userSelectContext)
     const { NPCSpeakingDialog } = slideState
     const handleKeyDownAttrs = displayBtn ? {
         tabIndex: 0,
@@ -31,6 +31,8 @@ function NPCSpeakingDialog (props: {
             setCurWordIdx(0)
             return
         }
+        // TODO: 不同情況使用此組件，handleKeyDown會有不同的行為，此部分需要再調整
+        // 如果能把邏輯跟UI切開來會更好
         slideControllerDispatch({
             type: 'NPCSpeakingDialog',
             payload: true
@@ -78,10 +80,10 @@ function NPCSpeakingDialog (props: {
         let isFirstWord = true
         for (const sentence of message[curMsgIdx].split('\n')) {
             const words: JSX.Element[] = []
-            for (const word of sentence) {
+            sentence.split('').forEach((word, index) => {
                 words.push(
                     <span
-                        key={word}
+                        key={index}
                         onAnimationEnd={fadeNextWord}
                         className={`
                         ${styles.message}
@@ -91,7 +93,7 @@ function NPCSpeakingDialog (props: {
                     </span>
                 )
                 isFirstWord = false
-            }
+            })
 
             result.push(
                 <div key={sentence}>{words}</div>

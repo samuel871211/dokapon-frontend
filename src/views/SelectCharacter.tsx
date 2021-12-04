@@ -1,4 +1,4 @@
-import React, { Fragment, useReducer } from 'react'
+import { Fragment, useReducer } from 'react'
 
 import guide from '../imgs/guide.png'
 
@@ -26,6 +26,7 @@ const Components = {
     SelectGoalType: <SelectGoalType/>,
     GoalInputDialog: <GoalInputDialog/>,
     SelectNumberOfPlayers: <SelectNumberOfPlayers/>,
+    OnlyOnePlayer: <SelectNumberOfPlayers/>,
     SelectGender: <SelectGender/>,
     BeforeNameInput: '',
     NameInputDialog: <NameInputDialog/>,
@@ -61,6 +62,12 @@ export default function SelectCharacter (): JSX.Element {
                 title: '遊玩人數',
                 NPCMessage: ['有幾個勇者呢？'],
                 NPCMessageBtnDisplay: false
+            }
+        case 'OnlyOnePlayer':
+            return {
+                title: '遊玩人數',
+                NPCMessage: ['．．．只有１個人喔', '果然是邊緣人啊'],
+                NPCMessageBtnDisplay: true
             }
         case 'SelectGender':
             return {

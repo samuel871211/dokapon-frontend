@@ -1,11 +1,10 @@
-import React, { useState, useRef, useEffect, useContext } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 
 import { userSelectContext } from '../../reducers/userSelect'
 import { slideControllerContext } from '../../reducers/slideController'
 import IconTextBtn from '../IconTextBtn'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectGoalType.module.css'
-// type goalType = 'period' | 'money'
 
 export default SelectGoalType
 
@@ -42,20 +41,23 @@ function SelectGoalType (): JSX.Element {
         }
     }
 
-    function handleAnimation (e: React.AnimationEvent<HTMLDivElement>) {
-        if (e.animationName.includes('slideLeft')) return
-        
-        userSelectDispatch({
-            type: 'goalType',
-            payload: selectedGoalType
-        })
-        userSelectDispatch({
-            type: 'currentStep',
-            payload: 'GoalInputDialog'
-        })
-    }
+    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>): void {
+        if (e.animationName.includes('slideLeft')) {
+            focusElement.current?.focus()
+            return
+        }
 
-    useEffect(() => focusElement.current?.focus(), [])
+        if (e.animationName.includes('slideRight')) {
+            userSelectDispatch({
+                type: 'goalType',
+                payload: selectedGoalType
+            })
+            userSelectDispatch({
+                type: 'currentStep',
+                payload: 'GoalInputDialog'
+            })
+        }
+    }
 
     return (
         <div
@@ -67,7 +69,7 @@ function SelectGoalType (): JSX.Element {
             tabIndex={0}
             onBlur={(event) => event.target.focus()}
             onKeyDown={handleKeyDown}
-            onAnimationEnd={handleAnimation}
+            onAnimationEnd={handleAnimationEnd}
         >
             <IconTextBtn
                 text='期間目標'

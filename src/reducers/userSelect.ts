@@ -4,6 +4,7 @@ type steps =
     'SelectGoalType' |
     'GoalInputDialog' |
     'SelectNumberOfPlayers' |
+    'OnlyOnePlayer' |
     'SelectGender' |
     'BeforeNameInput' |
     'NameInputDialog' |
@@ -69,7 +70,10 @@ const userSelectInitState = {
 
 const userSelectContext = React.createContext<userSelectContext>({} as userSelectContext)
 
-function userSelectReducer (state: typeof userSelectInitState, action: userSelectAction) {
+function userSelectReducer (
+    state: typeof userSelectInitState,
+    action: userSelectAction
+): typeof userSelectInitState {
     const { type, payload } = action
 
     switch (type) {
@@ -83,7 +87,7 @@ function userSelectReducer (state: typeof userSelectInitState, action: userSelec
     case 'numberOfPlayers':
         return {
             ...state,
-            goalInput: parseInt(payload)
+            [type]: parseInt(payload)
         }
     case 'gender':
     case 'nameInput':

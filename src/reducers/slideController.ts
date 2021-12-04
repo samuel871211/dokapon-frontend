@@ -21,7 +21,7 @@ type slideControllerContext = {
 
 const slideControllerContext = React.createContext<slideControllerContext>({} as slideControllerContext)
 
-function slideControllerReducer (state: typeof slideControllerInitState, action: slideControllerAction) {
+function slideControllerReducer (state: typeof slideControllerInitState, action: slideControllerAction): typeof slideControllerInitState {
     return {
         ...state,
         [action.type]: action.payload

@@ -5,7 +5,7 @@ import NameInputWord from './NameInputWord'
 import KeyBoardKey from './KeyBoardKey'
 import KeyBoardMenuItem from './KeyBoardMenuItem'
 import { userSelectContext } from '../../reducers/userSelect'
-import React, { useState, useRef, useEffect, useContext, Fragment } from 'react'
+import React, { useState, useRef, useContext, Fragment } from 'react'
 
 type wordType = 'hiragana' | 'katakana' | 'special'
 

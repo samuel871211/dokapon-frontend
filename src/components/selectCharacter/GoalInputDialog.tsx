@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useContext } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { userSelectContext } from '../../reducers/userSelect'
 import CustomBorderBottom from '../CustomBorderBottom'
 import GoalInputBtn from './GoalInputBtn'
@@ -12,7 +12,7 @@ export default GoalInputDialog
 function GoalInputDialog (): JSX.Element {
     const {
         userSelectDispatch,
-        userSelect:{
+        userSelect: {
             goalType: type,
             goalInput: initGoalInput
         }
@@ -24,17 +24,22 @@ function GoalInputDialog (): JSX.Element {
     const [goalInput, setGoalInput] = useState(initGoalInput)
     const [selectedIdx, setSelectedIdx] = useState(goalInputLen - 1)
 
-    function handleLeave (e: React.AnimationEvent) {
-        if (e.animationName.includes('slideLeft')) return
+    function handleAnimationEnd (e: React.AnimationEvent): void {
+        if (e.animationName.includes('slideLeft')) {
+            focusElement.current?.focus()
+            return
+        }
 
-        userSelectDispatch({
-            type: 'goalInput',
-            payload: String(goalInput)
-        })
-        userSelectDispatch({
-            type: 'currentStep',
-            payload: 'SelectNumberOfPlayers'
-        })
+        if (e.animationName.includes('slideRight')) {
+            userSelectDispatch({
+                type: 'goalInput',
+                payload: String(goalInput)
+            })
+            userSelectDispatch({
+                type: 'currentStep',
+                payload: 'SelectNumberOfPlayers'
+            })
+        }
     }
 
     function handleKeyDown (e: React.KeyboardEvent): void {
@@ -119,8 +124,6 @@ function GoalInputDialog (): JSX.Element {
         return inputBlocks
     }
 
-    useEffect(() => focusElement.current?.focus(), [])
-
     return (
         <div
             className={`
@@ -131,7 +134,7 @@ function GoalInputDialog (): JSX.Element {
             ref={focusElement}
             onBlur={(event) => event.target.focus()}
             onKeyDown={handleKeyDown}
-            onAnimationEnd={handleLeave}
+            onAnimationEnd={handleAnimationEnd}
         >
             <div
                 className={`

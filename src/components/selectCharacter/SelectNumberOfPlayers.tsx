@@ -3,13 +3,13 @@ import { useEffect, useState, useRef, useContext } from 'react'
 import NumberOfPlayersBtn from './NumberOfPlayersBtn'
 import styles from './SelectNumberOfPlayers.module.css'
 import globalStyles from '../../global/styles.module.css'
-import { UserSelectContext } from '../../reducers/SelectCharacter'
+import { userSelectContext } from '../../reducers/userSelect'
 
 export default SelectNumberOfPlayers
 
 function SelectNumberOfPlayers (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const { dispatch, userSelect: { numberOfPlayers } } = useContext(UserSelectContext)
+    const { userSelectDispatch, userSelect: { numberOfPlayers } } = useContext(userSelectContext)
     const [selectedPlayerNum, setSelectedPlayerNum] = useState(1)
 
     function handleKeyDown (e: React.KeyboardEvent) {
@@ -21,17 +21,17 @@ function SelectNumberOfPlayers (): JSX.Element {
             setSelectedPlayerNum(selectedPlayerNum === 4 ? 1 : selectedPlayerNum + 1)
             break
         case 'd':
-            dispatch({
+            userSelectDispatch({
                 type: 'numberOfPlayers',
                 payload: String(selectedPlayerNum)
             })
-            dispatch({
+            userSelectDispatch({
                 type: 'currentStep',
                 payload: 'SelectGender'
             })
             break
         case 'x':
-            dispatch({
+            userSelectDispatch({
                 type: 'currentStep',
                 payload: 'GoalInputDialog'
             })

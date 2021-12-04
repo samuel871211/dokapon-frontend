@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useContext } from 'react'
-import { UserSelectContext } from '../../reducers/SelectCharacter'
+import { userSelectContext } from '../../reducers/userSelect'
 import CustomBorderBottom from '../CustomBorderBottom'
 import GoalInputBtn from './GoalInputBtn'
 import globalStyles from '../../global/styles.module.css'
@@ -11,12 +11,12 @@ export default GoalInputDialog
 
 function GoalInputDialog (): JSX.Element {
     const {
-        dispatch,
+        userSelectDispatch,
         userSelect:{
             goalType: type,
             goalInput: initGoalInput
         }
-    } = useContext(UserSelectContext)
+    } = useContext(userSelectContext)
     const [isLeave, toggleIsleave] = useState(false)
     const goalInputLen = type === 'period' ? 3 : 9
     const goalUnit = type === 'period' ? '週' : '¥'
@@ -27,11 +27,11 @@ function GoalInputDialog (): JSX.Element {
     function handleLeave (e: React.AnimationEvent) {
         if (e.animationName.includes('slideLeft')) return
 
-        dispatch({
+        userSelectDispatch({
             type: 'goalInput',
             payload: String(goalInput)
         })
-        dispatch({
+        userSelectDispatch({
             type: 'currentStep',
             payload: 'SelectNumberOfPlayers'
         })
@@ -77,7 +77,7 @@ function GoalInputDialog (): JSX.Element {
             toggleIsleave(true)
             break
         case 'x':
-            dispatch({
+            userSelectDispatch({
                 type: 'currentStep',
                 payload: 'SelectGoalType'
             })

@@ -15,7 +15,8 @@ import GoalInputDialog from '../components/selectCharacter/GoalInputDialog'
 import NPCGenerateDialog from '../components/selectCharacter/NPCGenerateDialog'
 import NameInputDialog from '../components/selectCharacter/NameInputDialog'
 
-import { reducer, initState, UserSelectContext } from '../reducers/SelectCharacter'
+import { userSelectReducer, userSelectInitState, userSelectContext } from '../reducers/userSelect'
+import { slideControllerReducer, slideControllerInitState, slideControllerContext } from '../reducers/slideController'
 
 import styles from './SelectCharacter.module.css'
 
@@ -36,7 +37,8 @@ const Components = {
 
 export default function SelectCharacter (): JSX.Element {
     // data
-    const [userSelect, dispatch] = useReducer(reducer, initState)
+    const [userSelect, userSelectDispatch] = useReducer(userSelectReducer, userSelectInitState)
+    const [slideState, slideControllerDispatch] = useReducer(slideControllerReducer, slideControllerInitState)
     const { currentStep, goalType, playersAttrs, currentPlayer } = userSelect
     const nameInput = playersAttrs[currentPlayer - 1].nameInput
 
@@ -69,7 +71,7 @@ export default function SelectCharacter (): JSX.Element {
         case 'BeforeNameInput':
             return {
                 title: '',
-                NPCMessage: ['請教勇者的名字', '哈囉妳好帥'],
+                NPCMessage: ['請教勇者的名字'],
                 NPCMessageBtnDisplay: true
             }
         case 'NameInputDialog':
@@ -107,7 +109,8 @@ export default function SelectCharacter (): JSX.Element {
     
     // template
     return (
-        <UserSelectContext.Provider value={{ userSelect, dispatch }}>
+        <userSelectContext.Provider value={{ userSelect, userSelectDispatch }}>
+        <slideControllerContext.Provider value={{ slideState, slideControllerDispatch }}>
             <div className={styles.container}>
                 
                 {currentStep === 'NameInputDialog' &&
@@ -135,6 +138,7 @@ export default function SelectCharacter (): JSX.Element {
                     </Fragment>
                 }
             </div>
-        </UserSelectContext.Provider>
+        </slideControllerContext.Provider>
+        </userSelectContext.Provider>
     )
 }

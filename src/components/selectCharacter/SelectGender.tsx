@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState, useContext } from 'react'
 
 import GenderBlockBtn from './GenderBlockBtn'
-import { UserSelectContext } from '../../reducers/SelectCharacter'
+import { userSelectContext } from '../../reducers/userSelect'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectGender.module.css'
 type gender = 'male' | 'female'
 
 export default function SelectGender (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const { dispatch } = useContext(UserSelectContext)
+    const { userSelectDispatch } = useContext(userSelectContext)
     const [selectedGender, toggleSelectedGender] = useState<gender>('male')
 
     useEffect(() => focusElement.current?.focus(), [])
@@ -22,18 +22,18 @@ export default function SelectGender (): JSX.Element {
             toggleSelectedGender(selectedGender === 'male' ? 'female' : 'male')
             break
         case 'd':
-            dispatch({
+            userSelectDispatch({
                 type: 'gender',
                 payload: selectedGender
             })
             // TODO: NPC Speaking Dialog 請教勇者的名字
-            dispatch({
+            userSelectDispatch({
                 type: 'currentStep',
                 payload: 'BeforeNameInput'
             })
             break
         case 'x':
-            dispatch({
+            userSelectDispatch({
                 type: 'currentStep',
                 payload: 'SelectNumberOfPlayers'
             })

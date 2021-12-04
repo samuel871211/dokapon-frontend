@@ -24,12 +24,16 @@ type userSelectAction = {
         'nameInput' |
         'color' |
         'job' |
-        'npcLevel' |
-        'toggleTitleAreaLeaving',
+        'npcLevel',
     payload: string
 }
 
-const initState = {
+type userSelectContext = {
+    userSelect: typeof userSelectInitState
+    userSelectDispatch: React.Dispatch<userSelectAction>
+}
+
+const userSelectInitState = {
     goalType: <goalType> 'period',
     goalInput: 1,
     numberOfPlayers: 1,
@@ -63,14 +67,9 @@ const initState = {
     }]
 }
 
-type UserSelectContext = {
-    userSelect: typeof initState
-    dispatch: React.Dispatch<userSelectAction>
-}
+const userSelectContext = React.createContext<userSelectContext>({} as userSelectContext)
 
-const UserSelectContext = React.createContext<UserSelectContext>({} as UserSelectContext)
-
-function reducer (state: typeof initState, action: userSelectAction) {
+function userSelectReducer (state: typeof userSelectInitState, action: userSelectAction) {
     const { type, payload } = action
 
     switch (type) {
@@ -96,14 +95,13 @@ function reducer (state: typeof initState, action: userSelectAction) {
         newState.playersAttrs[index][type] = payload
         return newState
     }
-    case 'toggleTitleAreaLeaving':
-        return {
-            ...state,
-            titleAreaIsLeaving: !state.titleAreaIsLeaving
-        }
     default:
         return state
     }
 }
 
-export { reducer, initState, UserSelectContext }
+export {
+    userSelectReducer,
+    userSelectInitState,
+    userSelectContext
+}

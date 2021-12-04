@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useContext } from 'react'
 
-import { UserSelectContext } from '../../reducers/SelectCharacter'
+import { userSelectContext } from '../../reducers/userSelect'
+import { slideControllerContext } from '../../reducers/slideController'
 import IconTextBtn from '../IconTextBtn'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectGoalType.module.css'
@@ -10,7 +11,9 @@ export default SelectGoalType
 
 function SelectGoalType (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const { dispatch, userSelect }  = useContext(UserSelectContext)
+    const { userSelectDispatch, userSelect }  = useContext(userSelectContext)
+    const { slideControllerDispatch } = useContext(slideControllerContext)
+    
     const { goalType } = userSelect
     const [isLeave, toggleIsLeave] = useState(false)
     const [selectedGoalType, toggleSelectedGoalType] = useState(goalType)
@@ -25,9 +28,9 @@ function SelectGoalType (): JSX.Element {
             break
         case 'd':
             toggleIsLeave(true)
-            dispatch({
-                type: 'toggleTitleAreaLeaving',
-                payload: ''
+            slideControllerDispatch({
+                type: 'titleArea',
+                payload: true
             })
             break
         case 'x':
@@ -42,11 +45,11 @@ function SelectGoalType (): JSX.Element {
     function handleAnimation (e: React.AnimationEvent<HTMLDivElement>) {
         if (e.animationName.includes('slideLeft')) return
         
-        dispatch({
+        userSelectDispatch({
             type: 'goalType',
             payload: selectedGoalType
         })
-        dispatch({
+        userSelectDispatch({
             type: 'currentStep',
             payload: 'GoalInputDialog'
         })

@@ -1,20 +1,20 @@
 import React, { useContext } from 'react'
-import { UserSelectContext } from '../../reducers/SelectCharacter'
+import { slideControllerContext } from '../../reducers/slideController'
 import styles from './TitleArea.module.css'
 
 export default TitleArea
 
 function TitleArea (props: { title: string }): JSX.Element {
     const { title } = props
-    const { dispatch, userSelect } = useContext(UserSelectContext)
-    const { titleAreaIsLeaving } = userSelect
+    const { slideControllerDispatch, slideState } = useContext(slideControllerContext)
+    const { titleArea } = slideState
 
     function handleAnimation (e: React.AnimationEvent) {
         if (e.animationName.includes('slideDown')) return
 
-        dispatch({
-            type: 'toggleTitleAreaLeaving',
-            payload: ''
+        slideControllerDispatch({
+            type: 'titleArea',
+            payload: true
         })
     }
     
@@ -22,7 +22,7 @@ function TitleArea (props: { title: string }): JSX.Element {
         <div
             className={`
             ${styles.container}
-            ${titleAreaIsLeaving ? styles.leave : ''}`}
+            ${titleArea ? styles.leave : ''}`}
             onAnimationEnd={handleAnimation}
         >
             {title}

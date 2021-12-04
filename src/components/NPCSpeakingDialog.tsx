@@ -4,14 +4,19 @@ import styles from './NPCSpeakingDialog.module.css'
 
 export default NPCSpeakingDialog
 
-function NPCSpeakingDialog (props: { name: string, message: string[], displayBtn: boolean }): JSX.Element {
+function NPCSpeakingDialog (props: {
+    name: string,
+    message: string[],
+    displayBtn: boolean
+}): JSX.Element {
     const { name, message, displayBtn } = props
     const focusElement = useRef<HTMLDivElement>(null)
-    const handleKeyDownAttrs = message.length === 1 ?
-        {} : {  tabIndex: 0,
-                ref: focusElement,
-                onBlur: reFocus,
-                onKeyDown: handleKeyDown }
+    const handleKeyDownAttrs = displayBtn ? {
+        tabIndex: 0,
+        ref: focusElement,
+        onBlur: reFocus,
+        onKeyDown: handleKeyDown
+    } : {}
     function reFocus (event: React.SyntheticEvent<HTMLDivElement>): void {
         event.currentTarget.focus()
     }
@@ -21,6 +26,7 @@ function NPCSpeakingDialog (props: { name: string, message: string[], displayBtn
             setCurWordIdx(0)
             return
         }
+        console.log('next')
     }
     function resetWordIdx (): void {
         setCurWordIdx(0)

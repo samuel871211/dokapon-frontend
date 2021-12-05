@@ -14,7 +14,7 @@ function NPCSpeakingDialog (props: {
     const { name, message, displayBtn } = props
     const focusElement = useRef<HTMLDivElement>(null)
     const { slideState, slideControllerDispatch } = useContext(slideControllerContext)
-    const { userSelectDispatch, userSelect: { currentStep} } = useContext(userSelectContext)
+    const { userSelectDispatch, userSelect: { currentStep } } = useContext(userSelectContext)
     const { NPCSpeakingDialog } = slideState
     const handleKeyDownAttrs = displayBtn ? {
         tabIndex: 0,
@@ -31,35 +31,48 @@ function NPCSpeakingDialog (props: {
             setCurWordIdx(0)
             return
         }
+
         // TODO: 不同情況使用此組件，handleKeyDown會有不同的行為，此部分需要再調整
-        // 如果能把邏輯跟UI切開來會更好
-        slideControllerDispatch({
-            type: 'NPCSpeakingDialog',
-            payload: true
-        })
-        slideControllerDispatch({
-            type: 'NPCTopLeftImgArea',
-            payload: true
-        })
+        // 如果能把邏輯跟UI切開來會更好，暫時沒有更好的解法，只能by case
+        if (currentStep === 'OnlyOnePlayer') {
+            resetWordIdx()
+            userSelectDispatch({
+                type: 'currentStep',
+                payload: 'SelectGender'
+            })
+            return
+        }
+
+        if (currentStep === 'BeforeNameInput') {
+            slideControllerDispatch({
+                type: 'NPCSpeakingDialog',
+                payload: true
+            })
+            slideControllerDispatch({
+                type: 'NPCTopLeftImgArea',
+                payload: true
+            })
+        }
     }
-    function switchToNameInputDialog (e: React.AnimationEvent<HTMLDivElement>) {
-        if (!e.animationName.includes('slideDown')) return
-        
-        slideControllerDispatch({
-            type: 'NPCSpeakingDialog',
-            payload: false
-        })
-        slideControllerDispatch({
-            type: 'NPCTopLeftImgArea',
-            payload: false
-        })
-        userSelectDispatch({
-            type: 'currentStep',
-            payload: 'NameInputDialog'
-        })
+    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
+        if (e.animationName.includes('slideDown') && currentStep === 'BeforeNameInput') {
+            slideControllerDispatch({
+                type: 'NPCSpeakingDialog',
+                payload: false
+            })
+            slideControllerDispatch({
+                type: 'NPCTopLeftImgArea',
+                payload: false
+            })
+            userSelectDispatch({
+                type: 'currentStep',
+                payload: 'NameInputDialog'
+            })
+        }
     }
     function resetWordIdx (): void {
         setCurWordIdx(0)
+        setCurMsgIdx(0)
     }
     function focus (): void {
         if (displayBtn) focusElement.current?.focus()
@@ -107,7 +120,7 @@ function NPCSpeakingDialog (props: {
             className={`
             ${styles.container}
             ${NPCSpeakingDialog ? styles.leave : ''}`}
-            onAnimationEnd={switchToNameInputDialog}
+            onAnimationEnd={handleAnimationEnd}
             
             { ...handleKeyDownAttrs }
         >

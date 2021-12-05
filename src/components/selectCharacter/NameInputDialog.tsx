@@ -5,7 +5,7 @@ import NameInputWord from './NameInputWord'
 import KeyBoardKey from './KeyBoardKey'
 import KeyBoardMenuItem from './KeyBoardMenuItem'
 import { userSelectContext } from '../../reducers/userSelect'
-import React, { useState, useRef, useContext, Fragment } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 
 type wordType = 'hiragana' | 'katakana' | 'special'
 
@@ -13,13 +13,26 @@ export default NameInputDialog
 
 function NameInputDialog (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const { userSelectDispatch } = useContext(userSelectContext)
+    const { userSelect, userSelectDispatch } = useContext(userSelectContext)
     const [wordType, setWordType] = useState<wordType>('hiragana')
-    const [nameInputWords, setNameInputWords] = useState(['　','　','　','　','　','　','　','　'])
-    const [curNameInputIdx, setCurNameInputIdx] = useState(0)
+    const [isLeave, toggleIsLeave] = useState(false)
+    const [nameInputWords, setNameInputWords] = useState(getInitNameArr())
+    const [curNameInputIdx, setCurNameInputIdx] = useState(getInitInputIdx())
     const [selectedSection, setSelectedSection] = useState(0)
     const [selectedWordIdx, setSelectedWordIdx] = useState(0)
 
+    function getInitNameArr () {
+        const { currentPlayer, playersAttrs } = userSelect
+        const initName = playersAttrs[currentPlayer - 1].nameInput
+        const result = initName.split('')
+        while (result.length < 8) result.push('　')
+        return result
+    }
+    function getInitInputIdx () {
+        const { currentPlayer, playersAttrs } = userSelect
+        const initName = playersAttrs[currentPlayer - 1].nameInput.trim()
+        return initName.length === 0 ? 0 : initName.length - 1
+    }
     function generateKeyBoardKeys (section: 0 | 1) {
         const rows: JSX.Element[] = []
         japaneseChars[wordType][section].forEach((word, index) => {
@@ -46,7 +59,6 @@ function NameInputDialog (): JSX.Element {
         })
         return rows
     }
-
     function generateNameInputWords () {
         const rows: JSX.Element[] = []
         nameInputWords.forEach((word, index) => {
@@ -60,12 +72,13 @@ function NameInputDialog (): JSX.Element {
         })
         return rows
     }
-    function handleAnimation (e: React.AnimationEvent<HTMLDivElement>) {
-        if (!e.animationName.includes('slideLeft')) return
-
-        focusElement.current?.focus()
+    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>): void {
+        if (e.animationName.includes('slideLeft')) {
+            focusElement.current?.focus()
+            return
+        }
     }
-    function handleKeyDown (e: React.KeyboardEvent) {
+    function handleKeyDown (e: React.KeyboardEvent): void {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             (function handleSelectedWordIdx () {
@@ -231,8 +244,19 @@ function NameInputDialog (): JSX.Element {
                     case 'ＯＫ': {
                         const emptyWords = nameInputWords.filter(word => word.trim() === '')
                         if (emptyWords.length === nameInputWords.length) break
-
-                        // next component
+                        
+                        toggleIsLeave(true)
+                        if (!focusElement.current) break
+                        focusElement.current.onanimationend = () => {
+                            userSelectDispatch({
+                                type: 'nameInput',
+                                payload: nameInputWords.join('').trim()
+                            })
+                            userSelectDispatch({
+                                type: 'currentStep',
+                                payload: 'SelectColor'
+                            })
+                        }
                         break
                     }
                     default:
@@ -243,10 +267,32 @@ function NameInputDialog (): JSX.Element {
             }
             break
         case 'x':
-            userSelectDispatch({
-                type: 'currentStep',
-                payload: 'SelectGender'
-            })
+            if (nameInputWords[curNameInputIdx].trim() !== '') {
+                const newNameInputWords = [...nameInputWords]
+                for (let idx = 7; idx >= curNameInputIdx; idx--) {
+                    if (newNameInputWords[idx].trim() !== '') {
+                        newNameInputWords[idx] = '　'
+                        setNameInputWords(newNameInputWords)
+                        break
+                    }
+                }
+                break
+            }
+
+            if (curNameInputIdx === 0) {
+                toggleIsLeave(true)
+                if (!focusElement.current) break
+                focusElement.current.onanimationend = () => {
+                    toggleIsLeave(false)
+                    userSelectDispatch({
+                        type: 'currentStep',
+                        payload: 'SelectGender'
+                    })
+                }
+                break
+            }
+
+            setCurNameInputIdx(curNameInputIdx - 1)
             break
         default:
             break
@@ -254,39 +300,39 @@ function NameInputDialog (): JSX.Element {
     }
     
     return (
-        <Fragment>
+        <div
+            className={`
+            ${styles.container}
+            ${isLeave ? styles.leave : ''}`}
+            onAnimationEnd={handleAnimationEnd}
+            tabIndex={0}
+            ref={focusElement}
+            onBlur={(event) => event.target.focus()}
+            onKeyDown={handleKeyDown}
+        >
             <div
-                className={styles.container}
-                onAnimationEnd={handleAnimation}
-                tabIndex={0}
-                ref={focusElement}
-                onBlur={(event) => event.target.focus()}
-                onKeyDown={handleKeyDown}
+                className={`
+                ${styles.nameDisplayArea}
+                ${globalStyles.xyCenter}
+                ${globalStyles.yellowBlock}`}
             >
-                <div
-                    className={`
-                    ${styles.nameDisplayArea}
-                    ${globalStyles.xyCenter}
-                    ${globalStyles.yellowBlock}`}
-                >
-                    {generateNameInputWords()}
+                {generateNameInputWords()}
+            </div>
+            <div
+                className={`
+                ${styles.keyboardArea}
+                ${globalStyles.yellowBlock}`}
+            >
+                <div className={styles.keyboardSection}>
+                    {generateKeyBoardKeys(0)}
                 </div>
-                <div
-                    className={`
-                    ${styles.keyboardArea}
-                    ${globalStyles.yellowBlock}`}
-                >
-                    <div className={styles.keyboardSection}>
-                        {generateKeyBoardKeys(0)}
-                    </div>
-                    <div className={styles.keyboardSection}>
-                        {generateKeyBoardKeys(1)}
-                    </div>
-                    <div className={styles.keyboardMenu}>
-                        {generateKeyBoardMenuItems()}
-                    </div>
+                <div className={styles.keyboardSection}>
+                    {generateKeyBoardKeys(1)}
+                </div>
+                <div className={styles.keyboardMenu}>
+                    {generateKeyBoardMenuItems()}
                 </div>
             </div>
-        </Fragment>
+        </div>
     )
 }

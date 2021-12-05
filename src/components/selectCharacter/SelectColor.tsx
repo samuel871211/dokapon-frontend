@@ -1,18 +1,22 @@
 import ExampleCharacterImg from './ExampleCharacterImg'
 import ColorBtn from './ColorBtn'
-
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectColor.module.css'
 import { colors } from '../../global/characters'
-import { useEffect, useRef, useState } from 'react'
+import { userSelectContext } from '../../reducers/userSelect'
+import { slideControllerContext } from '../../reducers/slideController'
+import React, { useRef, useState, useContext } from 'react'
 
 const colorArr = Object.keys(colors)
 
 export default SelectColor
 
 function SelectColor (): JSX.Element {
+    const { userSelect, userSelectDispatch } = useContext(userSelectContext)
+    const { slideControllerDispatch } = useContext(slideControllerContext)
     const focusElement = useRef<HTMLDivElement>(null)
     const [selectedIdx, setSelectedIdx] = useState(0)
+    const [isLeave, toggleIsLeave] = useState(false)
 
     function generateColorRows () {
         const colorRows = []
@@ -40,13 +44,35 @@ function SelectColor (): JSX.Element {
         case 'd':
             break
         case 'x':
+            toggleIsLeave(true)
+            slideControllerDispatch({
+                type: 'titleArea',
+                payload: true
+            })
             break
         default:
             break
         }
     }
 
-    useEffect(() => focusElement.current?.focus(), [])
+    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>): void {
+        if (e.animationName.includes('slideLeft')) {
+            focusElement.current?.focus()
+            return
+        }
+
+        if (e.animationName.includes('slideRight')) {
+            toggleIsLeave(false)
+            slideControllerDispatch({
+                type: 'titleArea',
+                payload: false
+            })
+            userSelectDispatch({
+                type: 'currentStep',
+                payload: 'BeforeNameInput'
+            })
+        }
+    }
 
     return (
         <div
@@ -58,8 +84,16 @@ function SelectColor (): JSX.Element {
             onBlur={(event) => event.target.focus()}
             onKeyDown={handleKeyDown}
         >
-            <ExampleCharacterImg color={colorArr[selectedIdx]} job='warrior'/>
-            <div className={styles.btnGroup}>
+            <ExampleCharacterImg 
+                color={colorArr[selectedIdx]}
+                job='warrior'
+            />
+            <div
+                className={`
+                ${styles.btnGroup}
+                ${isLeave ? styles.leave : ''}`}
+                onAnimationEnd={handleAnimationEnd}
+            >
                 {generateColorRows()}
             </div>
         </div>

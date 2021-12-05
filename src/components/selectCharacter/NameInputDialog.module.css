@@ -32,7 +32,14 @@
     display: flex;
     flex-direction: column;
 }
+.leave {
+    animation: slideRight 1s;
+}
 @keyframes slideLeft {
     0% { transform: translateX(100%) }
     100% { transform: none }
+}
+@keyframes slideRight {
+    0% { transform: none }
+    100% { transform: translateX(100%)}
 }

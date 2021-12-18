@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useContext } from 'react'
+import React, { useEffect, useLayoutEffect, useState, useRef, useContext } from 'react'
 import { slideControllerContext } from '../reducers/slideController'
 import { userSelectContext } from '../reducers/userSelect'
 import globalStyles from '../global/styles.module.css'
@@ -53,6 +53,13 @@ function NPCSpeakingDialog (props: {
                 payload: true
             })
         }
+
+        if (currentStep === 'BeforeNPCGenerateDialog') {
+            userSelectDispatch({
+                type: 'currentStep',
+                payload: 'NPCGenerateDialog'
+            })
+        }
     }
     function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
         if (e.animationName.includes('slideDown') && currentStep === 'BeforeNameInput') {
@@ -85,12 +92,14 @@ function NPCSpeakingDialog (props: {
     const [curWordIdx, setCurWordIdx] = useState(0)
     const [curMsgIdx, setCurMsgIdx] = useState(0)
 
-    useEffect(resetWordIdx, [message])
+    useLayoutEffect(resetWordIdx, [message])
     useEffect(focus, [displayBtn])
 
     function splitMessage (): JSX.Element[] {
         const result: JSX.Element[] = []
         let isFirstWord = true
+        if (!message[curMsgIdx]) return result
+
         for (const sentence of message[curMsgIdx].split('\n')) {
             const words: JSX.Element[] = []
             sentence.split('').forEach((word, index) => {

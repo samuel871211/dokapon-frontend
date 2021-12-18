@@ -42,6 +42,10 @@ function SelectColor (): JSX.Element {
             setSelectedIdx(selectedIdx === 9 ? 0 : selectedIdx + 1)
             break
         case 'd':
+            userSelectDispatch({
+                type: 'currentStep',
+                payload: 'SelectJob'
+            })
             break
         case 'x':
             toggleIsLeave(true)
@@ -87,6 +91,7 @@ function SelectColor (): JSX.Element {
             <ExampleCharacterImg 
                 color={colorArr[selectedIdx]}
                 job='warrior'
+                isFadeOut={isLeave}
             />
             <div
                 className={`

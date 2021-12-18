@@ -1,6 +1,7 @@
 import { Fragment, useReducer } from 'react'
 
 import guide from '../imgs/guide.png'
+import { basicJobs } from '../global/characters'
 
 import TitleArea from '../components/selectCharacter/TitleArea'
 import NPCSpeakingDialog from '../components/NPCSpeakingDialog'
@@ -32,6 +33,7 @@ const Components = {
     NameInputDialog: <NameInputDialog/>,
     SelectColor: <SelectColor/>,
     SelectJob: <SelectJob/>,
+    BeforeNPCGenerateDialog: '',
     NPCGenerateDialog: <NPCGenerateDialog/>,
     SelectNPCLevel: <SelectNPCLevel/>
 }
@@ -40,7 +42,7 @@ export default function SelectCharacter (): JSX.Element {
     // data
     const [userSelect, userSelectDispatch] = useReducer(userSelectReducer, userSelectInitState)
     const [slideState, slideControllerDispatch] = useReducer(slideControllerReducer, slideControllerInitState)
-    const { currentStep, goalType, playersAttrs, currentPlayer } = userSelect
+    const { currentStep, goalType, playersAttrs, currentPlayer, currentJob, numberOfPlayers } = userSelect
     const nameInput = playersAttrs[currentPlayer - 1].nameInput
 
     function display (step: typeof currentStep) {
@@ -96,8 +98,15 @@ export default function SelectCharacter (): JSX.Element {
         case 'SelectJob': 
             return {
                 title: '職業選擇',
-                NPCMessage: [`${nameInput}\n勇者偏好什麼職業`],
+                NPCMessage: currentJob === '' ?
+                    [`${nameInput}\n勇者偏好什麼職業`] : [basicJobs[currentJob]?.chineseIntro],
                 NPCMessageBtnDisplay: false
+            }
+        case 'BeforeNPCGenerateDialog':
+            return {
+                title: '',
+                NPCMessage: ['國王招募的勇者有4人。', '換句話說現在還缺少勇者。', `還需要${4 - numberOfPlayers}個人。`, `想詢問第${currentPlayer}位勇者`],
+                NPCMessageBtnDisplay: true
             }
         case 'NPCGenerateDialog':
             return {

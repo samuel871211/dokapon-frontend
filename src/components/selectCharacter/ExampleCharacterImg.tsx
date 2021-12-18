@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef} from 'react'
 import globalStyles from '../../global/styles.module.css'
 import styles from './ExampleCharacterImg.module.css'
 
@@ -6,29 +6,27 @@ const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
 
 export default ExampleCharacterImg
 
-function ExampleCharacterImg (props: { color: string, job: string }): JSX.Element {
+function ExampleCharacterImg (props: {
+    color: string,
+    job: string,
+    isFadeOut: boolean
+}): JSX.Element {
     const focusElement = useRef<HTMLImageElement>(null)
-    const [colorChange, toggleColorChange] = useState(true)
-    const { color, job } = props
+    const { color, job, isFadeOut } = props
 
-    function handleAnimationEnd (e: React.AnimationEvent<HTMLImageElement>) {
-        if (e.animationName.includes('fadeIn')) {
-            toggleColorChange(false)
-        }
+    // useLayoutEffect fires synchronously after all DOM mutations.
+    // Use this to read layout from the DOM and synchronously re-render.
+    useLayoutEffect(handleImgFadeAnimation, [color, job])
+
+    function handleImgFadeAnimation (): void {
+        focusElement.current?.classList.remove(`${styles.fade}`)
+        setTimeout(() => focusElement.current?.classList.add(`${styles.fade}`), 1)
     }
 
-    useEffect(() => {
-        toggleColorChange(true)
-    }, [color])
-    
-    /* 
-    prop color change => react只會更新img src
-    但如果再把img包成component，就會有fade特效了
-    即便用useEffect來toggle fade特效，如果color change太快
-    前面的animation還沒結束，沒辦法中斷，useEffect會在render後才執行
-    */
-    
-    
+    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
+        focusElement.current?.classList.remove(`${styles.fade}`)
+    }
+
     return (
         <div
             className={`
@@ -39,9 +37,9 @@ function ExampleCharacterImg (props: { color: string, job: string }): JSX.Elemen
                 src={`${prefix}/imgs/${job}_male_${color}_front.png`}
                 className={`
                 ${styles.img}
-                ${colorChange ? styles.fade : ''}`}
-                ref={focusElement}
+                ${isFadeOut ? styles.fadeOut : ''}`}
                 onAnimationEnd={handleAnimationEnd}
+                ref={focusElement}
             />
         </div>
     )

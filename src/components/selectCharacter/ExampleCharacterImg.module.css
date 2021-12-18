@@ -1,6 +1,8 @@
 .container {
     width: 55%;
     height: 100%;
+    animation: fadeIn 1s;
+    animation-iteration-count: 1;
 }
 .img {
     width: min(calc(100vw / 12 * 7 * 0.8 * 0.55), calc(65vh * 0.8));

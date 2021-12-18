@@ -29,19 +29,24 @@ export function createCharacter (options: {
 
 export const basicJobs = {
 	warrior: {
-		chinese: '戰士'
+		chinese: '戰士',
+		chineseIntro: '是攻擊力很強的工作。\n雖然擅長物理攻擊，\n魔力不會上升，所以對魔法抵抗力很弱。'
 	},
 	magician: {
-		chinese: '魔法師'
+		chinese: '魔法師',
+		chineseIntro: '是靠強大的魔力去磨蹭的職業。\n雖然魔法攻擊很強\n防禦力沒有提高，所以被打得軟弱。'
 	},
 	cleric: {
-		chinese: '僧侶'
+		chinese: '僧侶',
+		chineseIntro: 'HP從事高職業。\n雖然有被打的強度，但是\n因爲速度不快，所以很短。'
 	},
 	thief: {
-		chinese: '盜賊'
+		chinese: '盜賊',
+		chineseIntro: '敏捷是皮凱奇的職業。\n雖然能迅速躲避攻擊，\n沒有其他特別的特徵。'
 	},
 	beginner: {
-		chinese: '無職'
+		chinese: '無職',
+		chineseIntro: '是不適合職業的自由人。\n沒有任何好處，也沒有工資，\n生活很艱難。'
 	}
 }
 

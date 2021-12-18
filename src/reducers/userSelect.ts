@@ -10,6 +10,7 @@ type steps =
     'NameInputDialog' |
     'SelectColor' |
     'SelectJob' |
+    'BeforeNPCGenerateDialog' |
     'NPCGenerateDialog' |
     'SelectNPCLevel'
 
@@ -19,6 +20,8 @@ type userSelectAction = {
     type: 
         'goalType' |
         'currentStep' |
+        'currentJob' |
+        'currentPlayer' |
         'goalInput' |
         'numberOfPlayers' |
         'gender' |
@@ -34,37 +37,40 @@ type userSelectContext = {
     userSelectDispatch: React.Dispatch<userSelectAction>
 }
 
+type basicJobs = 'warrior' | 'magician' | 'thief' | 'cleric' | 'beginner' | ''
+
 const userSelectInitState = {
     goalType: <goalType> 'period',
     goalInput: 1,
     numberOfPlayers: 1,
     currentPlayer: 1,
     currentStep: <steps> 'SelectGoalType',
+    currentJob: <basicJobs> '',
     titleAreaIsLeaving: false,
     playersAttrs: [{
         gender: 'male',
         nameInput: '',
         color: 'red',
         job: 'warrior',
-        npcLevel: 'weak'
+        npcLevel: ''
     }, {
         gender: 'male',
         nameInput: '',
         color: 'red',
         job: 'warrior',
-        npcLevel: 'weak'
+        npcLevel: ''
     }, {
         gender: 'male',
         nameInput: '',
         color: 'red',
         job: 'warrior',
-        npcLevel: 'weak'
+        npcLevel: ''
     }, {
         gender: 'male',
         nameInput: '',
         color: 'red',
         job: 'warrior',
-        npcLevel: 'weak'
+        npcLevel: ''
     }]
 }
 
@@ -79,11 +85,13 @@ function userSelectReducer (
     switch (type) {
     case 'goalType':
     case 'currentStep':
+    case 'currentJob':
         return {
             ...state,
             [type]: payload
         }
     case 'goalInput':
+    case 'currentPlayer':
     case 'numberOfPlayers':
         return {
             ...state,

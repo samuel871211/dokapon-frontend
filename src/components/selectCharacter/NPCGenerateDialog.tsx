@@ -1,7 +1,7 @@
 import CustomBorderBottom from '../CustomBorderBottom'
 import globalStyles from '../../global/styles.module.css'
 import styles from './NPCGenerateDialog.module.css'
-import { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 
 export default NPCGenerateDialog
 
@@ -26,7 +26,12 @@ function NPCGenerateDialog (): JSX.Element {
         }
     }
 
-    useEffect(() => focusElement.current?.focus(), [])
+    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
+        if (e.animationName.includes('slideLeft')) {
+            focusElement.current?.focus()
+            return
+        }
+    }
 
     return (
         <div
@@ -37,6 +42,7 @@ function NPCGenerateDialog (): JSX.Element {
             ref={focusElement}
             onBlur={(event) => event.target.focus()}
             onKeyDown={handleKeyDown}
+            onAnimationEnd={handleAnimationEnd}
         >
             <div className={styles.title}>勇者募集!!</div>
             <CustomBorderBottom/>

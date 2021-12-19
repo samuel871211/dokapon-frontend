@@ -38,6 +38,9 @@ type userSelectContext = {
 }
 
 type basicJobs = 'warrior' | 'magician' | 'thief' | 'cleric' | 'beginner' | ''
+type colors = 'red' | 'orange' | 'yellow' |
+            'lightGreen' | 'darkGreen' | 'lightBlue' |
+            'darkBlue' | 'pink' | 'gray' | 'white'
 
 const userSelectInitState = {
     goalType: <goalType> 'period',

@@ -17,7 +17,7 @@ function SelectNumberOfPlayers (): JSX.Element {
     function keyDownAttrs () {
         if (keyDownEvtRegister) return {
             tabIndex: 0,
-            onKeyDown: handleKeyDown,
+            onKeyUp: handleKeyUp,
             onAnimationEnd: handleAnimationEnd,
             onBlur: reFocus
         }
@@ -27,7 +27,7 @@ function SelectNumberOfPlayers (): JSX.Element {
     function reFocus (event: React.FocusEvent<HTMLDivElement>) {
         event.currentTarget.focus()
     }
-    function handleKeyDown (e: React.KeyboardEvent) {
+    function handleKeyUp (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             setSelectedPlayerNum(selectedPlayerNum === 1 ? 4 : selectedPlayerNum - 1)
@@ -88,7 +88,7 @@ function SelectNumberOfPlayers (): JSX.Element {
             ${isLeave ? styles.leave : ''}`}
             { ...keyDownAttrs() }
             // tabIndex={0}
-            // onKeyDown={handleKeyDown}
+            // onKeyUp={handleKeyUp}
             // onAnimationEnd={handleAnimationEnd}
             // onBlur={(event) => event.target.focus() }
         >

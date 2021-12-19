@@ -50,6 +50,18 @@ export const basicJobs = {
 	}
 }
 
+export const npcLevels = {
+	weak: {
+		chinese: '弱'
+	},
+	normal: {
+		chinese: '普通'
+	},
+	strong: {
+		chinese: '狡猾'
+	}
+}
+
 export const colors = {
 	red: {
 		chinese: '紅色',

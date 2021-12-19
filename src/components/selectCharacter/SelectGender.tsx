@@ -14,7 +14,7 @@ export default function SelectGender (): JSX.Element {
     const [isLeave, toggleIsLeave] = useState(false)
     const [selectedGender, toggleSelectedGender] = useState<gender>('male')
 
-    function handleKeyDown (e: React.KeyboardEvent) {
+    function handleKeyUp (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowleft':
             toggleSelectedGender(selectedGender === 'male' ? 'female' : 'male')
@@ -71,7 +71,7 @@ export default function SelectGender (): JSX.Element {
             ${isLeave ? styles.leave : ''}`}
             tabIndex={0}
             onBlur={(event) => event.target.focus()}
-            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
             onAnimationEnd={handleAnimationEnd}
         >
             <GenderBlockBtn gender='male' selected={selectedGender === 'male'}/>

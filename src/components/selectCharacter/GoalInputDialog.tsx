@@ -42,7 +42,7 @@ function GoalInputDialog (): JSX.Element {
         }
     }
 
-    function handleKeyDown (e: React.KeyboardEvent): void {
+    function handleKeyUp (e: React.KeyboardEvent): void {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             (function handleAdd () {
@@ -133,7 +133,7 @@ function GoalInputDialog (): JSX.Element {
             tabIndex={0}
             ref={focusElement}
             onBlur={(event) => event.target.focus()}
-            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
             onAnimationEnd={handleAnimationEnd}
         >
             <div

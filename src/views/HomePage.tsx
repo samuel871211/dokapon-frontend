@@ -11,7 +11,7 @@ function HomePage (): JSX.Element {
     const [selectedIdx, setSelectedIdx] = useState(0)
     const focusElement = useRef<HTMLDivElement>(null)
 
-    function handleKeyDown (e: React.KeyboardEvent) {
+    function handleKeyUp (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             setSelectedIdx(selectedIdx === 0 ? 3 : selectedIdx - 1)
@@ -49,7 +49,7 @@ function HomePage (): JSX.Element {
             tabIndex={0}
             className={styles.container}
             ref={focusElement}
-            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
             onBlur={(event) => event.target.focus()}
         >
             <h1>DOKAPON THE WORLD</h1>

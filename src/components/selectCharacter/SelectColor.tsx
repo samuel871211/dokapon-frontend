@@ -33,7 +33,7 @@ function SelectColor (): JSX.Element {
         return colorRows
     }
 
-    function handleKeyDown (e: React.KeyboardEvent) {
+    function handleKeyUp (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             setSelectedIdx(selectedIdx === 0 ? 9 : selectedIdx - 1)
@@ -86,7 +86,7 @@ function SelectColor (): JSX.Element {
             tabIndex={0}
             ref={focusElement}
             onBlur={(event) => event.target.focus()}
-            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
         >
             <ExampleCharacterImg 
                 color={colorArr[selectedIdx]}

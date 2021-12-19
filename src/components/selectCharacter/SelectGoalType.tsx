@@ -17,7 +17,7 @@ function SelectGoalType (): JSX.Element {
     const [isLeave, toggleIsLeave] = useState(false)
     const [selectedGoalType, toggleSelectedGoalType] = useState(goalType)
 
-    function handleKeyDown (e: React.KeyboardEvent) {
+    function handleKeyUp (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             toggleSelectedGoalType(selectedGoalType === 'period' ? 'money' : 'period')
@@ -68,7 +68,7 @@ function SelectGoalType (): JSX.Element {
             ${isLeave ? styles.leave : ''}`}
             tabIndex={0}
             onBlur={(event) => event.target.focus()}
-            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
             onAnimationEnd={handleAnimationEnd}
         >
             <IconTextBtn

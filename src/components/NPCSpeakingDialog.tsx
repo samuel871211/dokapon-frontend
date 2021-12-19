@@ -16,23 +16,23 @@ function NPCSpeakingDialog (props: {
     const { slideState, slideControllerDispatch } = useContext(slideControllerContext)
     const { userSelectDispatch, userSelect: { currentStep } } = useContext(userSelectContext)
     const { NPCSpeakingDialog } = slideState
-    const handleKeyDownAttrs = displayBtn ? {
+    const handleKeyUpAttrs = displayBtn ? {
         tabIndex: 0,
         ref: focusElement,
         onBlur: reFocus,
-        onKeyDown: handleKeyDown
+        onKeyUp: handleKeyUp
     } : {}
     function reFocus (event: React.SyntheticEvent<HTMLDivElement>): void {
         event.currentTarget.focus()
     }
-    function handleKeyDown (): void {
+    function handleKeyUp (): void {
         if (curMsgIdx !== message.length - 1) {
             setCurMsgIdx(curMsgIdx + 1)
             setCurWordIdx(0)
             return
         }
 
-        // TODO: 不同情況使用此組件，handleKeyDown會有不同的行為，此部分需要再調整
+        // TODO: 不同情況使用此組件，handleKeyUp會有不同的行為，此部分需要再調整
         // 如果能把邏輯跟UI切開來會更好，暫時沒有更好的解法，只能by case
         if (currentStep === 'OnlyOnePlayer') {
             resetWordIdx()
@@ -131,7 +131,7 @@ function NPCSpeakingDialog (props: {
             ${NPCSpeakingDialog ? styles.leave : ''}`}
             onAnimationEnd={handleAnimationEnd}
             
-            { ...handleKeyDownAttrs }
+            { ...handleKeyUpAttrs }
         >
             <div className={styles.nameArea}>
                 <div

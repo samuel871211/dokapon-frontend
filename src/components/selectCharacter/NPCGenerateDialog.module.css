@@ -19,6 +19,11 @@
 .imgContainer {
     width: 50%;
 }
+.imgContainer > img {
+    background-color: #f4c36e;
+    border-radius: 10px;
+    width: 90%;
+}
 .btnGroup {
     display: flex;
     flex-direction: column;
@@ -32,11 +37,50 @@
     font-size: 2.5rem;
     font-weight: bold;
 }
+.confirmBtn {
+    background-color: #feac30;
+    color: white;
+    font-weight: bold;
+    -webkit-text-stroke: 2px black;
+}
+.hoverEffect {
+    animation: btnHoverFrom 500ms, btnHoverTo 500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+.leave {
+    animation: slideRight 1s;
+}
+@keyframes btnHoverFrom {
+    0% {
+        background-color: #9bd65b;
+    }
+    100% {
+        background-color: #feac30;
+    }
+}
+@keyframes btnHoverTo {
+    0% {
+        background-color: #feac30;
+    }
+    100% {
+        background-color: #9bd65b;
+    }
+}
 @keyframes slideLeft {
     0% {
         transform: translateX(100%);
     }
     100% {
         transform: none;
+    }
+}
+@keyframes slideRight {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: translateX(150%);
     }
 }

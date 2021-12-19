@@ -20,7 +20,7 @@ function SelectJob (): JSX.Element {
     const [selectedIdx, setSelectedIdx] = useState(0)
     const [isLeave, toggleIsLeave] = useState(false)
 
-    function handleKeyDown (e: React.KeyboardEvent) {
+    function handleKeyUp (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup': {
             const newIdx = selectedIdx === 0 ? 4 : selectedIdx - 1
@@ -105,7 +105,7 @@ function SelectJob (): JSX.Element {
             tabIndex={0}
             ref={focusElement}
             onBlur={(event) => event.target.focus()}
-            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
         >
             <ExampleCharacterImg
                 color='red'

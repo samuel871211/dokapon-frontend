@@ -14,8 +14,10 @@ export default SelectColor
 function SelectColor (): JSX.Element {
     const { userSelect, userSelectDispatch } = useContext(userSelectContext)
     const { slideControllerDispatch } = useContext(slideControllerContext)
+    const { currentPlayer, playersAttrs } = userSelect
+    const { color } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
-    const [selectedIdx, setSelectedIdx] = useState(0)
+    const [selectedIdx, setSelectedIdx] = useState(colorArr.indexOf(color))
     const [isLeave, toggleIsLeave] = useState(false)
 
     function generateColorRows () {
@@ -42,6 +44,10 @@ function SelectColor (): JSX.Element {
             setSelectedIdx(selectedIdx === 9 ? 0 : selectedIdx + 1)
             break
         case 'd':
+            userSelectDispatch({
+                type: 'color',
+                payload: colorArr[selectedIdx]
+            })
             userSelectDispatch({
                 type: 'currentStep',
                 payload: 'SelectJob'

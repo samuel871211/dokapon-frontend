@@ -20,7 +20,7 @@ function ExampleCharacterImg (props: {
 
     function handleImgFadeAnimation (): void {
         focusElement.current?.classList.remove(`${styles.fade}`)
-        setTimeout(() => focusElement.current?.classList.add(`${styles.fade}`), 1)
+        setTimeout(() => focusElement.current?.classList.add(`${styles.fade}`), 10)
     }
 
     function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {

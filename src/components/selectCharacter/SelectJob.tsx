@@ -15,7 +15,8 @@ export default SelectJob
 function SelectJob (): JSX.Element {
     const { userSelect, userSelectDispatch } = useContext(userSelectContext)
     const { slideControllerDispatch } = useContext(slideControllerContext)
-    const { numberOfPlayers, currentPlayer } = userSelect
+    const { numberOfPlayers, currentPlayer, playersAttrs } = userSelect
+    const { color } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
     const [selectedIdx, setSelectedIdx] = useState(0)
     const [isLeave, toggleIsLeave] = useState(false)
@@ -108,7 +109,7 @@ function SelectJob (): JSX.Element {
             onKeyUp={handleKeyUp}
         >
             <ExampleCharacterImg
-                color='red'
+                color={color}
                 job={jobArr[selectedIdx]}
                 isFadeOut={isLeave}
             />

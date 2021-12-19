@@ -14,8 +14,8 @@ export default SelectColor
 function SelectColor (): JSX.Element {
     const { userSelect, userSelectDispatch } = useContext(userSelectContext)
     const { slideControllerDispatch } = useContext(slideControllerContext)
-    const { currentPlayer, playersAttrs } = userSelect
-    const { color } = playersAttrs[currentPlayer - 1]
+    const { currentPlayer, playersAttrs, numberOfPlayers } = userSelect
+    const { color, gender } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
     const [selectedIdx, setSelectedIdx] = useState(colorArr.indexOf(color))
     const [isLeave, toggleIsLeave] = useState(false)
@@ -50,7 +50,7 @@ function SelectColor (): JSX.Element {
             })
             userSelectDispatch({
                 type: 'currentStep',
-                payload: 'SelectJob'
+                payload:  numberOfPlayers >= currentPlayer ? 'SelectJob' : 'NPCGenerateDialog'
             })
             break
         case 'x':
@@ -79,7 +79,7 @@ function SelectColor (): JSX.Element {
             })
             userSelectDispatch({
                 type: 'currentStep',
-                payload: 'BeforeNameInput'
+                payload: numberOfPlayers >= currentPlayer ? 'BeforeNameInput' : 'NPCGenerateDialog'
             })
         }
     }
@@ -97,6 +97,7 @@ function SelectColor (): JSX.Element {
             <ExampleCharacterImg 
                 color={colorArr[selectedIdx]}
                 job='warrior'
+                gender={gender}
                 isFadeOut={isLeave}
             />
             <div

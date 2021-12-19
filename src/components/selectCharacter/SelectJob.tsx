@@ -16,7 +16,7 @@ function SelectJob (): JSX.Element {
     const { userSelect, userSelectDispatch } = useContext(userSelectContext)
     const { slideControllerDispatch } = useContext(slideControllerContext)
     const { numberOfPlayers, currentPlayer, playersAttrs } = userSelect
-    const { color } = playersAttrs[currentPlayer - 1]
+    const { color, gender } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
     const [selectedIdx, setSelectedIdx] = useState(0)
     const [isLeave, toggleIsLeave] = useState(false)
@@ -50,10 +50,6 @@ function SelectJob (): JSX.Element {
             }
 
             toggleIsLeave(true)
-            userSelectDispatch({
-                type: 'currentPlayer',
-                payload: String(currentPlayer + 1)
-            })
             break
         case 'x':
             userSelectDispatch({
@@ -62,7 +58,7 @@ function SelectJob (): JSX.Element {
             })
             userSelectDispatch({
                 type: 'currentStep',
-                payload: 'SelectColor'
+                payload: numberOfPlayers >= currentPlayer ? 'SelectColor' : 'NPCGenerateDialog'
             })
             break
         default:
@@ -76,9 +72,18 @@ function SelectJob (): JSX.Element {
             return
         }
         if (e.animationName.includes('slideRight')) {
+            const newCurrentPlayer = currentPlayer + 1
+            userSelectDispatch({
+                type: 'currentJob',
+                payload: ''
+            })
+            userSelectDispatch({
+                type: 'currentPlayer',
+                payload: String(newCurrentPlayer)
+            })
             userSelectDispatch({
                 type: 'currentStep',
-                payload: currentPlayer > numberOfPlayers ? 'BeforeNPCGenerateDialog' : 'SelectGender'
+                payload: newCurrentPlayer > numberOfPlayers ? 'BeforeNPCGenerateDialog' : 'SelectGender'
             })
             return
         }
@@ -111,6 +116,7 @@ function SelectJob (): JSX.Element {
             <ExampleCharacterImg
                 color={color}
                 job={jobArr[selectedIdx]}
+                gender={gender}
                 isFadeOut={isLeave}
             />
             <div

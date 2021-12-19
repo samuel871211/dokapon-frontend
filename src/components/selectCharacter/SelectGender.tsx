@@ -9,7 +9,8 @@ type gender = 'male' | 'female'
 
 export default function SelectGender (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const { userSelectDispatch } = useContext(userSelectContext)
+    const { userSelect, userSelectDispatch } = useContext(userSelectContext)
+    const { currentPlayer, numberOfPlayers } = userSelect
     const { slideControllerDispatch } = useContext(slideControllerContext)
     const [isLeave, toggleIsLeave] = useState(false)
     const [selectedGender, toggleSelectedGender] = useState<gender>('male')
@@ -32,7 +33,7 @@ export default function SelectGender (): JSX.Element {
         case 'x':
             userSelectDispatch({
                 type: 'currentStep',
-                payload: 'SelectNumberOfPlayers'
+                payload: numberOfPlayers >= currentPlayer ? 'SelectNumberOfPlayers' : 'NPCGenerateDialog'
             })
             break
         default:
@@ -57,7 +58,7 @@ export default function SelectGender (): JSX.Element {
             })
             userSelectDispatch({
                 type: 'currentStep',
-                payload: 'BeforeNameInput'
+                payload: numberOfPlayers >= currentPlayer ? 'BeforeNameInput' : 'NPCGenerateDialog'
             })
         }
     }

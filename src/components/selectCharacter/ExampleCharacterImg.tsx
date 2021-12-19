@@ -9,10 +9,11 @@ export default ExampleCharacterImg
 function ExampleCharacterImg (props: {
     color: string,
     job: string,
-    isFadeOut: boolean
+    gender: string,
+    isFadeOut: boolean,
 }): JSX.Element {
     const focusElement = useRef<HTMLImageElement>(null)
-    const { color, job, isFadeOut } = props
+    const { color, job, gender, isFadeOut } = props
 
     // useLayoutEffect fires synchronously after all DOM mutations.
     // Use this to read layout from the DOM and synchronously re-render.
@@ -34,7 +35,7 @@ function ExampleCharacterImg (props: {
             ${globalStyles.xyCenter}`}
         >
             <img
-                src={`${prefix}/imgs/${job}_male_${color}_front.png`}
+                src={`${prefix}/imgs/${job}_${gender}_${color}_front.png`}
                 className={`
                 ${styles.img}
                 ${isFadeOut ? styles.fadeOut : ''}`}

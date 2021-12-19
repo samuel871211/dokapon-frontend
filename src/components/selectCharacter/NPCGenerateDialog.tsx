@@ -104,7 +104,7 @@ function NPCGenerateDialog (): JSX.Element {
                     ${globalStyles.xyCenter}
                     ${styles.imgContainer}`}
                 >
-                    <img src={`${prefix}/imgs/${job}_male_${color}_front.png`}/>
+                    <img src={`${prefix}/imgs/${job}_${gender}_${color}_front.png`}/>
                 </div>
                 <div className={styles.btnGroup}>
                     <Btn

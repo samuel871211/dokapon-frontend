@@ -15,19 +15,32 @@ function SelectColor (): JSX.Element {
     const { userSelect, userSelectDispatch } = useContext(userSelectContext)
     const { slideControllerDispatch } = useContext(slideControllerContext)
     const { currentPlayer, playersAttrs, numberOfPlayers } = userSelect
-    const { color, gender } = playersAttrs[currentPlayer - 1]
+    const { color: currentPlayerColor, gender, job } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
-    const [selectedIdx, setSelectedIdx] = useState(colorArr.indexOf(color))
     const [isLeave, toggleIsLeave] = useState(false)
+    const remainColors = getRemainColors()
+    const initSelectedIdx = remainColors.indexOf(currentPlayerColor)
+    const [selectedIdx, setSelectedIdx] = useState(initSelectedIdx === -1 ? 0 : initSelectedIdx)
+
+    function getRemainColors () {
+        const remainColors = [ ...colorArr ]
+        for (let playerNumber = 0; playerNumber < currentPlayer - 1; playerNumber++) {
+            const usedColor = playersAttrs[playerNumber].color
+            const index = remainColors.indexOf(usedColor)
+            if (index != -1) remainColors.splice(index, 1)
+        }
+        return remainColors
+    }
 
     function generateColorRows () {
         const colorRows = []
         for (const [color, { chinese, rgb }] of Object.entries(colors)) {
+            if (!remainColors.includes(color)) continue
             colorRows.push( 
                 <ColorBtn
                     rgb={rgb}
                     name={chinese}
-                    selected={color === colorArr[selectedIdx]}
+                    selected={color === remainColors[selectedIdx]}
                     key={color}
                 />
             )
@@ -38,15 +51,15 @@ function SelectColor (): JSX.Element {
     function handleKeyUp (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
-            setSelectedIdx(selectedIdx === 0 ? 9 : selectedIdx - 1)
+            setSelectedIdx(selectedIdx === 0 ? remainColors.length - 1 : selectedIdx - 1)
             break
         case 'arrowdown':
-            setSelectedIdx(selectedIdx === 9 ? 0 : selectedIdx + 1)
+            setSelectedIdx(selectedIdx === remainColors.length - 1 ? 0 : selectedIdx + 1)
             break
         case 'd':
             userSelectDispatch({
                 type: 'color',
-                payload: colorArr[selectedIdx]
+                payload: remainColors[selectedIdx]
             })
             userSelectDispatch({
                 type: 'currentStep',
@@ -95,8 +108,8 @@ function SelectColor (): JSX.Element {
             onKeyUp={handleKeyUp}
         >
             <ExampleCharacterImg 
-                color={colorArr[selectedIdx]}
-                job='warrior'
+                color={remainColors[selectedIdx]}
+                job={job}
                 gender={gender}
                 isFadeOut={isLeave}
             />

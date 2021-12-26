@@ -47,6 +47,7 @@ const userSelectInitState = {
     goalInput: 1,
     numberOfPlayers: 1,
     currentPlayer: 1,
+    prevStep: <steps> '',
     currentStep: <steps> 'SelectGoalType',
     currentJob: <basicJobs> '',
     titleAreaIsLeaving: false,
@@ -87,11 +88,16 @@ function userSelectReducer (
 
     switch (type) {
     case 'goalType':
-    case 'currentStep':
     case 'currentJob':
         return {
             ...state,
             [type]: payload
+        }
+    case 'currentStep':
+        return {
+            ...state,
+            prevStep: state.currentStep,
+            currentStep: payload as steps
         }
     case 'goalInput':
     case 'currentPlayer':

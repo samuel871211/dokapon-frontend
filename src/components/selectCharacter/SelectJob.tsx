@@ -15,10 +15,10 @@ export default SelectJob
 function SelectJob (): JSX.Element {
     const { userSelect, userSelectDispatch } = useContext(userSelectContext)
     const { slideControllerDispatch } = useContext(slideControllerContext)
-    const { numberOfPlayers, currentPlayer, playersAttrs } = userSelect
-    const { color, gender } = playersAttrs[currentPlayer - 1]
+    const { numberOfPlayers, currentPlayer, playersAttrs, prevStep } = userSelect
+    const { color, gender, job } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
-    const [selectedIdx, setSelectedIdx] = useState(0)
+    const [selectedIdx, setSelectedIdx] = useState(jobArr.indexOf(job))
     const [isLeave, toggleIsLeave] = useState(false)
 
     function handleKeyUp (e: React.KeyboardEvent) {
@@ -72,18 +72,25 @@ function SelectJob (): JSX.Element {
             return
         }
         if (e.animationName.includes('slideRight')) {
-            const newCurrentPlayer = currentPlayer + 1
             userSelectDispatch({
-                type: 'currentJob',
-                payload: ''
+                type: 'job',
+                payload: jobArr[selectedIdx]
             })
+
+            let nextStep = ''
+            if (currentPlayer < numberOfPlayers) nextStep = 'SelectGender'
+            else if (prevStep === 'NPCGenerateDialog') nextStep = 'NPCGenerateDialog'
+            else nextStep = 'BeforeNPCGenerateDialog'
+            userSelectDispatch({
+                type: 'currentStep',
+                payload: nextStep
+            })
+
+            if (nextStep === 'NPCGenerateDialog') return
+            const newCurrentPlayer = currentPlayer + 1
             userSelectDispatch({
                 type: 'currentPlayer',
                 payload: String(newCurrentPlayer)
-            })
-            userSelectDispatch({
-                type: 'currentStep',
-                payload: newCurrentPlayer > numberOfPlayers ? 'BeforeNPCGenerateDialog' : 'SelectGender'
             })
             return
         }

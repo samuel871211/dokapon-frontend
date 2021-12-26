@@ -30,12 +30,28 @@ export default function SelectGender (): JSX.Element {
                 payload: true
             })
             break
-        case 'x':
+        case 'x': {
+            let nextStep = ''
+            if (currentPlayer === 1) nextStep = 'SelectNumberOfPlayers'
+            else if (numberOfPlayers >= currentPlayer) nextStep = 'SelectJob'
+            else if (numberOfPlayers < currentPlayer) nextStep = 'NPCGenerateDialog'
+
             userSelectDispatch({
                 type: 'currentStep',
-                payload: numberOfPlayers >= currentPlayer ? 'SelectNumberOfPlayers' : 'NPCGenerateDialog'
+                payload: nextStep
             })
+            if (nextStep === 'SelectJob') {
+                userSelectDispatch({
+                    type: 'currentPlayer',
+                    payload: String(currentPlayer - 1)
+                })
+                userSelectDispatch({
+                    type: 'currentJob',
+                    payload: ''
+                })
+            }
             break
+        }
         default:
             break
         }

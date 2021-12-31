@@ -15,10 +15,10 @@ export default NPCGenerateDialog
 
 function NPCGenerateDialog (): JSX.Element {
     const { userSelect, userSelectDispatch } = useContext(userSelectContext)
-    const { currentPlayer, playersAttrs } = userSelect
+    const { currentPlayer, playersAttrs, numberOfPlayers } = userSelect
     const { gender, color, job, npcLevel } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
-    const [selectedIdx, setSelectedIdx] = useState(0)
+    const [selectedIdx, setSelectedIdx] = useState(4)
     const [isLeave, toggleIsLeave] = useState(false)
 
     function handleKeyUp (e: React.KeyboardEvent) {
@@ -30,10 +30,64 @@ function NPCGenerateDialog (): JSX.Element {
             setSelectedIdx(selectedIdx === 4 ? 0 : selectedIdx + 1)
             break
         case 'd':
+            if (!focusElement.current) return
             toggleIsLeave(true)
+            focusElement.current.onanimationend = function handleConfirm () {
+                switch (selectedIdx) {
+                case 0:
+                    userSelectDispatch({
+                        type: 'currentStep',
+                        payload: 'SelectNPCLevel'
+                    })
+                    break
+                case 1:
+                    userSelectDispatch({
+                        type: 'currentStep',
+                        payload: 'SelectGender'
+                    })
+                    break
+                case 2:
+                    userSelectDispatch({
+                        type: 'currentStep',
+                        payload: 'SelectColor'
+                    })
+                    break
+                case 3:
+                    userSelectDispatch({
+                        type: 'currentStep',
+                        payload: 'SelectJob'
+                    })
+                    break
+                case 4:
+                    if (currentPlayer === 4) break
+                    userSelectDispatch({
+                        type: 'currentPlayer',
+                        payload: String(currentPlayer + 1)
+                    })
+                    userSelectDispatch({
+                        type: 'currentStep',
+                        payload: 'BeforeNPCGenerateDialog'
+                    })
+                    break
+                default:
+                    break
+                }
+            }
             break
         case 'x':
-            // back to SelectJob or NPCGenerateDialog
+            if (!focusElement.current) return
+            toggleIsLeave(true)
+            focusElement.current.onanimationend = function handleCancel () {
+                const newCurrentPlayer = currentPlayer - 1
+                userSelectDispatch({
+                    type: 'currentPlayer',
+                    payload: String(newCurrentPlayer)
+                })
+                userSelectDispatch({
+                    type: 'currentStep',
+                    payload: newCurrentPlayer === numberOfPlayers ? 'SelectJob' : 'NPCGenerateDialog'
+                })
+            }
             break
         default:
             break
@@ -41,46 +95,8 @@ function NPCGenerateDialog (): JSX.Element {
     }
 
     function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
-        if (e.animationName.includes('slideLeft')) {
+        if (e.animationName === styles.slideLeft) {
             focusElement.current?.focus()
-            return
-        }
-
-        if (e.animationName.includes('slideRight')) {
-            switch (selectedIdx) {
-            case 0:
-                userSelectDispatch({
-                    type: 'currentStep',
-                    payload: 'SelectNPCLevel'
-                })
-                break
-            case 1:
-                userSelectDispatch({
-                    type: 'currentStep',
-                    payload: 'SelectGender'
-                })
-                break
-            case 2:
-                userSelectDispatch({
-                    type: 'currentStep',
-                    payload: 'SelectColor'
-                })
-                break
-            case 3:
-                userSelectDispatch({
-                    type: 'currentStep',
-                    payload: 'SelectJob'
-                })
-                break
-            case 4:
-                // userSelectDispatch({
-                //     type: 'currentStep',
-                //     payload: 'SelectColor'
-                // })
-                break
-            default:
-                break
-            }
         }
     }
 

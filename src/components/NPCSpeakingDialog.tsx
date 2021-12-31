@@ -130,7 +130,6 @@ function NPCSpeakingDialog (props: {
             ${styles.container}
             ${NPCSpeakingDialog ? styles.leave : ''}`}
             onAnimationEnd={handleAnimationEnd}
-            
             { ...handleKeyUpAttrs }
         >
             <div className={styles.nameArea}>

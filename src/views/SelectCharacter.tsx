@@ -105,7 +105,7 @@ export default function SelectCharacter (): JSX.Element {
         case 'BeforeNPCGenerateDialog':
             return {
                 title: '',
-                NPCMessage: ['國王招募的勇者有4人。', '換句話說現在還缺少勇者。', `還需要${4 - numberOfPlayers}個人。`, `想詢問第${currentPlayer}位勇者`],
+                NPCMessage: ['國王招募的勇者有4人。', '換句話說現在還缺少勇者。', `還需要${5 - currentPlayer}個人。`, `想詢問第${currentPlayer}位勇者`],
                 NPCMessageBtnDisplay: true
             }
         case 'NPCGenerateDialog':

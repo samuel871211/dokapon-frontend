@@ -1,7 +1,7 @@
 import CustomBorderBottom from '../CustomBorderBottom'
 import globalStyles from '../../global/styles.module.css'
 import styles from './NPCGenerateDialog.module.css'
-import React, { useState, useRef, useContext } from 'react'
+import React, { useState, useRef, useContext, useEffect } from 'react'
 import { userSelectContext } from '../../reducers/userSelect'
 import { colors, basicJobs, npcLevels } from '../../global/characters'
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
@@ -16,10 +16,49 @@ export default NPCGenerateDialog
 function NPCGenerateDialog (): JSX.Element {
     const { userSelect, userSelectDispatch } = useContext(userSelectContext)
     const { currentPlayer, playersAttrs, numberOfPlayers } = userSelect
-    const { gender, color, job, npcLevel } = playersAttrs[currentPlayer - 1]
+    const { gender, color, job, npcLevel, npcAttrsReGenerated } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
     const [selectedIdx, setSelectedIdx] = useState(4)
     const [isLeave, toggleIsLeave] = useState(false)
+
+    useEffect(function reGenerateNPCAttrs () {
+        if (npcAttrsReGenerated) return
+
+        const colorList = Object.keys(colors)
+        const jobList = Object.keys(basicJobs)
+        const npcLevelList = Object.keys(npcLevels)
+        function getRandomInt(min: number, max: number) {
+            min = Math.ceil(min)
+            max = Math.floor(max)
+            return Math.floor(Math.random() * (max - min) + min)
+        }
+        (function removeUsedColors () {
+            for (let playerIdx = 1; playerIdx < currentPlayer; playerIdx++) {
+                const usedColor = playersAttrs[playerIdx - 1].color
+                colorList.splice(colorList.indexOf(usedColor), 1)
+            }
+        })()
+        userSelectDispatch({
+            type: 'color',
+            payload: colorList[getRandomInt(0, colorList.length)]
+        })
+        userSelectDispatch({
+            type: 'job',
+            payload: jobList[getRandomInt(0, jobList.length)]
+        })
+        userSelectDispatch({
+            type: 'npcLevel',
+            payload: npcLevelList[getRandomInt(0, npcLevelList.length)]
+        })
+        userSelectDispatch({
+            type: 'gender',
+            payload: getRandomInt(0, 1) === 0 ? 'male' : 'female'
+        })
+        userSelectDispatch({
+            type: 'npcAttrsReGenerated',
+            payload: ''
+        })
+    }, [])
 
     function handleKeyUp (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
@@ -85,7 +124,7 @@ function NPCGenerateDialog (): JSX.Element {
                 })
                 userSelectDispatch({
                     type: 'currentStep',
-                    payload: newCurrentPlayer === numberOfPlayers ? 'SelectJob' : 'NPCGenerateDialog'
+                    payload: newCurrentPlayer === numberOfPlayers ? 'SelectJob' : 'BeforeNPCGenerateDialog'
                 })
             }
             break

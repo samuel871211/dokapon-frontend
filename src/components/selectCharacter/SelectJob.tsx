@@ -15,7 +15,7 @@ export default SelectJob
 function SelectJob (): JSX.Element {
     const { userSelect, userSelectDispatch } = useContext(userSelectContext)
     const { slideControllerDispatch } = useContext(slideControllerContext)
-    const { numberOfPlayers, currentPlayer, playersAttrs, prevStep } = userSelect
+    const { numberOfPlayers, currentPlayer, playersAttrs } = userSelect
     const { color, gender, job } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
     const [selectedIdx, setSelectedIdx] = useState(jobArr.indexOf(job))
@@ -67,6 +67,11 @@ function SelectJob (): JSX.Element {
     }
 
     function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
+        function determineNextStep () {
+            if (currentPlayer < numberOfPlayers) return 'SelectGender'
+            if (currentPlayer === numberOfPlayers) return 'BeforeNPCGenerateDialog'
+            return 'NPCGenerateDialog'
+        }
         if (e.animationName.includes('slideLeft')) {
             focusElement.current?.focus()
             return
@@ -76,11 +81,7 @@ function SelectJob (): JSX.Element {
                 type: 'job',
                 payload: jobArr[selectedIdx]
             })
-
-            let nextStep = ''
-            if (currentPlayer < numberOfPlayers) nextStep = 'SelectGender'
-            else if (prevStep === 'NPCGenerateDialog') nextStep = 'NPCGenerateDialog'
-            else nextStep = 'BeforeNPCGenerateDialog'
+            const nextStep = determineNextStep()
             userSelectDispatch({
                 type: 'currentStep',
                 payload: nextStep
@@ -92,7 +93,6 @@ function SelectJob (): JSX.Element {
                 type: 'currentPlayer',
                 payload: String(newCurrentPlayer)
             })
-            return
         }
     }
 

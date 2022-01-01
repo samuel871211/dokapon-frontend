@@ -28,7 +28,8 @@ type userSelectAction = {
         'nameInput' |
         'color' |
         'job' |
-        'npcLevel',
+        'npcLevel' |
+        'npcAttrsReGenerated',
     payload: string
 }
 
@@ -47,7 +48,7 @@ const userSelectInitState = {
     goalInput: 1,
     numberOfPlayers: 1,
     currentPlayer: 1,
-    prevStep: <steps> '',
+    // prevStep: <steps> '',
     currentStep: <steps> 'SelectGoalType',
     currentJob: <basicJobs> '',
     titleAreaIsLeaving: false,
@@ -56,25 +57,29 @@ const userSelectInitState = {
         nameInput: '',
         color: 'red',
         job: 'warrior',
-        npcLevel: ''
+        npcLevel: '',
+        npcAttrsReGenerated: false
     }, {
         gender: 'male',
         nameInput: '',
         color: 'red',
         job: 'warrior',
-        npcLevel: ''
+        npcLevel: '',
+        npcAttrsReGenerated: false
     }, {
         gender: 'male',
         nameInput: '',
         color: 'red',
         job: 'warrior',
-        npcLevel: ''
+        npcLevel: '',
+        npcAttrsReGenerated: false
     }, {
         gender: 'male',
         nameInput: '',
         color: 'red',
         job: 'warrior',
-        npcLevel: ''
+        npcLevel: '',
+        npcAttrsReGenerated: false
     }]
 }
 
@@ -96,7 +101,7 @@ function userSelectReducer (
     case 'currentStep':
         return {
             ...state,
-            prevStep: state.currentStep,
+            // prevStep: state.currentStep,
             currentStep: payload as steps
         }
     case 'goalInput':
@@ -114,6 +119,12 @@ function userSelectReducer (
         const newState = { ...state }
         const index = state.currentPlayer - 1
         newState.playersAttrs[index][type] = payload
+        return newState
+    }
+    case 'npcAttrsReGenerated': {
+        const newState = { ...state }
+        const index = state.currentPlayer - 1
+        newState.playersAttrs[index].npcAttrsReGenerated = true
         return newState
     }
     default:

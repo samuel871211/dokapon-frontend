@@ -4,15 +4,31 @@
     margin: auto;
     flex-direction: column;
     outline: none;
-    animation: slideLeft 1s;
+    animation: slideIn 1s;
 }
 .leave {
-    animation: slideRight 1s;
+    animation: slideOut 1s;
 }
 .btn {
     width: 75%;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-weight: bold;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
 }
-@keyframes slideLeft {
+.imgContainer {
+    position: absolute;
+    left: 5%;
+}
+.img {
+    width: 30px;
+    height: 30px
+}
+@keyframes slideIn {
     0% {
         transform: translateX(100%);
     }
@@ -20,7 +36,7 @@
         transform: none;
     }
 }
-@keyframes slideRight {
+@keyframes slideOut {
     0% {
         transform: none;
     }

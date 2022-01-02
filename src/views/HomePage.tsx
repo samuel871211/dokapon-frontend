@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-
-import IconTextBtn from '../components/IconTextBtn'
+import globalStyles from '../global/styles.module.css'
 import styles from './HomePage.module.css'
-
-const components = ['SelectCharacter', 'SelectCharacter', 'Book', 'Setting']
 
 export default HomePage
 
@@ -19,24 +16,11 @@ function HomePage (): JSX.Element {
         case 'arrowdown':
             setSelectedIdx(selectedIdx === 3 ? 0 : selectedIdx + 1)
             break
-        case 'd':
-            (function handleNextComponent () {
-                switch (selectedIdx) {
-                case 0:
-                    window.location.assign(`/${components[selectedIdx]}`)
-                    break
-                case 1:
-                    window.location.assign(`/${components[selectedIdx]}`)
-                    break
-                case 2:
-                    // TODO: 圖鑑component 
-                    break
-                case 3:
-                    // TODO: 設定component
-                    break
-                }
-            })()
+        case 'd': {
+            const components = ['SelectCharacter', 'SelectCharacter', 'Book', 'Setting']
+            window.location.assign(`/${components[selectedIdx]}`)
             break
+        }
         default:
             break
         }
@@ -53,10 +37,27 @@ function HomePage (): JSX.Element {
             onBlur={(event) => event.target.focus()}
         >
             <h1>DOKAPON THE WORLD</h1>
-            <IconTextBtn text='故事模式' selected={selectedIdx === 0} customClass={styles.btn}/>
-            <IconTextBtn text='對戰模式' selected={selectedIdx === 1} customClass={styles.btn}/>
-            <IconTextBtn text='圖鑑' selected={selectedIdx === 2} customClass={styles.btn}/>
-            <IconTextBtn text='設定' selected={selectedIdx === 3} customClass={styles.btn}/>
+            <IconTextBtn text='故事模式' selected={selectedIdx === 0}/>
+            <IconTextBtn text='對戰模式' selected={selectedIdx === 1}/>
+            <IconTextBtn text='圖鑑' selected={selectedIdx === 2}/>
+            <IconTextBtn text='設定' selected={selectedIdx === 3}/>
+        </div>
+    )
+}
+
+function IconTextBtn (props: { text: string, selected: boolean }): JSX.Element {
+    const { text, selected } = props
+    return (
+        <div
+            className={`
+            ${globalStyles.yellowBlock}
+            ${selected ? globalStyles.hoverEffect : ''}
+            ${styles.btn}`}
+        >
+            <div className={styles.imgContainer}>
+                <img className={styles.img}/>
+            </div>
+            <span>{text}</span>
         </div>
     )
 }

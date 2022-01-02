@@ -2,7 +2,6 @@ import React, { useState, useRef, useContext } from 'react'
 
 import { userSelectContext } from '../../reducers/userSelect'
 import { slideControllerContext } from '../../reducers/slideController'
-import IconTextBtn from '../IconTextBtn'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectGoalType.module.css'
 
@@ -26,11 +25,25 @@ function SelectGoalType (): JSX.Element {
             toggleSelectedGoalType(selectedGoalType === 'period' ? 'money' : 'period')
             break
         case 'd':
-            toggleIsLeave(true)
-            slideControllerDispatch({
-                type: 'titleArea',
-                payload: true
-            })
+            if (!focusElement.current) break
+
+            (function handleAnimation () {
+                toggleIsLeave(true)
+                slideControllerDispatch({
+                    type: 'titleArea',
+                    payload: true
+                })
+            })()
+            focusElement.current.onanimationend = function handleNextComponent () {
+                userSelectDispatch({
+                    type: 'goalType',
+                    payload: selectedGoalType
+                })
+                userSelectDispatch({
+                    type: 'currentStep',
+                    payload: 'GoalInputDialog'
+                })
+            }
             break
         case 'x':
             // TODO: handle animation
@@ -41,21 +54,9 @@ function SelectGoalType (): JSX.Element {
         }
     }
 
-    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>): void {
-        if (e.animationName.includes('slideLeft')) {
+    function autoFocusElement (e: React.AnimationEvent<HTMLDivElement>): void {
+        if (e.animationName === styles.slideIn) {
             focusElement.current?.focus()
-            return
-        }
-
-        if (e.animationName.includes('slideRight')) {
-            userSelectDispatch({
-                type: 'goalType',
-                payload: selectedGoalType
-            })
-            userSelectDispatch({
-                type: 'currentStep',
-                payload: 'GoalInputDialog'
-            })
         }
     }
 
@@ -69,18 +70,27 @@ function SelectGoalType (): JSX.Element {
             tabIndex={0}
             onBlur={(event) => event.target.focus()}
             onKeyUp={handleKeyUp}
-            onAnimationEnd={handleAnimationEnd}
+            onAnimationEnd={autoFocusElement}
         >
-            <IconTextBtn
-                text='期間目標'
-                selected={selectedGoalType === 'period'}
-                customClass={styles.btn}
-            />
-            <IconTextBtn
-                text='金額目標'
-                selected={selectedGoalType === 'money'}
-                customClass={styles.btn}
-            />
+            <IconTextBtn text='期間目標' selected={selectedGoalType === 'period'}/>
+            <IconTextBtn text='金額目標' selected={selectedGoalType === 'money'}/>
+        </div>
+    )
+}
+
+function IconTextBtn (props: { text: string, selected: boolean }): JSX.Element {
+    const { text, selected } = props
+    return (
+        <div
+            className={`
+            ${globalStyles.yellowBlock}
+            ${selected ? globalStyles.hoverEffect : ''}
+            ${styles.btn}`}
+        >
+            <div className={styles.imgContainer}>
+                <img className={styles.img}/>
+            </div>
+            <span>{text}</span>
         </div>
     )
 }

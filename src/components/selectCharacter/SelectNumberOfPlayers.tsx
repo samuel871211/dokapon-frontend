@@ -1,9 +1,10 @@
 import React, { useState, useRef, useContext } from 'react'
-
-import NumberOfPlayersBtn from './NumberOfPlayersBtn'
+import PersonIcon from '@material-ui/icons/Person'
+import AdbIcon from '@material-ui/icons/Adb'
 import styles from './SelectNumberOfPlayers.module.css'
 import globalStyles from '../../global/styles.module.css'
 import { userSelectContext } from '../../reducers/userSelect'
+const digitToFullWidth = ['', '１', '２', '３', '４']
 
 export default SelectNumberOfPlayers
 
@@ -44,7 +45,18 @@ function SelectNumberOfPlayers (): JSX.Element {
                 toggleKeyDownRegister(false)
                 break
             }
+            if (!focusElement.current) break
             toggleIsLeave(true)
+            focusElement.current.onanimationend = function handleNextComponent () {
+                userSelectDispatch({
+                    type: 'numberOfPlayers',
+                    payload: String(selectedPlayerNum)
+                })
+                userSelectDispatch({
+                    type: 'currentStep',
+                    payload: 'SelectGender'
+                })
+            }
             break
         case 'x':
             userSelectDispatch({
@@ -58,21 +70,8 @@ function SelectNumberOfPlayers (): JSX.Element {
     }
 
     function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>): void {
-        if (e.animationName.includes('slideLeft')) {
+        if (e.animationName === styles.slideIn) {
             focusElement.current?.focus()
-            return
-        }
-
-        if (e.animationName.includes('slideRight')) {
-            toggleIsLeave(false)
-            userSelectDispatch({
-                type: 'numberOfPlayers',
-                payload: String(selectedPlayerNum)
-            })
-            userSelectDispatch({
-                type: 'currentStep',
-                payload: 'SelectGender'
-            })
         }
     }
 
@@ -87,15 +86,40 @@ function SelectNumberOfPlayers (): JSX.Element {
             ${globalStyles.xyCenter}
             ${isLeave ? styles.leave : ''}`}
             { ...keyDownAttrs() }
-            // tabIndex={0}
-            // onKeyUp={handleKeyUp}
-            // onAnimationEnd={handleAnimationEnd}
-            // onBlur={(event) => event.target.focus() }
         >
             <NumberOfPlayersBtn playerNum={1} selected={selectedPlayerNum === 1}/>
             <NumberOfPlayersBtn playerNum={2} selected={selectedPlayerNum === 2}/>
             <NumberOfPlayersBtn playerNum={3} selected={selectedPlayerNum === 3}/>
             <NumberOfPlayersBtn playerNum={4} selected={selectedPlayerNum === 4}/>
+        </div>
+    )
+}
+
+function NumberOfPlayersBtn (props: { playerNum: number, selected: boolean }): JSX.Element {
+    const { playerNum, selected } = props
+
+    function generateIcons () {
+        const icons = []
+        for (let i = 0; i < 4; i++) {
+            if (i < playerNum) {
+                icons.push(<PersonIcon key={i} fontSize='large'/>)
+            } else {
+                icons.push(<AdbIcon key={i} fontSize='large'/>)
+            }
+        }
+        return icons
+    }
+    return (
+        <div
+            className={`
+            ${styles.btn}
+            ${globalStyles.yellowBlock}
+            ${selected ? globalStyles.hoverEffect : ''}`}
+        >
+            {generateIcons()}
+            <div className={styles.btnText}>
+                {digitToFullWidth[playerNum]}人
+            </div>
         </div>
     )
 }

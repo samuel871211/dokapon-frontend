@@ -1,7 +1,6 @@
 import React, { useState, useRef, useContext } from 'react'
 import { userSelectContext } from '../../reducers/userSelect'
 import CustomBorderBottom from '../CustomBorderBottom'
-import GoalInputBtn from './GoalInputBtn'
 import globalStyles from '../../global/styles.module.css'
 import styles from './GoalInputDialog.module.css'
 
@@ -10,13 +9,8 @@ const typeToCN = { period: '期間', money: '金額' }
 export default GoalInputDialog
 
 function GoalInputDialog (): JSX.Element {
-    const {
-        userSelectDispatch,
-        userSelect: {
-            goalType: type,
-            goalInput: initGoalInput
-        }
-    } = useContext(userSelectContext)
+    const { userSelectDispatch, userSelect } = useContext(userSelectContext)
+    const { goalType: type, goalInput: initGoalInput } = userSelect
     const [isLeave, toggleIsleave] = useState(false)
     const goalInputLen = type === 'period' ? 3 : 9
     const goalUnit = type === 'period' ? '週' : '¥'
@@ -25,20 +19,8 @@ function GoalInputDialog (): JSX.Element {
     const [selectedIdx, setSelectedIdx] = useState(goalInputLen - 1)
 
     function handleAnimationEnd (e: React.AnimationEvent): void {
-        if (e.animationName.includes('slideLeft')) {
+        if (e.animationName === styles.slideIn) {
             focusElement.current?.focus()
-            return
-        }
-
-        if (e.animationName.includes('slideRight')) {
-            userSelectDispatch({
-                type: 'goalInput',
-                payload: String(goalInput)
-            })
-            userSelectDispatch({
-                type: 'currentStep',
-                payload: 'SelectNumberOfPlayers'
-            })
         }
     }
 
@@ -79,7 +61,19 @@ function GoalInputDialog (): JSX.Element {
             setGoalInput(0)
             break
         case 'd':
+            if (!focusElement.current) break
+
             toggleIsleave(true)
+            focusElement.current.onanimationend = function handleNextComponent () {
+                userSelectDispatch({
+                    type: 'goalInput',
+                    payload: String(goalInput)
+                })
+                userSelectDispatch({
+                    type: 'currentStep',
+                    payload: 'SelectNumberOfPlayers'
+                })
+            }
             break
         case 'x':
             userSelectDispatch({
@@ -159,6 +153,24 @@ function GoalInputDialog (): JSX.Element {
                 </div>
                 <div className={styles.unit}>{goalUnit}</div>
             </div>
+        </div>
+    )
+}
+
+function GoalInputBtn (props: {
+    type: 'period' | 'money'
+    text: string,
+    selected: boolean
+}): JSX.Element {
+    const { text, selected, type } = props
+    return (
+        <div
+            className={`
+            ${type === 'money' ? styles.moneyBtn : styles.durationBtn}
+            ${globalStyles.xyCenter}
+            ${selected ? globalStyles.hoverEffect : ''}`}
+        >
+            {text}
         </div>
     )
 }

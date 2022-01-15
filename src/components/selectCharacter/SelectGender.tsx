@@ -1,11 +1,12 @@
 import React, { useRef, useState, useContext } from 'react'
 
-import GenderBlockBtn from './GenderBlockBtn'
 import { userSelectContext } from '../../reducers/userSelect'
 import { slideControllerContext } from '../../reducers/slideController'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectGender.module.css'
 type gender = 'male' | 'female'
+const backendUrl = process.env.REACT_APP_BACKEND_BASEURL || ''
+const genderToCN = { male: '男', female: '女' }
 
 export default function SelectGender (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
@@ -93,6 +94,35 @@ export default function SelectGender (): JSX.Element {
         >
             <GenderBlockBtn gender='male' selected={selectedGender === 'male'}/>
             <GenderBlockBtn gender='female' selected={selectedGender === 'female'}/>
+        </div>
+    )
+}
+
+function GenderBlockBtn (props: { gender: gender, selected: boolean }): JSX.Element {
+    const { gender, selected } = props
+    const imgSrc = `${backendUrl}/imgs/beginner_${gender}_red_front.png`
+
+    return (
+        <div className={styles.genderBlock}>
+            <div className={styles.imgContainer}>
+                <img 
+                    src={imgSrc}
+                    width='100%'
+                    alt={genderToCN[gender]}
+                    className={selected ? styles.darkenImg: ''}
+                />
+            </div>
+            <div
+                className={`
+                ${styles.btn}
+                ${globalStyles.yellowBlock}
+                ${selected ? globalStyles.hoverEffect: ''}`}
+            >
+                <img src='' width='30px' height='30px'/>
+                <div className={styles.btnText}>
+                    {genderToCN[gender]}
+                </div>
+            </div>
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import React, { useRef, useState, useContext } from 'react'
 
-import JobBtn from './JobBtn'
 import ExampleCharacterImg from './ExampleCharacterImg'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectJob.module.css'
@@ -134,6 +133,21 @@ function SelectJob (): JSX.Element {
             >
                 {generateJobRows()}
             </div>
+        </div>
+    )
+}
+
+function JobBtn (props: { name: string, selected: boolean }): JSX.Element {
+    const { name, selected } = props
+    return (
+        <div
+            className={`
+            ${styles.btn}
+            ${globalStyles.yellowBlock}
+            ${globalStyles.xyCenter}
+            ${selected ? globalStyles.hoverEffect : ''}`}
+        >
+            {name}
         </div>
     )
 }

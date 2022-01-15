@@ -1,5 +1,4 @@
 import React, { useRef, useState, useContext } from 'react'
-import NPCLevelBtn from './NPCLevelBtn'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectNPCLevel.module.css'
 import { userSelectContext } from '../../reducers/userSelect'
@@ -7,6 +6,11 @@ import { slideControllerContext } from '../../reducers/slideController'
 
 type aiLevel = 'weak' | 'normal' | 'strong'
 const aiLevels: aiLevel[] = ['weak', 'normal', 'strong']
+const aiLevelToCN = {
+    weak: '弱',
+    normal: '普通',
+    strong: '狡猾'
+}
 
 export default SelectNPCLevel
 
@@ -96,5 +100,23 @@ function SelectNPCLevel (): JSX.Element {
                 {generateLevelRows()}
             </div>
         </div>
+    )
+}
+
+function NPCLevelBtn (props: {
+    aiLevel: 'weak' | 'normal' | 'strong',
+    selected: boolean
+}): JSX.Element {
+    const { aiLevel, selected } = props
+    return (
+        <div
+            className={`
+            ${styles.btn}
+            ${globalStyles.yellowBlock}
+            ${globalStyles.xyCenter}
+            ${selected ? globalStyles.hoverEffect : ''}`}
+        >
+            {aiLevelToCN[aiLevel]}
+        </div> 
     )
 }

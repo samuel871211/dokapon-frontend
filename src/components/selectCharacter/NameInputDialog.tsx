@@ -1,9 +1,6 @@
 import japaneseChars from '../../global/japaneseChars'
 import styles from './NameInputDialog.module.css'
 import globalStyles from '../../global/styles.module.css'
-import NameInputWord from './NameInputWord'
-import KeyBoardKey from './KeyBoardKey'
-import KeyBoardMenuItem from './KeyBoardMenuItem'
 import { userSelectContext } from '../../reducers/userSelect'
 import React, { useState, useRef, useContext } from 'react'
 
@@ -333,6 +330,55 @@ function NameInputDialog (): JSX.Element {
                     {generateKeyBoardMenuItems()}
                 </div>
             </div>
+        </div>
+    )
+}
+
+function KeyBoardMenuItem (props: {
+    word: string,
+    selected: boolean
+}): JSX.Element {
+    const { word, selected } = props
+
+    return (
+        <div className={styles.keyboardMenuItem}>
+            <span className={selected ? globalStyles.hoverEffect : ''}>
+                {word}
+            </span>
+        </div>
+    )
+}
+
+function KeyBoardKey (props: {
+    word: string,
+    selected: boolean
+}): JSX.Element {
+    const { word, selected } = props
+    return (
+        <div
+            className={`
+            ${styles.keyboardKey}
+            ${globalStyles.xyCenter}`}
+        >
+            <span className={selected ? globalStyles.hoverEffect : ''}>{word}</span>
+        </div>
+    )
+}
+
+function NameInputWord (props: {
+    word: string,
+    current: boolean
+}): JSX.Element {
+    const { word, current } = props
+
+    return (
+        <div
+            className={`
+            ${styles.nameInputWord}
+            ${globalStyles.xyCenter}`}
+        >
+            <span className={current ? globalStyles.hoverEffect : ''}>{word}</span>
+            <div className={styles.bottomLine}></div>
         </div>
     )
 }

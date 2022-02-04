@@ -4,6 +4,7 @@ import styles from './NPCGenerateDialog.module.css'
 import React, { useState, useRef, useContext, useEffect } from 'react'
 import { userSelectContext } from '../../reducers/userSelect'
 import { colors, basicJobs, npcLevels } from '../../global/characters'
+import japaneseChars from '../../global/japaneseChars'
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
 type colorTypes = 'red' | 'orange' | 'yellow' |
             'lightGreen' | 'darkGreen' | 'lightBlue' |
@@ -98,15 +99,26 @@ function NPCGenerateDialog (): JSX.Element {
                     })
                     break
                 case 4:
-                    if (currentPlayer === 4) break
                     userSelectDispatch({
-                        type: 'currentPlayer',
-                        payload: String(currentPlayer + 1)
+                        type: 'nameInput',
+                        payload: generateRandomName()
                     })
-                    userSelectDispatch({
-                        type: 'currentStep',
-                        payload: 'BeforeNPCGenerateDialog'
-                    })
+                    if (currentPlayer === 4) {
+                        userSelectDispatch({
+                            type: 'currentStep',
+                            payload: 'PlayerAttrsCollected'
+                        })
+                    }
+                    if (currentPlayer !== 4) {
+                        userSelectDispatch({
+                            type: 'currentPlayer',
+                            payload: String(currentPlayer + 1)
+                        })
+                        userSelectDispatch({
+                            type: 'currentStep',
+                            payload: 'BeforeNPCGenerateDialog'
+                        })
+                    }
                     break
                 default:
                     break
@@ -225,4 +237,28 @@ function Btn (props: {
             {content}
         </div>
     )
+}
+
+function generateRandomName(): string {
+    function getRandomIntInclusive(min: number, max: number) {
+        min = Math.ceil(min)
+        max = Math.floor(max)
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+    const nameLength = getRandomIntInclusive(1, 8)
+    const allChars = [
+        ...japaneseChars.hiragana[0],
+        ...japaneseChars.hiragana[1],
+        ...japaneseChars.katakana[0],
+        ...japaneseChars.katakana[1],
+        ...japaneseChars.special[0],
+        ...japaneseChars.special[1]
+    ].filter(char => char !== '　')
+
+    let result = ''
+    for (let i = 1; i <= nameLength; i++) {
+        const randomIndex = getRandomIntInclusive(0, allChars.length)
+        result += allChars[randomIndex]
+    }
+    return result
 }

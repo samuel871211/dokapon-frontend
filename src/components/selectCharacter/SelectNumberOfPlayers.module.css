@@ -3,7 +3,7 @@
     height: 80%;
     margin: auto;
     flex-direction: column;
-    outline: none;
+    
     animation: slideIn 1s;
 }
 .btn {

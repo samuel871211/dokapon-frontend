@@ -22,6 +22,8 @@ module.exports = {
         ],
         '@typescript-eslint/quotes': [
             'error', 'single', { 'allowTemplateLiterals' : true }
-        ]
+        ],
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/no-explicit-any': 'off'
     }
 }

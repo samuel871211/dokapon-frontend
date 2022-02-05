@@ -1,6 +1,6 @@
 import React from 'react'
 
-type steps =    
+export type steps =    
     'SelectGoalType' |
     'GoalInputDialog' |
     'SelectNumberOfPlayers' |
@@ -12,7 +12,13 @@ type steps =
     'SelectJob' |
     'BeforeNPCGenerateDialog' |
     'NPCGenerateDialog' |
-    'SelectNPCLevel'
+    'SelectNPCLevel' |
+    'PlayerAttrsCollected' |
+    'SelectController' |
+    'SelectControllerConfirm' |
+    'SelectOrderStep1' |
+    'SelectOrderStep2' |
+    'SelectOrderStep3'
 
 type goalType = 'period' | 'money'
 
@@ -29,7 +35,10 @@ type userSelectAction = {
         'color' |
         'job' |
         'npcLevel' |
-        'npcAttrsReGenerated',
+        'controllerNumber' |
+        'npcAttrsReGenerated' |
+        'confirmDialogSelectedIdx' |
+        'orderShuffle',
     payload: string
 }
 
@@ -48,38 +57,42 @@ const userSelectInitState = {
     goalInput: 1,
     numberOfPlayers: 1,
     currentPlayer: 1,
-    // prevStep: <steps> '',
     currentStep: <steps> 'SelectGoalType',
     currentJob: <basicJobs> '',
     titleAreaIsLeaving: false,
+    confirmDialogSelectedIdx: 1,
     playersAttrs: [{
         gender: 'male',
         nameInput: '',
         color: 'red',
         job: 'warrior',
         npcLevel: '',
-        npcAttrsReGenerated: false
+        npcAttrsReGenerated: false,
+        controllerNumber: 1
     }, {
         gender: 'male',
         nameInput: '',
         color: 'red',
         job: 'warrior',
         npcLevel: '',
-        npcAttrsReGenerated: false
+        npcAttrsReGenerated: false,
+        controllerNumber: 1
     }, {
         gender: 'male',
         nameInput: '',
         color: 'red',
         job: 'warrior',
         npcLevel: '',
-        npcAttrsReGenerated: false
+        npcAttrsReGenerated: false,
+        controllerNumber: 1
     }, {
         gender: 'male',
         nameInput: '',
         color: 'red',
         job: 'warrior',
         npcLevel: '',
-        npcAttrsReGenerated: false
+        npcAttrsReGenerated: false,
+        controllerNumber: 1
     }]
 }
 
@@ -101,12 +114,12 @@ function userSelectReducer (
     case 'currentStep':
         return {
             ...state,
-            // prevStep: state.currentStep,
             currentStep: payload as steps
         }
     case 'goalInput':
     case 'currentPlayer':
     case 'numberOfPlayers':
+    case 'confirmDialogSelectedIdx':
         return {
             ...state,
             [type]: parseInt(payload)
@@ -126,6 +139,24 @@ function userSelectReducer (
         const index = state.currentPlayer - 1
         newState.playersAttrs[index].npcAttrsReGenerated = true
         return newState
+    }
+    case 'controllerNumber': {
+        const newState = { ...state }
+        payload.split(',').forEach((num, index) => {
+            newState.playersAttrs[index].controllerNumber = parseInt(num)
+        })
+        return newState
+    }
+    case 'orderShuffle': {
+        const newState = { ...state }
+        const shuffleIndexes = payload.split(',')
+        newState.playersAttrs = [
+            newState.playersAttrs[parseInt(shuffleIndexes[0])],
+            newState.playersAttrs[parseInt(shuffleIndexes[1])],
+            newState.playersAttrs[parseInt(shuffleIndexes[2])],
+            newState.playersAttrs[parseInt(shuffleIndexes[3])]
+        ]
+        return newState 
     }
     default:
         return state

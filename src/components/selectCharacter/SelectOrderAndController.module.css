@@ -1,0 +1,192 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translate(-5%, 5%);
+}
+.containerSlideOut {
+    animation: containerSlideOut 1s;
+}
+.center {
+    justify-content: center;
+}
+.slideRight {
+    transform: translateX(18%);
+    transition: transform 0.5s;
+}
+.playerCardContainer {
+    position: relative;
+    display: flex;
+    width: 85%;
+    height: 20%;
+    background-color: #fee59a;
+    border-radius: calc(65vh / 5) 25px 25px calc(65vh / 5);
+    border: 3px solid;
+    border-top-color: gray;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-left-color: gray;
+    animation: slideLeft 1s;
+}
+.gatherToCenter0 {
+    transform: translate(18%, 150%);
+    transition: transform 1s;
+}
+.gatherToCenter1 {
+    transform: translate(18%, 50%);
+    transition: transform 1s;
+}
+.gatherToCenter2 {
+    transform: translate(18%, -50%);
+    transition: transform 1s;
+}
+.gatherToCenter3 {
+    transform: translate(18%, -150%);
+    transition: transform 1s;
+}
+.orderNumber {
+    position: absolute;
+    left: -15%;
+    width: 15%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.showOrderNumber {
+    animation: zoomIn 0.5s, zoomOut 0.5s;
+    animation-iteration-count: 2;
+    animation-direction: alternate-reverse;
+}
+.controllerConfirmContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 25%;
+    top: calc(-1.25rem - 3px);
+    width: 60%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    border: 3px solid black;
+    border-radius: 30px;
+    background-color: #fee59a;
+}
+.imgContainer {
+    width: calc(65vh / 5);
+    height: 100%;
+}
+.imgContainer > img {
+    width: 100%;
+    height: 100%;
+}
+.nameContainer {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nameArea {
+    display: block;
+    width: 95%;
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 1px;
+}
+.selectControllerContainer {
+    display: flex;
+    position: absolute;
+    right: -10%;
+    top: calc(-1.25rem - 3px);
+    width: 60%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    border: 3px solid black;
+    border-radius: 30px;
+    background-color: #fee59a;
+}
+.show {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.hide {
+    opacity: 0;
+}
+.leftTriangle {
+    width: 0;
+    height: 0;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-style: solid;
+    border-width: calc(1.25rem - 3px) calc(1.732* calc(1.25rem - 3px)) calc(1.25rem - 3px) 10px;
+    border-color: transparent black transparent transparent;
+}
+.centeredText {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rightTriangle {
+    width: 0;
+    height: 0;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-style: solid;
+    border-width: calc(1.25rem - 3px) 10px calc(1.25rem - 3px) calc(1.732* calc(1.25rem - 3px));
+    border-color: transparent transparent transparent black; 
+}
+@keyframes containerSlideOut {
+    0% { transform: none }
+    100% { transform:  translate(150%, 5%) }
+}
+@keyframes slideLeft {
+    0% { transform: translateX(100%) }
+    100% { transform: none }
+}
+@keyframes zoomIn {
+    0% { transform: none }
+    100% { transform: scale(200%) }
+}
+@keyframes zoomOut {
+    0% { transform: scale(200%) }
+    100% { transform: none }
+}
+
+
+.leftTriangleHoverEffect {
+    animation: leftTriangleHoverFrom 500ms, leftTriangleHoverTo 500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes leftTriangleHoverFrom {
+    0% { border-color: transparent black transparent transparent }
+    100% { border-color: transparent transparent transparent transparent }
+}
+@keyframes leftTriangleHoverTo {
+    0% { border-color: transparent transparent transparent transparent }
+    100% { border-color: transparent black transparent transparent }
+}
+
+.rightTriangleHoverEffect {
+    animation: rightTriangleHoverFrom 500ms, rightTriangleHoverTo 500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes rightTriangleHoverFrom {
+    0% { border-color: transparent transparent transparent black }
+    100% { border-color: transparent transparent transparent transparent }
+}
+@keyframes rightTriangleHoverTo {
+    0% { border-color: transparent transparent transparent transparent }
+    100% { border-color: transparent transparent transparent black }
+}

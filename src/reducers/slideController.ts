@@ -3,14 +3,18 @@ import React from 'react'
 const slideControllerInitState = {
     titleArea: false,
     NPCTopLeftImgArea: false,
-    NPCSpeakingDialog: false
+    NPCDialog: false,
+    confirmDialog: false,
+    selectCharacterFadeOut: false
 }
 
 type slideControllerAction = {
     type:
         'titleArea' |
         'NPCTopLeftImgArea' |
-        'NPCSpeakingDialog',
+        'NPCDialog' |
+        'confirmDialog' |
+        'selectCharacterFadeOut'
     payload: boolean
 }
 

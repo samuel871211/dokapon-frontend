@@ -2,21 +2,24 @@ import React, { useEffect, useLayoutEffect, useState, useRef, useContext } from 
 import { slideControllerContext } from '../reducers/slideController'
 import { userSelectContext } from '../reducers/userSelect'
 import globalStyles from '../global/styles.module.css'
-import styles from './NPCSpeakingDialog.module.css'
+import styles from './NPCDialog.module.css'
 
-export default NPCSpeakingDialog
+export default NPCDialog
 
-function NPCSpeakingDialog (props: {
+function NPCDialog (props: {
     name: string,
     message: string[],
-    displayBtn: boolean
+    confirmBtnDisplay: boolean,
+    confirmDialogDisplay: boolean,
+    shouldHandleKeyEvent: boolean
 }): JSX.Element {
-    const { name, message, displayBtn } = props
+    const { name, message, confirmBtnDisplay, confirmDialogDisplay, shouldHandleKeyEvent } = props
     const focusElement = useRef<HTMLDivElement>(null)
     const { slideState, slideControllerDispatch } = useContext(slideControllerContext)
-    const { userSelectDispatch, userSelect: { currentStep } } = useContext(userSelectContext)
-    const { NPCSpeakingDialog } = slideState
-    const handleKeyUpAttrs = displayBtn ? {
+    const { userSelectDispatch, userSelect } = useContext(userSelectContext)
+    const { currentStep, confirmDialogSelectedIdx } = userSelect
+    const { NPCDialog, confirmDialog } = slideState
+    const handleKeyUpAttrs = shouldHandleKeyEvent ? {
         tabIndex: 0,
         ref: focusElement,
         onBlur: reFocus,
@@ -45,13 +48,14 @@ function NPCSpeakingDialog (props: {
 
         if (currentStep === 'BeforeNameInput') {
             slideControllerDispatch({
-                type: 'NPCSpeakingDialog',
+                type: 'NPCDialog',
                 payload: true
             })
             slideControllerDispatch({
                 type: 'NPCTopLeftImgArea',
                 payload: true
             })
+            return
         }
 
         if (currentStep === 'BeforeNPCGenerateDialog') {
@@ -59,12 +63,51 @@ function NPCSpeakingDialog (props: {
                 type: 'currentStep',
                 payload: 'NPCGenerateDialog'
             })
+            return
+        }
+
+        if (currentStep === 'PlayerAttrsCollected') {
+            userSelectDispatch({
+                type: 'currentStep',
+                payload: 'SelectController'
+            })
+            return
+        }
+
+        if (currentStep === 'SelectOrderStep3') {
+            fetch(`${process.env.REACT_APP_BACKEND_BASEURL || ''}/gameArchive`, {
+                body: JSON.stringify(userSelect),
+                headers: { 'content-type': 'application/json' },
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(response => {
+                console.log(response)
+                slideControllerDispatch({
+                    type: 'NPCDialog',
+                    payload: true
+                })
+            })
+            .catch(err => console.log(err))
         }
     }
-    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
-        if (e.animationName.includes('slideDown') && currentStep === 'BeforeNameInput') {
+    function handleTransitionEnd (e: React.TransitionEvent<HTMLDivElement>): void {
+        if (currentStep === 'SelectControllerConfirm') {
             slideControllerDispatch({
-                type: 'NPCSpeakingDialog',
+                type: 'confirmDialog',
+                payload: false
+            })
+            userSelectDispatch({
+                type: 'currentStep',
+                payload: confirmDialogSelectedIdx === 1 ? 
+                    'SelectController' : 'SelectOrderStep1'
+            })
+            return
+        }
+
+        if (currentStep === 'BeforeNameInput') {
+            slideControllerDispatch({
+                type: 'NPCDialog',
                 payload: false
             })
             slideControllerDispatch({
@@ -75,6 +118,16 @@ function NPCSpeakingDialog (props: {
                 type: 'currentStep',
                 payload: 'NameInputDialog'
             })
+            return
+        }
+
+        if (currentStep === 'SelectOrderStep3' && e.propertyName === 'transform') {
+            slideControllerDispatch({
+                type: 'selectCharacterFadeOut',
+                payload: true
+            })
+            setTimeout(() => window.location.assign('/'), 1000)
+            return
         }
     }
     function resetWordIdx (): void {
@@ -82,7 +135,7 @@ function NPCSpeakingDialog (props: {
         setCurMsgIdx(0)
     }
     function focus (): void {
-        if (displayBtn) focusElement.current?.focus()
+        if (confirmBtnDisplay) focusElement.current?.focus()
     }
     function fadeNextWord (e: React.AnimationEvent<HTMLSpanElement>) {
         setCurWordIdx(curWordIdx + 1)
@@ -93,7 +146,7 @@ function NPCSpeakingDialog (props: {
     const [curMsgIdx, setCurMsgIdx] = useState(0)
 
     useLayoutEffect(resetWordIdx, [message])
-    useEffect(focus, [displayBtn])
+    useEffect(focus, [shouldHandleKeyEvent])
 
     function splitMessage (): JSX.Element[] {
         const result: JSX.Element[] = []
@@ -128,8 +181,8 @@ function NPCSpeakingDialog (props: {
         <div
             className={`
             ${styles.container}
-            ${NPCSpeakingDialog ? styles.leave : ''}`}
-            onAnimationEnd={handleAnimationEnd}
+            ${NPCDialog ? styles.containerSlideOut : ''}`}
+            onTransitionEnd={handleTransitionEnd}
             { ...handleKeyUpAttrs }
         >
             <div className={styles.nameArea}>
@@ -148,7 +201,37 @@ function NPCSpeakingDialog (props: {
                 ${globalStyles.yellowBlock}`}
             >
                 {splitMessage()}
-                {displayBtn && <div className={styles.confirmCircle}></div>}
+                {confirmBtnDisplay && <div className={styles.confirmCircle}></div>}
+                {confirmDialogDisplay &&
+                    <ConfirmDialog
+                        selectedIdx={confirmDialogSelectedIdx}
+                        slideOut={confirmDialog}
+                    />}
+            </div>
+        </div>
+    )
+}
+
+function ConfirmDialog (props: { selectedIdx: number, slideOut: boolean }): JSX.Element {
+    const { selectedIdx, slideOut } = props
+    return (
+        <div
+            className={`
+            ${styles.confirmDialogContainer}
+            ${slideOut ? styles.confirmDialogSlideOut : ''}`}>
+            <div className={styles.confirmDialogBtn}>
+                <div
+                    className={`
+                    ${styles.confirmDialogBtnText}
+                    ${selectedIdx === 0 ? styles.confirmDialogBtnHoverEffect : ''}`}
+                >是</div>
+            </div>
+            <div className={styles.confirmDialogBtn}>
+                <div
+                    className={`
+                    ${styles.confirmDialogBtnText}
+                    ${selectedIdx === 1 ? styles.confirmDialogBtnHoverEffect : ''}`}
+                >不是</div>
             </div>
         </div>
     )

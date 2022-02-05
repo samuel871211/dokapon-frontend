@@ -1,6 +1,7 @@
 import CustomBorderBottom from '../CustomBorderBottom'
 import globalStyles from '../../global/styles.module.css'
 import styles from './NPCGenerateDialog.module.css'
+import { getRandomInt } from '../../global/math'
 import React, { useState, useRef, useContext, useEffect } from 'react'
 import { userSelectContext } from '../../reducers/userSelect'
 import { colors, basicJobs, npcLevels } from '../../global/characters'
@@ -27,12 +28,7 @@ function NPCGenerateDialog (): JSX.Element {
 
         const colorList = Object.keys(colors)
         const jobList = Object.keys(basicJobs)
-        const npcLevelList = Object.keys(npcLevels)
-        function getRandomInt(min: number, max: number) {
-            min = Math.ceil(min)
-            max = Math.floor(max)
-            return Math.floor(Math.random() * (max - min) + min)
-        }
+        const npcLevelList = Object.keys(npcLevels);
         (function removeUsedColors () {
             for (let playerIdx = 1; playerIdx < currentPlayer; playerIdx++) {
                 const usedColor = playersAttrs[playerIdx - 1].color
@@ -41,15 +37,15 @@ function NPCGenerateDialog (): JSX.Element {
         })()
         userSelectDispatch({
             type: 'color',
-            payload: colorList[getRandomInt(0, colorList.length)]
+            payload: colorList[getRandomInt(0, colorList.length - 1)]
         })
         userSelectDispatch({
             type: 'job',
-            payload: jobList[getRandomInt(0, jobList.length)]
+            payload: jobList[getRandomInt(0, jobList.length - 1)]
         })
         userSelectDispatch({
             type: 'npcLevel',
-            payload: npcLevelList[getRandomInt(0, npcLevelList.length)]
+            payload: npcLevelList[getRandomInt(0, npcLevelList.length - 1)]
         })
         userSelectDispatch({
             type: 'gender',
@@ -240,12 +236,7 @@ function Btn (props: {
 }
 
 function generateRandomName(): string {
-    function getRandomIntInclusive(min: number, max: number) {
-        min = Math.ceil(min)
-        max = Math.floor(max)
-        return Math.floor(Math.random() * (max - min + 1) + min)
-    }
-    const nameLength = getRandomIntInclusive(1, 8)
+    const nameLength = getRandomInt(1, 8)
     const allChars = [
         ...japaneseChars.hiragana[0],
         ...japaneseChars.hiragana[1],
@@ -257,7 +248,7 @@ function generateRandomName(): string {
 
     let result = ''
     for (let i = 1; i <= nameLength; i++) {
-        const randomIndex = getRandomIntInclusive(0, allChars.length)
+        const randomIndex = getRandomInt(0, allChars.length - 1)
         result += allChars[randomIndex]
     }
     return result

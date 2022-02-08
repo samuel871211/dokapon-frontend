@@ -16,18 +16,10 @@
     animation-timing-function: ease-in-out;
 }
 @keyframes btnHoverFrom {
-    0% {
-        background-color: #9bd65b;
-    }
-    100% {
-        background-color: #fee59a;
-    }
+    0% { background-color: #9bd65b }
+    100% { background-color: #fee59a }
 }
 @keyframes btnHoverTo {
-    0% {
-        background-color: #fee59a;
-    }
-    100% {
-        background-color: #9bd65b;
-    }
+    0% { background-color: #fee59a }
+    100% { background-color: #9bd65b }
 }

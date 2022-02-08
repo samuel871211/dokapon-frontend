@@ -251,7 +251,6 @@ export default function SelectCharacter (): JSX.Element {
                 className={`
                 ${styles.container}
                 ${slideState.selectCharacterFadeOut ? styles.fadeOut : ''}`}
-                onContextMenu={(e) => e.preventDefault()}
             >
                 
                 {currentStep === 'NameInputDialog' &&

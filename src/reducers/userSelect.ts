@@ -48,11 +48,12 @@ type userSelectContext = {
 }
 
 type basicJobs = 'warrior' | 'magician' | 'thief' | 'cleric' | 'beginner' | ''
-type colors = 'red' | 'orange' | 'yellow' |
-            'lightGreen' | 'darkGreen' | 'lightBlue' |
-            'darkBlue' | 'pink' | 'gray' | 'white'
+// type colors = 'red' | 'orange' | 'yellow' |
+//             'lightGreen' | 'darkGreen' | 'lightBlue' |
+//             'darkBlue' | 'pink' | 'gray' | 'white'
 
 const userSelectInitState = {
+    timeStamp: '空的',
     goalType: <goalType> 'period',
     goalInput: 1,
     numberOfPlayers: 1,
@@ -96,6 +97,8 @@ const userSelectInitState = {
     }]
 }
 
+export type userSelect = typeof userSelectInitState
+
 const userSelectContext = React.createContext<userSelectContext>({} as userSelectContext)
 
 function userSelectReducer (
@@ -103,7 +106,7 @@ function userSelectReducer (
     action: userSelectAction
 ): typeof userSelectInitState {
     const { type, payload } = action
-
+ 
     switch (type) {
     case 'goalType':
     case 'currentJob':

@@ -3,6 +3,7 @@ import { Fragment, useReducer } from 'react'
 import guide from '../imgs/guide.png'
 import { basicJobs } from '../global/characters'
 
+import ContextMenu from '../global/ContextMenu'
 import TitleArea from '../components/selectCharacter/TitleArea'
 import NPCDialog from '../components/NPCDialog'
 import NPCTopLeftImgArea from '../components/NPCTopLeftImgArea'
@@ -252,7 +253,7 @@ export default function SelectCharacter (): JSX.Element {
                 ${styles.container}
                 ${slideState.selectCharacterFadeOut ? styles.fadeOut : ''}`}
             >
-                
+                <ContextMenu/>
                 {currentStep === 'NameInputDialog' &&
                     <NameInputDialog/>
                 }

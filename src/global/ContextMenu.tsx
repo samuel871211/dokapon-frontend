@@ -1,24 +1,88 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useContext } from 'react'
 import styles from './ContextMenu.module.css'
+import gameArchive from '../api/gameArchive'
+import { userSelectContext } from '../reducers/userSelect'
+import { AxiosResponse } from 'axios'
 
 export default ContextMenu
 
 function ContextMenu (): JSX.Element {
     const ctxMenu = useRef<HTMLDivElement>(null)
+    const menuItem = useRef<HTMLDivElement>(null)
     const writeFileMenu = useRef<HTMLDivElement>(null)
     const readFileMenu = useRef<HTMLDivElement>(null)
+    const fileInput = useRef<HTMLInputElement>(null)
+    const { userSelect } = useContext(userSelectContext)
     const [ctxMenuPos, setCtxMenuPos] = useState({ x: -1, y: -1 })
-    const [innerMenuPos, setInnerMenuPos] = useState({ x: -1, y: -1 })
+    const [innerMenuPos, setInnerMenuPos] = useState({ x: 238, y: -3 })
     const [ctxMenuOpen, toggleCtxMenuOpen] = useState(false)
     const [writeFileMenuOpen, toggleWriteFileMenuOpen] = useState(false)
     const [readFileMenuOpen, toggleReadFileMenuOpen] = useState(false)
+    const [selectedSlotIdx, setSelectedSlotIdx] = useState({ value: 0 })
+    const [slotsTimeStamp, setSlotsTimeStamp] = useState([
+        { timeStamp: '空的' },
+        { timeStamp: '空的' },
+        { timeStamp: '空的' },
+        { timeStamp: '空的' },
+        { timeStamp: '空的' },
+        { timeStamp: '空的' },
+        { timeStamp: '空的' },
+        { timeStamp: '空的' },
+        { timeStamp: '空的' },
+        { timeStamp: '空的' },
+        { timeStamp: '空的' },
+    ])
 
-    function openWriteFileMenu () {
+    function browseFile (): void {
+        fileInput.current?.click()
+    }
+    /**
+     * @todo 讀檔之後的行為
+     * @returns 
+     */
+    function sendFile (): void {
+        const file = fileInput.current?.files
+        if (!file) return
+        if (fileInput.current?.value) fileInput.current.value = ''
+    }
+
+    /**
+     * @todo handle error => ui提示
+     * @param slotIdx 
+     */
+    async function saveFileToSlot (slotIdx: number): Promise<void> {
+        setSelectedSlotIdx({ value: slotIdx })
+        toggleCtxMenuOpen(false)
+        toggleWriteFileMenuOpen(false)
+        const response = await gameArchive.put(slotIdx, userSelect)
+        console.log(response)
+    }
+    /**
+     * @todo 讀檔之後的行為 => 更新ui state
+     */
+    async function readBackUp (): Promise<void> {
+        toggleCtxMenuOpen(false)
+        toggleReadFileMenuOpen(false)
+        const response = await gameArchive.findBackup(selectedSlotIdx.value)
+        console.log(response)
+    }
+    /**
+     * @todo 讀檔之後的行為 => 更新ui state
+     */
+    async function readFileFromSlot (slotIdx: number): Promise<void> {
+        setSelectedSlotIdx({ value: slotIdx })
+        toggleCtxMenuOpen(false)
+        toggleReadFileMenuOpen(false)
+        const response = await gameArchive.find(slotIdx)
+        console.log(response)
+    }
+
+    function openWriteFileMenu (e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        if (!writeFileMenu.current || !ctxMenu.current || !ctxMenuOpen) return
+
         toggleWriteFileMenuOpen(true)
-        if (!writeFileMenu.current || !ctxMenu.current) return
         
         // 決定writeFileMenu要在第幾象限
-        // TODO: 小螢幕情況，要幫ctxMenu加上scroll bar
         const writeFileMenuWidth = writeFileMenu.current.clientWidth
         const writeFileMenuHeight = writeFileMenu.current.clientHeight
         const remainWidth = window.innerWidth - ctxMenuPos.x - ctxMenu.current.clientWidth
@@ -26,17 +90,54 @@ function ContextMenu (): JSX.Element {
         const firstQuadrant = remainWidth >= writeFileMenuWidth && remainHeight < writeFileMenuHeight
         const secondQuadrant = remainWidth < writeFileMenuWidth && remainHeight < writeFileMenuHeight
         const thirdQuadrant = remainWidth < writeFileMenuWidth && remainHeight >= writeFileMenuHeight
+        const menuItemHeight = (menuItem.current?.offsetHeight || 0) + 10
+        const finalPos = { x: 238, y: -3 }
+        if (firstQuadrant) {
+            finalPos.y -= (writeFileMenu.current.clientHeight - menuItemHeight)
+        } else if (secondQuadrant) {
+            finalPos.x -= (writeFileMenu.current.clientWidth * 2 - 5)
+            finalPos.y -= (writeFileMenu.current.clientHeight - menuItemHeight)
+        } else if (thirdQuadrant) {
+            finalPos.x -= (writeFileMenu.current.clientWidth * 2 - 5)
+        }
+        setInnerMenuPos(finalPos)
     }
 
-    function closeWriteFileMenu () {
+    function closeWriteFileMenu (e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        if (!writeFileMenu.current || !ctxMenu.current || !ctxMenuOpen) return
+
         toggleWriteFileMenuOpen(false)
     }
 
-    function openReadFileMenu () {
+    function openReadFileMenu (e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        if (!readFileMenu.current || !ctxMenu.current || !ctxMenuOpen) return
+
         toggleReadFileMenuOpen(true)
+
+        // 決定readFileMenu要在第幾象限
+        const readFileMenuWidth = readFileMenu.current.clientWidth
+        const readFileMenuHeight = readFileMenu.current.clientHeight
+        const remainWidth = window.innerWidth - ctxMenuPos.x - ctxMenu.current.clientWidth
+        const remainHeight = window.innerHeight - ctxMenuPos.y
+        const firstQuadrant = remainWidth >= readFileMenuWidth && remainHeight < readFileMenuHeight
+        const secondQuadrant = remainWidth < readFileMenuWidth && remainHeight < readFileMenuHeight
+        const thirdQuadrant = remainWidth < readFileMenuWidth && remainHeight >= readFileMenuHeight
+        const menuItemHeight = (menuItem.current?.offsetHeight || 0) + 5
+        const finalPos = { x: 238, y: -3 + menuItemHeight }
+        if (firstQuadrant) {
+            finalPos.y -= (readFileMenu.current.clientHeight - menuItemHeight - 5)
+        } else if (secondQuadrant) {
+            finalPos.x -= (readFileMenu.current.clientWidth * 2 - 5)
+            finalPos.y -= (readFileMenu.current.clientHeight - menuItemHeight - 5)
+        } else if (thirdQuadrant) {
+            finalPos.x -= (readFileMenu.current.clientWidth * 2 - 5)
+        }
+        setInnerMenuPos(finalPos)
     }
 
-    function closeReadFileMenu () {
+    function closeReadFileMenu (e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        if (!readFileMenu.current || !ctxMenu.current || !ctxMenuOpen) return
+
         toggleReadFileMenuOpen(false)
     }
 
@@ -74,11 +175,29 @@ function ContextMenu (): JSX.Element {
             toggleCtxMenuOpen(false)
         }
     }
-
+    function getAllSlotsDataTimeStamp (): void {
+        Promise.all([gameArchive.get(), gameArchive.findBackup(selectedSlotIdx.value)])
+        .then(responses => {
+            const [res1, res2] = responses
+            const newSlotsTimeStamp = [ ...slotsTimeStamp ]
+            if (res1.status === 200) {
+                for (let i = 0; i <= 9; i++) {
+                    newSlotsTimeStamp[i].timeStamp = ((res1 as AxiosResponse).data as typeof userSelect[])[i].timeStamp
+                }
+            }
+            if (res2.status === 200) {
+                newSlotsTimeStamp[10].timeStamp = ((res2 as AxiosResponse).data as typeof userSelect).timeStamp
+            } else if (res2.status === 404) {
+                newSlotsTimeStamp[10].timeStamp = '空的'
+            }
+            setSlotsTimeStamp(newSlotsTimeStamp)
+        })
+        .catch(err => console.log(err))
+    }
+    useEffect(getAllSlotsDataTimeStamp, [selectedSlotIdx])
     useEffect(registerRootEventHandler, [])
     return (
         <div
-            id='contextMenu'
             ref={ctxMenu}
             className={styles.contextMenu}
             style={{
@@ -87,35 +206,43 @@ function ContextMenu (): JSX.Element {
                 opacity: ctxMenuOpen ? 1 : 0
             }}
         >
+            <input
+                type='file'
+                ref={fileInput}
+                className={styles.fileInput}
+                onChange={sendFile}
+                accept=".json"
+            />
             <div
                 className={styles.menuItem}
                 onClick={(e) => e.nativeEvent.stopImmediatePropagation()}
                 onMouseEnter={openWriteFileMenu}
                 onMouseLeave={closeWriteFileMenu}
+                ref={menuItem}
             >
                 <span className={styles.menuItemText}>即時存檔</span>
                 <span>{'>'}</span>
                 <div
                     ref={writeFileMenu}
-                    className={styles.contextMenu}
+                    className={`${styles.contextMenu} ${styles.innerMenu}`}
                     style={{
                         position: 'absolute',
                         top: `${innerMenuPos.y}px`,
                         left: `${innerMenuPos.x}px`,
-                        opacity: writeFileMenuOpen ? 1 : 0
+                        opacity: writeFileMenuOpen ? 1 : 0,
+                        zIndex: writeFileMenuOpen ? 999 : 0
                     }}
                 >
-                    <span className={styles.menuItem}>插槽 0</span>
-                    <span className={styles.menuItem}>插槽 1</span>
-                    <span className={styles.menuItem}>插槽 2</span>
-                    <span className={styles.menuItem}>插槽 3</span>
-                    <span className={styles.menuItem}>插槽 4</span>
-                    <span className={styles.menuItem}>插槽 5</span>
-                    <span className={styles.menuItem}>插槽 6</span>
-                    <span className={styles.menuItem}>插槽 7</span>
-                    <span className={styles.menuItem}>插槽 8</span>
-                    <span className={styles.menuItem}>插槽 9</span>
-                    <span className={styles.menuItem}>檔案 ...</span>
+                    <span className={styles.menuItem} onClick={(e) => saveFileToSlot(0)}>插槽 0 - {slotsTimeStamp[0].timeStamp}</span>
+                    <span className={styles.menuItem} onClick={(e) => saveFileToSlot(1)}>插槽 1 - {slotsTimeStamp[1].timeStamp}</span>
+                    <span className={styles.menuItem} onClick={(e) => saveFileToSlot(2)}>插槽 2 - {slotsTimeStamp[2].timeStamp}</span>
+                    <span className={styles.menuItem} onClick={(e) => saveFileToSlot(3)}>插槽 3 - {slotsTimeStamp[3].timeStamp}</span>
+                    <span className={styles.menuItem} onClick={(e) => saveFileToSlot(4)}>插槽 4 - {slotsTimeStamp[4].timeStamp}</span>
+                    <span className={styles.menuItem} onClick={(e) => saveFileToSlot(5)}>插槽 5 - {slotsTimeStamp[5].timeStamp}</span>
+                    <span className={styles.menuItem} onClick={(e) => saveFileToSlot(6)}>插槽 6 - {slotsTimeStamp[6].timeStamp}</span>
+                    <span className={styles.menuItem} onClick={(e) => saveFileToSlot(7)}>插槽 7 - {slotsTimeStamp[7].timeStamp}</span>
+                    <span className={styles.menuItem} onClick={(e) => saveFileToSlot(8)}>插槽 8 - {slotsTimeStamp[8].timeStamp}</span>
+                    <span className={styles.menuItem} onClick={(e) => saveFileToSlot(9)}>插槽 9 - {slotsTimeStamp[9].timeStamp}</span>
                 </div>
             </div>
             <div
@@ -127,27 +254,116 @@ function ContextMenu (): JSX.Element {
                 <span className={styles.menuItemText}>即時讀檔</span>
                 <span>{'>'}</span>
                 <div
-                    ref={writeFileMenu}
-                    className={styles.contextMenu}
+                    ref={readFileMenu}
+                    className={`${styles.contextMenu} ${styles.innerMenu}`}
                     style={{
                         position: 'absolute',
                         top: `${innerMenuPos.y}px`,
                         left: `${innerMenuPos.x}px`,
-                        opacity: writeFileMenuOpen ? 1 : 0
+                        opacity: readFileMenuOpen ? 1 : 0,
+                        zIndex: readFileMenuOpen ? 999 : 0
                     }}
                 >
-                    <span className={styles.menuItem}>插槽 0</span>
-                    <span className={styles.menuItem}>插槽 1</span>
-                    <span className={styles.menuItem}>插槽 2</span>
-                    <span className={styles.menuItem}>插槽 3</span>
-                    <span className={styles.menuItem}>插槽 4</span>
-                    <span className={styles.menuItem}>插槽 5</span>
-                    <span className={styles.menuItem}>插槽 6</span>
-                    <span className={styles.menuItem}>插槽 7</span>
-                    <span className={styles.menuItem}>插槽 8</span>
-                    <span className={styles.menuItem}>插槽 9</span>
-                    <span className={styles.menuItem}>備份 0</span>
-                    <span className={styles.menuItem}>檔案 ...</span>
+                    <span
+                        className={`
+                        ${styles.menuItem}
+                        ${slotsTimeStamp[0].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        `}
+                        onClick={(e) => readFileFromSlot(0)}
+                    >
+                        插槽 0 - {slotsTimeStamp[0].timeStamp}
+                    </span>
+                    <span
+                        className={`
+                        ${styles.menuItem}
+                        ${slotsTimeStamp[1].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        `}
+                        onClick={(e) => readFileFromSlot(1)}
+                    >
+                        插槽 1 - {slotsTimeStamp[1].timeStamp}
+                    </span>
+                    <span
+                        className={`
+                        ${styles.menuItem}
+                        ${slotsTimeStamp[2].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        `}
+                        onClick={(e) => readFileFromSlot(2)}
+                    >
+                        插槽 2 - {slotsTimeStamp[2].timeStamp}
+                    </span>
+                    <span
+                        className={`
+                        ${styles.menuItem}
+                        ${slotsTimeStamp[3].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        `}
+                        onClick={(e) => readFileFromSlot(3)}
+                    >
+                        插槽 3 - {slotsTimeStamp[3].timeStamp}
+                    </span>
+                    <span
+                        className={`
+                        ${styles.menuItem}
+                        ${slotsTimeStamp[4].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        `}
+                        onClick={(e) => readFileFromSlot(4)}
+                    >
+                        插槽 4 - {slotsTimeStamp[4].timeStamp}
+                    </span>
+                    <span
+                        className={`
+                        ${styles.menuItem}
+                        ${slotsTimeStamp[5].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        `}
+                        onClick={(e) => readFileFromSlot(5)}
+                    >
+                        插槽 5 - {slotsTimeStamp[5].timeStamp}
+                    </span>
+                    <span
+                        className={`
+                        ${styles.menuItem}
+                        ${slotsTimeStamp[6].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        `}
+                        onClick={(e) => readFileFromSlot(6)}
+                    >
+                        插槽 6 - {slotsTimeStamp[6].timeStamp}
+                    </span>
+                    <span
+                        className={`
+                        ${styles.menuItem}
+                        ${slotsTimeStamp[7].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        `}
+                        onClick={(e) => readFileFromSlot(7)}
+                    >
+                        插槽 7 - {slotsTimeStamp[7].timeStamp}
+                    </span>
+                    <span
+                        className={`
+                        ${styles.menuItem}
+                        ${slotsTimeStamp[8].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        `}
+                        onClick={(e) => readFileFromSlot(8)}
+                    >
+                        插槽 8 - {slotsTimeStamp[8].timeStamp}
+                    </span>
+                    <span
+                        className={`
+                        ${styles.menuItem}
+                        ${slotsTimeStamp[9].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        `}
+                        onClick={(e) => readFileFromSlot(9)}
+                    >
+                        插槽 9 - {slotsTimeStamp[9].timeStamp}
+                    </span>
+                    <span
+                        className={`
+                        ${styles.menuItem}
+                        ${slotsTimeStamp[10].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        `}
+                        onClick={(e) => readBackUp()}
+                    >
+                        備份 {selectedSlotIdx.value} - {slotsTimeStamp[10].timeStamp}
+                    </span>
+                    <span className={styles.menuItem} onClick={browseFile}>檔案 ...</span>
                 </div>
             </div>
         </div>

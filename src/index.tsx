@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './index.css'
-import ContextMenu from './global/ContextMenu'
 import GraphEditor from './views/GraphEditor'
 import StoryMode from './views/StoryMode'
 import BattleMode from './views/BattleMode'
@@ -29,7 +28,6 @@ import HomePage from './views/HomePage'
 
 ReactDOM.render(
     <Router>
-        <ContextMenu/>
         <Switch>
             <Route path='/' exact component={HomePage}/>
             <Route path='/GraphEditor' exact sensitive component={GraphEditor}/>

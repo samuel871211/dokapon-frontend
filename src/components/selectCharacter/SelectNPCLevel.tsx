@@ -16,10 +16,8 @@ export default SelectNPCLevel
 
 function SelectNPCLevel (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const { userSelect, userSelectDispatch } = useContext(userSelectContext)
+    const { userSelectDispatch } = useContext(userSelectContext)
     const { slideControllerDispatch } = useContext(slideControllerContext)
-    const { currentPlayer, playersAttrs } = userSelect
-    const { npcLevel } = playersAttrs[currentPlayer - 1]
     const [selectedIdx, setSelectedIdx] = useState(0)
     const [isLeave, toggleIsLeave] = useState(false)
     

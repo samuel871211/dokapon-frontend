@@ -30,7 +30,7 @@ import ZoomInIcon from '@material-ui/icons/ZoomIn'
 import Tooltip from '@material-ui/core/Tooltip'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert, { Color } from '@material-ui/lab/Alert'
-import $ from 'jquery'
+// import $ from 'jquery'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
 import { getCells, updateCells } from '../api/graph'
@@ -397,7 +397,7 @@ export default function GraphEditor (): JSX.Element {
         function initPaper () {
             // paper should be initialized after #canvas is being mounted
             const Paper = new joint.dia.Paper({
-                el: $('#paper'),
+                el: document.getElementById('paper') || undefined,
                 cellViewNamespace: { standard: joint.shapes.standard },
                 width: '100%',
                 height: 'calc(100vh - 48px)',
@@ -983,17 +983,17 @@ export default function GraphEditor (): JSX.Element {
         registerPaperEventHandler(Paper)
 
         return (() => {
-            $('#paper').off()
+            const el = document.getElementById('paper')
+            if (el) el.replaceWith(el.cloneNode(true))
+            // $('#paper').off()
         })
     }, [graph])
-
 
 
     // css style
     const styles = makeStyles(theme => ({
         AppBar: {
-            backgroundColor: theme.palette.background.default,
-            maxHeight: '56px'
+            backgroundColor: theme.palette.background.default
         },
         GridItem: {
             textAlign: 'center'
@@ -1004,6 +1004,9 @@ export default function GraphEditor (): JSX.Element {
         },
         ml12: {
             marginLeft: '12px'
+        },
+        Paper: {
+            transform: 'rotate3d(1, 0, 0, 60deg)'
         }
     }))
     const classes = styles()

@@ -4,7 +4,7 @@ import styles from './NPCGenerateDialog.module.css'
 import { getRandomInt } from '../../global/math'
 import React, { useState, useRef, useContext, useEffect } from 'react'
 import { userSelectContext } from '../../reducers/userSelect'
-import { colors, basicJobs, npcLevels } from '../../global/characters'
+import { COLORS, BASICJOBS, NPCLEVELS } from '../../global/characters'
 import japaneseChars from '../../global/japaneseChars'
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
 type colorTypes = 'red' | 'orange' | 'yellow' |
@@ -26,9 +26,9 @@ function NPCGenerateDialog (): JSX.Element {
     useEffect(function reGenerateNPCAttrs () {
         if (npcAttrsReGenerated) return
 
-        const colorList = Object.keys(colors)
-        const jobList = Object.keys(basicJobs)
-        const npcLevelList = Object.keys(npcLevels);
+        const colorList = Object.keys(COLORS)
+        const jobList = Object.keys(BASICJOBS)
+        const npcLevelList = Object.keys(NPCLEVELS);
         (function removeUsedColors () {
             for (let playerIdx = 1; playerIdx < currentPlayer; playerIdx++) {
                 const usedColor = playersAttrs[playerIdx - 1].color
@@ -172,7 +172,7 @@ function NPCGenerateDialog (): JSX.Element {
                 <div className={styles.btnGroup}>
                     <Btn
                         selected={selectedIdx === 0}
-                        content={npcLevel === '' ? '弱' : npcLevels[npcLevel as npclevelTypes].chinese}
+                        content={npcLevel === '' ? '弱' : NPCLEVELS[npcLevel as npclevelTypes].chinese}
                     />
                     <Btn
                         selected={selectedIdx === 1}
@@ -180,11 +180,11 @@ function NPCGenerateDialog (): JSX.Element {
                     />
                     <Btn
                         selected={selectedIdx === 2}
-                        content={colors[color as colorTypes]?.chinese || ''}
+                        content={COLORS[color as colorTypes]?.chinese || ''}
                     />
                     <Btn
                         selected={selectedIdx === 3}
-                        content={basicJobs[job as basicJobTypes]?.chinese || ''}
+                        content={BASICJOBS[job as basicJobTypes]?.chinese || ''}
                     />
                     <ConfirmBtn
                         selected={selectedIdx === 4}

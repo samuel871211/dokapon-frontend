@@ -1,7 +1,7 @@
 import { Fragment, useReducer } from 'react'
 
 import guide from '../imgs/guide.png'
-import { basicJobs } from '../global/characters'
+import { BASICJOBS } from '../global/characters'
 
 import ContextMenu from '../global/ContextMenu'
 import TitleArea from '../components/selectCharacter/TitleArea'
@@ -140,7 +140,7 @@ export default function SelectCharacter (): JSX.Element {
                 title: '職業選擇',
                 npcDialog: {
                     messages: currentJob === '' ?
-                        [`${nameInput}\n勇者偏好什麼職業`] : [basicJobs[currentJob]?.chineseIntro],  
+                        [`${nameInput}\n勇者偏好什麼職業`] : [BASICJOBS[currentJob].chineseIntro],  
                     confirmBtnDisplay: false,
                     confirmDialogDisplay: false,
                     shouldHandleKeyEvent: false

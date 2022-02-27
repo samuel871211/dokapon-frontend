@@ -1,12 +1,12 @@
 import ExampleCharacterImg from './ExampleCharacterImg'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectColor.module.css'
-import { colors } from '../../global/characters'
+import { COLORS } from '../../global/characters'
 import { userSelectContext } from '../../reducers/userSelect'
 import { slideControllerContext } from '../../reducers/slideController'
 import React, { useRef, useState, useContext } from 'react'
 
-const colorArr = Object.keys(colors)
+const colorArr = Object.keys(COLORS)
 
 export default SelectColor
 
@@ -33,7 +33,7 @@ function SelectColor (): JSX.Element {
 
     function generateColorRows () {
         const colorRows = []
-        for (const [color, { chinese, rgb }] of Object.entries(colors)) {
+        for (const [color, { chinese, rgb }] of Object.entries(COLORS)) {
             if (!remainColors.includes(color)) continue
             colorRows.push( 
                 <ColorBtn

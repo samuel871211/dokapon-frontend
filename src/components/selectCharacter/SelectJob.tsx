@@ -3,11 +3,11 @@ import React, { useRef, useState, useContext } from 'react'
 import ExampleCharacterImg from './ExampleCharacterImg'
 import globalStyles from '../../global/styles.module.css'
 import styles from './SelectJob.module.css'
-import { basicJobs } from '../../global/characters'
+import { BASICJOBS } from '../../global/characters'
 import { userSelectContext } from '../../reducers/userSelect'
 import { slideControllerContext } from '../../reducers/slideController'
 
-const jobArr = Object.keys(basicJobs)
+const jobArr = Object.keys(BASICJOBS)
 
 export default SelectJob
 
@@ -97,7 +97,7 @@ function SelectJob (): JSX.Element {
 
     function generateJobRows () {
         const jobRows = []
-        for (const [job, { chinese }] of Object.entries(basicJobs)) {
+        for (const [job, { chinese }] of Object.entries(BASICJOBS)) {
             jobRows.push(
                 <JobBtn
                     name={chinese}

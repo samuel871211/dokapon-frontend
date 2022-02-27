@@ -4,7 +4,7 @@ import globalStyles from '../../global/styles.module.css'
 import styles from './SelectOrderAndController.module.css'
 import { userSelectContext, steps } from '../../reducers/userSelect'
 import { slideControllerContext } from '../../reducers/slideController'
-import { npcLevels } from '../../global/characters'
+import { NPCLEVELS } from '../../global/characters'
 import { shuffle } from '../../global/math'
 type genderTypes = 'male' | 'female'
 type jobTypes = 'warrior' | 'magician' | 'cleric' | 'thief' | 'beginner'
@@ -292,7 +292,7 @@ function PlayerCard (props: {
                 ${styles.controllerConfirmContainer}
                 ${currentStep === 'SelectControllerConfirm' ? styles.show : styles.hide}`}
             >
-                {npcLevel === '' ? `搖桿${controllerNumber}` :  npcLevels[npcLevel].chinese}
+                {npcLevel === '' ? `搖桿${controllerNumber}` : NPCLEVELS[npcLevel].chinese}
             </div>
         </div>
     )

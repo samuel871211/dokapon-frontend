@@ -47,8 +47,8 @@ type userSelectContext = {
     userSelectDispatch: React.Dispatch<userSelectAction>
 }
 
-type basicJobs = 'warrior' | 'magician' | 'thief' | 'cleric' | 'beginner' | ''
-// type colors = 'red' | 'orange' | 'yellow' |
+type BASICJOBS = 'warrior' | 'magician' | 'thief' | 'cleric' | 'beginner' | ''
+// type colorsss = 'red' | 'orange' | 'yellow' |
 //             'lightGreen' | 'darkGreen' | 'lightBlue' |
 //             'darkBlue' | 'pink' | 'gray' | 'white'
 
@@ -59,7 +59,7 @@ const userSelectInitState = {
     numberOfPlayers: 1,
     currentPlayer: 1,
     currentStep: <steps> 'SelectGoalType',
-    currentJob: <basicJobs> '',
+    currentJob: <BASICJOBS> '',
     titleAreaIsLeaving: false,
     confirmDialogSelectedIdx: 1,
     playersAttrs: [{

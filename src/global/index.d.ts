@@ -6,6 +6,8 @@ declare namespace Dokapon {
         'thief' | 'cleric' | 'beginner'
     type GoalType = 'period' | 'money'
     type NPCLevels = 'weak' | 'normal' | 'strong'
+    type Genders = 'male' | 'female'
+    type CharacterType = 'player' | 'monster'
 }
 export default Dokapon
 // export as namespace Dokapon

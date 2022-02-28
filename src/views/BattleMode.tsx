@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
-import $ from 'jquery'
+import { useState, useEffect, Fragment } from 'react'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
 import { getCells } from '../api/graph'
+import { createCharacter } from '../global/characters'
+import './BattleMode.module.css'
 
 export default BattleMode
 
@@ -15,7 +16,7 @@ function BattleMode (): JSX.Element {
         function initPaper () {
             // paper should be initialized after #canvas is being mounted
             const Paper = new joint.dia.Paper({
-                el: $('#paper'),
+                el: document.getElementById('paper') || undefined,
                 cellViewNamespace: { standard: joint.shapes.standard },
                 width: '100%',
                 height: '100vh',
@@ -41,6 +42,7 @@ function BattleMode (): JSX.Element {
                     y: number,
                     delta: number
                 ) {
+                    evt.preventDefault()
                     const oldScale = Paper.scale().sx
                     const { tx, ty } = Paper.translate()
                     delta = delta === 1 ? 0.05 : -0.05
@@ -92,6 +94,7 @@ function BattleMode (): JSX.Element {
                     y: number,
                     delta: number
                 ) {
+                    evt.preventDefault()
                     const oldScale = Paper.scale().sx
                     const { tx, ty } = Paper.translate()
                     delta = delta === 1 ? 0.05 : -0.05
@@ -137,9 +140,25 @@ function BattleMode (): JSX.Element {
                 }
             })
         }
-        async function loadCells () {
+        async function loadCells (): Promise<void> {
             const response = await getCells()
             graph.fromJSON(response.data)
+            
+            /**
+             * create player, read game Archive
+             */
+            const player = createCharacter({
+                characterType: 'player',
+                job: 'magician',
+                gender: 'female',
+                color: 'darkBlue'
+            }).position(6700 - 40, 4840 - 110)
+            // window.onclick = function () {
+            //     graph.addCell(player)
+            // }
+            // graph.addCell(player)
+            // const el = new player().position(6700, 4840)
+            // graph.addCell(el)
         }
 
         // initial data
@@ -149,16 +168,21 @@ function BattleMode (): JSX.Element {
         Paper.translate(-6085, -4606) // center of the world
 
         return () => {
-            $('#paper').off()
+            const el = document.getElementById('paper')
+            if (el) el.replaceWith(el.cloneNode(true))
+            // $('#paper').off()
         }
 
     }, [graph])
 
     // template
     return (
-        <div
-            id='paper'
-            onContextMenu={(e) => e.preventDefault()}
-        ></div>
+        <Fragment>
+            <div
+                id='paper'
+                onContextMenu={(e) => e.preventDefault()}
+            ></div>
+            <div className='test'></div>
+        </Fragment>
     )
 }

@@ -1,33 +1,39 @@
 import * as joint from 'jointjs'
-// import redNoJob from '../imgs/redNoJob.png'
-// TODO: 職業 * 顏色 * 性別，這邊會有多少排列組合？是否需要mapping table對應到圖片？
+import Dokapon from '.'
+/**
+ * 不確定為什麼textpath無法透過jointjs render到畫面，所以改成用text
+ */
+const characterTemplate = `
+	<g transform="translate(20, 85)">
+		<circle cx="60" cy="60" r="50" fill="white" stroke="{color}" stroke-width="20"></circle>
+		<text text-anchor="middle" x="60" y="111.5">{characterType}</text>
+		<line stroke="red" stroke-width="2" x1="0" y1="60" x2="120" y2="60"></line>
+	</g>
+	<g>
+		<image width="160" height="160" href="{href}"></image>
+	</g>`
+const BACKENDURL = process.env.REACT_APP_BACKEND_BASEURL || ''
 
-const noJob = joint.dia.Element.define('dokapon.noJob', {
-	job: 'noJob',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 148,
-			height: 125,
-			// href: redNoJob
-		}
-	}],
-	size: {
-		width: 148,
-		height: 125
-	}
-})
-
-export function createCharacter (options: {
-    job: string,
-    gender: string,
-    color: string
+export function createCharacter (attrs: {
+	characterType: Dokapon.CharacterType,
+    job: Dokapon.BasicJobs,
+    gender: Dokapon.Genders,
+    color: Dokapon.Colors
 }): joint.dia.Element {
-    return new noJob()
+	const { characterType, job, gender, color } = attrs
+	const character = joint.dia.Element.define(`dokapon.${characterType}`, {
+		name: characterType,
+		markup: characterTemplate
+				.replaceAll('\n', '')
+				.replaceAll('\t', '')
+				.replace('{characterType}', characterType)
+				.replace('{href}', `${BACKENDURL}/imgs/${job}_${gender}_${color}_front.png`)
+				.replace('{color}', COLORS[color].rgb)
+	})
+	return new character()
 }
 
-export const basicJobs = {
+export const BASICJOBS = {
 	warrior: {
 		chinese: '戰士',
 		chineseIntro: '是攻擊力很強的工作。\n雖然擅長物理攻擊，\n魔力不會上升，所以對魔法抵抗力很弱。'
@@ -50,7 +56,7 @@ export const basicJobs = {
 	}
 }
 
-export const npcLevels = {
+export const NPCLEVELS = {
 	weak: {
 		chinese: '弱'
 	},
@@ -62,7 +68,7 @@ export const npcLevels = {
 	}
 }
 
-export const colors = {
+export const COLORS = {
 	red: {
 		chinese: '紅色',
 		rgb: 'rgb(243,44,43)'

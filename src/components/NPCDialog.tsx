@@ -126,7 +126,10 @@ function NPCDialog (props: {
                 type: 'selectCharacterFadeOut',
                 payload: true
             })
-            setTimeout(() => window.location.assign('/'), 1000)
+            /**
+             * @todo send GameProgress to the backend server, and then switch to next page
+             */
+            setTimeout(() => window.location.assign('/BattleMode'), 1000)
             return
         }
     }

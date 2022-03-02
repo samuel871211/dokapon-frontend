@@ -60,7 +60,6 @@ const userSelectInitState = {
     currentPlayer: 1,
     currentStep: <steps> 'SelectGoalType',
     currentJob: <BASICJOBS> '',
-    titleAreaIsLeaving: false,
     confirmDialogSelectedIdx: 1,
     playersAttrs: [{
         gender: 'male',

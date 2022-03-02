@@ -1,7 +1,7 @@
 import * as joint from 'jointjs'
 import Dokapon from '.'
 /**
- * 不確定為什麼textpath無法透過jointjs render到畫面，所以改成用text
+ * @todo 不確定為什麼textpath無法透過jointjs render到畫面，所以改成用text
  */
 const characterTemplate = `
 	<g transform="translate(20, 85)">
@@ -15,10 +15,10 @@ const characterTemplate = `
 const BACKENDURL = process.env.REACT_APP_BACKEND_BASEURL || ''
 
 export function createCharacter (attrs: {
-	characterType: Dokapon.CharacterType,
-    job: Dokapon.BasicJobs,
-    gender: Dokapon.Genders,
-    color: Dokapon.Colors
+	characterType: Dokapon.CharacterTypes,
+    job: Dokapon.BasicJobTypes,
+    gender: Dokapon.GenderTypes,
+    color: Dokapon.ColorTypes
 }): joint.dia.Element {
 	const { characterType, job, gender, color } = attrs
 	const character = joint.dia.Element.define(`dokapon.${characterType}`, {
@@ -33,6 +33,9 @@ export function createCharacter (attrs: {
 	return new character()
 }
 
+/**
+ * @todo 文字希望能拆出來到language.ts
+ */
 export const BASICJOBS = {
 	warrior: {
 		chinese: '戰士',

@@ -1,11 +1,11 @@
-import CustomBorderBottom from '../CustomBorderBottom'
-import globalStyles from '../../global/styles.module.css'
-import styles from './NPCGenerateDialog.module.css'
-import { getRandomInt } from '../../global/math'
+import CustomBorderBottom from '../../../components/CustomBorderBottom'
+import globalStyles from '../../../global/styles.module.css'
+import styles from './index.module.css'
+import { getRandomInt } from '../../../global/math'
 import React, { useState, useRef, useContext, useEffect } from 'react'
-import { userSelectContext } from '../../reducers/userSelect'
-import { COLORS, BASICJOBS, NPCLEVELS } from '../../global/characters'
-import japaneseChars from '../../global/japaneseChars'
+import { userSelectContext } from '../../../reducers/userSelect'
+import { COLORS, BASICJOBS, NPCLEVELS } from '../../../global/characters'
+import japaneseChars from '../../../global/japaneseChars'
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
 type colorTypes = 'red' | 'orange' | 'yellow' |
             'lightGreen' | 'darkGreen' | 'lightBlue' |

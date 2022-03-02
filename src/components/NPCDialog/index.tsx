@@ -1,8 +1,8 @@
 import React, { useEffect, useLayoutEffect, useState, useRef, useContext } from 'react'
-import { slideControllerContext } from '../reducers/slideController'
-import { userSelectContext } from '../reducers/userSelect'
-import globalStyles from '../global/styles.module.css'
-import styles from './NPCDialog.module.css'
+import { slideControllerContext } from '../../reducers/slideController'
+import { userSelectContext } from '../../reducers/userSelect'
+import globalStyles from '../../global/styles.module.css'
+import styles from './index.module.css'
 
 export default NPCDialog
 

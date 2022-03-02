@@ -1,4 +1,6 @@
-export default function StoryMode (): JSX.Element {
+export default StoryMode
+
+function StoryMode (): JSX.Element {
     const css = {
         container: {
             display: 'grid',

@@ -1,7 +1,7 @@
-import japaneseChars from '../../global/japaneseChars'
-import styles from './NameInputDialog.module.css'
-import globalStyles from '../../global/styles.module.css'
-import { userSelectContext } from '../../reducers/userSelect'
+import japaneseChars from '../../../global/japaneseChars'
+import styles from './index.module.css'
+import globalStyles from '../../../global/styles.module.css'
+import { userSelectContext } from '../../../reducers/userSelect'
 import React, { useState, useRef, useContext } from 'react'
 
 type wordType = 'hiragana' | 'katakana' | 'special'

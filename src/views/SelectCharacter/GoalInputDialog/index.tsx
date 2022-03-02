@@ -1,8 +1,8 @@
 import React, { useState, useRef, useContext } from 'react'
-import { userSelectContext } from '../../reducers/userSelect'
-import CustomBorderBottom from '../CustomBorderBottom'
-import globalStyles from '../../global/styles.module.css'
-import styles from './GoalInputDialog.module.css'
+import { userSelectContext } from '../../../reducers/userSelect'
+import CustomBorderBottom from '../../../components/CustomBorderBottom'
+import globalStyles from '../../../global/styles.module.css'
+import styles from './index.module.css'
 
 const typeToCN = { period: '期間', money: '金額' }
 

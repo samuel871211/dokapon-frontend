@@ -1,14 +1,15 @@
 import React, { useRef, useState, useContext } from 'react'
 
-import { userSelectContext } from '../../reducers/userSelect'
-import { slideControllerContext } from '../../reducers/slideController'
-import globalStyles from '../../global/styles.module.css'
-import styles from './SelectGender.module.css'
+import { userSelectContext } from '../../../reducers/userSelect'
+import { slideControllerContext } from '../../../reducers/slideController'
+import globalStyles from '../../../global/styles.module.css'
+import styles from './index.module.css'
 type gender = 'male' | 'female'
 const backendUrl = process.env.REACT_APP_BACKEND_BASEURL || ''
 const genderToCN = { male: '男', female: '女' }
 
-export default function SelectGender (): JSX.Element {
+export default SelectGender
+function SelectGender (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
     const { userSelect, userSelectDispatch } = useContext(userSelectContext)
     const { currentPlayer, numberOfPlayers } = userSelect

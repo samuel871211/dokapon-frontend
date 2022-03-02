@@ -1,9 +1,9 @@
 import React, { useState, useRef, useContext } from 'react'
 
-import { userSelectContext } from '../../reducers/userSelect'
-import { slideControllerContext } from '../../reducers/slideController'
-import globalStyles from '../../global/styles.module.css'
-import styles from './SelectGoalType.module.css'
+import { userSelectContext } from '../../../reducers/userSelect'
+import { slideControllerContext } from '../../../reducers/slideController'
+import globalStyles from '../../../global/styles.module.css'
+import styles from './index.module.css'
 
 export default SelectGoalType
 

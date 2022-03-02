@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { slideControllerContext } from '../../reducers/slideController'
-import styles from './TitleArea.module.css'
+import { slideControllerContext } from '../../../reducers/slideController'
+import styles from './index.module.css'
 
 export default TitleArea
 

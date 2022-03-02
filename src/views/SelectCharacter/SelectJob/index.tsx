@@ -1,11 +1,11 @@
 import React, { useRef, useState, useContext } from 'react'
 
-import ExampleCharacterImg from './ExampleCharacterImg'
-import globalStyles from '../../global/styles.module.css'
-import styles from './SelectJob.module.css'
-import { BASICJOBS } from '../../global/characters'
-import { userSelectContext } from '../../reducers/userSelect'
-import { slideControllerContext } from '../../reducers/slideController'
+import ExampleCharacterImg from '../ExampleCharacterImg'
+import globalStyles from '../../../global/styles.module.css'
+import styles from './index.module.css'
+import { BASICJOBS } from '../../../global/characters'
+import { userSelectContext } from '../../../reducers/userSelect'
+import { slideControllerContext } from '../../../reducers/slideController'
 
 const jobArr = Object.keys(BASICJOBS)
 

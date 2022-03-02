@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import globalStyles from '../global/styles.module.css'
-import styles from './HomePage.module.css'
+import globalStyles from '../../global/styles.module.css'
+import styles from './index.module.css'
 
 export default HomePage
 

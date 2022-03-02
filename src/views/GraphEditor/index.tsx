@@ -1,4 +1,4 @@
-import * as SHAPES from '../global/shapes'
+import * as SHAPES from '../../global/shapes'
 import { useState, useEffect, Fragment } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
@@ -33,7 +33,7 @@ import MuiAlert, { Color } from '@material-ui/lab/Alert'
 // import $ from 'jquery'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
-import { getCells, updateCells } from '../api/graph'
+import { getCells, updateCells } from '../../api/graph'
 
 type groupOffset = Array<{
     origin?: 'source' | 'vertex' | 'target',

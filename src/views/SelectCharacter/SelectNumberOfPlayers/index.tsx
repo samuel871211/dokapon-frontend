@@ -1,9 +1,9 @@
 import React, { useState, useRef, useContext } from 'react'
 import PersonIcon from '@material-ui/icons/Person'
 import AdbIcon from '@material-ui/icons/Adb'
-import styles from './SelectNumberOfPlayers.module.css'
-import globalStyles from '../../global/styles.module.css'
-import { userSelectContext } from '../../reducers/userSelect'
+import styles from './index.module.css'
+import globalStyles from '../../../global/styles.module.css'
+import { userSelectContext } from '../../../reducers/userSelect'
 const digitToFullWidth = ['', '１', '２', '３', '４']
 
 export default SelectNumberOfPlayers

@@ -1,27 +1,27 @@
 import { Fragment, useReducer } from 'react'
 
-import guide from '../imgs/guide.png'
-import { BASICJOBS } from '../global/characters'
+import guide from '../../imgs/guide.png'
+import { BASICJOBS } from '../../global/characters'
 
-import ContextMenu from '../global/ContextMenu'
-import TitleArea from '../components/selectCharacter/TitleArea'
-import NPCDialog from '../components/NPCDialog'
-import NPCTopLeftImgArea from '../components/NPCTopLeftImgArea'
-import SelectGoalType from '../components/selectCharacter/SelectGoalType'
-import SelectNumberOfPlayers from '../components/selectCharacter/SelectNumberOfPlayers'
-import SelectGender from '../components/selectCharacter/SelectGender'
-import SelectColor from '../components/selectCharacter/SelectColor'
-import SelectJob from '../components/selectCharacter/SelectJob'
-import SelectNPCLevel from '../components/selectCharacter/SelectNPCLevel'
-import GoalInputDialog from '../components/selectCharacter/GoalInputDialog'
-import NPCGenerateDialog from '../components/selectCharacter/NPCGenerateDialog'
-import NameInputDialog from '../components/selectCharacter/NameInputDialog'
-import SelectOrderAndController from '../components/selectCharacter/SelectOrderAndController'
+import ContextMenu from '../../global/ContextMenu'
+import TitleArea from './TitleArea'
+import NPCDialog from '../../components/NPCDialog'
+import NPCTopLeftImgArea from '../../components/NPCTopLeftImgArea'
+import SelectGoalType from './SelectGoalType'
+import SelectNumberOfPlayers from './SelectNumberOfPlayers'
+import SelectGender from './SelectGender'
+import SelectColor from './SelectColor'
+import SelectJob from './SelectJob'
+import SelectNPCLevel from './SelectNPCLevel'
+import GoalInputDialog from './GoalInputDialog'
+import NPCGenerateDialog from './NPCGenerateDialog'
+import NameInputDialog from './NameInputDialog'
+import SelectOrderAndController from './SelectOrderAndController'
 
-import { userSelectReducer, userSelectInitState, userSelectContext } from '../reducers/userSelect'
-import { slideControllerReducer, slideControllerInitState, slideControllerContext } from '../reducers/slideController'
+import { userSelectReducer, userSelectInitState, userSelectContext } from '../../reducers/userSelect'
+import { slideControllerReducer, slideControllerInitState, slideControllerContext } from '../../reducers/slideController'
 
-import styles from './SelectCharacter.module.css'
+import styles from './index.module.css'
 
 const digitToFullWidth = ['', '１', '２', '３', '４']
 
@@ -46,7 +46,9 @@ const Components = {
     SelectOrderStep3: ''
 }
 
-export default function SelectCharacter (): JSX.Element {
+export default SelectCharacter
+
+function SelectCharacter (): JSX.Element {
     // data
     const [userSelect, userSelectDispatch] = useReducer(userSelectReducer, userSelectInitState)
     const [slideState, slideControllerDispatch] = useReducer(slideControllerReducer, slideControllerInitState)

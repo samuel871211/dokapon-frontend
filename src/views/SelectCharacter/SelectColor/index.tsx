@@ -1,9 +1,9 @@
-import ExampleCharacterImg from './ExampleCharacterImg'
-import globalStyles from '../../global/styles.module.css'
-import styles from './SelectColor.module.css'
-import { COLORS } from '../../global/characters'
-import { userSelectContext } from '../../reducers/userSelect'
-import { slideControllerContext } from '../../reducers/slideController'
+import ExampleCharacterImg from '../ExampleCharacterImg'
+import globalStyles from '../../../global/styles.module.css'
+import styles from './index.module.css'
+import { COLORS } from '../../../global/characters'
+import { userSelectContext } from '../../../reducers/userSelect'
+import { slideControllerContext } from '../../../reducers/slideController'
 import React, { useRef, useState, useContext } from 'react'
 
 const colorArr = Object.keys(COLORS)

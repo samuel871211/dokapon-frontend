@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef} from 'react'
-import globalStyles from '../../global/styles.module.css'
-import styles from './ExampleCharacterImg.module.css'
+import globalStyles from '../../../global/styles.module.css'
+import styles from './index.module.css'
 
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
 

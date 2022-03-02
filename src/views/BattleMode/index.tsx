@@ -1,9 +1,9 @@
 import { useState, useEffect, Fragment } from 'react'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
-import { getCells } from '../api/graph'
-import { createCharacter } from '../global/characters'
-import './BattleMode.module.css'
+import { getCells } from '../../api/graph'
+import { createCharacter } from '../../global/characters'
+import './index.module.css'
 
 export default BattleMode
 

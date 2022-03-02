@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import styles from './NPCTopLeftImgArea.module.css'
-import { slideControllerContext } from '../reducers/slideController'
+import styles from './index.module.css'
+import { slideControllerContext } from '../../reducers/slideController'
 
 export default NPCTopLeftImgArea
 

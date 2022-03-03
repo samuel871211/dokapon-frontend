@@ -1,23 +1,17 @@
 import React, { useRef, useState, useContext } from 'react'
 import globalStyles from '../../../global/styles.module.css'
 import styles from './index.module.css'
-import { userSelectContext } from '../../../reducers/userSelect'
-import { slideControllerContext } from '../../../reducers/slideController'
-
-type aiLevel = 'weak' | 'normal' | 'strong'
-const aiLevels: aiLevel[] = ['weak', 'normal', 'strong']
-const aiLevelToCN = {
-    weak: '弱',
-    normal: '普通',
-    strong: '狡猾'
-}
+import { gameProgressContext } from '../../../reducers/gameProgress'
+import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
+import { NPCLEVELLIST } from '../../../global/CONSTANTS'
+import { NPCLEVELS } from '../../../global/characters'
 
 export default SelectNPCLevel
 
 function SelectNPCLevel (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const { userSelectDispatch } = useContext(userSelectContext)
-    const { slideControllerDispatch } = useContext(slideControllerContext)
+    const { gameProgressDispatch } = useContext(gameProgressContext)
+    const { UIStateDispatch } = useContext(UIStateContext)
     const [selectedIdx, setSelectedIdx] = useState(0)
     const [isLeave, toggleIsLeave] = useState(false)
     
@@ -30,21 +24,21 @@ function SelectNPCLevel (): JSX.Element {
             setSelectedIdx(selectedIdx === 2 ? 0 : selectedIdx + 1)
             break
         case 'd':
-            console.log(aiLevels[selectedIdx])
-            userSelectDispatch({
+            console.log(NPCLEVELLIST[selectedIdx])
+            gameProgressDispatch({
                 type: 'npcLevel',
-                payload: aiLevels[selectedIdx]
+                payload: NPCLEVELLIST[selectedIdx]
             })
-            slideControllerDispatch({
-                type: 'titleArea',
-                payload: true
+            UIStateDispatch({
+                type: 'showTitleArea',
+                payload: false
             })
             toggleIsLeave(true)
             break
         case 'x':
-            slideControllerDispatch({
-                type: 'titleArea',
-                payload: true
+            UIStateDispatch({
+                type: 'showTitleArea',
+                payload: false
             })
             toggleIsLeave(true)
             break
@@ -55,12 +49,12 @@ function SelectNPCLevel (): JSX.Element {
 
     function generateLevelRows () {
         const aiLevelRows = []
-        for (const aiLevel of aiLevels) {
+        for (const npcLevel of NPCLEVELLIST) {
             aiLevelRows.push(
                 <NPCLevelBtn
-                    aiLevel={aiLevel}
-                    selected={aiLevels[selectedIdx] === aiLevel}
-                    key={aiLevel}
+                    npcLevel={npcLevel}
+                    selected={NPCLEVELLIST[selectedIdx] === npcLevel}
+                    key={npcLevel}
                 />
             )
         }
@@ -74,7 +68,7 @@ function SelectNPCLevel (): JSX.Element {
         }
 
         if (e.animationName.includes('slideRight')) {
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
                 payload: 'NPCGenerateDialog'
             })
@@ -102,10 +96,10 @@ function SelectNPCLevel (): JSX.Element {
 }
 
 function NPCLevelBtn (props: {
-    aiLevel: 'weak' | 'normal' | 'strong',
+    npcLevel: 'weak' | 'normal' | 'strong',
     selected: boolean
 }): JSX.Element {
-    const { aiLevel, selected } = props
+    const { npcLevel, selected } = props
     return (
         <div
             className={`
@@ -114,7 +108,7 @@ function NPCLevelBtn (props: {
             ${globalStyles.xyCenter}
             ${selected ? globalStyles.hoverEffect : ''}`}
         >
-            {aiLevelToCN[aiLevel]}
+            {NPCLEVELS[npcLevel].chinese}
         </div> 
     )
 }

@@ -36,7 +36,8 @@ export function createCharacter (attrs: {
 /**
  * @todo 文字希望能拆出來到language.ts
  */
-export const BASICJOBS = {
+type BasicJobsInfos = { chinese: string, chineseIntro: string }
+export const BASICJOBS: { [key in Dokapon.BasicJobTypes] : BasicJobsInfos } = {
 	warrior: {
 		chinese: '戰士',
 		chineseIntro: '是攻擊力很強的工作。\n雖然擅長物理攻擊，\n魔力不會上升，所以對魔法抵抗力很弱。'
@@ -59,7 +60,8 @@ export const BASICJOBS = {
 	}
 }
 
-export const NPCLEVELS = {
+type NPCLevelsInfos = { chinese: string }
+export const NPCLEVELS: { [key in Dokapon.NPCLevelTypes]: NPCLevelsInfos } = {
 	weak: {
 		chinese: '弱'
 	},
@@ -71,7 +73,8 @@ export const NPCLEVELS = {
 	}
 }
 
-export const COLORS = {
+type ColorsInfos = { chinese: string, rgb: string }
+export const COLORS: { [key in Dokapon.ColorTypes]: ColorsInfos } = {
 	red: {
 		chinese: '紅色',
 		rgb: 'rgb(243,44,43)'

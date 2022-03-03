@@ -2,18 +2,17 @@ import ExampleCharacterImg from '../ExampleCharacterImg'
 import globalStyles from '../../../global/styles.module.css'
 import styles from './index.module.css'
 import { COLORS } from '../../../global/characters'
-import { userSelectContext } from '../../../reducers/userSelect'
-import { slideControllerContext } from '../../../reducers/slideController'
+import { COLORLIST } from '../../../global/CONSTANTS'
+import { gameProgressContext } from '../../../reducers/gameProgress'
+import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import React, { useRef, useState, useContext } from 'react'
-
-const colorArr = Object.keys(COLORS)
 
 export default SelectColor
 
 function SelectColor (): JSX.Element {
-    const { userSelect, userSelectDispatch } = useContext(userSelectContext)
-    const { slideControllerDispatch } = useContext(slideControllerContext)
-    const { currentPlayer, playersAttrs, numberOfPlayers } = userSelect
+    const { gameProgress, gameProgressDispatch } = useContext(gameProgressContext)
+    const { UIStateDispatch } = useContext(UIStateContext)
+    const { currentPlayer, playersAttrs, numberOfPlayers } = gameProgress
     const { color: currentPlayerColor, gender, job } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
     const [isLeave, toggleIsLeave] = useState(false)
@@ -22,7 +21,7 @@ function SelectColor (): JSX.Element {
     const [selectedIdx, setSelectedIdx] = useState(initSelectedIdx === -1 ? 0 : initSelectedIdx)
 
     function getRemainColors () {
-        const remainColors = [ ...colorArr ]
+        const remainColors = [ ...COLORLIST ]
         for (let playerNumber = 0; playerNumber < currentPlayer - 1; playerNumber++) {
             const usedColor = playersAttrs[playerNumber].color
             const index = remainColors.indexOf(usedColor)
@@ -33,15 +32,15 @@ function SelectColor (): JSX.Element {
 
     function generateColorRows () {
         const colorRows = []
-        for (const [color, { chinese, rgb }] of Object.entries(COLORS)) {
-            if (!remainColors.includes(color)) continue
-            colorRows.push( 
+        for (const color of remainColors) {
+            const { rgb, chinese } = COLORS[color]
+            colorRows.push(
                 <ColorBtn
                     rgb={rgb}
                     name={chinese}
                     selected={color === remainColors[selectedIdx]}
                     key={color}
-                />
+                />               
             )
         }
         return colorRows
@@ -56,20 +55,21 @@ function SelectColor (): JSX.Element {
             setSelectedIdx(selectedIdx === remainColors.length - 1 ? 0 : selectedIdx + 1)
             break
         case 'd':
-            userSelectDispatch({
+            gameProgressDispatch({
                 type: 'color',
                 payload: remainColors[selectedIdx]
             })
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
-                payload:  numberOfPlayers >= currentPlayer ? 'SelectJob' : 'NPCGenerateDialog'
+                payload:  numberOfPlayers >= currentPlayer ?
+                            'SelectJob' : 'NPCGenerateDialog'
             })
             break
         case 'x':
             toggleIsLeave(true)
-            slideControllerDispatch({
-                type: 'titleArea',
-                payload: true
+            UIStateDispatch({
+                type: 'showTitleArea',
+                payload: false
             })
             break
         default:
@@ -85,13 +85,14 @@ function SelectColor (): JSX.Element {
 
         if (e.animationName.includes('slideRight')) {
             toggleIsLeave(false)
-            slideControllerDispatch({
-                type: 'titleArea',
-                payload: false
+            UIStateDispatch({
+                type: 'showTitleArea',
+                payload: true
             })
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
-                payload: numberOfPlayers >= currentPlayer ? 'BeforeNameInput' : 'NPCGenerateDialog'
+                payload: numberOfPlayers >= currentPlayer ?
+                        'BeforeNameInput' : 'NPCGenerateDialog'
             })
         }
     }

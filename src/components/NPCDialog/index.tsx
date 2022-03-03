@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState, useRef, useContext } from 'react'
-import { slideControllerContext } from '../../reducers/slideController'
-import { userSelectContext } from '../../reducers/userSelect'
+import { gameProgressContext } from '../../reducers/gameProgress'
+import { UIStateContext } from '../../reducers/SelectCharacter/UIState'
 import globalStyles from '../../global/styles.module.css'
 import styles from './index.module.css'
 
@@ -15,10 +15,9 @@ function NPCDialog (props: {
 }): JSX.Element {
     const { name, message, confirmBtnDisplay, confirmDialogDisplay, shouldHandleKeyEvent } = props
     const focusElement = useRef<HTMLDivElement>(null)
-    const { slideState, slideControllerDispatch } = useContext(slideControllerContext)
-    const { userSelectDispatch, userSelect } = useContext(userSelectContext)
-    const { currentStep, confirmDialogSelectedIdx } = userSelect
-    const { NPCDialog, confirmDialog } = slideState
+    const { gameProgress } = useContext(gameProgressContext)
+    const { UIState, UIStateDispatch } = useContext(UIStateContext)
+    const { currentStep, confirmDialogSelectedIdx, showNPCDialog, showConfirmDialog } = UIState
     const handleKeyUpAttrs = shouldHandleKeyEvent ? {
         tabIndex: 0,
         ref: focusElement,
@@ -28,6 +27,10 @@ function NPCDialog (props: {
     function reFocus (event: React.SyntheticEvent<HTMLDivElement>): void {
         event.currentTarget.focus()
     }
+    /**
+     *@todo 不同情況使用此組件，handleKeyUp會有不同的行為，此部分需要再調整
+     如果能把邏輯跟UI切開來會更好，暫時沒有更好的解法，只能by case
+     */
     function handleKeyUp (): void {
         if (curMsgIdx !== message.length - 1) {
             setCurMsgIdx(curMsgIdx + 1)
@@ -35,11 +38,9 @@ function NPCDialog (props: {
             return
         }
 
-        // TODO: 不同情況使用此組件，handleKeyUp會有不同的行為，此部分需要再調整
-        // 如果能把邏輯跟UI切開來會更好，暫時沒有更好的解法，只能by case
         if (currentStep === 'OnlyOnePlayer') {
             resetWordIdx()
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
                 payload: 'SelectGender'
             })
@@ -47,19 +48,19 @@ function NPCDialog (props: {
         }
 
         if (currentStep === 'BeforeNameInput') {
-            slideControllerDispatch({
-                type: 'NPCDialog',
-                payload: true
+            UIStateDispatch({
+                type: 'showNPCDialog',
+                payload: false
             })
-            slideControllerDispatch({
-                type: 'NPCTopLeftImgArea',
-                payload: true
+            UIStateDispatch({
+                type: 'showNPCTopLeftImgArea',
+                payload: false
             })
             return
         }
 
         if (currentStep === 'BeforeNPCGenerateDialog') {
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
                 payload: 'NPCGenerateDialog'
             })
@@ -67,7 +68,7 @@ function NPCDialog (props: {
         }
 
         if (currentStep === 'PlayerAttrsCollected') {
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
                 payload: 'SelectController'
             })
@@ -76,16 +77,16 @@ function NPCDialog (props: {
 
         if (currentStep === 'SelectOrderStep3') {
             fetch(`${process.env.REACT_APP_BACKEND_BASEURL || ''}/gameArchive`, {
-                body: JSON.stringify(userSelect),
+                body: JSON.stringify(gameProgress),
                 headers: { 'content-type': 'application/json' },
                 method: 'POST'
             })
             .then(response => response.json())
             .then(response => {
                 console.log(response)
-                slideControllerDispatch({
-                    type: 'NPCDialog',
-                    payload: true
+                UIStateDispatch({
+                    type: 'showNPCDialog',
+                    payload: false
                 })
             })
             .catch(err => console.log(err))
@@ -93,11 +94,11 @@ function NPCDialog (props: {
     }
     function handleTransitionEnd (e: React.TransitionEvent<HTMLDivElement>): void {
         if (currentStep === 'SelectControllerConfirm') {
-            slideControllerDispatch({
-                type: 'confirmDialog',
-                payload: false
+            UIStateDispatch({
+                type: 'showConfirmDialog',
+                payload: true
             })
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
                 payload: confirmDialogSelectedIdx === 1 ? 
                     'SelectController' : 'SelectOrderStep1'
@@ -106,15 +107,15 @@ function NPCDialog (props: {
         }
 
         if (currentStep === 'BeforeNameInput') {
-            slideControllerDispatch({
-                type: 'NPCDialog',
-                payload: false
+            UIStateDispatch({
+                type: 'showNPCDialog',
+                payload: true
             })
-            slideControllerDispatch({
-                type: 'NPCTopLeftImgArea',
-                payload: false
+            UIStateDispatch({
+                type: 'showNPCTopLeftImgArea',
+                payload: true
             })
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
                 payload: 'NameInputDialog'
             })
@@ -122,9 +123,9 @@ function NPCDialog (props: {
         }
 
         if (currentStep === 'SelectOrderStep3' && e.propertyName === 'transform') {
-            slideControllerDispatch({
-                type: 'selectCharacterFadeOut',
-                payload: true
+            UIStateDispatch({
+                type: 'showSelectCharacter',
+                payload: false
             })
             /**
              * @todo send GameProgress to the backend server, and then switch to next page
@@ -184,7 +185,7 @@ function NPCDialog (props: {
         <div
             className={`
             ${styles.container}
-            ${NPCDialog ? styles.containerSlideOut : ''}`}
+            ${showNPCDialog ? '' : styles.containerSlideOut}`}
             onTransitionEnd={handleTransitionEnd}
             { ...handleKeyUpAttrs }
         >
@@ -208,20 +209,20 @@ function NPCDialog (props: {
                 {confirmDialogDisplay &&
                     <ConfirmDialog
                         selectedIdx={confirmDialogSelectedIdx}
-                        slideOut={confirmDialog}
+                        show={showConfirmDialog}
                     />}
             </div>
         </div>
     )
 }
 
-function ConfirmDialog (props: { selectedIdx: number, slideOut: boolean }): JSX.Element {
-    const { selectedIdx, slideOut } = props
+function ConfirmDialog (props: { selectedIdx: number, show: boolean }): JSX.Element {
+    const { selectedIdx, show } = props
     return (
         <div
             className={`
             ${styles.confirmDialogContainer}
-            ${slideOut ? styles.confirmDialogSlideOut : ''}`}>
+            ${show ?  '' : styles.confirmDialogSlideOut}`}>
             <div className={styles.confirmDialogBtn}>
                 <div
                     className={`

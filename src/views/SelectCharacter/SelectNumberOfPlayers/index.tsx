@@ -3,14 +3,16 @@ import PersonIcon from '@material-ui/icons/Person'
 import AdbIcon from '@material-ui/icons/Adb'
 import styles from './index.module.css'
 import globalStyles from '../../../global/styles.module.css'
-import { userSelectContext } from '../../../reducers/userSelect'
+import { gameProgressContext } from '../../../reducers/gameProgress'
+import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 const digitToFullWidth = ['', '１', '２', '３', '４']
 
 export default SelectNumberOfPlayers
 
 function SelectNumberOfPlayers (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const { userSelectDispatch, userSelect: { numberOfPlayers } } = useContext(userSelectContext)
+    const { UIStateDispatch } = useContext(UIStateContext)
+    const { gameProgressDispatch, gameProgress: { numberOfPlayers } } = useContext(gameProgressContext)
     const [isLeave, toggleIsLeave] = useState(false)
     const [selectedPlayerNum, setSelectedPlayerNum] = useState(numberOfPlayers)
     const [keyDownEvtRegister, toggleKeyDownRegister] = useState(true)
@@ -38,7 +40,7 @@ function SelectNumberOfPlayers (): JSX.Element {
             break
         case 'd':
             if (selectedPlayerNum === 1) {
-                userSelectDispatch({
+                UIStateDispatch({
                     type: 'currentStep',
                     payload: 'OnlyOnePlayer'
                 })
@@ -48,18 +50,18 @@ function SelectNumberOfPlayers (): JSX.Element {
             if (!focusElement.current) break
             toggleIsLeave(true)
             focusElement.current.onanimationend = function handleNextComponent () {
-                userSelectDispatch({
+                gameProgressDispatch({
                     type: 'numberOfPlayers',
-                    payload: String(selectedPlayerNum)
+                    payload: selectedPlayerNum
                 })
-                userSelectDispatch({
+                UIStateDispatch({
                     type: 'currentStep',
                     payload: 'SelectGender'
                 })
             }
             break
         case 'x':
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
                 payload: 'GoalInputDialog'
             })

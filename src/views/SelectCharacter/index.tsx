@@ -3,7 +3,7 @@ import { Fragment, useReducer } from 'react'
 import guide from '../../imgs/guide.png'
 import { BASICJOBS } from '../../global/characters'
 
-import ContextMenu from '../../global/ContextMenu'
+import ContextMenu from '../../components/ContextMenu'
 import TitleArea from './TitleArea'
 import NPCDialog from '../../components/NPCDialog'
 import NPCTopLeftImgArea from '../../components/NPCTopLeftImgArea'
@@ -18,8 +18,8 @@ import NPCGenerateDialog from './NPCGenerateDialog'
 import NameInputDialog from './NameInputDialog'
 import SelectOrderAndController from './SelectOrderAndController'
 
-import { userSelectReducer, userSelectInitState, userSelectContext } from '../../reducers/userSelect'
-import { slideControllerReducer, slideControllerInitState, slideControllerContext } from '../../reducers/slideController'
+import { initGameProgress, gameProgressContext, gameProgressReducer } from '../../reducers/gameProgress'
+import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/SelectCharacter/UIState'
 
 import styles from './index.module.css'
 
@@ -50,10 +50,11 @@ export default SelectCharacter
 
 function SelectCharacter (): JSX.Element {
     // data
-    const [userSelect, userSelectDispatch] = useReducer(userSelectReducer, userSelectInitState)
-    const [slideState, slideControllerDispatch] = useReducer(slideControllerReducer, slideControllerInitState)
-    const { currentStep, goalType, playersAttrs, currentPlayer, currentJob } = userSelect
-    const nameInput = playersAttrs[currentPlayer - 1].nameInput
+    const [gameProgress, gameProgressDispatch] = useReducer(gameProgressReducer, initGameProgress)
+    const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState)
+    const { goalType, playersAttrs, currentPlayer } = gameProgress
+    const { currentStep, selectedJob, showSelectCharacter } = UIState
+    const name = playersAttrs[currentPlayer - 1].name
 
     function steps (step: typeof currentStep) {
         switch (step) {
@@ -131,7 +132,7 @@ function SelectCharacter (): JSX.Element {
             return {
                 title: '顏色選擇',
                 npcDialog: {
-                    messages: [`想詢問${nameInput}\n勇者喜歡什麼顏色`],
+                    messages: [`想詢問${name}\n勇者喜歡什麼顏色`],
                     confirmBtnDisplay: false,
                     confirmDialogDisplay: false,
                     shouldHandleKeyEvent: false
@@ -141,8 +142,8 @@ function SelectCharacter (): JSX.Element {
             return {
                 title: '職業選擇',
                 npcDialog: {
-                    messages: currentJob === '' ?
-                        [`${nameInput}\n勇者偏好什麼職業`] : [BASICJOBS[currentJob].chineseIntro],  
+                    messages: selectedJob === '' ?
+                        [`${name}\n勇者偏好什麼職業`] : [BASICJOBS[selectedJob].chineseIntro],  
                     confirmBtnDisplay: false,
                     confirmDialogDisplay: false,
                     shouldHandleKeyEvent: false
@@ -248,12 +249,12 @@ function SelectCharacter (): JSX.Element {
     
     // template
     return (
-        <userSelectContext.Provider value={{ userSelect, userSelectDispatch }}>
-        <slideControllerContext.Provider value={{ slideState, slideControllerDispatch }}>
+        <gameProgressContext.Provider value={{ gameProgress, gameProgressDispatch }}>
+        <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
             <div
                 className={`
                 ${styles.container}
-                ${slideState.selectCharacterFadeOut ? styles.fadeOut : ''}`}
+                ${showSelectCharacter ? '' : styles.fadeOut}`}
             >
                 <ContextMenu/>
                 {currentStep === 'NameInputDialog' &&
@@ -283,7 +284,7 @@ function SelectCharacter (): JSX.Element {
                     </Fragment>
                 }
             </div>
-        </slideControllerContext.Provider>
-        </userSelectContext.Provider>
+        </UIStateContext.Provider>
+        </gameProgressContext.Provider>
     )
 }

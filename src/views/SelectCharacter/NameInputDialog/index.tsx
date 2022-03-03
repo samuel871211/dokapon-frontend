@@ -1,7 +1,8 @@
 import japaneseChars from '../../../global/japaneseChars'
 import styles from './index.module.css'
 import globalStyles from '../../../global/styles.module.css'
-import { userSelectContext } from '../../../reducers/userSelect'
+import { gameProgressContext } from '../../../reducers/gameProgress'
+import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import React, { useState, useRef, useContext } from 'react'
 
 type wordType = 'hiragana' | 'katakana' | 'special'
@@ -10,7 +11,8 @@ export default NameInputDialog
 
 function NameInputDialog (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const { userSelect, userSelectDispatch } = useContext(userSelectContext)
+    const { gameProgress, gameProgressDispatch } = useContext(gameProgressContext)
+    const { UIStateDispatch } = useContext(UIStateContext)
     const [wordType, setWordType] = useState<wordType>('hiragana')
     const [isLeave, toggleIsLeave] = useState(false)
     const [nameInputWords, setNameInputWords] = useState(getInitNameArr())
@@ -19,15 +21,15 @@ function NameInputDialog (): JSX.Element {
     const [selectedWordIdx, setSelectedWordIdx] = useState(0)
 
     function getInitNameArr () {
-        const { currentPlayer, playersAttrs } = userSelect
-        const initName = playersAttrs[currentPlayer - 1].nameInput
+        const { currentPlayer, playersAttrs } = gameProgress
+        const initName = playersAttrs[currentPlayer - 1].name
         const result = initName.split('')
         while (result.length < 8) result.push('　')
         return result
     }
     function getInitInputIdx () {
-        const { currentPlayer, playersAttrs } = userSelect
-        const initName = playersAttrs[currentPlayer - 1].nameInput.trim()
+        const { currentPlayer, playersAttrs } = gameProgress
+        const initName = playersAttrs[currentPlayer - 1].name.trim()
         return initName.length === 0 ? 0 : initName.length - 1
     }
     function generateKeyBoardKeys (section: 0 | 1) {
@@ -245,11 +247,11 @@ function NameInputDialog (): JSX.Element {
                         toggleIsLeave(true)
                         if (!focusElement.current) break
                         focusElement.current.onanimationend = () => {
-                            userSelectDispatch({
-                                type: 'nameInput',
+                            gameProgressDispatch({
+                                type: 'name',
                                 payload: nameInputWords.join('').trim()
                             })
-                            userSelectDispatch({
+                            UIStateDispatch({
                                 type: 'currentStep',
                                 payload: 'SelectColor'
                             })
@@ -281,7 +283,7 @@ function NameInputDialog (): JSX.Element {
                 if (!focusElement.current) break
                 focusElement.current.onanimationend = () => {
                     toggleIsLeave(false)
-                    userSelectDispatch({
+                    UIStateDispatch({
                         type: 'currentStep',
                         payload: 'SelectGender'
                     })

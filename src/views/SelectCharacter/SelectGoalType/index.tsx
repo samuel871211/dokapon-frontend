@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext } from 'react'
 
-import { userSelectContext } from '../../../reducers/userSelect'
-import { slideControllerContext } from '../../../reducers/slideController'
+import { gameProgressContext } from '../../../reducers/gameProgress'
+import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import globalStyles from '../../../global/styles.module.css'
 import styles from './index.module.css'
 
@@ -9,10 +9,10 @@ export default SelectGoalType
 
 function SelectGoalType (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const { userSelectDispatch, userSelect }  = useContext(userSelectContext)
-    const { slideControllerDispatch } = useContext(slideControllerContext)
+    const { gameProgressDispatch, gameProgress }  = useContext(gameProgressContext)
+    const { UIStateDispatch } = useContext(UIStateContext)
     
-    const { goalType } = userSelect
+    const { goalType } = gameProgress
     const [isLeave, toggleIsLeave] = useState(false)
     const [selectedGoalType, toggleSelectedGoalType] = useState(goalType)
 
@@ -29,17 +29,17 @@ function SelectGoalType (): JSX.Element {
 
             (function handleAnimation () {
                 toggleIsLeave(true)
-                slideControllerDispatch({
-                    type: 'titleArea',
-                    payload: true
+                UIStateDispatch({
+                    type: 'showTitleArea',
+                    payload: false
                 })
             })()
             focusElement.current.onanimationend = function handleNextComponent () {
-                userSelectDispatch({
+                gameProgressDispatch({
                     type: 'goalType',
                     payload: selectedGoalType
                 })
-                userSelectDispatch({
+                UIStateDispatch({
                     type: 'currentStep',
                     payload: 'GoalInputDialog'
                 })

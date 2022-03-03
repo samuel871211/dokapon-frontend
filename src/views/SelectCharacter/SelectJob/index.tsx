@@ -4,60 +4,60 @@ import ExampleCharacterImg from '../ExampleCharacterImg'
 import globalStyles from '../../../global/styles.module.css'
 import styles from './index.module.css'
 import { BASICJOBS } from '../../../global/characters'
-import { userSelectContext } from '../../../reducers/userSelect'
-import { slideControllerContext } from '../../../reducers/slideController'
-
-const jobArr = Object.keys(BASICJOBS)
+import { gameProgressContext } from '../../../reducers/gameProgress'
+import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
+import { BASICJOBLIST } from '../../../global/CONSTANTS'
 
 export default SelectJob
 
 function SelectJob (): JSX.Element {
-    const { userSelect, userSelectDispatch } = useContext(userSelectContext)
-    const { slideControllerDispatch } = useContext(slideControllerContext)
-    const { numberOfPlayers, currentPlayer, playersAttrs } = userSelect
+    const { gameProgress, gameProgressDispatch } = useContext(gameProgressContext)
+    const { UIStateDispatch } = useContext(UIStateContext)
+    const { numberOfPlayers, currentPlayer, playersAttrs } = gameProgress
     const { color, gender, job } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
-    const [selectedIdx, setSelectedIdx] = useState(jobArr.indexOf(job))
+    const [selectedIdx, setSelectedIdx] = useState(BASICJOBLIST.indexOf(job))
     const [isLeave, toggleIsLeave] = useState(false)
 
     function handleKeyUp (e: React.KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup': {
             const newIdx = selectedIdx === 0 ? 4 : selectedIdx - 1
-            userSelectDispatch({
-                type: 'currentJob',
-                payload: jobArr[newIdx]
+            UIStateDispatch({
+                type: 'selectedJob',
+                payload: BASICJOBLIST[newIdx]
             })
             setSelectedIdx(newIdx)
             break
         }
         case 'arrowdown': {
             const newIdx = selectedIdx === 4 ? 0 : selectedIdx + 1
-            userSelectDispatch({
-                type: 'currentJob',
-                payload: jobArr[newIdx]
+            UIStateDispatch({
+                type: 'selectedJob',
+                payload: BASICJOBLIST[newIdx]
             })
             setSelectedIdx(newIdx)
             break
         }
         case 'd':
             if (currentPlayer === numberOfPlayers) {
-                slideControllerDispatch({
-                    type: 'titleArea',
-                    payload: true
+                UIStateDispatch({
+                    type: 'showTitleArea',
+                    payload: false
                 })
             }
 
             toggleIsLeave(true)
             break
         case 'x':
-            userSelectDispatch({
-                type: 'currentJob',
+            UIStateDispatch({
+                type: 'selectedJob',
                 payload: ''
             })
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
-                payload: numberOfPlayers >= currentPlayer ? 'SelectColor' : 'NPCGenerateDialog'
+                payload: numberOfPlayers >= currentPlayer ?
+                            'SelectColor' : 'NPCGenerateDialog'
             })
             break
         default:
@@ -76,21 +76,21 @@ function SelectJob (): JSX.Element {
             return
         }
         if (e.animationName.includes('slideRight')) {
-            userSelectDispatch({
+            gameProgressDispatch({
                 type: 'job',
-                payload: jobArr[selectedIdx]
+                payload: BASICJOBLIST[selectedIdx]
             })
             const nextStep = determineNextStep()
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
                 payload: nextStep
             })
 
             if (nextStep === 'NPCGenerateDialog') return
             const newCurrentPlayer = currentPlayer + 1
-            userSelectDispatch({
+            gameProgressDispatch({
                 type: 'currentPlayer',
-                payload: String(newCurrentPlayer)
+                payload: newCurrentPlayer
             })
         }
     }
@@ -101,7 +101,7 @@ function SelectJob (): JSX.Element {
             jobRows.push(
                 <JobBtn
                     name={chinese}
-                    selected={job === jobArr[selectedIdx]}
+                    selected={job === BASICJOBLIST[selectedIdx]}
                     key={job}
                 />
             )
@@ -121,7 +121,7 @@ function SelectJob (): JSX.Element {
         >
             <ExampleCharacterImg
                 color={color}
-                job={jobArr[selectedIdx]}
+                job={BASICJOBLIST[selectedIdx]}
                 gender={gender}
                 isFadeOut={isLeave}
             />

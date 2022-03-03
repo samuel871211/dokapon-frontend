@@ -1,5 +1,6 @@
 import React, { useState, useRef, useContext } from 'react'
-import { userSelectContext } from '../../../reducers/userSelect'
+import { gameProgressContext } from '../../../reducers/gameProgress'
+import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
 import globalStyles from '../../../global/styles.module.css'
 import styles from './index.module.css'
@@ -9,11 +10,12 @@ const typeToCN = { period: '期間', money: '金額' }
 export default GoalInputDialog
 
 function GoalInputDialog (): JSX.Element {
-    const { userSelectDispatch, userSelect } = useContext(userSelectContext)
-    const { goalType: type, goalInput: initGoalInput } = userSelect
+    const { gameProgress, gameProgressDispatch } = useContext(gameProgressContext)
+    const { UIStateDispatch } = useContext(UIStateContext)
+    const { goalType, goalInput: initGoalInput } = gameProgress
     const [isLeave, toggleIsleave] = useState(false)
-    const goalInputLen = type === 'period' ? 3 : 9
-    const goalUnit = type === 'period' ? '週' : '¥'
+    const goalInputLen = goalType === 'period' ? 3 : 9
+    const goalUnit = goalType === 'period' ? '週' : '¥'
     const focusElement = useRef<HTMLDivElement>(null)
     const [goalInput, setGoalInput] = useState(initGoalInput)
     const [selectedIdx, setSelectedIdx] = useState(goalInputLen - 1)
@@ -65,18 +67,18 @@ function GoalInputDialog (): JSX.Element {
 
             toggleIsleave(true)
             focusElement.current.onanimationend = function handleNextComponent () {
-                userSelectDispatch({
+                gameProgressDispatch({
                     type: 'goalInput',
-                    payload: String(goalInput)
+                    payload: goalInput
                 })
-                userSelectDispatch({
+                UIStateDispatch({
                     type: 'currentStep',
                     payload: 'SelectNumberOfPlayers'
                 })
             }
             break
         case 'x':
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
                 payload: 'SelectGoalType'
             })
@@ -110,7 +112,7 @@ function GoalInputDialog (): JSX.Element {
                 <GoalInputBtn
                     text={numberToArray[i]}
                     selected={selectedIdx === i}
-                    type={type}
+                    type={goalType}
                     key={i}
                 />
             )
@@ -135,7 +137,7 @@ function GoalInputDialog (): JSX.Element {
                 ${styles.title}
                 ${globalStyles.xyCenter}`}
             >
-                目標{typeToCN[type]}
+                目標{typeToCN[goalType]}
             </div>
             <CustomBorderBottom/>
             <div
@@ -147,7 +149,7 @@ function GoalInputDialog (): JSX.Element {
                     className={`
                     ${globalStyles.xyCenter}
                     ${globalStyles.yellowBlock}
-                    ${type === 'money' ? styles.moneyBtnGroup : styles.durationBtnGroup }`}
+                    ${goalType === 'money' ? styles.moneyBtnGroup : styles.durationBtnGroup }`}
                 >
                     {generateInputBlocks()}
                 </div>

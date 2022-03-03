@@ -1,8 +1,7 @@
 import { useEffect, useState, useRef, useContext } from 'react'
-import styles from './ContextMenu.module.css'
-import gameArchive from '../api/gameArchive'
-import { userSelectContext } from '../reducers/userSelect'
-import { AxiosResponse } from 'axios'
+import styles from './index.module.css'
+import gameArchive from '../../api/gameArchive'
+import { gameProgressContext } from '../../reducers/gameProgress'
 
 export default ContextMenu
 
@@ -12,25 +11,25 @@ function ContextMenu (): JSX.Element {
     const writeFileMenu = useRef<HTMLDivElement>(null)
     const readFileMenu = useRef<HTMLDivElement>(null)
     const fileInput = useRef<HTMLInputElement>(null)
-    const { userSelect } = useContext(userSelectContext)
+    const { gameProgress } = useContext(gameProgressContext)
     const [ctxMenuPos, setCtxMenuPos] = useState({ x: -1, y: -1 })
-    const [innerMenuPos, setInnerMenuPos] = useState({ x: 238, y: -3 })
+    const [innerMenuPos, setInnerMenuPos] = useState({ x: 188, y: -3 })
     const [ctxMenuOpen, toggleCtxMenuOpen] = useState(false)
     const [writeFileMenuOpen, toggleWriteFileMenuOpen] = useState(false)
     const [readFileMenuOpen, toggleReadFileMenuOpen] = useState(false)
     const [selectedSlotIdx, setSelectedSlotIdx] = useState({ value: 0 })
     const [slotsTimeStamp, setSlotsTimeStamp] = useState([
-        { timeStamp: '空的' },
-        { timeStamp: '空的' },
-        { timeStamp: '空的' },
-        { timeStamp: '空的' },
-        { timeStamp: '空的' },
-        { timeStamp: '空的' },
-        { timeStamp: '空的' },
-        { timeStamp: '空的' },
-        { timeStamp: '空的' },
-        { timeStamp: '空的' },
-        { timeStamp: '空的' },
+        { timeStamp: '' },
+        { timeStamp: '' },
+        { timeStamp: '' },
+        { timeStamp: '' },
+        { timeStamp: '' },
+        { timeStamp: '' },
+        { timeStamp: '' },
+        { timeStamp: '' },
+        { timeStamp: '' },
+        { timeStamp: '' },
+        { timeStamp: '' },
     ])
 
     function browseFile (): void {
@@ -54,7 +53,7 @@ function ContextMenu (): JSX.Element {
         setSelectedSlotIdx({ value: slotIdx })
         toggleCtxMenuOpen(false)
         toggleWriteFileMenuOpen(false)
-        const response = await gameArchive.put(slotIdx, userSelect)
+        const response = await gameArchive.put(slotIdx, gameProgress)
         console.log(response)
     }
     /**
@@ -91,14 +90,14 @@ function ContextMenu (): JSX.Element {
         const secondQuadrant = remainWidth < writeFileMenuWidth && remainHeight < writeFileMenuHeight
         const thirdQuadrant = remainWidth < writeFileMenuWidth && remainHeight >= writeFileMenuHeight
         const menuItemHeight = (menuItem.current?.offsetHeight || 0) + 10
-        const finalPos = { x: 238, y: -3 }
+        const finalPos = { x: 188, y: -3 }
         if (firstQuadrant) {
             finalPos.y -= (writeFileMenu.current.clientHeight - menuItemHeight)
         } else if (secondQuadrant) {
-            finalPos.x -= (writeFileMenu.current.clientWidth * 2 - 5)
+            finalPos.x -= (writeFileMenu.current.clientWidth * 2 - 5 - 50)
             finalPos.y -= (writeFileMenu.current.clientHeight - menuItemHeight)
         } else if (thirdQuadrant) {
-            finalPos.x -= (writeFileMenu.current.clientWidth * 2 - 5)
+            finalPos.x -= (writeFileMenu.current.clientWidth * 2 - 5 - 50)
         }
         setInnerMenuPos(finalPos)
     }
@@ -123,14 +122,14 @@ function ContextMenu (): JSX.Element {
         const secondQuadrant = remainWidth < readFileMenuWidth && remainHeight < readFileMenuHeight
         const thirdQuadrant = remainWidth < readFileMenuWidth && remainHeight >= readFileMenuHeight
         const menuItemHeight = (menuItem.current?.offsetHeight || 0) + 5
-        const finalPos = { x: 238, y: -3 + menuItemHeight }
+        const finalPos = { x: 188, y: -3 + menuItemHeight }
         if (firstQuadrant) {
             finalPos.y -= (readFileMenu.current.clientHeight - menuItemHeight - 5)
         } else if (secondQuadrant) {
-            finalPos.x -= (readFileMenu.current.clientWidth * 2 - 5)
+            finalPos.x -= (readFileMenu.current.clientWidth * 2 - 5 - 50)
             finalPos.y -= (readFileMenu.current.clientHeight - menuItemHeight - 5)
         } else if (thirdQuadrant) {
-            finalPos.x -= (readFileMenu.current.clientWidth * 2 - 5)
+            finalPos.x -= (readFileMenu.current.clientWidth * 2 - 5 - 50)
         }
         setInnerMenuPos(finalPos)
     }
@@ -182,13 +181,13 @@ function ContextMenu (): JSX.Element {
             const newSlotsTimeStamp = [ ...slotsTimeStamp ]
             if (res1.status === 200) {
                 for (let i = 0; i <= 9; i++) {
-                    newSlotsTimeStamp[i].timeStamp = ((res1 as AxiosResponse).data as typeof userSelect[])[i].timeStamp
+                    newSlotsTimeStamp[i].timeStamp = res1.data[i].timeStamp
                 }
             }
             if (res2.status === 200) {
-                newSlotsTimeStamp[10].timeStamp = ((res2 as AxiosResponse).data as typeof userSelect).timeStamp
+                newSlotsTimeStamp[10].timeStamp = res2.data?.timeStamp || ''
             } else if (res2.status === 404) {
-                newSlotsTimeStamp[10].timeStamp = '空的'
+                newSlotsTimeStamp[10].timeStamp = ''
             }
             setSlotsTimeStamp(newSlotsTimeStamp)
         })
@@ -267,7 +266,7 @@ function ContextMenu (): JSX.Element {
                     <span
                         className={`
                         ${styles.menuItem}
-                        ${slotsTimeStamp[0].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        ${slotsTimeStamp[0].timeStamp === '' ? styles.menuItemDisabled : ''}
                         `}
                         onClick={(e) => readFileFromSlot(0)}
                     >
@@ -276,7 +275,7 @@ function ContextMenu (): JSX.Element {
                     <span
                         className={`
                         ${styles.menuItem}
-                        ${slotsTimeStamp[1].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        ${slotsTimeStamp[1].timeStamp === '' ? styles.menuItemDisabled : ''}
                         `}
                         onClick={(e) => readFileFromSlot(1)}
                     >
@@ -285,7 +284,7 @@ function ContextMenu (): JSX.Element {
                     <span
                         className={`
                         ${styles.menuItem}
-                        ${slotsTimeStamp[2].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        ${slotsTimeStamp[2].timeStamp === '' ? styles.menuItemDisabled : ''}
                         `}
                         onClick={(e) => readFileFromSlot(2)}
                     >
@@ -294,7 +293,7 @@ function ContextMenu (): JSX.Element {
                     <span
                         className={`
                         ${styles.menuItem}
-                        ${slotsTimeStamp[3].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        ${slotsTimeStamp[3].timeStamp === '' ? styles.menuItemDisabled : ''}
                         `}
                         onClick={(e) => readFileFromSlot(3)}
                     >
@@ -303,7 +302,7 @@ function ContextMenu (): JSX.Element {
                     <span
                         className={`
                         ${styles.menuItem}
-                        ${slotsTimeStamp[4].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        ${slotsTimeStamp[4].timeStamp === '' ? styles.menuItemDisabled : ''}
                         `}
                         onClick={(e) => readFileFromSlot(4)}
                     >
@@ -312,7 +311,7 @@ function ContextMenu (): JSX.Element {
                     <span
                         className={`
                         ${styles.menuItem}
-                        ${slotsTimeStamp[5].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        ${slotsTimeStamp[5].timeStamp === '' ? styles.menuItemDisabled : ''}
                         `}
                         onClick={(e) => readFileFromSlot(5)}
                     >
@@ -321,7 +320,7 @@ function ContextMenu (): JSX.Element {
                     <span
                         className={`
                         ${styles.menuItem}
-                        ${slotsTimeStamp[6].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        ${slotsTimeStamp[6].timeStamp === '' ? styles.menuItemDisabled : ''}
                         `}
                         onClick={(e) => readFileFromSlot(6)}
                     >
@@ -330,7 +329,7 @@ function ContextMenu (): JSX.Element {
                     <span
                         className={`
                         ${styles.menuItem}
-                        ${slotsTimeStamp[7].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        ${slotsTimeStamp[7].timeStamp === '' ? styles.menuItemDisabled : ''}
                         `}
                         onClick={(e) => readFileFromSlot(7)}
                     >
@@ -339,7 +338,7 @@ function ContextMenu (): JSX.Element {
                     <span
                         className={`
                         ${styles.menuItem}
-                        ${slotsTimeStamp[8].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        ${slotsTimeStamp[8].timeStamp === '' ? styles.menuItemDisabled : ''}
                         `}
                         onClick={(e) => readFileFromSlot(8)}
                     >
@@ -348,7 +347,7 @@ function ContextMenu (): JSX.Element {
                     <span
                         className={`
                         ${styles.menuItem}
-                        ${slotsTimeStamp[9].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        ${slotsTimeStamp[9].timeStamp === '' ? styles.menuItemDisabled : ''}
                         `}
                         onClick={(e) => readFileFromSlot(9)}
                     >
@@ -357,7 +356,7 @@ function ContextMenu (): JSX.Element {
                     <span
                         className={`
                         ${styles.menuItem}
-                        ${slotsTimeStamp[10].timeStamp === '空的' ? styles.menuItemDisabled : ''}
+                        ${slotsTimeStamp[10].timeStamp === '' ? styles.menuItemDisabled : ''}
                         `}
                         onClick={(e) => readBackUp()}
                     >

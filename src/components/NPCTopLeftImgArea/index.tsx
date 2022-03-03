@@ -1,12 +1,11 @@
 import { useContext } from 'react'
 import styles from './index.module.css'
-import { slideControllerContext } from '../../reducers/slideController'
+import { UIStateContext } from '../../reducers/SelectCharacter/UIState'
 
 export default NPCTopLeftImgArea
 
 function NPCTopLeftImgArea (props: { src: string, alt: string }): JSX.Element {
-    const { slideState } = useContext(slideControllerContext)
-    const { NPCTopLeftImgArea } = slideState
+    const { UIState: { showNPCTopLeftImgArea } } = useContext(UIStateContext)
     const { src, alt } = props
     
     // template
@@ -14,7 +13,7 @@ function NPCTopLeftImgArea (props: { src: string, alt: string }): JSX.Element {
         <div
             className={`
             ${styles.container}
-            ${NPCTopLeftImgArea ? styles.leave : ''}`}
+            ${showNPCTopLeftImgArea ? '' : styles.leave}`}
         >
             <div className={styles.biggestSquare}>
                 <img src={src} alt={alt} className={styles.guideImg}/>

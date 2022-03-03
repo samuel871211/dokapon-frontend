@@ -3,57 +3,58 @@ import globalStyles from '../../../global/styles.module.css'
 import styles from './index.module.css'
 import { getRandomInt } from '../../../global/math'
 import React, { useState, useRef, useContext, useEffect } from 'react'
-import { userSelectContext } from '../../../reducers/userSelect'
+import { gameProgressContext } from '../../../reducers/gameProgress'
+import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import { COLORS, BASICJOBS, NPCLEVELS } from '../../../global/characters'
 import japaneseChars from '../../../global/japaneseChars'
+import Dokapon from '../../../global'
+import { COLORLIST, BASICJOBLIST, NPCLEVELLIST, GENDERLIST } from '../../../global/CONSTANTS'
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
-type colorTypes = 'red' | 'orange' | 'yellow' |
-            'lightGreen' | 'darkGreen' | 'lightBlue' |
-            'darkBlue' | 'pink' | 'gray' | 'white'
-type basicJobTypes = 'warrior' | 'magician' | 'thief' | 'cleric' | 'beginner'
-type npclevelTypes = 'weak' | 'normal' | 'strong'
 
 export default NPCGenerateDialog
 
 function NPCGenerateDialog (): JSX.Element {
-    const { userSelect, userSelectDispatch } = useContext(userSelectContext)
-    const { currentPlayer, playersAttrs, numberOfPlayers } = userSelect
-    const { gender, color, job, npcLevel, npcAttrsReGenerated } = playersAttrs[currentPlayer - 1]
+    const { gameProgress, gameProgressDispatch } = useContext(gameProgressContext)
+    const { currentPlayer, playersAttrs, numberOfPlayers } = gameProgress
+    const { UIState, UIStateDispatch } = useContext(UIStateContext)
+    const { npcsAttrsRegenerated } = UIState
+    const currentPlayerAttrs = playersAttrs[currentPlayer - 1]
+    const { gender, color, job, npcLevel } = currentPlayerAttrs
     const focusElement = useRef<HTMLDivElement>(null)
     const [selectedIdx, setSelectedIdx] = useState(4)
     const [isLeave, toggleIsLeave] = useState(false)
 
     useEffect(function reGenerateNPCAttrs () {
-        if (npcAttrsReGenerated) return
+        if (npcsAttrsRegenerated[currentPlayer - 1]) return
 
-        const colorList = Object.keys(COLORS)
-        const jobList = Object.keys(BASICJOBS)
-        const npcLevelList = Object.keys(NPCLEVELS);
-        (function removeUsedColors () {
-            for (let playerIdx = 1; playerIdx < currentPlayer; playerIdx++) {
-                const usedColor = playersAttrs[playerIdx - 1].color
-                colorList.splice(colorList.indexOf(usedColor), 1)
-            }
-        })()
-        userSelectDispatch({
+        function removeUsedColors (colorList: Dokapon.ColorTypes[]): Dokapon.ColorTypes[] {
+            playersAttrs.forEach(attrs => {
+                colorList.splice(colorList.indexOf(attrs.color), 1)
+            })
+            return colorList
+        }
+        const colorList = removeUsedColors([ ...COLORLIST ])
+        gameProgressDispatch({
             type: 'color',
             payload: colorList[getRandomInt(0, colorList.length - 1)]
         })
-        userSelectDispatch({
+        gameProgressDispatch({
             type: 'job',
-            payload: jobList[getRandomInt(0, jobList.length - 1)]
+            payload: BASICJOBLIST[getRandomInt(0, BASICJOBLIST.length - 1)]
         })
-        userSelectDispatch({
+        gameProgressDispatch({
             type: 'npcLevel',
-            payload: npcLevelList[getRandomInt(0, npcLevelList.length - 1)]
+            payload: NPCLEVELLIST[getRandomInt(0, NPCLEVELLIST.length - 1)]
         })
-        userSelectDispatch({
+        gameProgressDispatch({
             type: 'gender',
-            payload: getRandomInt(0, 1) === 0 ? 'male' : 'female'
+            payload: GENDERLIST[getRandomInt(0, GENDERLIST.length - 1)]
         })
-        userSelectDispatch({
-            type: 'npcAttrsReGenerated',
-            payload: ''
+        const newPayload: typeof npcsAttrsRegenerated = [ ...npcsAttrsRegenerated ]
+        newPayload[currentPlayer - 1] = true
+        UIStateDispatch({
+            type: 'npcsAttrsRegenerated',
+            payload: newPayload
         })
     }, [])
 
@@ -71,46 +72,46 @@ function NPCGenerateDialog (): JSX.Element {
             focusElement.current.onanimationend = function handleConfirm () {
                 switch (selectedIdx) {
                 case 0:
-                    userSelectDispatch({
+                    UIStateDispatch({
                         type: 'currentStep',
                         payload: 'SelectNPCLevel'
                     })
                     break
                 case 1:
-                    userSelectDispatch({
+                    UIStateDispatch({
                         type: 'currentStep',
                         payload: 'SelectGender'
                     })
                     break
                 case 2:
-                    userSelectDispatch({
+                    UIStateDispatch({
                         type: 'currentStep',
                         payload: 'SelectColor'
                     })
                     break
                 case 3:
-                    userSelectDispatch({
+                    UIStateDispatch({
                         type: 'currentStep',
                         payload: 'SelectJob'
                     })
                     break
                 case 4:
-                    userSelectDispatch({
-                        type: 'nameInput',
+                    gameProgressDispatch({
+                        type: 'name',
                         payload: generateRandomName()
                     })
                     if (currentPlayer === 4) {
-                        userSelectDispatch({
+                        UIStateDispatch({
                             type: 'currentStep',
                             payload: 'PlayerAttrsCollected'
                         })
                     }
                     if (currentPlayer !== 4) {
-                        userSelectDispatch({
+                        gameProgressDispatch({
                             type: 'currentPlayer',
-                            payload: String(currentPlayer + 1)
+                            payload: currentPlayer + 1
                         })
-                        userSelectDispatch({
+                        UIStateDispatch({
                             type: 'currentStep',
                             payload: 'BeforeNPCGenerateDialog'
                         })
@@ -126,11 +127,11 @@ function NPCGenerateDialog (): JSX.Element {
             toggleIsLeave(true)
             focusElement.current.onanimationend = function handleCancel () {
                 const newCurrentPlayer = currentPlayer - 1
-                userSelectDispatch({
+                gameProgressDispatch({
                     type: 'currentPlayer',
-                    payload: String(newCurrentPlayer)
+                    payload: newCurrentPlayer
                 })
-                userSelectDispatch({
+                UIStateDispatch({
                     type: 'currentStep',
                     payload: newCurrentPlayer === numberOfPlayers ? 'SelectJob' : 'BeforeNPCGenerateDialog'
                 })
@@ -172,7 +173,7 @@ function NPCGenerateDialog (): JSX.Element {
                 <div className={styles.btnGroup}>
                     <Btn
                         selected={selectedIdx === 0}
-                        content={npcLevel === '' ? '弱' : NPCLEVELS[npcLevel as npclevelTypes].chinese}
+                        content={npcLevel === '' ? '' : NPCLEVELS[npcLevel].chinese}
                     />
                     <Btn
                         selected={selectedIdx === 1}
@@ -180,11 +181,11 @@ function NPCGenerateDialog (): JSX.Element {
                     />
                     <Btn
                         selected={selectedIdx === 2}
-                        content={COLORS[color as colorTypes]?.chinese || ''}
+                        content={COLORS[color].chinese}
                     />
                     <Btn
                         selected={selectedIdx === 3}
-                        content={BASICJOBS[job as basicJobTypes]?.chinese || ''}
+                        content={BASICJOBS[job]?.chinese || ''}
                     />
                     <ConfirmBtn
                         selected={selectedIdx === 4}
@@ -244,7 +245,7 @@ function generateRandomName(): string {
         ...japaneseChars.katakana[1],
         ...japaneseChars.special[0],
         ...japaneseChars.special[1]
-    ].filter(char => char !== '　')
+    ].filter(char => char !== '')
 
     let result = ''
     for (let i = 1; i <= nameLength; i++) {

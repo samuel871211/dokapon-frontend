@@ -1,18 +1,17 @@
 import axios from 'axios'
-import { userSelect } from '../reducers/userSelect'
+import Dokapon from '../global'
 
 const gameArchiveAPI = axios.create({
     baseURL: `${process.env.REACT_APP_BACKEND_BASEURL || ''}/gameArchive`,
     timeout: 3000,
     headers: { 'content-type': 'application/json' }
 })
+type response = { status: number, data: Dokapon.GameProgress | null }
+
 class gameArchive {
-    constructor () {
-        //
-    }
-    async get (): Promise<{ status: number, data: userSelect[] }> {
+    async get (): Promise<{ status: number, data: Dokapon.GameProgress[] }> {
         try {
-            const response = await gameArchiveAPI.get<userSelect[]>('/')
+            const response = await gameArchiveAPI.get<Dokapon.GameProgress[]>('/')
             return { status: response.status, data: response.data }
         } catch (e: any) {
             if (axios.isAxiosError(e) && e.response) {
@@ -22,9 +21,9 @@ class gameArchive {
             return { status: 500, data: [] }
         }
     }
-    async findBackup (slotIdx: number): Promise<{ status: number, data: userSelect | null }> {
+    async findBackup (slotIdx: number): Promise<response> {
         try {
-            const response = await gameArchiveAPI.get<userSelect>(`backup/${slotIdx}`)
+            const response = await gameArchiveAPI.get<Dokapon.GameProgress>(`backup/${slotIdx}`)
             return { status: response.status, data: response.data }
         } catch (e: any) {
             if (axios.isAxiosError(e) && e.response) {
@@ -34,9 +33,9 @@ class gameArchive {
             return { status: 500, data: null }
         }
     }
-    async find (slotIdx: number): Promise<{ status: number, data: userSelect | null }> {
+    async find (slotIdx: number): Promise<response> {
         try {
-            const response = await gameArchiveAPI.get<userSelect>(`/${slotIdx}`)
+            const response = await gameArchiveAPI.get<Dokapon.GameProgress>(`/${slotIdx}`)
             return { status: response.status, data: response.data }
         } catch (e: any) {
             if (axios.isAxiosError(e) && e.response) {
@@ -46,9 +45,9 @@ class gameArchive {
             return { status: 500, data: null }
         }
     }
-    async put (slotIdx: number, data: userSelect): Promise<{ status: number, data: userSelect | null }> {
+    async put (slotIdx: number, data: Dokapon.GameProgress): Promise<response> {
         try {
-            const response = await gameArchiveAPI.put<userSelect>(`/${slotIdx}`, data )
+            const response = await gameArchiveAPI.put<Dokapon.GameProgress>(`/${slotIdx}`, data )
             return { status: response.status, data: response.data }
         } catch (e: any) {
             if (axios.isAxiosError(e) && e.response) {

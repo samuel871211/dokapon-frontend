@@ -1,7 +1,7 @@
 import React, { useRef, useState, useContext } from 'react'
 
-import { userSelectContext } from '../../../reducers/userSelect'
-import { slideControllerContext } from '../../../reducers/slideController'
+import { gameProgressContext } from '../../../reducers/gameProgress'
+import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import globalStyles from '../../../global/styles.module.css'
 import styles from './index.module.css'
 type gender = 'male' | 'female'
@@ -11,9 +11,9 @@ const genderToCN = { male: '男', female: '女' }
 export default SelectGender
 function SelectGender (): JSX.Element {
     const focusElement = useRef<HTMLDivElement>(null)
-    const { userSelect, userSelectDispatch } = useContext(userSelectContext)
-    const { currentPlayer, numberOfPlayers } = userSelect
-    const { slideControllerDispatch } = useContext(slideControllerContext)
+    const { gameProgress, gameProgressDispatch } = useContext(gameProgressContext)
+    const { UIStateDispatch } = useContext(UIStateContext)
+    const { currentPlayer, numberOfPlayers } = gameProgress
     const [isLeave, toggleIsLeave] = useState(false)
     const [selectedGender, toggleSelectedGender] = useState<gender>('male')
 
@@ -27,28 +27,29 @@ function SelectGender (): JSX.Element {
             break
         case 'd':
             toggleIsLeave(true)
-            slideControllerDispatch({
-                type: 'titleArea',
-                payload: true
+            UIStateDispatch({
+                type: 'showTitleArea',
+                payload: false
             })
             break
         case 'x': {
-            let nextStep = ''
-            if (currentPlayer === 1) nextStep = 'SelectNumberOfPlayers'
-            else if (numberOfPlayers >= currentPlayer) nextStep = 'SelectJob'
-            else if (numberOfPlayers < currentPlayer) nextStep = 'NPCGenerateDialog'
+            const nextStep = (function determineNextStep (): Dokapon.SelectCharacter.Steps {
+                if (currentPlayer === 1) return 'SelectNumberOfPlayers'
+                else if (numberOfPlayers >= currentPlayer) return 'SelectJob'
+                else return 'NPCGenerateDialog'
+            })()
 
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
                 payload: nextStep
             })
             if (nextStep === 'SelectJob') {
-                userSelectDispatch({
+                gameProgressDispatch({
                     type: 'currentPlayer',
-                    payload: String(currentPlayer - 1)
+                    payload: currentPlayer - 1
                 })
-                userSelectDispatch({
-                    type: 'currentJob',
+                UIStateDispatch({
+                    type: 'selectedJob',
                     payload: ''
                 })
             }
@@ -66,17 +67,18 @@ function SelectGender (): JSX.Element {
 
         if (e.animationName.includes('slideRight')) {
             toggleIsLeave(false)
-            slideControllerDispatch({
-                type: 'titleArea',
-                payload: false
+            UIStateDispatch({
+                type: 'showTitleArea',
+                payload: true
             })
-            userSelectDispatch({
+            gameProgressDispatch({
                 type: 'gender',
                 payload: selectedGender
             })
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
-                payload: numberOfPlayers >= currentPlayer ? 'BeforeNameInput' : 'NPCGenerateDialog'
+                payload: numberOfPlayers >= currentPlayer ?
+                            'BeforeNameInput' : 'NPCGenerateDialog'
             })
         }
     }

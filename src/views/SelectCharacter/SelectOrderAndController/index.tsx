@@ -2,16 +2,11 @@ import { useContext, useLayoutEffect, useRef, useState } from 'react'
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
 import globalStyles from '../../../global/styles.module.css'
 import styles from './index.module.css'
-import { userSelectContext, steps } from '../../../reducers/userSelect'
-import { slideControllerContext } from '../../../reducers/slideController'
+import { gameProgressContext } from '../../../reducers/gameProgress'
+import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import { NPCLEVELS } from '../../../global/characters'
 import { shuffle } from '../../../global/math'
-type genderTypes = 'male' | 'female'
-type jobTypes = 'warrior' | 'magician' | 'cleric' | 'thief' | 'beginner'
-type colorTypes = 'red' | 'orange' | 'yellow' | 
-                    'lightGreen' | 'darkGreen' | 'lightBlue' |
-                    'darkBlue' | 'pink' | 'gray' | 'white'
-type npcLevelTypes = 'weak' | 'normal' | 'strong' | ''
+
 
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
 
@@ -24,10 +19,16 @@ function SelectOrderAndController (): JSX.Element {
     const [shuffleInterval, setShuffleInterval] = useState<number>()
     const [shuffleIndexes, setShuffleIndexes] = useState([0, 1, 2, 3])
     const [selectedPlayerCard, setSelectedPlayerCard] = useState(1)
-    const [controllerNumbers, setControllerNumbers] = useState([1, 1, 1, 1])
-    const { userSelect, userSelectDispatch } = useContext(userSelectContext)
-    const { slideControllerDispatch } = useContext(slideControllerContext)
-    const { numberOfPlayers, currentStep, playersAttrs, confirmDialogSelectedIdx } = userSelect
+    const { gameProgress, gameProgressDispatch } = useContext(gameProgressContext)
+    const [controllerNumbers, setControllerNumbers] = useState([
+        gameProgress.playersAttrs[0].controllerNumber,
+        gameProgress.playersAttrs[1].controllerNumber,
+        gameProgress.playersAttrs[2].controllerNumber,
+        gameProgress.playersAttrs[3].controllerNumber
+    ])
+    const { UIState, UIStateDispatch } = useContext(UIStateContext)
+    const { currentStep, confirmDialogSelectedIdx } = UIState
+    const { numberOfPlayers, playersAttrs } = gameProgress
     const handleKeyUpAttrs = (function () {
         switch (currentStep) {
         case 'PlayerAttrsCollected':
@@ -59,7 +60,7 @@ function SelectOrderAndController (): JSX.Element {
         }
 
         if (e.animationName === styles.containerSlideOut) {
-            userSelectDispatch({
+            UIStateDispatch({
                 type: 'currentStep',
                 payload: 'SelectOrderStep3'
             })
@@ -121,17 +122,17 @@ function SelectOrderAndController (): JSX.Element {
                 break
             }
             case 'd':
-                userSelectDispatch({
+                gameProgressDispatch({
                     type: 'controllerNumber',
-                    payload: String(controllerNumbers)
+                    payload: controllerNumbers
                 })
-                userSelectDispatch({
+                UIStateDispatch({
                     type: 'currentStep',
                     payload: 'SelectControllerConfirm'
                 })
                 break
             case 'x':
-                userSelectDispatch({
+                UIStateDispatch({
                     type: 'currentStep',
                     payload: 'BeforeNPCGenerateDialog'
                 })
@@ -144,16 +145,15 @@ function SelectOrderAndController (): JSX.Element {
             switch (e.key.toLowerCase()) {
             case 'arrowup':
             case 'arrowdown':
-                userSelectDispatch({
+                UIStateDispatch({
                     type: 'confirmDialogSelectedIdx',
-                    payload: confirmDialogSelectedIdx === 1 ?
-                        String(0) : String(1)
+                    payload: confirmDialogSelectedIdx === 1 ? 0 : 1
                 })
                 break
             case 'd':
-                slideControllerDispatch({
-                    type: 'confirmDialog',
-                    payload: true
+                UIStateDispatch({
+                    type: 'showConfirmDialog',
+                    payload: false
                 })
             }
             return
@@ -164,11 +164,11 @@ function SelectOrderAndController (): JSX.Element {
             case 'd':
                 clearInterval(shuffleInterval)
                 setShuffleInterval(undefined)
-                userSelectDispatch({
-                    type: 'orderShuffle',
-                    payload: String(shuffleIndexes)
+                gameProgressDispatch({
+                    type: 'shuffle',
+                    payload: shuffleIndexes
                 })
-                userSelectDispatch({
+                UIStateDispatch({
                     type: 'currentStep',
                     payload: 'SelectOrderStep2'
                 })
@@ -176,7 +176,7 @@ function SelectOrderAndController (): JSX.Element {
             case 'x':
                 clearInterval(shuffleInterval)
                 setShuffleInterval(undefined)
-                userSelectDispatch({
+                UIStateDispatch({
                     type: 'currentStep',
                     payload: 'SelectControllerConfirm'
                 })
@@ -206,11 +206,11 @@ function SelectOrderAndController (): JSX.Element {
                     index={index}
                     shuffleIndex={shuffleIndexes[index]}
                     showOrderNumberIdx={showOrderNumberIdx}
-                    gender={attrs.gender as genderTypes}
-                    job={attrs.job as jobTypes}
-                    color={attrs.color as colorTypes}
-                    name={attrs.nameInput}
-                    npcLevel={attrs.npcLevel as npcLevelTypes}
+                    gender={attrs.gender}
+                    job={attrs.job}
+                    color={attrs.color}
+                    name={attrs.name}
+                    npcLevel={attrs.npcLevel}
                     controllerNumber={controllerNumbers[index]}
                     currentStep={currentStep}
                     numberOfPlayers={numberOfPlayers}
@@ -225,12 +225,12 @@ function PlayerCard (props: {
     index: number,
     shuffleIndex: number,
     showOrderNumberIdx: number,
-    gender: genderTypes,
-    job: jobTypes,
-    color: colorTypes,
+    gender: Dokapon.GenderTypes,
+    job: Dokapon.BasicJobTypes,
+    color: Dokapon.ColorTypes,
     name: string,
-    npcLevel: npcLevelTypes,
-    currentStep: steps,
+    npcLevel: Dokapon.NPCLevelTypes | '',
+    currentStep: Dokapon.SelectCharacter.Steps,
     numberOfPlayers: number,
     controllerNumber: number,
     selected: boolean

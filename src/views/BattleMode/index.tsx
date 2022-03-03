@@ -153,12 +153,7 @@ function BattleMode (): JSX.Element {
                 gender: 'female',
                 color: 'darkBlue'
             }).position(6700 - 40, 4840 - 110)
-            // window.onclick = function () {
-            //     graph.addCell(player)
-            // }
-            // graph.addCell(player)
-            // const el = new player().position(6700, 4840)
-            // graph.addCell(el)
+            graph.addCell(player)
         }
 
         // initial data

@@ -9,33 +9,46 @@ declare namespace Dokapon {
         'darkBlue' | 'pink' | 'gray' | 'white'
     type BasicJobTypes = 'warrior' | 'magician' |
         'thief' | 'cleric' | 'beginner'
-    type GoalTypes = 'period' | 'money'
     type NPCLevelTypes = 'weak' | 'normal' | 'strong'
     type GenderTypes = 'male' | 'female'
+    type GoalTypes = 'period' | 'money'
     type CharacterTypes = 'player' | 'monster'
     interface CharacterAttrs {
         gender: GenderTypes,
         name: string,
         color: ColorTypes,
-        job: BasicJobTypes
+        job: BasicJobTypes,
+        isNPC: boolean,
+        npcLevel : NPCLevelTypes | '',
+        controllerNumber: number,
     }
+    /**
+     * schema統一化，程式端會比較好管理
+     */
     interface PlayerAttrs extends CharacterAttrs {
         isNPC: false,
-        controllerNumber: 1 | 2 | 3 | 4,
+        npcLevel : '',
+        controllerNumber: number,
     }
     interface NPCAttrs extends CharacterAttrs {
         isNPC: true,
-        npcLevel: NPCLevelTypes
+        npcLevel: NPCLevelTypes,
+        controllerNumber: 0
     }
     interface MonsterAttrs extends CharacterAttrs {
-        isNPC: true
-        // 待補
+        isNPC: true,
+        npcLevel : NPCLevelTypes,
+        controllerNumber: 0
     }
     type GameProgress = {
+        /**
+         * 資料送到後端的時候才會產生
+         */
+        readonly timeStamp: string,
         goalType: GoalTypes,
         goalInput: number,
-        numberOfPlayers: 1 | 2 | 3 | 4,
-        currentPlayer: 1 | 2 | 3 | 4,
+        numberOfPlayers: number,
+        currentPlayer: number,
         playersAttrs: [
             PlayerAttrs | NPCAttrs,
             PlayerAttrs | NPCAttrs,
@@ -55,8 +68,11 @@ declare namespace Dokapon {
             type: 'goalInput',
             payload: number
         } | {
-            type: 'numberOfPlayers' | 'currentPlayer' | 'controllerNumber',
-            payload: 1 | 2 | 3 | 4
+            type: 'numberOfPlayers' | 'currentPlayer',
+            payload: number
+        } | {
+            type: 'controllerNumber' | 'shuffle',
+            payload: number[]
         } | {
             type: 'gender',
             payload: GenderTypes
@@ -100,9 +116,9 @@ declare namespace Dokapon {
             showNPCDialog: boolean,
             showConfirmDialog: boolean,
             showSelectCharacter: boolean,
-            selectedJob: Dokapon.BasicJobTypes,
-            confirmDialogSelctedIdx: 0 | 1,
-            npcAttrsRegenerated: [boolean, boolean, boolean, boolean],
+            selectedJob: Dokapon.BasicJobTypes | '',
+            confirmDialogSelectedIdx: number,
+            npcsAttrsRegenerated: [boolean, boolean, boolean, boolean],
             currentStep: Steps
         }
         type Action = {
@@ -115,19 +131,19 @@ declare namespace Dokapon {
             payload: boolean
         } | {
             type: 'selectedJob',
-            payload: State['selectedJob']
+            payload: UIState['selectedJob']
         } | {
-            type: 'confirmDialogSelctedIdx',
-            payload: State['confirmDialogSelctedIdx']
+            type: 'confirmDialogSelectedIdx',
+            payload: UIState['confirmDialogSelectedIdx']
         } | {
-            type: 'npcAttrsRegenerated',
-            payload: State['npcAttrsRegenerated']
+            type: 'npcsAttrsRegenerated',
+            payload: UIState['npcsAttrsRegenerated']
         } | {
             type: 'currentStep',
-            payload: State['currentStep']
+            payload: UIState['currentStep']
         }
         type Context = {
-            UIState: State,
+            UIState: UIState,
             UIStateDispatch: Dispatch<Action>
         }
     }

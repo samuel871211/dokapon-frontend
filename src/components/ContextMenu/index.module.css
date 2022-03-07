@@ -4,7 +4,6 @@
     background-color: #fee59a;
     border-radius: 10px;
     width: 200px;
-    z-index: 999;
     transition: opacity 0.25s;
 }
 .innerMenu {

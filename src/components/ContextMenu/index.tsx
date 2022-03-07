@@ -202,7 +202,8 @@ function ContextMenu (): JSX.Element {
             style={{
                 top: `${ctxMenuPos.y}px`,
                 left: `${ctxMenuPos.x}px`,
-                opacity: ctxMenuOpen ? 1 : 0
+                opacity: ctxMenuOpen ? 1 : 0,
+                zIndex: ctxMenuOpen ? 999 : 0
             }}
         >
             <input

@@ -3,6 +3,8 @@ import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
 import { getCells } from '../../api/graph'
 import { createCharacter } from '../../global/characters'
+// import ContextMenu from '../../components/ContextMenu'
+import Drawer from './Drawer'
 import './index.module.css'
 
 export default BattleMode
@@ -23,7 +25,7 @@ function BattleMode (): JSX.Element {
                 model: graph,
                 restrictTranslate: true,
                 background: {
-                    color: '#111'
+                    color: '#555'
                 },
                 gridSize: 1,
                 interactive: false,
@@ -173,11 +175,9 @@ function BattleMode (): JSX.Element {
     // template
     return (
         <Fragment>
-            <div
-                id='paper'
-                onContextMenu={(e) => e.preventDefault()}
-            ></div>
-            <div className='test'></div>
+            <div id='paper'></div>
+            {/* <ContextMenu/> */}
+            <Drawer/>
         </Fragment>
     )
 }

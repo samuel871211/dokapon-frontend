@@ -1,14 +1,19 @@
+:root {
+    --bgColor: #fee59a;
+    --hoverBgColor: #9bd65b;
+    --borderColor: #222222;
+}
+
 html, body, #root {
     padding: 0;
     margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: #35363a;
+    width: 100vw;
+    height: 100vh;
 }
 * {
+    font-family: Microsoft JhengHei;
+    font-weight: bold;
     box-sizing: border-box;
     outline: none;
     cursor: default;
 }
-

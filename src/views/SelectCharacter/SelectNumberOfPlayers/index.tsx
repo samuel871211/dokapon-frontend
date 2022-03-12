@@ -83,10 +83,7 @@ function SelectNumberOfPlayers (): JSX.Element {
     return (
         <div
             ref={focusElement}
-            className={`
-            ${styles.btnGroup}
-            ${globalStyles.xyCenter}
-            ${isLeave ? styles.leave : ''}`}
+            className={`${styles.btnGroup} ${isLeave ? styles.leave : ''}`}
             { ...keyDownAttrs() }
         >
             <NumberOfPlayersBtn playerNum={1} selected={selectedPlayerNum === 1}/>
@@ -112,12 +109,7 @@ function NumberOfPlayersBtn (props: { playerNum: number, selected: boolean }): J
         return icons
     }
     return (
-        <div
-            className={`
-            ${styles.btn}
-            ${globalStyles.yellowBlock}
-            ${selected ? globalStyles.hoverEffect : ''}`}
-        >
+        <div className={`${styles.btn} ${selected ? globalStyles.hoverEffect : ''}`}>
             {generateIcons()}
             <div className={styles.btnText}>
                 {digitToFullWidth[playerNum]}人

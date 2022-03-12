@@ -99,9 +99,7 @@ function SelectColor (): JSX.Element {
 
     return (
         <div
-            className={`
-            ${styles.container}
-            ${globalStyles.xyCenter}`}
+            className={styles.container}
             tabIndex={0}
             ref={focusElement}
             onBlur={(event) => event.target.focus()}
@@ -132,12 +130,7 @@ function ColorBtn (props: {
 }): JSX.Element {
     const { rgb, name, selected } = props
     return (
-        <div
-            className={`
-            ${styles.btn}
-            ${globalStyles.yellowBlock}
-            ${selected ? globalStyles.hoverEffect : ''}`}
-        >
+        <div className={`${styles.btn} ${selected ? globalStyles.hoverEffect : ''}`}>
             <div className={styles.circle} style={{ backgroundColor: rgb }}></div>
             <div className={styles.name}>{name}</div>
         </div>

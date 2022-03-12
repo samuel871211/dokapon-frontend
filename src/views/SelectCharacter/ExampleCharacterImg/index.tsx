@@ -29,11 +29,7 @@ function ExampleCharacterImg (props: {
     }
 
     return (
-        <div
-            className={`
-            ${styles.container}
-            ${globalStyles.xyCenter}`}
-        >
+        <div className={styles.container}>
             <img
                 src={`${prefix}/imgs/${job}_${gender}_${color}_front.png`}
                 className={`

@@ -251,11 +251,7 @@ function SelectCharacter (): JSX.Element {
     return (
         <gameProgressContext.Provider value={{ gameProgress, gameProgressDispatch }}>
         <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
-            <div
-                className={`
-                ${styles.container}
-                ${showSelectCharacter ? '' : styles.fadeOut}`}
-            >
+            <div className={`${styles.container} ${showSelectCharacter ? '' : styles.fadeOut}`}>
                 <ContextMenu/>
                 {currentStep === 'NameInputDialog' &&
                     <NameInputDialog/>

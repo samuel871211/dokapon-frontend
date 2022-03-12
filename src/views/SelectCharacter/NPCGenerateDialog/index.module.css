@@ -1,14 +1,17 @@
 .container {
     width: 85%;
     height: 100%;
-    margin: 5%;
+    margin: 5% auto 0 auto;
     display: flex;
     flex-direction: column;
     animation: slideLeft 1s;
+    border-radius: 1.5rem;
+    border: 0.2rem outset var(--border-color);
+    background-color: var(--bg-color);
 }
 .title {
-    font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    line-height: 4rem;
     text-align: center;
     width: 100%;
 }
@@ -18,6 +21,9 @@
 }
 .imgContainer {
     width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .imgContainer > img {
     background-color: #f4c36e;
@@ -34,14 +40,18 @@
 .btn {
     height: calc(100% / 6);
     width: 90%;
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 3rem;
+    border-radius: 9999px;
+    border: 0.2rem outset var(--border-color);
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .confirmBtn {
     background-color: #feac30;
     color: white;
-    font-weight: bold;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 0.15rem black;
 }
 .hoverEffect {
     animation: btnHoverFrom 500ms, btnHoverTo 500ms;
@@ -53,34 +63,18 @@
     animation: slideRight 1s;
 }
 @keyframes btnHoverFrom {
-    0% {
-        background-color: #9bd65b;
-    }
-    100% {
-        background-color: #feac30;
-    }
+    0% { background-color: #9bd65b }
+    100% { background-color: #feac30 }
 }
 @keyframes btnHoverTo {
-    0% {
-        background-color: #feac30;
-    }
-    100% {
-        background-color: #9bd65b;
-    }
+    0% { background-color: #feac30 }
+    100% { background-color: #9bd65b }
 }
 @keyframes slideLeft {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: none;
-    }
+    0% { transform: translateX(100%) }
+    100% { transform: none }
 }
 @keyframes slideRight {
-    0% {
-        transform: none;
-    }
-    100% {
-        transform: translateX(150%);
-    }
+    0% { transform: none }
+    100% { transform: translateX(150%) }
 }

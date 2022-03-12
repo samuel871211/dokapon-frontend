@@ -1,65 +1,9 @@
-import { Transition } from 'react-transition-group'
+// import { Transition } from 'react-transition-group'
 import AttrCircle from '../../../components/AttrCircle'
 import WatchLaterIcon from '@material-ui/icons/WatchLater'
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
 import styles from './index.module.css'
 const BACKENDURL = process.env.REACT_APP_BACKEND_BASEURL || ''
-const FAKEDATA = {
-    curMoney: 14700000,
-    curWeek: 100,
-    dayOfWeek: [
-        { chinese: '月', english: 'MON', event: '職安休' },
-        { chinese: '火', english: 'TUE', event: '職安休' },
-        { chinese: '水', english: 'WED', event: '職安休' },
-        { chinese: '木', english: 'THU', event: '職安休' },
-        { chinese: '金', english: 'FRI', event: '職安休' },
-        { chinese: '土', english: 'SAT', event: '職安休' },
-        { chinese: '日', english: 'SUN', event: '職安休' },
-    ],
-    playerAttrs: [{
-        ranking: 1,
-        level: 11,
-        attack: 50,
-        defense: 51,
-        magic: 52,
-        speed: 53,
-        hp: 1000,
-        curHp: 990,
-        name: '@@@'
-    }, {
-        ranking: 1,
-        level: 11,
-        attack: 50,
-        defense: 51,
-        magic: 52,
-        speed: 53,
-        hp: 1000,
-        curHp: 990,
-        name: '@@@'
-    }, {
-        ranking: 1,
-        level: 11,
-        attack: 50,
-        defense: 51,
-        magic: 52,
-        speed: 53,
-        hp: 1000,
-        curHp: 990,
-        name: '@@@'
-    }, {
-        ranking: 1,
-        level: 11,
-        attack: 50,
-        defense: 51,
-        magic: 52,
-        speed: 53,
-        hp: 1000,
-        curHp: 990,
-        name: '@@@'
-    }]
-
-}
-
 
 export default Drawer
 
@@ -119,7 +63,7 @@ function FloatingActionBtn (props: { selected: boolean }): JSX.Element {
                 />
             </div>
             <div style={{ opacity: selected ? 1 : 0 }}>
-                <div>育昇</div>
+                <div></div>
             </div>
         </div>
     )

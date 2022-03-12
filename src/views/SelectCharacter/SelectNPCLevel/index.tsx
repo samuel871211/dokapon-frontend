@@ -77,10 +77,7 @@ function SelectNPCLevel (): JSX.Element {
 
     return (
         <div
-            className={`
-            ${styles.container}
-            ${globalStyles.xyCenter}
-            ${isLeave ? styles.leave : ''}`}
+            className={`${styles.container} ${isLeave ? styles.leave : ''}`}
             tabIndex={0}
             ref={focusElement}
             onBlur={(event) => event.target.focus()}
@@ -101,13 +98,7 @@ function NPCLevelBtn (props: {
 }): JSX.Element {
     const { npcLevel, selected } = props
     return (
-        <div
-            className={`
-            ${styles.btn}
-            ${globalStyles.yellowBlock}
-            ${globalStyles.xyCenter}
-            ${selected ? globalStyles.hoverEffect : ''}`}
-        >
+        <div className={`${styles.btn} ${selected ? globalStyles.hoverEffect : ''}`}>
             {NPCLEVELS[npcLevel].chinese}
         </div> 
     )

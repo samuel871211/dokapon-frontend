@@ -122,34 +122,21 @@ function GoalInputDialog (): JSX.Element {
 
     return (
         <div
-            className={`
-            ${styles.container}
-            ${globalStyles.yellowBlock}
-            ${isLeave ? styles.leave : ''}`}
+            className={`${styles.container} ${isLeave ? styles.leave : ''}`}
             tabIndex={0}
             ref={focusElement}
             onBlur={(event) => event.target.focus()}
             onKeyUp={handleKeyUp}
             onAnimationEnd={handleAnimationEnd}
         >
-            <div
-                className={`
-                ${styles.title}
-                ${globalStyles.xyCenter}`}
-            >
+            <div className={styles.title}>
                 目標{typeToCN[goalType]}
             </div>
             <CustomBorderBottom/>
-            <div
-                className={`
-                ${globalStyles.xyCenter}
-                ${styles.bottom}`}
-            >
-                <div
-                    className={`
-                    ${globalStyles.xyCenter}
-                    ${globalStyles.yellowBlock}
-                    ${goalType === 'money' ? styles.moneyBtnGroup : styles.durationBtnGroup }`}
+            <div className={styles.bottom}>
+                <div 
+                    className={styles.btnGroup}
+                    style={{ width: goalType === 'money' ? '75%' : '30%' }}
                 >
                     {generateInputBlocks()}
                 </div>
@@ -167,10 +154,8 @@ function GoalInputBtn (props: {
     const { text, selected, type } = props
     return (
         <div
-            className={`
-            ${type === 'money' ? styles.moneyBtn : styles.durationBtn}
-            ${globalStyles.xyCenter}
-            ${selected ? globalStyles.hoverEffect : ''}`}
+            className={`${styles.btn} ${selected ? globalStyles.hoverEffect : ''}`}
+            style={{ width : type === 'money' ? 'calc(100% / 9)' : 'calc(100% / 3)' }}
         >
             {text}
         </div>

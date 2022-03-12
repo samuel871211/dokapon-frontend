@@ -111,9 +111,7 @@ function SelectJob (): JSX.Element {
 
     return (
         <div
-            className={`
-            ${styles.container}
-            ${globalStyles.xyCenter}`}
+            className={styles.container}
             tabIndex={0}
             ref={focusElement}
             onBlur={(event) => event.target.focus()}
@@ -140,13 +138,7 @@ function SelectJob (): JSX.Element {
 function JobBtn (props: { name: string, selected: boolean }): JSX.Element {
     const { name, selected } = props
     return (
-        <div
-            className={`
-            ${styles.btn}
-            ${globalStyles.yellowBlock}
-            ${globalStyles.xyCenter}
-            ${selected ? globalStyles.hoverEffect : ''}`}
-        >
+        <div className={`${styles.btn} ${selected ? globalStyles.hoverEffect : ''}`}>
             {name}
         </div>
     )

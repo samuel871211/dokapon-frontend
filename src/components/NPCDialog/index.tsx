@@ -190,20 +190,11 @@ function NPCDialog (props: {
             { ...handleKeyUpAttrs }
         >
             <div className={styles.nameArea}>
-                <div
-                    className={`
-                    ${styles.name}
-                    ${globalStyles.xyCenter}`}
-                >
+                <div className={styles.name}>
                     {name}
                 </div>
             </div>
-            <div
-                className={`
-                ${styles.messageArea}
-                ${globalStyles.xyCenter}
-                ${globalStyles.yellowBlock}`}
-            >
+            <div className={styles.messageArea}>
                 {splitMessage()}
                 {confirmBtnDisplay && <div className={styles.confirmCircle}></div>}
                 {confirmDialogDisplay &&

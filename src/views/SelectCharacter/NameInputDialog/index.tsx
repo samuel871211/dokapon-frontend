@@ -309,19 +309,10 @@ function NameInputDialog (): JSX.Element {
             onBlur={(event) => event.target.focus()}
             onKeyUp={handleKeyUp}
         >
-            <div
-                className={`
-                ${styles.nameDisplayArea}
-                ${globalStyles.xyCenter}
-                ${globalStyles.yellowBlock}`}
-            >
+            <div className={styles.nameDisplayArea}>
                 {generateNameInputWords()}
             </div>
-            <div
-                className={`
-                ${styles.keyboardArea}
-                ${globalStyles.yellowBlock}`}
-            >
+            <div className={styles.keyboardArea}>
                 <div className={styles.keyboardSection}>
                     {generateKeyBoardKeys(0)}
                 </div>
@@ -357,11 +348,7 @@ function KeyBoardKey (props: {
 }): JSX.Element {
     const { word, selected } = props
     return (
-        <div
-            className={`
-            ${styles.keyboardKey}
-            ${globalStyles.xyCenter}`}
-        >
+        <div className={styles.keyboardKey}>
             <span className={selected ? globalStyles.hoverEffect : ''}>{word}</span>
         </div>
     )
@@ -374,11 +361,7 @@ function NameInputWord (props: {
     const { word, current } = props
 
     return (
-        <div
-            className={`
-            ${styles.nameInputWord}
-            ${globalStyles.xyCenter}`}
-        >
+        <div className={styles.nameInputWord}>
             <span className={current ? globalStyles.hoverEffect : ''}>{word}</span>
             <div className={styles.bottomLine}></div>
         </div>

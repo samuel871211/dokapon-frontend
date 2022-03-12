@@ -2,7 +2,9 @@
     width: 80%;
     height: 80%;
     margin: auto;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btnGroup {
     display: flex;
@@ -19,35 +21,29 @@
     justify-content: space-between;
     width: 70%;
     height: calc(100% / 11);
+    border-radius: 9999px;
+    border: 0.2rem outset var(--border-color);
+    background-color: var(--bg-color);
+    padding: 0px 1rem;
 }
 .circle {
     border-radius: 50%;
-    border: 2px solid black;
-    height: 90%;
+    border: 0.15rem outset var(--border-color);
+    height: 2rem;
     width: 20%;
-    margin-left: 7.5%;
 }
 .name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-right: 7.5%;
+    font-size: 2rem;
+    line-height: 2rem;
 }
 .leave {
     animation: slideRight 1s;
 }
 @keyframes slideLeft {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: none;
-    }
+    0% { transform: translateX(100%) }
+    100% { transform: none }
 }
 @keyframes slideRight {
-    0% {
-        transform: none;
-    }
-    100% {
-        transform: translateX(200%);
-    }
+    0% { transform: none }
+    100% { transform: translateX(200%) }
 }

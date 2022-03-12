@@ -63,10 +63,7 @@ function SelectGoalType (): JSX.Element {
     return (
         <div
             ref={focusElement}
-            className={`
-            ${globalStyles.xyCenter}
-            ${styles.container}
-            ${isLeave ? styles.leave : ''}`}
+            className={`${styles.container} ${isLeave ? styles.leave : ''}`}
             tabIndex={0}
             onBlur={(event) => event.target.focus()}
             onKeyUp={handleKeyUp}
@@ -81,12 +78,7 @@ function SelectGoalType (): JSX.Element {
 function IconTextBtn (props: { text: string, selected: boolean }): JSX.Element {
     const { text, selected } = props
     return (
-        <div
-            className={`
-            ${globalStyles.yellowBlock}
-            ${selected ? globalStyles.hoverEffect : ''}
-            ${styles.btn}`}
-        >
+        <div className={`${styles.btn} ${selected ? globalStyles.hoverEffect : ''}`}>
             <div className={styles.imgContainer}>
                 <img className={styles.img}/>
             </div>

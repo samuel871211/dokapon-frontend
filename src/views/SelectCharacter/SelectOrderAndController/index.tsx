@@ -259,9 +259,7 @@ function PlayerCard (props: {
             >
                 {index}
             </div>
-            <div className={styles.imgContainer}>
-                <img src={`${prefix}/imgs/${job}_${gender}_${color}_front.png`} alt=''></img>
-            </div>
+            <img src={`${prefix}/imgs/${job}_${gender}_${color}_front.png`}/>
             <div className={styles.nameContainer}>
                 <span className={styles.nameArea}>{name}</span>
                 <CustomBorderBottom/>

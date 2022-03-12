@@ -3,7 +3,9 @@
     height: 80%;
     margin: auto;
     flex-direction: column;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     animation: slideIn 1s;
 }
 .btn {
@@ -14,7 +16,10 @@
     padding-left: 5%;
     align-items: center;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    border-radius: 9999px;
+    border: 0.2rem outset var(--border-color);
+    background-color: #fee59a;
 }
 .btnText {
     display: flex;
@@ -22,7 +27,6 @@
     justify-content: flex-end;
     align-items: center;
     padding-right: 5%;
-    letter-spacing: 1px;
 }
 .leave {
     animation: slideOut 1s;

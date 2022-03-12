@@ -5,7 +5,8 @@ import { getCells } from '../../api/graph'
 import { createCharacter } from '../../global/characters'
 // import ContextMenu from '../../components/ContextMenu'
 import Drawer from './Drawer'
-import './index.module.css'
+import Roulette from './Roulette'
+import styles from './index.module.css'
 
 export default BattleMode
 
@@ -21,7 +22,7 @@ function BattleMode (): JSX.Element {
                 el: document.getElementById('paper') || undefined,
                 cellViewNamespace: { standard: joint.shapes.standard },
                 width: '100%',
-                height: '100vh',
+                height: '100%',
                 model: graph,
                 restrictTranslate: true,
                 background: {
@@ -178,6 +179,8 @@ function BattleMode (): JSX.Element {
             <div id='paper'></div>
             {/* <ContextMenu/> */}
             <Drawer/>
+            {/* <Roulette/> */}
+            {/* <div className={styles.test}></div> */}
         </Fragment>
     )
 }

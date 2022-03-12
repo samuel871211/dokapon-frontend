@@ -6,65 +6,66 @@
     width: 35%;
     height: 20%;
     margin-left: 5%;
-    border-radius: 30px;
-    border: 3px outset #222222;
-    background-color: #fee59a;
+    border-radius: 9999px;
+    border: 0.2rem outset var(--border-color);
+    background-color: var(--bg-color);
     position: relative;
-    top: 7.5%;
+    /* top: 7.5%; */
+    transform: translateY(50%);
     z-index: 1;
 }
 .name {
     height: 100%;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .messageArea {
     width: 95%;
     height: 75%;
-    margin-left: 2.5%;
-    font-weight: bold;
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-    line-height: 2.5rem;
+    margin: auto;
     flex-direction: column;
     position: relative;
     z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    border: 0.2rem outset var(--border-color);
+    background-color: var(--bg-color);
 }
 .message {
     position: relative;
+    font-size: 3rem;
 }
 .message::after {
     content: '';
-    color: #fee59a;
-    background-color: #fee59a;
+    color: var(--bg-color);
+    background-color: var(--bg-color);
     display: block;
     position: absolute;
-    top: 0%;
-    left: 0%;
-    right: 0%;
-    bottom: 0%;
-    line-height: 2.5rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 .confirmCircle {
     position: absolute;
-    bottom: 12px;
-    right: 12px;
-    height: 40px;
-    width: 40px;
+    bottom: 1rem;
+    right: 1rem;
     border-radius: 50%;
     background-color: black;
-    border: 3px solid #b43d3b;
-    outline: 3px solid black;
-    box-shadow: 0px 0px 0px 2px #9c8a70;
     animation: spread 0.8s linear 0s infinite;
 }
 .fadeIn::after {
     animation: fadeIn 0.1s linear 0s 1 alternate forwards;
 }
 .confirmDialogContainer {
-    background-color: #fee59a;
-    border: 3px solid black;
-    border-radius: 30px;
+    background-color: var(--bg-color);
+    border: 0.2rem outset var(--border-color);
+    border-radius: 1.5rem;
     position: absolute;
     top: 10%;
     right: -2%;
@@ -92,19 +93,18 @@
 */
 .confirmDialogBtn {
     width: 80%;
-    height: 2.5rem;
+    height: 3rem;
     margin: 0% 10%;
     position: relative;
 }
 .confirmDialogBtnText {
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 2.5rem;
+    font-size: 3rem;
+    line-height: 3rem;
     position: absolute;
     bottom: 0;
     z-index: 1;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 0.15rem;
 }
 .confirmDialogBtn::before {
     display: block;
@@ -123,20 +123,12 @@
     animation-timing-function: ease-in-out;
 }
 @keyframes confirmDialogBtnHoverFrom {
-    0% {
-        background-color: #9bd65b;
-    }
-    100% {
-        background-color: transparent;
-    }
+    0% { background-color: #9bd65b }
+    100% { background-color: transparent }
 }
 @keyframes confirmDialogBtnHoverTo {
-    0% {
-        background-color: transparent;
-    }
-    100% {
-        background-color: #9bd65b;
-    }
+    0% { background-color: transparent }
+    100% { background-color: #9bd65b }
 }
 @keyframes slideLeft {
     0% { transform: translateX(100%) }
@@ -144,18 +136,18 @@
 }
 @keyframes spread {
     0% {
-        border: 3px solid #b43d3b;
-        outline: 3px solid black;
-        height: 40px;
-        width: 40px;
-        box-shadow: 0px 0px 0px 2px #9c8a70;
+        border: 0.2rem solid #b43d3b;
+        outline: 0.2rem solid black;
+        height: 3rem;
+        width: 3rem;
+        box-shadow: 0px 0px 0px 0.15rem #9c8a70;
     }
     100% {
-        border: 5px solid #b43d3b;
-        outline: 2px solid black;
-        height: 42px;
-        width: 42px;
-        box-shadow: 0px 0px 2px 10px #d8c790;
+        border: 0.3rem solid #b43d3b;
+        outline: 0.15rem solid black;
+        height: 3.15rem;
+        width: 3.15rem;
+        box-shadow: 0px 0px 0.15rem 0.75rem #d8c790;
     }
 }
 @keyframes slideUp {

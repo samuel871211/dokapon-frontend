@@ -1,7 +1,6 @@
 .container {
     width: 100%;
     height: 100%;
-    
     animation: slideLeft 1s;
 }
 .nameDisplayArea {
@@ -11,22 +10,28 @@
     top: 5%;
     left: 56%;
     display: flex;
-    justify-content: space-between;
-    padding: 0px 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    border: 0.2rem outset var(--border-color);
+    background-color: var(--bg-color);
 }
 .nameInputWord {
     width: calc(100% / 9);
     flex-direction: column;
     font-weight: bold;
-    font-size: 2.5rem;
-    line-height: 2.5rem;
+    font-size: 3rem;
+    line-height: 3rem;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .bottomLine {
     width: 90%;
-    height: 3px;
-    margin-top: 4px;
-    background-color: black;
+    height: 0.2rem;
+    margin-top: 0.25rem;
+    background-color: var(--border-color);
 }
 .keyboardArea {
     width: 90%;
@@ -35,6 +40,9 @@
     padding: 5vh 0%;
     display: flex;
     justify-content: space-evenly;
+    border-radius: 1.5rem;
+    border: 0.2rem outset var(--border-color);
+    background-color: var(--bg-color);
 }
 .keyboardSection {
     width: 30%;
@@ -44,9 +52,11 @@
 .keyboardKey {
     width: 20%;
     height: calc(100% / 9);
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 2.5rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .keyboardMenu {
     width: 15%;
@@ -54,9 +64,8 @@
     flex-direction: column;
 }
 .keyboardMenuItem {
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 2.5rem;
+    font-size: 3rem;
+    line-height: 3rem;
     height: calc(100% / 9);
     display: flex;
     align-items: center;
@@ -71,5 +80,5 @@
 }
 @keyframes slideRight {
     0% { transform: none }
-    100% { transform: translateX(100%)}
+    100% { transform: translateX(100%) }
 }

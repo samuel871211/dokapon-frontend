@@ -21,6 +21,54 @@ declare namespace Dokapon {
         isNPC: boolean,
         npcLevel : NPCLevelTypes | '',
         controllerNumber: number,
+
+        // // 底下是新增的key-value pairs，reducers還沒寫
+        // level: number,
+        // rank: number,
+        // attack: {
+        //     base: number,
+        //     buff: number[],
+        //     nerf: number[],
+        //     total: number,
+        //     equipment: number,
+        // },
+        // defense: {
+        //     base: number,
+        //     buff: number[],
+        //     nerf: number[],
+        //     total: number,
+        //     equipment: number,
+        // },
+        // magic: {
+        //     base: number,
+        //     buff: number[],
+        //     nerf: number[],
+        //     total: number
+        // },
+        // speed: {
+        //     base: number,
+        //     buff: number[],
+        //     nerf: number[],
+        //     total: number
+        // }
+        // hp: {
+        //     base: number,
+        //     buff: number[],
+        //     nerf: number[],
+        //     total: number,
+        //     cur: number
+        // },
+        // money: {
+        //     cash: number,
+        //     bank: number,
+        //     specialty: number,
+        //     village: number,
+        //     assets: number
+        // },
+        // items: [],
+        // magics: [],
+        // weapon: number, // refer as index
+        // shield: number // refer as index
     }
     /**
      * schema統一化，程式端會比較好管理

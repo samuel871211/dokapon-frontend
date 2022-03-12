@@ -150,10 +150,7 @@ function NPCGenerateDialog (): JSX.Element {
 
     return (
         <div
-            className={`
-            ${styles.container}
-            ${globalStyles.yellowBlock}
-            ${isLeave ?  styles.leave : ''}`}
+            className={`${styles.container} ${isLeave ?  styles.leave : ''}`}
             tabIndex={0}
             ref={focusElement}
             onBlur={(event) => event.target.focus()}
@@ -163,11 +160,7 @@ function NPCGenerateDialog (): JSX.Element {
             <div className={styles.title}>勇者募集!!</div>
             <CustomBorderBottom/>
             <div className={styles.bottom}>
-                <div
-                    className={`
-                    ${globalStyles.xyCenter}
-                    ${styles.imgContainer}`}
-                >
+                <div className={styles.imgContainer}>
                     <img src={`${prefix}/imgs/${job}_${gender}_${color}_front.png`}/>
                 </div>
                 <div className={styles.btnGroup}>
@@ -204,14 +197,7 @@ function ConfirmBtn (props: {
     const { selected, content } = props
 
     return (
-        <div
-            className={`
-            ${styles.confirmBtn}
-            ${globalStyles.yellowBlock}
-            ${styles.btn}
-            ${globalStyles.xyCenter}
-            ${selected ? styles.hoverEffect : ''}`}
-        >
+        <div className={`${styles.confirmBtn} ${styles.btn} ${selected ? styles.hoverEffect : ''}`}>
             {content}
         </div>
     )
@@ -224,13 +210,7 @@ function Btn (props: {
     const { selected, content } = props
 
     return (
-        <div
-            className={`
-            ${globalStyles.yellowBlock}
-            ${styles.btn}
-            ${globalStyles.xyCenter}
-            ${selected ? globalStyles.hoverEffect : ''}`}
-        >
+        <div className={`${styles.btn} ${selected ? globalStyles.hoverEffect : ''}`}>
             {content}
         </div>
     )

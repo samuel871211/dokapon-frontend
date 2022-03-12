@@ -2,8 +2,10 @@
     width: 80%;
     height: 80%;
     margin: auto;
-    
     animation: slideLeft 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn {
     width: 80%;
@@ -11,8 +13,14 @@
     display: flex;
     padding-left: 5%;
     align-items: center;
-    font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    border-radius: 9999px;
+    border: 0.2rem outset var(--border-color);
+    background-color: var(--bg-color);
+}
+.btn > img {
+    width: 3rem;
+    height: 3rem;
 }
 .btnText {
     display: flex;
@@ -29,8 +37,10 @@
     justify-content: flex-end;
     align-items: center;
 }
-.imgContainer {
-    width: min(20vw, 41.6vh);
+.genderBlock > img {
+    /* 100 / 12 * 7 * 0.8 * 0.5 = 23.33 */
+    /* 100 * 0.65 * 0.8 = 52 */
+    width: min(var(--vw) * 23.33, var(--vh) * 52);
 }
 .darkenImg {
     filter: brightness(70%);

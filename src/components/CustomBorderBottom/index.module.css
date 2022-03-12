@@ -1,18 +1,18 @@
 .container {
     width: 95%;
     margin: 0 2.5%;
-    height: 1vh;
+    height: var(--vh);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .circle {
-    width: 1vh;
-    height: 1vh;
+    width: var(--vh);
+    height: var(--vh);
     border-radius: 50%;
     background-color: black;
 }
 .line {
-    border-bottom: 0.5vh solid black;
-    width: calc(100% - 2vh);
+    border-bottom: calc(0.5 * var(--vh)) solid black;
+    width: calc(100% - var(--vh) * 2);
 }

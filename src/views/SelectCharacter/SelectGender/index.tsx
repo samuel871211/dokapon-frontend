@@ -86,10 +86,7 @@ function SelectGender (): JSX.Element {
     return (
         <div
             ref={focusElement}
-            className={`
-            ${styles.btnGroup}
-            ${globalStyles.xyCenter}
-            ${isLeave ? styles.leave : ''}`}
+            className={`${styles.btnGroup} ${isLeave ? styles.leave : ''}`}
             tabIndex={0}
             onBlur={(event) => event.target.focus()}
             onKeyUp={handleKeyUp}
@@ -107,21 +104,13 @@ function GenderBlockBtn (props: { gender: gender, selected: boolean }): JSX.Elem
 
     return (
         <div className={styles.genderBlock}>
-            <div className={styles.imgContainer}>
-                <img 
-                    src={imgSrc}
-                    width='100%'
-                    alt={genderToCN[gender]}
-                    className={selected ? styles.darkenImg: ''}
-                />
-            </div>
-            <div
-                className={`
-                ${styles.btn}
-                ${globalStyles.yellowBlock}
-                ${selected ? globalStyles.hoverEffect: ''}`}
-            >
-                <img src='' width='30px' height='30px'/>
+            <img 
+                src={imgSrc}
+                alt={genderToCN[gender]}
+                className={selected ? styles.darkenImg: ''}
+            />
+            <div className={`${styles.btn} ${selected ? globalStyles.hoverEffect: ''}`}>
+                <img src=''/>
                 <div className={styles.btnText}>
                     {genderToCN[gender]}
                 </div>

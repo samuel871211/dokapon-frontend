@@ -20,13 +20,9 @@
     display: flex;
     width: 85%;
     height: 20%;
-    background-color: #fee59a;
-    border-radius: calc(65vh / 5) 25px 25px calc(65vh / 5);
-    border: 3px solid;
-    border-top-color: gray;
-    border-right-color: black;
-    border-bottom-color: black;
-    border-left-color: gray;
+    background-color: var(--bg-color);
+    border-radius: calc(var(--vh) * 10) 1.5rem 1.5rem calc(var(--vh) * 10);
+    border: 0.2rem outset var(--border-color);
     animation: slideLeft 1s;
 }
 .gatherToCenter0 {
@@ -50,8 +46,9 @@
     left: -15%;
     width: 15%;
     height: 100%;
-    font-weight: bold;
     font-size: 5rem;
+    color: white;
+    -webkit-text-stroke: 0.15rem black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,22 +64,16 @@
     align-items: center;
     position: absolute;
     left: 25%;
-    top: calc(-1.25rem - 3px);
+    transform: translateY(-50%);
     width: 60%;
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 2.5rem;
-    border: 3px solid black;
-    border-radius: 30px;
-    background-color: #fee59a;
+    font-size: 3rem;
+    line-height: 3rem;
+    border: 0.2rem outset var(--border-color);
+    border-radius: 9999px;
+    background-color: var(--bg-color);
 }
-.imgContainer {
-    width: calc(65vh / 5);
-    height: 100%;
-}
-.imgContainer > img {
-    width: 100%;
-    height: 100%;
+.playerCardContainer > img {
+    width: calc(var(--vh) * 65 / 5);
 }
 .nameContainer {
     display: flex;
@@ -95,22 +86,21 @@
     display: block;
     width: 95%;
     font-weight: bold;
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    letter-spacing: 1px;
+    font-size: 3rem;
+    line-height: 3rem;
 }
 .selectControllerContainer {
     display: flex;
+    align-items: center;
     position: absolute;
     right: -10%;
-    top: calc(-1.25rem - 3px);
+    transform: translateY(-50%);
     width: 60%;
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 2.5rem;
-    border: 3px solid black;
-    border-radius: 30px;
-    background-color: #fee59a;
+    font-size: 3rem;
+    line-height: 3rem;
+    border: 0.2rem outset var(--border-color);
+    border-radius: 9999px;
+    background-color: var(--bg-color);
 }
 .show {
     opacity: 1;
@@ -122,11 +112,10 @@
 .leftTriangle {
     width: 0;
     height: 0;
-    margin-top: 3px;
-    margin-bottom: 3px;
     border-style: solid;
-    border-width: calc(1.25rem - 3px) calc(1.732* calc(1.25rem - 3px)) calc(1.25rem - 3px) 10px;
-    border-color: transparent black transparent transparent;
+    /* 3rem(font-size) * 0.5 - 0.2rem(padding Y) */
+    border-width: 1.3rem calc(1.732* 1.3rem) 1.3rem 1.5rem;
+    border-color: transparent var(--border-color) transparent transparent;
 }
 .centeredText {
     flex-grow: 1;
@@ -137,11 +126,9 @@
 .rightTriangle {
     width: 0;
     height: 0;
-    margin-top: 3px;
-    margin-bottom: 3px;
     border-style: solid;
-    border-width: calc(1.25rem - 3px) 10px calc(1.25rem - 3px) calc(1.732* calc(1.25rem - 3px));
-    border-color: transparent transparent transparent black; 
+    border-width: 1.3rem 1.5rem 1.3rem calc(1.732* 1.3rem);
+    border-color: transparent transparent transparent var(--border-color); 
 }
 @keyframes containerSlideOut {
     0% { transform: none }

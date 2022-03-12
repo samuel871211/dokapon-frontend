@@ -7,6 +7,9 @@
     display: flex;
     flex-direction: column;
     animation: slideIn 0.5s linear;
+    border-radius: 1.5rem;
+    border: 0.2rem outset var(--border-color);
+    background-color: var(--bg-color);
 }
 .leave {
     animation: slideOut 0.5s linear;
@@ -14,58 +17,48 @@
 .title {
     width: 100%;
     text-align: center;
-    font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .bottom {
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.moneyBtnGroup {
-    padding: 8px 20px;
-    width: 75%;
+.btnGroup {
+    padding: 0.5vw 2vw;
     display: flex;
     justify-content: space-between;
-}
-
-.durationBtnGroup {
-    padding: 8px 20px;
-    width: 30%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    border: 0.2rem outset var(--border-color);
+    background-color: #fee59a;
 }
 .unit {
     text-align: center;
     font-weight: bold;
-    font-size: 2.5rem;
-    margin-left: 8px;
+    font-size: 3rem;
+    margin-left: 1vw;
 }
-.moneyBtn {
-    width: 10%;
-}
-.durationBtn {
-    width: 30%;
-}
-.moneyBtn, .durationBtn {
+.btn {
     font-weight: bold;
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-}
-.moneyBtn:empty, .durationBtn:empty {
-    height: 2.5rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 @keyframes slideIn {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: none;
-    }
+    0% { transform: translateX(100%) }
+    100% { transform: none }
 }
 @keyframes slideOut {
-    0% {
-        transform: none;
-    }
-    100% {
-        transform: translateX(200%);
-    }
+    0% { transform: none }
+    100% { transform: translateX(200%) }
 }

@@ -309,7 +309,7 @@
     /* 100% of parent width - 50% of parent height */
     width: calc(17.5rem - (17.5 * var(--vh) * 0.7 * 0.8 * 0.5));
     height: 80%;
-    font-size: 3vw;
+    font-size: 3rem;
     border-radius: 0.2rem;
     background-color: var(--hover-bg-color);
     display: flex;

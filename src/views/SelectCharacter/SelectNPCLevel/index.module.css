@@ -22,7 +22,7 @@
     width: 90%;
     height: calc(100% / 6);
     font-size: 3rem;
-    margin-bottom: 1vw;
+    margin-bottom: 1rem;
     border-radius: 9999px;
     border: 0.2rem outset var(--border-color);
     background-color: var(--bg-color);

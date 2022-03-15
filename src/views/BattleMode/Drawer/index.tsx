@@ -90,10 +90,10 @@ function DetailedPlayerInfos (): JSX.Element {
             <div>
                 <div>
                     <div className={styles.verticalCircles}>
-                        <AttrCircle attr='LV' value={11} fontSize='2vw'/>
+                        <AttrCircle attr='LV' value={11} fontSize='2rem'/>
                     </div>
                     <div className={styles.verticalCircles}>
-                        <AttrCircle attr='AT' value={61} fontSize='2vw'/>
+                        <AttrCircle attr='AT' value={61} fontSize='2rem'/>
                     </div>
                 </div>
                 <div>
@@ -104,13 +104,13 @@ function DetailedPlayerInfos (): JSX.Element {
                     </div>
                     <div className={styles.circlesContainer}>
                         <div>
-                            <AttrCircle attr='DF' value={65} fontSize='2vw'/>
+                            <AttrCircle attr='DF' value={65} fontSize='2rem'/>
                         </div>
                         <div>
-                            <AttrCircle attr='MG' value={59} fontSize='2vw'/>
+                            <AttrCircle attr='MG' value={59} fontSize='2rem'/>
                         </div>
                         <div>
-                            <AttrCircle attr='SP' value={59} fontSize='2vw'/>
+                            <AttrCircle attr='SP' value={59} fontSize='2rem'/>
                         </div>
                     </div>
                 </div>
@@ -148,7 +148,7 @@ function BriefPlayerInfos (): JSX.Element {
             <div>
                 <div>
                     <div className={styles.level}>
-                        <AttrCircle attr='LV' value={11} fontSize='1.6vw'/>
+                        <AttrCircle attr='LV' value={11} fontSize='1.6rem'/>
                     </div>
                     <div className={styles.nameArea}>
                         <div>NAME</div>

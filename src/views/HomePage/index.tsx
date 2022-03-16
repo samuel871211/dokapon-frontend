@@ -1,58 +1,31 @@
-import React, { useEffect, useRef, useState } from 'react'
-import globalStyles from '../../global/styles.module.css'
+import { useReducer } from 'react'
 import styles from './index.module.css'
+import { Transition } from 'react-transition-group'
+import { texts } from './texts'
+import Settings from './Settings'
+import BtnGroup from './BtnGroup'
+import {initUserPreference, UserPreferenceContext, UserPreferenceReducer } from '../../reducers/userPreference'
+import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/HomePage/UIState'
 
 export default HomePage
 
 function HomePage (): JSX.Element {
-    const [selectedIdx, setSelectedIdx] = useState(0)
-    const focusElement = useRef<HTMLDivElement>(null)
-
-    function handleKeyUp (e: React.KeyboardEvent) {
-        switch (e.key.toLowerCase()) {
-        case 'arrowup':
-            setSelectedIdx(selectedIdx === 0 ? 3 : selectedIdx - 1)
-            break
-        case 'arrowdown':
-            setSelectedIdx(selectedIdx === 3 ? 0 : selectedIdx + 1)
-            break
-        case 'd': {
-            const components = ['SelectCharacter', 'SelectCharacter', 'Book', 'Setting']
-            window.location.assign(`/${components[selectedIdx]}`)
-            break
-        }
-        default:
-            break
-        }
-    }
-
-    useEffect(() => focusElement.current?.focus(), [])
-
+    const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState)
+    const [UserPreference, UserPreferenceDispatch] = useReducer(UserPreferenceReducer, initUserPreference)
+    // const 
     return (
-        <div
-            tabIndex={0}
-            className={styles.container}
-            ref={focusElement}
-            onKeyUp={handleKeyUp}
-            onBlur={(event) => event.target.focus()}
-        >
-            <h1>DOKAPON THE WORLD</h1>
-            <IconTextBtn text='故事模式' selected={selectedIdx === 0}/>
-            <IconTextBtn text='對戰模式' selected={selectedIdx === 1}/>
-            <IconTextBtn text='圖鑑' selected={selectedIdx === 2}/>
-            <IconTextBtn text='設定' selected={selectedIdx === 3}/>
-        </div>
-    )
-}
-
-function IconTextBtn (props: { text: string, selected: boolean }): JSX.Element {
-    const { text, selected } = props
-    return (
-        <div className={`${styles.btn} ${selected ? globalStyles.hoverEffect : ''}`}>
-            <div className={styles.imgContainer}>
-                <img className={styles.img}/>
+        <UserPreferenceContext.Provider value={{ UserPreference, UserPreferenceDispatch }}>
+        <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
+            <div className={styles.container}>
+                <h1 className={styles.title}>{texts.title.cn}</h1>
+                <Transition appear in={UIState.showBtnGroup} timeout={1000}>
+                    {state => (<BtnGroup state={state}/>)}
+                </Transition>
             </div>
-            <span>{text}</span>
-        </div>
+            <Transition in={UIState.showSetting} timeout={1000}>
+                {state => (<Settings state={state}/>)}
+            </Transition>
+        </UIStateContext.Provider>
+        </UserPreferenceContext.Provider>
     )
 }

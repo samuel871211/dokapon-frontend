@@ -4,6 +4,25 @@ export = Dokapon
 export as namespace Dokapon
 
 declare namespace Dokapon {
+    export type Text = { jp: string, en: string, cn: string }
+    export type LangTypes = 'jp' | 'en' | 'cn'
+    export type GamePadKeyTypes =
+        'arrowUp' |
+        'arrowDown' |
+        'arrowLeft' |
+        'arrowRight' |
+        'triangle' |
+        'circle' |
+        'square' |
+        'cross' |
+        'L1' |
+        'L2' |
+        'R1' |
+        'R2' |
+        'SELECT' |
+        'ANALOG' |
+        'START'
+    export type AspectRatioTypes = '16:9' | '4:3' | 'stretch'
     type ColorTypes = 'red' | 'orange' | 'yellow' |
         'lightGreen' | 'darkGreen' | 'lightBlue' |
         'darkBlue' | 'pink' | 'gray' | 'white'
@@ -193,6 +212,51 @@ declare namespace Dokapon {
         type Context = {
             UIState: UIState,
             UIStateDispatch: Dispatch<Action>
+        }
+    }
+    declare namespace HomePage {
+        type UIState = {
+            showBtnGroup: boolean,
+            showSetting: boolean,
+            showBook: boolean,
+            showKeyMappingDialog: boolean
+        }
+        type Action = {
+            type:
+                'showBtnGroup' |
+                'showSetting' |
+                'showBook' |
+                'showKeyMappingDialog'
+            payload: boolean
+        }
+        type Context = {
+            UIState: UIState,
+            UIStateDispatch: Dispatch<Action>
+        }
+    }
+    declare namespace Settings {
+        type UserPreference = {
+            lang: LangTypes,
+            aspectRatio: AspectRatioTypes
+        } & {
+            [key in GamePadKeyTypes]: string
+        }
+        type Action = {
+            type: 'update',
+            payload: UserPreference
+        } | {
+            type: GamePadKeyTypes,
+            payload: string
+        } | {
+            type: 'aspectRatio',
+            payload: AspectRatioTypes
+        } | {
+            type: 'lang',
+            payload: LangTypes
+        }
+        type Context = {
+            UserPreference: UserPreference,
+            UserPreferenceDispatch: Dispatch<Action>
         }
     }
 }

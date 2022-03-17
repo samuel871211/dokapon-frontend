@@ -5,8 +5,7 @@ import { getCells } from '../../api/graph'
 import { createCharacter } from '../../global/characters'
 // import ContextMenu from '../../components/ContextMenu'
 import Drawer from './Drawer'
-import Roulette from './Roulette'
-import styles from './index.module.css'
+// import Roulette from './Roulette'
 
 export default BattleMode
 
@@ -180,7 +179,6 @@ function BattleMode (): JSX.Element {
             {/* <ContextMenu/> */}
             <Drawer/>
             {/* <Roulette/> */}
-            {/* <div className={styles.test}></div> */}
         </Fragment>
     )
 }

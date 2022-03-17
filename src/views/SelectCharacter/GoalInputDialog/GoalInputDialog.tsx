@@ -3,7 +3,7 @@ import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
 import globalStyles from '../../../global/styles.module.css'
-import styles from './index.module.css'
+import styles from './GoalInputDialog.module.css'
 
 const typeToCN = { period: '期間', money: '金額' }
 

@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import styles from './index.module.css'
+import styles from './NPCTopLeftImgArea.module.css'
 import { UIStateContext } from '../../reducers/SelectCharacter/UIState'
 
 export default NPCTopLeftImgArea

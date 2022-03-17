@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import styles from './index.module.css'
+import styles from './TitleArea.module.css'
 
 export default TitleArea
 

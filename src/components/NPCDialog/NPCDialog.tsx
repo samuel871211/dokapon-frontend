@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState, useRef, useContext } from 'react'
 import { gameProgressContext } from '../../reducers/gameProgress'
 import { UIStateContext } from '../../reducers/SelectCharacter/UIState'
-import styles from './index.module.css'
+import styles from './NPCDialog.module.css'
 
 export default NPCDialog
 

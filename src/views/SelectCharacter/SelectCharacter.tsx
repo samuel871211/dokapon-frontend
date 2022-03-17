@@ -21,7 +21,7 @@ import SelectOrderAndController from './SelectOrderAndController'
 import { initGameProgress, gameProgressContext, gameProgressReducer } from '../../reducers/gameProgress'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/SelectCharacter/UIState'
 
-import styles from './index.module.css'
+import styles from './SelectCharacter.module.css'
 
 const digitToFullWidth = ['', '１', '２', '３', '４']
 

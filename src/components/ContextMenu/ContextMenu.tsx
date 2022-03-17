@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useContext } from 'react'
-import styles from './index.module.css'
+import styles from './ContextMenu.module.css'
 import gameArchive from '../../api/gameArchive'
 import { gameProgressContext } from '../../reducers/gameProgress'
 

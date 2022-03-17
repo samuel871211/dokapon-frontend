@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef} from 'react'
-import styles from './index.module.css'
+import styles from './ExampleCharacterImg.module.css'
 
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
 

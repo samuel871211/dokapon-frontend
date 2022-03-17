@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext } from 'react'
 import PersonIcon from '@material-ui/icons/Person'
 import AdbIcon from '@material-ui/icons/Adb'
-import styles from './index.module.css'
+import styles from './SelectNumberOfPlayers.module.css'
 import globalStyles from '../../../global/styles.module.css'
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'

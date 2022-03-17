@@ -3,7 +3,7 @@ import React, { useRef, useState, useContext } from 'react'
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import globalStyles from '../../../global/styles.module.css'
-import styles from './index.module.css'
+import styles from './SelectGender.module.css'
 type gender = 'male' | 'female'
 const backendUrl = process.env.REACT_APP_BACKEND_BASEURL || ''
 const genderToCN = { male: '男', female: '女' }

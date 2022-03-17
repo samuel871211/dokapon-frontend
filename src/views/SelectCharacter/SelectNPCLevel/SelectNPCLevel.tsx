@@ -1,6 +1,6 @@
 import React, { useRef, useState, useContext } from 'react'
 import globalStyles from '../../../global/styles.module.css'
-import styles from './index.module.css'
+import styles from './SelectNPCLevel.module.css'
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import { NPCLEVELLIST } from '../../../global/CONSTANTS'

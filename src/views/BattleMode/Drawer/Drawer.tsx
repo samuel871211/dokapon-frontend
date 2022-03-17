@@ -1,8 +1,7 @@
-// import { Transition } from 'react-transition-group'
 import AttrCircle from '../../../components/AttrCircle'
 import WatchLaterIcon from '@material-ui/icons/WatchLater'
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
-import styles from './index.module.css'
+import styles from './Drawer.module.css'
 const BACKENDURL = process.env.REACT_APP_BACKEND_BASEURL || ''
 
 export default Drawer

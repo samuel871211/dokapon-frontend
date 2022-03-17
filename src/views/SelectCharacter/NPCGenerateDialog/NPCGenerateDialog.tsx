@@ -1,6 +1,6 @@
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
 import globalStyles from '../../../global/styles.module.css'
-import styles from './index.module.css'
+import styles from './NPCGenerateDialog.module.css'
 import { getRandomInt } from '../../../global/math'
 import React, { useState, useRef, useContext, useEffect } from 'react'
 import { gameProgressContext } from '../../../reducers/gameProgress'

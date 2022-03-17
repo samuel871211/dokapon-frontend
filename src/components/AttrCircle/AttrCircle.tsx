@@ -1,4 +1,4 @@
-import styles from './index.module.css'
+import styles from './AttrCircle.module.css'
 
 export default AttrCircle
 

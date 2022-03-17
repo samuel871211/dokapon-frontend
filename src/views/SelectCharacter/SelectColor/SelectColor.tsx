@@ -1,6 +1,6 @@
 import ExampleCharacterImg from '../ExampleCharacterImg'
 import globalStyles from '../../../global/styles.module.css'
-import styles from './index.module.css'
+import styles from './SelectColor.module.css'
 import { COLORS } from '../../../global/characters'
 import { COLORLIST } from '../../../global/CONSTANTS'
 import { gameProgressContext } from '../../../reducers/gameProgress'

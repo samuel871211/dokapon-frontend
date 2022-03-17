@@ -1,0 +1,33 @@
+.wideRoot {
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+    max-height: 100%;
+}
+.traditionalRoot {
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
+    max-height: 100%;
+}
+.stretchRoot {
+    aspect-ratio: auto;
+    width: 100%;
+    height: 100%;
+}
+.wideHTML {
+    --vh: calc(var(--vw) * 0.5625);
+    font-size: var(--vw);
+}
+.traditionalHTML {
+    --vh: calc(var(--vw) * 0.75);
+    font-size: var(--vw);
+}
+.stretchHTML {
+    --vh: 1vh;
+    font-size: min(1.78vh , 1vw);
+    /* 
+    in aspect ratio 16:9, 1.78vh = 1vw
+    if wider (ex: 21:9), 1.78vh < 1vw
+    if Narrower (ex: 1:1), 1.78vh > 1vw
+    always select the smaller unit to calc font-size
+    */
+}

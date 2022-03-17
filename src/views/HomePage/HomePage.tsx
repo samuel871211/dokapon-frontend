@@ -1,23 +1,23 @@
-import { useReducer } from 'react'
-import styles from './index.module.css'
+import { useContext, useReducer } from 'react'
+import styles from './HomePage.module.css'
 import { Transition } from 'react-transition-group'
-import { texts } from './texts'
+import useTranslation from '../../global/translation'
 import Settings from './Settings'
 import BtnGroup from './BtnGroup'
-import {initUserPreference, UserPreferenceContext, UserPreferenceReducer } from '../../reducers/userPreference'
+import KeyMappingDialog from './KeyMappingDialog'
+import { UserPreferenceContext } from '../../reducers/userPreference'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/HomePage/UIState'
 
 export default HomePage
 
 function HomePage (): JSX.Element {
     const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState)
-    const [UserPreference, UserPreferenceDispatch] = useReducer(UserPreferenceReducer, initUserPreference)
-    // const 
+    const { UserPreference } = useContext(UserPreferenceContext)
+    const { t } = useTranslation(UserPreference.lang)
     return (
-        <UserPreferenceContext.Provider value={{ UserPreference, UserPreferenceDispatch }}>
         <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
             <div className={styles.container}>
-                <h1 className={styles.title}>{texts.title.cn}</h1>
+                <h1 className={styles.title}>{t('ドカポン・ザ・ワールド')}</h1>
                 <Transition appear in={UIState.showBtnGroup} timeout={1000}>
                     {state => (<BtnGroup state={state}/>)}
                 </Transition>
@@ -25,7 +25,9 @@ function HomePage (): JSX.Element {
             <Transition in={UIState.showSetting} timeout={1000}>
                 {state => (<Settings state={state}/>)}
             </Transition>
+            <Transition in={UIState.showKeyMappingDialog} timeout={1000}>
+                {state => (<KeyMappingDialog state={state}/>)}
+            </Transition>
         </UIStateContext.Provider>
-        </UserPreferenceContext.Provider>
     )
 }

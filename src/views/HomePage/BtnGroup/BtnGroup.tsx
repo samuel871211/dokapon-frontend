@@ -3,7 +3,9 @@ import globalStyles from '../../../global/styles.module.css'
 import { TransitionStatus } from 'react-transition-group'
 import { useState, useEffect, useRef, useContext, SyntheticEvent, KeyboardEvent } from 'react'
 import { UIStateContext } from '../../../reducers/HomePage/UIState'
-import { texts } from './texts'
+import useTranslation from '../../../global/translation'
+import { UserPreferenceContext } from '../../../reducers/userPreference'
+import classNames from 'classnames'
 const transitionStyles = {
     exiting: styles.fadeOut,
     exited: styles.fadeOut,
@@ -18,6 +20,8 @@ function BtnGroup (props: { state: TransitionStatus }): JSX.Element {
     const { state } = props
     const [selectedBtnIdx, setSelectedBtnIdx] = useState(0)
     const { UIState, UIStateDispatch } = useContext(UIStateContext)
+    const { UserPreference } = useContext(UserPreferenceContext)
+    const { t } = useTranslation(UserPreference.lang)
     const focusElement = useRef<HTMLDivElement>(null)
     const handleKeyUpAttrs = UIState.showBtnGroup ? {
         tabIndex: 0,
@@ -27,19 +31,19 @@ function BtnGroup (props: { state: TransitionStatus }): JSX.Element {
     } : {}
     function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
-        case 'arrowup':
+        case UserPreference.arrowUp:
             setSelectedBtnIdx(selectedBtnIdx === 0 ? 3 : selectedBtnIdx - 1)
             return
-        case 'arrowdown':
+        case UserPreference.arrowDown:
             setSelectedBtnIdx(selectedBtnIdx === 3 ? 0 : selectedBtnIdx + 1)
             return
-        case 'd': {
-            switch (texts.btn[selectedBtnIdx].cn) {
-            case '從頭開始':
-            case '自由對戰':
+        case UserPreference.circle: {
+            switch (selectedBtnIdx) {
+            case 0:
+            case 1:
                 window.location.assign('/SelectCharacter')
                 return
-            case '圖鑑':
+            case 2:
                 UIStateDispatch({
                     type: 'showBook',
                     payload: true
@@ -49,7 +53,7 @@ function BtnGroup (props: { state: TransitionStatus }): JSX.Element {
                     payload: false
                 })
                 return
-            case '設定':
+            case 3:
                 UIStateDispatch({
                     type: 'showSetting',
                     payload: true
@@ -77,10 +81,10 @@ function BtnGroup (props: { state: TransitionStatus }): JSX.Element {
             className={transitionStyles[state]}
             { ...handleKeyUpAttrs }
         >
-            <Btn text='故事模式' selected={selectedBtnIdx === 0}/>
-            <Btn text='對戰模式' selected={selectedBtnIdx === 1}/>
-            <Btn text='圖鑑' selected={selectedBtnIdx === 2}/>
-            <Btn text='設定' selected={selectedBtnIdx === 3}/>
+            <Btn text={t('はじめから')} selected={selectedBtnIdx === 0}/>
+            <Btn text={t('フリー対戦')} selected={selectedBtnIdx === 1}/>
+            <Btn text={t('図鑑')} selected={selectedBtnIdx === 2}/>
+            <Btn text={t('設定')} selected={selectedBtnIdx === 3}/>
         </div>
     )
 }
@@ -88,10 +92,11 @@ function BtnGroup (props: { state: TransitionStatus }): JSX.Element {
 function Btn (props: { text: string, selected: boolean }): JSX.Element {
     const { text, selected } = props
     return (
-        <div className={`${styles.btn} ${selected ? globalStyles.hoverEffect : ''}`}>
-            <div className={styles.imgContainer}>
-                <img className={styles.img}/>
-            </div>
+        <div className={classNames({
+            [styles.btn]: true,
+            [globalStyles.hoverEffect]: selected
+        })}>
+            <img className={styles.img}/>
             <span>{text}</span>
         </div>
     )

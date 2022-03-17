@@ -30,6 +30,26 @@ const texts = new Map([
     ['いいえ', {
         en: 'Cancel',
         cn: '取消'
+    }],
+    ['ドカポン・ザ・ワールド', {
+        en: 'DOKAPON THE WORLD',
+        cn: '多卡波世界'
+    }],
+    ['はじめから', {
+        en: 'From the beginning',
+        cn: '從頭開始'
+    }],
+    ['フリー対戦', {
+        en: 'Free match',
+        cn: '自由對戰'
+    }], 
+    ['図鑑', {
+        en: 'Book',
+        cn: '圖鑑'
+    }],
+    ['設定', {
+        en: 'Setting',
+        cn: '設定'
     }]
 ])
 

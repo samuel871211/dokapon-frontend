@@ -10,13 +10,9 @@
     border: 0.2rem outset var(--border-color);
     background-color: var(--bg-color);
 }
-.imgContainer {
+.img {
     position: absolute;
     left: 5%;
-    display: flex;
-    align-items: center;
-}
-.img {
     width: 3rem;
     height: 3rem;
 }

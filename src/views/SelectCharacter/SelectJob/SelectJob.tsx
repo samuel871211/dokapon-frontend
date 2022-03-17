@@ -68,6 +68,7 @@ function SelectJob (): JSX.Element {
     function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
         function determineNextStep () {
             if (currentPlayer < numberOfPlayers) return 'SelectGender'
+            if (currentPlayer === 4) return 'PlayerAttrsCollected'
             if (currentPlayer === numberOfPlayers) return 'BeforeNPCGenerateDialog'
             return 'NPCGenerateDialog'
         }
@@ -87,6 +88,7 @@ function SelectJob (): JSX.Element {
             })
 
             if (nextStep === 'NPCGenerateDialog') return
+            if (currentPlayer === 4) return
             const newCurrentPlayer = currentPlayer + 1
             gameProgressDispatch({
                 type: 'currentPlayer',

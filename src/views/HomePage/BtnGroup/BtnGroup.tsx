@@ -4,7 +4,7 @@ import { TransitionStatus } from 'react-transition-group'
 import { useState, useEffect, useRef, useContext, SyntheticEvent, KeyboardEvent } from 'react'
 import { UIStateContext } from '../../../reducers/HomePage/UIState'
 import useTranslation from '../../../global/translation'
-import { UserPreferenceContext } from '../../../reducers/userPreference'
+import { userPreferenceContext } from '../../../reducers/userPreference'
 import classNames from 'classnames'
 const transitionStyles = {
     exiting: styles.fadeOut,
@@ -20,8 +20,8 @@ function BtnGroup (props: { state: TransitionStatus }): JSX.Element {
     const { state } = props
     const [selectedBtnIdx, setSelectedBtnIdx] = useState(0)
     const { UIState, UIStateDispatch } = useContext(UIStateContext)
-    const { UserPreference } = useContext(UserPreferenceContext)
-    const { t } = useTranslation(UserPreference.lang)
+    const { userPreference } = useContext(userPreferenceContext)
+    const { t } = useTranslation(userPreference.lang)
     const focusElement = useRef<HTMLDivElement>(null)
     const handleKeyUpAttrs = UIState.showBtnGroup ? {
         tabIndex: 0,
@@ -31,13 +31,13 @@ function BtnGroup (props: { state: TransitionStatus }): JSX.Element {
     } : {}
     function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
-        case UserPreference.arrowUp:
+        case userPreference.arrowUp:
             setSelectedBtnIdx(selectedBtnIdx === 0 ? 3 : selectedBtnIdx - 1)
             return
-        case UserPreference.arrowDown:
+        case userPreference.arrowDown:
             setSelectedBtnIdx(selectedBtnIdx === 3 ? 0 : selectedBtnIdx + 1)
             return
-        case UserPreference.circle: {
+        case userPreference.circle: {
             switch (selectedBtnIdx) {
             case 0:
             case 1:

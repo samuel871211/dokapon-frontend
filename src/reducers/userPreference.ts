@@ -4,7 +4,7 @@ import Dokapon from '../global'
 /**
  * use lower case string as value only because it's better to handle switch case
  */
-const initUserPreference: Dokapon.Settings.UserPreference = {
+const inituserPreference: Dokapon.Settings.UserPreference = {
     lang: 'cn',
     aspectRatio: '16:9',
     arrowUp: 'arrowup',
@@ -24,14 +24,14 @@ const initUserPreference: Dokapon.Settings.UserPreference = {
     START: 'v'
 }
 
-const UserPreferenceContext = createContext<Dokapon.Settings.Context>({
-    UserPreference: initUserPreference,
-    UserPreferenceDispatch: function (action: Dokapon.Settings.Action) {
+const userPreferenceContext = createContext<Dokapon.Settings.Context>({
+    userPreference: inituserPreference,
+    userPreferenceDispatch: function (action: Dokapon.Settings.Action) {
         console.error('Settings.Context did not provide a value')
     }
 })
 
-function UserPreferenceReducer (
+function userPreferenceReducer (
     state: Dokapon.Settings.UserPreference,
     action: Dokapon.Settings.Action
 ): Dokapon.Settings.UserPreference {
@@ -75,7 +75,7 @@ function UserPreferenceReducer (
 }
 
 export {
-    initUserPreference,
-    UserPreferenceContext,
-    UserPreferenceReducer
+    inituserPreference,
+    userPreferenceContext,
+    userPreferenceReducer
 }

@@ -255,8 +255,8 @@ declare namespace Dokapon {
             payload: LangTypes
         }
         type Context = {
-            UserPreference: UserPreference,
-            UserPreferenceDispatch: Dispatch<Action>
+            userPreference: UserPreference,
+            userPreferenceDispatch: Dispatch<Action>
         }
     }
 }

@@ -3,7 +3,7 @@ import { AspectRatioTypes, LangTypes } from '../../../global'
 import { TransitionStatus } from 'react-transition-group'
 import { useRef, KeyboardEvent, useContext, useEffect, useState } from 'react'
 import { UIStateContext } from '../../../reducers/HomePage/UIState'
-import { UserPreferenceContext } from '../../../reducers/userPreference'
+import { userPreferenceContext } from '../../../reducers/userPreference'
 import { SyntheticEvent } from 'react'
 import KEYBOARDMAP from './KeyBoardMap'
 import useTranslation from '../../../global/translation'
@@ -38,9 +38,9 @@ export default Settings
 function Settings (props: { state: TransitionStatus }): JSX.Element {
     const { state } = props
     const { UIState, UIStateDispatch } = useContext(UIStateContext)
-    const { UserPreference, UserPreferenceDispatch } = useContext(UserPreferenceContext)
-    const { t } = useTranslation(UserPreference.lang)
-    const [preservedUserPreference, initPreservedUserPreference] = useState<typeof UserPreference>()
+    const { userPreference, userPreferenceDispatch } = useContext(userPreferenceContext)
+    const { t } = useTranslation(userPreference.lang)
+    const [preserveduserPreference, initPreserveduserPreference] = useState<typeof userPreference>()
     const [selectedLang, setSelectedLang] = useState<LangTypes>('cn')
     const [selectedAspectRatio, setSelectedAspectRatio] = useState<AspectRatioTypes>('16:9')
     const focusElement = useRef<HTMLDivElement>(null)
@@ -61,18 +61,18 @@ function Settings (props: { state: TransitionStatus }): JSX.Element {
         const maybeGamePadKey = KEYBOARDMAP[row][col] as GamePadKeyTypes
         if (!gamePadKeys.includes(maybeGamePadKey)) return
 
-        const oldKeyBoardKey = UserPreference[maybeGamePadKey]
+        const oldKeyBoardKey = userPreference[maybeGamePadKey]
         const newKeyBoardKey = e.key.toLowerCase()
 
-        UserPreferenceDispatch({
+        userPreferenceDispatch({
             type: maybeGamePadKey,
             payload: newKeyBoardKey
         })
 
         // avoid two gamepad key mapping to the same keyboard key
         for (const gamePadKey of gamePadKeys) {
-            if (UserPreference[gamePadKey] === newKeyBoardKey) {
-                UserPreferenceDispatch({
+            if (userPreference[gamePadKey] === newKeyBoardKey) {
+                userPreferenceDispatch({
                     type: gamePadKey,
                     payload: oldKeyBoardKey
                 })
@@ -86,31 +86,31 @@ function Settings (props: { state: TransitionStatus }): JSX.Element {
     }
     function handleKeyUp (e: KeyboardEvent): void {
         switch (e.key.toLowerCase()) {
-        case UserPreference.arrowUp:
+        case userPreference.arrowUp:
             setCurrentAxis({
                 col: currentAxis.col,
                 row: currentAxis.row === 0 ? 9 : currentAxis.row - 1
             })
             break
-        case UserPreference.arrowDown:
+        case userPreference.arrowDown:
             setCurrentAxis({
                 col: currentAxis.col,
                 row: currentAxis.row === 9 ? 0 : currentAxis.row + 1
             })
             break
-        case UserPreference.arrowLeft:
+        case userPreference.arrowLeft:
             setCurrentAxis({
                 col: currentAxis.col === 0 ? 2 : currentAxis.col - 1,
                 row: currentAxis.row
             })
             break
-        case UserPreference.arrowRight:
+        case userPreference.arrowRight:
             setCurrentAxis({
                 col: currentAxis.col === 2 ? 0 : currentAxis.col + 1,
                 row: currentAxis.row
             })
             break
-        case UserPreference.circle: {
+        case userPreference.circle: {
             const { row, col } = currentAxis
             const key = KEYBOARDMAP[row][col]
             switch (key) {
@@ -118,7 +118,7 @@ function Settings (props: { state: TransitionStatus }): JSX.Element {
             case 'en':
             case 'jp':
                 setSelectedLang(key)
-                UserPreferenceDispatch({
+                userPreferenceDispatch({
                     type: 'lang',
                     payload: key
                 })
@@ -127,14 +127,14 @@ function Settings (props: { state: TransitionStatus }): JSX.Element {
             case '4:3':
             case 'stretch':
                 setSelectedAspectRatio(key)
-                UserPreferenceDispatch({
+                userPreferenceDispatch({
                     type: 'aspectRatio',
                     payload: key
                 })
                 break
             case '確定':
             case '取消': {
-                const payload = key === '確定' ? UserPreference : (preservedUserPreference || UserPreference)
+                const payload = key === '確定' ? userPreference : (preserveduserPreference || userPreference)
                 UIStateDispatch({
                     type: 'showSetting',
                     payload: false
@@ -143,7 +143,7 @@ function Settings (props: { state: TransitionStatus }): JSX.Element {
                     type: 'showBtnGroup',
                     payload: true
                 })
-                UserPreferenceDispatch({
+                userPreferenceDispatch({
                     type: 'update',
                     payload
                 })
@@ -177,7 +177,7 @@ function Settings (props: { state: TransitionStatus }): JSX.Element {
         }
         }
     }
-    useEffect(() => initPreservedUserPreference(UserPreference), [])
+    useEffect(() => initPreserveduserPreference(userPreference), [])
     useEffect(() => { if (state === 'entered') focusElement.current?.focus() }, [state])
     return (
         <div
@@ -259,49 +259,49 @@ function Settings (props: { state: TransitionStatus }): JSX.Element {
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 0 && currentAxis.row === 2,
-                            })}>{UserPreference.arrowUp}</div>
+                            })}>{userPreference.arrowUp}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 0 && currentAxis.row === 3,
-                            })}>{UserPreference.arrowDown}</div>
+                            })}>{userPreference.arrowDown}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 0 && currentAxis.row === 4,
-                            })}>{UserPreference.arrowRight}</div>
+                            })}>{userPreference.arrowRight}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 0 && currentAxis.row === 5,
-                            })}>{UserPreference.arrowLeft}</div>
+                            })}>{userPreference.arrowLeft}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 0 && currentAxis.row === 6,
-                            })}>{UserPreference.triangle}</div>
+                            })}>{userPreference.triangle}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 0 && currentAxis.row === 7,
-                            })}>{UserPreference.circle}</div>
+                            })}>{userPreference.circle}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 0 && currentAxis.row === 8,
-                            })}>{UserPreference.square}</div>
+                            })}>{userPreference.square}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 0 && currentAxis.row === 9,
-                            })}>{UserPreference.cross}</div>
+                            })}>{userPreference.cross}</div>
                         </div>
                     </div>
                     <div className={styles.gamePadColumn}>
@@ -348,43 +348,43 @@ function Settings (props: { state: TransitionStatus }): JSX.Element {
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 2 && currentAxis.row === 2,
-                            })}>{UserPreference.L1}</div>
+                            })}>{userPreference.L1}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 2 && currentAxis.row === 3,
-                            })}>{UserPreference.L2}</div>
+                            })}>{userPreference.L2}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 2 && currentAxis.row === 4,
-                            })}>{UserPreference.R1}</div>
+                            })}>{userPreference.R1}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 2 && currentAxis.row === 5,
-                            })}>{UserPreference.R2}</div>
+                            })}>{userPreference.R2}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 2 && currentAxis.row === 6,
-                            })}>{UserPreference.SELECT}</div>
+                            })}>{userPreference.SELECT}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 2 && currentAxis.row === 7,
-                            })}>{UserPreference.ANALOG}</div>
+                            })}>{userPreference.ANALOG}</div>
                         </div>
                         <div className={styles.cell}>
                             <div className={classNames({
                                 [styles.cellText]: true,
                                 [styles.hoverEffect]: currentAxis.col === 2 && currentAxis.row === 8,
-                            })}>{UserPreference.START}</div>
+                            })}>{userPreference.START}</div>
                         </div>
                         <div className={styles.actions}>
                             <div className={classNames({

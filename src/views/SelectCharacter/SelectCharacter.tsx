@@ -1,4 +1,4 @@
-import { Fragment, useReducer } from 'react'
+import { Fragment, useContext, useReducer } from 'react'
 
 import guide from '../../imgs/guide.png'
 import { BASICJOBS } from '../../global/characters'
@@ -18,7 +18,7 @@ import NPCGenerateDialog from './NPCGenerateDialog'
 import NameInputDialog from './NameInputDialog'
 import SelectOrderAndController from './SelectOrderAndController'
 
-import { initGameProgress, gameProgressContext, gameProgressReducer } from '../../reducers/gameProgress'
+import { gameProgressContext } from '../../reducers/gameProgress'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/SelectCharacter/UIState'
 
 import styles from './SelectCharacter.module.css'
@@ -50,7 +50,7 @@ export default SelectCharacter
 
 function SelectCharacter (): JSX.Element {
     // data
-    const [gameProgress, gameProgressDispatch] = useReducer(gameProgressReducer, initGameProgress)
+    const { gameProgress } = useContext(gameProgressContext)
     const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState)
     const { goalType, playersAttrs, currentPlayer } = gameProgress
     const { currentStep, selectedJob, showSelectCharacter } = UIState
@@ -249,7 +249,6 @@ function SelectCharacter (): JSX.Element {
     
     // template
     return (
-        <gameProgressContext.Provider value={{ gameProgress, gameProgressDispatch }}>
         <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
             <div className={`${styles.container} ${showSelectCharacter ? '' : styles.fadeOut}`}>
                 <ContextMenu/>
@@ -281,6 +280,5 @@ function SelectCharacter (): JSX.Element {
                 }
             </div>
         </UIStateContext.Provider>
-        </gameProgressContext.Provider>
     )
 }

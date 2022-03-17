@@ -10,14 +10,17 @@ import SelectCharacter from './views/SelectCharacter'
 import HomePage from './views/HomePage'
 import calcVW from './global/calcVW'
 import { DARKTHEME } from './global/CONSTANTS'
-import { initUserPreference, UserPreferenceContext, UserPreferenceReducer } from './reducers/userPreference'
+import { initGameProgress, gameProgressContext, gameProgressReducer } from './reducers/gameProgress'
+import { inituserPreference, userPreferenceContext, userPreferenceReducer } from './reducers/userPreference'
 
 calcVW()
 
 function App (): JSX.Element {
-    const [UserPreference, UserPreferenceDispatch] = useReducer(UserPreferenceReducer, initUserPreference)
+    const [gameProgress, gameProgressDispatch] = useReducer(gameProgressReducer, initGameProgress)
+    const [userPreference, userPreferenceDispatch] = useReducer(userPreferenceReducer, inituserPreference)
     return (
-        <UserPreferenceContext.Provider value={{ UserPreference, UserPreferenceDispatch }}>
+        <gameProgressContext.Provider value={{ gameProgress, gameProgressDispatch }}>
+        <userPreferenceContext.Provider value={{ userPreference, userPreferenceDispatch }}>
         <ThemeProvider theme={DARKTHEME}>
         <Router>
             <Switch>
@@ -29,7 +32,8 @@ function App (): JSX.Element {
             </Switch>
         </Router>
         </ThemeProvider>
-        </UserPreferenceContext.Provider>
+        </userPreferenceContext.Provider>
+        </gameProgressContext.Provider>
     )
 }
 

@@ -5,15 +5,15 @@ import useTranslation from '../../global/translation'
 import Settings from './Settings'
 import BtnGroup from './BtnGroup'
 import KeyMappingDialog from './KeyMappingDialog'
-import { UserPreferenceContext } from '../../reducers/userPreference'
+import { userPreferenceContext } from '../../reducers/userPreference'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/HomePage/UIState'
 
 export default HomePage
 
 function HomePage (): JSX.Element {
     const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState)
-    const { UserPreference } = useContext(UserPreferenceContext)
-    const { t } = useTranslation(UserPreference.lang)
+    const { userPreference } = useContext(userPreferenceContext)
+    const { t } = useTranslation(userPreference.lang)
     return (
         <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
             <div className={styles.container}>

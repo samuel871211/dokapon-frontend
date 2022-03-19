@@ -25,6 +25,50 @@ const HTMLStyles = {
 }
 calcVW()
 
+import { get } from 'lodash'
+const body = {
+    timeStamp: '2022-03-19T06:07:04.741Z',
+    goalInput: 1000,
+    goalType: 'money',
+    numberOfPlayers: 1,
+    currentPlayer: 4,
+    playersAttrs: [{
+        gender: 'male',
+        name: '12345678',
+        color: 'red',
+        job: 'warrior',
+        isNPC: false,
+        npcLevel: '',
+        controllerNumber: 1
+    }, {
+        gender: 'male',
+        name: '12345678',
+        color: 'red',
+        job: 'warrior',
+        isNPC: false,
+        npcLevel: '',
+        controllerNumber: 1
+    }, {
+        gender: 'male',
+        name: '12345678',
+        color: 'red',
+        job: 'warrior',
+        isNPC: false,
+        npcLevel: '',
+        controllerNumber: 1
+    }, {
+        gender: 'male',
+        name: '12345678',
+        color: 'red',
+        job: 'warrior',
+        isNPC: false,
+        npcLevel: '',
+        controllerNumber: 1
+    }]
+}
+const path = 'playersAttrs[2].npcLevel'
+console.log(get(body.playersAttrs, path))
+
 function App (): JSX.Element {
     const [gameProgress, gameProgressDispatch] = useReducer(gameProgressReducer, initGameProgress)
     const [userPreference, userPreferenceDispatch] = useReducer(userPreferenceReducer, inituserPreference)

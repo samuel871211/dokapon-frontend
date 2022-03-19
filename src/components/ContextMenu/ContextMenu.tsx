@@ -1,6 +1,11 @@
 import { useEffect, useState, useRef, useContext } from 'react'
 import styles from './ContextMenu.module.css'
-import gameArchive from '../../api/gameArchive'
+import {
+    getGameProgress,
+    findGameProgress,
+    findGameProgressBackup,
+    updateGameProgress
+} from '../../api/gameProgress'
 import { gameProgressContext } from '../../reducers/gameProgress'
 
 export default ContextMenu
@@ -53,7 +58,7 @@ function ContextMenu (): JSX.Element {
         setSelectedSlotIdx({ value: slotIdx })
         toggleCtxMenuOpen(false)
         toggleWriteFileMenuOpen(false)
-        const response = await gameArchive.put(slotIdx, gameProgress)
+        const response = await updateGameProgress(slotIdx, gameProgress)
         console.log(response)
     }
     /**
@@ -62,7 +67,7 @@ function ContextMenu (): JSX.Element {
     async function readBackUp (): Promise<void> {
         toggleCtxMenuOpen(false)
         toggleReadFileMenuOpen(false)
-        const response = await gameArchive.findBackup(selectedSlotIdx.value)
+        const response = await findGameProgressBackup(selectedSlotIdx.value)
         console.log(response)
     }
     /**
@@ -72,7 +77,7 @@ function ContextMenu (): JSX.Element {
         setSelectedSlotIdx({ value: slotIdx })
         toggleCtxMenuOpen(false)
         toggleReadFileMenuOpen(false)
-        const response = await gameArchive.find(slotIdx)
+        const response = await findGameProgress(slotIdx)
         console.log(response)
     }
 
@@ -175,7 +180,7 @@ function ContextMenu (): JSX.Element {
         }
     }
     function getAllSlotsDataTimeStamp (): void {
-        Promise.all([gameArchive.get(), gameArchive.findBackup(selectedSlotIdx.value)])
+        Promise.all([getGameProgress(), findGameProgressBackup(selectedSlotIdx.value)])
         .then(responses => {
             const [res1, res2] = responses
             const newSlotsTimeStamp = [ ...slotsTimeStamp ]

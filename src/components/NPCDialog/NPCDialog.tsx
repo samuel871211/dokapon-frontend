@@ -75,7 +75,7 @@ function NPCDialog (props: {
         }
 
         if (currentStep === 'SelectOrderStep3') {
-            fetch(`${process.env.REACT_APP_BACKEND_BASEURL || ''}/gameArchive`, {
+            fetch(`${process.env.REACT_APP_BACKEND_BASEURL || ''}/gameProgress`, {
                 body: JSON.stringify(gameProgress),
                 headers: { 'content-type': 'application/json' },
                 method: 'POST'

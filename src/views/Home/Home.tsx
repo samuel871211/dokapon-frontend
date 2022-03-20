@@ -1,16 +1,16 @@
 import { useContext, useReducer } from 'react'
-import styles from './HomePage.module.css'
+import styles from './Home.module.css'
 import { Transition } from 'react-transition-group'
 import useTranslation from '../../global/translation'
 import Settings from './Settings'
 import BtnGroup from './BtnGroup'
 import KeyMappingDialog from './KeyMappingDialog'
 import { userPreferenceContext } from '../../reducers/userPreference'
-import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/HomePage/UIState'
+import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Home/UIState'
 
-export default HomePage
+export default Home
 
-function HomePage (): JSX.Element {
+function Home (): JSX.Element {
     const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState)
     const { userPreference } = useContext(userPreferenceContext)
     const { t } = useTranslation(userPreference.lang)

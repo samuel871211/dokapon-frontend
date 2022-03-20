@@ -5,10 +5,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styles from './index.module.css'
 import './index.css'
 import GraphEditor from './views/GraphEditor'
-import StoryMode from './views/StoryMode'
-import BattleMode from './views/BattleMode'
+import Game from './views/Game'
 import SelectCharacter from './views/SelectCharacter'
-import HomePage from './views/HomePage'
+import Home from './views/Home'
 import calcVW from './global/calcVW'
 import { DARKTHEME } from './global/CONSTANTS'
 import { initGameProgress, gameProgressContext, gameProgressReducer } from './reducers/gameProgress'
@@ -24,50 +23,6 @@ const HTMLStyles = {
     'stretch': styles.stretchHTML
 }
 calcVW()
-
-import { get } from 'lodash'
-const body = {
-    timeStamp: '2022-03-19T06:07:04.741Z',
-    goalInput: 1000,
-    goalType: 'money',
-    numberOfPlayers: 1,
-    currentPlayer: 4,
-    playersAttrs: [{
-        gender: 'male',
-        name: '12345678',
-        color: 'red',
-        job: 'warrior',
-        isNPC: false,
-        npcLevel: '',
-        controllerNumber: 1
-    }, {
-        gender: 'male',
-        name: '12345678',
-        color: 'red',
-        job: 'warrior',
-        isNPC: false,
-        npcLevel: '',
-        controllerNumber: 1
-    }, {
-        gender: 'male',
-        name: '12345678',
-        color: 'red',
-        job: 'warrior',
-        isNPC: false,
-        npcLevel: '',
-        controllerNumber: 1
-    }, {
-        gender: 'male',
-        name: '12345678',
-        color: 'red',
-        job: 'warrior',
-        isNPC: false,
-        npcLevel: '',
-        controllerNumber: 1
-    }]
-}
-const path = 'playersAttrs[2].npcLevel'
-console.log(get(body.playersAttrs, path))
 
 function App (): JSX.Element {
     const [gameProgress, gameProgressDispatch] = useReducer(gameProgressReducer, initGameProgress)
@@ -90,11 +45,10 @@ function App (): JSX.Element {
         <ThemeProvider theme={DARKTHEME}>
         <Router>
             <Switch>
-                <Route path='/' exact component={HomePage}/>
-                <Route path='/GraphEditor' exact sensitive component={GraphEditor}/>
-                <Route path='/SelectCharacter' exact sensitive component={SelectCharacter}/>
-                <Route path='/StoryMode' exact sensitive component={StoryMode}/>
-                <Route path='/BattleMode' exact sensitive component={BattleMode}/>
+                <Route path='/' exact component={Home}/>
+                <Route path='/graph-editor' exact component={GraphEditor}/>
+                <Route path='/select-character' exact component={SelectCharacter}/>
+                <Route path='/game' exact component={Game}/>
             </Switch>
         </Router>
         </ThemeProvider>

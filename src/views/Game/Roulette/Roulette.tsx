@@ -1,11 +1,82 @@
 import styles from './Roulette.module.css'
+import { TransitionStatus } from 'react-transition-group'
+import { useRef, useContext, useEffect, SyntheticEvent, KeyboardEvent, useState } from 'react'
+import { userPreferenceContext } from '../../../reducers/userPreference'
+import { UIStateContext } from '../../../reducers/Game/UIState'
+import { getRandomInt } from '../../../global/math'
+import classNames from 'classnames'
+const transitionStyles = {
+    entering: '',
+    entered: styles.entered,
+    exiting: '',
+    exited: '',
+    unmounted: ''
+}
 
 export default Roulette
 
-function Roulette (): JSX.Element {
+/**
+ * @todo 無法得知arrow停下來的時候是落在幾度，所以按下O的時候一定會出現動畫斷層
+ * 
+ * 機率分佈：
+ * 
+ * 0 => 1/16
+ * 
+ * 1 => 2/16
+ * 
+ * 2 => 3/16
+ * 
+ * 3 => 4/16
+ * 
+ * 4 => 3/16
+ * 
+ * 5 => 2/16
+ * 
+ * 6 => 1/16
+ */
+function Roulette (props: { state: TransitionStatus }): JSX.Element {
+    const { state } = props
+    const [rouletteResult, setRouletteResult] = useState(-1)
+    const { userPreference } = useContext(userPreferenceContext)
+    const { UIState, UIStateDispatch } = useContext(UIStateContext)
+    const focusElement = useRef<HTMLDivElement>(null)
+    const handleKeyUpAttrs = UIState.showRoulette ? {
+        tabIndex: 0,
+        ref: focusElement,
+        onBlur: (event: SyntheticEvent<HTMLDivElement>) => event.currentTarget.focus(),
+        onKeyUp: handleKeyUp
+    } : {}
+    function handleKeyUp (e: KeyboardEvent) {
+        switch (e.key.toLowerCase()) {
+        case userPreference.circle:
+            setRouletteResult(getRandomInt(0, 3) + getRandomInt(0, 3))
+            return
+        case userPreference.cross:
+            UIStateDispatch({
+                type: 'showRoulette',
+                payload: false
+            })
+            UIStateDispatch({
+                type: 'showDrawer',
+                payload: true
+            })
+            return
+        }
+    }
+    useEffect(() => {
+        if (rouletteResult !== -1) {
+            setTimeout(() => {
+                UIStateDispatch({
+                    type: 'showRoulette',
+                    payload: false
+                })
+            }, 1000)
+        }
+    }, [rouletteResult])
+    useEffect(() => { if (state === 'entered') focusElement.current?.focus() }, [state])
     return (
-        <div className={styles.container}>
-            <div className={styles.roulette}>
+        <div { ...handleKeyUpAttrs } className={styles.container}>
+            <div className={classNames(styles.roulette, transitionStyles[state])}>
                 <svg className={styles.svg} viewBox='0 0 600 600' xmlns="http://www.w3.org/2000/svg">
                     <g id="Layer_1">
                         <title>Layer 1</title>
@@ -26,7 +97,18 @@ function Roulette (): JSX.Element {
                         <text transform="matrix(1 0 0 1 0 0)" fontWeight="bold" xmlSpace="preserve" textAnchor="start" fontFamily="'Arimo'" fontSize="90" id="svg_25" y="333.00005" x="75.33477" stroke="#000000" fill="#ffffff">5</text>
                         <text fontWeight="bold" xmlSpace="preserve" textAnchor="start" fontFamily="'Arimo'" fontSize="90" id="svg_26" y="503.33415" x="376.33507" stroke="#000000" fill="#ffffff">3</text>
                         <text fontWeight="bold" xmlSpace="preserve" textAnchor="start" fontFamily="'Arimo'" fontSize="90" id="svg_27" y="506" x="165.33485" stroke="#000000" fill="#ffffff">4</text>
-                        <path transform='rotate(-90)' className={styles.arrow} stroke="#000000" strokeWidth="2" id="svg_28" d="m370.03786,338.9455l26.16052,-24.05457l-50.58008,0l-50.57997,0l0,-14.89092l0,-14.89093l49.99972,0c27.49981,0 49.99968,-0.75474 49.99968,-1.67721c0,-0.92245 -10.94759,-11.74701 -24.32794,-24.05456l-24.32802,-22.37738l22.48652,0l22.48644,0l34.34189,31.53021l34.34187,31.53019l-34.40775,31.46987l-34.40774,31.46987l-23.67284,0l-23.67289,0l26.16059,-24.05458l0.00001,0.00001z" fill="#ffffff"/>
+                        <path 
+                            className={classNames({
+                                [styles.arrow]: true,
+                                [styles.arrowRotate]: rouletteResult === -1,
+                                [styles[`stopAt${rouletteResult}`]]: rouletteResult !== -1
+                            })}
+                            fill="#ffffff"
+                            stroke="#000000"
+                            strokeWidth="2"
+                            id="svg_28"
+                            d="m370.03786,338.9455l26.16052,-24.05457l-50.58008,0l-50.57997,0l0,-14.89092l0,-14.89093l49.99972,0c27.49981,0 49.99968,-0.75474 49.99968,-1.67721c0,-0.92245 -10.94759,-11.74701 -24.32794,-24.05456l-24.32802,-22.37738l22.48652,0l22.48644,0l34.34189,31.53021l34.34187,31.53019l-34.40775,31.46987l-34.40774,31.46987l-23.67284,0l-23.67289,0l26.16059,-24.05458l0.00001,0.00001z" 
+                        />
                     </g>
                 </svg>
             </div>

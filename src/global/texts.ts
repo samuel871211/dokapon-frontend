@@ -1,4 +1,14 @@
+/**
+ * 目前已翻譯好的components
+ * 
+ * Home > BtnGroup
+ * 
+ * Home > Settings
+ * 
+ * Game > Drawer > FloatingActionBtn
+ */
 const texts = new Map([
+    // Home > Settings
     ['語言', {
         en: 'Language',
         cn: '語言',
@@ -31,6 +41,7 @@ const texts = new Map([
         en: 'Cancel',
         cn: '取消'
     }],
+    // Home > BtnGroup
     ['ドカポン・ザ・ワールド', {
         en: 'DOKAPON THE WORLD',
         cn: '多卡波世界'
@@ -50,7 +61,53 @@ const texts = new Map([
     ['設定', {
         en: 'Setting',
         cn: '設定'
-    }]
+    }],
+    // Game > Drawer > FloatingActionBtn
+    ['移動', {
+        en: 'move',
+        cn: '移動'
+    }],
+    ['カバン', {
+        en: 'bag',
+        cn: '背包'
+    }],
+    ['チェック', {
+        en: 'check',
+        cn: '查看'
+    }],
+    ['特技', {
+        en: 'talent',
+        cn: '特技'
+    }],
+    ['データ', {
+        en: 'data',
+        cn: '資訊'
+    }],
+    // Game > Walk
+    ['おまかせ', {
+        en: 'appoint',
+        cn: '委託'
+    }],
+    ['チェック', {
+        en: 'check',
+        cn: '查看'
+    }],
+    ['マスチェック', {
+        en: 'mass check',
+        cn: '質量檢查'
+    }],
+    ['スピードUP', {
+        en: 'Speed up',
+        cn: '加速'
+    }],
+    ['戻る', {
+        en: 'return',
+        cn: '返回'
+    }],
+    ['', {
+        en: '',
+        cn: ''
+    }],
 ])
 
 export default texts

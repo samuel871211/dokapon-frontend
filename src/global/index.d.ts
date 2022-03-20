@@ -214,7 +214,7 @@ declare namespace Dokapon {
             UIStateDispatch: Dispatch<Action>
         }
     }
-    declare namespace HomePage {
+    declare namespace Home {
         type UIState = {
             showBtnGroup: boolean,
             showSetting: boolean,
@@ -257,6 +257,28 @@ declare namespace Dokapon {
         type Context = {
             userPreference: UserPreference,
             userPreferenceDispatch: Dispatch<Action>
+        }
+    }
+    declare namespace Game {
+        type UIState = {
+            showDrawer: boolean,
+            showRoulette: boolean,
+            showBag: boolean,
+            showTalent: boolean,
+            showData: boolean
+        }
+        type Action = {
+            type:
+                'showDrawer' |
+                'showRoulette' |
+                'showBag' |
+                'showTalent' |
+                'showData',
+            payload: boolean
+        }
+        type Context = {
+            UIState: UIState,
+            UIStateDispatch: Dispatch<Action>
         }
     }
 }

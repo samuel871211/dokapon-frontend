@@ -1,28 +1,124 @@
 import AttrCircle from '../../../components/AttrCircle'
 import WatchLaterIcon from '@material-ui/icons/WatchLater'
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
+import { TransitionStatus } from 'react-transition-group'
 import styles from './Drawer.module.css'
+import classNames from 'classnames'
+import useTranslation from '../../../global/translation'
+import { userPreferenceContext } from '../../../reducers/userPreference'
+import { UIStateContext } from '../../../reducers/Game/UIState'
+import { useState, useContext, useRef, useEffect, SyntheticEvent, KeyboardEvent } from 'react'
 const BACKENDURL = process.env.REACT_APP_BACKEND_BASEURL || ''
+const transitionStyles = {
+    topLeft: {
+        entering: styles.topLeftEntering,
+        entered: styles.topLeftEntered,
+        exiting: styles.topLeftExiting,
+        exited: '',
+        unmounted: ''
+    },
+    topRight: {
+        entering: styles.topRightEntering,
+        entered: styles.topRightEntered,
+        exiting: styles.topRightExiting,
+        exited: '',
+        unmounted: ''
+    },
+    bottomLeft: {
+        entering: styles.topLeftEntering,
+        entered: styles.topLeftEntered,
+        exiting: styles.topLeftExiting,
+        exited: '',
+        unmounted: ''
+    },
+    bottomRight: {
+        entering: styles.topRightEntering,
+        entered: styles.topRightEntered,
+        exiting: styles.topRightExiting,
+        exited: '',
+        unmounted: ''
+    }
+}
 
 export default Drawer
 
-function Drawer (): JSX.Element {
+function Drawer (props: { state: TransitionStatus }): JSX.Element {
+    const { state } = props
+    const [selectedBtnIdx, setSelectedBtnIdx] = useState(0)
+    const { UIState, UIStateDispatch } = useContext(UIStateContext)
+    const { userPreference } = useContext(userPreferenceContext)
+    const { t } = useTranslation(userPreference.lang)
+    const focusElement = useRef<HTMLDivElement>(null)
+    const handleKeyUpAttrs = UIState.showDrawer ? {
+        tabIndex: 0,
+        ref: focusElement,
+        onBlur: (event: SyntheticEvent<HTMLDivElement>) => event.currentTarget.focus(),
+        onKeyUp: handleKeyUp
+    } : {}
+
+    function handleKeyUp (e: KeyboardEvent) {
+        switch (e.key.toLowerCase()) {
+        case userPreference.arrowUp:
+            setSelectedBtnIdx(selectedBtnIdx === 0 ? 4 : selectedBtnIdx - 1)
+            return
+        case userPreference.arrowDown:
+            setSelectedBtnIdx(selectedBtnIdx === 4 ? 0 : selectedBtnIdx + 1)
+            return
+        case userPreference.circle:
+            switch (selectedBtnIdx) {
+            case 0: // 移動
+                UIStateDispatch({
+                    type: 'showDrawer',
+                    payload: false
+                })
+                UIStateDispatch({
+                    type: 'showRoulette',
+                    payload: true
+                })
+                return
+            case 1: // 背包
+                return
+            case 2: // 查看
+                return
+            case 3: // 特技
+                return
+            case 4: // 資訊
+                return
+            }
+            return
+        }
+    }
+
+    useEffect(() => { if (state === 'entered') focusElement.current?.focus() }, [state])
+
     return (
-        <div className={styles.container}>
-            <div className={styles.topLeft}>
+        <div { ...handleKeyUpAttrs } className={styles.container}>
+            <div className={classNames(
+                styles.topLeft,
+                transitionStyles.topLeft[state]
+            )}>
                 <WeeklyInfo/>
             </div>
-            <div className={styles.topRight}>
+            <div className={classNames(
+                styles.topRight,
+                transitionStyles.topRight[state]
+            )}>
                 <DetailedPlayerInfos/>
             </div>
-            <div className={styles.bottomLeft}>
-                <FloatingActionBtn selected={true}/>
-                <FloatingActionBtn selected={false}/>
-                <FloatingActionBtn selected={false}/>
-                <FloatingActionBtn selected={false}/>
-                <FloatingActionBtn selected={false}/>
+            <div className={classNames(
+                styles.bottomLeft,
+                transitionStyles.bottomLeft[state]
+            )}>
+                <FloatingActionBtn selected={selectedBtnIdx === 0}>{t('移動')}</FloatingActionBtn>
+                <FloatingActionBtn selected={selectedBtnIdx === 1}>{t('カバン')}</FloatingActionBtn>
+                <FloatingActionBtn selected={selectedBtnIdx === 2}>{t('チェック')}</FloatingActionBtn>
+                <FloatingActionBtn selected={selectedBtnIdx === 3}>{t('特技')}</FloatingActionBtn>
+                <FloatingActionBtn selected={selectedBtnIdx === 4}>{t('データ')}</FloatingActionBtn>
             </div>
-            <div className={styles.bottomRight}>
+            <div className={classNames(
+                styles.bottomRight,
+                transitionStyles.bottomRight[state]
+            )}>
                 <BriefPlayerInfos/>
                 <BriefPlayerInfos/>
                 <BriefPlayerInfos/>
@@ -51,8 +147,8 @@ function WeeklyInfo (): JSX.Element {
     )
 }
 
-function FloatingActionBtn (props: { selected: boolean }): JSX.Element {
-    const { selected } = props
+function FloatingActionBtn (props: { selected: boolean, children: string }): JSX.Element {
+    const { selected, children } = props
     return (
         <div className={styles.floatingActionBtn}>
             <div>
@@ -62,7 +158,7 @@ function FloatingActionBtn (props: { selected: boolean }): JSX.Element {
                 />
             </div>
             <div style={{ opacity: selected ? 1 : 0 }}>
-                <div></div>
+                <div>{children}</div>
             </div>
         </div>
     )

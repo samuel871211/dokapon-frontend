@@ -6,7 +6,9 @@ const initUIState: Dokapon.Game.UIState = {
     showRoulette: false,
     showBag: false,
     showTalent: false,
-    showData: false
+    showData: false,
+    showMap: false,
+    isPaperTopLayer: false
 }
 
 const UIStateContext = createContext<Dokapon.Game.Context>({

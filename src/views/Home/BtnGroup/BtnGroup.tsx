@@ -41,7 +41,7 @@ function BtnGroup (props: { state: TransitionStatus }): JSX.Element {
             switch (selectedBtnIdx) {
             case 0:
             case 1:
-                window.location.assign('/SelectCharacter')
+                window.location.assign('/select-character')
                 return
             case 2:
                 UIStateDispatch({

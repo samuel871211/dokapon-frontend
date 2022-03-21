@@ -70,6 +70,10 @@ function Roulette (props: { state: TransitionStatus }): JSX.Element {
                     type: 'showRoulette',
                     payload: false
                 })
+                UIStateDispatch({
+                    type: 'isPaperTopLayer',
+                    payload: true
+                })
             }, 1000)
         }
     }, [rouletteResult])

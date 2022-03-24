@@ -6,9 +6,14 @@ import { createCharacter } from '../../global/characters'
 import { Transition } from 'react-transition-group'
 // import { userPreferenceContext } from '../../reducers/userPreference'
 import Drawer from './Drawer'
+import Roulette from './Roulette'
+import Bag from './Bag'
 import { useReducer } from 'react'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Game/UIState'
-import Roulette from './Roulette'
+// import GraphDSA from '../../global/GraphDSA'
+// import graph from '../../global/graph'
+// const maybeElements = graph.cells.filter(cell => !cell.name.toLowerCase().includes('link'))
+// const { getAllPossiblePaths } = GraphDSA(maybeElements) 
 // let keyPressed: { [key: string]: boolean } = {}
 // console.log(keyPressed)
 
@@ -26,7 +31,7 @@ function Game (): JSX.Element {
     // const [keyPressed, setKeyPress] = useState< { [key: string]: boolean }>({})
     // const [center, setCenter] = useState({ x: -6085, y: -4606 })
     const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState)
-    const [graph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
+    const [interactiveGraph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
     // const [paper, setPaper] = useState<joint.dia.Paper>()
     // const handleKeyBoardAttrs = UIState.isPaperTopLayer ? {
     //     tabIndex: 0,
@@ -77,7 +82,7 @@ function Game (): JSX.Element {
                 cellViewNamespace: { standard: joint.shapes.standard },
                 width: '100%',
                 height: '100%',
-                model: graph,
+                model: interactiveGraph,
                 restrictTranslate: true,
                 background: {
                     color: '#555'
@@ -202,7 +207,7 @@ function Game (): JSX.Element {
          */
         async function loadCells (): Promise<void> {
             const response = await getCells()
-            graph.fromJSON(response.data)
+            interactiveGraph.fromJSON(response.data)
             
             const player = createCharacter({
                 characterType: 'player',
@@ -210,7 +215,7 @@ function Game (): JSX.Element {
                 gender: 'female',
                 color: 'darkBlue'
             }).position(6700 - 40, 4840 - 110)
-            graph.addCell(player)
+            interactiveGraph.addCell(player)
         }
 
         // initial data
@@ -226,7 +231,7 @@ function Game (): JSX.Element {
             // $('#paper').off()
         }
 
-    }, [graph])
+    }, [interactiveGraph])
 
     // template
     return (
@@ -239,6 +244,10 @@ function Game (): JSX.Element {
 
             <Transition in={UIState.showRoulette} timeout={{ enter: 1000, exit: 0 }}>
             {state => state !== 'exited' && (<Roulette state={state}/>)}
+            </Transition>
+
+            <Transition in={UIState.showBag} timeout={{ enter: 1000, exit: 0 }}>
+            {state => state !== 'exited' && (<Bag state={state}/>)}
             </Transition>
 
         </UIStateContext.Provider>

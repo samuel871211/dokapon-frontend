@@ -77,6 +77,14 @@ function Drawer (props: { state: TransitionStatus }): JSX.Element {
                 })
                 return
             case 1: // 背包
+                UIStateDispatch({
+                    type: 'showDrawer',
+                    payload: false
+                })
+                UIStateDispatch({
+                    type: 'showBag',
+                    payload: true
+                })
                 return
             case 2: // 查看
                 return

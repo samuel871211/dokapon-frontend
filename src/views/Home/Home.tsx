@@ -7,6 +7,10 @@ import BtnGroup from './BtnGroup'
 import KeyMappingDialog from './KeyMappingDialog'
 import { userPreferenceContext } from '../../reducers/userPreference'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Home/UIState'
+import GraphDSA from '../../global/GraphDSA'
+const Graph = new GraphDSA()
+const { result, queues } = Graph.getAllPaths('I', 20)
+console.log(result, queues)
 
 export default Home
 

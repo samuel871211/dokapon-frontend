@@ -61,9 +61,9 @@ class GraphDSA {
     public count = 0
 
     constructor () {
-        this.buildAdjacentMap()
+        this.#buildAdjacentMap()
     }
-    buildAdjacentMap () {
+    #buildAdjacentMap () {
         this.adjacentMap = new Map([
             ['A', ['B', 'G']],
             ['B', ['A', 'C']],
@@ -99,7 +99,7 @@ class GraphDSA {
         //     O: ['K', 'N'] 
         // }
     }
-    init () {
+    #init () {
         this.result = []
         this.path = []
         this.ends = []
@@ -111,15 +111,18 @@ class GraphDSA {
     getAllPaths (start: string, count: number) {
         this.start = start
         this.count = count
-        this.init()
-        this.traversal()
+        this.#init()
+        this.#traversal()
         return {
             result: this.result,
             queues: this.queues
         }
     }
-    traversal () {
+    #traversal () {
         if (this.count < 0) return
+        console.count()
+        // console.log(this.path)
+        // console.table(this.queues)
 
         while (this.queues[this.path.length].length > 0 && !this.nextNode) {
             this.nextNode = this.queues[this.path.length].shift()
@@ -127,9 +130,11 @@ class GraphDSA {
         if (!this.nextNode) {
             // queues 被清空了(所有路都被走過了)
             if (this.path.length === 0) return
-            // 目前這層已經沒有路，往上一層走
-            this.path.pop()
-            this.traversal()
+            // 目前這層已經沒有路，持續往上一層走
+            while (this.path.length !== 0 && this.queues[this.path.length].length === 0) {
+                this.path.pop()
+            }
+            this.#traversal()
         } else if (this.nextNode) {
             this.adjacentNodes = this.adjacentMap.get(this.nextNode)
             if (this.adjacentNodes === undefined || this.adjacentNodes.length === 0) return
@@ -138,9 +143,9 @@ class GraphDSA {
                 this.result.push([...this.path])
                 this.ends.push(this.path.pop() as string)
             } else if (this.path.length === this.count) {
-                // 殊途同歸只要取一種路徑
+                // 殊途同歸只要取一種路徑，且確保nextNode !== previousNode (不能走回頭路)
                 for (const adjacentNode of this.adjacentNodes) {
-                    if (!this.ends.includes(adjacentNode)) {
+                    if (!this.ends.includes(adjacentNode) && adjacentNode !== this.path[this.path.length - 2]) {
                         this.queues[this.path.length].push(adjacentNode)
                     }
                 }
@@ -153,7 +158,7 @@ class GraphDSA {
                 }
             }
             this.nextNode = undefined
-            this.traversal()
+            this.#traversal()
         }
     }
 }

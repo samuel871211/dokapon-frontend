@@ -9,8 +9,26 @@ import { userPreferenceContext } from '../../reducers/userPreference'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Home/UIState'
 import GraphDSA from '../../global/GraphDSA'
 const Graph = new GraphDSA()
-const { result, queues } = Graph.getAllPaths('I', 20)
-console.log(result, queues)
+const nodes = [
+    'A', 'B', 'C', 'D',
+    'E', 'F', 'G', 'H',
+    'I', 'J', 'K', 'L',
+    'M', 'N', 'O'
+]
+const { ends: tempEnds, untraversedQueues, traversedQueues, result } = Graph.getAllPaths(nodes[8], 15)
+console.log('ends', tempEnds)
+console.log('traversed', traversedQueues)
+console.log('untraversed', untraversedQueues)
+console.log('result', result)
+// const realEnds: Set<string> = new Set()
+// for (const tempEnd of tempEnds) {
+//     const { ends } = Graph.getAllPaths(tempEnd, 1)
+//     for (const end of ends) {
+//         realEnds.add(end)
+//     }
+// }
+// console.log(realEnds)
+
 
 export default Home
 

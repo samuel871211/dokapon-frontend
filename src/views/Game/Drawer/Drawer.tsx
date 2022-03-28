@@ -10,6 +10,13 @@ import { UIStateContext } from '../../../reducers/Game/UIState'
 import { useState, useContext, useRef, useEffect, SyntheticEvent, KeyboardEvent } from 'react'
 const BACKENDURL = process.env.REACT_APP_BACKEND_BASEURL || ''
 const transitionStyles = {
+    container: {
+        entering: '',
+        entered: '',
+        exiting: '',
+        exited: styles.exited,
+        unmounted: ''
+    },
     topLeft: {
         entering: styles.topLeftEntering,
         entered: styles.topLeftEntered,
@@ -100,7 +107,9 @@ function Drawer (props: { state: TransitionStatus }): JSX.Element {
     useEffect(() => { if (state === 'entered') focusElement.current?.focus() }, [state])
 
     return (
-        <div { ...handleKeyUpAttrs } className={styles.container}>
+        <div { ...handleKeyUpAttrs } className={classNames(
+            `${styles.container}`, `${transitionStyles.container[state]}`
+        )}>
             <div className={classNames(
                 styles.topLeft,
                 transitionStyles.topLeft[state]

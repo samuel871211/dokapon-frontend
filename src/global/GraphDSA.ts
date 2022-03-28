@@ -1,53 +1,72 @@
-// type position = { x: number, y: number }
-// type maybeElement = {
-//     position?: position,
-//     id: string,
-//     top?: string,
-//     bottom?: string,
-//     left?: string,
-//     right?: string,
-//     [key: string]: any
-// }
-
+type position = { x: number, y: number }
+type maybeElement = {
+    position?: position,
+    top?: string,
+    bottom?: string,
+    left?: string,
+    right?: string,
+    id: string,
+    [key: string]: any
+}
 class GraphDSA {
-    public adjacentMap: Map<string, string[]> = new Map()
+    public adjacencyLists: { [key: string]: string[] } = {}
+    public positionLists: { [key: string]: position } = {}
     public result: string[][] = []
     public path: string[] = []
     public ends: string[] = []
     public traversedQueues: { [key: number]: { node: string, prevNode: string }[] } = {}
     public untraversedQueues: { [key: number]: string[] } = {}
-    public adjacentNodes: string[] | undefined = undefined
+    public adjacentNodes: string[] = []
     public nextNode: string | undefined = undefined
     public start = ''
     public count = 0
 
-    constructor () {
-        this.#buildAdjacentMap()
+    constructor (cells: maybeElement[]) {
+        this.#checkIsValidGraph(cells)
+        this.#buildAdjacencyLists(cells)
     }
-    #buildAdjacentMap (): void {
-        this.adjacentMap = new Map([
-            ['A', ['B', 'G']],
-            ['B', ['A', 'C']],
-            ['C', ['B', 'D', 'H']],
-            ['D', ['C', 'E']],
-            ['E', ['D', 'F', 'J']],
-            ['F', ['E', 'K']],
-            ['G', ['A', 'H']],
-            ['H', ['C', 'G', 'I', 'L']],
-            ['I', ['H', 'J']],
-            ['J', ['E', 'I', 'N']],
-            ['K', ['F', 'O']],
-            ['L', ['H', 'M']],
-            ['M', ['L', 'N']],
-            ['N', ['J', 'M', 'O']],
-            ['O', ['K', 'N']]
-        ])
+    /**
+     * @todo check top, bottom, left, right are all connected to element not link
+     */
+    #checkIsValidGraph (cells: maybeElement[]): void {
+        //
+    }
+    #buildAdjacencyLists (cells: maybeElement[]): void {
+        for (const cell of cells) {
+            // discard links when building AdjacentLists
+            if (!cell.position) continue
+
+            // unique uuid key
+            this.adjacencyLists[cell.id] = []
+            if (cell.top) this.adjacencyLists[cell.id].push(cell.top)
+            if (cell.bottom) this.adjacencyLists[cell.id].push(cell.bottom)
+            if (cell.left) this.adjacencyLists[cell.id].push(cell.left)
+            if (cell.right) this.adjacencyLists[cell.id].push(cell.right)
+            this.positionLists[cell.id] = { ...cell.position }
+        }
+        // this.adjacencyLists = new Map([
+        //     ['A', ['B', 'G']],
+        //     ['B', ['A', 'C']],
+        //     ['C', ['B', 'D', 'H']],
+        //     ['D', ['C', 'E']],
+        //     ['E', ['D', 'F', 'J']],
+        //     ['F', ['E', 'K']],
+        //     ['G', ['A', 'H']],
+        //     ['H', ['C', 'G', 'I', 'L']],
+        //     ['I', ['H', 'J']],
+        //     ['J', ['E', 'I', 'N']],
+        //     ['K', ['F', 'O']],
+        //     ['L', ['H', 'M']],
+        //     ['M', ['L', 'N']],
+        //     ['N', ['J', 'M', 'O']],
+        //     ['O', ['K', 'N']]
+        // ])
     }
     #init (): void {
         this.result = []
         this.path = []
         this.ends = []
-        this.adjacentNodes = undefined
+        this.adjacentNodes = []
         this.nextNode = undefined
         this.traversedQueues = { 0: [] }
         this.untraversedQueues = { 0: [this.start] }
@@ -85,7 +104,7 @@ class GraphDSA {
         this.#goBackUntilUntraversedQueueIsNotEmpty()
     }
     #filter (filters: { duplicateEnd: boolean, traversed?: true, goBackward?: true }): void {
-        if (!this.adjacentNodes || this.adjacentNodes.length === 0) throw new Error('Map有錯')
+        if (!this.adjacentNodes || this.adjacentNodes.length === 0) throw new Error(`adjacencyLists有錯,${this.nextNode || ''}`)
 
         for (const adjacentNode of this.adjacentNodes) {
             const IsDuplicateEnd = filters.duplicateEnd ? this.ends.includes(adjacentNode) : false
@@ -127,7 +146,7 @@ class GraphDSA {
             this.#goBackUntilUntraversedQueueIsNotEmpty()
             this.#traversal()
         } else if (this.nextNode) {
-            this.adjacentNodes = this.adjacentMap.get(this.nextNode)
+            this.adjacentNodes = this.adjacencyLists[this.nextNode]
             this.path.push(this.nextNode)
             this.#addNodeToTraversedQueues()
             // console.log(this.path)
@@ -145,4 +164,5 @@ class GraphDSA {
         }
     }
 }
+
 export default GraphDSA

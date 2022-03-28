@@ -238,8 +238,9 @@ function Game (): JSX.Element {
         <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
             <div id='paper'></div>
 
+            {/* in order to hold drawer state, only set css display none when exited */}
             <Transition appear in={UIState.showDrawer} timeout={{ enter: 0, exit: 1000 }}>
-            {state => state !== 'exited' && (<Drawer state={state}/>)}
+            {state => (<Drawer state={state}/>)}
             </Transition>
 
             <Transition in={UIState.showRoulette} timeout={{ enter: 1000, exit: 0 }}>

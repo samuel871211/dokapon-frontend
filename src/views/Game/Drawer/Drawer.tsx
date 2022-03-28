@@ -14,28 +14,28 @@ const transitionStyles = {
         entering: styles.topLeftEntering,
         entered: styles.topLeftEntered,
         exiting: styles.topLeftExiting,
-        exited: '',
+        exited: styles.exited,
         unmounted: ''
     },
     topRight: {
         entering: styles.topRightEntering,
         entered: styles.topRightEntered,
         exiting: styles.topRightExiting,
-        exited: '',
+        exited: styles.exited,
         unmounted: ''
     },
     bottomLeft: {
         entering: styles.topLeftEntering,
         entered: styles.topLeftEntered,
         exiting: styles.topLeftExiting,
-        exited: '',
+        exited: styles.exited,
         unmounted: ''
     },
     bottomRight: {
         entering: styles.topRightEntering,
         entered: styles.topRightEntered,
         exiting: styles.topRightExiting,
-        exited: '',
+        exited: styles.exited,
         unmounted: ''
     }
 }

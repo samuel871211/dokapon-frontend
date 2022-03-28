@@ -4,3 +4,33 @@
     transform: translateY(-100%);
     background-color: var(--bg-color);
 }
+.topArea {
+    height: 10%;
+    background-color: red;
+    transform: translateY(-100%);
+}
+.centerArea {
+    height: 55%;
+    background-color: green;
+    transform: translateX(-100%);
+}
+.bottomArea {
+    height: 35%;
+    background-color: blue;
+    transform: translateY(100%);
+}
+.topAreaEntering {
+    visibility: hidden;
+}
+.topAreaEntered {
+    transform: none;
+    transition: transform 0.5s;
+}
+.centerAreaEntered {
+    transform: none;
+    transition: transform 0.5s;
+}
+.bottomAreaEntered {
+    transform: none;
+    transition: transform 0.5s;
+}

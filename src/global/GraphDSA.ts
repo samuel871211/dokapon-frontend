@@ -1,16 +1,14 @@
-type position = { x: number, y: number }
-type maybeElement = {
-    position?: position,
-    id: string,
-    top?: string,
-    bottom?: string,
-    left?: string,
-    right?: string,
-    [key: string]: any
-}
-// type Element =  maybeElement & {
-//     position: position
+// type position = { x: number, y: number }
+// type maybeElement = {
+//     position?: position,
+//     id: string,
+//     top?: string,
+//     bottom?: string,
+//     left?: string,
+//     right?: string,
+//     [key: string]: any
 // }
+
 class GraphDSA {
     public adjacentMap: Map<string, string[]> = new Map()
     public result: string[][] = []
@@ -26,7 +24,7 @@ class GraphDSA {
     constructor () {
         this.#buildAdjacentMap()
     }
-    #buildAdjacentMap () {
+    #buildAdjacentMap (): void {
         this.adjacentMap = new Map([
             ['A', ['B', 'G']],
             ['B', ['A', 'C']],
@@ -45,7 +43,7 @@ class GraphDSA {
             ['O', ['K', 'N']]
         ])
     }
-    #init () {
+    #init (): void {
         this.result = []
         this.path = []
         this.ends = []
@@ -58,14 +56,16 @@ class GraphDSA {
             this.untraversedQueues[i] = []
         }
     }
+    // eslint-disable-next-line
     getAllPaths (start: string, count: number) {
-        if (this.count < 0) this.#getResult()
+        if (this.count < 0) return this.#getResult()
         this.start = start
         this.count = count
         this.#init()
         this.#traversal()
         return this.#getResult()
     }
+    // eslint-disable-next-line
     #getResult () {
         return {
             result: this.result,
@@ -74,17 +74,17 @@ class GraphDSA {
             ends: this.ends
         }
     }
-    #goBackUntilUntraversedQueueIsNotEmpty () {
+    #goBackUntilUntraversedQueueIsNotEmpty (): void {
         while (this.path.length !== 0 && this.untraversedQueues[this.path.length].length === 0) {
             this.path.pop()
         }
     }
-    #addResultAndGoBack () {
+    #addResultAndGoBack (): void {
         this.result.push([...this.path])
         this.ends.push(this.path.pop() as string)
         this.#goBackUntilUntraversedQueueIsNotEmpty()
     }
-    #filter (filters: { duplicateEnd: boolean, traversed?: true, goBackward?: true }) {
+    #filter (filters: { duplicateEnd: boolean, traversed?: true, goBackward?: true }): void {
         if (!this.adjacentNodes || this.adjacentNodes.length === 0) throw new Error('Map有錯')
 
         for (const adjacentNode of this.adjacentNodes) {
@@ -96,13 +96,13 @@ class GraphDSA {
             }
         }
     }
-    #IsTraversed (adjacentNode: string) {
+    #IsTraversed (adjacentNode: string): boolean {
         for (const { node, prevNode } of this.traversedQueues[this.path.length]) {
             if (adjacentNode === node && this.path[this.path.length - 1] === prevNode) return true
         }
         return false
     }
-    #addNodeToTraversedQueues () {
+    #addNodeToTraversedQueues (): void {
         // 尾巴不需要紀錄，因為ends會紀錄
         // 開頭不需要紀錄，因為一定不會重複
         if (this.path.length === this.count + 1) return
@@ -118,7 +118,7 @@ class GraphDSA {
             prevNode: prevNodeToBeAdded
         })
     }
-    #traversal () {
+    #traversal (): void {
         console.count(this.start)
         this.nextNode = this.untraversedQueues[this.path.length].shift()
         
@@ -146,8 +146,3 @@ class GraphDSA {
     }
 }
 export default GraphDSA
-
-// const instance = new GraphDSA()
-// const { result, queues } = instance.getAllPaths('A', 17)
-// console.log(result)
-// console.log(queues)

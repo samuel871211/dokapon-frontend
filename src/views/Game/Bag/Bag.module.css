@@ -2,20 +2,85 @@
     width: 100%;
     height: 100%;
     transform: translateY(-100%);
-    background-color: var(--bg-color);
 }
 .topArea {
-    height: 10%;
-    background-color: red;
+    width: 100%;
+    height: 15%;
     transform: translateY(-100%);
 }
+.swiperContainer {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+}
+.swiper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 3rem;
+    display: flex;
+    border: 0.2rem outset var(--border-color);
+    border-radius: 9999px;
+    font-size: 3rem;
+    line-height: 4rem;
+    background-color: var(--bg-color);
+}
+.swiperText {
+    margin-left: 0.5rem;
+    margin-right:0.5rem;
+}
+.square {
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: black;
+    color: white;
+}
 .centerArea {
+    width: 100%;
     height: 55%;
     background-color: green;
     transform: translateX(-100%);
 }
+.itemAndMagicContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.itemContainer {
+    position: absolute;
+    top: 6%;
+    left: 6%;
+    font-size: 3rem;
+    line-height: 3rem;
+    background-color: var(--bg-color);
+    border: 0.2rem outset var(--border-color);
+    border-radius: 1.5rem;
+    width: 85%;
+    /* display: flex;
+    flex-wrap: nowrap; */
+}
+.item {
+    font-size: 3rem;
+    line-height: 3rem;
+    width: 50%;
+    display: inline-block;
+}
+.magicContainer {
+    position: absolute;
+    top: 3%;
+    left: 9%;
+    font-size: 3rem;
+    line-height: 3rem;
+    background-color: purple;
+    width: 85%;
+}
 .bottomArea {
-    height: 35%;
+    width: 100%;
+    height: 30%;
     background-color: blue;
     transform: translateY(100%);
 }
@@ -26,11 +91,23 @@
     transform: none;
     transition: transform 0.5s;
 }
+.topAreaExiting {
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+}
 .centerAreaEntered {
     transform: none;
     transition: transform 0.5s;
 }
+.centerAreaExiting {
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
 .bottomAreaEntered {
     transform: none;
+    transition: transform 0.5s;
+}
+.bottomAreaExiting {
+    transform: translateY(100%);
     transition: transform 0.5s;
 }

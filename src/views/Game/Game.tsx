@@ -40,6 +40,12 @@ function Game (): JSX.Element {
     //     onKeyDown: handleKeyDown,
     //     onKeyUp: handleKeyUp
     // } : {}
+    function showDrawer () {
+        UIStateDispatch({
+            type: 'showDrawer',
+            payload: true
+        })
+    }
     // function handleKeyDown (e: KeyboardEvent) {
     //     if (!paper) return
     //     keyPressed[e.key.toLowerCase()] = true
@@ -247,7 +253,7 @@ function Game (): JSX.Element {
             {state => state !== 'exited' && (<Roulette state={state}/>)}
             </Transition>
 
-            <Transition in={UIState.showBag} timeout={{ enter: 1000, exit: 0 }}>
+            <Transition in={UIState.showBag} timeout={{ enter: 1000, exit: 500 }} onExited={showDrawer}>
             {state => state !== 'exited' && (<Bag state={state}/>)}
             </Transition>
 

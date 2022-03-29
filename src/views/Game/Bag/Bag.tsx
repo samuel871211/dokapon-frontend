@@ -9,21 +9,21 @@ const transitionStyles = {
     topArea: {
         entering: styles.topAreaEntering,
         entered: styles.topAreaEntered,
-        exiting: '',
+        exiting: styles.topAreaExiting,
         exited: '',
         unmounted: ''
     },
     centerArea: {
         entering: '',
         entered: styles.centerAreaEntered,
-        exiting: '',
+        exiting: styles.centerAreaExiting,
         exited: '',
         unmounted: ''
     },
     bottomArea: {
         entering: '',
         entered: styles.bottomAreaEntered,
-        exiting: '',
+        exiting: styles.bottomAreaExiting,
         exited: '',
         unmounted: ''
     }
@@ -43,12 +43,36 @@ function Bag (props: {state: TransitionStatus }): JSX.Element {
             <div className={classNames(
                 `${styles.topArea}`, `${transitionStyles.topArea[state]}`
             )}>
-
+                <div className={styles.swiperContainer}>
+                    <div className={styles.swiper}>
+                        <div className={styles.square}>L</div>
+                        <div className={styles.swiperText}>{t('アイテム')}</div>
+                        <div className={styles.square}>R</div>
+                    </div>
+                </div>
             </div>
             <div className={classNames(
                 `${styles.centerArea}`, `${transitionStyles.centerArea[state]}`
             )}>
+                <div className={styles.itemAndMagicContainer}>
+                    <div className={styles.itemContainer}>
+                        <div className={styles.item}>a</div>
+                        <div className={styles.item}>a</div>
+                        <div className={styles.item}>a</div>
+                        <div className={styles.item}>a</div>
+                        <div className={styles.item}>a</div>
+                        <div className={styles.item}>a</div>
+                        <div className={styles.item}>a</div>
+                        <div className={styles.item}>a</div>
+                        <div className={styles.item}>a</div>
+                        <div className={styles.item}>a</div>
+                        <div className={styles.item}>a</div>
+                        <div className={styles.item}>a</div>
+                    </div>
+                    <div className={styles.magicContainer}>
 
+                    </div>
+                </div>
             </div>
             <div className={classNames(
                 `${styles.bottomArea}`, `${transitionStyles.bottomArea[state]}`
@@ -96,10 +120,6 @@ function useMetaData (props: {state: TransitionStatus }) {
             UIStateDispatch({
                 type: 'showBag',
                 payload: false
-            })
-            UIStateDispatch({
-                type: 'showDrawer',
-                payload: true
             })
             return
         }

@@ -2,11 +2,15 @@
     aspect-ratio: 16 / 9;
     max-width: 100%;
     max-height: 100%;
+    /* margin-top: calc(50vh - var(--vw) * 50 * 9 / 16);
+    margin-bottom: calc(50vh - var(--vw) * 50 * 9 / 16); */
 }
 .traditionalRoot {
     aspect-ratio: 4 / 3;
     max-width: 100%;
     max-height: 100%;
+    /* margin-top: calc(50vh - var(--vw) * 50 * 3 / 4);
+    margin-bottom: calc(50vh - var(--vw) * 50 * 3 / 4); */
 }
 .stretchRoot {
     aspect-ratio: auto;

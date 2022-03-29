@@ -21,7 +21,8 @@
     background-color: black;
 }
 #root {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
     background-color: #333333;
 }

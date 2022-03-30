@@ -22,26 +22,35 @@ class GraphDSA {
     public count = 0
 
     constructor (cells: maybeElement[]) {
-        this.#checkIsValidGraph(cells)
         this.#buildAdjacencyLists(cells)
-    }
-    /**
-     * @todo check top, bottom, left, right are all connected to element not link
-     */
-    #checkIsValidGraph (cells: maybeElement[]): void {
-        //
     }
     #buildAdjacencyLists (cells: maybeElement[]): void {
         for (const cell of cells) {
             // discard links when building AdjacentLists
             if (!cell.position) continue
 
-            // unique uuid key
+            // use cell.id as unique uuid key
             this.adjacencyLists[cell.id] = []
-            if (cell.top) this.adjacencyLists[cell.id].push(cell.top)
-            if (cell.bottom) this.adjacencyLists[cell.id].push(cell.bottom)
-            if (cell.left) this.adjacencyLists[cell.id].push(cell.left)
-            if (cell.right) this.adjacencyLists[cell.id].push(cell.right)
+            if (cell.top) {
+                const connectedCell = cells.find(tempCell => tempCell.id === cell.top)
+                if (connectedCell?.position) throw new Error(`${cell.id} top ${connectedCell.id}`)
+                else this.adjacencyLists[cell.id].push(cell.top)
+            }
+            if (cell.bottom) {
+                const connectedCell = cells.find(tempCell => tempCell.id === cell.bottom)
+                if (connectedCell?.position) throw new Error(`${cell.id} bottom ${connectedCell.id}`)
+                else this.adjacencyLists[cell.id].push(cell.bottom)
+            }
+            if (cell.left) {
+                const connectedCell = cells.find(tempCell => tempCell.id === cell.left)
+                if (connectedCell?.position) throw new Error(`${cell.id} left ${connectedCell.id}`)
+                else this.adjacencyLists[cell.id].push(cell.left)
+            }
+            if (cell.right) {
+                const connectedCell = cells.find(tempCell => tempCell.id === cell.right)
+                if (connectedCell?.position) throw new Error(`${cell.id} right ${connectedCell.id}`)
+                else this.adjacencyLists[cell.id].push(cell.right)
+            }
             this.positionLists[cell.id] = { ...cell.position }
         }
         // this.adjacencyLists = new Map([

@@ -1,4 +1,4 @@
-import { Fragment, useContext, useReducer } from 'react'
+import { Fragment, useContext, useEffect, useReducer } from 'react'
 
 import guide from '../../imgs/guide.png'
 import { BASICJOBS } from '../../global/characters'
@@ -17,12 +17,21 @@ import GoalInputDialog from './GoalInputDialog'
 import NPCGenerateDialog from './NPCGenerateDialog'
 import NameInputDialog from './NameInputDialog'
 import SelectOrderAndController from './SelectOrderAndController'
+import registerWindowResizeEvtHandler from '../../global/windowResizeEvtHandler'
 
 import { gameProgressContext } from '../../reducers/gameProgress'
+import { userPreferenceContext } from '../../reducers/userPreference'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/SelectCharacter/UIState'
 
 import styles from './SelectCharacter.module.css'
+import indexStyles from '../../index.module.css'
+import classNames from 'classnames'
 
+const aspectRatioStyles = {
+    '16:9': indexStyles.wideAspectRatio,
+    '4:3': indexStyles.traditionalAspectRatio,
+    'stretch': indexStyles.stretchAspectRatio
+}
 const digitToFullWidth = ['', '１', '２', '３', '４']
 
 const Components = {
@@ -52,6 +61,7 @@ function SelectCharacter (): JSX.Element {
     // data
     const { gameProgress } = useContext(gameProgressContext)
     const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState)
+    const { userPreference } = useContext(userPreferenceContext)
     const { goalType, playersAttrs, currentPlayer } = gameProgress
     const { currentStep, selectedJob, showSelectCharacter } = UIState
     const name = playersAttrs[currentPlayer - 1].name
@@ -246,11 +256,17 @@ function SelectCharacter (): JSX.Element {
             }
         }
     }
+
+    useEffect(registerWindowResizeEvtHandler, [])
     
     // template
     return (
         <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
-            <div className={`${styles.container} ${showSelectCharacter ? '' : styles.fadeOut}`}>
+            <div className={classNames({
+                [styles.container]: true,
+                [styles.fadeOut]: !showSelectCharacter,
+                [aspectRatioStyles[userPreference.aspectRatio]]: true
+            })}>
                 <ContextMenu/>
                 {currentStep === 'NameInputDialog' &&
                     <NameInputDialog/>

@@ -1,12 +1,3 @@
-/**
- * 目前已翻譯好的components
- * 
- * Home > BtnGroup
- * 
- * Home > Settings
- * 
- * Game > Drawer > FloatingActionBtn
- */
 const texts = new Map([
     // Home > Settings
     ['語言', {

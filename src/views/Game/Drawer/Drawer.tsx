@@ -1,5 +1,5 @@
 import AttrCircle from '../../../components/AttrCircle'
-import WatchLaterIcon from '@material-ui/icons/WatchLater'
+import { SomeKindOfIcon } from '../../../global/icons'
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
 import { TransitionStatus } from 'react-transition-group'
 import styles from './Drawer.module.css'
@@ -94,6 +94,14 @@ function Drawer (props: { state: TransitionStatus }): JSX.Element {
                 })
                 return
             case 2: // 查看
+                UIStateDispatch({
+                    type: 'showDrawer',
+                    payload: false
+                })
+                UIStateDispatch({
+                    type: 'showCheck',
+                    payload: true
+                })
                 return
             case 3: // 特技
                 return
@@ -169,10 +177,7 @@ function FloatingActionBtn (props: { selected: boolean, children: string }): JSX
     return (
         <div className={styles.floatingActionBtn}>
             <div>
-                <WatchLaterIcon
-                    fontSize='inherit'
-                    htmlColor='yellow'
-                />
+                <SomeKindOfIcon/>
             </div>
             <div style={{ opacity: selected ? 1 : 0 }}>
                 <div>{children}</div>

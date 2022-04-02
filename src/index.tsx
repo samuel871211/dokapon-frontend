@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 import { useEffect, useReducer } from 'react'
-import { ThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider } from '@mui/material'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styles from './index.module.css'
 import './index.css'
@@ -8,35 +8,35 @@ import GraphEditor from './views/GraphEditor'
 import Game from './views/Game'
 import SelectCharacter from './views/SelectCharacter'
 import Home from './views/Home'
-import calcVW from './global/calcVW'
+// import registerWindowResizeEvtHandler from './global/registerWindowResizeEvtHandler'
 import { DARKTHEME } from './global/CONSTANTS'
 import { initGameProgress, gameProgressContext, gameProgressReducer } from './reducers/gameProgress'
 import { inituserPreference, userPreferenceContext, userPreferenceReducer } from './reducers/userPreference'
-const rootStyles = {
-    '16:9': styles.wideRoot,
-    '4:3': styles.traditionalRoot,
-    'stretch': styles.stretchRoot
-}
+// const rootStyles = {
+//     '16:9': styles.wideRoot,
+//     '4:3': styles.traditionalRoot,
+//     'stretch': styles.stretchRoot
+// }
 const HTMLStyles = {
     '16:9': styles.wideHTML,
     '4:3': styles.traditionalHTML,
     'stretch': styles.stretchHTML
 }
-calcVW()
+// registerWindowResizeEvtHandler()
 
 function App (): JSX.Element {
     const [gameProgress, gameProgressDispatch] = useReducer(gameProgressReducer, initGameProgress)
     const [userPreference, userPreferenceDispatch] = useReducer(userPreferenceReducer, inituserPreference)
     useEffect(function switchAspectRatio () {
-        const rootEl = document.getElementById('root')
+        const aspectRatioEl = document.getElementById('root')?.children[0]
         const HTMLEl = document.documentElement
-        if (!rootEl) return
+        if (!aspectRatioEl) return
 
-        rootEl.removeAttribute('class')
-        rootEl.classList.add(rootStyles[userPreference.aspectRatio])
+        // aspectRatioEl.removeAttribute('class')
+        // aspectRatioEl.classList.add(rootStyles[userPreference.aspectRatio])
         HTMLEl.removeAttribute('class')
         HTMLEl.classList.add(HTMLStyles[userPreference.aspectRatio])
-        HTMLEl.style.setProperty('--vw', `${rootEl.clientWidth / 100}px`)
+        HTMLEl.style.setProperty('--vw', `${aspectRatioEl.clientWidth / 100}px`)
     }, [userPreference.aspectRatio])
 
     return (

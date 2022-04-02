@@ -1,4 +1,10 @@
 .container {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #333333;
+    overflow: hidden;
+}
+.view1 {
     width: 100%;
     height: 100%;
 }

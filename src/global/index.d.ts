@@ -266,7 +266,7 @@ declare namespace Dokapon {
             showBag: boolean,
             showTalent: boolean,
             showData: boolean,
-            showMap: boolean,
+            showCheck: boolean,
             isPaperTopLayer: boolean
         }
         type Action = {
@@ -276,7 +276,7 @@ declare namespace Dokapon {
                 'showBag' |
                 'showTalent' |
                 'showData' |
-                'showMap' |
+                'showCheck' |
                 'isPaperTopLayer',
             payload: boolean
         }

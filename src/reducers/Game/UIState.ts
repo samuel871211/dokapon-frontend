@@ -7,7 +7,7 @@ const initUIState: Dokapon.Game.UIState = {
     showBag: false,
     showTalent: false,
     showData: false,
-    showMap: false,
+    showCheck: false,
     isPaperTopLayer: false
 }
 

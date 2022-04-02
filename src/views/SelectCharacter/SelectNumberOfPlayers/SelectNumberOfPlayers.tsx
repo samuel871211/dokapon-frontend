@@ -1,6 +1,5 @@
 import React, { useState, useRef, useContext } from 'react'
-import PersonIcon from '@material-ui/icons/Person'
-import AdbIcon from '@material-ui/icons/Adb'
+import { SomeKindOfIcon } from '../../../global/icons'
 import styles from './SelectNumberOfPlayers.module.css'
 import globalStyles from '../../../global/styles.module.css'
 import { gameProgressContext } from '../../../reducers/gameProgress'
@@ -101,9 +100,9 @@ function NumberOfPlayersBtn (props: { playerNum: number, selected: boolean }): J
         const icons = []
         for (let i = 0; i < 4; i++) {
             if (i < playerNum) {
-                icons.push(<PersonIcon key={i} fontSize='large'/>)
+                icons.push(<SomeKindOfIcon/>)
             } else {
-                icons.push(<AdbIcon key={i} fontSize='large'/>)
+                icons.push(<SomeKindOfIcon/>)
             }
         }
         return icons

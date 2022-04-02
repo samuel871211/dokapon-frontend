@@ -1,5 +1,5 @@
 import Dokapon from '.'
-import { createTheme } from '@material-ui/core'
+import { createTheme } from '@mui/material'
 
 export const COLORLIST: Dokapon.ColorTypes[] = [
     'red', 'orange', 'yellow',
@@ -18,7 +18,7 @@ export const GENDERLIST: Dokapon.GenderTypes[] = [
 ]
 export const DARKTHEME = createTheme({
     palette: {
-        type: 'dark',
+        mode: 'dark',
         primary: {
             light: '#ffa919',
             main: '#ffa000',

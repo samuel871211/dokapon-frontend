@@ -1,15 +1,24 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
 import { getCells } from '../../api/graph'
 import { createCharacter } from '../../global/characters'
 import { Transition } from 'react-transition-group'
-// import { userPreferenceContext } from '../../reducers/userPreference'
+import { userPreferenceContext } from '../../reducers/userPreference'
+import styles from './Game.module.css'
+import registerWindowResizeEvtHandler from '../../global/windowResizeEvtHandler'
 import Drawer from './Drawer'
 import Roulette from './Roulette'
 import Bag from './Bag'
+import Check from './Check'
 import { useReducer } from 'react'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Game/UIState'
+import indexStyles from '../../index.module.css'
+const aspectRatioStyles = {
+    '16:9': indexStyles.wideAspectRatio,
+    '4:3': indexStyles.traditionalAspectRatio,
+    'stretch': indexStyles.stretchAspectRatio
+}
 // import GraphDSA from '../../global/GraphDSA'
 // import graph from '../../global/graph'
 // const maybeElements = graph.cells.filter(cell => !cell.name.toLowerCase().includes('link'))
@@ -30,6 +39,7 @@ function Game (): JSX.Element {
     // const { userPreference } = useContext(userPreferenceContext)
     // const [keyPressed, setKeyPress] = useState< { [key: string]: boolean }>({})
     // const [center, setCenter] = useState({ x: -6085, y: -4606 })
+    const { userPreference } = useContext(userPreferenceContext)
     const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState)
     const [interactiveGraph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
     // const [paper, setPaper] = useState<joint.dia.Paper>()
@@ -80,6 +90,7 @@ function Game (): JSX.Element {
 
     // useEffect(() => focusElement.current?.focus(), [UIState.isPaperTopLayer])
     // watch && mounted
+    useEffect(registerWindowResizeEvtHandler, [])
     useEffect(() => {
         function initPaper () {
             // paper should be initialized after #canvas is being mounted
@@ -155,6 +166,26 @@ function Game (): JSX.Element {
                         dragAnchorPos.x + deltaX,
                         dragAnchorPos.y + deltaY
                     )
+                },
+                'cell:mouseover': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event
+                ) {
+                    cellView.highlight()
+                },
+                'cell:mouseout': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event
+                ) {
+                    cellView.unhighlight()
+                },
+                'cell:pointerdblclick': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
+                    console.log(cellView)
                 },
                 'blank:mousewheel': function (
                     evt: JQuery.Event,
@@ -242,20 +273,26 @@ function Game (): JSX.Element {
     // template
     return (
         <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
-            <div id='paper'></div>
+            <div className={`${styles.container} ${aspectRatioStyles[userPreference.aspectRatio]}`}>
+                <div id='paper'></div>
 
-            {/* in order to hold drawer state, only set css display none when exited */}
-            <Transition appear in={UIState.showDrawer} timeout={{ enter: 0, exit: 1000 }}>
-            {state => (<Drawer state={state}/>)}
-            </Transition>
+                {/* in order to hold drawer state, only set css display none when exited */}
+                <Transition appear in={UIState.showDrawer} timeout={{ enter: 0, exit: 1000 }}>
+                {state => (<Drawer state={state}/>)}
+                </Transition>
 
-            <Transition in={UIState.showRoulette} timeout={{ enter: 1000, exit: 0 }}>
-            {state => state !== 'exited' && (<Roulette state={state}/>)}
-            </Transition>
+                <Transition in={UIState.showRoulette} timeout={{ enter: 1000, exit: 0 }}>
+                {state => state !== 'exited' && (<Roulette state={state}/>)}
+                </Transition>
 
-            <Transition in={UIState.showBag} timeout={{ enter: 1000, exit: 500 }} onExited={showDrawer}>
-            {state => state !== 'exited' && (<Bag state={state}/>)}
-            </Transition>
+                <Transition in={UIState.showBag} timeout={{ enter: 1000, exit: 500 }} onExited={showDrawer}>
+                {state => state !== 'exited' && (<Bag state={state}/>)}
+                </Transition>
+
+                <Transition in={UIState.showCheck} timeout={{ enter: 1000, exit: 1000}}>
+                {state => state !== 'exited' && (<Check state={state}/>)}
+                </Transition>
+            </div>
 
         </UIStateContext.Provider>
     )

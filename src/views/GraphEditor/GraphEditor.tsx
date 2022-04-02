@@ -1,36 +1,42 @@
 import * as SHAPES from '../../global/shapes'
 import { useState, useEffect, Fragment } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import Box from '@material-ui/core/Box'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
-import Divider from '@material-ui/core/Divider'
-import CloudUploadIcon from '@material-ui/icons/CloudUpload'
-import SwapHorizIcon from '@material-ui/icons/SwapHoriz'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import Dialog from '@material-ui/core/Dialog'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
-import InfoIcon from '@material-ui/icons/Info'
-import ImportExportIcon from '@material-ui/icons/ImportExport'
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
-import ArrowBackIcon from '@material-ui/icons/ArrowBack'
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
-import SvgIcon from '@material-ui/core/SvgIcon'
-import PanToolIcon from '@material-ui/icons/PanTool'
-import EditIcon from '@material-ui/icons/Edit'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Checkbox from '@material-ui/core/Checkbox'
-import Grid from '@material-ui/core/Grid'
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
-import ZoomInIcon from '@material-ui/icons/ZoomIn'
-import Tooltip from '@material-ui/core/Tooltip'
-import Snackbar from '@material-ui/core/Snackbar'
-import MuiAlert, { Color } from '@material-ui/lab/Alert'
-// import $ from 'jquery'
+import {
+    Box,
+    AppBar,
+    Toolbar,
+    Button,
+    IconButton,
+    Divider,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogContentText,
+    SvgIcon,
+    FormControlLabel,
+    Checkbox,
+    Grid,
+    Menu,
+    MenuItem,
+    Tooltip,
+    Snackbar,
+    Alert,
+    Select,
+    FormControl,
+    InputLabel,
+    FormLabel
+} from '@mui/material'
+import CloudUploadIcon from '@mui/icons-material/CloudUpload'
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz'
+import InfoIcon from '@mui/icons-material/Info'
+import ImportExportIcon from '@mui/icons-material/ImportExport'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
+import PanToolIcon from '@mui/icons-material/PanTool'
+import EditIcon from '@mui/icons-material/Edit'
+import ZoomInIcon from '@mui/icons-material/ZoomIn'
+import AddIcon from '@mui/icons-material/Add'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
 import { getCells, updateCells } from '../../api/graph'
@@ -43,7 +49,7 @@ type groupOffset = Array<{
 }>
 type snackbarState = {
     open: boolean
-    severity: Color,
+    severity: 'success' | 'info' | 'warning' | 'error',
     text: string
 }
 
@@ -59,14 +65,18 @@ export default function GraphEditor (): JSX.Element {
     const [graph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
     const [selectedLink, setSelectedLink] = useState<joint.dia.Link>()
     const [selectedElement, setSelectedElement] = useState<joint.dia.Element>()
-    const [twoWayLinkEnabled, toggleTwoWayLinkEnabled] = useState(true) 
+    const [twoWayLinkEnabled, toggleTwoWayLinkEnabled] = useState(true)
+    const [toolBarMenuAnchorEl, setToolBarMenuAnchorEl] = useState<null | HTMLElement>(null)
     const [snackbar, setSnackbar] = useState<snackbarState>({
         open: false,
         severity: 'success',
         text: ''
     })
-
+    const toolBarMenuOpen = Boolean(toolBarMenuAnchorEl)
     // methods
+    function addNewGraph () {
+        //
+    }
     function addElement (name: string): void {
         if (!selectedLink) return
 
@@ -393,6 +403,9 @@ export default function GraphEditor (): JSX.Element {
     }
 
     // watch && mounted && unmount
+    useEffect(() => {
+        //
+    }, [snackbar.text])
     useEffect(() => {
         function initPaper () {
             // paper should be initialized after #canvas is being mounted
@@ -989,35 +1002,13 @@ export default function GraphEditor (): JSX.Element {
         })
     }, [graph])
 
-
-    // css style
-    const styles = makeStyles(theme => ({
-        AppBar: {
-            backgroundColor: theme.palette.background.default
-        },
-        GridItem: {
-            textAlign: 'center'
-        },
-        mx12: {
-            marginRight: '12px',
-            marginLeft: '12px'
-        },
-        ml12: {
-            marginLeft: '12px'
-        },
-        Paper: {
-            transform: 'rotate3d(1, 0, 0, 60deg)'
-        }
-    }))
-    const classes = styles()
-
     // template
     return (
         <Fragment>
-            <AppBar className={classes.AppBar} position="sticky">
+            <AppBar position="sticky">
                 <Toolbar variant="dense" disableGutters>
                     <Tooltip title="儲存">
-                        <IconButton onClick={saveGraph}>
+                        <IconButton onClick={saveGraph} size='large'>
                             <CloudUploadIcon/>
                         </IconButton>
                     </Tooltip>
@@ -1027,7 +1018,7 @@ export default function GraphEditor (): JSX.Element {
                     />
                     <PanToolIcon
                         htmlColor={IsDragMode ? '#ffa000' : '#cccccc'}
-                        className={classes.mx12}
+                        sx={{ mx: 1.5 }}
                     />
                     <Divider
                         orientation="vertical"
@@ -1035,15 +1026,58 @@ export default function GraphEditor (): JSX.Element {
                     />
                     <EditIcon
                         htmlColor={IsDragMode ? '#cccccc' : '#ffa000'}
-                        className={classes.mx12}
+                        sx={{ mx: 1.5 }}
                     />
+                    <Divider
+                        orientation="vertical"
+                        flexItem
+                    />
+                    <Button
+                        variant='text'
+                        sx={{ mx: 1.5 }}
+                        onClick={(e) => setToolBarMenuAnchorEl(e.currentTarget)}
+                    >Graph</Button>
+                    <Menu
+                        open={toolBarMenuOpen}
+                        anchorEl={toolBarMenuAnchorEl}
+                        onClose={() => setToolBarMenuAnchorEl(null)}
+                    >
+                        <MenuItem>aaa</MenuItem>
+                        <MenuItem>bbb</MenuItem>
+                        <MenuItem>ccc</MenuItem>
+                    </Menu>
+                    {/* <FormControl sx={{ mx: 1.5 }}>
+                        <FormLabel>Graph</FormLabel>
+                        <Select autoWidth>
+                            <MenuItem>aaaaaaaaaa</MenuItem>
+                            <MenuItem>bbb</MenuItem>
+                            <MenuItem>ccc</MenuItem>
+                        </Select>
+                    </FormControl> */}
+                    <Divider
+                        orientation="vertical"
+                        flexItem
+                    />
+                    <Tooltip title='Add new graph'>
+                        <IconButton onClick={addNewGraph}>
+                            <AddIcon/>
+                        </IconButton>
+                    </Tooltip>
+                    {/* <IconButton>
+                        <AddIcon/>
+                    </IconButton> */}
+                    {/* <Button
+                        sx={{ mx: 1.5 }}
+                        variant='contained'
+                        startIcon={<AddIcon/>}
+                    >Add new grpah</Button> */}
                     <Divider
                         orientation="vertical"
                         flexItem
                     />
                     <ZoomInIcon
                         htmlColor="white"
-                        className={classes.ml12}
+                        sx={{ ml: 1.5 }}
                     />
                     <Box color="white" display="flex" mr={1.5}>
                         {(paperScale * 100).toFixed(0) + '%'}
@@ -1084,7 +1118,7 @@ export default function GraphEditor (): JSX.Element {
                                 <Grid
                                     item xs={4}
                                     key={index}
-                                    className={classes.GridItem}
+                                    sx={{ textAlign: 'center'}}
                                 >
                                     <ElementSvgIcon
                                         type={type}
@@ -1127,7 +1161,7 @@ export default function GraphEditor (): JSX.Element {
                             <Grid 
                                 item
                                 xs={4}
-                                className={classes.GridItem}
+                                sx={{ textAlign: 'center' }}
                             >   
                                 <LinkSvgIcon
                                     direction='top'
@@ -1139,7 +1173,7 @@ export default function GraphEditor (): JSX.Element {
                             <Grid 
                                 item
                                 xs={4}
-                                className={classes.GridItem}
+                                sx={{ textAlign: 'center' }}
                             >
                                 <LinkSvgIcon
                                     direction='left'
@@ -1150,7 +1184,7 @@ export default function GraphEditor (): JSX.Element {
                             <Grid 
                                 item
                                 xs={4}
-                                className={classes.GridItem}
+                                sx={{ textAlign: 'center' }}
                             >
                                 <ElementSvgIcon
                                     disabled={true}
@@ -1160,7 +1194,7 @@ export default function GraphEditor (): JSX.Element {
                             <Grid 
                                 item
                                 xs={4}
-                                className={classes.GridItem}
+                                sx={{ textAlign: 'center' }}
                             >
                                 <LinkSvgIcon
                                     direction='right'
@@ -1172,7 +1206,7 @@ export default function GraphEditor (): JSX.Element {
                             <Grid 
                                 item
                                 xs={4}
-                                className={classes.GridItem}
+                                sx={{ textAlign: 'center' }}
                             >
                                 <LinkSvgIcon
                                     direction='bottom'
@@ -1190,12 +1224,12 @@ export default function GraphEditor (): JSX.Element {
                 open={snackbar.open}
                 autoHideDuration={3000}
                 onClose={closeSnackbar}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
             >
-                <MuiAlert
+                <Alert
                     severity={snackbar.severity}
-                    variant="filled"
-                    children={ snackbar.text }
-                />
+                    variant='filled'
+                >{snackbar.text}</Alert>
             </Snackbar>
             <Dialog
                 open={infoDialog}

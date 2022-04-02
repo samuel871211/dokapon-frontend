@@ -1,6 +1,6 @@
 import { debounce } from 'lodash'
 
-export default function calcVW (): void {
+export default function calcVW () {
     const HTMLEl = document.documentElement
     const rootEl = document.getElementById('root')
     if (!rootEl) return console.error('#root not found')

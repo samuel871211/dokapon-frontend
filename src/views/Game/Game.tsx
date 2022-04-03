@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
-import { getCells } from '../../api/graph'
+import { findGraph } from '../../api/graph'
 import { createCharacter } from '../../global/characters'
 import { Transition } from 'react-transition-group'
 import { userPreferenceContext } from '../../reducers/userPreference'
@@ -41,7 +41,7 @@ function Game (): JSX.Element {
     // const [center, setCenter] = useState({ x: -6085, y: -4606 })
     const { userPreference } = useContext(userPreferenceContext)
     const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState)
-    const [interactiveGraph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
+    const [graph] = useState(new joint.dia.Graph({}, { cellNamespace: { standard: joint.shapes.standard } }))
     // const [paper, setPaper] = useState<joint.dia.Paper>()
     // const handleKeyBoardAttrs = UIState.isPaperTopLayer ? {
     //     tabIndex: 0,
@@ -99,7 +99,7 @@ function Game (): JSX.Element {
                 cellViewNamespace: { standard: joint.shapes.standard },
                 width: '100%',
                 height: '100%',
-                model: interactiveGraph,
+                model: graph,
                 restrictTranslate: true,
                 background: {
                     color: '#555'
@@ -241,10 +241,11 @@ function Game (): JSX.Element {
         }
         /**
          * @todo create player, read game Progress
+         * @todo 紀錄player目前所在的地圖
          */
         async function loadCells (): Promise<void> {
-            const response = await getCells()
-            interactiveGraph.fromJSON(response.data)
+            const response = await findGraph('mainWorld')
+            graph.fromJSON(response.data)
             
             const player = createCharacter({
                 characterType: 'player',
@@ -252,12 +253,11 @@ function Game (): JSX.Element {
                 gender: 'female',
                 color: 'darkBlue'
             }).position(6700 - 40, 4840 - 110)
-            interactiveGraph.addCell(player)
+            graph.addCell(player)
         }
 
         // initial data
         const Paper = initPaper()
-        // setPaper(Paper)
         void loadCells()
         registerPaperEventHandler(Paper)
         Paper.translate(-6085, -4606) // center of the world
@@ -265,10 +265,9 @@ function Game (): JSX.Element {
         return () => {
             const el = document.getElementById('paper')
             if (el) el.replaceWith(el.cloneNode(true))
-            // $('#paper').off()
         }
 
-    }, [interactiveGraph])
+    }, [graph])
 
     // template
     return (

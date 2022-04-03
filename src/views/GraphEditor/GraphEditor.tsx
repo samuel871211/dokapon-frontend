@@ -20,10 +20,13 @@ import {
     Tooltip,
     Snackbar,
     Alert,
-    Select,
-    FormControl,
-    InputLabel,
-    FormLabel
+    TextField,
+    DialogActions,
+    // Backdrop
+    // Select,
+    // FormControl,
+    // InputLabel,
+    // FormLabel
 } from '@mui/material'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz'
@@ -37,9 +40,10 @@ import PanToolIcon from '@mui/icons-material/PanTool'
 import EditIcon from '@mui/icons-material/Edit'
 import ZoomInIcon from '@mui/icons-material/ZoomIn'
 import AddIcon from '@mui/icons-material/Add'
+// import CircularProgress from '@mui/material/CircularProgress'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
-import { getCells, updateCells } from '../../api/graph'
+import { getAllGraphs, updateGraph, createGraph, resData } from '../../api/graph'
 
 type groupOffset = Array<{
     origin?: 'source' | 'vertex' | 'target',
@@ -67,6 +71,11 @@ export default function GraphEditor (): JSX.Element {
     const [selectedElement, setSelectedElement] = useState<joint.dia.Element>()
     const [twoWayLinkEnabled, toggleTwoWayLinkEnabled] = useState(true)
     const [toolBarMenuAnchorEl, setToolBarMenuAnchorEl] = useState<null | HTMLElement>(null)
+    const [graphDatas, setGraphDatas] = useState<resData[]>([])
+    const [currentGraphIdx, setCurrentGraphIdx] = useState(0)
+    const [newGraphDialogOpen, toggleNewGraphDialogOpen] = useState(false)
+    const [inputGraphName, setInputGrpahName] = useState('')
+    // const [IsLoadingGraph, toggleIsLoadingGraph] = useState(true)
     const [snackbar, setSnackbar] = useState<snackbarState>({
         open: false,
         severity: 'success',
@@ -75,7 +84,46 @@ export default function GraphEditor (): JSX.Element {
     const toolBarMenuOpen = Boolean(toolBarMenuAnchorEl)
     // methods
     function addNewGraph () {
-        //
+        if (inputGraphName === '') return
+
+        createGraph(inputGraphName)
+        .then(response => {
+            switch (response.status) {
+            case 200: {
+                setSnackbar({
+                    open: true,
+                    severity: 'success',
+                    text: '新增成功'
+                })
+                const newGraphDatas = [ ...graphDatas, response.data ]
+                setGraphDatas(newGraphDatas)
+                setCurrentGraphIdx(newGraphDatas.length - 1)
+                break
+            }
+            case 400:
+                setSnackbar({
+                    open: true,
+                    severity: 'error',
+                    text: '重複的名稱'
+                })
+                break
+            default:
+                setSnackbar({
+                    open: true,
+                    severity: 'error',
+                    text: 'server error'
+                })
+                break
+            }
+
+        })
+        .catch(err => {
+            setSnackbar({
+                open: false,
+                severity: 'success',
+                text: 'server error' 
+            })
+        })
     }
     function addElement (name: string): void {
         if (!selectedLink) return
@@ -330,13 +378,24 @@ export default function GraphEditor (): JSX.Element {
 
     function saveGraph (): void {
         clearSelection()
-        updateCells(graph.toJSON())
+        updateGraph(graphDatas[currentGraphIdx].name, graph.toJSON())
         .then(response => {
-            setSnackbar({
-                open: true,
-                severity: 'success',
-                text: '儲存成功'
-            })
+            switch (response.status) {
+            case 200:
+                setSnackbar({
+                    open: true,
+                    severity: 'success',
+                    text: '儲存成功'
+                })
+                return
+            default:
+                setSnackbar({
+                    open: true,
+                    severity: 'error',
+                    text: '儲存失敗'
+                })
+                return
+            }
         })
         .catch(error => {
             setSnackbar({
@@ -402,10 +461,17 @@ export default function GraphEditor (): JSX.Element {
         )
     }
 
-    // watch && mounted && unmount
-    useEffect(() => {
-        //
-    }, [snackbar.text])
+    // watch
+    useEffect(function reDrawGraph () {
+        if (graphDatas.length === 0) return
+        graph.clear()
+        graph.fromJSON(graphDatas[currentGraphIdx])
+        if (graph.getCells().length === 0) {
+            const firstCell = SHAPES.createElement('battleField')
+            firstCell.position(0, 0)
+            firstCell.addTo(graph)
+        }
+    }, [currentGraphIdx])
     useEffect(() => {
         function initPaper () {
             // paper should be initialized after #canvas is being mounted
@@ -962,8 +1028,8 @@ export default function GraphEditor (): JSX.Element {
                 }
             })
         }
-        async function loadCells () {
-            const response = await getCells()
+        async function loadGraphs () {
+            const response = await getAllGraphs()
             switch (response.status) {
             case 200:
                 setSnackbar({
@@ -971,15 +1037,14 @@ export default function GraphEditor (): JSX.Element {
                     severity: 'success',
                     text: '圖面初始化成功'
                 })
-                graph.fromJSON(response.data)
+                graph.fromJSON(response.data[0])
+                setGraphDatas(response.data)
                 if (graph.getCells().length === 0) {
                     const firstCell = SHAPES.createElement('battleField')
                     firstCell.position(0, 0)
                     firstCell.addTo(graph)
                 }
                 break
-            case 500:
-            case 499:
             default:
                 setSnackbar({
                     open: true,
@@ -992,13 +1057,12 @@ export default function GraphEditor (): JSX.Element {
 
         // initial data
         const Paper = initPaper()
-        void loadCells()
+        void loadGraphs()
         registerPaperEventHandler(Paper)
 
         return (() => {
             const el = document.getElementById('paper')
             if (el) el.replaceWith(el.cloneNode(true))
-            // $('#paper').off()
         })
     }, [graph])
 
@@ -1036,30 +1100,31 @@ export default function GraphEditor (): JSX.Element {
                         variant='text'
                         sx={{ mx: 1.5 }}
                         onClick={(e) => setToolBarMenuAnchorEl(e.currentTarget)}
-                    >Graph</Button>
+                    >{graphDatas[currentGraphIdx]?.name || ''}</Button>
                     <Menu
                         open={toolBarMenuOpen}
                         anchorEl={toolBarMenuAnchorEl}
                         onClose={() => setToolBarMenuAnchorEl(null)}
                     >
-                        <MenuItem>aaa</MenuItem>
-                        <MenuItem>bbb</MenuItem>
-                        <MenuItem>ccc</MenuItem>
+                        {graphDatas.map((graphData, index) => 
+                            <MenuItem
+                                key={index}
+                                onClick={() => {
+                                    setCurrentGraphIdx(index)
+                                    setToolBarMenuAnchorEl(null)
+                                }}
+                            >{graphData.name}</MenuItem>
+                        )}
                     </Menu>
-                    {/* <FormControl sx={{ mx: 1.5 }}>
-                        <FormLabel>Graph</FormLabel>
-                        <Select autoWidth>
-                            <MenuItem>aaaaaaaaaa</MenuItem>
-                            <MenuItem>bbb</MenuItem>
-                            <MenuItem>ccc</MenuItem>
-                        </Select>
-                    </FormControl> */}
                     <Divider
                         orientation="vertical"
                         flexItem
                     />
                     <Tooltip title='Add new graph'>
-                        <IconButton onClick={addNewGraph}>
+                        <IconButton 
+                            size='large'
+                            onClick={() => toggleNewGraphDialogOpen(true)}
+                        >
                             <AddIcon/>
                         </IconButton>
                     </Tooltip>
@@ -1246,6 +1311,24 @@ export default function GraphEditor (): JSX.Element {
                     <DialogContentText>
                         3. 線段分成水平/垂直，且分成單向/雙向
                     </DialogContentText>
+                </DialogContent>
+            </Dialog>
+            <Dialog open={newGraphDialogOpen}>
+                <DialogTitle>新增Graph</DialogTitle>
+                <DialogContent>
+                    <Box my={1}></Box>
+                    <TextField 
+                        label='Graph名稱'
+                        onChange={(e) => setInputGrpahName(e.target.value)}
+                    />
+                    <DialogActions>
+                        <Button onClick={() => toggleNewGraphDialogOpen(false)}>取消</Button>
+                        <Button 
+                            variant='contained'
+                            onClick={addNewGraph}
+                            disabled={inputGraphName === ''}
+                        >確定</Button>
+                    </DialogActions>
                 </DialogContent>
             </Dialog>
         </Fragment>

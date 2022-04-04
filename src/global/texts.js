@@ -104,13 +104,14 @@ const texts = new Map([
         en: 'magic',
         cn: '魔法'
     }],
-    ['', {
-        en: '',
-        cn: ''
+    // Game > OverviewMap
+    ['スケール', {
+        en: 'scale',
+        cn: '放大'
     }],
-    ['', {
-        en: '',
-        cn: ''
+    ['終了', {
+        en: 'end',
+        cn: '結束'
     }],
     ['', {
         en: '',

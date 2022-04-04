@@ -14,6 +14,7 @@ import Check from './Check'
 import { useReducer } from 'react'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Game/UIState'
 import indexStyles from '../../index.module.css'
+import OverviewMap from './OverviewMap'
 const aspectRatioStyles = {
     '16:9': indexStyles.wideAspectRatio,
     '4:3': indexStyles.traditionalAspectRatio,
@@ -37,7 +38,6 @@ function Game (): JSX.Element {
     // data
     // const focusElement = useRef<HTMLDivElement>(null)
     // const { userPreference } = useContext(userPreferenceContext)
-    // const [keyPressed, setKeyPress] = useState< { [key: string]: boolean }>({})
     // const [center, setCenter] = useState({ x: -6085, y: -4606 })
     const { userPreference } = useContext(userPreferenceContext)
     const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState)
@@ -55,6 +55,20 @@ function Game (): JSX.Element {
             type: 'showDrawer',
             payload: true
         })
+    }
+    function showCheck () {
+        // UIStateDispatch({
+        //     type: 'showCheck',
+        //     payload: true
+        // })
+        // UIStateDispatch({
+        //     type: 'showCheckTip',
+        //     payload: true
+        // })
+        // UIStateDispatch({
+        //     type: 'showMinimap',
+        //     payload: true
+        // })
     }
     // function handleKeyDown (e: KeyboardEvent) {
     //     if (!paper) return
@@ -106,7 +120,7 @@ function Game (): JSX.Element {
                 },
                 gridSize: 1,
                 interactive: false,
-                drawGrid: true
+                drawGrid: false
             })
             return Paper
         }
@@ -166,26 +180,44 @@ function Game (): JSX.Element {
                         dragAnchorPos.x + deltaX,
                         dragAnchorPos.y + deltaY
                     )
+                    UIStateDispatch({
+                        type: 'showCheckTip',
+                        payload: false
+                    })
                 },
-                'cell:mouseover': function (
-                    cellView: joint.dia.CellView,
-                    evt: JQuery.Event
-                ) {
-                    cellView.highlight()
-                },
-                'cell:mouseout': function (
-                    cellView: joint.dia.CellView,
-                    evt: JQuery.Event
-                ) {
-                    cellView.unhighlight()
-                },
-                'cell:pointerdblclick': function (
+                'cell:pointerup': function (
                     cellView: joint.dia.CellView,
                     evt: JQuery.Event,
                     x: number,
                     y: number
                 ) {
-                    console.log(cellView)
+                    UIStateDispatch({
+                        type: 'showCheckTip',
+                        payload: true
+                    })
+                },
+                'cell:mouseover': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event
+                ) {
+                    if (cellView.model.isLink()) return
+                    cellView.highlight()
+                    UIStateDispatch({
+                        type: 'showNodeAttrsAndDistance',
+                        payload: true
+                    })
+
+                },
+                'cell:mouseout': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event
+                ) {
+                    if (cellView.model.isLink()) return
+                    cellView.unhighlight()
+                    UIStateDispatch({
+                        type: 'showNodeAttrsAndDistance',
+                        payload: false
+                    })
                 },
                 'blank:mousewheel': function (
                     evt: JQuery.Event,
@@ -236,7 +268,21 @@ function Game (): JSX.Element {
                         dragAnchorPos.x + deltaX,
                         dragAnchorPos.y + deltaY
                     )
-                }
+                    UIStateDispatch({
+                        type: 'showCheckTip',
+                        payload: false
+                    })
+                },
+                'blank:pointerup': function (
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
+                    UIStateDispatch({
+                        type: 'showCheckTip',
+                        payload: true
+                    })
+                },
             })
         }
         /**
@@ -288,11 +334,14 @@ function Game (): JSX.Element {
                 {state => state !== 'exited' && (<Bag state={state}/>)}
                 </Transition>
 
-                <Transition in={UIState.showCheck} timeout={{ enter: 1000, exit: 1000}}>
+                <Transition in={UIState.showCheck} timeout={{ enter: 1000, exit: 500 }} onExited={UIState.showOverviewMap ? undefined : showDrawer}>
                 {state => state !== 'exited' && (<Check state={state}/>)}
                 </Transition>
-            </div>
 
+                <Transition in={UIState.showOverviewMap} timeout={{ enter: 500, exit: 500 }} onExited={showCheck}>
+                {state => state !== 'exited' && (<OverviewMap state={state}/>)}
+                </Transition>
+            </div>
         </UIStateContext.Provider>
     )
 }

@@ -267,17 +267,36 @@ declare namespace Dokapon {
             showTalent: boolean,
             showData: boolean,
             showCheck: boolean,
-            isPaperTopLayer: boolean
+            isPaperTopLayer: boolean,
+            showOverviewMap: boolean,
+            showNodeAttrsAndDistance: boolean,
+            showMinimap: boolean
+            showNodeDescription: boolean,
+            showCheckTip: boolean,
+            showShopList: boolean,
+            showBankList: boolean,
+            showVillageStatus: boolean,
+            showVillageValueList: boolean
         }
         type Action = {
-            type:
+            type: 
+                // keyof UIState
                 'showDrawer' |
                 'showRoulette' |
                 'showBag' |
                 'showTalent' |
                 'showData' |
                 'showCheck' |
-                'isPaperTopLayer',
+                'isPaperTopLayer' |
+                'showOverviewMap' |
+                'showNodeAttrsAndDistance' |
+                'showMinimap' |
+                'showNodeDescription' |
+                'showCheckTip' |
+                'showShopList' |
+                'showBankList' |
+                'showVillageStatus' |
+                'showVillageValueList',
             payload: boolean
         }
         type Context = {

@@ -8,7 +8,16 @@ const initUIState: Dokapon.Game.UIState = {
     showTalent: false,
     showData: false,
     showCheck: false,
-    isPaperTopLayer: false
+    isPaperTopLayer: false,
+    showOverviewMap: false,
+    showNodeAttrsAndDistance: false,
+    showMinimap: false,
+    showNodeDescription: false,
+    showCheckTip: false,
+    showShopList: false,
+    showBankList: false,
+    showVillageStatus: false,
+    showVillageValueList: false
 }
 
 const UIStateContext = createContext<Dokapon.Game.Context>({

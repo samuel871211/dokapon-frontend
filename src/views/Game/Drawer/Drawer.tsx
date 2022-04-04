@@ -102,6 +102,14 @@ function Drawer (props: { state: TransitionStatus }): JSX.Element {
                     type: 'showCheck',
                     payload: true
                 })
+                UIStateDispatch({
+                    type: 'showCheckTip',
+                    payload: true
+                })
+                UIStateDispatch({
+                    type: 'showMinimap',
+                    payload: true
+                })
                 return
             case 3: // 特技
                 return

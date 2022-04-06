@@ -4,6 +4,7 @@ import CustomBorderBottom from '../../../components/CustomBorderBottom'
 import useTranslation from '../../../global/translation'
 import { UIStateContext } from '../../../reducers/Game/UIState'
 import { userPreferenceContext } from '../../../reducers/userPreference'
+import YellowBlock from '../../../components/YellowBlock'
 import BottomDialogConfirmCircle from '../../../components/BottomDialogConfirmCircle'
 import styles from './ShopList.module.css'
 const transitionStyles = {
@@ -34,8 +35,10 @@ function ShopList (props: { state: TransitionStatus }): JSX.Element {
             className={styles.container}
         >
             <div className={`${styles.topArea} ${transitionStyles.topArea[state]}`}>
-                <div className={styles.shopName}>陳昱昇</div>
-                <div className={styles.shopList}>
+                <YellowBlock role='title' className={styles.shopName}>
+                    陳昱昇
+                </YellowBlock>
+                <YellowBlock role='dialog' className={styles.shopList}>
                     <div className={styles.listHead}>
                         <div className={styles.th}>NAME</div>
                         <div className={styles.th}>PRICE</div>
@@ -92,15 +95,15 @@ function ShopList (props: { state: TransitionStatus }): JSX.Element {
                             <div className={styles.arrowIcon}></div>
                         </div>
                     </div>
-                </div>
+                </YellowBlock>
             </div>
             <div className={`${styles.bottomArea} ${transitionStyles.bottomArea[state]}`}>
-                <div className={styles.messageContainer}>
+                <YellowBlock role='dialog' className={styles.messageContainer}>
                     <div>知道妳會過得有模有樣</div>
                     <div>也知道我哭是為了給妳祝福，別再靠北了</div>
                     <div>今後提起，妳的姓名，談笑我也可以</div>
                     <BottomDialogConfirmCircle/>
-                </div>
+                </YellowBlock>
             </div>
         </div>
     )

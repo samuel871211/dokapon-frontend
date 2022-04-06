@@ -1,0 +1,4 @@
+.yellowBlock {
+    border: 0.2rem outset var(--border-color);
+    background-color: var(--bg-color);
+}

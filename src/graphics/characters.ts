@@ -1,5 +1,5 @@
 import * as joint from 'jointjs'
-import Dokapon from '.'
+import Dokapon from '../global'
 /**
  * @todo 不確定為什麼textpath無法透過jointjs render到畫面，所以改成用text
  */

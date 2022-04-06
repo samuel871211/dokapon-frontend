@@ -3,10 +3,10 @@ import React, { useRef, useState, useContext } from 'react'
 import ExampleCharacterImg from '../ExampleCharacterImg'
 import globalStyles from '../../../global/styles.module.css'
 import styles from './SelectJob.module.css'
-import { BASICJOBS } from '../../../global/characters'
+import { BASICJOBS } from '../../../graphics/characters'
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import { BASICJOBLIST } from '../../../global/CONSTANTS'
+import { BASICJOBLIST } from '../../../utils/constants'
 
 export default SelectJob
 

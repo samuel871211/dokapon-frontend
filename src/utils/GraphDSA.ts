@@ -57,23 +57,6 @@ class GraphDSA {
             }
             this.positionLists[cell.id] = { ...cell.position }
         }
-        // this.adjacencyLists = new Map([
-        //     ['A', ['B', 'G']],
-        //     ['B', ['A', 'C']],
-        //     ['C', ['B', 'D', 'H']],
-        //     ['D', ['C', 'E']],
-        //     ['E', ['D', 'F', 'J']],
-        //     ['F', ['E', 'K']],
-        //     ['G', ['A', 'H']],
-        //     ['H', ['C', 'G', 'I', 'L']],
-        //     ['I', ['H', 'J']],
-        //     ['J', ['E', 'I', 'N']],
-        //     ['K', ['F', 'O']],
-        //     ['L', ['H', 'M']],
-        //     ['M', ['L', 'N']],
-        //     ['N', ['J', 'M', 'O']],
-        //     ['O', ['K', 'N']]
-        // ])
     }
     #init (): void {
         this.result = []

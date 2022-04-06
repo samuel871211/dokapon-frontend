@@ -8,21 +8,29 @@ import GraphEditor from './views/GraphEditor'
 import Game from './views/Game'
 import SelectCharacter from './views/SelectCharacter'
 import Home from './views/Home'
-// import registerWindowResizeEvtHandler from './global/registerWindowResizeEvtHandler'
-import { DARKTHEME } from './global/CONSTANTS'
+import { createTheme } from '@mui/material'
 import { initGameProgress, gameProgressContext, gameProgressReducer } from './reducers/gameProgress'
 import { inituserPreference, userPreferenceContext, userPreferenceReducer } from './reducers/userPreference'
-// const rootStyles = {
-//     '16:9': styles.wideRoot,
-//     '4:3': styles.traditionalRoot,
-//     'stretch': styles.stretchRoot
-// }
+const darkTheme = createTheme({
+    palette: {
+        mode: 'dark',
+        primary: {
+            light: '#ffa919',
+            main: '#ffa000',
+            dark: '#e59000'
+        },
+        secondary: {
+            light: '#ffc919',
+            main: '#ffc400',
+            dark: '#e5b000'
+        }
+    }
+})
 const HTMLStyles = {
     '16:9': styles.wideHTML,
     '4:3': styles.traditionalHTML,
     'stretch': styles.stretchHTML
 }
-// registerWindowResizeEvtHandler()
 
 function App (): JSX.Element {
     const [gameProgress, gameProgressDispatch] = useReducer(gameProgressReducer, initGameProgress)
@@ -42,7 +50,7 @@ function App (): JSX.Element {
     return (
         <gameProgressContext.Provider value={{ gameProgress, gameProgressDispatch }}>
         <userPreferenceContext.Provider value={{ userPreference, userPreferenceDispatch }}>
-        <ThemeProvider theme={DARKTHEME}>
+        <ThemeProvider theme={darkTheme}>
         <Router>
             <Switch>
                 <Route path='/' exact component={Home}/>

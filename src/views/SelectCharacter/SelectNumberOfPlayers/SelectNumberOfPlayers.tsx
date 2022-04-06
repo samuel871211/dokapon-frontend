@@ -1,5 +1,5 @@
 import React, { useState, useRef, useContext } from 'react'
-import { SomeKindOfIcon } from '../../../global/icons'
+import { SomeKindOfIcon } from '../../../components/icons'
 import styles from './SelectNumberOfPlayers.module.css'
 import globalStyles from '../../../global/styles.module.css'
 import { gameProgressContext } from '../../../reducers/gameProgress'

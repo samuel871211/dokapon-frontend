@@ -1,4 +1,4 @@
-import * as SHAPES from '../../global/shapes'
+import * as SHAPES from '../../graphics/shapes'
 import { useState, useEffect, Fragment } from 'react'
 import {
     Box,

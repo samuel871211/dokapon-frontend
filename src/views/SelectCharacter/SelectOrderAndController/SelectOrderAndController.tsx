@@ -4,8 +4,8 @@ import globalStyles from '../../../global/styles.module.css'
 import styles from './SelectOrderAndController.module.css'
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import { NPCLEVELS } from '../../../global/characters'
-import { shuffle } from '../../../global/utils/math'
+import { NPCLEVELS } from '../../../graphics/characters'
+import { shuffle } from '../../../utils/math'
 
 
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''

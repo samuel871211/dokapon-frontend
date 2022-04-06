@@ -1,14 +1,14 @@
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
 import globalStyles from '../../../global/styles.module.css'
 import styles from './NPCGenerateDialog.module.css'
-import { getRandomInt } from '../../../global/utils/math'
+import { getRandomInt } from '../../../utils/math'
 import React, { useState, useRef, useContext, useEffect } from 'react'
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import { COLORS, BASICJOBS, NPCLEVELS } from '../../../global/characters'
-import japaneseChars from '../../../global/data/japaneseChars'
+import { COLORS, BASICJOBS, NPCLEVELS } from '../../../graphics/characters'
+import japaneseChars from '../../../utils/japaneseChars'
 import Dokapon from '../../../global'
-import { COLORLIST, BASICJOBLIST, NPCLEVELLIST, GENDERLIST } from '../../../global/CONSTANTS'
+import { COLORLIST, BASICJOBLIST, NPCLEVELLIST, GENDERLIST } from '../../../utils/constants'
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
 
 export default NPCGenerateDialog

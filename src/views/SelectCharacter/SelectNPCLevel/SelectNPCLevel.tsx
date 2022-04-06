@@ -3,8 +3,8 @@ import globalStyles from '../../../global/styles.module.css'
 import styles from './SelectNPCLevel.module.css'
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import { NPCLEVELLIST } from '../../../global/CONSTANTS'
-import { NPCLEVELS } from '../../../global/characters'
+import { NPCLEVELLIST } from '../../../utils/constants'
+import { NPCLEVELS } from '../../../graphics/characters'
 
 export default SelectNPCLevel
 

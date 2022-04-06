@@ -1,7 +1,7 @@
 import { Fragment, useContext, useEffect, useReducer } from 'react'
 
 import guide from '../../imgs/guide.png'
-import { BASICJOBS } from '../../global/characters'
+import { BASICJOBS } from '../../graphics/characters'
 
 import ContextMenu from '../../components/ContextMenu'
 import TitleArea from './TitleArea'
@@ -17,7 +17,7 @@ import GoalInputDialog from './GoalInputDialog'
 import NPCGenerateDialog from './NPCGenerateDialog'
 import NameInputDialog from './NameInputDialog'
 import SelectOrderAndController from './SelectOrderAndController'
-import registerWindowResizeEvtHandler from '../../global/utils/windowResizeEvtHandler'
+import registerWindowResizeEvtHandler from '../../utils/windowResizeEvtHandler'
 
 import { gameProgressContext } from '../../reducers/gameProgress'
 import { userPreferenceContext } from '../../reducers/userPreference'

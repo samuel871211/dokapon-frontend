@@ -3,7 +3,7 @@ import { TransitionStatus } from 'react-transition-group'
 import { useRef, useContext, useEffect, SyntheticEvent, KeyboardEvent, useState } from 'react'
 import { userPreferenceContext } from '../../../reducers/userPreference'
 import { UIStateContext } from '../../../reducers/Game/UIState'
-import { getRandomInt } from '../../../global/utils/math'
+import { getRandomInt } from '../../../utils/math'
 import classNames from 'classnames'
 const transitionStyles = {
     entering: '',

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useContext, useRef, SyntheticEvent, KeyboardEvent, useEffect } from 'react'
 import { TransitionStatus } from 'react-transition-group'
-import useTranslation from '../../../global/utils/translation'
+import useTranslation from '../../../hooks/useTranslation'
 import { UIStateContext } from '../../../reducers/Game/UIState'
 import { userPreferenceContext } from '../../../reducers/userPreference'
 import styles from './OverviewMap.module.css'

@@ -1,6 +1,6 @@
 import { TransitionStatus, Transition } from 'react-transition-group'
 import styles from './Check.module.css'
-import useTranslation from '../../../global/utils/translation'
+import useTranslation from '../../../hooks/useTranslation'
 import { userPreferenceContext } from '../../../reducers/userPreference'
 import { UIStateContext } from '../../../reducers/Game/UIState'
 import { useContext, useRef, SyntheticEvent, KeyboardEvent, useEffect } from 'react'

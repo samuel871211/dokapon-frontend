@@ -1,6 +1,6 @@
 .container {
     width: 95%;
-    margin: 0 2.5%;
+    margin: 0 auto;
     height: var(--vh);
     display: flex;
     justify-content: center;

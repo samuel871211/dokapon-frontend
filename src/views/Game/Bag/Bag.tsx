@@ -141,6 +141,7 @@ function useMetaData (props: {state: TransitionStatus }) {
     const { t } = useTranslation(userPreference.lang)
     const [curBag, toggleCurBag] = useState<'item' | 'magic'>('item')
     const [selectedItemIdx, setSelectedItemIdx] = useState(0)
+    // eslint-disable-next-line
     const [bagInfo, setBagInfo] = useState({
         item: ['', '', '', '', '', '', '', ''],
         magic: ['', '', '', '', '', '', '', '']

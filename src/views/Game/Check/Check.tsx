@@ -39,6 +39,11 @@ const transitionStyles = {
 
 export default Check
 
+/**
+ * 因為Check底下又有很多獨立的view級component(畫面佔整頁，且需要handleKeyUp的)
+ * 
+ * 所以把這些component提升到跟Check同一個階層，確保showCheck跟isCheckTopLayer都true才focus
+ */
 function Check (props: { state: TransitionStatus }): JSX.Element {
     const { state: checkTransitionState } = props
     const { t, UIState, handleKeyUpAttrs } = useMetaData(checkTransitionState)
@@ -110,12 +115,12 @@ function useMetaData (state: TransitionStatus) {
     const { UIState, UIStateDispatch } = useContext(UIStateContext)
     const focusElement = useRef<HTMLDivElement>(null)
     const { t } = useTranslation(userPreference.lang)
-    const handleKeyUpAttrs = {
+    const handleKeyUpAttrs = UIState.showCheck && UIState.isCheckTopLayer ? {
         tabIndex: 0,
         ref: focusElement,
         onBlur: (event: SyntheticEvent<HTMLDivElement>) => event.currentTarget.focus(),
         onKeyUp: handleKeyUp
-    }
+    } : {}
     function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case userPreference.circle:
@@ -138,7 +143,7 @@ function useMetaData (state: TransitionStatus) {
                 payload: false
             })
             UIStateDispatch({
-                type: 'showCheck',
+                type: 'isCheckTopLayer',
                 payload: false
             })
             break
@@ -162,6 +167,9 @@ function useMetaData (state: TransitionStatus) {
             break
         }
     }
-    useEffect(() => { if (state === 'entered') focusElement.current?.focus() } , [state])
+    function autoFocus () {
+        if (state === 'entered' && UIState.isCheckTopLayer) focusElement.current?.focus()
+    }
+    useEffect(autoFocus, [state, UIState.isCheckTopLayer])
     return { t, UIState, handleKeyUpAttrs }
 }

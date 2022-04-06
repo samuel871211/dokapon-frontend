@@ -11,10 +11,11 @@ import Drawer from './Drawer'
 import Roulette from './Roulette'
 import Bag from './Bag'
 import Check from './Check'
+import OverviewMap from './OverviewMap'
+import ShopList from './ShopList'
 import { useReducer } from 'react'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Game/UIState'
 import indexStyles from '../../index.module.css'
-import OverviewMap from './OverviewMap'
 const aspectRatioStyles = {
     '16:9': indexStyles.wideAspectRatio,
     '4:3': indexStyles.traditionalAspectRatio,
@@ -33,6 +34,8 @@ export default Game
  * @todo 上下左右可以移動地圖的功能，keyDown事件可以做到，只是移動速度太慢
  * 
  * 如果將delta設太高，畫面移動又會變得有斷層，所以結論還是用滑鼠就好(?
+ * 
+ * @todo 繪圖的時候，還需要把所有Node的屬性都加上去(哪種商店、哪種地形...)
  */
 function Game (): JSX.Element {
     // data
@@ -57,18 +60,22 @@ function Game (): JSX.Element {
         })
     }
     function showCheck () {
-        // UIStateDispatch({
-        //     type: 'showCheck',
-        //     payload: true
-        // })
-        // UIStateDispatch({
-        //     type: 'showCheckTip',
-        //     payload: true
-        // })
-        // UIStateDispatch({
-        //     type: 'showMinimap',
-        //     payload: true
-        // })
+        UIStateDispatch({
+            type: 'showCheck',
+            payload: true
+        })
+        UIStateDispatch({
+            type: 'isCheckTopLayer',
+            payload: true
+        })
+        UIStateDispatch({
+            type: 'showCheckTip',
+            payload: true
+        })
+        UIStateDispatch({
+            type: 'showMinimap',
+            payload: true
+        })
     }
     // function handleKeyDown (e: KeyboardEvent) {
     //     if (!paper) return
@@ -219,6 +226,40 @@ function Game (): JSX.Element {
                         payload: false
                     })
                 },
+                /**
+                 * @todo 需要根據element Type來決定要開啟什麼Dialog
+                 */
+                'cell:pointerdblclick': function (
+                    cellView: joint.dia.CellView,
+                    evt: JQuery.Event,
+                    x: number,
+                    y: number
+                ) {
+                    if (cellView.model.isLink()) return
+
+                    const elementType = (cellView.model.prop('type') as string).toLowerCase()
+                    switch (elementType) {
+                    case 'dokapon.specialfield':
+                        UIStateDispatch({
+                            type: 'isCheckTopLayer',
+                            payload: false
+                        })
+                        UIStateDispatch({
+                            type: 'showMinimap',
+                            payload: false
+                        })
+                        UIStateDispatch({
+                            type: 'showCheckTip',
+                            payload: false
+                        })
+                        UIStateDispatch({
+                            type: 'showShopList',
+                            payload: true
+                        })
+                        break
+                    }
+                    cellView.model.attr('')
+                },
                 'blank:mousewheel': function (
                     evt: JQuery.Event,
                     x: number,
@@ -334,12 +375,16 @@ function Game (): JSX.Element {
                 {state => state !== 'exited' && (<Bag state={state}/>)}
                 </Transition>
 
-                <Transition in={UIState.showCheck} timeout={{ enter: 1000, exit: 500 }} onExited={UIState.showOverviewMap ? undefined : showDrawer}>
+                <Transition in={UIState.showCheck} timeout={{ enter: 1000, exit: 500 }} onExited={showDrawer}>
                 {state => state !== 'exited' && (<Check state={state}/>)}
                 </Transition>
 
                 <Transition in={UIState.showOverviewMap} timeout={{ enter: 500, exit: 500 }} onExited={showCheck}>
                 {state => state !== 'exited' && (<OverviewMap state={state}/>)}
+                </Transition>
+
+                <Transition in={UIState.showShopList} timeout={{ enter: 500, exit: 500 }} onExited={showCheck}>
+                {state => state !== 'exited' && (<ShopList state={state}/>)}
                 </Transition>
             </div>
         </UIStateContext.Provider>

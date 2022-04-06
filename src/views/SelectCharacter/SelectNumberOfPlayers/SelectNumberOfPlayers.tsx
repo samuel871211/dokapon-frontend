@@ -95,14 +95,13 @@ function SelectNumberOfPlayers (): JSX.Element {
 
 function NumberOfPlayersBtn (props: { playerNum: number, selected: boolean }): JSX.Element {
     const { playerNum, selected } = props
-
     function generateIcons () {
         const icons = []
         for (let i = 0; i < 4; i++) {
             if (i < playerNum) {
-                icons.push(<SomeKindOfIcon/>)
+                icons.push(<SomeKindOfIcon key={i}/>)
             } else {
-                icons.push(<SomeKindOfIcon/>)
+                icons.push(<SomeKindOfIcon key={i}/>)
             }
         }
         return icons

@@ -157,6 +157,10 @@ declare namespace Dokapon {
             payload: NPCLevelTypes
         }
     }
+    declare namespace Shapes {
+        type ElementTypes = ''
+        type LinkTypes = ''
+    }
     declare namespace SelectCharacter {
         type Steps =
             'SelectGoalType' |
@@ -268,6 +272,7 @@ declare namespace Dokapon {
             showData: boolean,
             showCheck: boolean,
             isPaperTopLayer: boolean,
+            isCheckTopLayer: boolean,
             showOverviewMap: boolean,
             showNodeAttrsAndDistance: boolean,
             showMinimap: boolean
@@ -288,6 +293,7 @@ declare namespace Dokapon {
                 'showData' |
                 'showCheck' |
                 'isPaperTopLayer' |
+                'isCheckTopLayer' |
                 'showOverviewMap' |
                 'showNodeAttrsAndDistance' |
                 'showMinimap' |

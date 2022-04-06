@@ -9,6 +9,7 @@ const initUIState: Dokapon.Game.UIState = {
     showData: false,
     showCheck: false,
     isPaperTopLayer: false,
+    isCheckTopLayer: false,
     showOverviewMap: false,
     showNodeAttrsAndDistance: false,
     showMinimap: false,

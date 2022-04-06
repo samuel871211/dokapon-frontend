@@ -436,7 +436,7 @@ export function createLink (name: string): joint.dia.Link {
 	}
 }
 
-export const ELEMENTS: Array<string> = [
+export const ELEMENTS = [
 	'battleField', 'magicField',
 	'treasureField', 'specialField',
 	'collectMoneyField', 'collectAllMoneyField',
@@ -445,7 +445,7 @@ export const ELEMENTS: Array<string> = [
 	'worldTransferField'
 ]
 
-export const LINKS: Array<string> = [
+export const LINKS = [
 	'oneWayHLink', 'twoWayHLink',
 	'oneWayVLink', 'twoWayVLink'
 ]

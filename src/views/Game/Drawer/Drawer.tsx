@@ -103,6 +103,10 @@ function Drawer (props: { state: TransitionStatus }): JSX.Element {
                     payload: true
                 })
                 UIStateDispatch({
+                    type: 'isCheckTopLayer',
+                    payload: true
+                })
+                UIStateDispatch({
                     type: 'showCheckTip',
                     payload: true
                 })

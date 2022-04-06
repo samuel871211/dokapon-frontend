@@ -51,14 +51,6 @@
     right: 0;
     bottom: 0;
 }
-.confirmCircle {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    border-radius: 50%;
-    background-color: black;
-    animation: spread 0.8s linear 0s infinite;
-}
 .fadeIn::after {
     animation: fadeIn 0.1s linear 0s 1 alternate forwards;
 }
@@ -133,22 +125,6 @@
 @keyframes slideLeft {
     0% { transform: translateX(100%) }
     100% { transform: none }
-}
-@keyframes spread {
-    0% {
-        border: 0.2rem solid #b43d3b;
-        outline: 0.2rem solid black;
-        height: 3rem;
-        width: 3rem;
-        box-shadow: 0px 0px 0px 0.15rem #9c8a70;
-    }
-    100% {
-        border: 0.3rem solid #b43d3b;
-        outline: 0.15rem solid black;
-        height: 3.15rem;
-        width: 3.15rem;
-        box-shadow: 0px 0px 0.15rem 0.75rem #d8c790;
-    }
 }
 @keyframes slideUp {
     0%   { transform: translateY(100%) }

@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState, useRef, useContext } from 'react'
 import { gameProgressContext } from '../../reducers/gameProgress'
 import { UIStateContext } from '../../reducers/SelectCharacter/UIState'
+import BottomDialogConfirmCircle from '../BottomDialogConfirmCircle'
 import styles from './NPCDialog.module.css'
 
 export default NPCDialog
@@ -195,7 +196,7 @@ function NPCDialog (props: {
             </div>
             <div className={styles.messageArea}>
                 {splitMessage()}
-                {confirmBtnDisplay && <div className={styles.confirmCircle}></div>}
+                {confirmBtnDisplay && <BottomDialogConfirmCircle/>}
                 {confirmDialogDisplay &&
                     <ConfirmDialog
                         selectedIdx={confirmDialogSelectedIdx}

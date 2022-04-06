@@ -3,6 +3,7 @@
     --sub-bg-color: #f4c36e;    
     --hover-bg-color: #9bd65b;
     --border-color: #222222;
+    --confirm-circle: #b43d3b;
 
     /* experimental，還不確定這些case有沒有辦法cover所有的possibility */
     --main-border-radius: 1.5rem;

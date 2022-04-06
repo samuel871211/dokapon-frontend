@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import { unionBy } from 'lodash'
 import { useContext, useRef, SyntheticEvent, KeyboardEvent, useEffect } from 'react'
 import { TransitionStatus } from 'react-transition-group'
 import useTranslation from '../../../global/translation'
@@ -473,7 +472,7 @@ function useMetaData (state: TransitionStatus) {
                 payload: false
             })
             UIStateDispatch({
-                type: 'showCheck',
+                type: 'isCheckTopLayer',
                 payload: true
             })
             UIStateDispatch({

@@ -5,7 +5,7 @@ import styles from './SelectOrderAndController.module.css'
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import { NPCLEVELS } from '../../../global/characters'
-import { shuffle } from '../../../global/math'
+import { shuffle } from '../../../global/utils/math'
 
 
 const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''

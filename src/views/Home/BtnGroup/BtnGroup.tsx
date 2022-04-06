@@ -3,7 +3,7 @@ import globalStyles from '../../../global/styles.module.css'
 import { TransitionStatus } from 'react-transition-group'
 import { useState, useEffect, useRef, useContext, SyntheticEvent, KeyboardEvent } from 'react'
 import { UIStateContext } from '../../../reducers/Home/UIState'
-import useTranslation from '../../../global/translation'
+import useTranslation from '../../../global/utils/translation'
 import { userPreferenceContext } from '../../../reducers/userPreference'
 import classNames from 'classnames'
 const transitionStyles = {

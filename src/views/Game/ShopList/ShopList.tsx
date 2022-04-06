@@ -1,10 +1,10 @@
 import { useContext, useRef, SyntheticEvent, KeyboardEvent, useEffect } from 'react'
 import { TransitionStatus } from 'react-transition-group'
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
-import useTranslation from '../../../global/translation'
+import useTranslation from '../../../global/utils/translation'
 import { UIStateContext } from '../../../reducers/Game/UIState'
 import { userPreferenceContext } from '../../../reducers/userPreference'
-import YellowBlock from '../../../components/YellowBlock'
+import YellowBlock from '../../../layouts/YellowBlock'
 import BottomDialogConfirmCircle from '../../../components/BottomDialogConfirmCircle'
 import styles from './ShopList.module.css'
 const transitionStyles = {

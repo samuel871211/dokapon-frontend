@@ -1,4 +1,4 @@
-import japaneseChars from '../../../global/japaneseChars'
+import japaneseChars from '../../../global/data/japaneseChars'
 import styles from './NameInputDialog.module.css'
 import globalStyles from '../../../global/styles.module.css'
 import { gameProgressContext } from '../../../reducers/gameProgress'

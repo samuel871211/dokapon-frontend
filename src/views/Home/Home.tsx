@@ -1,13 +1,13 @@
 import { useContext, useEffect, useReducer } from 'react'
 import styles from './Home.module.css'
 import { Transition } from 'react-transition-group'
-import useTranslation from '../../global/translation'
+import useTranslation from '../../global/utils/translation'
 import Settings from './Settings'
 import BtnGroup from './BtnGroup'
 import KeyMappingDialog from './KeyMappingDialog'
 import { userPreferenceContext } from '../../reducers/userPreference'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Home/UIState'
-import registerWindowResizeEvtHandler from '../../global/windowResizeEvtHandler'
+import registerWindowResizeEvtHandler from '../../global/utils/windowResizeEvtHandler'
 import indexStyles from '../../index.module.css'
 
 const aspectRatioStyles = {

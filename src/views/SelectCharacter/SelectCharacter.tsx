@@ -17,7 +17,7 @@ import GoalInputDialog from './GoalInputDialog'
 import NPCGenerateDialog from './NPCGenerateDialog'
 import NameInputDialog from './NameInputDialog'
 import SelectOrderAndController from './SelectOrderAndController'
-import registerWindowResizeEvtHandler from '../../global/windowResizeEvtHandler'
+import registerWindowResizeEvtHandler from '../../global/utils/windowResizeEvtHandler'
 
 import { gameProgressContext } from '../../reducers/gameProgress'
 import { userPreferenceContext } from '../../reducers/userPreference'

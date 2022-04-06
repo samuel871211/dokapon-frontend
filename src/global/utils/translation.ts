@@ -1,8 +1,8 @@
-import { LangTypes } from '.'
+import { LangTypes } from '../index'
 // import cn from './cn'
 // import en from './en'
 // const texts = { cn, en }
-import texts from './texts'
+import texts from '../data/texts'
 const defaultLang = 'jp'
 
 export default useTranslation

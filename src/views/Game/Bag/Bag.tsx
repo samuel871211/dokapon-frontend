@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useContext, useRef, SyntheticEvent, KeyboardEvent, useEffect, useState } from 'react'
 import { TransitionStatus, Transition } from 'react-transition-group'
-import useTranslation from '../../../global/translation'
+import useTranslation from '../../../global/utils/translation'
 import { UIStateContext } from '../../../reducers/Game/UIState'
 import { userPreferenceContext } from '../../../reducers/userPreference'
 import styles from './Bag.module.css'

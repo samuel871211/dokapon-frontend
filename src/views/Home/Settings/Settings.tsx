@@ -6,7 +6,7 @@ import { UIStateContext } from '../../../reducers/Home/UIState'
 import { userPreferenceContext } from '../../../reducers/userPreference'
 import { SyntheticEvent } from 'react'
 import KEYBOARDMAP from './KeyBoardMap'
-import useTranslation from '../../../global/translation'
+import useTranslation from '../../../global/utils/translation'
 import { GamePadKeyTypes } from '../../../global'
 import classNames from 'classnames'
 const transitionStyles = {

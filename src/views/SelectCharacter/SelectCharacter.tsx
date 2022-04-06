@@ -1,6 +1,6 @@
 import { Fragment, useContext, useEffect, useReducer } from 'react'
 
-import guide from '../../imgs/guide.png'
+import guide from '../../assets/images/guide.png'
 import { BASICJOBS } from '../../graphics/characters'
 
 import ContextMenu from '../../components/ContextMenu'

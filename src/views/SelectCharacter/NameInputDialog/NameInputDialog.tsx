@@ -1,6 +1,6 @@
 import japaneseChars from '../../../utils/japaneseChars'
 import styles from './NameInputDialog.module.css'
-import globalStyles from '../../../global/styles.module.css'
+import globalStyles from '../../../assets/styles/globalStyles.module.css'
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import React, { useState, useRef, useContext } from 'react'

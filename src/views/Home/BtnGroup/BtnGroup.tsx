@@ -1,5 +1,5 @@
 import styles from './BtnGroup.module.css'
-import globalStyles from '../../../global/styles.module.css'
+import globalStyles from '../../../assets/styles/globalStyles.module.css'
 import { TransitionStatus } from 'react-transition-group'
 import { useState, useEffect, useRef, useContext, SyntheticEvent, KeyboardEvent } from 'react'
 import { UIStateContext } from '../../../reducers/Home/UIState'

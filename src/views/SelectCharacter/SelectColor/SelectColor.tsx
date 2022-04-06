@@ -1,5 +1,5 @@
 import ExampleCharacterImg from '../ExampleCharacterImg'
-import globalStyles from '../../../global/styles.module.css'
+import globalStyles from '../../../assets/styles/globalStyles.module.css'
 import styles from './SelectColor.module.css'
 import { COLORS } from '../../../graphics/characters'
 import { COLORLIST } from '../../../utils/constants'

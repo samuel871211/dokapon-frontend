@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext } from 'react'
 import { SomeKindOfIcon } from '../../../components/icons'
 import styles from './SelectNumberOfPlayers.module.css'
-import globalStyles from '../../../global/styles.module.css'
+import globalStyles from '../../../assets/styles/globalStyles.module.css'
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 const digitToFullWidth = ['', '１', '２', '３', '４']

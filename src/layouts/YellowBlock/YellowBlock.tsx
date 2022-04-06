@@ -1,5 +1,5 @@
 import styles from './YellowBlock.module.css'
-import globalStyles from '../../global/styles.module.css'
+import globalStyles from '../../assets/styles/globalStyles.module.css'
 import { ReactChild } from 'react'
 import classNames from 'classnames'
 

@@ -2,7 +2,7 @@ import React, { useState, useRef, useContext } from 'react'
 
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import globalStyles from '../../../global/styles.module.css'
+import globalStyles from '../../../assets/styles/globalStyles.module.css'
 import styles from './SelectGoalType.module.css'
 
 export default SelectGoalType

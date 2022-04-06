@@ -1,6 +1,6 @@
 import { useContext, useLayoutEffect, useRef, useState } from 'react'
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
-import globalStyles from '../../../global/styles.module.css'
+import globalStyles from '../../../assets/styles/globalStyles.module.css'
 import styles from './SelectOrderAndController.module.css'
 import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'

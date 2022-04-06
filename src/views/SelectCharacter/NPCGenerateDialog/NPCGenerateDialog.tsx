@@ -1,5 +1,5 @@
 import CustomBorderBottom from '../../../components/CustomBorderBottom'
-import globalStyles from '../../../global/styles.module.css'
+import globalStyles from '../../../assets/styles/globalStyles.module.css'
 import styles from './NPCGenerateDialog.module.css'
 import { getRandomInt } from '../../../utils/math'
 import React, { useState, useRef, useContext, useEffect } from 'react'

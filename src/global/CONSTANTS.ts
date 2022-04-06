@@ -8,7 +8,7 @@ export const COLORLIST: Dokapon.ColorTypes[] = [
 ]
 export const BASICJOBLIST: Dokapon.BasicJobTypes[] = [
     'warrior', 'magician',
-    'thief', 'cleric', 'beginner'
+    'cleric', 'thief', 'beginner'
 ]
 export const NPCLEVELLIST: Dokapon.NPCLevelTypes[] = [
     'weak', 'normal', 'strong'

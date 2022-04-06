@@ -33,22 +33,26 @@ class GraphDSA {
             this.adjacencyLists[cell.id] = []
             if (cell.top) {
                 const connectedCell = cells.find(tempCell => tempCell.id === cell.top)
-                if (connectedCell?.position) throw new Error(`${cell.id} top ${connectedCell.id}`)
+                if (!connectedCell) throw new Error(`${cell.id} top`)
+                else if (!connectedCell?.position) throw new Error(`${cell.id} top ${connectedCell.id}`)
                 else this.adjacencyLists[cell.id].push(cell.top)
             }
             if (cell.bottom) {
                 const connectedCell = cells.find(tempCell => tempCell.id === cell.bottom)
-                if (connectedCell?.position) throw new Error(`${cell.id} bottom ${connectedCell.id}`)
+                if (!connectedCell) throw new Error(`${cell.id} bottom`)
+                else if (!connectedCell?.position) throw new Error(`${cell.id} bottom ${connectedCell.id}`)
                 else this.adjacencyLists[cell.id].push(cell.bottom)
             }
             if (cell.left) {
                 const connectedCell = cells.find(tempCell => tempCell.id === cell.left)
-                if (connectedCell?.position) throw new Error(`${cell.id} left ${connectedCell.id}`)
+                if (!connectedCell) throw new Error(`${cell.id} left`)
+                else if (!connectedCell?.position) throw new Error(`${cell.id} left ${connectedCell.id}`)
                 else this.adjacencyLists[cell.id].push(cell.left)
             }
             if (cell.right) {
                 const connectedCell = cells.find(tempCell => tempCell.id === cell.right)
-                if (connectedCell?.position) throw new Error(`${cell.id} right ${connectedCell.id}`)
+                if (!connectedCell) throw new Error(`${cell.id} right`)
+                if (!connectedCell?.position) throw new Error(`${cell.id} right ${connectedCell.id}`)
                 else this.adjacencyLists[cell.id].push(cell.right)
             }
             this.positionLists[cell.id] = { ...cell.position }

@@ -10,19 +10,17 @@ function YellowBlock (props: {
     role: 'dialog' | 'button' | 'title'
     selected?: boolean,
     className?: string,
-    borderRadius?: string,
+    // borderRadius?: string,
 }): JSX.Element {
     // eslint-disable-next-line
-    const { selected, className, children, borderRadius, role } = props
+    const { selected, className, children, role } = props
     return (
         <div className={classNames(
             styles.yellowBlock,
             className,
             { [globalStyles.hoverEffect]: selected }
         )}>
-            <>
-                {children}
-            </>
+            <>{children}</>
         </div>
     )
 }

@@ -1,11 +1,10 @@
 import styles from './BtnGroup.module.css'
-import globalStyles from '../../../assets/styles/globalStyles.module.css'
 import { TransitionStatus } from 'react-transition-group'
 import { useState, useEffect, useRef, useContext, SyntheticEvent, KeyboardEvent } from 'react'
 import { UIStateContext } from '../../../reducers/Home/UIState'
 import useTranslation from '../../../hooks/useTranslation'
 import { userPreferenceContext } from '../../../reducers/userPreference'
-import classNames from 'classnames'
+import YellowBlock from '../../../layouts/YellowBlock'
 const transitionStyles = {
     exiting: styles.fadeOut,
     exited: styles.fadeOut,
@@ -18,6 +17,49 @@ export default BtnGroup
 
 function BtnGroup (props: { state: TransitionStatus }): JSX.Element {
     const { state } = props
+    const { handleKeyUpAttrs, selectedBtnIdx, t } = useMetaData(state)
+    return (
+        <div
+            className={transitionStyles[state]}
+            { ...handleKeyUpAttrs }
+        >
+            <YellowBlock 
+                role='button'
+                selected={selectedBtnIdx === 0}
+                className={styles.btn}
+            >
+                <img className={styles.img}/>
+                {t('はじめから')}
+            </YellowBlock>
+            <YellowBlock 
+                role='button'
+                selected={selectedBtnIdx === 1}
+                className={styles.btn}
+            >
+                <img className={styles.img}/>
+                {t('フリー対戦')}
+            </YellowBlock>
+            <YellowBlock 
+                role='button'
+                selected={selectedBtnIdx === 2}
+                className={styles.btn}
+            >
+                <img className={styles.img}/>
+                {t('図鑑')}
+            </YellowBlock>
+            <YellowBlock 
+                role='button'
+                selected={selectedBtnIdx === 3}
+                className={styles.btn}
+            >
+                <img className={styles.img}/>
+                {t('設定')}
+            </YellowBlock>
+        </div>
+    )
+}
+
+function useMetaData (state: TransitionStatus) {
     const [selectedBtnIdx, setSelectedBtnIdx] = useState(0)
     const { UIState, UIStateDispatch } = useContext(UIStateContext)
     const { userPreference } = useContext(userPreferenceContext)
@@ -71,33 +113,12 @@ function BtnGroup (props: { state: TransitionStatus }): JSX.Element {
             return
         }
     }
+    function focusOnEntered () { if (state === 'entered') focusElement.current?.focus() }
 
-    useEffect(function focusOnEntered () {
-        if (state === 'entered') focusElement.current?.focus()
-    }, [state])
-
-    return (
-        <div
-            className={transitionStyles[state]}
-            { ...handleKeyUpAttrs }
-        >
-            <Btn text={t('はじめから')} selected={selectedBtnIdx === 0}/>
-            <Btn text={t('フリー対戦')} selected={selectedBtnIdx === 1}/>
-            <Btn text={t('図鑑')} selected={selectedBtnIdx === 2}/>
-            <Btn text={t('設定')} selected={selectedBtnIdx === 3}/>
-        </div>
-    )
-}
-
-function Btn (props: { text: string, selected: boolean }): JSX.Element {
-    const { text, selected } = props
-    return (
-        <div className={classNames({
-            [styles.btn]: true,
-            [globalStyles.hoverEffect]: selected
-        })}>
-            <img className={styles.img}/>
-            <span>{text}</span>
-        </div>
-    )
+    useEffect(focusOnEntered, [state])
+    return {
+        handleKeyUpAttrs,
+        selectedBtnIdx,
+        t
+    }
 }

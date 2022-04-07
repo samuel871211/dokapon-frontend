@@ -39,12 +39,6 @@ function Home (): JSX.Element {
                     {state => (<KeyMappingDialog state={state}/>)}
                 </Transition>
             </div>
-            {/* <Transition in={UIState.showSetting} timeout={1000}>
-                {state => (<Settings state={state}/>)}
-            </Transition>
-            <Transition in={UIState.showKeyMappingDialog} timeout={1000}>
-                {state => (<KeyMappingDialog state={state}/>)}
-            </Transition> */}
         </UIStateContext.Provider>
     )
 }

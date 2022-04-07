@@ -1,6 +1,6 @@
 import styles from './KeyMappingDialog.module.css'
 import { TransitionStatus } from 'react-transition-group'
-import classNames from 'classnames'
+import YellowBlock from '../../../layouts/YellowBlock'
 const transitionStyles = {
     exiting: styles.slideOut,
     exited: styles.slideOut,
@@ -14,13 +14,10 @@ export default KeyMappingDialog
 function KeyMappingDialog (props: { state: TransitionStatus }): JSX.Element {
     const { state } = props
     return (
-        <div className={classNames({
-            [styles.container]: true,
-            [transitionStyles[state]]: true
-        })}>
-            <div className={styles.dialog}>
+        <div className={`${styles.container} ${transitionStyles[state]}`}>
+            <YellowBlock role='dialog' className={styles.dialog}>
                 Press any key to override
-            </div>
+            </YellowBlock>
         </div>
     )
 }

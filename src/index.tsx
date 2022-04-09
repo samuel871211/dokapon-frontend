@@ -48,11 +48,11 @@ function App (): JSX.Element {
 
     return (
         <gameProgressContext.Provider value={{ gameProgress, gameProgressDispatch }}>
-        <userPreferenceContext.Provider value={{ userPreference, userPreferenceDispatch }}>
-        <ThemeProvider theme={darkTheme}>
-            <GraphEditor/>
-        </ThemeProvider>
-        </userPreferenceContext.Provider>
+            <userPreferenceContext.Provider value={{ userPreference, userPreferenceDispatch }}>
+                <ThemeProvider theme={darkTheme}>
+                    <GraphEditor/>
+                </ThemeProvider>
+            </userPreferenceContext.Provider>
         </gameProgressContext.Provider>
     )
 }

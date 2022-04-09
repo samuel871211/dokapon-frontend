@@ -57,7 +57,7 @@ function SelectJob (): JSX.Element {
             UIStateDispatch({
                 type: 'currentStep',
                 payload: numberOfPlayers >= currentPlayer ?
-                            'SelectColor' : 'NPCGenerateDialog'
+                    'SelectColor' : 'NPCGenerateDialog'
             })
             break
         default:

@@ -181,22 +181,22 @@ function ContextMenu (): JSX.Element {
     }
     function getAllSlotsDataTimeStamp (): void {
         Promise.all([getGameProgress(), findGameProgressBackup(selectedSlotIdx.value)])
-        .then(responses => {
-            const [res1, res2] = responses
-            const newSlotsTimeStamp = [ ...slotsTimeStamp ]
-            if (res1.status === 200) {
-                for (let i = 0; i <= 9; i++) {
-                    newSlotsTimeStamp[i].timeStamp = res1.data[i].timeStamp
+            .then(responses => {
+                const [res1, res2] = responses
+                const newSlotsTimeStamp = [ ...slotsTimeStamp ]
+                if (res1.status === 200) {
+                    for (let i = 0; i <= 9; i++) {
+                        newSlotsTimeStamp[i].timeStamp = res1.data[i].timeStamp
+                    }
                 }
-            }
-            if (res2.status === 200) {
-                newSlotsTimeStamp[10].timeStamp = res2.data?.timeStamp || ''
-            } else if (res2.status === 404) {
-                newSlotsTimeStamp[10].timeStamp = ''
-            }
-            setSlotsTimeStamp(newSlotsTimeStamp)
-        })
-        .catch(err => console.log(err))
+                if (res2.status === 200) {
+                    newSlotsTimeStamp[10].timeStamp = res2.data?.timeStamp || ''
+                } else if (res2.status === 404) {
+                    newSlotsTimeStamp[10].timeStamp = ''
+                }
+                setSlotsTimeStamp(newSlotsTimeStamp)
+            })
+            .catch(err => console.log(err))
     }
     useEffect(getAllSlotsDataTimeStamp, [selectedSlotIdx])
     useEffect(registerRootEventHandler, [])

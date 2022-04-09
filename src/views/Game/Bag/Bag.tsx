@@ -99,11 +99,11 @@ function Bag (props: {state: TransitionStatus }): JSX.Element {
                 <div className={styles.messageContainer}>
                     <div className={styles.messageArea}></div>
                     <Transition in={false} timeout={1000}>
-                    {state => 
-                        <div className={classNames(
-                            styles.confirmDialog, transitionStyles.confirmDialog[state]
-                        )}></div>
-                    }
+                        {state => 
+                            <div className={classNames(
+                                styles.confirmDialog, transitionStyles.confirmDialog[state]
+                            )}></div>
+                        }
                     </Transition>
                 </div>
             </div>

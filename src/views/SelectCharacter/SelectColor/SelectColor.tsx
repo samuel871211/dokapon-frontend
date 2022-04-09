@@ -62,7 +62,7 @@ function SelectColor (): JSX.Element {
             UIStateDispatch({
                 type: 'currentStep',
                 payload:  numberOfPlayers >= currentPlayer ?
-                            'SelectJob' : 'NPCGenerateDialog'
+                    'SelectJob' : 'NPCGenerateDialog'
             })
             break
         case 'x':
@@ -92,7 +92,7 @@ function SelectColor (): JSX.Element {
             UIStateDispatch({
                 type: 'currentStep',
                 payload: numberOfPlayers >= currentPlayer ?
-                        'BeforeNameInput' : 'NPCGenerateDialog'
+                    'BeforeNameInput' : 'NPCGenerateDialog'
             })
         }
     }

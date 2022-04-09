@@ -253,7 +253,7 @@ function PlayerCard (props: {
                 className={`
                 ${styles.orderNumber}
                 ${currentStep === 'SelectOrderStep2' && showOrderNumberIdx >= index ?
-                styles.showOrderNumber : styles.hide}`}
+            styles.showOrderNumber : styles.hide}`}
             >
                 {index}
             </div>
@@ -267,7 +267,7 @@ function PlayerCard (props: {
                 ${styles.selectControllerContainer}
                 ${selected ? globalStyles.hoverEffect : ''}
                 ${numberOfPlayers >= index + 1 && currentStep === 'SelectController' ?
-                    styles.show : styles.hide}`}
+            styles.show : styles.hide}`}
             >
                 <div
                     className={`

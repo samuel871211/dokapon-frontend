@@ -364,27 +364,27 @@ function Game (): JSX.Element {
 
                 {/* in order to hold drawer state, only set css display none when exited */}
                 <Transition appear in={UIState.showDrawer} timeout={{ enter: 0, exit: 1000 }}>
-                {state => (<Drawer state={state}/>)}
+                    {state => (<Drawer state={state}/>)}
                 </Transition>
 
                 <Transition in={UIState.showRoulette} timeout={{ enter: 1000, exit: 0 }}>
-                {state => state !== 'exited' && (<Roulette state={state}/>)}
+                    {state => state !== 'exited' && (<Roulette state={state}/>)}
                 </Transition>
 
                 <Transition in={UIState.showBag} timeout={{ enter: 1000, exit: 500 }} onExited={showDrawer}>
-                {state => state !== 'exited' && (<Bag state={state}/>)}
+                    {state => state !== 'exited' && (<Bag state={state}/>)}
                 </Transition>
 
                 <Transition in={UIState.showCheck} timeout={{ enter: 1000, exit: 500 }} onExited={showDrawer}>
-                {state => state !== 'exited' && (<Check state={state}/>)}
+                    {state => state !== 'exited' && (<Check state={state}/>)}
                 </Transition>
 
                 <Transition in={UIState.showOverviewMap} timeout={{ enter: 500, exit: 500 }} onExited={showCheck}>
-                {state => state !== 'exited' && (<OverviewMap state={state}/>)}
+                    {state => state !== 'exited' && (<OverviewMap state={state}/>)}
                 </Transition>
 
                 <Transition in={UIState.showShopList} timeout={{ enter: 500, exit: 500 }} onExited={showCheck}>
-                {state => state !== 'exited' && (<ShopList state={state}/>)}
+                    {state => state !== 'exited' && (<ShopList state={state}/>)}
                 </Transition>
             </div>
         </UIStateContext.Provider>

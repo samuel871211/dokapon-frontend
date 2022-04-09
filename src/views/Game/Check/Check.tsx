@@ -52,48 +52,48 @@ function Check (props: { state: TransitionStatus }): JSX.Element {
         <>  
             <div { ...handleKeyUpAttrs }></div>
             <Transition appear in={UIState.showCheckTip} timeout={{ enter: checkTransitionState === 'entered' ? 0 : 1000, exit: 500 }}>
-            {state => (
-                <div className={classNames(
-                    styles.checkTipContainer,
-                    transitionStyles.checkTip[state])}
-                >
-                    <div className={styles.checkTipColumn}>
-                        <div className={styles.checkTipIcon}>O</div>
-                        <div className={styles.checkTipText}>{t('マスチェック')}</div>
+                {state => (
+                    <div className={classNames(
+                        styles.checkTipContainer,
+                        transitionStyles.checkTip[state])}
+                    >
+                        <div className={styles.checkTipColumn}>
+                            <div className={styles.checkTipIcon}>O</div>
+                            <div className={styles.checkTipText}>{t('マスチェック')}</div>
+                        </div>
+                        <div className={styles.checkTipColumn}>
+                            <div className={styles.checkTipIcon}>S</div>
+                            <div className={styles.checkTipText}>MAP</div>
+                        </div>
+                        <div className={styles.checkTipColumn}>
+                            <div className={styles.checkTipIcon}>X</div>
+                            <div className={styles.checkTipText}>{t('戻る')}</div>
+                        </div>
                     </div>
-                    <div className={styles.checkTipColumn}>
-                        <div className={styles.checkTipIcon}>S</div>
-                        <div className={styles.checkTipText}>MAP</div>
-                    </div>
-                    <div className={styles.checkTipColumn}>
-                        <div className={styles.checkTipIcon}>X</div>
-                        <div className={styles.checkTipText}>{t('戻る')}</div>
-                    </div>
-                </div>
-            )}
+                )}
             </Transition>
             <Transition in={UIState.showNodeAttrsAndDistance} timeout={{ enter: checkTransitionState === 'entered' ? 0 : 1000, exit: 500 }}>
-            {state => (
-                <div className={classNames(
-                    styles.nodeAttrsAndDistance,
-                    transitionStyles.nodeAttrsAndDistance[state])}
-                > 
-                    <div className={styles.nodeType}>
+                {state => (
+                    <div className={classNames(
+                        styles.nodeAttrsAndDistance,
+                        transitionStyles.nodeAttrsAndDistance[state])}
+                    > 
+                        <div className={styles.nodeType}>
                         草原拉我
-                    </div>
-                    <div className={styles.nodeDistance}>
+                        </div>
+                        <div className={styles.nodeDistance}>
                         總共是 <b>28</b> 步
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
             </Transition>
             <Transition appear in={UIState.showMinimap} timeout={{ enter: 1000, exit: 500 }}>
-            {state => (
-                <div className={classNames(
-                    styles.minimap,
-                    transitionStyles.minimap[state])}
-                ></div>
-            )}
+                {state => (
+                    <div className={classNames(
+                        styles.minimap,
+                        transitionStyles.minimap[state])}
+                    ></div>
+                )}
             </Transition>
             {/* <Transition in={UIState.showOverviewMap} timeout={{ enter: 500, exit: 500 }}>
             {state => (

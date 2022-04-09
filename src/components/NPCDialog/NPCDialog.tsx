@@ -82,15 +82,15 @@ function NPCDialog (props: {
                 headers: { 'content-type': 'application/json' },
                 method: 'POST'
             })
-            .then(response => response.json())
-            .then(response => {
-                console.log(response)
-                UIStateDispatch({
-                    type: 'showNPCDialog',
-                    payload: false
+                .then(response => response.json())
+                .then(response => {
+                    console.log(response)
+                    UIStateDispatch({
+                        type: 'showNPCDialog',
+                        payload: false
+                    })
                 })
-            })
-            .catch(err => console.log(err))
+                .catch(err => console.log(err))
         }
     }
     function handleTransitionEnd (e: React.TransitionEvent<HTMLDivElement>): void {

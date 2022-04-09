@@ -78,7 +78,7 @@ function SelectGender (): JSX.Element {
             UIStateDispatch({
                 type: 'currentStep',
                 payload: numberOfPlayers >= currentPlayer ?
-                            'BeforeNameInput' : 'NPCGenerateDialog'
+                    'BeforeNameInput' : 'NPCGenerateDialog'
             })
         }
     }

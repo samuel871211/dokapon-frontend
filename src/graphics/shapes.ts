@@ -6,14 +6,14 @@ import * as joint from 'jointjs'
 // conclusion: no need to specify z-index.
 
 export const SVG: { [key: string]: string } = {
-	battleField:
+    battleField:
 		'<?xml version="1.0" standalone="no"?>' +
 		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">' +
 		'<g>' +
 		'<circle fill="#eee" strokeWidth="3" stroke="#333333" cx="30" cy="30" r="30"></circle>' +
 		'</g>' +
 		'</svg>',
-	magicField:
+    magicField:
 		'<?xml version="1.0" standalone="no"?>' +
 		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">' +
 		'<g>' +
@@ -30,7 +30,7 @@ export const SVG: { [key: string]: string } = {
 		'<path transform="rotate(180 17.2575 47.552)" stroke-width="0" d="m16.07,48.86449l0,-2.625l2.375,2.625l-2.375,0z" fill="#ffffff"/>' +
 		'</g>' +
 		'</svg>',
-	treasureField:
+    treasureField:
 		'<?xml version="1.0" standalone="no"?>' +
 		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">' +
 		'<g>' +
@@ -42,14 +42,14 @@ export const SVG: { [key: string]: string } = {
 		'<ellipse stroke="#333333" ry="7.0625" rx="15.5625" cy="16.6375" cx="30" fill="#975102"/>' +
 		'</g>' +
 		'</svg>',
-	specialField:
+    specialField:
 		'<?xml version="1.0" standalone="no"?>' +
 		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">' +
 		'<g>' +
 		'<circle fill="#4089d8" strokeWidth="3" stroke="#333333" cx="30" cy="30" r="30"></circle>' +
 		'</g>' +
 		'</svg>',
-	collectMoneyField:
+    collectMoneyField:
 		'<?xml version="1.0" standalone="no"?>' +
 		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">' +
 		'<g>' +
@@ -61,7 +61,7 @@ export const SVG: { [key: string]: string } = {
 		'<ellipse ry="18" rx="18" cy="30" cx="30" stroke="#000000" fill="#4a91dc"/>' +
 		'</g>' +
 		'</svg>',
-	collectAllMoneyField:
+    collectAllMoneyField:
 		'<?xml version="1.0" standalone="no"?>' +
 		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">' +
 		'<g>' +
@@ -73,7 +73,7 @@ export const SVG: { [key: string]: string } = {
 		'<ellipse ry="18" rx="18" cy="30" cx="30" stroke="#000000" fill="#fff953"/>' +
 		'</g>' +
 		'</svg>',
-	goldTreasureField:
+    goldTreasureField:
 		'<?xml version="1.0" standalone="no"?>' +
 		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">' +
 		'<g>' +
@@ -91,7 +91,7 @@ export const SVG: { [key: string]: string } = {
 		'<line stroke="#6a3816" y2="39.70268" x2="23.32147" y1="39.70268" x1="12.70958" fill="none"/>' +
 		'</g>' +
 		'</svg>',
-	redTreasureField:
+    redTreasureField:
 		'<?xml version="1.0" standalone="no"?>' +
 		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">' +
 		'<g>' +
@@ -109,7 +109,7 @@ export const SVG: { [key: string]: string } = {
 		'<line stroke="#6a3816" y2="39.70268" x2="23.32147" y1="39.70268" x1="12.70958" fill="none"/>' +
 		'</g>' +
 		'</svg>',
-	whiteTreasureField:
+    whiteTreasureField:
 		'<?xml version="1.0" standalone="no"?>' +
 		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">' +
 		'<g>' +
@@ -127,7 +127,7 @@ export const SVG: { [key: string]: string } = {
 		'<line stroke="#6a3816" y2="39.70268" x2="23.32147" y1="39.70268" x1="12.70958" fill="none"/>' +
 		'</g>' +
 		'</svg>',
-	keyTreasureField:
+    keyTreasureField:
 		'<?xml version="1.0" standalone="no"?>' +
 		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">' +
 		'<g>' +
@@ -144,7 +144,7 @@ export const SVG: { [key: string]: string } = {
 		'<path fill="none" stroke="#2f0205" d="m19.07366,33.07848l0.00164,-0.00109l-0.10539,-0.16572c0.30055,-0.40449 0.34089,-0.96653 0.05451,-1.41737c-0.37124,-0.58385 -1.14534,-0.75611 -1.72919,-0.38487c-0.58366,0.37106 -0.75647,1.14516 -0.38523,1.72937c0.27766,0.43648 0.78137,0.64272 1.26182,0.56368l0.07705,0.12157l0.03743,0.00818l0.14155,-0.08123l-0.05542,0.25022l0.45119,0.10031l-0.05379,0.24077l0.3458,0.07705l-0.12357,0.55604l0.25549,0.05688l-0.07705,0.34635l0.75139,0.16681l0.13774,-0.61637l-0.98598,-1.55056l0.00001,-0.00002zm-1.34286,-1.28381c-0.12447,0.07923 -0.28947,0.04234 -0.3687,-0.08213c-0.07905,-0.12447 -0.04252,-0.28965 0.08195,-0.3687s0.28965,-0.04234 0.36852,0.08213c0.07941,0.12447 0.04252,0.28965 -0.08177,0.3687z"/>' +
 		'</g>' +
 		'</svg>',
-	worldTransferField:
+    worldTransferField:
 		'<?xml version="1.0" standalone="no"?>' +
 		'<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" version="1.0" preserveAspectRatio="xMidYMid meet">' +
 		'<g>' +
@@ -159,270 +159,270 @@ export const SVG: { [key: string]: string } = {
 }
 
 const battleField = joint.dia.Element.define('dokapon.battleField', {
-	name: 'battleField',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 80,
-			height: 80,
-			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.battleField)
-		}
-	}],
-	size: {
-		width: 80,
-		height: 80
-	}
+    name: 'battleField',
+    markup: [{
+        selector: 'body',
+        tagName: 'image',
+        attributes: {
+            width: 80,
+            height: 80,
+            href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.battleField)
+        }
+    }],
+    size: {
+        width: 80,
+        height: 80
+    }
 })
 
 const magicField = joint.dia.Element.define('dokapon.magicField', {
-	name: 'magicField',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 80,
-			height: 80,
-			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.magicField)
-		}
-	}],
-	size: {
-		width: 80,
-		height: 80
-	}
+    name: 'magicField',
+    markup: [{
+        selector: 'body',
+        tagName: 'image',
+        attributes: {
+            width: 80,
+            height: 80,
+            href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.magicField)
+        }
+    }],
+    size: {
+        width: 80,
+        height: 80
+    }
 })
 
 const treasureField = joint.dia.Element.define('dokapon.treasureField', {
-	name: 'treasureField',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 80,
-			height: 80,
-			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.treasureField)
-		}
-	}],
-	size: {
-		width: 80,
-		height: 80
-	}
+    name: 'treasureField',
+    markup: [{
+        selector: 'body',
+        tagName: 'image',
+        attributes: {
+            width: 80,
+            height: 80,
+            href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.treasureField)
+        }
+    }],
+    size: {
+        width: 80,
+        height: 80
+    }
 })
 
 const specialField = joint.dia.Element.define('dokapon.specialField', {
-	name: 'specialField',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 80,
-			height: 80,
-			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.specialField)
-		}
-	}],
-	size: {
-		width: 80,
-		height: 80
-	}
+    name: 'specialField',
+    markup: [{
+        selector: 'body',
+        tagName: 'image',
+        attributes: {
+            width: 80,
+            height: 80,
+            href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.specialField)
+        }
+    }],
+    size: {
+        width: 80,
+        height: 80
+    }
 })
 
 const collectMoneyField = joint.dia.Element.define('dokapon.collectMoneyField', {
-	name: 'collectMoneyField',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 80,
-			height: 80,
-			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.collectMoneyField)
-		}
-	}],
-	size: {
-		width: 80,
-		height: 80
-	}
+    name: 'collectMoneyField',
+    markup: [{
+        selector: 'body',
+        tagName: 'image',
+        attributes: {
+            width: 80,
+            height: 80,
+            href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.collectMoneyField)
+        }
+    }],
+    size: {
+        width: 80,
+        height: 80
+    }
 })
 
 const collectAllMoneyField = joint.dia.Element.define('dokapon.collectAllMoneyField', {
-	name: 'collectAllMoneyField',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 80,
-			height: 80,
-			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.collectAllMoneyField)
-		}
-	}],
-	size: {
-		width: 80,
-		height: 80
-	}
+    name: 'collectAllMoneyField',
+    markup: [{
+        selector: 'body',
+        tagName: 'image',
+        attributes: {
+            width: 80,
+            height: 80,
+            href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.collectAllMoneyField)
+        }
+    }],
+    size: {
+        width: 80,
+        height: 80
+    }
 })
 
 const goldTreasureField = joint.dia.Element.define('dokapon.goldTreasureField', {
-	name: 'goldTreasureField',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 80,
-			height: 80,
-			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.goldTreasureField)
-		}
-	}],
-	size: {
-		width: 80,
-		height: 80
-	}
+    name: 'goldTreasureField',
+    markup: [{
+        selector: 'body',
+        tagName: 'image',
+        attributes: {
+            width: 80,
+            height: 80,
+            href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.goldTreasureField)
+        }
+    }],
+    size: {
+        width: 80,
+        height: 80
+    }
 })
 
 const redTreasureField = joint.dia.Element.define('dokapon.redTreasureField', {
-	name: 'redTreasureField',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 80,
-			height: 80,
-			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.redTreasureField)
-		}
-	}],
-	size: {
-		width: 80,
-		height: 80
-	}
+    name: 'redTreasureField',
+    markup: [{
+        selector: 'body',
+        tagName: 'image',
+        attributes: {
+            width: 80,
+            height: 80,
+            href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.redTreasureField)
+        }
+    }],
+    size: {
+        width: 80,
+        height: 80
+    }
 })
 
 const whiteTreasureField = joint.dia.Element.define('dokapon.whiteTreasureField', {
-	name: 'whiteTreasureField',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 80,
-			height: 80,
-			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.whiteTreasureField)
-		}
-	}],
-	size: {
-		width: 80,
-		height: 80
-	}
+    name: 'whiteTreasureField',
+    markup: [{
+        selector: 'body',
+        tagName: 'image',
+        attributes: {
+            width: 80,
+            height: 80,
+            href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.whiteTreasureField)
+        }
+    }],
+    size: {
+        width: 80,
+        height: 80
+    }
 })
 
 const keyTreasureField = joint.dia.Element.define('dokapon.keyTreasureField', {
-	name: 'keyTreasureField',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 80,
-			height: 80,
-			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.keyTreasureField)
-		}
-	}],
-	size: {
-		width: 80,
-		height: 80
-	}
+    name: 'keyTreasureField',
+    markup: [{
+        selector: 'body',
+        tagName: 'image',
+        attributes: {
+            width: 80,
+            height: 80,
+            href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.keyTreasureField)
+        }
+    }],
+    size: {
+        width: 80,
+        height: 80
+    }
 })
 
 const worldTransferField = joint.dia.Element.define('dokapon.worldTransferField', {
-	name: 'worldTransferField',
-	markup: [{
-		selector: 'body',
-		tagName: 'image',
-		attributes: {
-			width: 80,
-			height: 80,
-			href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.worldTransferField)
-		}
-	}],
-	size: {
-		width: 80,
-		height: 80
-	}
+    name: 'worldTransferField',
+    markup: [{
+        selector: 'body',
+        tagName: 'image',
+        attributes: {
+            width: 80,
+            height: 80,
+            href: 'data:image/svg+xml;utf8,' + encodeURIComponent(SVG.worldTransferField)
+        }
+    }],
+    size: {
+        width: 80,
+        height: 80
+    }
 })
 
 // joint.shapes.standard.Link.define(): joint.dia.Link
 // will cause error "markup required"
 function oneWayHLink (): joint.shapes.standard.Link {
-	const link = new joint.shapes.standard.Link()
-	link.attr('line', {
-		stroke: 'white',
-		strokeWidth: 4,
-		targetMarker: { d: 'M -5 0 L 10 10 L 10 -10 Z' }
-	})
-	link.prop('name', 'oneWayHLink')
-	return link
+    const link = new joint.shapes.standard.Link()
+    link.attr('line', {
+        stroke: 'white',
+        strokeWidth: 4,
+        targetMarker: { d: 'M -5 0 L 10 10 L 10 -10 Z' }
+    })
+    link.prop('name', 'oneWayHLink')
+    return link
 }
 
 function twoWayHLink (): joint.shapes.standard.Link {
-	const link = new joint.shapes.standard.Link()
-	link.attr('line', {
-		stroke: 'white',
-		strokeWidth: 4,
-		targetMarker: 'none'
-	})
-	link.prop('name', 'twoWayHLink')
-	return link
+    const link = new joint.shapes.standard.Link()
+    link.attr('line', {
+        stroke: 'white',
+        strokeWidth: 4,
+        targetMarker: 'none'
+    })
+    link.prop('name', 'twoWayHLink')
+    return link
 }
 
 function oneWayVLink (): joint.shapes.standard.Link {
-	const link = new joint.shapes.standard.Link()
-	link.attr('line', {
-		stroke: 'white',
-		strokeWidth: 4,
-		targetMarker: { d: 'M -5 0 L 10 10 L 10 -10 Z' }
-	})
-	link.prop('name', 'oneWayVLink')
-	return link
+    const link = new joint.shapes.standard.Link()
+    link.attr('line', {
+        stroke: 'white',
+        strokeWidth: 4,
+        targetMarker: { d: 'M -5 0 L 10 10 L 10 -10 Z' }
+    })
+    link.prop('name', 'oneWayVLink')
+    return link
 }
 
 function twoWayVLink (): joint.shapes.standard.Link {
-	const link = new joint.shapes.standard.Link()
-	link.attr('line', {
-		stroke: 'white',
-		strokeWidth: 4,
-		targetMarker: 'none'
-	})
-	link.prop('name', 'twoWayVLink')
-	return link
+    const link = new joint.shapes.standard.Link()
+    link.attr('line', {
+        stroke: 'white',
+        strokeWidth: 4,
+        targetMarker: 'none'
+    })
+    link.prop('name', 'twoWayVLink')
+    return link
 }
 
 export function createElement (name: string): joint.dia.Element {
-	switch (name.toLowerCase()) {
+    switch (name.toLowerCase()) {
     case 'battlefield':
         return new battleField()
     case 'magicfield':
         return new magicField()
     case 'treasurefield':
         return new treasureField()
-	case 'specialfield':
-		return new specialField()
-	case 'collectmoneyfield':
-		return new collectMoneyField()
-	case 'collectallmoneyfield':
-		return new collectAllMoneyField()
-	case 'goldtreasurefield':
-		return new goldTreasureField()
-	case 'redtreasurefield':
-		return new redTreasureField()
-	case 'whitetreasurefield':
-		return new whiteTreasureField()
-	case 'keytreasurefield':
-		return new keyTreasureField()
-	case 'worldtransferfield':
-		return new worldTransferField()
+    case 'specialfield':
+        return new specialField()
+    case 'collectmoneyfield':
+        return new collectMoneyField()
+    case 'collectallmoneyfield':
+        return new collectAllMoneyField()
+    case 'goldtreasurefield':
+        return new goldTreasureField()
+    case 'redtreasurefield':
+        return new redTreasureField()
+    case 'whitetreasurefield':
+        return new whiteTreasureField()
+    case 'keytreasurefield':
+        return new keyTreasureField()
+    case 'worldtransferfield':
+        return new worldTransferField()
     default:
-		console.error(`unknown element name ${name}`)
+        console.error(`unknown element name ${name}`)
         return new battleField()
-	}
+    }
 }
 
 export function createLink (name: string): joint.dia.Link {
-	switch (name.toLowerCase()) {
+    switch (name.toLowerCase()) {
     case 'onewayhlink':
         return oneWayHLink()
     case 'twowayhlink':
@@ -433,19 +433,19 @@ export function createLink (name: string): joint.dia.Link {
         return twoWayVLink()
     default:
         return oneWayHLink()
-	}
+    }
 }
 
 export const ELEMENTS = [
-	'battleField', 'magicField',
-	'treasureField', 'specialField',
-	'collectMoneyField', 'collectAllMoneyField',
-	'goldTreasureField', 'redTreasureField',
-	'whiteTreasureField', 'keyTreasureField',
-	'worldTransferField'
+    'battleField', 'magicField',
+    'treasureField', 'specialField',
+    'collectMoneyField', 'collectAllMoneyField',
+    'goldTreasureField', 'redTreasureField',
+    'whiteTreasureField', 'keyTreasureField',
+    'worldTransferField'
 ]
 
 export const LINKS = [
-	'oneWayHLink', 'twoWayHLink',
-	'oneWayVLink', 'twoWayVLink'
+    'oneWayHLink', 'twoWayHLink',
+    'oneWayVLink', 'twoWayVLink'
 ]

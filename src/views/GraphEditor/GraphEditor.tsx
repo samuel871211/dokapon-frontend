@@ -87,43 +87,43 @@ export default function GraphEditor (): JSX.Element {
         if (inputGraphName === '') return
 
         createGraph(inputGraphName)
-        .then(response => {
-            switch (response.status) {
-            case 200: {
-                setSnackbar({
-                    open: true,
-                    severity: 'success',
-                    text: '新增成功'
-                })
-                const newGraphDatas = [ ...graphDatas, response.data ]
-                setGraphDatas(newGraphDatas)
-                setCurrentGraphIdx(newGraphDatas.length - 1)
-                break
-            }
-            case 400:
-                setSnackbar({
-                    open: true,
-                    severity: 'error',
-                    text: '重複的名稱'
-                })
-                break
-            default:
-                setSnackbar({
-                    open: true,
-                    severity: 'error',
-                    text: 'server error'
-                })
-                break
-            }
+            .then(response => {
+                switch (response.status) {
+                case 200: {
+                    setSnackbar({
+                        open: true,
+                        severity: 'success',
+                        text: '新增成功'
+                    })
+                    const newGraphDatas = [ ...graphDatas, response.data ]
+                    setGraphDatas(newGraphDatas)
+                    setCurrentGraphIdx(newGraphDatas.length - 1)
+                    break
+                }
+                case 400:
+                    setSnackbar({
+                        open: true,
+                        severity: 'error',
+                        text: '重複的名稱'
+                    })
+                    break
+                default:
+                    setSnackbar({
+                        open: true,
+                        severity: 'error',
+                        text: 'server error'
+                    })
+                    break
+                }
 
-        })
-        .catch(err => {
-            setSnackbar({
-                open: false,
-                severity: 'success',
-                text: 'server error' 
             })
-        })
+            .catch(err => {
+                setSnackbar({
+                    open: false,
+                    severity: 'success',
+                    text: 'server error' 
+                })
+            })
     }
     function addElement (name: string): void {
         if (!selectedLink) return
@@ -379,31 +379,31 @@ export default function GraphEditor (): JSX.Element {
     function saveGraph (): void {
         clearSelection()
         updateGraph(graphDatas[currentGraphIdx].name, graph.toJSON())
-        .then(response => {
-            switch (response.status) {
-            case 200:
-                setSnackbar({
-                    open: true,
-                    severity: 'success',
-                    text: '儲存成功'
-                })
-                return
-            default:
+            .then(response => {
+                switch (response.status) {
+                case 200:
+                    setSnackbar({
+                        open: true,
+                        severity: 'success',
+                        text: '儲存成功'
+                    })
+                    return
+                default:
+                    setSnackbar({
+                        open: true,
+                        severity: 'error',
+                        text: '儲存失敗'
+                    })
+                    return
+                }
+            })
+            .catch(error => {
                 setSnackbar({
                     open: true,
                     severity: 'error',
                     text: '儲存失敗'
                 })
-                return
-            }
-        })
-        .catch(error => {
-            setSnackbar({
-                open: true,
-                severity: 'error',
-                text: '儲存失敗'
             })
-        })
     }
 
     function closeSnackbar (): void {
@@ -454,10 +454,11 @@ export default function GraphEditor (): JSX.Element {
         }
         return (
             <IconButton
-                children={icon}
                 disabled={disabled}
                 onClick={() => addLink(type, direction)}
-            />
+            >
+                {icon}
+            </IconButton>
         )
     }
 

@@ -5,7 +5,7 @@ import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import globalStyles from '../../../assets/styles/globalStyles.module.css'
 import styles from './SelectGender.module.css'
 type gender = 'male' | 'female'
-const backendUrl = process.env.REACT_APP_BACKEND_BASEURL || ''
+const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 const genderToCN = { male: '男', female: '女' }
 
 export default SelectGender
@@ -100,7 +100,7 @@ function SelectGender (): JSX.Element {
 
 function GenderBlockBtn (props: { gender: gender, selected: boolean }): JSX.Element {
     const { gender, selected } = props
-    const imgSrc = `${backendUrl}/imgs/beginner_${gender}_red_front.png`
+    const imgSrc = `${backendBaseUrl}/imgs/beginner_${gender}_red_front.png`
 
     return (
         <div className={styles.genderBlock}>

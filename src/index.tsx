@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom'
 import { useEffect, useReducer } from 'react'
 import { ThemeProvider } from '@mui/material'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styles from './index.module.css'
 import './index.css'
 import GraphEditor from './views/GraphEditor'
@@ -51,14 +50,7 @@ function App (): JSX.Element {
         <gameProgressContext.Provider value={{ gameProgress, gameProgressDispatch }}>
         <userPreferenceContext.Provider value={{ userPreference, userPreferenceDispatch }}>
         <ThemeProvider theme={darkTheme}>
-        <Router>
-            <Switch>
-                <Route path='/' exact component={Home}/>
-                <Route path='/graph-editor' exact component={GraphEditor}/>
-                <Route path='/select-character' exact component={SelectCharacter}/>
-                <Route path='/game' exact component={Game}/>
-            </Switch>
-        </Router>
+            <GraphEditor/>
         </ThemeProvider>
         </userPreferenceContext.Provider>
         </gameProgressContext.Provider>

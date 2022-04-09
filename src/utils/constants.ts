@@ -15,4 +15,3 @@ export const NPCLEVELLIST: Dokapon.NPCLevelTypes[] = [
 export const GENDERLIST: Dokapon.GenderTypes[] = [
     'male', 'female'
 ]
-export const BACKENDURL = process.env.REACT_APP_BACKEND_BASEURL || ''

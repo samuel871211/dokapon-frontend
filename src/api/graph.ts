@@ -1,10 +1,8 @@
-import axios, {
-    // AxiosResponse,
-    // AxiosError
-} from 'axios'
+import axios from 'axios'
+const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 
 const graphAPI = axios.create({
-    baseURL: `${process.env.REACT_APP_BACKEND_BASEURL || ''}/graph`,
+    baseURL: `${backendBaseUrl}/graph`,
     timeout: 3000,
     headers: { 'content-type': 'application/json' }
 })

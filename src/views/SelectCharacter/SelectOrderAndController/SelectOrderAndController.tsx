@@ -6,9 +6,7 @@ import { gameProgressContext } from '../../../reducers/gameProgress'
 import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
 import { NPCLEVELS } from '../../../graphics/characters'
 import { shuffle } from '../../../utils/math'
-
-
-const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
+const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 
 export default SelectOrderAndController
 
@@ -259,7 +257,7 @@ function PlayerCard (props: {
             >
                 {index}
             </div>
-            <img src={`${prefix}/imgs/${job}_${gender}_${color}_front.png`}/>
+            <img src={`${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`}/>
             <div className={styles.nameContainer}>
                 <span className={styles.nameArea}>{name}</span>
                 <CustomBorderBottom/>

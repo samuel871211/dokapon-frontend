@@ -8,7 +8,7 @@ import useTranslation from '../../../hooks/useTranslation'
 import { userPreferenceContext } from '../../../reducers/userPreference'
 import { UIStateContext } from '../../../reducers/Game/UIState'
 import { useState, useContext, useRef, useEffect, SyntheticEvent, KeyboardEvent } from 'react'
-const BACKENDURL = process.env.REACT_APP_BACKEND_BASEURL || ''
+const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 const transitionStyles = {
     container: {
         entering: '',
@@ -206,7 +206,7 @@ function DetailedPlayerInfos (): JSX.Element {
                     <img
                         width="100%"
                         height="100%"
-                        src={`${BACKENDURL}/imgs/magician_male_red_front.png`}
+                        src={`${backendBaseUrl}/imgs/magician_male_red_front.png`}
                     />
                 </div>
                 <div className={styles.ranking}>
@@ -271,7 +271,7 @@ function BriefPlayerInfos (): JSX.Element {
                 <img
                     width="100%"
                     height="100%"
-                    src={`${BACKENDURL}/imgs/magician_male_red_front.png`}
+                    src={`${backendBaseUrl}/imgs/magician_male_red_front.png`}
                 />
             </div>
             <div>

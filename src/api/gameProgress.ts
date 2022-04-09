@@ -1,9 +1,10 @@
 import axios from 'axios'
 import Dokapon from '../global'
+const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 type response = { status: number, data: Dokapon.GameProgress | null }
 
 const gameProgressClient = axios.create({
-    baseURL: `${process.env.REACT_APP_BACKEND_BASEURL || ''}/gameProgress`,
+    baseURL: `${backendBaseUrl}/gameProgress`,
     timeout: 3000,
     headers: { 'content-type': 'application/json' }
 })

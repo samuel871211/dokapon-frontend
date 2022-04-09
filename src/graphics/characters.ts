@@ -1,5 +1,6 @@
 import * as joint from 'jointjs'
 import Dokapon from '../global'
+const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 /**
  * @todo 不確定為什麼textpath無法透過jointjs render到畫面，所以改成用text
  */
@@ -12,7 +13,6 @@ const characterTemplate = `
 	<g>
 		<image width="160" height="160" href="{href}"></image>
 	</g>`
-const BACKENDURL = process.env.REACT_APP_BACKEND_BASEURL || ''
 
 export function createCharacter (attrs: {
 	characterType: Dokapon.CharacterTypes,
@@ -27,7 +27,7 @@ export function createCharacter (attrs: {
 				.replaceAll('\n', '')
 				.replaceAll('\t', '')
 				.replace('{characterType}', characterType)
-				.replace('{href}', `${BACKENDURL}/imgs/${job}_${gender}_${color}_front.png`)
+				.replace('{href}', `${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`)
 				.replace('{color}', COLORS[color].rgb)
 	})
 	return new character()

@@ -3,6 +3,7 @@ import { gameProgressContext } from '../../reducers/gameProgress'
 import { UIStateContext } from '../../reducers/SelectCharacter/UIState'
 import BottomDialogConfirmCircle from '../BottomDialogConfirmCircle'
 import styles from './NPCDialog.module.css'
+const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 
 export default NPCDialog
 
@@ -76,7 +77,7 @@ function NPCDialog (props: {
         }
 
         if (currentStep === 'SelectOrderStep3') {
-            fetch(`${process.env.REACT_APP_BACKEND_BASEURL || ''}/gameProgress`, {
+            fetch(`${backendBaseUrl}/gameProgress`, {
                 body: JSON.stringify(gameProgress),
                 headers: { 'content-type': 'application/json' },
                 method: 'POST'

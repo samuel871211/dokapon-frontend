@@ -1,7 +1,6 @@
 import React, { useLayoutEffect, useRef} from 'react'
 import styles from './ExampleCharacterImg.module.css'
-
-const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
+const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 
 export default ExampleCharacterImg
 
@@ -30,7 +29,7 @@ function ExampleCharacterImg (props: {
     return (
         <div className={styles.container}>
             <img
-                src={`${prefix}/imgs/${job}_${gender}_${color}_front.png`}
+                src={`${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`}
                 className={`
                 ${styles.img}
                 ${isFadeOut ? styles.fadeOut : ''}`}

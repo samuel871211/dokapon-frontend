@@ -1,29 +1,52 @@
 module.exports = {
-    root: true,
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        project: ['./tsconfig.json']
+    'env': {
+        'browser': true,
+        'es2021': true,
+        'node': true
     },
-    plugins: [
-        '@typescript-eslint',
-    ],
-    extends: [
+    'extends': [
         'eslint:recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking'
+        'plugin:react/recommended',
+        'plugin:@typescript-eslint/recommended'
     ],
-    rules: {
+    'parser': '@typescript-eslint/parser',
+    'parserOptions': {
+        'ecmaFeatures': {
+            'jsx': true
+        },
+        'ecmaVersion': 'latest',
+        'sourceType': 'module'
+    },
+    'plugins': [
+        'react',
+        '@typescript-eslint'
+    ],
+    'settings': {
+        'react': {
+            'version': '17.0.2'
+        }
+    },
+    'rules': {
+        'indent': [
+            'error',
+            4
+        ],
+        'quotes': [
+            'error',
+            'single'
+        ],
+        'semi': [
+            'error',
+            'never'
+        ],
+        'react/jsx-uses-react': 'off',
+        'react/react-in-jsx-scope': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-unused-vars': [
             'warn', {
                 'vars': 'all', // check all global vars that should be used
-                'args': 'none', // don't check function args
-                'ignoreRestSiblings': false
+                'args': 'none' // don't check function args
             }
         ],
-        '@typescript-eslint/quotes': [
-            'error', 'single', { 'allowTemplateLiterals' : true }
-        ],
-        '@typescript-eslint/no-unsafe-assignment': 'off',
-        '@typescript-eslint/no-explicit-any': 'off'
     }
 }

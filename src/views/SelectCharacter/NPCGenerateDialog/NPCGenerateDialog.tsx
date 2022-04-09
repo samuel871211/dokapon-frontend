@@ -9,7 +9,7 @@ import { COLORS, BASICJOBS, NPCLEVELS } from '../../../graphics/characters'
 import japaneseChars from '../../../utils/japaneseChars'
 import Dokapon from '../../../global'
 import { COLORLIST, BASICJOBLIST, NPCLEVELLIST, GENDERLIST } from '../../../utils/constants'
-const prefix = process.env.REACT_APP_BACKEND_BASEURL || ''
+const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 
 export default NPCGenerateDialog
 
@@ -161,7 +161,7 @@ function NPCGenerateDialog (): JSX.Element {
             <CustomBorderBottom/>
             <div className={styles.bottom}>
                 <div className={styles.imgContainer}>
-                    <img src={`${prefix}/imgs/${job}_${gender}_${color}_front.png`}/>
+                    <img src={`${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`}/>
                 </div>
                 <div className={styles.btnGroup}>
                     <Btn

@@ -68,7 +68,7 @@ const texts: { [key: string]: { en: string, cn: string } } = {
     },
     特技: {
         en: 'talent',
-        cn: '特技'
+        cn: '技能'
     },
     データ: {
         en: 'data',
@@ -81,7 +81,7 @@ const texts: { [key: string]: { en: string, cn: string } } = {
     },
     'マスチェック': {
         en: 'mass check',
-        cn: '質量檢查'
+        cn: '查看格子'
     },
     スピードUP: {
         en: 'Speed up',
@@ -109,5 +109,287 @@ const texts: { [key: string]: { en: string, cn: string } } = {
         en: 'end',
         cn: '結束'
     },
+    // SelectCharacter > SelectGoalType
+    フリーモード設定: {
+        en: 'Free mode setting',
+        cn: '自由模式設定'
+    },
+    期間を目標: {
+        en: 'period',
+        cn: '期間目標'
+    },
+    お金を目標: {
+        en: 'money',
+        cn: '金錢目標'
+    },
+    ナビイ: {
+        en: 'Navi',
+        cn: '導航'
+    },
+    'どちらのモードで遊びますか?': {
+        en: '請問您要選擇什麼模式？',
+        cn: 'Which mode do you play in?'
+    },
+    // SelectCharacter > GoalInputDialog
+    '週数を決めてください。': {
+        en: 'Please decide the number of weeks.',
+        cn: '請決定週數。'
+    },
+    週: {
+        en: 'week',
+        cn: '週'
+    },
+    目標期間: {
+        en: 'goal period',
+        cn: '目標期間'
+    },
+    目標金額: {
+        en: 'goal money',
+        cn: '目標金額'
+    },
+    // SelectCharacter > SelectNumberOfPlayers
+    '勇者様は何人いるんですか?': {
+        en: 'How many heroes are there?',
+        cn: '請問有多少位勇者？'
+    },
+    プレイヤ一人数: {
+        en: 'Number of players',
+        cn: '玩家人數'
+    },
+    '⋯一人ぼっちですか。': {
+        en: '⋯ Are you alone?',
+        cn: '⋯你一個人嗎？'
+    },
+    'さみしいですね⋯。': {
+        en: 'I\'m lonely ...',
+        cn: '好孤單...'
+    },
+    // SelectCharacter > SelectGender
+    '1人目の勇者様。\n勇者様の性別は何ですか?': {
+        en: 'The first hero.\nWhat is the gender of the hero?',
+        cn: '第1個勇者。\n勇者的性別是什麼？'
+    },
+    '2人目の勇者様。\n勇者様の性別は何ですか?': {
+        en: 'The first hero.\nWhat is the gender of the hero?',
+        cn: '第2個勇者。\n勇者的性別是什麼？'
+    },
+    '3人目の勇者様。\n勇者様の性別は何ですか?': {
+        en: 'The third hero.\nWhat is the gender of the hero?',
+        cn: '第3個勇者。\n勇者的性別是什麼？'
+    },
+    '4人目の勇者様。\n勇者様の性別は何ですか?': {
+        en: 'The fourth hero.\nWhat is the gender of the hero?',
+        cn: '第4個勇者。\n勇者的性別是什麼？'
+    },
+    性別選択: {
+        en: 'Gender selection',
+        cn: '選擇性別'
+    },
+    男: {
+        en: 'Male',
+        cn: '男'
+    },  
+    女: {
+        en: 'Female',
+        cn: '女'
+    },
+    // SelectCharacter > NameInputDialog
+    '勇者様の名前を教えてください。': {
+        en: 'Please tell me the name of the hero.',
+        cn: '請告訴我勇者的名字。'
+    },
+    ひらがな: {
+        en: 'Hiragana',
+        cn: '平假名'
+    },
+    カタカナ: {
+        en: 'Katakana',
+        cn: '片假名'
+    },
+    すすむ: {
+        en: 'Proceed',
+        cn: '繼續'
+    },
+    もどる: {
+        en: 'Return',
+        cn: '返回'
+    },
+    けす: {
+        en: 'remove',
+        cn: '刪除'
+    },
+    // SelectCharacter > SelectColor
+    'それでは{name}様にお聞きしますぅ。\n勇者様は何色がお好きですか?': {
+        en: 'Then I would like to ask hero {name}.\nWhat color do you like?',
+        cn: '那麼我想問一下{name}。\n請問勇者您喜歡什麼顏色？'
+    },
+    あか: {
+        en: 'Red',
+        cn: '紅色'
+    },
+    オレンジ: {
+        en: 'Orange',
+        cn: '橘色'
+    },
+    きいろ: {
+        en: 'Yellow',
+        cn: '黃色'
+    },
+    きみどり: {
+        en: 'Yellow-green',
+        cn: '黃綠色'
+    },
+    みどり: {
+        en: 'Green',
+        cn: '綠色'
+    },
+    みずいろ: {
+        en: 'Water-blue',
+        cn: '水藍色'
+    },
+    あお: {
+        en: 'Blue',
+        cn: '藍色'
+    },
+    ピンク: {
+        en: 'Pink',
+        cn: '粉紅色'
+    },
+    くろ: {
+        en: 'Black',
+        cn: '黑色'
+    },
+    しろ: {
+        en: 'White',
+        cn: '白色'
+    },
+    // SelectCharacter > SelectJob
+    '{name}様。\n勇者様はどの職業につきますか?': {
+        en: '{name}.\nWhich profession does the hero have?',
+        cn: '{name}。\n請問勇者大人要選擇什麼職業？'
+    },
+    戦士: {
+        en: 'Warrior',
+        cn: '戰士'
+    },
+    魔法使い: {
+        en: 'Magician',
+        cn: '魔法師'
+    },
+    僧侶: {
+        en: 'Cleric',
+        cn: '僧侶'
+    },
+    盜賊: {
+        en: 'Thief',
+        cn: '盜賊'
+    },
+    つかない: {
+        en: 'None',
+        cn: '不選擇'
+    },
+    '攻撃力でガンガン行く職業ですぅ。\n物理攻撃が得意ですけど、\n魔力が上がらないので魔法には弱いですぅ。': {
+        en: 'It\'s a profession that goes crazy with offensive power.\nI\'m good at physical attacks,\nIt\'s weak against magic because it doesn\'t increase its magical power.',
+        cn: '這是一個以攻擊力橫衝直撞的職業。\n雖然擅長物理攻擊，\n但因為魔力值不會提升的緣故，魔法相對弱一點'
+    },
+    '高い魔力でビシビシ行く職業ですぅ。\n魔法攻撃は強力ですけど、\n防御力が上がらないので打たれ弱いですぅ。': {
+        en: 'It\'s a profession that goes crazy with high magical power.\nMagic attacks are powerful,\nbut It\'s weak because it doesn\'t increase the defense power.',
+        cn: '這是一個以高魔力威震四方的職業。\n雖然魔法攻擊很強大，\n但因為防禦力不會上升的緣故，相對不耐打。'
+    },
+    'HPが高い職業ですぅ。\n打たれ強さはありますけど、\n素早さが上がらないのでミスしやすいですぅ。': {
+        en: 'It\'s a profession with high HP.\nIt\'s strong, but it\'s strong.\nIt\'s easy to make mistakes because it doesn\'t improve your speed.',
+        cn: '這是高HP的職業。\n他雖然很耐打，\n但因為敏捷度不會上升的緣故，攻擊容易揮空。'
+    },
+    '素早さがピカイチの職業ですぅ。\n素早く攻撃をよけたりしますけど、\n他にこれといった特徴が無いですぅ。': {
+        en: 'Quickness is Pikaichi\'s profession.\nIt avoids attacks quickly,\n but there is no other feature like this.',
+        cn: '敏捷數一數二的職業。\n雖然他可以靈敏地躲開攻擊，\n但除此之外沒有其他長處了。'
+    },
+    '職業にはつかない自由人ですぅ。\n何のメリットもなく、給料ももらえないので、\n生活はキビシイですぅ。': {
+        en: 'He is a free person who cannot get a job.\nThere is no merit and I don\'t get a salary,\nLife is hard.',
+        cn: '不從事任何職業的自由人。\n沒有任何優點，也因為拿不到薪水，\n生活非常艱難。'
+    },
+    // SelectCharacter > NPCGenerateDialog
+    '王様が募集している勇者様は4人ですぅ。': {
+        en: 'The king is looking for four heroes.',
+        cn: '國王正在尋找四個勇者。'
+    },
+    'ということは勇者様が足りません。': {
+        en: 'That means there are not enough heroes.',
+        cn: '這意味著沒有足夠的勇者。'
+    },
+    'あと{count}人必要ですぅ。': {
+        en: 'I need {count} more people.',
+        cn: '我還需要{count}個人。'
+    },
+    '{count}人目の勇者様についてお聞きしますぅ。': {
+        en: 'I would like to ask you about the {count} hero.',
+        cn: '我想問你關於第{count}個勇者的事。'
+    },
+    'こんな方を募集します。\n気に入らない場所があったら直してください。': {
+        en: 'We are looking for people like this.\nIf you find something you don\'t like, please fix it.',
+        cn: '我們正在尋找這樣的人。\n若有讓您不愉快的地方請指正我。'
+    },
+    '勇者募集!!': {
+        en: 'Recruiting Heroes!!',
+        cn: '勇者募集!!'
+    },
+    決定: {
+        en: 'Confirm',
+        cn: '決定'
+    },
+    // SelectCharacter > SelectNPCLevel
+    強さ選択: {
+        en: 'Strength selection',
+        cn: '強度選擇'
+    },
+    弱い: {
+        en: 'Weak',
+        cn: '弱'
+    },
+    普通: {
+        en: 'Normal',
+        cn: '普通'
+    },
+    ズルい: {
+        en: 'Unfair',
+        cn: '不公平'
+    },
+    '強さはどのくらいの人がよろしいですか?': {
+        en: 'How strong should you be?',
+        cn: '強度要幾個人好呢？'
+    },
+    'これで4人の勇者様が全員そろいました!': {
+        en: 'Now you have all four heroes!',
+        cn: '這樣四位勇者大人都到齊了！'
+    },
+    // SelectCharacter > SelectOrderAndController
+    '使うコントローラを決めてください!': {
+        en: 'Decide which controller to use!',
+        cn: '請決定所要使用的控制器！'
+    },
+    コントローラ: {
+        en: 'Controller',
+        cn: '控制器'
+    },
+    'つながっていないコントローラが\n選ばれていますよ!': {
+        en: 'The controller you have been chosen\nis not connected!',
+        cn: '您選中了\n未連接的控制器！'
+    },
+    'このメンバーでよろしいですね?': {
+        en: 'Is this ok?',
+        cn: '請問這個成員配置可以嗎？'
+    },
+    'それでは順番を決めますう!': {
+        en: 'Let\'s decide the order!',
+        cn: '那我們就來決定順序！'
+    },
+    '以上のように決まりました!': {
+        en: 'As above!',
+        cn: '結果如上!'
+    },
+   'それでは、ドカポン王国にご案内ですぅ!': {
+        en: 'Then, I will guide you to the Kingdom of Dokapon!',
+        cn: '那麼，就讓我帶你去多卡波王國！'
+    }
 }
 export default texts

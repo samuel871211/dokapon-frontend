@@ -1,5 +1,6 @@
 import styles from './BottomArea.module.css'
-import { ReactChild } from 'react'
+import { ReactNode } from 'react'
+import classNames from 'classnames'
 
 export default BottomArea
 
@@ -8,13 +9,13 @@ export default BottomArea
  */
 function BottomArea (props: {
     className?: string,
-    children?: ReactChild | ReactChild[],
+    children?: ReactNode | ReactNode[],
     height?: string
 }): JSX.Element {
     const { className, children, height } = props
     return (
         <div 
-            className={`${styles.bottomArea} ${className}`}
+            className={classNames(styles.bottomArea, className)}
             style={{ height }}
         >
             <>{children}</>

@@ -1,13 +1,13 @@
 import styles from './YellowBlock.module.css'
 import globalStyles from '../../assets/styles/globalStyles.module.css'
-import { ReactChild } from 'react'
+import { ReactNode } from 'react'
 import classNames from 'classnames'
 
 export default YellowBlock
 
 function YellowBlock (props: {
-    children: ReactChild | ReactChild[],
-    role: 'dialog' | 'button' | 'title'
+    children: ReactNode | ReactNode[],
+    role?: 'dialog' | 'button' | 'title',
     selected?: boolean,
     className?: string,
     // borderRadius?: string,

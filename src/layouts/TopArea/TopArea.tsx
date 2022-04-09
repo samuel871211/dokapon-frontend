@@ -1,5 +1,6 @@
 import styles from './TopArea.module.css'
-import { ReactChild } from 'react'
+import { ReactNode } from 'react'
+import classNames from 'classnames'
 
 export default TopArea
 
@@ -8,13 +9,18 @@ export default TopArea
  */
 function TopArea (props: {
     className?: string,
-    children?: ReactChild | ReactChild[],
-    height?: string
+    children?: ReactNode | ReactNode[],
+    height?: string,
+    flex?: true
 }): JSX.Element {
-    const { className, children, height } = props
+    const { className, children, height, flex } = props
     return (
         <div 
-            className={`${styles.topArea} ${className}`}
+            className={classNames(
+                styles.topArea,
+                className, 
+                { [styles.flex]: flex }
+            )}
             style={{ height }}
         >
             <>{children}</>

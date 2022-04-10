@@ -1,30 +1,13 @@
 import ReactDOM from 'react-dom'
 import { useEffect, useReducer } from 'react'
-import { ThemeProvider } from '@mui/material'
 import styles from './index.module.css'
 import './index.css'
-import GraphEditor from './views/GraphEditor'
 import Game from './views/Game'
 import SelectCharacter from './views/SelectCharacter'
 import Home from './views/Home'
-import { createTheme } from '@mui/material'
 import { initGameProgress, gameProgressContext, gameProgressReducer } from './reducers/gameProgress'
 import { inituserPreference, userPreferenceContext, userPreferenceReducer } from './reducers/userPreference'
-const darkTheme = createTheme({
-    palette: {
-        mode: 'dark',
-        primary: {
-            light: '#ffa919',
-            main: '#ffa000',
-            dark: '#e59000'
-        },
-        secondary: {
-            light: '#ffc919',
-            main: '#ffc400',
-            dark: '#e5b000'
-        }
-    }
-})
+
 const HTMLStyles = {
     '16:9': styles.wideHTML,
     '4:3': styles.traditionalHTML,
@@ -49,9 +32,7 @@ function App (): JSX.Element {
     return (
         <gameProgressContext.Provider value={{ gameProgress, gameProgressDispatch }}>
             <userPreferenceContext.Provider value={{ userPreference, userPreferenceDispatch }}>
-                <ThemeProvider theme={darkTheme}>
-                    <GraphEditor/>
-                </ThemeProvider>
+                <Game/>
             </userPreferenceContext.Provider>
         </gameProgressContext.Provider>
     )

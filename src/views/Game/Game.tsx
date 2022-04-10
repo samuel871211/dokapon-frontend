@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import * as joint from 'jointjs'
 import 'jointjs/dist/joint.css'
-import { findGraph } from '../../api/graph'
 import { createCharacter } from '../../graphics/characters'
 import { Transition } from 'react-transition-group'
 import { userPreferenceContext } from '../../reducers/userPreference'
@@ -15,16 +14,13 @@ import OverviewMap from './OverviewMap'
 import ShopList from './ShopList'
 import { useReducer } from 'react'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Game/UIState'
+import mainWorld from '../../data/mainWorld'
 import indexStyles from '../../index.module.css'
 const aspectRatioStyles = {
     '16:9': indexStyles.wideAspectRatio,
     '4:3': indexStyles.traditionalAspectRatio,
     'stretch': indexStyles.stretchAspectRatio
 }
-// import GraphDSA from '../../global/GraphDSA'
-// import graph from '../../global/graph'
-// const maybeElements = graph.cells.filter(cell => !cell.name.toLowerCase().includes('link'))
-// const { getAllPossiblePaths } = GraphDSA(maybeElements) 
 // let keyPressed: { [key: string]: boolean } = {}
 // console.log(keyPressed)
 
@@ -330,10 +326,7 @@ function Game (): JSX.Element {
          * @todo create player, read game Progress
          * @todo 紀錄player目前所在的地圖
          */
-        async function loadCells (): Promise<void> {
-            const response = await findGraph('mainWorld')
-            graph.fromJSON(response.data)
-            
+        function createCharacters () {
             const player = createCharacter({
                 characterType: 'player',
                 job: 'magician',
@@ -343,9 +336,10 @@ function Game (): JSX.Element {
             graph.addCell(player)
         }
 
-        // initial data
+        // init data
         const Paper = initPaper()
-        void loadCells()
+        graph.fromJSON(mainWorld)
+        createCharacters()
         registerPaperEventHandler(Paper)
         Paper.translate(-6085, -4606) // center of the world
 

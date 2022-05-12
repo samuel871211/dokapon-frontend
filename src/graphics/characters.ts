@@ -1,37 +1,4 @@
-import * as joint from 'jointjs'
 import Dokapon from '../global'
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
-/**
- * @todo 不確定為什麼textpath無法透過jointjs render到畫面，所以改成用text
- */
-const characterTemplate = `
-	<g transform="translate(20, 85)">
-		<circle cx="60" cy="60" r="50" fill="white" stroke="{color}" stroke-width="20"></circle>
-		<text text-anchor="middle" x="60" y="111.5">{characterType}</text>
-		<line stroke="red" stroke-width="2" x1="0" y1="60" x2="120" y2="60"></line>
-	</g>
-	<g>
-		<image width="160" height="160" href="{href}"></image>
-	</g>`
-
-export function createCharacter (attrs: {
-	characterType: Dokapon.CharacterTypes,
-    job: Dokapon.BasicJobTypes,
-    gender: Dokapon.GenderTypes,
-    color: Dokapon.ColorTypes
-}): joint.dia.Element {
-    const { characterType, job, gender, color } = attrs
-    const character = joint.dia.Element.define(`dokapon.${characterType}`, {
-        name: characterType,
-        markup: characterTemplate
-            .replaceAll('\n', '')
-            .replaceAll('\t', '')
-            .replace('{characterType}', characterType)
-            .replace('{href}', `${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`)
-            .replace('{color}', COLORS[color].rgb)
-    })
-    return new character()
-}
 
 /**
  * @todo 文字希望能拆出來到language.ts

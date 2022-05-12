@@ -123,7 +123,7 @@ declare namespace Dokapon {
             PlayerAttrs | NPCAttrs
         ]
     }
-    declare namespace GameProgress {
+    namespace GameProgress {
         type Context = {
             gameProgress: GameProgress,
             gameProgressDispatch: Dispatch<Action>
@@ -157,11 +157,11 @@ declare namespace Dokapon {
             payload: NPCLevelTypes
         }
     }
-    declare namespace Shapes {
+    namespace Shapes {
         type ElementTypes = ''
         type LinkTypes = ''
     }
-    declare namespace SelectCharacter {
+    namespace SelectCharacter {
         type Steps =
             'SelectGoalType' |
             'GoalInputDialog' |
@@ -218,7 +218,7 @@ declare namespace Dokapon {
             UIStateDispatch: Dispatch<Action>
         }
     }
-    declare namespace Home {
+    namespace Home {
         type UIState = {
             showBtnGroup: boolean,
             showSetting: boolean,
@@ -238,7 +238,7 @@ declare namespace Dokapon {
             UIStateDispatch: Dispatch<Action>
         }
     }
-    declare namespace Settings {
+    namespace Settings {
         type UserPreference = {
             lang: LangTypes,
             aspectRatio: AspectRatioTypes
@@ -263,7 +263,7 @@ declare namespace Dokapon {
             userPreferenceDispatch: Dispatch<Action>
         }
     }
-    declare namespace Game {
+    namespace Game {
         type UIState = {
             showDrawer: boolean,
             showRoulette: boolean,

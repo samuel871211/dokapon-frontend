@@ -4,6 +4,64 @@ export = Dokapon
 export as namespace Dokapon
 
 declare namespace Dokapon {
+    export type Position = { x: number, y: number }
+    export type CellId = string
+    export type VertexTypes =
+        'BattleField' |
+        'MagicField' |
+        'TreasureField' |
+        'CollectMoneyField' |
+        'CollectAllMoneyField' |
+        'GoldTreasureField' |
+        'RedTreasureField' |
+        'WhiteTreasureField' |
+        'KeyTreasureField' |
+        'WorldTransferField' |
+        'ChruchField' |
+        'WeaponStoreField' |
+        'JobStoreField' |
+        'GroceryStoreField' |
+        'MagicStoreField' |
+        'VillageField' |
+        'CaveField' |
+        'CastleField'
+    export type EdgeTypes = 
+        'OneWayHEdge' |
+        'TwoWayHEdge' |
+        'OneWayVEdge' |
+        'TwoWayVEdge'
+    export type Directions = 
+        'top' |
+        'left' |
+        'right' |
+        'bottom'
+    export type Cell = {
+        name: VertexTypes | EdgeTypes,
+        id: string
+    }
+    export type Vertex = Cell & {
+        name: VertexTypes,
+        position: Position,
+        top?: string,
+        left?: string,
+        right?: string,
+        bottom?: string,
+        edges: string[]
+    }
+    export type Edge = Cell & {
+        name: EdgeTypes,
+        start: Position,
+        end: Position,
+        startId: string,
+        endId: string
+    }
+    export type MouseMode = 'edit' | 'drag'
+    export type Area = {
+        x: number,
+        y: number,
+        width: number,
+        height: number
+    }
     export type Text = { jp: string, en: string, cn: string }
     export type LangTypes = 'jp' | 'en' | 'cn'
     export type GamePadKeyTypes =

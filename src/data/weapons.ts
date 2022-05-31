@@ -2,7 +2,7 @@ import { Weapon } from '../global'
 
 const weapons: Weapon[] = [
     {
-        name: "やすものの剣",
+        name: 'やすものの剣',
         price: 50,
         attack: 2,
         defense: 0,
@@ -17,7 +17,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "竹ざお",
+        name: '竹ざお',
         price: 800,
         attack: 6,
         defense: 0,
@@ -32,7 +32,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "りりむロッド",
+        name: 'りりむロッド',
         price: 500,
         attack: 7,
         defense: 0,
@@ -47,7 +47,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "コメディステッキ",
+        name: 'コメディステッキ',
         price: 1,
         attack: 9,
         defense: 0,
@@ -62,7 +62,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "出刃ぼうちょう",
+        name: '出刃ぼうちょう',
         price: 3,
         attack: 13,
         defense: 0,
@@ -77,7 +77,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "こんぼう",
+        name: 'こんぼう',
         price: 2,
         attack: 16,
         defense: 0,
@@ -92,7 +92,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "青龍刀",
+        name: '青龍刀',
         price: 8,
         attack: 19,
         defense: 0,
@@ -107,7 +107,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "アツアツおでん",
+        name: 'アツアツおでん',
         price: 120,
         attack: 22,
         defense: 0,
@@ -122,7 +122,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "にょいぼう",
+        name: 'にょいぼう',
         price: 6,
         attack: 24,
         defense: 0,
@@ -137,7 +137,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "聖なるナイフ",
+        name: '聖なるナイフ',
         price: 14,
         attack: 25,
         defense: 0,
@@ -152,7 +152,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "レイピア",
+        name: 'レイピア',
         price: 17,
         attack: 27,
         defense: 0,
@@ -167,7 +167,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "兵士の槍",
+        name: '兵士の槍',
         price: 20,
         attack: 33,
         defense: 0,
@@ -182,7 +182,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "導師の杖",
+        name: '導師の杖',
         price: 26,
         attack: 35,
         defense: 0,
@@ -197,7 +197,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ペロペロハンマー",
+        name: 'ペロペロハンマー',
         price: 100,
         attack: 36,
         defense: 0,
@@ -212,7 +212,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "魔女ッ子ステッキ",
+        name: '魔女ッ子ステッキ',
         price: 3,
         attack: 37,
         defense: 0,
@@ -227,7 +227,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "ジュリアナせんす",
+        name: 'ジュリアナせんす',
         price: 74,
         attack: 38,
         defense: 0,
@@ -242,7 +242,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "しゃくじょう",
+        name: 'しゃくじょう',
         price: 4,
         attack: 39,
         defense: 0,
@@ -257,7 +257,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "メイス",
+        name: 'メイス',
         price: 26,
         attack: 40,
         defense: 1,
@@ -272,7 +272,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ハルバード",
+        name: 'ハルバード',
         price: 34,
         attack: 41,
         defense: 0,
@@ -287,7 +287,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "のうふのカマ",
+        name: 'のうふのカマ',
         price: 38,
         attack: 43,
         defense: 0,
@@ -302,7 +302,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ナイトランス",
+        name: 'ナイトランス',
         price: 39,
         attack: 45,
         defense: 0,
@@ -317,7 +317,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "メリケンサック",
+        name: 'メリケンサック',
         price: 51,
         attack: 52,
         defense: 0,
@@ -332,7 +332,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "クリムゾンワンド",
+        name: 'クリムゾンワンド',
         price: 77,
         attack: 54,
         defense: 0,
@@ -347,7 +347,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "聖騎士のつるぎ",
+        name: '聖騎士のつるぎ',
         price: 44,
         attack: 55,
         defense: 0,
@@ -362,7 +362,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "エンジェルロッド",
+        name: 'エンジェルロッド',
         price: 158,
         attack: 56,
         defense: 0,
@@ -377,7 +377,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "木こりのオノ",
+        name: '木こりのオノ',
         price: 62,
         attack: 57,
         defense: 0,
@@ -392,7 +392,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "タンバリン",
+        name: 'タンバリン',
         price: 57,
         attack: 60,
         defense: 2,
@@ -407,7 +407,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "巨大きづち",
+        name: '巨大きづち',
         price: 65,
         attack: 62,
         defense: 0,
@@ -422,7 +422,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "スチールナイフ",
+        name: 'スチールナイフ',
         price: 95,
         attack: 63,
         defense: 0,
@@ -437,7 +437,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "雷めいのつるぎ",
+        name: '雷めいのつるぎ',
         price: 35,
         attack: 64,
         defense: 0,
@@ -452,7 +452,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "モーニングスター",
+        name: 'モーニングスター',
         price: 91,
         attack: 65,
         defense: 0,
@@ -467,7 +467,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "スピリットクラブ",
+        name: 'スピリットクラブ',
         price: 103,
         attack: 70,
         defense: 0,
@@ -482,7 +482,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ピンクの注射器",
+        name: 'ピンクの注射器',
         price: 106,
         attack: 71,
         defense: 0,
@@ -497,7 +497,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "打ち出のこづち",
+        name: '打ち出のこづち',
         price: 124,
         attack: 75,
         defense: 0,
@@ -512,7 +512,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "シャーマンロッド",
+        name: 'シャーマンロッド',
         price: 142,
         attack: 76,
         defense: 0,
@@ -527,7 +527,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ジャックのメス",
+        name: 'ジャックのメス',
         price: 134,
         attack: 77,
         defense: 0,
@@ -542,7 +542,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ハヤブサの槍",
+        name: 'ハヤブサの槍',
         price: 206,
         attack: 78,
         defense: 0,
@@ -557,7 +557,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "和銅一文字",
+        name: '和銅一文字',
         price: 50,
         attack: 80,
         defense: 0,
@@ -572,7 +572,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "シルバーソード",
+        name: 'シルバーソード',
         price: 208,
         attack: 83,
         defense: 1,
@@ -587,7 +587,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ピクシーロッド",
+        name: 'ピクシーロッド',
         price: 245,
         attack: 84,
         defense: 0,
@@ -602,7 +602,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "バトルアックス",
+        name: 'バトルアックス',
         price: 150,
         attack: 85,
         defense: 0,
@@ -617,7 +617,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "デジ剣",
+        name: 'デジ剣',
         price: 210,
         attack: 92,
         defense: 1,
@@ -632,7 +632,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "パールカ",
+        name: 'パールカ',
         price: 9,
         attack: 94,
         defense: 0,
@@ -647,7 +647,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "黄金の杖",
+        name: '黄金の杖',
         price: 1,
         attack: 95,
         defense: 0,
@@ -662,7 +662,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "フラワーバトン",
+        name: 'フラワーバトン',
         price: 254,
         attack: 96,
         defense: 0,
@@ -677,7 +677,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ドカポソソード",
+        name: 'ドカポソソード',
         price: 195,
         attack: 99,
         defense: 0,
@@ -692,7 +692,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "Mリング",
+        name: 'Mリング',
         price: 75,
         attack: 100,
         defense: 0,
@@ -707,7 +707,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "ボーンダガー",
+        name: 'ボーンダガー',
         price: 265,
         attack: 107,
         defense: 0,
@@ -722,7 +722,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "バイラルフック",
+        name: 'バイラルフック',
         price: 300,
         attack: 108,
         defense: 5,
@@ -737,7 +737,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ウォーリアスピア",
+        name: 'ウォーリアスピア',
         price: 273,
         attack: 110,
         defense: 0,
@@ -752,7 +752,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "おおかなづち",
+        name: 'おおかなづち',
         price: 280,
         attack: 116,
         defense: 0,
@@ -767,7 +767,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "真紅のロウソク",
+        name: '真紅のロウソク',
         price: 397,
         attack: 117,
         defense: 0,
@@ -782,7 +782,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true 
     },
     {
-        name: "ギロチンアックス",
+        name: 'ギロチンアックス',
         price: 368,
         attack: 118,
         defense: 0,
@@ -797,7 +797,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "バトルホーク",
+        name: 'バトルホーク',
         price: 158,
         attack: 119,
         defense: 0,
@@ -812,7 +812,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "コンバットナイフ",
+        name: 'コンバットナイフ',
         price: 394,
         attack: 123,
         defense: 0,
@@ -827,7 +827,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "王者のツメ",
+        name: '王者のツメ',
         price: 320,
         attack: 126,
         defense: 0,
@@ -842,7 +842,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "れんじゅの杖",
+        name: 'れんじゅの杖',
         price: 474,
         attack: 127,
         defense: 0,
@@ -857,7 +857,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ヌイグルミ",
+        name: 'ヌイグルミ',
         price: 80,
         attack: 128,
         defense: 0,
@@ -872,7 +872,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "しっぷう剣",
+        name: 'しっぷう剣',
         price: 489,
         attack: 130,
         defense: 0,
@@ -887,7 +887,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ぎしきのナイフ",
+        name: 'ぎしきのナイフ',
         price: 511,
         attack: 131,
         defense: 0,
@@ -902,7 +902,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "ドラゴンクロー",
+        name: 'ドラゴンクロー',
         price: 538,
         attack: 136,
         defense: 4,
@@ -917,7 +917,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "アサシンダガー",
+        name: 'アサシンダガー',
         price: 958,
         attack: 140,
         defense: 0,
@@ -932,7 +932,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "特大ノコギリ",
+        name: '特大ノコギリ',
         price: 452,
         attack: 142,
         defense: 0,
@@ -947,7 +947,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ドリルランサー",
+        name: 'ドリルランサー',
         price: 593,
         attack: 146,
         defense: 0,
@@ -962,7 +962,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ごくあく注射器",
+        name: 'ごくあく注射器',
         price: 638,
         attack: 147,
         defense: 0,
@@ -977,7 +977,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "やいばのおうぎ",
+        name: 'やいばのおうぎ',
         price: 610,
         attack: 149,
         defense: 5,
@@ -992,7 +992,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "スネークロッド",
+        name: 'スネークロッド',
         price: 44,
         attack: 150,
         defense: 0,
@@ -1007,7 +1007,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ルーンスタッフ",
+        name: 'ルーンスタッフ',
         price: 715,
         attack: 152,
         defense: 0,
@@ -1022,7 +1022,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "マーメイドロッド",
+        name: 'マーメイドロッド',
         price: 600,
         attack: 154,
         defense: 0,
@@ -1037,7 +1037,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "毒手",
+        name: '毒手',
         price: 5,
         attack: 160,
         defense: 0,
@@ -1052,7 +1052,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "破壊のオノ",
+        name: '破壊のオノ',
         price: 732,
         attack: 161,
         defense: 0,
@@ -1067,7 +1067,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ピコピコハンマー",
+        name: 'ピコピコハンマー',
         price: 1,
         attack: 162,
         defense: 5,
@@ -1082,7 +1082,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "海神のモリ",
+        name: '海神のモリ',
         price: 818,
         attack: 164,
         defense: 0,
@@ -1097,7 +1097,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "コアラのぼう",
+        name: 'コアラのぼう',
         price: 8,
         attack: 165,
         defense: 1,
@@ -1112,7 +1112,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "メテオストライク",
+        name: 'メテオストライク',
         price: 802,
         attack: 166,
         defense: 5,
@@ -1127,7 +1127,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "おしおき棒",
+        name: 'おしおき棒',
         price: 910,
         attack: 171,
         defense: 0,
@@ -1142,7 +1142,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "竜殺しの剣",
+        name: '竜殺しの剣',
         price: 875,
         attack: 175,
         defense: 5,
@@ -1157,7 +1157,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "よみのカマ",
+        name: 'よみのカマ',
         price: 259,
         attack: 176,
         defense: 0,
@@ -1172,7 +1172,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "燃える拳",
+        name: '燃える拳',
         price: 287,
         attack: 180,
         defense: 0,
@@ -1187,7 +1187,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "王家のハンマー",
+        name: '王家のハンマー',
         price: 1,
         attack: 181,
         defense: 3,
@@ -1202,7 +1202,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "めいふの杖",
+        name: 'めいふの杖',
         price: 1,
         attack: 185,
         defense: 0,
@@ -1217,7 +1217,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "ビートホーク",
+        name: 'ビートホーク',
         price: 1,
         attack: 190,
         defense: 0,
@@ -1232,7 +1232,7 @@ const weapons: Weapon[] = [
         isFromTreasure: false
     },
     {
-        name: "狂剣ジャブロー",
+        name: '狂剣ジャブロー',
         price: 1,
         attack: 193,
         defense: 2,
@@ -1247,7 +1247,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "吹雪の杖",
+        name: '吹雪の杖',
         price: 1,
         attack: 199,
         defense: 0,
@@ -1262,7 +1262,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "アトミックアイス",
+        name: 'アトミックアイス',
         price: 1,
         attack: 203,
         defense: 3,
@@ -1277,7 +1277,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "ゴッドブロー",
+        name: 'ゴッドブロー',
         price: 1,
         attack: 205,
         defense: 0,
@@ -1292,7 +1292,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "にくかい",
+        name: 'にくかい',
         price: 2,
         attack: 206,
         defense: 0,
@@ -1307,7 +1307,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "支配のナイフ",
+        name: '支配のナイフ',
         price: 1,
         attack: 208,
         defense: 5,
@@ -1322,7 +1322,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "ドカポンソード",
+        name: 'ドカポンソード',
         price: 1,
         attack: 215,
         defense: 1,
@@ -1337,7 +1337,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "バケモノの槍",
+        name: 'バケモノの槍',
         price: 444,
         attack: 230,
         defense: 20,
@@ -1352,7 +1352,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "妖刀ニヒル",
+        name: '妖刀ニヒル',
         price: 1,
         attack: 244,
         defense: 20,
@@ -1367,7 +1367,7 @@ const weapons: Weapon[] = [
         isFromTreasure: true
     },
     {
-        name: "神魔合竜剣",
+        name: '神魔合竜剣',
         price: 888,
         attack: 300,
         defense: 0,

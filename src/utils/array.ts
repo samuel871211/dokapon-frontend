@@ -22,6 +22,7 @@ export function transferNumberToArray (options: {
     len?: number,
     fill?: any
 }): string[]  {
+    // eslint-disable-next-line
     let { num, len, fill } = options
     const numToArray = String(num).split('')
     const initArrayLen = numToArray.length

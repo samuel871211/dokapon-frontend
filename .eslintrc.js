@@ -7,6 +7,7 @@ module.exports = {
     'extends': [
         'eslint:recommended',
         'plugin:react/recommended',
+        'plugin:react/jsx-runtime',
         'plugin:@typescript-eslint/recommended'
     ],
     'parser': '@typescript-eslint/parser',
@@ -21,11 +22,6 @@ module.exports = {
         'react',
         '@typescript-eslint'
     ],
-    'settings': {
-        'react': {
-            'version': '17.0.2'
-        }
-    },
     'rules': {
         'indent': [
             'error',
@@ -41,8 +37,8 @@ module.exports = {
         ],
         '@typescript-eslint/no-unused-vars': [
             'warn', {
-                'vars': 'all', // check all global vars that should be used
-                'args': 'none' // don't check function args
+                'vars': 'all',
+                'args': 'none'
             }
         ],
     }

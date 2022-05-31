@@ -139,6 +139,7 @@ class GraphDSA {
         })
     }
     #traversal (): void {
+        // eslint-disable-next-line
         while (true) {
             // console.count(this.#startVertex)
             this.#nextVertex = this.#untraversedQueues[this.#path.length].shift()

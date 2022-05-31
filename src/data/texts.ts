@@ -387,7 +387,7 @@ const texts: { [key: string]: { en: string, cn: string } } = {
         en: 'As above!',
         cn: '結果如上!'
     },
-   'それでは、ドカポン王国にご案内ですぅ!': {
+    'それでは、ドカポン王国にご案内ですぅ!': {
         en: 'Then, I will guide you to the Kingdom of Dokapon!',
         cn: '那麼，就讓我帶你去多卡波王國！'
     }

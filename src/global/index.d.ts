@@ -46,7 +46,8 @@ declare namespace Dokapon {
         left?: string,
         right?: string,
         bottom?: string,
-        edges: string[]
+        edges: string[],
+        area?: AreaTypes
     }
     export type Edge = Cell & {
         name: EdgeTypes,
@@ -55,6 +56,17 @@ declare namespace Dokapon {
         startId: string,
         endId: string
     }
+    export type AreaTypes = 
+        'Asia' |
+        'Europe' |
+        'Russia' |
+        'NorthAmerica' |
+        'SouthAmerica' |
+        'Oceania' |
+        'Africa' |
+        'Arctic' |
+        'Antarctica' |
+        'HawaiianIslands'
     export type MouseMode = 'edit' | 'drag'
     export type Area = {
         x: number,
@@ -181,6 +193,22 @@ declare namespace Dokapon {
             PlayerAttrs | NPCAttrs
         ]
     }
+    export type Weapon = {
+        name: string,
+        price: number,
+        attack: number,
+        defense: number,
+        magic: number,
+        speed: number,
+        hp: number,
+        additionalDamageJobs: [],
+        fromAreas: AreaTypes[],
+        explanation: string,
+        isFromWeaponStore: boolean,
+        isFromMonster: boolean,
+        isFromTreasure: boolean
+    }
+    export type Shields = Omit<Weapon, 'additionalDamageJobs'> 
     namespace GameProgress {
         type Context = {
             gameProgress: GameProgress,

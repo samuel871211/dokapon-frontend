@@ -12,7 +12,7 @@ import ShopList from './ShopList'
 import { useReducer } from 'react'
 import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Game/UIState'
 import indexStyles from '../../index.module.css'
-import GraphEditor from '../../components/GraphEditor'
+import GraphUI from '../../components/GraphUI'
 const aspectRatioStyles = {
     '16:9': indexStyles.wideAspectRatio,
     '4:3': indexStyles.traditionalAspectRatio,
@@ -197,7 +197,7 @@ function Game (): JSX.Element {
     return (
         <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
             <div className={`${styles.container} ${aspectRatioStyles[userPreference.aspectRatio]}`}>
-                <GraphEditor/>
+                <GraphUI/>
                 {/* in order to hold drawer state, only set css display none when exited */}
                 <Transition appear in={UIState.showDrawer} timeout={{ enter: 0, exit: 1000 }}>
                     {state => (<Drawer state={state}/>)}

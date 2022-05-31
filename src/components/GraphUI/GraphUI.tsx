@@ -7,29 +7,29 @@ import { PointerEvent, useState, WheelEvent, createElement, useMemo } from 'reac
 import type { Vertex, Edge } from '../../global'
 import mainWorld from '../../data/mainWorld'
 import GraphDSA from '../../graphics/GraphDSA'
-import OneWayHEdge from '../../components/edges/OneWayHEdge'
-import OneWayVEdge from '../../components/edges/OneWayVEdge'
-import TwoWayHEdge from '../../components/edges/TwoWayHEdge'
-import TwoWayVEdge from '../../components/edges/TwoWayVEdge'
-import WorldTransferField from '../../components/vertices/WorldTransferField'
-import KeyTreasureField from '../../components/vertices/KeyTreasureField'
-import WhiteTreasureField from '../../components/vertices/WhiteTreasureField'
-import RedTreasureField from '../../components/vertices/RedTreasureField'
-import GoldTreasureField from '../../components/vertices/GoldTreasureField'
-import CollectAllMoneyField from '../../components/vertices/CollectAllMoneyField'
-import CollectMoneyField from '../../components/vertices/CollectMoneyField'
-import ChruchField from '../../components/vertices/ChruchField'
-import WeaponStoreField from '../../components/vertices/WeaponStoreField'
-import JobStoreField from '../../components/vertices/JobStoreField'
-import GroceryStoreField from '../../components/vertices/GroceryStoreField'
-import MagicStoreField from '../../components/vertices/MagicStoreField'
-import VillageField from '../../components/vertices/VillageField'
-import CaveField from '../../components/vertices/CaveField'
-import CastleField from '../../components/vertices/CastleField'
-import TreasureField from '../../components/vertices/TreasureField'
-import MagicField from '../../components/vertices/MagicField'
-import BattleField from '../../components/vertices/BattleField'
-import styles from './GraphEditor.module.css'
+import OneWayHEdge from '../edges/OneWayHEdge'
+import OneWayVEdge from '../edges/OneWayVEdge'
+import TwoWayHEdge from '../edges/TwoWayHEdge'
+import TwoWayVEdge from '../edges/TwoWayVEdge'
+import WorldTransferField from '../vertices/WorldTransferField'
+import KeyTreasureField from '../vertices/KeyTreasureField'
+import WhiteTreasureField from '../vertices/WhiteTreasureField'
+import RedTreasureField from '../vertices/RedTreasureField'
+import GoldTreasureField from '../vertices/GoldTreasureField'
+import CollectAllMoneyField from '../vertices/CollectAllMoneyField'
+import CollectMoneyField from '../vertices/CollectMoneyField'
+import ChruchField from '../vertices/ChruchField'
+import WeaponStoreField from '../vertices/WeaponStoreField'
+import JobStoreField from '../vertices/JobStoreField'
+import GroceryStoreField from '../vertices/GroceryStoreField'
+import MagicStoreField from '../vertices/MagicStoreField'
+import VillageField from '../vertices/VillageField'
+import CaveField from '../vertices/CaveField'
+import CastleField from '../vertices/CastleField'
+import TreasureField from '../vertices/TreasureField'
+import MagicField from '../vertices/MagicField'
+import BattleField from '../vertices/BattleField'
+import styles from './GraphUI.module.css'
 
 // Stateless vars declare
 
@@ -82,9 +82,9 @@ const pointerDownTranslate = { x: -1, y: -1 }
 const graphDSA = new GraphDSA(mainWorld)
 const result = graphDSA.getAllPaths('34c8cd25-57f1-44ac-a407-f185f1cfe6c9', 30)
 
-export default GraphEditor
+export default GraphUI
 
-function GraphEditor (): JSX.Element {
+function GraphUI (): JSX.Element {
     const {
         handlePointerDown,
         handlePointerMove,
@@ -121,8 +121,6 @@ function GraphEditor (): JSX.Element {
                 </defs>
                 <g transform={`matrix(${SVGScale}, 0, 0, ${SVGScale}, ${SVGTranslate.x}, ${SVGTranslate.y})`}>  
                     {Cells}
-                </g>
-                <g transform={`matrix(${SVGScale}, 0, 0, ${SVGScale}, ${SVGTranslate.x}, ${SVGTranslate.y})`}>  
                     {HighLights}
                 </g>
             </svg>

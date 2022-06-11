@@ -1,11 +1,18 @@
+// Standard library imports.
+
+// Related third party imports.
 import classNames from 'classnames'
 import { useContext, useRef, SyntheticEvent, KeyboardEvent, useEffect, useState } from 'react'
 import { TransitionStatus, Transition } from 'react-transition-group'
-import useTranslation from '../../../hooks/useTranslation'
-import { UIStateContext } from '../../../reducers/Game/UIState'
-import { userPreferenceContext } from '../../../reducers/userPreference'
+
+// Local application/library specific imports.
+import useTranslation from 'hooks/useTranslation'
+import { UIStateContext } from 'reducers/Game/UIState'
+import { userPreferenceContext } from 'reducers/userPreference'
+import { SomeKindOfIcon } from 'components/icons'
 import styles from './Bag.module.css'
-import { SomeKindOfIcon } from '../../../components/icons'
+
+// Stateless vars declare.
 const transitionStyles = {
     topArea: {
         entering: styles.topAreaEntering,

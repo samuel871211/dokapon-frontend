@@ -1,9 +1,16 @@
-import japaneseChars from '../../../utils/japaneseChars'
+// Standard library imports.
+
+// Related third party imports.
+import { useState, useRef, useContext, AnimationEvent, KeyboardEvent } from 'react'
+
+// Local application/library specific imports.
+import japaneseChars from 'utils/japaneseChars'
 import styles from './NameInputDialog.module.css'
-import globalStyles from '../../../assets/styles/globalStyles.module.css'
-import { gameProgressContext } from '../../../reducers/gameProgress'
-import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import React, { useState, useRef, useContext } from 'react'
+import globalStyles from 'assets/styles/globalStyles.module.css'
+import { gameProgressContext } from 'reducers/gameProgress'
+import { UIStateContext } from 'reducers/SelectCharacter/UIState'
+
+// Stateless vars declare.
 
 type wordType = 'hiragana' | 'katakana' | 'special'
 
@@ -71,13 +78,13 @@ function NameInputDialog (): JSX.Element {
         })
         return rows
     }
-    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>): void {
+    function handleAnimationEnd (e: AnimationEvent<HTMLDivElement>): void {
         if (e.animationName.includes('slideLeft')) {
             focusElement.current?.focus()
             return
         }
     }
-    function handleKeyUp (e: React.KeyboardEvent): void {
+    function handleKeyUp (e: KeyboardEvent): void {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             (function handleSelectedWordIdx () {

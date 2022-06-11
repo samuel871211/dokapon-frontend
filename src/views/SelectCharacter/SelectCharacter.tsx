@@ -1,11 +1,15 @@
+// Standard library imports.
+
+// Related third party imports.
 import { Fragment, useContext, useEffect, useReducer } from 'react'
+import classNames from 'classnames'
 
-import guide from '../../assets/images/guide.png'
-import { BASICJOBS } from '../../graphics/characters'
-
-import ContextMenu from '../../components/ContextMenu'
+// Local application/library specific imports.
+import guide from 'assets/images/guide.png'
+import { BASICJOBS } from 'graphics/characters'
+import ContextMenu from 'components/ContextMenu'
 import TitleArea from './TitleArea'
-import NPCDialog from '../../components/NPCDialog'
+import NPCDialog from 'components/NPCDialog'
 import NPCTopLeftImgArea from './NPCTopLeftImgArea'
 import SelectGoalType from './SelectGoalType'
 import SelectNumberOfPlayers from './SelectNumberOfPlayers'
@@ -17,16 +21,14 @@ import GoalInputDialog from './GoalInputDialog'
 import NPCGenerateDialog from './NPCGenerateDialog'
 import NameInputDialog from './NameInputDialog'
 import SelectOrderAndController from './SelectOrderAndController'
-import registerWindowResizeEvtHandler from '../../utils/windowResizeEvtHandler'
-
-import { gameProgressContext } from '../../reducers/gameProgress'
-import { userPreferenceContext } from '../../reducers/userPreference'
-import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/SelectCharacter/UIState'
-
+import registerWindowResizeEvtHandler from 'utils/windowResizeEvtHandler'
+import { gameProgressContext } from 'reducers/gameProgress'
+import { userPreferenceContext } from 'reducers/userPreference'
+import { initUIState, UIStateContext, UIStateReducer } from 'reducers/SelectCharacter/UIState'
 import styles from './SelectCharacter.module.css'
-import indexStyles from '../../index.module.css'
-import classNames from 'classnames'
+import indexStyles from 'index.module.css'
 
+// Stateless vars declare.
 const aspectRatioStyles = {
     '16:9': indexStyles.wideAspectRatio,
     '4:3': indexStyles.traditionalAspectRatio,

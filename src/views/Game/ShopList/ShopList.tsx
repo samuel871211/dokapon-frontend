@@ -1,12 +1,19 @@
+// Standard library imports.
+
+// Related third party imports.
 import { useContext, useRef, SyntheticEvent, KeyboardEvent, useEffect } from 'react'
 import { TransitionStatus } from 'react-transition-group'
-import CustomBorderBottom from '../../../components/CustomBorderBottom'
-import useTranslation from '../../../hooks/useTranslation'
-import { UIStateContext } from '../../../reducers/Game/UIState'
-import { userPreferenceContext } from '../../../reducers/userPreference'
-import YellowBlock from '../../../layouts/YellowBlock'
-import BottomDialogConfirmCircle from '../../../components/BottomDialogConfirmCircle'
+
+// Local application/library specific imports.
+import CustomBorderBottom from 'components/CustomBorderBottom'
+import useTranslation from 'hooks/useTranslation'
+import { UIStateContext } from 'reducers/Game/UIState'
+import { userPreferenceContext } from 'reducers/userPreference'
+import YellowBlock from 'layouts/YellowBlock'
+import BottomDialogConfirmCircle from 'components/BottomDialogConfirmCircle'
 import styles from './ShopList.module.css'
+
+// Stateless vars declare.
 const transitionStyles = {
     topArea: {
         entering: '',
@@ -52,44 +59,44 @@ function ShopList (props: { state: TransitionStatus }): JSX.Element {
                         <div className={styles.nameList}>
                             <div className={styles.name}>
                                 <div className={styles.icon}></div>
-                                <div className={styles.nameText}>一二</div>
+                                <div>一二</div>
                             </div>
                             <div className={styles.name}>
                                 <div className={styles.icon}></div>
-                                <div className={styles.nameText}>一二三四五六</div>
+                                <div>一二三四五六</div>
                             </div>
                             <div className={styles.name}>
                                 <div className={styles.icon}></div>
-                                <div className={styles.nameText}>一二三四五六七</div>
+                                <div>一二三四五六七</div>
                             </div>
                             <div className={styles.name}>
                                 <div className={styles.icon}></div>
-                                <div className={styles.nameText}>一二三四五六七</div>
+                                <div>一二三四五六七</div>
                             </div>
                             <div className={styles.name}>
                                 <div className={styles.icon}></div>
-                                <div className={styles.nameText}>一二三四五六</div>
+                                <div>一二三四五六</div>
                             </div>
                             <div className={styles.name}>
                                 <div className={styles.icon}></div>
-                                <div className={styles.nameText}>一二</div>
+                                <div>一二</div>
                             </div>
                         </div>
                         <div className={styles.priceList}>
-                            <div className={styles.price}>300000</div>
-                            <div className={styles.price}>270000</div>
-                            <div className={styles.price}>820000</div>
-                            <div className={styles.price}>645000</div>
-                            <div className={styles.price}>30000</div>
-                            <div className={styles.price}>7800</div>
+                            <div>300000</div>
+                            <div>270000</div>
+                            <div>820000</div>
+                            <div>645000</div>
+                            <div>30000</div>
+                            <div>7800</div>
                         </div>
                         <div className={styles.dataList}>
-                            <div className={styles.data}>陳昱昇是大帥哥</div>
-                            <div className={styles.data}>陳昱昇是大帥</div>
-                            <div className={styles.data}>陳昱昇是大</div>
-                            <div className={styles.data}>陳昱昇是大</div>
-                            <div className={styles.data}>陳昱昇是大帥</div>
-                            <div className={styles.data}>陳昱昇是大帥哥</div>
+                            <div>陳昱昇是大帥哥</div>
+                            <div>陳昱昇是大帥</div>
+                            <div>陳昱昇是大</div>
+                            <div>陳昱昇是大</div>
+                            <div>陳昱昇是大帥</div>
+                            <div>陳昱昇是大帥哥</div>
                         </div>
                         <div className={styles.right}>
                             <div className={styles.arrowIcon}></div>

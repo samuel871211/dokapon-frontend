@@ -1,4 +1,4 @@
-import { Vertex, Edge } from '../global'
+import { Vertex, Edge } from 'global'
 
 const mainWorld: { vertices: Vertex[], edges: Edge[] } = {
     'vertices': [

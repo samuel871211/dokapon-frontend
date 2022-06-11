@@ -1,9 +1,16 @@
-import React, { useState, useRef, useContext } from 'react'
-import { gameProgressContext } from '../../../reducers/gameProgress'
-import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import CustomBorderBottom from '../../../components/CustomBorderBottom'
-import globalStyles from '../../../assets/styles/globalStyles.module.css'
+// Standard library imports.
+
+// Related third party imports.
+import { useState, useRef, useContext, AnimationEvent, KeyboardEvent } from 'react'
+
+// Local application/library specific imports.
+import { gameProgressContext } from 'reducers/gameProgress'
+import { UIStateContext } from 'reducers/SelectCharacter/UIState'
+import CustomBorderBottom from 'components/CustomBorderBottom'
+import globalStyles from 'assets/styles/globalStyles.module.css'
 import styles from './GoalInputDialog.module.css'
+
+// Stateless vars declare.
 
 const typeToCN = { period: '期間', money: '金額' }
 
@@ -20,13 +27,13 @@ function GoalInputDialog (): JSX.Element {
     const [goalInput, setGoalInput] = useState(initGoalInput)
     const [selectedIdx, setSelectedIdx] = useState(goalInputLen - 1)
 
-    function handleAnimationEnd (e: React.AnimationEvent): void {
+    function handleAnimationEnd (e: AnimationEvent): void {
         if (e.animationName === styles.slideIn) {
             focusElement.current?.focus()
         }
     }
 
-    function handleKeyUp (e: React.KeyboardEvent): void {
+    function handleKeyUp (e: KeyboardEvent): void {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             (function handleAdd () {

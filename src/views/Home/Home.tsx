@@ -1,14 +1,21 @@
+// Standard library imports.
+
+// Related third party imports.
 import { useContext, useEffect, useReducer } from 'react'
-import styles from './Home.module.css'
 import { Transition } from 'react-transition-group'
-import useTranslation from '../../hooks/useTranslation'
+
+// Local application/library specific imports.
+import styles from './Home.module.css'
+import useTranslation from 'hooks/useTranslation'
 import Settings from './Settings'
 import BtnGroup from './BtnGroup'
 import KeyMappingDialog from './KeyMappingDialog'
-import { userPreferenceContext } from '../../reducers/userPreference'
-import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Home/UIState'
-import registerWindowResizeEvtHandler from '../../utils/windowResizeEvtHandler'
-import indexStyles from '../../index.module.css'
+import { userPreferenceContext } from 'reducers/userPreference'
+import { initUIState, UIStateContext, UIStateReducer } from 'reducers/Home/UIState'
+import registerWindowResizeEvtHandler from 'utils/windowResizeEvtHandler'
+import indexStyles from 'index.module.css'
+
+// Stateless vars declare.
 
 const aspectRatioStyles = {
     '16:9': indexStyles.wideAspectRatio,

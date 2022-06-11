@@ -1,10 +1,17 @@
-import styles from './BtnGroup.module.css'
+// Standard library imports.
+
+// Related third party imports.
 import { TransitionStatus } from 'react-transition-group'
 import { useState, useEffect, useRef, useContext, SyntheticEvent, KeyboardEvent } from 'react'
-import { UIStateContext } from '../../../reducers/Home/UIState'
-import useTranslation from '../../../hooks/useTranslation'
-import { userPreferenceContext } from '../../../reducers/userPreference'
-import YellowBlock from '../../../layouts/YellowBlock'
+
+// Local application/library specific imports.
+import styles from './BtnGroup.module.css'
+import { UIStateContext } from 'reducers/Home/UIState'
+import useTranslation from 'hooks/useTranslation'
+import { userPreferenceContext } from 'reducers/userPreference'
+import YellowBlock from 'layouts/YellowBlock'
+
+// Stateless vars declare.
 const transitionStyles = {
     exiting: styles.fadeOut,
     exited: styles.fadeOut,

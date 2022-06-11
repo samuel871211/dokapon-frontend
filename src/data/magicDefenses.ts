@@ -1,4 +1,4 @@
-import { magicDefense } from '../global'
+import { magicDefense } from 'global'
 
 const magicDefenses: magicDefense[] = [
     {
@@ -202,3 +202,5 @@ const magicDefenses: magicDefense[] = [
         isFromMonster: false
     }
 ]
+
+export default magicDefenses

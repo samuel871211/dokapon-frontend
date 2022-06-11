@@ -1,4 +1,4 @@
-import Dokapon from '../global'
+import Dokapon from 'global'
 
 export const COLORLIST: Dokapon.ColorTypes[] = [
     'red', 'orange', 'yellow',

@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import Dokapon from '../global'
+import Dokapon from 'global'
 
 /**
  * use lower case string as value only because it's better to handle switch case

@@ -1,6 +1,13 @@
-import styles from './TopArea.module.css'
+// Standard library imports.
+
+// Related third party imports.
 import { ReactNode } from 'react'
 import classNames from 'classnames'
+
+// Local application/library specific imports.
+import styles from './TopArea.module.css'
+
+// Stateless vars declare.
 
 export default TopArea
 

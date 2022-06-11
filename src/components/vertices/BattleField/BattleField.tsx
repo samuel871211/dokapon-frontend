@@ -1,4 +1,11 @@
-import { Vertex } from '../../../global'
+// Standard library imports.
+
+// Related third party imports.
+
+// Local application/library specific imports.
+import { Vertex } from 'global'
+
+// Stateless vars declare.
 
 export default BattleField
 

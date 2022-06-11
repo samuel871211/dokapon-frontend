@@ -1,5 +1,5 @@
 import axios from 'axios'
-import Dokapon from '../global'
+import Dokapon from 'global'
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 type response = { status: number, data: Dokapon.GameProgress | null }
 

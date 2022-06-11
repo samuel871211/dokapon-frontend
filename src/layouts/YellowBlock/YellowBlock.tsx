@@ -1,7 +1,14 @@
-import styles from './YellowBlock.module.css'
-import globalStyles from '../../assets/styles/globalStyles.module.css'
+// Standard library imports.
+
+// Related third party imports.
 import { ReactNode } from 'react'
 import classNames from 'classnames'
+
+// Local application/library specific imports.
+import styles from './YellowBlock.module.css'
+import globalStyles from 'assets/styles/globalStyles.module.css'
+
+// Stateless vars declare.
 
 export default YellowBlock
 

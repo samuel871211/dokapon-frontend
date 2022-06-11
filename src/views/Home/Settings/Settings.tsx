@@ -1,14 +1,20 @@
-import styles from './Settings.module.css'
-import { AspectRatioTypes, LangTypes } from '../../../global'
+// Standard library imports.
+
+// Related third party imports.
 import { TransitionStatus } from 'react-transition-group'
-import { useRef, KeyboardEvent, useContext, useEffect, useState } from 'react'
-import { UIStateContext } from '../../../reducers/Home/UIState'
-import { userPreferenceContext } from '../../../reducers/userPreference'
-import { SyntheticEvent } from 'react'
-import KEYBOARDMAP from './KeyBoardMap'
-import useTranslation from '../../../hooks/useTranslation'
-import { GamePadKeyTypes } from '../../../global'
+import { useRef, KeyboardEvent, useContext, useEffect, useState, SyntheticEvent } from 'react'
 import classNames from 'classnames'
+
+// Local application/library specific imports.
+import styles from './Settings.module.css'
+import { AspectRatioTypes, LangTypes } from 'global'
+import { UIStateContext } from 'reducers/Home/UIState'
+import { userPreferenceContext } from 'reducers/userPreference'
+import KEYBOARDMAP from './KeyBoardMap'
+import useTranslation from 'hooks/useTranslation'
+import { GamePadKeyTypes } from 'global'
+
+// Stateless vars declare.
 const transitionStyles = {
     exiting: styles.slideOut,
     exited: styles.slideOut,

@@ -1,4 +1,4 @@
-import { MagicBook } from '../global'
+import { MagicBook } from 'global'
 
 const magicBooks: MagicBook[] = [
     {

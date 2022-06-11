@@ -1,4 +1,4 @@
-import Dokapon from '../global'
+import Dokapon from 'global'
 
 /**
  * @todo 文字希望能拆出來到language.ts

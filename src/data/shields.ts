@@ -1,4 +1,4 @@
-import { Shield } from '../global'
+import { Shield } from 'global'
 
 const shields: Shield[] = [
     {

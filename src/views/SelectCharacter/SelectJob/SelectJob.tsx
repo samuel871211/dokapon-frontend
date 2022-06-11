@@ -1,12 +1,18 @@
-import React, { useRef, useState, useContext } from 'react'
+// Standard library imports.
 
+// Related third party imports.
+import { useRef, useState, useContext, KeyboardEvent, AnimationEvent } from 'react'
+
+// Local application/library specific imports.
 import ExampleCharacterImg from '../ExampleCharacterImg'
-import globalStyles from '../../../assets/styles/globalStyles.module.css'
+import globalStyles from 'assets/styles/globalStyles.module.css'
 import styles from './SelectJob.module.css'
-import { BASICJOBS } from '../../../graphics/characters'
-import { gameProgressContext } from '../../../reducers/gameProgress'
-import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import { BASICJOBLIST } from '../../../utils/constants'
+import { BASICJOBS } from 'graphics/characters'
+import { gameProgressContext } from 'reducers/gameProgress'
+import { UIStateContext } from 'reducers/SelectCharacter/UIState'
+import { BASICJOBLIST } from 'utils/constants'
+
+// Stateless vars declare.
 
 export default SelectJob
 
@@ -19,7 +25,7 @@ function SelectJob (): JSX.Element {
     const [selectedIdx, setSelectedIdx] = useState(BASICJOBLIST.indexOf(job))
     const [isLeave, toggleIsLeave] = useState(false)
 
-    function handleKeyUp (e: React.KeyboardEvent) {
+    function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup': {
             const newIdx = selectedIdx === 0 ? 4 : selectedIdx - 1
@@ -65,7 +71,7 @@ function SelectJob (): JSX.Element {
         }
     }
 
-    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
+    function handleAnimationEnd (e: AnimationEvent<HTMLDivElement>) {
         function determineNextStep () {
             if (currentPlayer < numberOfPlayers) return 'SelectGender'
             if (currentPlayer === 4) return 'PlayerAttrsCollected'

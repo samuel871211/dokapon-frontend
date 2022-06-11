@@ -1,9 +1,15 @@
+// Standard library imports.
+
+// Related third party imports.
 import React, { useRef, useState, useContext } from 'react'
 
-import { gameProgressContext } from '../../../reducers/gameProgress'
-import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import globalStyles from '../../../assets/styles/globalStyles.module.css'
+// Local application/library specific imports.
+import { gameProgressContext } from 'reducers/gameProgress'
+import { UIStateContext } from 'reducers/SelectCharacter/UIState'
+import globalStyles from 'assets/styles/globalStyles.module.css'
 import styles from './SelectGender.module.css'
+
+// Stateless vars declare.
 type gender = 'male' | 'female'
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 const genderToCN = { male: '男', female: '女' }

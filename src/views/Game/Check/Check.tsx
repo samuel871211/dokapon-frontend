@@ -1,11 +1,19 @@
-import { TransitionStatus, Transition } from 'react-transition-group'
-import styles from './Check.module.css'
-import useTranslation from '../../../hooks/useTranslation'
-import { userPreferenceContext } from '../../../reducers/userPreference'
-import { UIStateContext } from '../../../reducers/Game/UIState'
+// Standard library imports.
+
+// Related third party imports.
 import { useContext, useRef, SyntheticEvent, KeyboardEvent, useEffect } from 'react'
+import { TransitionStatus, Transition } from 'react-transition-group'
 import classNames from 'classnames'
-// import WorldSvg from '../../../components/WorldSvg'
+
+// Local application/library specific imports.
+import styles from './Check.module.css'
+import useTranslation from 'hooks/useTranslation'
+import { userPreferenceContext } from 'reducers/userPreference'
+import { UIStateContext } from 'reducers/Game/UIState'
+
+// Stateless vars declare.
+
+// import WorldSvg from 'components/WorldSvg'
 const transitionStyles = {
     checkTip: {
         entering: styles.fadeInEntering,

@@ -1,4 +1,4 @@
-import { Weapon } from '../global'
+import { Weapon } from 'global'
 import { 
     warriorJobTypes,
     magicianJobTypes,

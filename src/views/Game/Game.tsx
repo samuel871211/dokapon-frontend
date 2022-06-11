@@ -1,8 +1,13 @@
-import { useState, useEffect, useContext } from 'react'
+// Standard library imports.
+
+// Related third party imports.
+import { useEffect, useContext } from 'react'
 import { Transition } from 'react-transition-group'
-import { userPreferenceContext } from '../../reducers/userPreference'
+
+// Local application/library specific imports.
+import { userPreferenceContext } from 'reducers/userPreference'
 import styles from './Game.module.css'
-import registerWindowResizeEvtHandler from '../../utils/windowResizeEvtHandler'
+import registerWindowResizeEvtHandler from 'utils/windowResizeEvtHandler'
 import Drawer from './Drawer'
 import Roulette from './Roulette'
 import Bag from './Bag'
@@ -10,9 +15,11 @@ import Check from './Check'
 import OverviewMap from './OverviewMap'
 import ShopList from './ShopList'
 import { useReducer } from 'react'
-import { initUIState, UIStateContext, UIStateReducer } from '../../reducers/Game/UIState'
-import indexStyles from '../../index.module.css'
-import GraphUI from '../../components/GraphUI'
+import { initUIState, UIStateContext, UIStateReducer } from 'reducers/Game/UIState'
+import indexStyles from 'index.module.css'
+import GraphUI from 'components/GraphUI'
+
+// Stateless vars declare.
 const aspectRatioStyles = {
     '16:9': indexStyles.wideAspectRatio,
     '4:3': indexStyles.traditionalAspectRatio,

@@ -1,9 +1,16 @@
-import React, { useState, useRef, useContext } from 'react'
 
-import { gameProgressContext } from '../../../reducers/gameProgress'
-import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import globalStyles from '../../../assets/styles/globalStyles.module.css'
+// Standard library imports.
+
+// Related third party imports.
+import { useState, useRef, useContext, AnimationEvent, KeyboardEvent } from 'react'
+
+// Local application/library specific imports.
+import { gameProgressContext } from 'reducers/gameProgress'
+import { UIStateContext } from 'reducers/SelectCharacter/UIState'
+import globalStyles from 'assets/styles/globalStyles.module.css'
 import styles from './SelectGoalType.module.css'
+
+// Stateless vars declare.
 
 export default SelectGoalType
 
@@ -16,7 +23,7 @@ function SelectGoalType (): JSX.Element {
     const [isLeave, toggleIsLeave] = useState(false)
     const [selectedGoalType, toggleSelectedGoalType] = useState(goalType)
 
-    function handleKeyUp (e: React.KeyboardEvent) {
+    function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             toggleSelectedGoalType(selectedGoalType === 'period' ? 'money' : 'period')
@@ -54,7 +61,7 @@ function SelectGoalType (): JSX.Element {
         }
     }
 
-    function autoFocusElement (e: React.AnimationEvent<HTMLDivElement>): void {
+    function autoFocusElement (e: AnimationEvent<HTMLDivElement>): void {
         if (e.animationName === styles.slideIn) {
             focusElement.current?.focus()
         }

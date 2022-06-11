@@ -1,4 +1,4 @@
-import { magicAttack } from '../global'
+import { magicAttack } from 'global'
 
 const magicAttacks: magicAttack[] = [
     {

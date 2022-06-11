@@ -1,9 +1,16 @@
-import React, { useState, useRef, useContext } from 'react'
-import { SomeKindOfIcon } from '../../../components/icons'
+// Standard library imports.
+
+// Related third party imports.
+import { useState, useRef, useContext, KeyboardEvent, AnimationEvent, FocusEvent } from 'react'
+
+// Local application/library specific imports.
+import { SomeKindOfIcon } from 'components/icons'
 import styles from './SelectNumberOfPlayers.module.css'
-import globalStyles from '../../../assets/styles/globalStyles.module.css'
-import { gameProgressContext } from '../../../reducers/gameProgress'
-import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
+import globalStyles from 'assets/styles/globalStyles.module.css'
+import { gameProgressContext } from 'reducers/gameProgress'
+import { UIStateContext } from 'reducers/SelectCharacter/UIState'
+
+// Stateless vars declare.
 const digitToFullWidth = ['', '１', '２', '３', '４']
 
 export default SelectNumberOfPlayers
@@ -26,10 +33,10 @@ function SelectNumberOfPlayers (): JSX.Element {
         
         return {}
     }
-    function reFocus (event: React.FocusEvent<HTMLDivElement>) {
+    function reFocus (event: FocusEvent<HTMLDivElement>) {
         event.currentTarget.focus()
     }
-    function handleKeyUp (e: React.KeyboardEvent) {
+    function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             setSelectedPlayerNum(selectedPlayerNum === 1 ? 4 : selectedPlayerNum - 1)
@@ -70,7 +77,7 @@ function SelectNumberOfPlayers (): JSX.Element {
         }
     }
 
-    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>): void {
+    function handleAnimationEnd (e: AnimationEvent<HTMLDivElement>): void {
         if (e.animationName === styles.slideIn) {
             focusElement.current?.focus()
         }

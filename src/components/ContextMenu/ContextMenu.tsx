@@ -1,12 +1,19 @@
+// Standard library imports.
+
+// Related third party imports.
 import { useEffect, useState, useRef, useContext } from 'react'
+
+// Local application/library specific imports.
 import styles from './ContextMenu.module.css'
 import {
     getGameProgress,
     findGameProgress,
     findGameProgressBackup,
     updateGameProgress
-} from '../../api/gameProgress'
-import { gameProgressContext } from '../../reducers/gameProgress'
+} from 'api/gameProgress'
+import { gameProgressContext } from 'reducers/gameProgress'
+
+// Stateless vars declare.
 
 export default ContextMenu
 

@@ -1,10 +1,17 @@
-import styles from './Roulette.module.css'
+// Standard library imports.
+
+// Related third party imports.
 import { TransitionStatus } from 'react-transition-group'
 import { useRef, useContext, useEffect, SyntheticEvent, KeyboardEvent, useState } from 'react'
-import { userPreferenceContext } from '../../../reducers/userPreference'
-import { UIStateContext } from '../../../reducers/Game/UIState'
-import { getRandomInt } from '../../../utils/math'
 import classNames from 'classnames'
+
+// Local application/library specific imports.
+import styles from './Roulette.module.css'
+import { userPreferenceContext } from 'reducers/userPreference'
+import { UIStateContext } from 'reducers/Game/UIState'
+import { getRandomInt } from 'utils/math'
+
+// Stateless vars declare.
 const transitionStyles = {
     entering: '',
     entered: styles.entered,
@@ -46,6 +53,9 @@ function Roulette (props: { state: TransitionStatus }): JSX.Element {
         onBlur: (event: SyntheticEvent<HTMLDivElement>) => event.currentTarget.focus(),
         onKeyUp: handleKeyUp
     } : {}
+    function getRouletteEndCss (): keyof typeof styles {
+        return `stopAt${rouletteResult}` as keyof typeof styles
+    }
     function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case userPreference.circle:
@@ -105,7 +115,7 @@ function Roulette (props: { state: TransitionStatus }): JSX.Element {
                             className={classNames({
                                 [styles.arrow]: true,
                                 [styles.arrowRotate]: rouletteResult === -1,
-                                [styles[`stopAt${rouletteResult}`]]: rouletteResult !== -1
+                                [getRouletteEndCss()]: rouletteResult !== -1
                             })}
                             fill="#ffffff"
                             stroke="#000000"

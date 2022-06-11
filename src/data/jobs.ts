@@ -1,4 +1,4 @@
-import type { Job, JobTypes } from '../global'
+import type { Job, JobTypes } from 'global'
 
 const jobs: Job[] = [{
     type: 'beginner',

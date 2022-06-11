@@ -1,4 +1,4 @@
-import { Monster } from '../global'
+import { Monster } from 'global'
 
 const monsters: Monster[] = [
     {

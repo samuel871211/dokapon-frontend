@@ -1,10 +1,17 @@
+// Standard library imports.
+
+// Related third party imports.
 import classNames from 'classnames'
 import { useContext, useRef, SyntheticEvent, KeyboardEvent, useEffect } from 'react'
 import { TransitionStatus } from 'react-transition-group'
-import useTranslation from '../../../hooks/useTranslation'
-import { UIStateContext } from '../../../reducers/Game/UIState'
-import { userPreferenceContext } from '../../../reducers/userPreference'
+
+// Local application/library specific imports.
+import useTranslation from 'hooks/useTranslation'
+import { UIStateContext } from 'reducers/Game/UIState'
+import { userPreferenceContext } from 'reducers/userPreference'
 import styles from './OverviewMap.module.css'
+
+// Stateless vars declare.
 const transitionStyles = {
     svg: {
         entering: styles.fadeInEntering,
@@ -442,10 +449,10 @@ function OverviewMap (props: { state: TransitionStatus }): JSX.Element {
                 transitionStyles.tip[state]
             )}>
                 <div className={styles.tipIcon}></div>
-                <div className={styles.tipText}>{t('スケール')}</div>
+                <div>{t('スケール')}</div>
                 <div className={styles.space}></div>
                 <div className={styles.tipIcon}></div>
-                <div className={styles.tipText}>{t('終了')}</div>
+                <div>{t('終了')}</div>
             </div>
         </div>
     )

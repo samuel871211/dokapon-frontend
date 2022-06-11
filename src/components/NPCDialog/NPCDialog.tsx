@@ -1,8 +1,24 @@
-import React, { useEffect, useLayoutEffect, useState, useRef, useContext } from 'react'
-import { gameProgressContext } from '../../reducers/gameProgress'
-import { UIStateContext } from '../../reducers/SelectCharacter/UIState'
-import BottomDialogConfirmCircle from '../BottomDialogConfirmCircle'
+// Standard library imports.
+
+// Related third party imports.
+import {
+    useEffect,
+    useLayoutEffect,
+    useState,
+    useRef,
+    useContext,
+    SyntheticEvent,
+    TransitionEvent,
+    AnimationEvent
+} from 'react'
+
+// Local application/library specific imports.
+import { gameProgressContext } from 'reducers/gameProgress'
+import { UIStateContext } from 'reducers/SelectCharacter/UIState'
+import BottomDialogConfirmCircle from 'components/BottomDialogConfirmCircle'
 import styles from './NPCDialog.module.css'
+
+// Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 
 export default NPCDialog
@@ -25,7 +41,7 @@ function NPCDialog (props: {
         onBlur: reFocus,
         onKeyUp: handleKeyUp
     } : {}
-    function reFocus (event: React.SyntheticEvent<HTMLDivElement>): void {
+    function reFocus (event: SyntheticEvent<HTMLDivElement>): void {
         event.currentTarget.focus()
     }
     /**
@@ -93,7 +109,7 @@ function NPCDialog (props: {
                 .catch(err => console.log(err))
         }
     }
-    function handleTransitionEnd (e: React.TransitionEvent<HTMLDivElement>): void {
+    function handleTransitionEnd (e: TransitionEvent<HTMLDivElement>): void {
         if (currentStep === 'SelectControllerConfirm') {
             UIStateDispatch({
                 type: 'showConfirmDialog',
@@ -142,7 +158,7 @@ function NPCDialog (props: {
     function focus (): void {
         if (confirmBtnDisplay) focusElement.current?.focus()
     }
-    function fadeNextWord (e: React.AnimationEvent<HTMLSpanElement>) {
+    function fadeNextWord (e: AnimationEvent<HTMLSpanElement>) {
         setCurWordIdx(curWordIdx + 1)
         const wordElements = document.getElementsByClassName(`${styles.message}`)
         wordElements[curWordIdx + 1]?.classList.add(`${styles.fadeIn}`)

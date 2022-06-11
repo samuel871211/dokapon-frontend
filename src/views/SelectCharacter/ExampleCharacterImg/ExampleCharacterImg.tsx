@@ -1,5 +1,12 @@
-import React, { useLayoutEffect, useRef} from 'react'
+// Standard library imports.
+
+// Related third party imports.
+import { useLayoutEffect, useRef, AnimationEvent } from 'react'
+
+// Local application/library specific imports.
 import styles from './ExampleCharacterImg.module.css'
+
+// Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 
 export default ExampleCharacterImg
@@ -22,7 +29,7 @@ function ExampleCharacterImg (props: {
         setTimeout(() => focusElement.current?.classList.add(`${styles.fade}`), 10)
     }
 
-    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
+    function handleAnimationEnd (e: AnimationEvent<HTMLDivElement>) {
         focusElement.current?.classList.remove(`${styles.fade}`)
     }
 

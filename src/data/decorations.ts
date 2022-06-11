@@ -1,4 +1,4 @@
-import { Decoration } from '../global'
+import { Decoration } from 'global'
 
 const decorations: Decoration[] = [
     {

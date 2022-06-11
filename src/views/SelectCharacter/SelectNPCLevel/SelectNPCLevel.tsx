@@ -1,10 +1,17 @@
-import React, { useRef, useState, useContext } from 'react'
-import globalStyles from '../../../assets/styles/globalStyles.module.css'
+// Standard library imports.
+
+// Related third party imports.
+import { useRef, useState, useContext, KeyboardEvent, AnimationEvent } from 'react'
+
+// Local application/library specific imports.
+import globalStyles from 'assets/styles/globalStyles.module.css'
 import styles from './SelectNPCLevel.module.css'
-import { gameProgressContext } from '../../../reducers/gameProgress'
-import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import { NPCLEVELLIST } from '../../../utils/constants'
-import { NPCLEVELS } from '../../../graphics/characters'
+import { gameProgressContext } from 'reducers/gameProgress'
+import { UIStateContext } from 'reducers/SelectCharacter/UIState'
+import { NPCLEVELLIST } from 'utils/constants'
+import { NPCLEVELS } from 'graphics/characters'
+
+// Stateless vars declare.
 
 export default SelectNPCLevel
 
@@ -15,7 +22,7 @@ function SelectNPCLevel (): JSX.Element {
     const [selectedIdx, setSelectedIdx] = useState(0)
     const [isLeave, toggleIsLeave] = useState(false)
     
-    function handleKeyUp (e: React.KeyboardEvent) {
+    function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             setSelectedIdx(selectedIdx === 0 ? 2 : selectedIdx - 1)
@@ -61,7 +68,7 @@ function SelectNPCLevel (): JSX.Element {
         return aiLevelRows
     }
 
-    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
+    function handleAnimationEnd (e: AnimationEvent<HTMLDivElement>) {
         if (e.animationName.includes('slideLeft')) {
             focusElement.current?.focus()
             return

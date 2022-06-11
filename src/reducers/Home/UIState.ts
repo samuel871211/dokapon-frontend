@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import Dokapon from '../../global'
+import Dokapon from 'global'
 
 const initUIState: Dokapon.Home.UIState = {
     showBtnGroup: true,

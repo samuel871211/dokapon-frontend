@@ -1,4 +1,4 @@
-import type { Vertex, CellId, Position, Edge } from '../global'
+import type { Vertex, CellId, Position, Edge } from 'global'
 
 class GraphDSA {
     #verticesForDSA: { [key: CellId]: Vertex } = {}

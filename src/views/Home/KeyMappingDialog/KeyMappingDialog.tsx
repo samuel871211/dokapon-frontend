@@ -1,6 +1,13 @@
-import styles from './KeyMappingDialog.module.css'
+// Standard library imports.
+
+// Related third party imports.
 import { TransitionStatus } from 'react-transition-group'
-import YellowBlock from '../../../layouts/YellowBlock'
+
+// Local application/library specific imports.
+import styles from './KeyMappingDialog.module.css'
+import YellowBlock from 'layouts/YellowBlock'
+
+// Stateless vars declare.
 const transitionStyles = {
     exiting: styles.slideOut,
     exited: styles.slideOut,

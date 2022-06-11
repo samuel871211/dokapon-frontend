@@ -1,11 +1,18 @@
+// Standard library imports.
+
+// Related third party imports.
 import { useContext, useLayoutEffect, useRef, useState } from 'react'
-import CustomBorderBottom from '../../../components/CustomBorderBottom'
-import globalStyles from '../../../assets/styles/globalStyles.module.css'
+
+// Local application/library specific imports.
+import CustomBorderBottom from 'components/CustomBorderBottom'
+import globalStyles from 'assets/styles/globalStyles.module.css'
 import styles from './SelectOrderAndController.module.css'
-import { gameProgressContext } from '../../../reducers/gameProgress'
-import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import { NPCLEVELS } from '../../../graphics/characters'
-import { shuffle } from '../../../utils/math'
+import { gameProgressContext } from 'reducers/gameProgress'
+import { UIStateContext } from 'reducers/SelectCharacter/UIState'
+import { NPCLEVELS } from 'graphics/characters'
+import { shuffle } from 'utils/math'
+
+// Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 
 export default SelectOrderAndController
@@ -245,7 +252,7 @@ function PlayerCard (props: {
         <div
             className={`
             ${styles.playerCardContainer}
-            ${currentStep === 'SelectOrderStep1' ? styles[`gatherToCenter${index}`] : ''}
+            ${currentStep === 'SelectOrderStep1' ? styles[`gatherToCenter${index}` as keyof typeof styles] : ''}
             ${currentStep === 'SelectOrderStep2' ? styles.slideRight : ''}`}
             style={{ zIndex: shuffleIndex }}
         >

@@ -1,11 +1,19 @@
+
+// Standard library imports.
+
+// Related third party imports.
+import { useRef, useState, useContext, KeyboardEvent, AnimationEvent } from 'react'
+
+// Local application/library specific imports.
 import ExampleCharacterImg from '../ExampleCharacterImg'
-import globalStyles from '../../../assets/styles/globalStyles.module.css'
+import globalStyles from 'assets/styles/globalStyles.module.css'
 import styles from './SelectColor.module.css'
-import { COLORS } from '../../../graphics/characters'
-import { COLORLIST } from '../../../utils/constants'
-import { gameProgressContext } from '../../../reducers/gameProgress'
-import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import React, { useRef, useState, useContext } from 'react'
+import { COLORS } from 'graphics/characters'
+import { COLORLIST } from 'utils/constants'
+import { gameProgressContext } from 'reducers/gameProgress'
+import { UIStateContext } from 'reducers/SelectCharacter/UIState'
+
+// Stateless vars declare.
 
 export default SelectColor
 
@@ -46,7 +54,7 @@ function SelectColor (): JSX.Element {
         return colorRows
     }
 
-    function handleKeyUp (e: React.KeyboardEvent) {
+    function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             setSelectedIdx(selectedIdx === 0 ? remainColors.length - 1 : selectedIdx - 1)
@@ -77,7 +85,7 @@ function SelectColor (): JSX.Element {
         }
     }
 
-    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>): void {
+    function handleAnimationEnd (e: AnimationEvent<HTMLDivElement>): void {
         if (e.animationName.includes('slideLeft')) {
             focusElement.current?.focus()
             return

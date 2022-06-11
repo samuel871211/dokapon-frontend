@@ -1,14 +1,21 @@
-import CustomBorderBottom from '../../../components/CustomBorderBottom'
-import globalStyles from '../../../assets/styles/globalStyles.module.css'
+// Standard library imports.
+
+// Related third party imports.
+import { useState, useRef, useContext, useEffect, KeyboardEvent, AnimationEvent } from 'react'
+
+// Local application/library specific imports.
+import CustomBorderBottom from 'components/CustomBorderBottom'
+import globalStyles from 'assets/styles/globalStyles.module.css'
 import styles from './NPCGenerateDialog.module.css'
-import { getRandomInt } from '../../../utils/math'
-import React, { useState, useRef, useContext, useEffect } from 'react'
-import { gameProgressContext } from '../../../reducers/gameProgress'
-import { UIStateContext } from '../../../reducers/SelectCharacter/UIState'
-import { COLORS, BASICJOBS, NPCLEVELS } from '../../../graphics/characters'
-import japaneseChars from '../../../utils/japaneseChars'
-import Dokapon from '../../../global'
-import { COLORLIST, BASICJOBLIST, NPCLEVELLIST, GENDERLIST } from '../../../utils/constants'
+import { getRandomInt } from 'utils/math'
+import { gameProgressContext } from 'reducers/gameProgress'
+import { UIStateContext } from 'reducers/SelectCharacter/UIState'
+import { COLORS, BASICJOBS, NPCLEVELS } from 'graphics/characters'
+import japaneseChars from 'utils/japaneseChars'
+import Dokapon from 'global'
+import { COLORLIST, BASICJOBLIST, NPCLEVELLIST, GENDERLIST } from 'utils/constants'
+
+// Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 
 export default NPCGenerateDialog
@@ -58,7 +65,7 @@ function NPCGenerateDialog (): JSX.Element {
         })
     }, [])
 
-    function handleKeyUp (e: React.KeyboardEvent) {
+    function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case 'arrowup':
             setSelectedIdx(selectedIdx === 0 ? 4 : selectedIdx - 1)
@@ -142,7 +149,7 @@ function NPCGenerateDialog (): JSX.Element {
         }
     }
 
-    function handleAnimationEnd (e: React.AnimationEvent<HTMLDivElement>) {
+    function handleAnimationEnd (e: AnimationEvent<HTMLDivElement>) {
         if (e.animationName === styles.slideLeft) {
             focusElement.current?.focus()
         }

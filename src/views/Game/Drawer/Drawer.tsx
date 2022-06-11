@@ -1,13 +1,20 @@
-import AttrCircle from '../../../components/AttrCircle'
-import { SomeKindOfIcon } from '../../../components/icons'
-import CustomBorderBottom from '../../../components/CustomBorderBottom'
-import { TransitionStatus } from 'react-transition-group'
-import styles from './Drawer.module.css'
-import classNames from 'classnames'
-import useTranslation from '../../../hooks/useTranslation'
-import { userPreferenceContext } from '../../../reducers/userPreference'
-import { UIStateContext } from '../../../reducers/Game/UIState'
+// Standard library imports.
+
+// Related third party imports.
 import { useState, useContext, useRef, useEffect, SyntheticEvent, KeyboardEvent } from 'react'
+import classNames from 'classnames'
+import { TransitionStatus } from 'react-transition-group'
+
+// Local application/library specific imports.
+import AttrCircle from 'components/AttrCircle'
+import { SomeKindOfIcon } from 'components/icons'
+import CustomBorderBottom from 'components/CustomBorderBottom'
+import styles from './Drawer.module.css'
+import useTranslation from 'hooks/useTranslation'
+import { userPreferenceContext } from 'reducers/userPreference'
+import { UIStateContext } from 'reducers/Game/UIState'
+
+// Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
 const transitionStyles = {
     container: {

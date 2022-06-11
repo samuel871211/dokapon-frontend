@@ -1,4 +1,4 @@
-// import { Text } from '../../../global'
+// import { Text } from 'global'
 // import texts from './texts'
 
 // export class Node {
@@ -124,7 +124,7 @@
 // const keyboardMap = new Map(texts)
 // export default keyboardMap
 
-import { LangTypes, AspectRatioTypes, GamePadKeyTypes } from '../../../global'
+import { LangTypes, AspectRatioTypes, GamePadKeyTypes } from 'global'
 type KeyboardMap = [
     [LangTypes, LangTypes, LangTypes],
     [AspectRatioTypes, AspectRatioTypes, AspectRatioTypes],

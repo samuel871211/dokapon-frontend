@@ -1,301 +1,226 @@
-/**
- * @todo ability不知道怎定義
- */
-export const items = {
-    バイン: {
+const items = [
+    {
         type: 'roulette',
         description: '',
-        icon: '',
-        purchasePrice: 800,
-        sellingPrice: 400,
-        ability: ''
+        price: 800,
+        name: 'バイン'
     },
-    '３バイン': {
+    {
         type: 'roulette',
         description: '',
-        icon: '',
-        purchasePrice: 2000,
-        sellingPrice: 1000,
-        ability: ''
+        price: 2000,
+        name: '３バイン'
     },
-    '４バイン': {
+    {
         type: 'roulette',
         description: '',
-        icon: '',
-        purchasePrice: 6000,
-        sellingPrice: 3000,
-        ability: ''
+        price: 6000,
+        name: '４バイン'
     },
-    '５バイン': {
+    {
         type: 'roulette',
         description: '',
-        icon: '',
-        purchasePrice: 12000,
-        sellingPrice: 6000,
-        ability: ''
+        price: 12000,
+        name: '５バイン'
     },
-    バイバイン: {
+    {
         type: 'roulette',
         description: '',
-        icon: '',
-        purchasePrice: 15000,
-        sellingPrice: 7500,
-        ability: ''
+        price: 15000,
+        name: 'バイバイン'
     },
-    バババイン: {
+    {
         type: 'roulette',
         description: '',
-        icon: '',
-        purchasePrice: 20000,
-        sellingPrice: 10000,
-        ability: ''
+        price: 20000,
+        name: 'バババイン'
     },
-    フリールーレット: {
+    {
         type: 'roulette',
         description: '',
-        icon: '',
-        purchasePrice: 500000,
-        sellingPrice: 250000,
-        ability: ''
+        price: 500000,
+        name: 'フリールーレット'
     },
-    '０のクリスタル': {
+    {
         type: 'crystal',
         description: '',
-        icon: '',
-        purchasePrice: 400,
-        sellingPrice: 200,
-        ability: ''
+        price: 400,
+        name: '０のクリスタル'
     },
-    '１のクリスタル': {
+    {
         type: 'crystal',
         description: '',
-        icon: '',
-        purchasePrice: 300,
-        sellingPrice: 150,
-        ability: ''
+        price: 300,
+        name: '１のクリスタル'
     },
-    '２のクリスタル': {
+    {
         type: 'crystal',
         description: '',
-        icon: '',
-        purchasePrice: 300,
-        sellingPrice: 150,
-        ability: ''
+        price: 300,
+        name: '２のクリスタル'
     },
-    '３のクリスタル': {
+    {
         type: 'crystal',
         description: '',
-        icon: '',
-        purchasePrice: 300,
-        sellingPrice: 150,
-        ability: ''
+        price: 300,
+        name: '３のクリスタル'
     },
-    '４のクリスタル': {
+    {
         type: 'crystal',
         description: '',
-        icon: '',
-        purchasePrice: 300,
-        sellingPrice: 150,
-        ability: ''
+        price: 300,
+        name: '４のクリスタル'
     },
-    '５のクリスタル': {
+    {
         type: 'crystal',
         description: '',
-        icon: '',
-        purchasePrice: 300,
-        sellingPrice: 150,
-        ability: ''
+        price: 300,
+        name: '５のクリスタル'
     },
-    '６のクリスタル': {
+    {
         type: 'crystal',
         description: '',
-        icon: '',
-        purchasePrice: 300,
-        sellingPrice: 150,
-        ability: ''
+        price: 300,
+        name: '６のクリスタル'
     },
-    マルチクリスタル: {
+    {
         type: 'crystal',
         description: '',
-        icon: '',
-        purchasePrice: 1600,
-        sellingPrice: 800,
-        ability: ''
+        price: 1600,
+        name: 'マルチクリスタル'
     },
-    ジャンプ: {
+    {
         type: 'jump',
         description: '',
-        icon: '',
-        purchasePrice: 500,
-        sellingPrice: 250,
-        ability: ''
+        price: 500,
+        name: 'ジャンプ'
     },
-    ソトジャンプ: {
+    {
         type: 'jump',
         description: '',
-        icon: '',
-        purchasePrice: 250,
-        sellingPrice: 125,
-        ability: ''
+        price: 250,
+        name: 'ソトジャンプ'
     },
-    ハロージャンプ: {
+    {
         type: 'jump',
         description: '',
-        icon: '',
-        purchasePrice: 400,
-        sellingPrice: 200,
-        ability: ''
+        price: 400,
+        name: 'ハロージャンプ'
     },
-    ミセジャンプ: {
+    {
         type: 'jump',
         description: '',
-        icon: '',
-        purchasePrice: 1500,
-        sellingPrice: 750,
-        ability: ''
+        price: 1500,
+        name: 'ミセジャンプ'
     },
-    カエロッカナ: {
+    {
         type: 'jump',
         description: '',
-        icon: '',
-        purchasePrice: 800,
-        sellingPrice: 400,
-        ability: ''
+        price: 800,
+        name: 'カエロッカナ'
     },
-    回復ざい: {
+    {
         type: 'recovery',
         description: '',
-        icon: '',
-        purchasePrice: 100,
-        sellingPrice: 5400,
-        ability: ''
+        price: 100,
+        name: '回復ざい'
     },
-    回復ざいＳＰ: {
+    {
         type: 'recovery',
         description: '',
-        icon: '',
-        purchasePrice: 1200,
-        sellingPrice: 600,
-        ability: ''
+        price: 1200,
+        name: '回復ざいＳＰ'
     },
-    ちりょう薬: {
+    {
         type: 'recovery',
         description: '',
-        icon: '',
-        purchasePrice: 500,
-        sellingPrice: 250,
-        ability: ''
+        price: 500,
+        name: 'ちりょう薬'
     },
-    ばんのう薬: {
+    {
         type: 'recovery',
         description: '',
-        icon: '',
-        purchasePrice: 12000,
-        sellingPrice: 6000,
-        ability: ''
+        price: 12000,
+        name: 'ばんのう薬'
     },
-    きせきのしずく: {
+    {
         type: 'recovery',
         description: '',
-        icon: '',
-        purchasePrice: 30000,
-        sellingPrice: 15000,
-        ability: ''
+        price: 30000,
+        name: 'きせきのしずく'
     },
-    復活ざい: {
+    {
         type: 'recovery',
         description: '',
-        icon: '',
-        purchasePrice: 20000,
-        sellingPrice: 10000,
-        ability: ''
+        price: 20000,
+        name: '復活ざい'
     },
-    ヒーリングベル: {
+    {
         type: 'recovery',
         description: '',
-        icon: '',
-        purchasePrice: 15000,
-        sellingPrice: 7500,
-        ability: ''
+        price: 15000,
+        name: 'ヒーリングベル'
     },
-    パワーキノコ: {
+    {
         type: 'powerUp',
         description: '',
-        icon: '',
-        purchasePrice: 200,
-        sellingPrice: 100,
-        ability: ''
+        price: 200,
+        name: 'パワーキノコ'
     },
-    ガードキノコ: {
+    {
         type: 'powerUp',
         description: '',
-        icon: '',
-        purchasePrice: 200,
-        sellingPrice: 100,
-        ability: ''
+        price: 200,
+        name: 'ガードキノコ'
     },
-    スピードキノコ: {
+    {
         type: 'powerUp',
         description: '',
-        icon: '',
-        purchasePrice: 200,
-        sellingPrice: 100,
-        ability: ''
+        price: 200,
+        name: 'スピードキノコ'
     },
-    マジックキノコ: {
+    {
         type: 'powerUp',
         description: '',
-        icon: '',
-        purchasePrice: 200,
-        sellingPrice: 100,
-        ability: ''
+        price: 200,
+        name: 'マジックキノコ'
     },
-    魔法の薬: {
+    {
         type: 'powerUp',
         description: '',
-        icon: '',
-        purchasePrice: -1,
-        sellingPrice: -1,
-        ability: ''
+        price: -1,
+        name: '魔法の薬'
     },
-    マモるんです: {
+    {
         type: 'guard',
         description: '',
-        icon: '',
-        purchasePrice: 16000,
-        sellingPrice: 8000,
-        ability: ''
+        price: 16000,
+        name: 'マモるんです'
     },
-    ヨケるんです: {
+    {
         type: 'guard',
         description: '',
-        icon: '',
-        purchasePrice: 14200,
-        sellingPrice: 7100,
-        ability: ''
+        price: 14200,
+        name: 'ヨケるんです'
     },
-    キエるんです: {
+    {
         type: 'guard',
         description: '',
-        icon: '',
-        purchasePrice: 6000,
-        sellingPrice: 3000,
-        ability: ''
+        price: 6000,
+        name: 'キエるんです'
     },
-    ミエるんです: {
+    {
         type: 'guard',
         description: '',
-        icon: '',
-        purchasePrice: 13800,
-        sellingPrice: 6900,
-        ability: ''
+        price: 13800,
+        name: 'ミエるんです'
     },
-    魔法の鏡: {
+    {
         type: 'guard',
         description: '',
-        icon: '',
-        purchasePrice: 6000,
-        sellingPrice: 3000,
-        ability: ''
+        price: 6000,
+        name: '魔法の鏡'
     }
-}
+]
+
+export default items

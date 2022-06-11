@@ -1,4 +1,11 @@
 import { Weapon } from '../global'
+import { 
+    warriorJobTypes,
+    magicianJobTypes,
+    clericJobTypes,
+    thiefJobTypes,
+    gladiatorJobTypes
+} from './jobs'
 
 const weapons: Weapon[] = [
     {
@@ -9,12 +16,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Asia'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: '竹ざお',
@@ -24,12 +29,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 1,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Asia'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'りりむロッド',
@@ -39,12 +42,10 @@ const weapons: Weapon[] = [
         magic: 50,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
+        additionalDamageJobs: magicianJobTypes,
         fromAreas: [],
-        explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromMonster: '白ミミック',
+        explanation: ''
     },
     {
         name: 'コメディステッキ',
@@ -54,12 +55,10 @@ const weapons: Weapon[] = [
         magic: 4,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['Asia'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: '出刃ぼうちょう',
@@ -69,12 +68,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 2,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['Asia'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'こんぼう',
@@ -84,12 +81,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -3,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: clericJobTypes,
+        fromAreas: ['Asia'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: '青龍刀',
@@ -99,12 +94,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Asia'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'アツアツおでん',
@@ -114,12 +107,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 20,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['alien'],
+        fromAreas: ['Asia'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'ハッカイ'
     },
     {
         name: 'にょいぼう',
@@ -129,12 +120,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 5,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Asia'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'ゴクウ'
     },
     {
         name: '聖なるナイフ',
@@ -144,12 +133,10 @@ const weapons: Weapon[] = [
         magic: 1,
         speed: 6,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['Europe'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'レイピア',
@@ -159,12 +146,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 4,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Europe'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: '兵士の槍',
@@ -174,12 +159,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Europe'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: '導師の杖',
@@ -189,12 +172,10 @@ const weapons: Weapon[] = [
         magic: 3,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['Europe'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'ペロペロハンマー',
@@ -204,12 +185,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 60,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['alien'],
+        fromAreas: ['EuropeCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'フランケン'
     },
     {
         name: '魔女ッ子ステッキ',
@@ -219,12 +198,10 @@ const weapons: Weapon[] = [
         magic: 12,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['AsiaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: 'ジュリアナせんす',
@@ -234,12 +211,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 12,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['dancer'],
+        fromAreas: ['EuropeCave'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: 'しゃくじょう',
@@ -249,12 +224,10 @@ const weapons: Weapon[] = [
         magic: 3,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: clericJobTypes,
+        fromAreas: ['AsiaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: '惨憎法師'
     },
     {
         name: 'メイス',
@@ -264,12 +237,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -2,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: clericJobTypes,
+        fromAreas: ['Europe'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'ハルバード',
@@ -279,12 +250,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Europe'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'のうふのカマ',
@@ -294,12 +263,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 6,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['Europe'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'ナイトランス',
@@ -309,12 +276,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 1,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Europe'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'ブラックアーマー'
     },
     {
         name: 'メリケンサック',
@@ -324,12 +289,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 5,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: gladiatorJobTypes,
+        fromAreas: ['Russia'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'クリムゾンワンド',
@@ -339,12 +302,10 @@ const weapons: Weapon[] = [
         magic: 2,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['Russia'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: '聖騎士のつるぎ',
@@ -354,12 +315,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['EuropeCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: 'エンジェルロッド',
@@ -369,12 +328,10 @@ const weapons: Weapon[] = [
         magic: 15,
         speed: 1,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['Russia'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'ラスプーチン'
     },
     {
         name: '木こりのオノ',
@@ -384,12 +341,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
+        additionalDamageJobs: warriorJobTypes,
         fromAreas: [],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'タンバリン',
@@ -399,12 +354,10 @@ const weapons: Weapon[] = [
         magic: 2,
         speed: 2,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['dancer'],
+        fromAreas: ['Russia'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: '雪原人キッズ'
     },
     {
         name: '巨大きづち',
@@ -414,12 +367,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -5,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['carpenter'],
+        fromAreas: ['Russia'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'スチールナイフ',
@@ -429,12 +380,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 6,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['NorthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: '雷めいのつるぎ',
@@ -444,12 +393,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 3,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['EuropeCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'レッドブリキン'
     },
     {
         name: 'モーニングスター',
@@ -459,12 +406,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -2,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: clericJobTypes,
+        fromAreas: ['Russia'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'スピリットクラブ',
@@ -474,12 +419,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: clericJobTypes,
+        fromAreas: ['NorthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
     },
     {
         name: 'ピンクの注射器',
@@ -489,12 +432,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 30,
-        additionalDamageJobs: [],
+        additionalDamageJobs: ['nurse'],
         fromAreas: [],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: '打ち出のこづち',
@@ -504,12 +445,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['carpenter'],
+        fromAreas: ['SouthAmericaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: 'シャーマンロッド',
@@ -519,12 +458,11 @@ const weapons: Weapon[] = [
         magic: 3,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['NorthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'ジャックのメス',
@@ -534,12 +472,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 3,
         hp: 10,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['nurse'],
+        fromAreas: ['NorthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'ハヤブサの槍',
@@ -549,12 +486,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 15,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['NorthAmerica'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'トーテマン',
+        
     },
     {
         name: '和銅一文字',
@@ -564,12 +500,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 2,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['AsiaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'ガママル',
+        
     },
     {
         name: 'シルバーソード',
@@ -579,12 +514,11 @@ const weapons: Weapon[] = [
         magic: 3,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['NorthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'ピクシーロッド',
@@ -594,12 +528,10 @@ const weapons: Weapon[] = [
         magic: 15,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['NorthAmerica'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: 'バトルアックス',
@@ -609,12 +541,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -1,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['NorthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'デジ剣',
@@ -624,12 +555,11 @@ const weapons: Weapon[] = [
         magic: 1,
         speed: 1,
         hp: 10,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['robot'],
+        fromAreas: ['SouthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'パールカ',
@@ -639,12 +569,11 @@ const weapons: Weapon[] = [
         magic: -10,
         speed: -5,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['carpenter'],
+        fromAreas: ['Russia'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: '雪原人ミチエーリ',
+        
     },
     {
         name: '黄金の杖',
@@ -654,12 +583,11 @@ const weapons: Weapon[] = [
         magic: 18,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['SouthAmericaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'テスカポリトカ',
+        
     },
     {
         name: 'フラワーバトン',
@@ -669,12 +597,11 @@ const weapons: Weapon[] = [
         magic: 5,
         speed: 1,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['SouthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'ドカポソソード',
@@ -684,12 +611,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 50,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['NorthAmericaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'KeyTreasureField'
     },
     {
         name: 'Mリング',
@@ -699,12 +624,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 8,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['queen'],
+        fromAreas: ['NorthAmericaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: 'ボーンダガー',
@@ -714,12 +637,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 3,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['SouthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'バイラルフック',
@@ -729,12 +651,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 8,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['Europe'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'バイラル',
+        
     },
     {
         name: 'ウォーリアスピア',
@@ -744,12 +665,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -1,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['SouthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'おおかなづち',
@@ -759,12 +679,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -4,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['carpenter'],
+        fromAreas: ['SouthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: '真紅のロウソク',
@@ -774,12 +693,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 30,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['queen'],
+        fromAreas: ['SouthAmericaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true 
+        fromTreasureField: 'RedTreasureField' 
     },
     {
         name: 'ギロチンアックス',
@@ -789,12 +706,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -2,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['SouthAmerica'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'バトルホーク',
@@ -805,11 +721,10 @@ const weapons: Weapon[] = [
         speed: 0,
         hp: 10,
         additionalDamageJobs: [],
-        fromAreas: [],
+        fromAreas: ['NorthAmerica'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: '族長タタンカ',
+        
     },
     {
         name: 'コンバットナイフ',
@@ -819,12 +734,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 5,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['Oceania'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: '王者のツメ',
@@ -834,12 +748,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 8,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['SouthAmericaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'KeyTreasureField'
     },
     {
         name: 'れんじゅの杖',
@@ -849,12 +761,11 @@ const weapons: Weapon[] = [
         magic: 4,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['Oceania'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'ヌイグルミ',
@@ -864,12 +775,11 @@ const weapons: Weapon[] = [
         magic: 12,
         speed: 2,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['alien'],
+        fromAreas: ['EuropeCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'アリサ',
+        
     },
     {
         name: 'しっぷう剣',
@@ -879,12 +789,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 8,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Oceania'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'ぎしきのナイフ',
@@ -894,12 +803,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 8,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['SouthAmericaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: 'ドラゴンクロー',
@@ -909,12 +816,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 2,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: gladiatorJobTypes,
+        fromAreas: ['Oceania'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'アサシンダガー',
@@ -924,12 +830,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 6,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['Africa'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: '特大ノコギリ',
@@ -939,12 +844,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -3,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['carpenter'],
+        fromAreas: ['Oceania'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'ドリルランサー',
@@ -954,12 +858,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 3,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['robot'],
+        fromAreas: ['Oceania'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'ごくあく注射器',
@@ -969,12 +872,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 60,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['nurse'],
+        fromAreas: ['Oceania'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: 'やいばのおうぎ',
@@ -984,12 +885,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 3,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['dancer'],
+        fromAreas: ['Africa'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'スネークロッド',
@@ -999,12 +899,11 @@ const weapons: Weapon[] = [
         magic: 12,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['Oceania'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'フリルドリザード',
+        
     },
     {
         name: 'ルーンスタッフ',
@@ -1014,12 +913,11 @@ const weapons: Weapon[] = [
         magic: 4,
         speed: 2,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['Africa'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'マーメイドロッド',
@@ -1029,12 +927,10 @@ const weapons: Weapon[] = [
         magic: 10,
         speed: 0,
         hp: 10,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['Oceania'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: '毒手',
@@ -1044,12 +940,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 10,
         hp: 30,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: gladiatorJobTypes,
+        fromAreas: ['NorthAmericaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'シャオロン',
+        
     },
     {
         name: '破壊のオノ',
@@ -1059,12 +954,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -3,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Africa'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'ピコピコハンマー',
@@ -1074,12 +968,10 @@ const weapons: Weapon[] = [
         magic: 5,
         speed: 5,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['alien'],
+        fromAreas: ['Africa'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: '海神のモリ',
@@ -1089,12 +981,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Oceania'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'KeyTreasureField'
     },
     {
         name: 'コアラのぼう',
@@ -1104,12 +994,11 @@ const weapons: Weapon[] = [
         magic: 1,
         speed: 1,
         hp: 10,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['alien'],
+        fromAreas: ['Oceania'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'ウンフーク',
+        
     },
     {
         name: 'メテオストライク',
@@ -1119,12 +1008,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -8,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: clericJobTypes,
+        fromAreas: ['Africa'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'おしおき棒',
@@ -1134,12 +1022,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 50,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['queen'],
+        fromAreas: ['Africa', 'AfricaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromMonster: 'ホルス神',
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: '竜殺しの剣',
@@ -1149,12 +1036,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: -3,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Africa', 'AntarcticaCave'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: 'よみのカマ',
@@ -1164,12 +1050,11 @@ const weapons: Weapon[] = [
         magic: -2,
         speed: -2,
         hp: 50,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['Africa'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: '死の呼び子',
+        
     },
     {
         name: '燃える拳',
@@ -1179,12 +1064,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 10,
         hp: 10,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: gladiatorJobTypes,
+        fromAreas: ['AfricaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: '王家のハンマー',
@@ -1194,12 +1077,10 @@ const weapons: Weapon[] = [
         magic: 3,
         speed: -6,
         hp: 10,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: clericJobTypes,
+        fromAreas: ['AfricaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'KeyTreasureField'
     },
     {
         name: 'めいふの杖',
@@ -1209,12 +1090,11 @@ const weapons: Weapon[] = [
         magic: 16,
         speed: -3,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['Africa'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: true,
-        isFromTreasure: false
+        fromMonster: 'マコンデ'
+        
     },
     {
         name: 'ビートホーク',
@@ -1224,12 +1104,11 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['robot'],
+        fromAreas: ['AfricaCave'],
         explanation: '',
-        isFromWeaponStore: true,
-        isFromMonster: false,
-        isFromTreasure: false
+        isFromWeaponStore: true
+        
     },
     {
         name: '狂剣ジャブロー',
@@ -1239,12 +1118,10 @@ const weapons: Weapon[] = [
         magic: -2,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['Antarctica', 'Arctic'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: '吹雪の杖',
@@ -1254,12 +1131,11 @@ const weapons: Weapon[] = [
         magic: 10,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: magicianJobTypes,
+        fromAreas: ['Arctic', 'HawaiianIslandsCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromMonster: 'ペギゴン',
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: 'アトミックアイス',
@@ -1269,12 +1145,10 @@ const weapons: Weapon[] = [
         magic: 5,
         speed: -5,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: clericJobTypes,
+        fromAreas: ['Arctic', 'Antarctica'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: 'ゴッドブロー',
@@ -1284,12 +1158,10 @@ const weapons: Weapon[] = [
         magic: 10,
         speed: 15,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: gladiatorJobTypes,
+        fromAreas: ['ArcticCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'KeyTreasureField'
     },
     {
         name: 'にくかい',
@@ -1299,12 +1171,10 @@ const weapons: Weapon[] = [
         magic: -20,
         speed: 0,
         hp: 300,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: ['alien'],
+        fromAreas: ['AntarcticaCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'KeyTreasureField'
     },
     {
         name: '支配のナイフ',
@@ -1314,12 +1184,10 @@ const weapons: Weapon[] = [
         magic: 5,
         speed: 8,
         hp: 0,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['HawaiianIslands'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: 'ドカポンソード',
@@ -1329,12 +1197,10 @@ const weapons: Weapon[] = [
         magic: 1,
         speed: 1,
         hp: 100,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['HawaiianIslandsCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'KeyTreasureField'
     },
     {
         name: 'バケモノの槍',
@@ -1344,12 +1210,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 20,
         hp: 200,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: warriorJobTypes,
+        fromAreas: ['HawaiianIslandsCave'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'RedTreasureField'
     },
     {
         name: '妖刀ニヒル',
@@ -1359,12 +1223,10 @@ const weapons: Weapon[] = [
         magic: 15,
         speed: 15,
         hp: 150,
-        additionalDamageJobs: [],
-        fromAreas: [],
+        additionalDamageJobs: thiefJobTypes,
+        fromAreas: ['Atlantis'],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: true
+        fromTreasureField: 'KeyTreasureField'
     },
     {
         name: '神魔合竜剣',
@@ -1374,12 +1236,10 @@ const weapons: Weapon[] = [
         magic: 0,
         speed: 0,
         hp: 0,
-        additionalDamageJobs: [],
+        additionalDamageJobs: ['devil'],
         fromAreas: [],
         explanation: '',
-        isFromWeaponStore: false,
-        isFromMonster: false,
-        isFromTreasure: false
+        
     }
 ]
 

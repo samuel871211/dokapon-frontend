@@ -58,15 +58,25 @@ declare namespace Dokapon {
     }
     export type AreaTypes = 
         'Asia' |
+        'AsiaCave' |
         'Europe' |
+        'EuropeCave' |
         'Russia' |
         'NorthAmerica' |
+        'NorthAmericaCave' |
         'SouthAmerica' |
+        'SouthAmericaCave' |
         'Oceania' |
+        'OceaniaCave' |
         'Africa' |
+        'AfricaCave' |
         'Arctic' |
+        'ArcticCave' |
         'Antarctica' |
-        'HawaiianIslands'
+        'AntarcticaCave' |
+        'HawaiianIslands' |
+        'HawaiianIslandsCave' |
+        'Atlantis'
     export type MouseMode = 'edit' | 'drag'
     export type Area = {
         x: number,
@@ -172,11 +182,11 @@ declare namespace Dokapon {
         npcLevel: NPCLevelTypes,
         controllerNumber: 0
     }
-    interface MonsterAttrs extends CharacterAttrs {
-        isNPC: true,
-        npcLevel : NPCLevelTypes,
-        controllerNumber: 0
-    }
+    // interface MonsterAttrs extends CharacterAttrs {
+    //     isNPC: true,
+    //     npcLevel : NPCLevelTypes,
+    //     controllerNumber: 0
+    // }
     type GameProgress = {
         /**
          * 資料送到後端的時候才會產生
@@ -193,7 +203,7 @@ declare namespace Dokapon {
             PlayerAttrs | NPCAttrs
         ]
     }
-    export type Weapon = {
+    export type Shield = {
         name: string,
         price: number,
         attack: number,
@@ -201,14 +211,141 @@ declare namespace Dokapon {
         magic: number,
         speed: number,
         hp: number,
-        additionalDamageJobs: [],
+        fromAreas: AreaTypes[],
+        fromMonster?: string,
+        fromTreasureField?: VertexTypes,
+        explanation: string,
+        isFromWeaponStore?: true,
+    }
+    export type Weapon = Shield & { additionalDamageJobs: JobTypes[] }
+    export type Decoration = Omit<Shield, 'isFromWeaponStore'>
+    export type MagicBook = {
+        type: 'damage' | 'status' | 'other',
+        name: string,
+        price: number,
         fromAreas: AreaTypes[],
         explanation: string,
-        isFromWeaponStore: boolean,
+        isFromMagicStore: boolean,
         isFromMonster: boolean,
         isFromTreasure: boolean
     }
-    export type Shields = Omit<Weapon, 'additionalDamageJobs'> 
+    export type magicAttack = {
+        name: string,
+        price: number,
+        damage?: 'small' | 'medium' | 'large',
+        fromAreas: AreaTypes[],
+        explanation: string,
+        isFromMagicStore: boolean,
+        isFromTreasure: boolean,
+        isFromMonster: boolean
+    }
+    export type magicDefense = {
+        name: string,
+        price: number,
+        defense: number,
+        fromAreas: AreaTypes[],
+        explanation: string,
+        isFromMagicStore: boolean,
+        isFromTreasure: boolean,
+        isFromMonster: boolean
+    }
+    export type Monster = {
+        name: string,
+        level: number,
+        attack: number,
+        defense: number,
+        magic: number,
+        speed: number,
+        hp: number,
+        trick?: string,
+        magicAttack?: string,
+        magicDefense?: string,
+        exp: number,
+        money: number,
+        isBoss: boolean,
+        fromAreas: AreaTypes[],
+        possession: {
+            name: string,
+            isItem?: true,
+            isMagic?: true,
+            isWeapon?: true,
+            isShield?: true,
+            isDecoration?: true
+        }
+    }
+    export type Item = {
+        type: 'roulette' | 'crystal' | 'jump' | 'recovery' | 'powerUp' | 'guard',
+        description: string,
+        price: number,
+        name: string
+    }
+    export type JobTypes = 
+        'beginner' |
+        'warrior' |
+        'magician' |
+        'cleric' |
+        'thief' |
+        'knight' |
+        'archMage' |
+        'priest' |
+        'bladeMaster' |
+        'necromancer' |
+        'exorcist' |
+        'pirate' |
+        'ninja' |
+        'gamester' |
+        'beastTamer' |
+        'robot' |
+        'carpenter' |
+        'nurse' |
+        'monk' |
+        'dancer' |
+        'alien' |
+        'queen' |
+        'gladiator' |
+        'elves' |
+        'royal' |
+        'devil' |
+        'anotherDevil'
+    export type Job = {
+        type: JobTypes,
+        name: string,
+        levelUpPoint: {
+            attack: number,
+            defense: number,
+            magic: number,
+            speed: number,
+            hp: number
+        },
+        masterPoint: {
+            attack: number,
+            defense: number,
+            magic: number,
+            speed: number,
+            hp: number
+        },
+        bagSpace: {
+            item: number,
+            magic: number
+        },
+        masterRounds: number,
+        pay: number,
+        explanation: string,
+        fieldSpeciality: {
+            name: string,
+            briefExplanation: string,
+            fullExplanation: string
+        },
+        battleSpeciality: {
+            name: string,
+            briefExplanation: string,
+            fullExplanation: string
+        },
+        allowMale: true,
+        allowFemale: true,
+        weeklyBonus?: unknown,
+        condition?: unknown
+    }
     namespace GameProgress {
         type Context = {
             gameProgress: GameProgress,

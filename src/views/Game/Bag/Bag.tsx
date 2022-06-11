@@ -166,13 +166,13 @@ function useMetaData (props: {state: TransitionStatus }) {
     function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case userPreference.arrowUp: {
-            const capacity = bagInfo[curBag].length
+            const space = bagInfo[curBag].length
             switch (selectedItemIdx) {
             case 0:
-                setSelectedItemIdx(capacity - 2)
+                setSelectedItemIdx(space - 2)
                 return
             case 1:
-                setSelectedItemIdx(capacity - 1)
+                setSelectedItemIdx(space - 1)
                 return
             default:
                 setSelectedItemIdx(selectedItemIdx - 2)
@@ -180,12 +180,12 @@ function useMetaData (props: {state: TransitionStatus }) {
             }
         }
         case userPreference.arrowDown: {
-            const capacity = bagInfo[curBag].length
+            const space = bagInfo[curBag].length
             switch (selectedItemIdx) {
-            case capacity - 2:
+            case space - 2:
                 setSelectedItemIdx(0)
                 return
-            case capacity - 1:
+            case space - 1:
                 setSelectedItemIdx(1)
                 return
             default:

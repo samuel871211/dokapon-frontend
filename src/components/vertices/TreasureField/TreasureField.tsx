@@ -10,7 +10,7 @@ import { Vertex } from 'global'
 export default TreasureField
 
 function TreasureField (props: Vertex): JSX.Element {
-    const { position, name, id } = props
+    const { position, id } = props
 
     return (
         <g transform={`translate(${position.x}, ${position.y})`} data-type='vertex' id={id}>

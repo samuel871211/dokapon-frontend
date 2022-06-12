@@ -95,7 +95,7 @@ const shields: Shield[] = [
         hp: 10,
         fromAreas: ['AsiaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: '兵士の盾',
@@ -119,7 +119,7 @@ const shields: Shield[] = [
         hp: 0,
         fromAreas: ['AsiaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'クマタンガード',
@@ -143,7 +143,7 @@ const shields: Shield[] = [
         hp: 0,
         fromAreas: ['Europe'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'アイアンシールド',
@@ -179,7 +179,7 @@ const shields: Shield[] = [
         hp: 0,
         fromAreas: ['EuropeCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: '黒の盾',
@@ -251,7 +251,7 @@ const shields: Shield[] = [
         hp: 0,
         fromAreas: ['Russia'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'カッターフラワー',
@@ -275,7 +275,7 @@ const shields: Shield[] = [
         hp: 0,
         fromAreas: ['Russia'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'シルバーシールド',
@@ -311,7 +311,7 @@ const shields: Shield[] = [
         hp: 50,
         fromAreas: ['NorthAmericaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'ナスカシールド',
@@ -335,7 +335,7 @@ const shields: Shield[] = [
         hp: 0,
         fromAreas: ['NorthAmerica', 'NorthAmericaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: '破邪の盾',
@@ -395,7 +395,7 @@ const shields: Shield[] = [
         hp: 0,
         fromAreas: ['SouthAmericaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'こうらの盾',
@@ -515,7 +515,7 @@ const shields: Shield[] = [
         hp: 0,
         fromAreas: ['Oceania'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'ドラゴンシールド',
@@ -540,7 +540,7 @@ const shields: Shield[] = [
         fromAreas: ['Oceania', 'AntarcticaCave'],
         explanation: '',
         isFromWeaponStore: true,
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField', 'KeyTreasureField']
     },
     {
         name: 'ダイヤの盾',
@@ -552,7 +552,7 @@ const shields: Shield[] = [
         hp: 0,
         fromAreas: ['AfricaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField', 'KeyTreasureField']
     },
     {
         name: 'エンゼルシールド',
@@ -564,7 +564,7 @@ const shields: Shield[] = [
         hp: 0,
         fromAreas: ['Arctic', 'Antarctica'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: '氷河の盾',
@@ -577,7 +577,7 @@ const shields: Shield[] = [
         fromAreas: ['AntarcticaCave', 'Atlantis'],
         explanation: '',
         fromMonster: 'シロクマラ',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'ふくじゅうの盾',
@@ -589,7 +589,7 @@ const shields: Shield[] = [
         hp: 0,
         fromAreas: ['HawaiianIslands'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'ドカポンシールド',
@@ -601,7 +601,7 @@ const shields: Shield[] = [
         hp: 100,
         fromAreas: ['Atlantis'],
         explanation: '',
-        fromTreasureField: 'KeyTreasureField'
+        fromTreasureFields: ['KeyTreasureField']
     },
     {
         name: '魔の盾ソロモン',
@@ -613,7 +613,7 @@ const shields: Shield[] = [
         hp: 120,
         fromAreas: ['Atlantis'],
         explanation: '',
-        fromTreasureField: 'KeyTreasureField'
+        fromTreasureFields: ['KeyTreasureField']
     },
     {
         name: '血ぬりの盾',

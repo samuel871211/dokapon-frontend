@@ -201,7 +201,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: magicianJobTypes,
         fromAreas: ['AsiaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'ジュリアナせんす',
@@ -214,7 +214,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: ['dancer'],
         fromAreas: ['EuropeCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'しゃくじょう',
@@ -318,7 +318,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: warriorJobTypes,
         fromAreas: ['EuropeCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'エンジェルロッド',
@@ -435,7 +435,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: ['nurse'],
         fromAreas: [],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: '打ち出のこづち',
@@ -448,7 +448,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: ['carpenter'],
         fromAreas: ['SouthAmericaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'シャーマンロッド',
@@ -531,7 +531,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: magicianJobTypes,
         fromAreas: ['NorthAmerica'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'バトルアックス',
@@ -614,7 +614,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: warriorJobTypes,
         fromAreas: ['NorthAmericaCave'],
         explanation: '',
-        fromTreasureField: 'KeyTreasureField'
+        fromTreasureFields: ['KeyTreasureField']
     },
     {
         name: 'Mリング',
@@ -627,7 +627,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: ['queen'],
         fromAreas: ['NorthAmericaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'ボーンダガー',
@@ -696,7 +696,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: ['queen'],
         fromAreas: ['SouthAmericaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField' 
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'ギロチンアックス',
@@ -751,7 +751,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: thiefJobTypes,
         fromAreas: ['SouthAmericaCave'],
         explanation: '',
-        fromTreasureField: 'KeyTreasureField'
+        fromTreasureFields: ['KeyTreasureField']
     },
     {
         name: 'れんじゅの杖',
@@ -806,7 +806,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: thiefJobTypes,
         fromAreas: ['SouthAmericaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'ドラゴンクロー',
@@ -875,7 +875,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: ['nurse'],
         fromAreas: ['Oceania'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'やいばのおうぎ',
@@ -930,7 +930,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: magicianJobTypes,
         fromAreas: ['Oceania'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: '毒手',
@@ -971,7 +971,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: ['alien'],
         fromAreas: ['Africa'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: '海神のモリ',
@@ -984,7 +984,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: warriorJobTypes,
         fromAreas: ['Oceania'],
         explanation: '',
-        fromTreasureField: 'KeyTreasureField'
+        fromTreasureFields: ['KeyTreasureField']
     },
     {
         name: 'コアラのぼう',
@@ -1026,7 +1026,7 @@ const weapons: Weapon[] = [
         fromAreas: ['Africa', 'AfricaCave'],
         explanation: '',
         fromMonster: 'ホルス神',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: '竜殺しの剣',
@@ -1067,7 +1067,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: gladiatorJobTypes,
         fromAreas: ['AfricaCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: '王家のハンマー',
@@ -1080,7 +1080,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: clericJobTypes,
         fromAreas: ['AfricaCave'],
         explanation: '',
-        fromTreasureField: 'KeyTreasureField'
+        fromTreasureFields: ['KeyTreasureField']
     },
     {
         name: 'めいふの杖',
@@ -1121,7 +1121,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: warriorJobTypes,
         fromAreas: ['Antarctica', 'Arctic'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: '吹雪の杖',
@@ -1135,7 +1135,7 @@ const weapons: Weapon[] = [
         fromAreas: ['Arctic', 'HawaiianIslandsCave'],
         explanation: '',
         fromMonster: 'ペギゴン',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'アトミックアイス',
@@ -1148,7 +1148,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: clericJobTypes,
         fromAreas: ['Arctic', 'Antarctica'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'ゴッドブロー',
@@ -1161,7 +1161,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: gladiatorJobTypes,
         fromAreas: ['ArcticCave'],
         explanation: '',
-        fromTreasureField: 'KeyTreasureField'
+        fromTreasureFields: ['KeyTreasureField']
     },
     {
         name: 'にくかい',
@@ -1174,7 +1174,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: ['alien'],
         fromAreas: ['AntarcticaCave'],
         explanation: '',
-        fromTreasureField: 'KeyTreasureField'
+        fromTreasureFields: ['KeyTreasureField']
     },
     {
         name: '支配のナイフ',
@@ -1187,7 +1187,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: thiefJobTypes,
         fromAreas: ['HawaiianIslands'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: 'ドカポンソード',
@@ -1200,7 +1200,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: warriorJobTypes,
         fromAreas: ['HawaiianIslandsCave'],
         explanation: '',
-        fromTreasureField: 'KeyTreasureField'
+        fromTreasureFields: ['KeyTreasureField']
     },
     {
         name: 'バケモノの槍',
@@ -1213,7 +1213,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: warriorJobTypes,
         fromAreas: ['HawaiianIslandsCave'],
         explanation: '',
-        fromTreasureField: 'RedTreasureField'
+        fromTreasureFields: ['RedTreasureField']
     },
     {
         name: '妖刀ニヒル',
@@ -1226,7 +1226,7 @@ const weapons: Weapon[] = [
         additionalDamageJobs: thiefJobTypes,
         fromAreas: ['Atlantis'],
         explanation: '',
-        fromTreasureField: 'KeyTreasureField'
+        fromTreasureFields: ['KeyTreasureField']
     },
     {
         name: '神魔合竜剣',

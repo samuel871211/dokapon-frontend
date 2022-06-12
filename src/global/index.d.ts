@@ -4,7 +4,16 @@ export = Dokapon
 export as namespace Dokapon
 
 declare namespace Dokapon {
-    export type Position = { x: number, y: number }
+    export type Position = { 
+        x: number,
+        y: number
+    }
+    export type Area = {
+        x: number,
+        y: number,
+        width: number,
+        height: number
+    }
     export type CellId = string
     export type VertexTypes =
         'BattleField' |
@@ -25,6 +34,12 @@ declare namespace Dokapon {
         'VillageField' |
         'CaveField' |
         'CastleField'
+    export type TreasureFieldTypes = 
+        'TreasureField' |
+        'GoldTreasureField' |
+        'RedTreasureField' |
+        'WhiteTreasureField' |
+        'KeyTreasureField'
     export type EdgeTypes = 
         'OneWayHEdge' |
         'TwoWayHEdge' |
@@ -47,7 +62,7 @@ declare namespace Dokapon {
         right?: string,
         bottom?: string,
         edges: string[],
-        area?: AreaTypes
+        area: AreaTypes
     }
     export type Edge = Cell & {
         name: EdgeTypes,
@@ -77,14 +92,6 @@ declare namespace Dokapon {
         'HawaiianIslands' |
         'HawaiianIslandsCave' |
         'Atlantis'
-    export type MouseMode = 'edit' | 'drag'
-    export type Area = {
-        x: number,
-        y: number,
-        width: number,
-        height: number
-    }
-    export type Text = { jp: string, en: string, cn: string }
     export type LangTypes = 'jp' | 'en' | 'cn'
     export type GamePadKeyTypes =
         'arrowUp' |
@@ -102,91 +109,69 @@ declare namespace Dokapon {
         'SELECT' |
         'ANALOG' |
         'START'
-    export type AspectRatioTypes = '16:9' | '4:3' | 'stretch'
-    type ColorTypes = 'red' | 'orange' | 'yellow' |
-        'lightGreen' | 'darkGreen' | 'lightBlue' |
-        'darkBlue' | 'pink' | 'gray' | 'white'
-    type BasicJobTypes = 'warrior' | 'magician' |
-        'thief' | 'cleric' | 'beginner'
-    type NPCLevelTypes = 'weak' | 'normal' | 'strong'
-    type GenderTypes = 'male' | 'female'
-    type GoalTypes = 'period' | 'money'
-    type CharacterTypes = 'player' | 'monster'
-    interface CharacterAttrs {
-        gender: GenderTypes,
+    export type AspectRatioTypes = 
+        '16:9' |
+        '4:3' |
+        'stretch'
+    type ColorTypes = 
+        'red' |
+        'orange' |
+        'yellow' |
+        'lightGreen' |
+        'darkGreen' |
+        'lightBlue' |
+        'darkBlue' |
+        'pink' |
+        'gray' |
+        'white'
+    type BasicJobTypes = 
+        'warrior' |
+        'magician' |
+        'thief' |
+        'cleric' |
+        'beginner'
+    type NPCLevelTypes = 
+        'weak' |
+        'normal' |
+        'strong'
+    type GenderTypes = 
+        'male' |
+        'female' |
+        'other'
+    type GoalTypes = 
+        'period' |
+        'money'
+    type CharacterTypes = 
+        'player' |
+        'npcPlayer' |
+        'enemy' |
+        'allied'
+    type CharacterAttrs = {
         name: string,
-        color: ColorTypes,
-        job: BasicJobTypes,
         isNPC: boolean,
-        npcLevel : NPCLevelTypes | '',
-        controllerNumber: number,
-
-        // // 底下是新增的key-value pairs，reducers還沒寫
-        // level: number,
-        // rank: number,
-        // attack: {
-        //     base: number,
-        //     buff: number[],
-        //     nerf: number[],
-        //     total: number,
-        //     equipment: number,
-        // },
-        // defense: {
-        //     base: number,
-        //     buff: number[],
-        //     nerf: number[],
-        //     total: number,
-        //     equipment: number,
-        // },
-        // magic: {
-        //     base: number,
-        //     buff: number[],
-        //     nerf: number[],
-        //     total: number
-        // },
-        // speed: {
-        //     base: number,
-        //     buff: number[],
-        //     nerf: number[],
-        //     total: number
-        // }
-        // hp: {
-        //     base: number,
-        //     buff: number[],
-        //     nerf: number[],
-        //     total: number,
-        //     cur: number
-        // },
-        // money: {
-        //     cash: number,
-        //     bank: number,
-        //     specialty: number,
-        //     village: number,
-        //     assets: number
-        // },
-        // items: [],
-        // magics: [],
-        // weapon: number, // refer as index
-        // shield: number // refer as index
+        // npcLevel : NPCLevelTypes | '',
+        // controllerNumber: number,
     }
-    /**
-     * schema統一化，程式端會比較好管理
-     */
-    interface PlayerAttrs extends CharacterAttrs {
+    type PlayerAttrs = CharacterAttrs & {
+        gender: GenderTypes,
+        color: ColorTypes,
+        job: JobTypes,
         isNPC: false,
-        npcLevel : '',
-        controllerNumber: number,
     }
-    interface NPCAttrs extends CharacterAttrs {
+    type NPCPlayerAttrs = CharacterAttrs & {
+        gender: GenderTypes,
+        color: ColorTypes,
+        job: JobTypes,
         isNPC: true,
-        npcLevel: NPCLevelTypes,
-        controllerNumber: 0
+        npcLevel: NPCLevelTypes
     }
-    // interface MonsterAttrs extends CharacterAttrs {
-    //     isNPC: true,
-    //     npcLevel : NPCLevelTypes,
-    //     controllerNumber: 0
-    // }
+    type EnemyAttrs = CharacterAttrs & {
+        job: JobTypes,
+        isNPC: true
+    }
+    type AlliedAttrs = CharacterAttrs & {
+        isNPC: true
+    }
     type GameProgress = {
         /**
          * 資料送到後端的時候才會產生
@@ -197,10 +182,10 @@ declare namespace Dokapon {
         numberOfPlayers: number,
         currentPlayer: number,
         playersAttrs: [
-            PlayerAttrs | NPCAttrs,
-            PlayerAttrs | NPCAttrs,
-            PlayerAttrs | NPCAttrs,
-            PlayerAttrs | NPCAttrs
+            PlayerAttrs | NPCPlayerAttrs,
+            PlayerAttrs | NPCPlayerAttrs,
+            PlayerAttrs | NPCPlayerAttrs,
+            PlayerAttrs | NPCPlayerAttrs
         ]
     }
     export type Shield = {
@@ -213,7 +198,7 @@ declare namespace Dokapon {
         hp: number,
         fromAreas: AreaTypes[],
         fromMonster?: string,
-        fromTreasureField?: VertexTypes,
+        fromTreasureFields?: TreasureFieldTypes[],
         explanation: string,
         isFromWeaponStore?: true,
     }

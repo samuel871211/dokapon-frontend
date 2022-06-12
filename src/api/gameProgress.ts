@@ -20,7 +20,7 @@ async function getGameProgress (): Promise<{ status: number, data: Dokapon.GameP
     try {
         const response = await gameProgressClient.get<Dokapon.GameProgress[]>('/')
         return { status: response.status, data: response.data }
-    } catch (e: any) {
+    } catch (e: unknown) {
         if (axios.isAxiosError(e) && e.response) {
             return { status: e.response.status, data: [] }
         }
@@ -32,7 +32,7 @@ async function findGameProgressBackup (slotIdx: number): Promise<response> {
     try {
         const response = await gameProgressClient.get<Dokapon.GameProgress>(`backup/${slotIdx}`)
         return { status: response.status, data: response.data }
-    } catch (e: any) {
+    } catch (e: unknown) {
         if (axios.isAxiosError(e) && e.response) {
             return { status: e.response.status, data: null }
         }
@@ -44,7 +44,7 @@ async function findGameProgress (slotIdx: number): Promise<response> {
     try {
         const response = await gameProgressClient.get<Dokapon.GameProgress>(`/${slotIdx}`)
         return { status: response.status, data: response.data }
-    } catch (e: any) {
+    } catch (e: unknown) {
         if (axios.isAxiosError(e) && e.response) {
             return { status: e.response.status, data: null }
         }
@@ -56,7 +56,7 @@ async function updateGameProgress (slotIdx: number, data: Dokapon.GameProgress):
     try {
         const response = await gameProgressClient.put<Dokapon.GameProgress>(`/${slotIdx}`, data )
         return { status: response.status, data: response.data }
-    } catch (e: any) {
+    } catch (e: unknown) {
         if (axios.isAxiosError(e) && e.response) {
             return { status: e.response.status, data: null }
         }

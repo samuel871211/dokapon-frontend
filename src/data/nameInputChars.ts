@@ -1,4 +1,4 @@
-const japaneseChars = {
+const nameInputChars = {
     'hiragana': [
         [
             'あ', 'い', 'う', 'え', 'お',
@@ -83,4 +83,4 @@ const japaneseChars = {
         'ＯＫ'
     ]
 }
-export default japaneseChars
+export default nameInputChars

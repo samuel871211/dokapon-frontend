@@ -8,7 +8,7 @@ import globalStyles from 'assets/styles/globalStyles.module.css'
 import styles from './SelectNPCLevel.module.css'
 import { gameProgressContext } from 'reducers/gameProgress'
 import { UIStateContext } from 'reducers/SelectCharacter/UIState'
-import { NPCLEVELLIST } from 'utils/constants'
+import npcLevels from 'data/npcLevels'
 import { NPCLEVELS } from 'graphics/characters'
 
 // Stateless vars declare.
@@ -31,10 +31,10 @@ function SelectNPCLevel (): JSX.Element {
             setSelectedIdx(selectedIdx === 2 ? 0 : selectedIdx + 1)
             break
         case 'd':
-            console.log(NPCLEVELLIST[selectedIdx])
+            console.log(npcLevels[selectedIdx])
             gameProgressDispatch({
                 type: 'npcLevel',
-                payload: NPCLEVELLIST[selectedIdx]
+                payload: npcLevels[selectedIdx]
             })
             UIStateDispatch({
                 type: 'showTitleArea',
@@ -56,11 +56,11 @@ function SelectNPCLevel (): JSX.Element {
 
     function generateLevelRows () {
         const aiLevelRows = []
-        for (const npcLevel of NPCLEVELLIST) {
+        for (const npcLevel of npcLevels) {
             aiLevelRows.push(
                 <NPCLevelBtn
                     npcLevel={npcLevel}
-                    selected={NPCLEVELLIST[selectedIdx] === npcLevel}
+                    selected={npcLevels[selectedIdx] === npcLevel}
                     key={npcLevel}
                 />
             )

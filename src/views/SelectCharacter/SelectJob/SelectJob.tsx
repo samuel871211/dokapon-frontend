@@ -10,7 +10,7 @@ import styles from './SelectJob.module.css'
 import { BASICJOBS } from 'graphics/characters'
 import { gameProgressContext } from 'reducers/gameProgress'
 import { UIStateContext } from 'reducers/SelectCharacter/UIState'
-import { BASICJOBLIST } from 'utils/constants'
+import { basicJobTypes } from 'data/jobs'
 
 // Stateless vars declare.
 
@@ -22,7 +22,7 @@ function SelectJob (): JSX.Element {
     const { numberOfPlayers, currentPlayer, playersAttrs } = gameProgress
     const { color, gender, job } = playersAttrs[currentPlayer - 1]
     const focusElement = useRef<HTMLDivElement>(null)
-    const [selectedIdx, setSelectedIdx] = useState(BASICJOBLIST.indexOf(job))
+    const [selectedIdx, setSelectedIdx] = useState(basicJobTypes.indexOf(job))
     const [isLeave, toggleIsLeave] = useState(false)
 
     function handleKeyUp (e: KeyboardEvent) {
@@ -31,7 +31,7 @@ function SelectJob (): JSX.Element {
             const newIdx = selectedIdx === 0 ? 4 : selectedIdx - 1
             UIStateDispatch({
                 type: 'selectedJob',
-                payload: BASICJOBLIST[newIdx]
+                payload: basicJobTypes[newIdx]
             })
             setSelectedIdx(newIdx)
             break
@@ -40,7 +40,7 @@ function SelectJob (): JSX.Element {
             const newIdx = selectedIdx === 4 ? 0 : selectedIdx + 1
             UIStateDispatch({
                 type: 'selectedJob',
-                payload: BASICJOBLIST[newIdx]
+                payload: basicJobTypes[newIdx]
             })
             setSelectedIdx(newIdx)
             break
@@ -85,7 +85,7 @@ function SelectJob (): JSX.Element {
         if (e.animationName.includes('slideRight')) {
             gameProgressDispatch({
                 type: 'job',
-                payload: BASICJOBLIST[selectedIdx]
+                payload: basicJobTypes[selectedIdx]
             })
             const nextStep = determineNextStep()
             UIStateDispatch({
@@ -109,7 +109,7 @@ function SelectJob (): JSX.Element {
             jobRows.push(
                 <JobBtn
                     name={chinese}
-                    selected={job === BASICJOBLIST[selectedIdx]}
+                    selected={job === basicJobTypes[selectedIdx]}
                     key={job}
                 />
             )
@@ -127,7 +127,7 @@ function SelectJob (): JSX.Element {
         >
             <ExampleCharacterImg
                 color={color}
-                job={BASICJOBLIST[selectedIdx]}
+                job={basicJobTypes[selectedIdx]}
                 gender={gender}
                 isFadeOut={isLeave}
             />

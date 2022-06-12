@@ -10,7 +10,6 @@ import styles from './SelectOrderAndController.module.css'
 import { gameProgressContext } from 'reducers/gameProgress'
 import { UIStateContext } from 'reducers/SelectCharacter/UIState'
 import { NPCLEVELS } from 'graphics/characters'
-import { shuffle } from 'utils/math'
 
 // Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
@@ -84,7 +83,7 @@ function SelectOrderAndController (): JSX.Element {
             currentStep === 'SelectOrderStep1'
         ) {
             const interval = window.setInterval(() => {
-                shuffle(shuffleIndexes)
+                shuffleIndexes.shuffle()
                 const newShuffle = [ ...shuffleIndexes ]
                 setShuffleIndexes(newShuffle)
             }, 50)

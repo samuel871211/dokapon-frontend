@@ -1,4 +1,4 @@
-import type { Job, JobTypes } from 'global'
+import type { BasicJobTypes, Job, JobTypes } from 'global'
 
 const jobs: Job[] = [{
     type: 'beginner',
@@ -1001,6 +1001,7 @@ const jobs: Job[] = [{
     allowFemale: true
 }]
 
+export const basicJobTypes: BasicJobTypes[] = ['warrior', 'magician', 'cleric', 'thief', 'beginner']
 export const warriorJobTypes: JobTypes[] = ['warrior', 'knight', 'bladeMaster']
 export const magicianJobTypes: JobTypes[] = ['magician', 'archMage', 'necromancer', 'elves']
 export const clericJobTypes: JobTypes[] = ['cleric', 'priest', 'exorcist']

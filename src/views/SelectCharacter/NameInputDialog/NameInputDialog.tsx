@@ -4,7 +4,7 @@
 import { useState, useRef, useContext, AnimationEvent, KeyboardEvent } from 'react'
 
 // Local application/library specific imports.
-import japaneseChars from 'utils/japaneseChars'
+import nameInputChars from 'data/nameInputChars'
 import styles from './NameInputDialog.module.css'
 import globalStyles from 'assets/styles/globalStyles.module.css'
 import { gameProgressContext } from 'reducers/gameProgress'
@@ -41,7 +41,7 @@ function NameInputDialog (): JSX.Element {
     }
     function generateKeyBoardKeys (section: 0 | 1) {
         const rows: JSX.Element[] = []
-        japaneseChars[wordType][section].forEach((word, index) => {
+        nameInputChars[wordType][section].forEach((word, index) => {
             rows.push(
                 <KeyBoardKey
                     word={word}
@@ -54,7 +54,7 @@ function NameInputDialog (): JSX.Element {
     }
     function generateKeyBoardMenuItems () {
         const rows: JSX.Element[] = []
-        japaneseChars.menu.forEach((word, index) => {
+        nameInputChars.menu.forEach((word, index) => {
             rows.push(
                 <KeyBoardMenuItem
                     word={word}
@@ -191,7 +191,7 @@ function NameInputDialog (): JSX.Element {
             case 0:
             case 1:
                 (function handleNameInput () {
-                    const word = japaneseChars[wordType][selectedSection][selectedWordIdx]
+                    const word = nameInputChars[wordType][selectedSection][selectedWordIdx]
                     if (word.trim() === '') return
                     
                     // replace/add word to current idx
@@ -211,7 +211,7 @@ function NameInputDialog (): JSX.Element {
                 break
             case 2:
                 (function handleMenuItemClick () {
-                    const word = japaneseChars.menu[selectedWordIdx]
+                    const word = nameInputChars.menu[selectedWordIdx]
                     switch (word) {
                     case '平假名':
                         setWordType('hiragana')

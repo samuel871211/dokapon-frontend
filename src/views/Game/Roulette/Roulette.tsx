@@ -9,7 +9,6 @@ import classNames from 'classnames'
 import styles from './Roulette.module.css'
 import { userPreferenceContext } from 'reducers/userPreference'
 import { UIStateContext } from 'reducers/Game/UIState'
-import { getRandomInt } from 'utils/math'
 
 // Stateless vars declare.
 const transitionStyles = {
@@ -59,7 +58,7 @@ function Roulette (props: { state: TransitionStatus }): JSX.Element {
     function handleKeyUp (e: KeyboardEvent) {
         switch (e.key.toLowerCase()) {
         case userPreference.circle:
-            setRouletteResult(getRandomInt(0, 3) + getRandomInt(0, 3))
+            setRouletteResult(Math.getRandomIntInclusive(0, 3) + Math.getRandomIntInclusive(0, 3))
             return
         case userPreference.cross:
             UIStateDispatch({

@@ -9,7 +9,7 @@ import ExampleCharacterImg from '../ExampleCharacterImg'
 import globalStyles from 'assets/styles/globalStyles.module.css'
 import styles from './SelectColor.module.css'
 import { COLORS } from 'graphics/characters'
-import { COLORLIST } from 'utils/constants'
+import colors from 'data/colors'
 import { gameProgressContext } from 'reducers/gameProgress'
 import { UIStateContext } from 'reducers/SelectCharacter/UIState'
 
@@ -29,7 +29,7 @@ function SelectColor (): JSX.Element {
     const [selectedIdx, setSelectedIdx] = useState(initSelectedIdx === -1 ? 0 : initSelectedIdx)
 
     function getRemainColors () {
-        const remainColors = [ ...COLORLIST ]
+        const remainColors = [ ...colors ]
         for (let playerNumber = 0; playerNumber < currentPlayer - 1; playerNumber++) {
             const usedColor = playersAttrs[playerNumber].color
             const index = remainColors.indexOf(usedColor)

@@ -7,13 +7,15 @@ import { useState, useRef, useContext, useEffect, KeyboardEvent, AnimationEvent 
 import CustomBorderBottom from 'components/CustomBorderBottom'
 import globalStyles from 'assets/styles/globalStyles.module.css'
 import styles from './NPCGenerateDialog.module.css'
-import { getRandomInt } from 'utils/math'
 import { gameProgressContext } from 'reducers/gameProgress'
 import { UIStateContext } from 'reducers/SelectCharacter/UIState'
 import { COLORS, BASICJOBS, NPCLEVELS } from 'graphics/characters'
-import japaneseChars from 'utils/japaneseChars'
+import nameInputChars from 'data/nameInputChars'
 import Dokapon from 'global'
-import { COLORLIST, BASICJOBLIST, NPCLEVELLIST, GENDERLIST } from 'utils/constants'
+import { basicJobTypes } from 'data/jobs'
+import colors from 'data/colors'
+import npcLevels from 'data/npcLevels'
+import genders from 'data/genders'
 
 // Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL
@@ -40,22 +42,22 @@ function NPCGenerateDialog (): JSX.Element {
             })
             return colorList
         }
-        const colorList = removeUsedColors([ ...COLORLIST ])
+        const colorList = removeUsedColors([ ...colors ])
         gameProgressDispatch({
             type: 'color',
-            payload: colorList[getRandomInt(0, colorList.length - 1)]
+            payload: colorList[Math.getRandomIntInclusive(0, colorList.length - 1)]
         })
         gameProgressDispatch({
             type: 'job',
-            payload: BASICJOBLIST[getRandomInt(0, BASICJOBLIST.length - 1)]
+            payload: basicJobTypes[Math.getRandomIntInclusive(0, basicJobTypes.length - 1)]
         })
         gameProgressDispatch({
             type: 'npcLevel',
-            payload: NPCLEVELLIST[getRandomInt(0, NPCLEVELLIST.length - 1)]
+            payload: npcLevels[Math.getRandomIntInclusive(0, npcLevels.length - 1)]
         })
         gameProgressDispatch({
             type: 'gender',
-            payload: GENDERLIST[getRandomInt(0, GENDERLIST.length - 1)]
+            payload: genders[Math.getRandomIntInclusive(0, genders.length - 1)]
         })
         const newPayload: typeof npcsAttrsRegenerated = [ ...npcsAttrsRegenerated ]
         newPayload[currentPlayer - 1] = true
@@ -224,19 +226,19 @@ function Btn (props: {
 }
 
 function generateRandomName(): string {
-    const nameLength = getRandomInt(1, 8)
+    const nameLength = Math.getRandomIntInclusive(1, 8)
     const allChars = [
-        ...japaneseChars.hiragana[0],
-        ...japaneseChars.hiragana[1],
-        ...japaneseChars.katakana[0],
-        ...japaneseChars.katakana[1],
-        ...japaneseChars.special[0],
-        ...japaneseChars.special[1]
+        ...nameInputChars.hiragana[0],
+        ...nameInputChars.hiragana[1],
+        ...nameInputChars.katakana[0],
+        ...nameInputChars.katakana[1],
+        ...nameInputChars.special[0],
+        ...nameInputChars.special[1]
     ].filter(char => char !== '')
 
     let result = ''
     for (let i = 1; i <= nameLength; i++) {
-        const randomIndex = getRandomInt(0, allChars.length - 1)
+        const randomIndex = Math.getRandomIntInclusive(0, allChars.length - 1)
         result += allChars[randomIndex]
     }
     return result

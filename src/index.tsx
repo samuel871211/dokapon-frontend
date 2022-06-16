@@ -1,5 +1,10 @@
+// Standard library imports.
+
+// Related third party imports.
 import { createRoot } from 'react-dom/client' 
 import { useEffect, useReducer } from 'react'
+
+// Local application/library specific imports.
 import styles from './index.module.css'
 import './index.css'
 import Game from './views/Game'
@@ -9,6 +14,7 @@ import '@samuel871211/utils'
 import { initGameProgress, gameProgressContext, gameProgressReducer } from './reducers/gameProgress'
 import { inituserPreference, userPreferenceContext, userPreferenceReducer } from './reducers/userPreference'
 
+// Stateless vars declare.
 const HTMLStyles = {
     '16:9': styles.wideHTML,
     '4:3': styles.traditionalHTML,

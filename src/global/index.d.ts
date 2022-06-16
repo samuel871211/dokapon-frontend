@@ -148,9 +148,7 @@ declare namespace Dokapon {
         'allied'
     type CharacterAttrs = {
         name: string,
-        isNPC: boolean,
-        // npcLevel : NPCLevelTypes | '',
-        // controllerNumber: number,
+        isNPC: boolean
     }
     type PlayerAttrs = CharacterAttrs & {
         gender: GenderTypes,
@@ -196,14 +194,18 @@ declare namespace Dokapon {
         magic: number,
         speed: number,
         hp: number,
-        fromAreas: AreaTypes[],
-        fromMonster?: string,
-        fromTreasureFields?: TreasureFieldTypes[],
         explanation: string,
-        isFromWeaponStore?: true,
+        /**
+         * Monster可關聯到fromAreas
+         */
+        fromMonsters?: string[],
+        fromVerticesQuery?: {
+            areas: AreaTypes[],
+            vertexTypes: VertexTypes[]
+        }[]
     }
     export type Weapon = Shield & { additionalDamageJobs: JobTypes[] }
-    export type Decoration = Omit<Shield, 'isFromWeaponStore'>
+    export type Decoration = Shield
     export type MagicBook = {
         type: 'damage' | 'status' | 'other',
         name: string,

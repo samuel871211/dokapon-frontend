@@ -1,2 +1,2 @@
-import BottomDialogConfirmCircle from './BottomDialogConfirmCircle'
-export default BottomDialogConfirmCircle
+import BottomDialogConfirmCircle from "./BottomDialogConfirmCircle";
+export default BottomDialogConfirmCircle;

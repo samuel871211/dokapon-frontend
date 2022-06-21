@@ -1,26 +1,28 @@
 :root {
-    --bg-color: #fee59a;
-    --sub-bg-color: #f4c36e;    
-    --hover-bg-color: #9bd65b;
-    --border-color: #222222;
-    --confirm-circle: #b43d3b;
+  --bg-color: #fee59a;
+  --sub-bg-color: #f4c36e;
+  --hover-bg-color: #9bd65b;
+  --border-color: #222222;
+  --confirm-circle: #b43d3b;
 
-    /* experimental，還不確定這些case有沒有辦法cover所有的possibility */
-    --main-border-radius: 1.5rem;
-    --main-border-width: 0.2rem;
-    --sub-border-width: 0.15rem;
-    --main-title: 3rem;
-    --sub-title: 2.5rem;
-    --title: 2rem;
-    --small-title: 1.5rem;
+  /* experimental，還不確定這些case有沒有辦法cover所有的possibility */
+  --main-border-radius: 1.5rem;
+  --main-border-width: 0.2rem;
+  --sub-border-width: 0.15rem;
+  --main-title: 3rem;
+  --sub-title: 2.5rem;
+  --title: 2rem;
+  --small-title: 1.5rem;
 }
-:root, body, #root {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: black;
+:root,
+body,
+#root {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
 }
 /* #root {
     margin-left: auto;
@@ -30,12 +32,12 @@
     position: relative;
 } */
 * {
-    font-family: Microsoft JhengHei;
-    font-weight: bold;
-    box-sizing: border-box;
-    outline: none;
-    cursor: default;
+  font-family: Microsoft JhengHei;
+  font-weight: bold;
+  box-sizing: border-box;
+  outline: none;
+  cursor: default;
 }
 g[data-type="dokapon.player"] {
-    transition: transform 0.5s;
+  transition: transform 0.5s;
 }

@@ -1,84 +1,92 @@
 .container {
-    width: 100%;
-    height: 100%;
-    animation: slideLeft 1s;
+  width: 100%;
+  height: 100%;
+  animation: slideLeft 1s;
 }
 .nameDisplayArea {
-    width: 40%;
-    height: 10%;
-    position: relative;
-    top: 5%;
-    left: 56%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1.5rem;
-    border: 0.2rem outset var(--border-color);
-    background-color: var(--bg-color);
+  width: 40%;
+  height: 10%;
+  position: relative;
+  top: 5%;
+  left: 56%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+  border: 0.2rem outset var(--border-color);
+  background-color: var(--bg-color);
 }
 .nameInputWord {
-    width: calc(100% / 9);
-    flex-direction: column;
-    font-weight: bold;
-    font-size: 3rem;
-    line-height: 3rem;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: calc(100% / 9);
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 3rem;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .bottomLine {
-    width: 90%;
-    height: 0.2rem;
-    margin-top: 0.25rem;
-    background-color: var(--border-color);
+  width: 90%;
+  height: 0.2rem;
+  margin-top: 0.25rem;
+  background-color: var(--border-color);
 }
 .keyboardArea {
-    width: 90%;
-    height: 80%;
-    margin: auto;
-    padding: 5vh 0%;
-    display: flex;
-    justify-content: space-evenly;
-    border-radius: 1.5rem;
-    border: 0.2rem outset var(--border-color);
-    background-color: var(--bg-color);
+  width: 90%;
+  height: 80%;
+  margin: auto;
+  padding: 5vh 0%;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 1.5rem;
+  border: 0.2rem outset var(--border-color);
+  background-color: var(--bg-color);
 }
 .keyboardSection {
-    width: 30%;
-    display: flex;
-    flex-wrap: wrap;
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
 }
 .keyboardKey {
-    width: 20%;
-    height: calc(100% / 9);
-    font-size: 3rem;
-    line-height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 20%;
+  height: calc(100% / 9);
+  font-size: 3rem;
+  line-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .keyboardMenu {
-    width: 15%;
-    display: flex;
-    flex-direction: column;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
 }
 .keyboardMenuItem {
-    font-size: 3rem;
-    line-height: 3rem;
-    height: calc(100% / 9);
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
+  font-size: 3rem;
+  line-height: 3rem;
+  height: calc(100% / 9);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
 .leave {
-    animation: slideRight 1s;
+  animation: slideRight 1s;
 }
 @keyframes slideLeft {
-    0% { transform: translateX(100%) }
-    100% { transform: none }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: none;
+  }
 }
 @keyframes slideRight {
-    0% { transform: none }
-    100% { transform: translateX(100%) }
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }

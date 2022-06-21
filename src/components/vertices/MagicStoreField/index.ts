@@ -1,2 +1,2 @@
-import MagicStoreField from './MagicStoreField'
-export default MagicStoreField
+import MagicStoreField from "./MagicStoreField";
+export default MagicStoreField;

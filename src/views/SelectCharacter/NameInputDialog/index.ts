@@ -1,2 +1,2 @@
-import NameInputDialog from './NameInputDialog'
-export default NameInputDialog
+import NameInputDialog from "./NameInputDialog";
+export default NameInputDialog;

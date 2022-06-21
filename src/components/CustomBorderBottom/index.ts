@@ -1,2 +1,2 @@
-import CustomBorderBottom from './CustomBorderBottom'
-export default CustomBorderBottom
+import CustomBorderBottom from "./CustomBorderBottom";
+export default CustomBorderBottom;

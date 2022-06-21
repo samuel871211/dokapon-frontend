@@ -1,135 +1,144 @@
 .container {
-    width: 100%;
-    height: 100%;
-    transform: translate(100%, -100%);
+  width: 100%;
+  height: 100%;
+  transform: translate(100%, -100%);
 }
 .dialog {
-    width: 80%;
-    height: 100%;
-    margin: auto;
-    border: 0.2rem outset var(--border-color);
-    border-radius: 1.5rem;
-    background-color: var(--bg-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    --x: 0;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  border: 0.2rem outset var(--border-color);
+  border-radius: 1.5rem;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  --x: 0;
 }
 .dialogContent {
-    display: flex;
-    font-size: 3rem;
-    line-height: 4rem;
-    height: 4rem;
-    justify-content: space-evenly;
+  display: flex;
+  font-size: 3rem;
+  line-height: 4rem;
+  height: 4rem;
+  justify-content: space-evenly;
 }
 .dialogContent > div:nth-child(1) {
-    width: 30%;
-    text-align: center;
-    background-color: var(--sub-bg-color);
-    border-radius: 9999px;
+  width: 30%;
+  text-align: center;
+  background-color: var(--sub-bg-color);
+  border-radius: 9999px;
 }
 .empty {
-    width: 20%;
+  width: 20%;
 }
 .choice {
-    width: 20%;
-    position: relative;
+  width: 20%;
+  position: relative;
 }
 .choiceText {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
 .choice::after {
-    content: '';
-    width: 100%;
-    height: 40%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    background-color: var(--sub-bg-color);
+  content: "";
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-color: var(--sub-bg-color);
 }
 .mappingTable {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
-.gamePadColumn, .keyBoardColumn {
-    width: 22.5%;
+.gamePadColumn,
+.keyBoardColumn {
+  width: 22.5%;
 }
 .keyBoardColumn > .cell:nth-child(n + 2) {
-    position: relative;
-    height: 4rem;
+  position: relative;
+  height: 4rem;
 }
 .keyBoardColumn > .cell:nth-child(n + 2) > .cellText {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 .keyBoardColumn > .cell:nth-child(n + 2)::after {
-    content: '';
-    width: 100%;
-    height: 40%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    background-color: var(--sub-bg-color);
+  content: "";
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-color: var(--sub-bg-color);
 }
 .cell {
-    text-align: center;
-    font-size: 3rem;
-    line-height: 4rem;
-    height: 4rem;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 4rem;
+  height: 4rem;
 }
 .actions {
-    height: 4rem;
-    position: relative;
+  height: 4rem;
+  position: relative;
 }
 .actions > div {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    z-index: 1;
-    font-size: 3rem;
-    line-height: 4rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 1;
+  font-size: 3rem;
+  line-height: 4rem;
 }
 .actions::after {
-    content: '';
-    width: 100%;
-    height: 40%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    background-color: var(--sub-bg-color);
+  content: "";
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-color: var(--sub-bg-color);
 }
 .slideIn {
-    transform: translate(0%, -100%);
-    transition: transform 1s;
+  transform: translate(0%, -100%);
+  transition: transform 1s;
 }
 .slideOut {
-    transform: translate(100%, -100%);
-    transition: transform 1s;
+  transform: translate(100%, -100%);
+  transition: transform 1s;
 }
 .disabledText {
-    color: #6d6d81;
+  color: #6d6d81;
 }
 .hoverEffect {
-    animation: btnHoverFrom 500ms, btnHoverTo 500ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
+  animation: btnHoverFrom 500ms, btnHoverTo 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 }
 @keyframes btnHoverFrom {
-    0% { background-color: #9bd65b }
-    100% { background-color: transparent }
+  0% {
+    background-color: #9bd65b;
+  }
+  100% {
+    background-color: transparent;
+  }
 }
 @keyframes btnHoverTo {
-    0% { background-color: transparent }
-    100% { background-color: #9bd65b }
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #9bd65b;
+  }
 }

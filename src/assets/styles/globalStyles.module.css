@@ -1,14 +1,22 @@
 .hoverEffect {
-    animation: btnHoverFrom 500ms, btnHoverTo 500ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
+  animation: btnHoverFrom 500ms, btnHoverTo 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 }
 @keyframes btnHoverFrom {
-    0% { background-color: var(--hover-bg-color) }
-    100% { background-color: var(--bg-color) }
+  0% {
+    background-color: var(--hover-bg-color);
+  }
+  100% {
+    background-color: var(--bg-color);
+  }
 }
 @keyframes btnHoverTo {
-    0% { background-color: var(--bg-color) }
-    100% { background-color: var(--hover-bg-color) }
+  0% {
+    background-color: var(--bg-color);
+  }
+  100% {
+    background-color: var(--hover-bg-color);
+  }
 }

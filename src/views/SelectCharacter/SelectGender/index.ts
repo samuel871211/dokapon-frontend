@@ -1,2 +1,2 @@
-import SelectGender from './SelectGender'
-export default SelectGender
+import SelectGender from "./SelectGender";
+export default SelectGender;

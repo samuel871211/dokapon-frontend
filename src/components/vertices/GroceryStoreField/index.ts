@@ -1,2 +1,2 @@
-import GroceryStoreField from './GroceryStoreField'
-export default GroceryStoreField
+import GroceryStoreField from "./GroceryStoreField";
+export default GroceryStoreField;

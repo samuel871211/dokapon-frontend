@@ -1,18 +1,18 @@
 .container {
-    width: 95%;
-    margin: 0 auto;
-    height: var(--vh);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 95%;
+  margin: 0 auto;
+  height: var(--vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .circle {
-    width: var(--vh);
-    height: var(--vh);
-    border-radius: 50%;
-    background-color: black;
+  width: var(--vh);
+  height: var(--vh);
+  border-radius: 50%;
+  background-color: black;
 }
 .line {
-    border-bottom: calc(0.5 * var(--vh)) solid black;
-    width: calc(100% - var(--vh) * 2);
+  border-bottom: calc(0.5 * var(--vh)) solid black;
+  width: calc(100% - var(--vh) * 2);
 }

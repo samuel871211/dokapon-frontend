@@ -1,2 +1,2 @@
-import KeyMappingDialog from './KeyMappingDialog'
-export default KeyMappingDialog
+import KeyMappingDialog from "./KeyMappingDialog";
+export default KeyMappingDialog;

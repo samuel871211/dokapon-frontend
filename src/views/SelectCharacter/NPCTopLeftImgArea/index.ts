@@ -1,2 +1,2 @@
-import NPCTopLeftImgArea from './NPCTopLeftImgArea'
-export default NPCTopLeftImgArea
+import NPCTopLeftImgArea from "./NPCTopLeftImgArea";
+export default NPCTopLeftImgArea;

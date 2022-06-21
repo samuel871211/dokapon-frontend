@@ -1,2 +1,2 @@
-import ExampleCharacterImg from './ExampleCharacterImg'
-export default ExampleCharacterImg
+import ExampleCharacterImg from "./ExampleCharacterImg";
+export default ExampleCharacterImg;

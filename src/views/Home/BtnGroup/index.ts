@@ -1,2 +1,2 @@
-import BtnGroup from './BtnGroup'
-export default BtnGroup
+import BtnGroup from "./BtnGroup";
+export default BtnGroup;

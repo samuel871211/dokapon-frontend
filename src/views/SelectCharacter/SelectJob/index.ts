@@ -1,2 +1,2 @@
-import SelectJob from './SelectJob'
-export default SelectJob
+import SelectJob from "./SelectJob";
+export default SelectJob;

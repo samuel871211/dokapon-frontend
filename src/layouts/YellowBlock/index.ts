@@ -1,2 +1,2 @@
-import YellowBlock from './YellowBlock'
-export default YellowBlock
+import YellowBlock from "./YellowBlock";
+export default YellowBlock;

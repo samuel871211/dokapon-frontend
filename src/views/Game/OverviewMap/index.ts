@@ -1,2 +1,2 @@
-import OverviewMap from './OverviewMap'
-export default OverviewMap
+import OverviewMap from "./OverviewMap";
+export default OverviewMap;

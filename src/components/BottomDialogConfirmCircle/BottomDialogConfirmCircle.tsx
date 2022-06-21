@@ -3,14 +3,12 @@
 // Related third party imports.
 
 // Local application/library specific imports.
-import styles from './BottomDialogConfirmCircle.module.css'
+import styles from "./BottomDialogConfirmCircle.module.css";
 
 // Stateless vars declare.
 
-export default BottomDialogConfirmCircle
+export default BottomDialogConfirmCircle;
 
-function BottomDialogConfirmCircle (): JSX.Element {
-    return (
-        <div className={styles.confirmCircle}></div>
-    )
+function BottomDialogConfirmCircle(): JSX.Element {
+  return <div className={styles.confirmCircle}></div>;
 }

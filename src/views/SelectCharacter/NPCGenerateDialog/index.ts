@@ -1,2 +1,2 @@
-import NPCGenerateDialog from './NPCGenerateDialog'
-export default NPCGenerateDialog
+import NPCGenerateDialog from "./NPCGenerateDialog";
+export default NPCGenerateDialog;

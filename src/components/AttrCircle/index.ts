@@ -1,2 +1,2 @@
-import AttrCircle from './AttrCircle'
-export default AttrCircle
+import AttrCircle from "./AttrCircle";
+export default AttrCircle;

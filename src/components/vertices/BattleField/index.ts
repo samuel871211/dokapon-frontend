@@ -1,2 +1,2 @@
-import BattleField from './BattleField'
-export default BattleField
+import BattleField from "./BattleField";
+export default BattleField;

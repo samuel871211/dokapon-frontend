@@ -1,2 +1,2 @@
-import KeyTreasureField from './KeyTreasureField'
-export default KeyTreasureField
+import KeyTreasureField from "./KeyTreasureField";
+export default KeyTreasureField;

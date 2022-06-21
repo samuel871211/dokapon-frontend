@@ -1,2 +1,2 @@
-import SelectColor from './SelectColor'
-export default SelectColor
+import SelectColor from "./SelectColor";
+export default SelectColor;

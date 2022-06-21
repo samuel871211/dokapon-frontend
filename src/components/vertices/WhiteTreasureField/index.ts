@@ -1,2 +1,2 @@
-import WhiteTreasureField from './WhiteTreasureField'
-export default WhiteTreasureField
+import WhiteTreasureField from "./WhiteTreasureField";
+export default WhiteTreasureField;

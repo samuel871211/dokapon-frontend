@@ -1,2 +1,2 @@
-import Roulette from './Roulette'
-export default Roulette
+import Roulette from "./Roulette";
+export default Roulette;

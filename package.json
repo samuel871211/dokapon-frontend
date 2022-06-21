@@ -5,8 +5,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "npx eslint ./src --fix"
+    "preview": "vite preview"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,md,css}": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "npx eslint --fix"
+    ]
   },
   "dependencies": {
     "@samuel871211/utils": "^0.2.0",
@@ -18,15 +25,19 @@
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
-    "@types/react": "^18.0.13",
+    "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "@types/react-transition-group": "^4.4.4",
-    "@typescript-eslint/eslint-plugin": "^5.28.0",
-    "@typescript-eslint/parser": "^5.28.0",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
     "@vitejs/plugin-react": "^1.3.2",
-    "eslint": "^8.17.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.0",
-    "typescript": "^4.7.3",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.2",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
     "vite": "^2.9.12",
     "vite-tsconfig-paths": "^3.5.0"
   }

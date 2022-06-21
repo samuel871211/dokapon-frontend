@@ -3,63 +3,63 @@
     transform: translateY(-100%);
 } */
 .checkTipContainer {
-    position: absolute;
-    top: 5%;
-    left: 2.5%;
-    border: 0.2rem outset var(--border-color);
-    background-color: var(--bg-color);
-    border-radius: 1.5rem;
-    padding: 1rem;
+  position: absolute;
+  top: 5%;
+  left: 2.5%;
+  border: 0.2rem outset var(--border-color);
+  background-color: var(--bg-color);
+  border-radius: 1.5rem;
+  padding: 1rem;
 }
 .checkTipColumn {
-    font-size: 3rem;
-    line-height: 3rem;
+  font-size: 3rem;
+  line-height: 3rem;
 }
 .checkTipIcon {
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    width: 3rem;
-    height: 3rem;
-    border: 0.2rem outset var(--border-color);
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 3rem;
+  height: 3rem;
+  border: 0.2rem outset var(--border-color);
 }
 .checkTipText {
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 1rem;
 }
 .nodeAttrsAndDistance {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    border: 0.2rem outset var(--border-color);
-    background-color: var(--bg-color);
-    border-radius: 1.5rem;
-    padding: 1rem;
-    transform: translateX(-50%);
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  border: 0.2rem outset var(--border-color);
+  background-color: var(--bg-color);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  transform: translateX(-50%);
 }
 .nodeType {
-    font-size: 3rem;
-    line-height: 3.5rem;
-    text-align: center;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  text-align: center;
 }
 .nodeDistance {
-    font-size: 2.5rem;
-    line-height: 3.5rem;
-    text-align: center;
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  text-align: center;
 }
 .nodeDistance > b {
-    font-size: 3rem;
-    color: blue;
+  font-size: 3rem;
+  color: blue;
 }
 .minimap {
-    position: absolute;
-    top: 2.5%;
-    right: 4%;
-    width: 33%;
-    height: 40%;
-    border-radius: 1.5rem;
-    background-color: rgba(34, 34, 34, 0.5);
+  position: absolute;
+  top: 2.5%;
+  right: 4%;
+  width: 33%;
+  height: 40%;
+  border-radius: 1.5rem;
+  background-color: rgba(34, 34, 34, 0.5);
 }
 /* .overviewMap {
     position: absolute;
@@ -70,16 +70,16 @@
     background-color: #2c9eaf;
 } */
 .fadeInEntering {
-    opacity: 0;
+  opacity: 0;
 }
 .fadeInEntered {
-    opacity: 1;
-    transition: opacity 0.5s;
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 .fadeOutExiting {
-    opacity: 0;
-    transition: opacity 0.5s;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 .fadeOutExited {
-    display: none;
+  display: none;
 }

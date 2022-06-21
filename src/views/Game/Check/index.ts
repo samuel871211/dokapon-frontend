@@ -1,2 +1,2 @@
-import Check from './Check'
-export default Check
+import Check from "./Check";
+export default Check;

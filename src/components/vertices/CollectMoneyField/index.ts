@@ -1,2 +1,2 @@
-import CollectMoneyField from './CollectMoneyField'
-export default CollectMoneyField
+import CollectMoneyField from "./CollectMoneyField";
+export default CollectMoneyField;

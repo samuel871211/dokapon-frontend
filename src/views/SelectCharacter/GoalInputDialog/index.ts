@@ -1,2 +1,2 @@
-import GoalInputDialog from './GoalInputDialog'
-export default GoalInputDialog
+import GoalInputDialog from "./GoalInputDialog";
+export default GoalInputDialog;

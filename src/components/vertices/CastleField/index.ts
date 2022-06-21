@@ -1,2 +1,2 @@
-import CastleField from './CastleField'
-export default CastleField
+import CastleField from "./CastleField";
+export default CastleField;

@@ -1,43 +1,51 @@
 .container {
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: slideLeft 1s;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideLeft 1s;
 }
 .emptyArea {
-    width: 60%;
+  width: 60%;
 }
 .btnGroup {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    width: 40%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
 }
 .btn {
-    width: 90%;
-    height: calc(100% / 6);
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    border-radius: 9999px;
-    border: 0.2rem outset var(--border-color);
-    background-color: var(--bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 90%;
+  height: calc(100% / 6);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 9999px;
+  border: 0.2rem outset var(--border-color);
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .leave {
-    animation: slideRight 1s;
+  animation: slideRight 1s;
 }
 @keyframes slideLeft {
-    0% { transform: translateX(100%) }
-    100% { transform: none }   
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: none;
+  }
 }
 @keyframes slideRight {
-    0% { transform: none }
-    100% { transform: translateX(150%) }   
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateX(150%);
+  }
 }

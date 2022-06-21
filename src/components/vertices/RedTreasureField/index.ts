@@ -1,2 +1,2 @@
-import RedTreasureField from './RedTreasureField'
-export default RedTreasureField
+import RedTreasureField from "./RedTreasureField";
+export default RedTreasureField;

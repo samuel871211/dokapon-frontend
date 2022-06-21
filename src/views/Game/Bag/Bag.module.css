@@ -1,190 +1,198 @@
 .container {
-    width: 100%;
-    height: 100%;
-    transform: translateY(-100%);
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%);
 }
 .topArea {
-    width: 100%;
-    height: 15%;
-    transform: translateY(-100%);
+  width: 100%;
+  height: 15%;
+  transform: translateY(-100%);
 }
 .swiperContainer {
-    display: flex;
-    height: 100%;
-    align-items: flex-end;
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
 }
 .swiper {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-left: 3rem;
-    display: flex;
-    border: 0.2rem outset var(--border-color);
-    border-radius: 9999px;
-    font-size: 3rem;
-    line-height: 4rem;
-    background-color: var(--bg-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 3rem;
+  display: flex;
+  border: 0.2rem outset var(--border-color);
+  border-radius: 9999px;
+  font-size: 3rem;
+  line-height: 4rem;
+  background-color: var(--bg-color);
 }
 .swiperText {
-    margin-left: 0.5rem;
-    margin-right:0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .square {
-    width: 3rem;
-    height: 3rem;
-    font-size: 3rem;
-    line-height: 3rem;
-    text-align: center;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    background-color: black;
-    color: white;
+  width: 3rem;
+  height: 3rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: black;
+  color: white;
 }
 .centerArea {
-    width: 100%;
-    height: 55%;
-    transform: translateX(-100%);
+  width: 100%;
+  height: 55%;
+  transform: translateX(-100%);
 }
 .itemAndMagicContainer {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 .itemContainer {
-    position: absolute;
-    top: 6%;
-    left: 6%;
-    font-size: 3rem;
-    line-height: 3rem;
-    background-color: var(--bg-color);
-    border: 0.2rem outset var(--border-color);
-    border-radius: 1.5rem;
-    width: 85%;
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
+  position: absolute;
+  top: 6%;
+  left: 6%;
+  font-size: 3rem;
+  line-height: 3rem;
+  background-color: var(--bg-color);
+  border: 0.2rem outset var(--border-color);
+  border-radius: 1.5rem;
+  width: 85%;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 .item {
-    font-size: 3rem;
-    line-height: 3rem;
-    height: 3rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    position: relative;
+  font-size: 3rem;
+  line-height: 3rem;
+  height: 3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 .item::after {
-    content: '';
-    width: 98%;
-    height: 40%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: var(--sub-bg-color);
-    z-index: 0;
+  content: "";
+  width: 98%;
+  height: 40%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--sub-bg-color);
+  z-index: 0;
 }
 .itemContent {
-    position: absolute;
-    z-index: 1;
-    width: 98%;
-    height: 100%;
-    display: flex;
-    z-index: 1;
+  position: absolute;
+  z-index: 1;
+  width: 98%;
+  height: 100%;
+  display: flex;
+  z-index: 1;
 }
 .iconContainer {
-    width: 3rem;
-    height: 3rem;
-    border: 0.2rem outset var(--border-color);
+  width: 3rem;
+  height: 3rem;
+  border: 0.2rem outset var(--border-color);
 }
 .itemText {
-    padding-left: 0.5rem;
-    flex-grow: 1;
+  padding-left: 0.5rem;
+  flex-grow: 1;
 }
 .magicContainer {
-    position: absolute;
-    top: 3%;
-    left: 9%;
-    font-size: 3rem;
-    line-height: 3rem;
-    background-color: var(--bg-color);
-    border: 0.2rem outset var(--border-color);
-    border-radius: 1.5rem;
-    width: 85%;
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    z-index: 1;
+  position: absolute;
+  top: 3%;
+  left: 9%;
+  font-size: 3rem;
+  line-height: 3rem;
+  background-color: var(--bg-color);
+  border: 0.2rem outset var(--border-color);
+  border-radius: 1.5rem;
+  width: 85%;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
 }
 .bottomArea {
-    width: 100%;
-    height: 30%;
-    transform: translateY(100%);
+  width: 100%;
+  height: 30%;
+  transform: translateY(100%);
 }
 .messageContainer {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .messageArea {
-    width: 95%;
-    height: 95%;
-    background-color: var(--bg-color);
-    border-radius: 1.5rem;
-    border: 0.2rem outset var(--border-color);
+  width: 95%;
+  height: 95%;
+  background-color: var(--bg-color);
+  border-radius: 1.5rem;
+  border: 0.2rem outset var(--border-color);
 }
 .confirmDialog {
-    position: absolute;
-    width: 20%;
-    height: 80%;
-    right: 0%;
-    transform: translateX(100%);
-    transition: transform 0.5s;
-    background-color: var(--bg-color);
-    border-radius: 1.5rem;
-    border: 0.2rem outset var(--border-color);
+  position: absolute;
+  width: 20%;
+  height: 80%;
+  right: 0%;
+  transform: translateX(100%);
+  transition: transform 0.5s;
+  background-color: var(--bg-color);
+  border-radius: 1.5rem;
+  border: 0.2rem outset var(--border-color);
 }
 .topAreaEntering {
-    visibility: hidden;
+  visibility: hidden;
 }
 .topAreaEntered {
-    transform: none;
-    transition: transform 0.5s;
+  transform: none;
+  transition: transform 0.5s;
 }
 .topAreaExiting {
-    transform: translateY(-100%);
-    transition: transform 0.5s;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
 }
 .centerAreaEntered {
-    transform: none;
-    transition: transform 0.5s;
+  transform: none;
+  transition: transform 0.5s;
 }
 .centerAreaExiting {
-    transform: translateX(-100%);
-    transition: transform 0.5s;
+  transform: translateX(-100%);
+  transition: transform 0.5s;
 }
 .bottomAreaEntered {
-    transform: none;
-    transition: transform 0.5s;
+  transform: none;
+  transition: transform 0.5s;
 }
 .bottomAreaExiting {
-    transform: translateY(100%);
-    transition: transform 0.5s;
+  transform: translateY(100%);
+  transition: transform 0.5s;
 }
 .hoverEffect {
-    animation: btnHoverFrom 500ms, btnHoverTo 500ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
+  animation: btnHoverFrom 500ms, btnHoverTo 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 }
 @keyframes btnHoverFrom {
-    0% { background-color: #9bd65b }
-    100% { background-color: transparent }
+  0% {
+    background-color: #9bd65b;
+  }
+  100% {
+    background-color: transparent;
+  }
 }
 @keyframes btnHoverTo {
-    0% { background-color: transparent }
-    100% { background-color: #9bd65b }
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #9bd65b;
+  }
 }

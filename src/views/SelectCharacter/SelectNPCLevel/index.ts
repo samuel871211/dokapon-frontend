@@ -1,2 +1,2 @@
-import SelectNPCLevel from './SelectNPCLevel'
-export default SelectNPCLevel
+import SelectNPCLevel from "./SelectNPCLevel";
+export default SelectNPCLevel;

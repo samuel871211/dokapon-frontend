@@ -1,2 +1,2 @@
-import SelectGoalType from './SelectGoalType'
-export default SelectGoalType
+import SelectGoalType from "./SelectGoalType";
+export default SelectGoalType;

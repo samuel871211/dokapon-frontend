@@ -1,2 +1,2 @@
-import WorldTransferField from './WorldTransferField'
-export default WorldTransferField
+import WorldTransferField from "./WorldTransferField";
+export default WorldTransferField;

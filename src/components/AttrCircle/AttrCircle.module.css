@@ -1,12 +1,12 @@
 .container {
-    width: 90%;
-    height: 90%;
-    border-radius: 50%;
-    box-shadow: -0.15rem -0.15rem  var(--border-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: black;
-    color: white;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  box-shadow: -0.15rem -0.15rem var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: black;
+  color: white;
 }

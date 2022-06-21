@@ -1,34 +1,34 @@
 .contextMenu {
-    position: fixed;
-    border: 3px solid black;
-    background-color: #fee59a;
-    border-radius: 10px;
-    width: 200px;
-    transition: opacity 0.25s;
+  position: fixed;
+  border: 3px solid black;
+  background-color: #fee59a;
+  border-radius: 10px;
+  width: 200px;
+  transition: opacity 0.25s;
 }
 .innerMenu {
-    width: 250px;
+  width: 250px;
 }
 .menuItem {
-    display: flex;
-    margin: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1rem;
+  display: flex;
+  margin: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1rem;
 }
 .menuItem:hover {
-    background-color: #9bd65b;
+  background-color: #9bd65b;
 }
 .menuItemDisabled {
-    pointer-events: none;
-    color: #6d6d6d;
+  pointer-events: none;
+  color: #6d6d6d;
 }
 .menuItemText {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 .writeFileSlots {
-    position: absolute;
+  position: absolute;
 }
 .fileInput {
-    display: none;
+  display: none;
 }

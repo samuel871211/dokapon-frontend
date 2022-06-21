@@ -1,2 +1,2 @@
-import ChruchField from './ChruchField'
-export default ChruchField
+import ChruchField from "./ChruchField";
+export default ChruchField;

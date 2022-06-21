@@ -1,16 +1,14 @@
 // Standard library imports.
 
 // Related third party imports.
-import { TransitionStatus } from 'react-transition-group'
+import { TransitionStatus } from "react-transition-group";
 
 // Local application/library specific imports.
 
 // Stateless vars declare.
 
-export default Walk
+export default Walk;
 
-function Walk (props: { state: TransitionStatus }): JSX.Element {
-    return (
-        <div></div>
-    )
+function Walk(props: { state: TransitionStatus }): JSX.Element {
+  return <div></div>;
 }

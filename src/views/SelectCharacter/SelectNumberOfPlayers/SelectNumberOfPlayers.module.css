@@ -1,42 +1,50 @@
 .btnGroup {
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: slideIn 1s;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideIn 1s;
 }
 .btn {
-    width: 80%;
-    height: 15%;
-    margin-top: 5%;
-    display: flex;
-    padding-left: 5%;
-    align-items: center;
-    font-weight: bold;
-    font-size: 3rem;
-    border-radius: 9999px;
-    border: 0.2rem outset var(--border-color);
-    background-color: #fee59a;
+  width: 80%;
+  height: 15%;
+  margin-top: 5%;
+  display: flex;
+  padding-left: 5%;
+  align-items: center;
+  font-weight: bold;
+  font-size: 3rem;
+  border-radius: 9999px;
+  border: 0.2rem outset var(--border-color);
+  background-color: #fee59a;
 }
 .btnText {
-    display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 5%;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 5%;
 }
 .leave {
-    animation: slideOut 1s;
+  animation: slideOut 1s;
 }
 @keyframes slideIn {
-    0% { transform: translateX(100%) }
-    100% { transform: none }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: none;
+  }
 }
 
 @keyframes slideOut {
-    0% { transform: none }
-    100% {transform: translateX(200%) }
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateX(200%);
+  }
 }

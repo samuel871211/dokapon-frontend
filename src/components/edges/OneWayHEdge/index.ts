@@ -1,2 +1,2 @@
-import OneWayHEdge from './OneWayHEdge'
-export default OneWayHEdge
+import OneWayHEdge from "./OneWayHEdge";
+export default OneWayHEdge;

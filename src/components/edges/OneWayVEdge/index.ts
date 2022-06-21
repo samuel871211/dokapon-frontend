@@ -1,2 +1,2 @@
-import OneWayVEdge from './OneWayVEdge'
-export default OneWayVEdge
+import OneWayVEdge from "./OneWayVEdge";
+export default OneWayVEdge;

@@ -1,24 +1,24 @@
 .confirmCircle {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    border-radius: 50%;
-    background-color: black;
-    animation: spread 0.8s linear 0s infinite;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 50%;
+  background-color: black;
+  animation: spread 0.8s linear 0s infinite;
 }
 @keyframes spread {
-    0% {
-        border: 0.2rem solid var(--confirm-circle);
-        outline: 0.2rem solid black;
-        height: 3rem;
-        width: 3rem;
-        box-shadow: 0px 0px 0px 0.15rem #9c8a70;
-    }
-    100% {
-        border: 0.3rem solid var(--confirm-circle);
-        outline: 0.15rem solid black;
-        height: 3.15rem;
-        width: 3.15rem;
-        box-shadow: 0px 0px 0.15rem 0.75rem #d8c790;
-    }
+  0% {
+    border: 0.2rem solid var(--confirm-circle);
+    outline: 0.2rem solid black;
+    height: 3rem;
+    width: 3rem;
+    box-shadow: 0px 0px 0px 0.15rem #9c8a70;
+  }
+  100% {
+    border: 0.3rem solid var(--confirm-circle);
+    outline: 0.15rem solid black;
+    height: 3.15rem;
+    width: 3.15rem;
+    box-shadow: 0px 0px 0.15rem 0.75rem #d8c790;
+  }
 }

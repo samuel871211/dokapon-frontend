@@ -1,2 +1,2 @@
-import TitleArea from './TitleArea'
-export default TitleArea
+import TitleArea from "./TitleArea";
+export default TitleArea;

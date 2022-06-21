@@ -1,2 +1,2 @@
-import VillageField from './VillageField'
-export default VillageField
+import VillageField from "./VillageField";
+export default VillageField;

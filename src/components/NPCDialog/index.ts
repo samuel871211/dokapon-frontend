@@ -1,2 +1,2 @@
-import NPCDialog from './NPCDialog'
-export default NPCDialog
+import NPCDialog from "./NPCDialog";
+export default NPCDialog;

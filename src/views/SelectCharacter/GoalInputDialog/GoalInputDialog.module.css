@@ -1,64 +1,72 @@
 .container {
-    position: relative;
-    top: 30%;
-    left: 10%;
-    width: 80%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    animation: slideIn 0.5s linear;
-    border-radius: 1.5rem;
-    border: 0.2rem outset var(--border-color);
-    background-color: var(--bg-color);
+  position: relative;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.5s linear;
+  border-radius: 1.5rem;
+  border: 0.2rem outset var(--border-color);
+  background-color: var(--bg-color);
 }
 .leave {
-    animation: slideOut 0.5s linear;
+  animation: slideOut 0.5s linear;
 }
 .title {
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .bottom {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .btnGroup {
-    padding: 0.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
-    border: 0.2rem outset var(--border-color);
-    background-color: var(--bg-color);
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 0.2rem outset var(--border-color);
+  background-color: var(--bg-color);
 }
 .unit {
-    text-align: center;
-    font-weight: bold;
-    font-size: 3rem;
-    margin-left: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-left: 1rem;
 }
 .btn {
-    font-weight: bold;
-    font-size: 3rem;
-    line-height: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @keyframes slideIn {
-    0% { transform: translateX(100%) }
-    100% { transform: none }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: none;
+  }
 }
 @keyframes slideOut {
-    0% { transform: none }
-    100% { transform: translateX(200%) }
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateX(200%);
+  }
 }

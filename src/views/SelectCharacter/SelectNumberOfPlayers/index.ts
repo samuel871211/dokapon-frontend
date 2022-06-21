@@ -1,2 +1,2 @@
-import SelectNumberOfPlayers from './SelectNumberOfPlayers'
-export default SelectNumberOfPlayers
+import SelectNumberOfPlayers from "./SelectNumberOfPlayers";
+export default SelectNumberOfPlayers;

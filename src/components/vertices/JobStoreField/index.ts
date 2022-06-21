@@ -1,2 +1,2 @@
-import JobStoreField from './JobStoreField'
-export default JobStoreField
+import JobStoreField from "./JobStoreField";
+export default JobStoreField;

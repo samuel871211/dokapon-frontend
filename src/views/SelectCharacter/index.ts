@@ -1,2 +1,2 @@
-import SelectCharacter from './SelectCharacter'
-export default SelectCharacter
+import SelectCharacter from "./SelectCharacter";
+export default SelectCharacter;

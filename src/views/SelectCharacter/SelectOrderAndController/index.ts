@@ -1,2 +1,2 @@
-import SelectOrderAndController from './SelectOrderAndController'
-export default SelectOrderAndController
+import SelectOrderAndController from "./SelectOrderAndController";
+export default SelectOrderAndController;

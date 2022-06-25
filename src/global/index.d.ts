@@ -174,8 +174,8 @@ declare namespace Dokapon {
     /**
      * Monster可關聯到fromAreas
      */
-    fromMonsters?: string[];
-    fromVerticesQuery?: {
+    fromMonsters: string[];
+    fromVerticesQuery: {
       areas: AreaTypes[];
       vertexTypes: VertexTypes[];
     }[];
@@ -186,31 +186,43 @@ declare namespace Dokapon {
     type: "damage" | "status" | "other";
     name: string;
     price: number;
-    fromAreas: AreaTypes[];
     explanation: string;
-    isFromMagicStore: boolean;
-    isFromMonster: boolean;
-    isFromTreasure: boolean;
+    /**
+     * Monster可關聯到fromAreas
+     */
+    fromMonsters: string[];
+    fromVerticesQuery: {
+      areas: AreaTypes[];
+      vertexTypes: VertexTypes[];
+    }[];
   };
   export type magicAttack = {
     name: string;
     price: number;
     damage?: "small" | "medium" | "large";
-    fromAreas: AreaTypes[];
     explanation: string;
-    isFromMagicStore: boolean;
-    isFromTreasure: boolean;
-    isFromMonster: boolean;
+    /**
+     * Monster可關聯到fromAreas
+     */
+    fromMonsters: string[];
+    fromVerticesQuery: {
+      areas: AreaTypes[];
+      vertexTypes: VertexTypes[];
+    }[];
   };
   export type magicDefense = {
     name: string;
     price: number;
     defense: number;
-    fromAreas: AreaTypes[];
     explanation: string;
-    isFromMagicStore: boolean;
-    isFromTreasure: boolean;
-    isFromMonster: boolean;
+    /**
+     * Monster可關聯到fromAreas
+     */
+    fromMonsters: string[];
+    fromVerticesQuery: {
+      areas: AreaTypes[];
+      vertexTypes: VertexTypes[];
+    }[];
   };
   export type Monster = {
     name: string;
@@ -352,10 +364,10 @@ declare namespace Dokapon {
           payload: NPCLevelTypes;
         };
   }
-  namespace Shapes {
-    type ElementTypes = "";
-    type LinkTypes = "";
-  }
+  // namespace Shapes {
+  //   type ElementTypes = "";
+  //   type LinkTypes = "";
+  // }
   namespace SelectCharacter {
     type Steps =
       | "SelectGoalType"

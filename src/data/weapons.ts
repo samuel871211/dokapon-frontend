@@ -18,10 +18,11 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
@@ -35,24 +36,25 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "りりむロッド",
-    price: 500,
+    price: 500000,
     attack: 7,
     defense: 0,
     magic: 50,
     speed: 0,
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
-    fromMonsters: ["白ミミック"],
     explanation: "",
+    fromMonsters: ["白ミミック"],
     fromVerticesQuery: [
       {
         areas: [],
@@ -62,7 +64,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "コメディステッキ",
-    price: 1,
+    price: 1980,
     attack: 9,
     defense: 0,
     magic: 4,
@@ -70,16 +72,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "出刃ぼうちょう",
-    price: 3,
+    price: 3650,
     attack: 13,
     defense: 0,
     magic: 0,
@@ -87,16 +90,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "こんぼう",
-    price: 2,
+    price: 2800,
     attack: 16,
     defense: 0,
     magic: 0,
@@ -104,16 +108,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: clericJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "青龍刀",
-    price: 8,
+    price: 8500,
     attack: 19,
     defense: 0,
     magic: 0,
@@ -121,10 +126,11 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
@@ -139,16 +145,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: ["alien"],
     explanation: "",
     fromMonsters: ["ハッカイ"],
-    fromVerticesQuery: [
-      {
-        areas: ["Asia"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "にょいぼう",
-    price: 6,
+    price: 6800,
     attack: 24,
     defense: 0,
     magic: 0,
@@ -157,16 +158,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
     fromMonsters: ["ゴクウ"],
-    fromVerticesQuery: [
-      {
-        areas: ["Asia"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "聖なるナイフ",
-    price: 14,
+    price: 14800,
     attack: 25,
     defense: 0,
     magic: 1,
@@ -174,16 +170,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "レイピア",
-    price: 17,
+    price: 17600,
     attack: 27,
     defense: 0,
     magic: 0,
@@ -191,16 +188,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "兵士の槍",
-    price: 20,
+    price: 20000,
     attack: 33,
     defense: 0,
     magic: 0,
@@ -208,16 +206,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "導師の杖",
-    price: 26,
+    price: 26000,
     attack: 35,
     defense: 0,
     magic: 3,
@@ -225,10 +224,11 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
@@ -243,16 +243,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: ["alien"],
     explanation: "",
     fromMonsters: ["フランケン"],
-    fromVerticesQuery: [
-      {
-        areas: ["EuropeCave"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "魔女ッ子ステッキ",
-    price: 3,
+    price: 3200,
     attack: 37,
     defense: 0,
     magic: 12,
@@ -260,6 +255,7 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["AsiaCave"],
@@ -269,7 +265,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "ジュリアナせんす",
-    price: 74,
+    price: 74500,
     attack: 38,
     defense: 0,
     magic: 0,
@@ -277,6 +273,7 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["dancer"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -286,7 +283,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "しゃくじょう",
-    price: 4,
+    price: 4800,
     attack: 39,
     defense: 0,
     magic: 3,
@@ -295,16 +292,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: clericJobTypes,
     explanation: "",
     fromMonsters: ["惨憎法師"],
-    fromVerticesQuery: [
-      {
-        areas: ["AsiaCave"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "メイス",
-    price: 26,
+    price: 26500,
     attack: 40,
     defense: 1,
     magic: 0,
@@ -312,16 +304,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: clericJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ハルバード",
-    price: 34,
+    price: 34800,
     attack: 41,
     defense: 0,
     magic: 0,
@@ -329,16 +322,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "のうふのカマ",
-    price: 38,
+    price: 38000,
     attack: 43,
     defense: 0,
     magic: 0,
@@ -346,16 +340,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ナイトランス",
-    price: 39,
+    price: 39400,
     attack: 45,
     defense: 0,
     magic: 0,
@@ -364,16 +359,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
     fromMonsters: ["ブラックアーマー"],
-    fromVerticesQuery: [
-      {
-        areas: ["Europe"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "メリケンサック",
-    price: 51,
+    price: 51000,
     attack: 52,
     defense: 0,
     magic: 0,
@@ -381,16 +371,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: gladiatorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "クリムゾンワンド",
-    price: 77,
+    price: 77500,
     attack: 54,
     defense: 0,
     magic: 2,
@@ -398,16 +389,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "聖騎士のつるぎ",
-    price: 44,
+    price: 44000,
     attack: 55,
     defense: 0,
     magic: 0,
@@ -415,6 +407,7 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -424,7 +417,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "エンジェルロッド",
-    price: 158,
+    price: 158000,
     attack: 56,
     defense: 0,
     magic: 15,
@@ -433,16 +426,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
     fromMonsters: ["ラスプーチン"],
-    fromVerticesQuery: [
-      {
-        areas: ["Russia"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "木こりのオノ",
-    price: 62,
+    price: 62000,
     attack: 57,
     defense: 0,
     magic: 0,
@@ -450,16 +438,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Russia"],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "タンバリン",
-    price: 57,
+    price: 57500,
     attack: 60,
     defense: 2,
     magic: 2,
@@ -468,16 +457,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: ["dancer"],
     explanation: "",
     fromMonsters: ["雪原人キッズ"],
-    fromVerticesQuery: [
-      {
-        areas: ["Russia"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "巨大きづち",
-    price: 65,
+    price: 65000,
     attack: 62,
     defense: 0,
     magic: 0,
@@ -485,16 +469,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["carpenter"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "スチールナイフ",
-    price: 95,
+    price: 95000,
     attack: 63,
     defense: 0,
     magic: 0,
@@ -502,16 +487,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "雷めいのつるぎ",
-    price: 35,
+    price: 35000,
     attack: 64,
     defense: 0,
     magic: 0,
@@ -520,16 +506,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
     fromMonsters: ["レッドブリキン"],
-    fromVerticesQuery: [
-      {
-        areas: ["EuropeCave"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "モーニングスター",
-    price: 91,
+    price: 91500,
     attack: 65,
     defense: 0,
     magic: 0,
@@ -537,16 +518,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: clericJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "スピリットクラブ",
-    price: 103,
+    price: 103800,
     attack: 70,
     defense: 0,
     magic: 0,
@@ -554,16 +536,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: clericJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ピンクの注射器",
-    price: 106,
+    price: 106000,
     attack: 71,
     defense: 0,
     magic: 0,
@@ -571,16 +554,17 @@ const weapons: Weapon[] = [
     hp: 30,
     additionalDamageJobs: ["nurse"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
+        areas: ["Russia"],
         vertexTypes: ["RedTreasureField"],
       },
     ],
   },
   {
     name: "打ち出のこづち",
-    price: 124,
+    price: 124000,
     attack: 75,
     defense: 0,
     magic: 0,
@@ -588,16 +572,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["carpenter"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: ["SouthAmericaCave"],
+        areas: ["SouthAmericaCave", "Oceania"],
         vertexTypes: ["RedTreasureField"],
       },
     ],
   },
   {
     name: "シャーマンロッド",
-    price: 142,
+    price: 142000,
     attack: 76,
     defense: 0,
     magic: 3,
@@ -605,16 +590,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ジャックのメス",
-    price: 134,
+    price: 134000,
     attack: 77,
     defense: 0,
     magic: 0,
@@ -622,16 +608,17 @@ const weapons: Weapon[] = [
     hp: 10,
     additionalDamageJobs: ["nurse"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ハヤブサの槍",
-    price: 206,
+    price: 206000,
     attack: 78,
     defense: 0,
     magic: 0,
@@ -640,16 +627,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
     fromMonsters: ["トーテマン"],
-    fromVerticesQuery: [
-      {
-        areas: ["NorthAmerica"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "和銅一文字",
-    price: 50,
+    price: 50000,
     attack: 80,
     defense: 0,
     magic: 0,
@@ -658,16 +640,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
     fromMonsters: ["ガママル"],
-    fromVerticesQuery: [
-      {
-        areas: ["AsiaCave"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "シルバーソード",
-    price: 208,
+    price: 208000,
     attack: 83,
     defense: 1,
     magic: 3,
@@ -675,16 +652,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ピクシーロッド",
-    price: 245,
+    price: 245000,
     attack: 84,
     defense: 0,
     magic: 15,
@@ -692,6 +670,7 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -701,7 +680,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "バトルアックス",
-    price: 150,
+    price: 150000,
     attack: 85,
     defense: 0,
     magic: 0,
@@ -709,16 +688,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "デジ剣",
-    price: 210,
+    price: 210000,
     attack: 92,
     defense: 1,
     magic: 1,
@@ -726,16 +706,17 @@ const weapons: Weapon[] = [
     hp: 10,
     additionalDamageJobs: ["robot"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "パールカ",
-    price: 9,
+    price: 9000,
     attack: 94,
     defense: 0,
     magic: -10,
@@ -744,16 +725,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: ["carpenter"],
     explanation: "",
     fromMonsters: ["雪原人ミチエーリ"],
-    fromVerticesQuery: [
-      {
-        areas: ["Russia"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "黄金の杖",
-    price: 1,
+    price: 1400000,
     attack: 95,
     defense: 0,
     magic: 18,
@@ -762,16 +738,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
     fromMonsters: ["テスカポリトカ"],
-    fromVerticesQuery: [
-      {
-        areas: ["SouthAmericaCave"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "フラワーバトン",
-    price: 254,
+    price: 254000,
     attack: 96,
     defense: 0,
     magic: 5,
@@ -779,16 +750,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ドカポソソード",
-    price: 195,
+    price: 195100,
     attack: 99,
     defense: 0,
     magic: 0,
@@ -796,6 +768,7 @@ const weapons: Weapon[] = [
     hp: 50,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmericaCave"],
@@ -805,7 +778,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "Mリング",
-    price: 75,
+    price: 75000,
     attack: 100,
     defense: 0,
     magic: 0,
@@ -813,6 +786,7 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["queen"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmericaCave"],
@@ -822,7 +796,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "ボーンダガー",
-    price: 265,
+    price: 265000,
     attack: 107,
     defense: 0,
     magic: 0,
@@ -830,16 +804,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "バイラルフック",
-    price: 300,
+    price: 300000,
     attack: 108,
     defense: 5,
     magic: 0,
@@ -848,16 +823,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
     fromMonsters: ["バイラル"],
-    fromVerticesQuery: [
-      {
-        areas: ["Europe"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "ウォーリアスピア",
-    price: 273,
+    price: 273000,
     attack: 110,
     defense: 0,
     magic: 0,
@@ -865,16 +835,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "おおかなづち",
-    price: 280,
+    price: 280000,
     attack: 116,
     defense: 0,
     magic: 0,
@@ -882,16 +853,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["carpenter"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "真紅のロウソク",
-    price: 397,
+    price: 397200,
     attack: 117,
     defense: 0,
     magic: 0,
@@ -899,6 +871,7 @@ const weapons: Weapon[] = [
     hp: 30,
     additionalDamageJobs: ["queen"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmericaCave"],
@@ -908,7 +881,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "ギロチンアックス",
-    price: 368,
+    price: 368000,
     attack: 118,
     defense: 0,
     magic: 0,
@@ -916,16 +889,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "バトルホーク",
-    price: 158,
+    price: 158800,
     attack: 119,
     defense: 0,
     magic: 0,
@@ -934,16 +908,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: [],
     explanation: "",
     fromMonsters: ["族長タタンカ"],
-    fromVerticesQuery: [
-      {
-        areas: ["NorthAmerica"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "コンバットナイフ",
-    price: 394,
+    price: 394000,
     attack: 123,
     defense: 0,
     magic: 0,
@@ -951,16 +920,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "王者のツメ",
-    price: 320,
+    price: 320000,
     attack: 126,
     defense: 0,
     magic: 0,
@@ -968,6 +938,7 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmericaCave"],
@@ -977,7 +948,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "れんじゅの杖",
-    price: 474,
+    price: 474000,
     attack: 127,
     defense: 0,
     magic: 4,
@@ -985,16 +956,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ヌイグルミ",
-    price: 80,
+    price: 80000,
     attack: 128,
     defense: 0,
     magic: 12,
@@ -1003,16 +975,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: ["alien"],
     explanation: "",
     fromMonsters: ["アリサ"],
-    fromVerticesQuery: [
-      {
-        areas: ["EuropeCave"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "しっぷう剣",
-    price: 489,
+    price: 489000,
     attack: 130,
     defense: 0,
     magic: 0,
@@ -1020,16 +987,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ぎしきのナイフ",
-    price: 511,
+    price: 511500,
     attack: 131,
     defense: 0,
     magic: 0,
@@ -1037,6 +1005,7 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmericaCave"],
@@ -1046,7 +1015,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "ドラゴンクロー",
-    price: 538,
+    price: 538500,
     attack: 136,
     defense: 4,
     magic: 0,
@@ -1054,16 +1023,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: gladiatorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "アサシンダガー",
-    price: 958,
+    price: 958000,
     attack: 140,
     defense: 0,
     magic: 0,
@@ -1071,16 +1041,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "特大ノコギリ",
-    price: 452,
+    price: 452000,
     attack: 142,
     defense: 0,
     magic: 0,
@@ -1088,16 +1059,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["carpenter"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ドリルランサー",
-    price: 593,
+    price: 593000,
     attack: 146,
     defense: 0,
     magic: 0,
@@ -1105,16 +1077,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["robot"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ごくあく注射器",
-    price: 638,
+    price: 638000,
     attack: 147,
     defense: 0,
     magic: 0,
@@ -1122,6 +1095,7 @@ const weapons: Weapon[] = [
     hp: 60,
     additionalDamageJobs: ["nurse"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -1131,7 +1105,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "やいばのおうぎ",
-    price: 610,
+    price: 610000,
     attack: 149,
     defense: 5,
     magic: 0,
@@ -1139,16 +1113,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["dancer"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "スネークロッド",
-    price: 44,
+    price: 44400,
     attack: 150,
     defense: 0,
     magic: 12,
@@ -1157,16 +1132,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
     fromMonsters: ["フリルドリザード"],
-    fromVerticesQuery: [
-      {
-        areas: ["Oceania"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "ルーンスタッフ",
-    price: 715,
+    price: 715000,
     attack: 152,
     defense: 0,
     magic: 4,
@@ -1174,16 +1144,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "マーメイドロッド",
-    price: 600,
+    price: 600000,
     attack: 154,
     defense: 0,
     magic: 10,
@@ -1191,6 +1162,7 @@ const weapons: Weapon[] = [
     hp: 10,
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -1200,7 +1172,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "毒手",
-    price: 5,
+    price: 5050,
     attack: 160,
     defense: 0,
     magic: 0,
@@ -1209,16 +1181,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: gladiatorJobTypes,
     explanation: "",
     fromMonsters: ["シャオロン"],
-    fromVerticesQuery: [
-      {
-        areas: ["NorthAmericaCave"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "破壊のオノ",
-    price: 732,
+    price: 732000,
     attack: 161,
     defense: 0,
     magic: 0,
@@ -1226,16 +1193,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "ピコピコハンマー",
-    price: 1,
+    price: 1980,
     attack: 162,
     defense: 5,
     magic: 5,
@@ -1243,16 +1211,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["alien"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: ["Africa"],
+        areas: ["AfricaCave"],
         vertexTypes: ["RedTreasureField"],
       },
     ],
   },
   {
     name: "海神のモリ",
-    price: 818,
+    price: 818000,
     attack: 164,
     defense: 0,
     magic: 0,
@@ -1260,16 +1229,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: ["Oceania"],
+        areas: ["OceaniaCave"],
         vertexTypes: ["KeyTreasureField"],
       },
     ],
   },
   {
     name: "コアラのぼう",
-    price: 8,
+    price: 8000,
     attack: 165,
     defense: 1,
     magic: 1,
@@ -1278,16 +1248,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: ["alien"],
     explanation: "",
     fromMonsters: ["ウンフーク"],
-    fromVerticesQuery: [
-      {
-        areas: ["Oceania"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "メテオストライク",
-    price: 802,
+    price: 802000,
     attack: 166,
     defense: 5,
     magic: 0,
@@ -1295,16 +1260,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: clericJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "おしおき棒",
-    price: 910,
+    price: 910000,
     attack: 171,
     defense: 0,
     magic: 0,
@@ -1322,7 +1288,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "竜殺しの剣",
-    price: 875,
+    price: 875000,
     attack: 175,
     defense: 5,
     magic: 0,
@@ -1330,10 +1296,11 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Africa", "AntarcticaCave"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
@@ -1348,16 +1315,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
     fromMonsters: ["死の呼び子"],
-    fromVerticesQuery: [
-      {
-        areas: ["Africa"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "燃える拳",
-    price: 287,
+    price: 287600,
     attack: 180,
     defense: 0,
     magic: 0,
@@ -1365,16 +1327,17 @@ const weapons: Weapon[] = [
     hp: 10,
     additionalDamageJobs: gladiatorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: ["AfricaCave"],
+        areas: ["Africa", "AfricaCave"],
         vertexTypes: ["RedTreasureField"],
       },
     ],
   },
   {
     name: "王家のハンマー",
-    price: 1,
+    price: 1122000,
     attack: 181,
     defense: 3,
     magic: 3,
@@ -1382,6 +1345,7 @@ const weapons: Weapon[] = [
     hp: 10,
     additionalDamageJobs: clericJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["AfricaCave"],
@@ -1391,7 +1355,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "めいふの杖",
-    price: 1,
+    price: 1020000,
     attack: 185,
     defense: 0,
     magic: 16,
@@ -1400,16 +1364,11 @@ const weapons: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation: "",
     fromMonsters: ["マコンデ"],
-    fromVerticesQuery: [
-      {
-        areas: ["Africa"],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "ビートホーク",
-    price: 1,
+    price: 1355000,
     attack: 190,
     defense: 0,
     magic: 0,
@@ -1417,16 +1376,17 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["robot"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["AfricaCave"],
-        vertexTypes: [],
+        vertexTypes: ["WeaponStoreField"],
       },
     ],
   },
   {
     name: "狂剣ジャブロー",
-    price: 1,
+    price: 1122000,
     attack: 193,
     defense: 2,
     magic: -2,
@@ -1434,6 +1394,7 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Antarctica", "Arctic"],
@@ -1443,7 +1404,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "吹雪の杖",
-    price: 1,
+    price: 1500000,
     attack: 199,
     defense: 0,
     magic: 10,
@@ -1454,14 +1415,14 @@ const weapons: Weapon[] = [
     fromMonsters: ["ペギゴン"],
     fromVerticesQuery: [
       {
-        areas: ["Arctic", "HawaiianIslandsCave"],
+        areas: ["Atlantis"],
         vertexTypes: ["RedTreasureField"],
       },
     ],
   },
   {
     name: "アトミックアイス",
-    price: 1,
+    price: 1500000,
     attack: 203,
     defense: 3,
     magic: 5,
@@ -1469,6 +1430,7 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: clericJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Arctic", "Antarctica"],
@@ -1478,7 +1440,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "ゴッドブロー",
-    price: 1,
+    price: 1320000,
     attack: 205,
     defense: 0,
     magic: 10,
@@ -1486,6 +1448,7 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: gladiatorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["ArcticCave"],
@@ -1495,7 +1458,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "にくかい",
-    price: 2,
+    price: 2929,
     attack: 206,
     defense: 0,
     magic: -20,
@@ -1503,6 +1466,7 @@ const weapons: Weapon[] = [
     hp: 300,
     additionalDamageJobs: ["alien"],
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["AntarcticaCave"],
@@ -1512,7 +1476,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "支配のナイフ",
-    price: 1,
+    price: 1800000,
     attack: 208,
     defense: 5,
     magic: 5,
@@ -1520,6 +1484,7 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["HawaiianIslands"],
@@ -1529,7 +1494,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "ドカポンソード",
-    price: 1,
+    price: 1800000,
     attack: 215,
     defense: 1,
     magic: 1,
@@ -1537,6 +1502,7 @@ const weapons: Weapon[] = [
     hp: 100,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["HawaiianIslandsCave"],
@@ -1554,6 +1520,7 @@ const weapons: Weapon[] = [
     hp: 200,
     additionalDamageJobs: warriorJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["HawaiianIslandsCave"],
@@ -1563,7 +1530,7 @@ const weapons: Weapon[] = [
   },
   {
     name: "妖刀ニヒル",
-    price: 1,
+    price: 1110,
     attack: 244,
     defense: 20,
     magic: 15,
@@ -1571,6 +1538,7 @@ const weapons: Weapon[] = [
     hp: 150,
     additionalDamageJobs: thiefJobTypes,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Atlantis"],
@@ -1588,12 +1556,8 @@ const weapons: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["devil"],
     explanation: "",
-    fromVerticesQuery: [
-      {
-        areas: [],
-        vertexTypes: [],
-      },
-    ],
+    fromMonsters: [],
+    fromVerticesQuery: [],
   },
 ];
 

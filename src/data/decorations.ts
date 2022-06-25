@@ -3,7 +3,7 @@ import { Decoration } from "global";
 const decorations: Decoration[] = [
   {
     name: "力のグローブ",
-    price: 30,
+    price: 30000,
     attack: 5,
     defense: 0,
     magic: 0,
@@ -20,7 +20,7 @@ const decorations: Decoration[] = [
   },
   {
     name: "守のグローブ",
-    price: 30,
+    price: 30000,
     attack: 0,
     defense: 5,
     magic: 0,
@@ -28,23 +28,18 @@ const decorations: Decoration[] = [
     hp: 0,
     explanation: "",
     fromMonsters: ["魔法の騎士"],
-    fromVerticesQuery: [
-      {
-        areas: [],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "気のグローブ",
-    price: 30,
+    price: 30000,
     attack: 0,
     defense: 0,
     magic: 5,
     speed: 0,
     hp: 0,
     explanation: "",
-    fromMonsters: ["さまよう魂"],
+    fromMonsters: ["さまよう魂", "マジックマッシュ"],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -54,7 +49,7 @@ const decorations: Decoration[] = [
   },
   {
     name: "速のグローブ",
-    price: 30,
+    price: 30000,
     attack: 0,
     defense: 0,
     magic: 0,
@@ -71,14 +66,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "体のグローブ",
-    price: 30,
+    price: 30000,
     attack: 0,
     defense: 0,
     magic: 0,
     speed: 0,
     hp: 20,
-    fromMonsters: ["スノーマン"],
     explanation: "",
+    fromMonsters: ["スノーマン"],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -88,13 +83,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "剛のグローブ",
-    price: 50,
+    price: 50000,
     attack: 15,
     defense: 0,
     magic: 0,
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -104,7 +100,7 @@ const decorations: Decoration[] = [
   },
   {
     name: "鉄のグローブ",
-    price: 50,
+    price: 50000,
     attack: 0,
     defense: 15,
     magic: 0,
@@ -112,16 +108,11 @@ const decorations: Decoration[] = [
     hp: 0,
     explanation: "",
     fromMonsters: ["ヨロイエビ"],
-    fromVerticesQuery: [
-      {
-        areas: [],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "法のグローブ",
-    price: 50,
+    price: 50000,
     attack: 0,
     defense: 0,
     magic: 15,
@@ -138,7 +129,7 @@ const decorations: Decoration[] = [
   },
   {
     name: "忍のグローブ",
-    price: 50,
+    price: 50000,
     attack: 0,
     defense: 0,
     magic: 0,
@@ -146,16 +137,11 @@ const decorations: Decoration[] = [
     hp: 0,
     explanation: "",
     fromMonsters: ["アサシン", "ガママル"],
-    fromVerticesQuery: [
-      {
-        areas: [],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "命のグローブ",
-    price: 80,
+    price: 80000,
     attack: 0,
     defense: 0,
     magic: 0,
@@ -172,13 +158,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "女神のリング",
-    price: 50,
+    price: 50000,
     attack: 5,
     defense: 5,
     magic: 5,
     speed: 5,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -188,24 +175,28 @@ const decorations: Decoration[] = [
   },
   {
     name: "ロードオブリング",
-    price: 500,
+    price: 500000,
     attack: 15,
     defense: 15,
     magic: 15,
     speed: 15,
     hp: 0,
-    fromMonsters: ["ライディーン"],
     explanation: "",
+    fromMonsters: ["ライディーン"],
     fromVerticesQuery: [
       {
-        areas: ["HawaiianIslandsCave", "Arctic"],
-        vertexTypes: ["RedTreasureField", "KeyTreasureField"],
+        areas: ["Arctic"],
+        vertexTypes: ["RedTreasureField"],
+      },
+      {
+        areas: ["HawaiianIslandsCave"],
+        vertexTypes: ["KeyTreasureField"],
       },
     ],
   },
   {
     name: "破壊のリング",
-    price: 300,
+    price: 300000,
     attack: 30,
     defense: 0,
     magic: -30,
@@ -222,31 +213,35 @@ const decorations: Decoration[] = [
   },
   {
     name: "神速のリング",
-    price: 300,
+    price: 300000,
     attack: 0,
     defense: -30,
     magic: 0,
     speed: 30,
     hp: 0,
-    fromMonsters: ["オセアニアデビル"],
     explanation: "",
+    fromMonsters: ["オセアニアデビル"],
     fromVerticesQuery: [
       {
-        areas: ["EuropeCave", "Atlantis"],
-        vertexTypes: ["KeyTreasureField", "WhiteTreasureField"],
+        areas: ["EuropeCave"],
+        vertexTypes: ["KeyTreasureField"],
+      },
+      {
+        areas: ["Atlantis"],
+        vertexTypes: ["WhiteTreasureField"],
       },
     ],
   },
   {
     name: "魔人リング",
-    price: 300,
+    price: 300000,
     attack: -30,
     defense: 0,
     magic: 30,
     speed: 0,
     hp: 0,
-    fromMonsters: ["ゴールドギドラ"],
     explanation: "",
+    fromMonsters: ["ゴールドギドラ"],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -263,6 +258,7 @@ const decorations: Decoration[] = [
     speed: -10,
     hp: 300,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Antarctica"],
@@ -272,14 +268,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "炎のうでわ",
-    price: 12,
+    price: 12000,
     attack: 0,
     defense: 0,
     magic: 3,
     speed: 0,
     hp: 0,
-    fromMonsters: ["ウッディアン"],
     explanation: "",
+    fromMonsters: ["ウッディアン"],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -289,13 +285,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "氷のうでわ",
-    price: 12,
+    price: 12000,
     attack: 0,
     defense: 0,
     magic: 3,
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -305,14 +302,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "雷のうでわ",
-    price: 12,
+    price: 12000,
     attack: 0,
     defense: 0,
     magic: 3,
     speed: 0,
     hp: 0,
-    fromMonsters: ["神の目"],
     explanation: "",
+    fromMonsters: ["神の目"],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave", "OceaniaCave"],
@@ -322,13 +319,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "風のうでわ",
-    price: 12,
+    price: 12000,
     attack: 0,
     defense: 0,
     magic: 3,
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave", "SouthAmericaCave"],
@@ -338,13 +336,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "地のうでわ",
-    price: 24,
+    price: 24000,
     attack: 0,
     defense: 0,
     magic: 3,
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -354,13 +353,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "ぼうえんゴーグル",
-    price: 7,
+    price: 7000,
     attack: 0,
     defense: 3,
     magic: 0,
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -370,13 +370,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "みかわしゴーグル",
-    price: 7,
+    price: 7000,
     attack: 0,
     defense: 3,
     magic: 0,
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -386,17 +387,22 @@ const decorations: Decoration[] = [
   },
   {
     name: "水晶のネックレス",
-    price: 8,
+    price: 8000,
     attack: 0,
     defense: 0,
     magic: 0,
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: ["NorthAmericaCave", "Atlantis"],
-        vertexTypes: ["KeyTreasureField", "WhiteTreasureField"],
+        areas: ["NorthAmericaCave"],
+        vertexTypes: ["KeyTreasureField"],
+      },
+      {
+        areas: ["Atlantis"],
+        vertexTypes: ["WhiteTreasureField"],
       },
     ],
   },
@@ -409,6 +415,7 @@ const decorations: Decoration[] = [
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -418,13 +425,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "鏡のネックレス",
-    price: 200,
+    price: 200000,
     attack: 0,
     defense: 0,
     magic: 0,
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["AfricaCave"],
@@ -441,6 +449,7 @@ const decorations: Decoration[] = [
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave", "SouthAmericaCave"],
@@ -450,34 +459,39 @@ const decorations: Decoration[] = [
   },
   {
     name: "天使のネックレス",
-    price: 300,
+    price: 300000,
     attack: 0,
     defense: 0,
     magic: 0,
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: ["SouthAmericaCave", "HawaiianIslandsCave", "Atlantis"],
-        vertexTypes: [
-          "RedTreasureField",
-          "KeyTreasureField",
-          "WhiteTreasureField",
-        ],
+        areas: ["SouthAmericaCave"],
+        vertexTypes: ["RedTreasureField"],
+      },
+      {
+        areas: ["HawaiianIslandsCave"],
+        vertexTypes: ["KeyTreasureField"],
+      },
+      {
+        areas: ["Atlantis"],
+        vertexTypes: ["WhiteTreasureField"],
       },
     ],
   },
   {
     name: "ハートのくつ",
-    price: 180,
+    price: 180000,
     attack: 0,
     defense: 0,
     magic: 0,
     speed: 3,
     hp: 0,
-    fromMonsters: ["パッチー１号"],
     explanation: "",
+    fromMonsters: ["パッチー１号"],
     fromVerticesQuery: [
       {
         areas: ["AsiaCave"],
@@ -487,13 +501,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "勇者のくつ",
-    price: 150,
+    price: 150000,
     attack: 0,
     defense: 0,
     magic: 0,
     speed: 0,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania", "EuropeCave"],
@@ -503,13 +518,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "金のくつ",
-    price: 150,
+    price: 150000,
     attack: 0,
     defense: 0,
     magic: 0,
     speed: 3,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -519,13 +535,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "ヒョウがら額当て",
-    price: 1,
+    price: 1500,
     attack: 0,
     defense: 0,
     magic: 0,
     speed: 3,
     hp: 0,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -535,14 +552,14 @@ const decorations: Decoration[] = [
   },
   {
     name: "ゼブラがら額当て",
-    price: 1,
+    price: 1500,
     attack: 0,
     defense: 0,
     magic: 3,
     speed: 0,
     hp: 0,
-    fromMonsters: ["ペロ"],
     explanation: "",
+    fromMonsters: ["ペロ"],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica", "Europe"],
@@ -552,7 +569,7 @@ const decorations: Decoration[] = [
   },
   {
     name: "ピーポのバッジ",
-    price: 500,
+    price: 500000,
     attack: 3,
     defense: 0,
     magic: 0,
@@ -560,23 +577,18 @@ const decorations: Decoration[] = [
     hp: 0,
     explanation: "",
     fromMonsters: ["セルモン"],
-    fromVerticesQuery: [
-      {
-        areas: [],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "ワルサーバッジ",
-    price: 250,
+    price: 250000,
     attack: 0,
     defense: 0,
     magic: 0,
     speed: 0,
     hp: 0,
-    fromMonsters: ["ワルサー"],
     explanation: "",
+    fromMonsters: ["ワルサー"],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -594,32 +606,11 @@ const decorations: Decoration[] = [
     hp: 10,
     explanation: "",
     fromMonsters: ["ウィウィ"],
-    fromVerticesQuery: [
-      {
-        areas: [],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "誠のピアス",
-    price: 65,
-    attack: 0,
-    defense: 0,
-    magic: 0,
-    speed: 0,
-    hp: 0,
-    explanation: "",
-    fromVerticesQuery: [
-      {
-        areas: ["Atlantis"],
-        vertexTypes: ["WhiteTreasureField"],
-      },
-    ],
-  },
-  {
-    name: "愛のピアス",
-    price: 65,
+    price: 65000,
     attack: 0,
     defense: 0,
     magic: 0,
@@ -629,10 +620,22 @@ const decorations: Decoration[] = [
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Atlantis"],
+        vertexTypes: ["WhiteTreasureField"],
       },
     ],
+  },
+  {
+    name: "愛のピアス",
+    price: 65000,
+    attack: 0,
+    defense: 0,
+    magic: 0,
+    speed: 0,
+    hp: 0,
+    explanation: "",
+    fromMonsters: [],
+    fromVerticesQuery: [],
   },
   {
     name: "極悪ピアス",
@@ -644,32 +647,32 @@ const decorations: Decoration[] = [
     hp: 44,
     explanation: "",
     fromMonsters: ["キィ"],
-    fromVerticesQuery: [
-      {
-        areas: [],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
   {
     name: "ドカポンクラウン",
-    price: 2,
+    price: 2000000,
     attack: 30,
     defense: 30,
     magic: 30,
     speed: 30,
     hp: 300,
     explanation: "",
+    fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: ["Arctic", "Antarctica", "SouthAmericaCave", "Atlantis"],
-        vertexTypes: ["RedTreasureField", "WhiteTreasureField"],
+        areas: ["Arctic", "Antarctica"],
+        vertexTypes: ["RedTreasureField"],
+      },
+      {
+        areas: ["SouthAmericaCave", "Atlantis"],
+        vertexTypes: ["WhiteTreasureField"],
       },
     ],
   },
   {
     name: "魔王の王かん",
-    price: 1,
+    price: 1444444,
     attack: 444,
     defense: 44,
     magic: 44,
@@ -677,12 +680,7 @@ const decorations: Decoration[] = [
     hp: 444,
     explanation: "",
     fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: [],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
 ];
 

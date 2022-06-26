@@ -9,8 +9,8 @@ const magicAttacks: magicAttack[] = [
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Europe"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
@@ -22,8 +22,8 @@ const magicAttacks: magicAttack[] = [
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Asia"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
@@ -35,8 +35,8 @@ const magicAttacks: magicAttack[] = [
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Asia"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
@@ -48,268 +48,280 @@ const magicAttacks: magicAttack[] = [
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Asia"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "フリジ",
-    price: 20,
+    price: 20000,
     damage: "small",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Asia"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "ゼニゲット",
-    price: 12,
+    price: 12000,
     damage: "small",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Europe", "Asia"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "ハリー",
-    price: 23,
+    price: 23000,
     damage: "small",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Europe"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "クルパー",
-    price: 39,
+    price: 39800,
     damage: "small",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Russia"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "ドクラマグラ",
-    price: 46,
+    price: 46000,
     damage: "small",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Russia"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "エレク",
-    price: 60,
+    price: 60000,
     damage: "small",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Russia"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "バーン",
-    price: 65,
+    price: 65000,
     damage: "small",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Russia"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "ＤＦマホケス",
-    price: 84,
+    price: 84000,
     damage: "small",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["NorthAmerica"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "フリーズ",
-    price: 120,
+    price: 120000,
     damage: "medium",
     explanation: "",
-    fromMonsters: [],
+    fromMonsters: ["氷玉"],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["NorthAmerica"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "ハリーク",
-    price: 135,
+    price: 135000,
     damage: "medium",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["NorthAmerica"],
+        vertexTypes: ["MagicStoreField"],
+      },
+      {
+        areas: ["EuropeCave"],
+        vertexTypes: ["RedTreasureField"],
       },
     ],
   },
   {
     name: "ハズシャーン",
-    price: 152,
+    price: 152000,
     damage: "small",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["SouthAmerica"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "ＡＴマホケス",
-    price: 198,
+    price: 198000,
     damage: "small",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["SouthAmerica"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "エレクト",
-    price: 280,
+    price: 280000,
     damage: "medium",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["SouthAmerica"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "バーニー",
-    price: 290,
+    price: 290000,
     damage: "medium",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["SouthAmerica"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "ウラミム",
-    price: 258,
+    price: 258000,
     damage: "small",
     explanation: "",
-    fromMonsters: [],
+    fromMonsters: ["マサイハンター"],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Oceania"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "フリーザー",
-    price: 450,
+    price: 450000,
     damage: "large",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Oceania"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "ハリケーン",
-    price: 480,
+    price: 480000,
     damage: "large",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Oceania"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "ラストルズ",
-    price: 365,
+    price: 365000,
     damage: "medium",
     explanation: "",
-    fromMonsters: [],
+    fromMonsters: ["サビトマトガエル"],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Africa"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "エレクトラ",
-    price: 750,
+    price: 750000,
     damage: "large",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Africa"],
+        vertexTypes: ["MagicStoreField"],
+      },
+      {
+        areas: ["SouthAmerica"],
+        vertexTypes: ["RedTreasureField"],
       },
     ],
   },
   {
     name: "バーニング",
-    price: 800,
+    price: 800000,
     damage: "large",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["Africa"],
+        vertexTypes: ["MagicStoreField"],
+      },
+      {
+        areas: ["SouthAmerica"],
+        vertexTypes: ["RedTreasureField"],
       },
     ],
   },
@@ -320,33 +332,37 @@ const magicAttacks: magicAttack[] = [
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["AfricaCave"],
+        vertexTypes: ["KeyTreasureField"],
       },
     ],
   },
   {
     name: "レベゲット",
-    price: 1,
+    price: 1130000,
     damage: "small",
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["ArcticCave"],
+        vertexTypes: ["MagicStoreField"],
       },
     ],
   },
   {
     name: "ゴウトゥヘル",
-    price: 1,
+    price: 1666000,
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: [],
-        vertexTypes: [],
+        areas: ["AntarcticaCave"],
+        vertexTypes: ["MagicStoreField"],
+      },
+      {
+        areas: ["SouthAmerica"],
+        vertexTypes: ["RedTreasureField"],
       },
     ],
   },
@@ -355,12 +371,7 @@ const magicAttacks: magicAttack[] = [
     price: 0,
     explanation: "",
     fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: [],
-        vertexTypes: [],
-      },
-    ],
+    fromVerticesQuery: [],
   },
 ];
 

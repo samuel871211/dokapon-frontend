@@ -112,9 +112,11 @@ class GraphDSA {
    * 3. IsDuplicateEnd：結尾不得相同(要到倒數第二步才知道)
    */
   #addVertexToUntraversedQueues(filters: { duplicateEnd: boolean }): void {
-    if (!this.#adjacentVertexs || this.#adjacentVertexs.length === 0)
-      throw new Error(`adjacencyLists有錯,${this.#nextVertex || ""}`);
-
+    if (!this.#adjacentVertexs || this.#adjacentVertexs.length === 0) {
+      console.log(this.#nextVertex);
+      console.log(this.#adjacentVertexs);
+      throw new Error(`adjacencyLists有錯`);
+    }
     for (const adjacentVertex of this.#adjacentVertexs) {
       const IsDuplicateEnd = filters.duplicateEnd
         ? this.#ends.includes(adjacentVertex)

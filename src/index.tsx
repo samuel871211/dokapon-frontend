@@ -7,20 +7,21 @@ import { useEffect, useReducer } from "react";
 // Local application/library specific imports.
 import styles from "./index.module.css";
 import "./index.css";
-import Game from "./views/Game";
+import Game from "views/Game";
 import "@samuel871211/utils";
-// import SelectCharacter from './views/SelectCharacter'
-// import Home from './views/Home'
+import SelectCharacter from "views/SelectCharacter";
+import Home from "views/Home";
+import GraphEditor from "views/GraphEditor/GraphEditor";
 import {
   initGameProgress,
   gameProgressContext,
   gameProgressReducer,
-} from "./reducers/gameProgress";
+} from "reducers/gameProgress";
 import {
   inituserPreference,
   userPreferenceContext,
   userPreferenceReducer,
-} from "./reducers/userPreference";
+} from "reducers/userPreference";
 
 // Stateless vars declare.
 const HTMLStyles = {
@@ -60,7 +61,8 @@ function App(): JSX.Element {
       <userPreferenceContext.Provider
         value={{ userPreference, userPreferenceDispatch }}
       >
-        <Game />
+        {/* <Game /> */}
+        <GraphEditor />
       </userPreferenceContext.Provider>
     </gameProgressContext.Provider>
   );

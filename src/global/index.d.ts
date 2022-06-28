@@ -58,7 +58,7 @@ declare namespace Dokapon {
     right?: string;
     bottom?: string;
     edges: string[];
-    area: AreaTypes;
+    area?: AreaTypes;
   };
   export type Edge = Cell & {
     name: EdgeTypes;

@@ -11,7 +11,7 @@ import {
 
 // Local application/library specific imports.
 import type { Vertex, Edge } from "global";
-import mainWorld from "data/mainWorld";
+import mainWorld from "graphics/mainWorld";
 import GraphDSA from "graphics/GraphDSA";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";

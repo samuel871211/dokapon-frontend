@@ -33,7 +33,8 @@ declare namespace Dokapon {
     | "MagicStoreField"
     | "VillageField"
     | "CaveField"
-    | "CastleField";
+    | "CastleField"
+    | "DamageField";
   export type TreasureFieldTypes =
     | "TreasureField"
     | "GoldTreasureField"
@@ -59,6 +60,7 @@ declare namespace Dokapon {
     bottom?: string;
     edges: string[];
     area?: AreaTypes;
+    isHide?: true;
   };
   export type Edge = Cell & {
     name: EdgeTypes;
@@ -66,6 +68,7 @@ declare namespace Dokapon {
     end: Position;
     startId: string;
     endId: string;
+    isHide?: true;
   };
   export type AreaTypes =
     | "Asia"

@@ -23,8 +23,10 @@ import type {
   Position,
   AreaTypes,
 } from "global";
-// import mainWorld from 'graphics/mainWorld'
-import asiaCave from "graphics/asiaCave";
+// import mainWorld from 'graphics/mainWorld';
+// import asiaCave from "graphics/asiaCave";
+// import europeCave from "graphics/europeCave";
+import europeCaveHall from "graphics/europeCaveHall";
 import GraphDSA from "graphics/GraphDSA";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
@@ -48,6 +50,7 @@ import CastleField from "components/vertices/CastleField";
 import TreasureField from "components/vertices/TreasureField";
 import MagicField from "components/vertices/MagicField";
 import BattleField from "components/vertices/BattleField";
+import DamageField from "components/vertices/DamageField";
 import styles from "./GraphEditor.module.css";
 
 // Stateless vars declare
@@ -75,6 +78,7 @@ const Components = {
     VillageField,
     CaveField,
     CastleField,
+    DamageField,
   },
   edges: {
     OneWayHEdge,
@@ -121,7 +125,7 @@ const selectedVertices: Vertex[] = [];
 const selectedVerticesGroupOffsets: Position[] = [];
 
 // graph資料結構與演算法的實作，整包精華都在這邊
-const graphDSA = new GraphDSA(asiaCave);
+const graphDSA = new GraphDSA(europeCaveHall);
 
 export default GraphEditor;
 
@@ -287,6 +291,7 @@ function GraphEditor(): JSX.Element {
                 <option value="JobStoreField">職安所</option>
                 <option value="MagicStoreField">魔法店</option>
                 <option value="WorldTransferField">世界轉移</option>
+                <option value="DamageField">傷害</option>
                 {/* 集金類型 */}
                 <option value="CollectMoneyField">集金</option>
                 <option value="CollectAllMoneyField">集金(黃)</option>
@@ -345,7 +350,7 @@ function useMetaData() {
     x: -1,
     y: -1,
   });
-  const [curGraph, setCurGraph] = useState(asiaCave);
+  const [curGraph, setCurGraph] = useState(europeCaveHall);
   const [mouseMode, toggleMouseMode] = useState<MouseMode>("edit");
   const [SVGScale, setSVGScale] = useState(1);
   const [selectedArea, setSelectedArea] = useState({
@@ -882,7 +887,7 @@ function useMetaData() {
     const isEndConnected = startId === "" && endId !== "";
 
     if (isTwoWayConnected) {
-      // 1. 刪除startVertex[Direction] === endVertex[Direction]的那個direction
+      // 1. 刪除startVertex[direction] === endVertex[direction]的那個direction
       // 2. 刪除(startVertex.edges和endVertex.edges)含有pointerDownEdge.id的那個元素
       if (!startVertex || !endVertex) return console.error("invalid vertex");
       let [sDel, eDel] = [false, false];
@@ -908,17 +913,37 @@ function useMetaData() {
       }
       if (!sDel || !eDel) throw new Error("invalid vertex");
     } else if (isStartConnected) {
+      let isDeleted = false;
       // 1. 刪除startVertex.edges含有pointerDownEdge.id的那個元素
       if (!startVertex) return console.error("invalid vertex");
       const sIdx = startVertex.edges.indexOf(pointerDownEdge.id);
       if (sIdx === -1) return console.error("invalid vertex");
       startVertex.edges.splice(sIdx, 1);
+      // 2. 刪除startVertex[direction] = pointerDownEdge.id的那個direction
+      for (const direction of directions) {
+        if (startVertex[direction] === pointerDownEdge.id) {
+          delete startVertex[direction];
+          isDeleted = true;
+          break;
+        }
+      }
+      if (!isDeleted) throw new Error("invalid vertex");
     } else if (isEndConnected) {
+      let isDeleted = false;
       // 1. 刪除endVertex.edges含有pointerDownEdge.id的那個元素
       if (!endVertex) return console.error("invalid vertex");
       const eIdx = endVertex.edges.indexOf(pointerDownEdge.id);
       if (eIdx === -1) return console.error("invalid vertex");
       endVertex.edges.splice(eIdx, 1);
+      // 2. 刪除endVertex[direction] = pointerDownEdge.id的那個direction
+      for (const direction of directions) {
+        if (endVertex[direction] === pointerDownEdge.id) {
+          delete endVertex[direction];
+          isDeleted = true;
+          break;
+        }
+      }
+      if (!isDeleted) throw new Error("invalid vertex");
     }
 
     curGraph.edges.splice(pointerDownEdgeIdx, 1);

@@ -26,7 +26,9 @@ import type {
 // import mainWorld from 'graphics/mainWorld';
 // import asiaCave from "graphics/asiaCave";
 // import europeCave from "graphics/europeCave";
-import europeCaveHall from "graphics/europeCaveHall";
+// import europeCaveHall from "graphics/europeCaveHall";
+// import europeCaveLibrary from 'graphics/europeCaveLibrary';
+import europeCaveCanteen from "graphics/europeCaveCanteen";
 import GraphDSA from "graphics/GraphDSA";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
@@ -125,7 +127,7 @@ const selectedVertices: Vertex[] = [];
 const selectedVerticesGroupOffsets: Position[] = [];
 
 // graph資料結構與演算法的實作，整包精華都在這邊
-const graphDSA = new GraphDSA(europeCaveHall);
+const graphDSA = new GraphDSA(europeCaveCanteen);
 
 export default GraphEditor;
 
@@ -350,7 +352,7 @@ function useMetaData() {
     x: -1,
     y: -1,
   });
-  const [curGraph, setCurGraph] = useState(europeCaveHall);
+  const [curGraph, setCurGraph] = useState(europeCaveCanteen);
   const [mouseMode, toggleMouseMode] = useState<MouseMode>("edit");
   const [SVGScale, setSVGScale] = useState(1);
   const [selectedArea, setSelectedArea] = useState({

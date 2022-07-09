@@ -8,7 +8,7 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
         y: 660,
       },
       name: "BattleField",
-      id: "923bc7a0-ba19-4481-b5be-2bbd68515476",
+      id: "a857d30a-94a1-430a-a004-95b5936ce2b9",
       edges: [
         "2328d4b2-9ed2-442b-8d21-809d57a5f0b1",
         "f9e316e4-ffa8-4dc2-9d59-03ea8efb0ba3",
@@ -29,7 +29,7 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
         "2328d4b2-9ed2-442b-8d21-809d57a5f0b1",
         "f94e46be-848b-4695-a71a-6969dbbfa335",
       ],
-      left: "923bc7a0-ba19-4481-b5be-2bbd68515476",
+      left: "a857d30a-94a1-430a-a004-95b5936ce2b9",
       top: "16e53271-b09d-4dbf-8b4d-02184254904e",
     },
     {
@@ -40,7 +40,7 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
         y: 1120,
       },
       edges: ["f9e316e4-ffa8-4dc2-9d59-03ea8efb0ba3"],
-      top: "923bc7a0-ba19-4481-b5be-2bbd68515476",
+      top: "a857d30a-94a1-430a-a004-95b5936ce2b9",
     },
     {
       id: "b8216840-1eb2-46e3-9a8a-07aec953441b",
@@ -53,7 +53,7 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
         "e18bfea0-f496-430b-8fc9-4e0f310306dc",
         "6e794f37-3703-4388-9470-289435e85a43",
       ],
-      right: "923bc7a0-ba19-4481-b5be-2bbd68515476",
+      right: "a857d30a-94a1-430a-a004-95b5936ce2b9",
       top: "5b412c38-cf3d-4d28-889f-6cd3e8684d70",
     },
     {
@@ -979,7 +979,7 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
         x: 740,
         y: 660,
       },
-      startId: "923bc7a0-ba19-4481-b5be-2bbd68515476",
+      startId: "a857d30a-94a1-430a-a004-95b5936ce2b9",
       end: {
         x: 1180,
         y: 640,
@@ -993,7 +993,7 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
         x: 740,
         y: 660,
       },
-      startId: "923bc7a0-ba19-4481-b5be-2bbd68515476",
+      startId: "a857d30a-94a1-430a-a004-95b5936ce2b9",
       end: {
         x: 740,
         y: 1120,
@@ -1007,7 +1007,7 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
         x: 740,
         y: 660,
       },
-      startId: "923bc7a0-ba19-4481-b5be-2bbd68515476",
+      startId: "a857d30a-94a1-430a-a004-95b5936ce2b9",
       end: {
         x: 280,
         y: 640,

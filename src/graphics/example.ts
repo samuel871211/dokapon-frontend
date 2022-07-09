@@ -1,6 +1,6 @@
 import { Vertex, Edge } from "../global";
 
-const asiaCave: { vertices: Vertex[]; edges: Edge[] } = {
+const example: { vertices: Vertex[]; edges: Edge[] } = {
   vertices: [
     {
       position: {
@@ -14,4 +14,4 @@ const asiaCave: { vertices: Vertex[]; edges: Edge[] } = {
   ],
   edges: [],
 };
-export default asiaCave;
+export default example;

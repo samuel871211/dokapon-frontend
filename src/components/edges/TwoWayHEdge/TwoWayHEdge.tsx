@@ -16,7 +16,7 @@ function TwoWayHEdge(props: Edge): JSX.Element {
     <g id={id} data-type="edge">
       <path
         stroke="white"
-        strokeWidth={20}
+        strokeWidth={40}
         d={`M ${start.x} ${start.y} L ${end.x} ${end.y}`}
       />
     </g>

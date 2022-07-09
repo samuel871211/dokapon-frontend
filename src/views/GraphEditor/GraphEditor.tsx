@@ -28,7 +28,18 @@ import type {
 // import europeCave from "graphics/europeCave";
 // import europeCaveHall from "graphics/europeCaveHall";
 // import europeCaveLibrary from 'graphics/europeCaveLibrary';
-import europeCaveCanteen from "graphics/europeCaveCanteen";
+// import europeCaveCanteen from "graphics/europeCaveCanteen";
+// import africaCave from 'graphics/africaCave';
+// import northAmericaCave from 'graphics/northAmericaCave';
+// import hawaiianIslandsCave from 'graphics/hawaiianIslandsCave';
+// import africaCaveB2 from 'graphics/africaCaveB2';
+// import northAmericaCaveB2 from 'graphics/northAmericaCaveB2';
+// import hawaiianIslandsCaveB2Left from 'graphics/hawaiianIslandsCaveB2Left';
+// import hawaiianIslandsCaveB2Center from 'graphics/hawaiianIslandsCaveB2Center';
+// import hawaiianIslandsCaveB2Right from 'graphics/hawaiianIslandsCaveB2Right';
+// import hawaiianIslandsCaveB3Left from 'graphics/hawaiianIslandsCaveB3Left';
+// import hawaiianIslandsCaveB3Center from 'graphics/hawaiianIslandsCaveB3Center';
+import hawaiianIslandsCaveB3Right from "graphics/hawaiianIslandsCaveB3Right";
 import GraphDSA from "graphics/GraphDSA";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
@@ -127,7 +138,7 @@ const selectedVertices: Vertex[] = [];
 const selectedVerticesGroupOffsets: Position[] = [];
 
 // graph資料結構與演算法的實作，整包精華都在這邊
-const graphDSA = new GraphDSA(europeCaveCanteen);
+const graphDSA = new GraphDSA(hawaiianIslandsCaveB3Right);
 
 export default GraphEditor;
 
@@ -285,14 +296,14 @@ function GraphEditor(): JSX.Element {
                 {/* 最常用到 */}
                 <option value="BattleField">戰鬥</option>
                 {/* Special */}
-                <option value="VillageField">村莊</option>
+                {/* <option value="VillageField">村莊</option> */}
                 <option value="CaveField">洞窟</option>
-                <option value="ChruchField">教堂</option>
+                {/* <option value="ChruchField">教堂</option> */}
                 <option value="GroceryStoreField">道具店</option>
                 <option value="WeaponStoreField">裝備店</option>
                 <option value="JobStoreField">職安所</option>
                 <option value="MagicStoreField">魔法店</option>
-                <option value="WorldTransferField">世界轉移</option>
+                {/* <option value="WorldTransferField">世界轉移</option> */}
                 <option value="DamageField">傷害</option>
                 {/* 集金類型 */}
                 <option value="CollectMoneyField">集金</option>
@@ -305,7 +316,7 @@ function GraphEditor(): JSX.Element {
                 <option value="RedTreasureField">紅色寶箱</option>
                 <option value="KeyTreasureField">鑰匙寶箱</option>
                 {/* 只有一個 */}
-                <option value="CastleField">城堡</option>
+                {/* <option value="CastleField">城堡</option> */}
                 <option value="reconnect">重連</option>
               </optgroup>
               <option value="delete">刪除</option>
@@ -352,7 +363,7 @@ function useMetaData() {
     x: -1,
     y: -1,
   });
-  const [curGraph, setCurGraph] = useState(europeCaveCanteen);
+  const [curGraph, setCurGraph] = useState(hawaiianIslandsCaveB3Right);
   const [mouseMode, toggleMouseMode] = useState<MouseMode>("edit");
   const [SVGScale, setSVGScale] = useState(1);
   const [selectedArea, setSelectedArea] = useState({
@@ -783,31 +794,35 @@ function useMetaData() {
     //     pointerDownVertex.bottom === temp.id
     // )
 
-    let deleteCount = 0;
+    let modifiedCount = 0;
     for (const vertex of vertices) {
       for (const direction of directions) {
         if (vertex[direction] === pointerDownVertex.id) {
-          delete vertex[direction];
-          deleteCount += 1;
+          const inersectionEdgeId = pointerDownVertex.edges.find((edgeId) =>
+            vertex.edges.includes(edgeId)
+          );
+          if (!inersectionEdgeId) throw new Error("no inersection edgeId");
+          vertex[direction] = inersectionEdgeId;
+          modifiedCount += 1;
           break;
         }
       }
     }
-    if (vertices.length !== deleteCount)
-      throw new Error("deleteCount does not match");
+    if (vertices.length !== modifiedCount)
+      throw new Error("modifiedCount does not match");
 
-    deleteCount = 0;
+    modifiedCount = 0;
     for (const edge of edges) {
       if (edge.startId === pointerDownVertex.id) {
         edge.startId = "";
-        deleteCount += 1;
+        modifiedCount += 1;
       } else if (edge.endId === pointerDownVertex.id) {
         edge.endId = "";
-        deleteCount += 1;
+        modifiedCount += 1;
       }
     }
-    if (edges.length !== deleteCount)
-      throw new Error("deleteCount does not match");
+    if (edges.length !== modifiedCount)
+      throw new Error("modifiedCount does not match");
 
     curGraph.vertices.splice(pointerDownVertexIdx, 1);
     setCurGraph({ ...curGraph });

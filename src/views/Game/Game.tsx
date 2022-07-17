@@ -32,9 +32,6 @@ const aspectRatioStyles = {
 
 export default Game;
 
-/**
- * @todo 繪圖的時候，還需要把所有Node的屬性都加上去(哪種商店、哪種地形...)
- */
 function Game(): JSX.Element {
   const { userPreference } = useContext(userPreferenceContext);
   const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState);

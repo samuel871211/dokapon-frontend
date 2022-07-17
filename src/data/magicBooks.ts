@@ -1,5 +1,5 @@
 import { MagicBook } from "global";
-import areas from "./areas";
+import areas from "constants/areas";
 
 const magicBooks: MagicBook[] = [
   {

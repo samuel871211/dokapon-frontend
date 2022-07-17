@@ -7,11 +7,11 @@ import { useEffect, useReducer } from "react";
 // Local application/library specific imports.
 import styles from "./index.module.css";
 import "./index.css";
-import Game from "views/Game";
 import "@samuel871211/utils";
-import SelectCharacter from "views/SelectCharacter";
-import Home from "views/Home";
-import GraphEditor from "views/GraphEditor/GraphEditor";
+import Game from "views/Game";
+// import SelectCharacter from "views/SelectCharacter";
+// import Home from "views/Home";
+// import GraphEditor from "views/GraphEditor/GraphEditor";
 import {
   initGameProgress,
   gameProgressContext,
@@ -61,8 +61,8 @@ function App(): JSX.Element {
       <userPreferenceContext.Provider
         value={{ userPreference, userPreferenceDispatch }}
       >
-        {/* <Game /> */}
-        <GraphEditor />
+        <Game />
+        {/* <GraphEditor /> */}
       </userPreferenceContext.Provider>
     </gameProgressContext.Provider>
   );

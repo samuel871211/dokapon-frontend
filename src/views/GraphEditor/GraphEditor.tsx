@@ -40,7 +40,10 @@ import type {
 // import hawaiianIslandsCaveB3Left from 'graphics/hawaiianIslandsCaveB3Left';
 // import hawaiianIslandsCaveB3Center from 'graphics/hawaiianIslandsCaveB3Center';
 // import hawaiianIslandsCaveB3Right from "graphics/hawaiianIslandsCaveB3Right";
-import africaCaveB3Left from "graphics/africaCaveB3Left";
+// import africaCaveB3Left from "graphics/africaCaveB3Left";
+// import southAmericaCave from 'graphics/southAmericaCave';
+// import southAmericaCaveB2 from 'graphics/southAmericaCaveB2';
+import southAmericaCaveB3 from "graphics/southAmericaCaveB3";
 import GraphDSA from "graphics/GraphDSA";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
@@ -139,7 +142,7 @@ const selectedVertices: Vertex[] = [];
 const selectedVerticesGroupOffsets: Position[] = [];
 
 // graph資料結構與演算法的實作，整包精華都在這邊
-const graphDSA = new GraphDSA(africaCaveB3Left);
+const graphDSA = new GraphDSA(southAmericaCaveB3);
 
 export default GraphEditor;
 
@@ -364,7 +367,7 @@ function useMetaData() {
     x: -1,
     y: -1,
   });
-  const [curGraph, setCurGraph] = useState(africaCaveB3Left);
+  const [curGraph, setCurGraph] = useState(southAmericaCaveB3);
   const [mouseMode, toggleMouseMode] = useState<MouseMode>("edit");
   const [SVGScale, setSVGScale] = useState(1);
   const [selectedArea, setSelectedArea] = useState({

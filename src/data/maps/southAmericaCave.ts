@@ -1,8 +1,9 @@
-import { Vertex, Edge } from "../global";
+import { Vertex, Edge } from "global";
 
 const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
   vertices: [
     {
+      area: "SouthAmericaCave",
       position: {
         x: 300,
         y: 620,
@@ -20,6 +21,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ccf39cd3-52af-4949-9b7e-e5a723d07678",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 340,
@@ -34,6 +37,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "41de9c55-0347-4889-bf5f-20830f8b4e1e",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 1400,
@@ -50,6 +55,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1210f500-1d87-45d6-8431-4951324b2bf5",
+
+      area: "SouthAmericaCave",
       name: "TreasureField",
       position: {
         x: 900,
@@ -66,6 +73,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5b4ac141-6c61-4215-9e84-b2cad8805e9c",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 1480,
@@ -82,6 +91,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f4997e9b-6cc3-4484-a2f3-bda192559e48",
+
+      area: "SouthAmericaCave",
       name: "CaveField",
       position: {
         x: 820,
@@ -92,6 +103,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "afaae593-2728-4cc5-a0c7-ac8a7abc65c1",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: -280,
@@ -106,6 +119,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4f67461a-39d3-485d-a559-2275e713bb26",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: -340,
@@ -122,6 +137,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "76773e90-0ba1-4aea-80c2-9287a660514e",
+
+      area: "SouthAmericaCave",
       name: "TreasureField",
       position: {
         x: -240,
@@ -138,6 +155,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "390e544c-4d97-4f9b-bdb0-fee23d05ffbb",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 860,
@@ -154,6 +173,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d8822b24-80c2-4a1e-b1aa-c730b901f927",
+
+      area: "SouthAmericaCave",
       name: "MagicField",
       position: {
         x: 280,
@@ -168,6 +189,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3c518ad4-6809-4ebd-aada-23e3ee875467",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 940,
@@ -182,6 +205,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "2b5d08c3-f1d9-40fe-95a6-2b6bf9392598",
+
+      area: "SouthAmericaCave",
       name: "RedTreasureField",
       position: {
         x: 880,
@@ -196,6 +221,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3bfa43b7-d383-45e5-af8d-ef50361095c5",
+
+      area: "SouthAmericaCave",
       name: "TreasureField",
       position: {
         x: 840,
@@ -210,6 +237,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f8c658c8-ee5b-41bc-8143-a7ade0408e24",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 860,
@@ -224,6 +253,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "7a16b299-1b6b-465a-8e84-f3834d1809e4",
+
+      area: "SouthAmericaCave",
       name: "DamageField",
       position: {
         x: 260,
@@ -238,6 +269,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8049a32f-d743-47c2-984f-7bd46c0444f0",
+
+      area: "SouthAmericaCave",
       name: "WhiteTreasureField",
       position: {
         x: -300,
@@ -248,6 +281,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d00e7438-95b7-4db9-a7b9-2c87d4cf53c2",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: -260,
@@ -262,6 +297,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b9b80c4f-784e-4757-a350-de468186104b",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: -800,
@@ -276,6 +313,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "028eda39-3228-4f39-969b-deb7b418f859",
+
+      area: "SouthAmericaCave",
       name: "MagicField",
       position: {
         x: -1300,
@@ -290,6 +329,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "cfaccbea-78f5-4676-872a-3edf44b92940",
+
+      area: "SouthAmericaCave",
       name: "DamageField",
       position: {
         x: -1340,
@@ -304,6 +345,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "15ca5997-bd65-4b8a-8c8a-05ccb05c695e",
+
+      area: "SouthAmericaCave",
       name: "RedTreasureField",
       position: {
         x: -1300,
@@ -318,6 +361,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "59b69fbc-c5a2-47a3-b4c3-d0ce41085620",
+
+      area: "SouthAmericaCave",
       name: "TreasureField",
       position: {
         x: -1240,
@@ -334,6 +379,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "33bff1fa-fc8b-406b-8b05-133b90d65cbf",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: -1280,
@@ -348,6 +395,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4085aa9c-0040-4c4f-bbe5-01e41ab2d363",
+
+      area: "SouthAmericaCave",
       name: "TreasureField",
       position: {
         x: -700,
@@ -364,6 +413,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "faf55cd4-6c52-4032-a269-af1d98be307b",
+
+      area: "SouthAmericaCave",
       name: "GoldTreasureField",
       position: {
         x: -140,
@@ -378,6 +429,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "25153b3b-8680-414f-91b6-54ca2acf56ce",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: -200,
@@ -392,6 +445,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1c716a27-8815-48bd-ab9f-2875a3640e38",
+
+      area: "SouthAmericaCave",
       name: "CaveField",
       position: {
         x: -740,
@@ -402,6 +457,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "6d2e2c29-ceb8-458f-8764-f6e96ed4d1b2",
+
+      area: "SouthAmericaCave",
       name: "GoldTreasureField",
       position: {
         x: 1460,
@@ -416,6 +473,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d1bf0dc6-abe2-492e-bd1c-a6dbfdc04efe",
+
+      area: "SouthAmericaCave",
       name: "DamageField",
       position: {
         x: 1420,
@@ -430,6 +489,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "df17d00a-afd7-4017-a694-2131af71ae4d",
+
+      area: "SouthAmericaCave",
       name: "DamageField",
       position: {
         x: 1660,
@@ -446,6 +507,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "2513fb0b-5f40-469d-9809-bb0934e4ab8d",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 2180,
@@ -460,6 +523,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "62eae3ba-796b-43a3-ae0d-8b11ea1cf301",
+
+      area: "SouthAmericaCave",
       name: "TreasureField",
       position: {
         x: 2720,
@@ -476,6 +541,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "620fcea8-5956-4619-9e25-30316b9cbc6e",
+
+      area: "SouthAmericaCave",
       name: "TreasureField",
       position: {
         x: 1680,
@@ -490,6 +557,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8ca20b3e-cd3e-44a1-b2ac-206296c8fce1",
+
+      area: "SouthAmericaCave",
       name: "RedTreasureField",
       position: {
         x: 2700,
@@ -506,6 +575,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1729155a-55e3-41e1-9359-819acb17d49c",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 2740,
@@ -522,6 +593,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f789ada4-a7a6-4137-b483-4dec9900b029",
+
+      area: "SouthAmericaCave",
       name: "MagicField",
       position: {
         x: 3320,
@@ -536,6 +609,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "7de6ae34-501d-41ee-b4db-5b28066cde62",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 3280,
@@ -550,6 +625,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b5cd05da-fc2a-4c21-9482-fc8aca5f2c79",
+
+      area: "SouthAmericaCave",
       name: "CaveField",
       position: {
         x: 2700,
@@ -560,6 +637,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3f4c5601-a79a-4ebd-a42e-5ff89906fac7",
+
+      area: "SouthAmericaCave",
       name: "MagicField",
       position: {
         x: 2060,
@@ -574,6 +653,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "54c26d45-6dbe-4de0-ae44-a0cacbd51d96",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 2620,
@@ -588,6 +669,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "30f110f4-b830-437a-9a43-bdc515359bd3",
+
+      area: "SouthAmericaCave",
       name: "GoldTreasureField",
       position: {
         x: 3180,
@@ -602,6 +685,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ff503db6-a644-4917-8855-0941243d2da2",
+
+      area: "SouthAmericaCave",
       name: "DamageField",
       position: {
         x: 3760,
@@ -616,6 +701,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ae0e9bcb-98ff-4d5a-a55b-544ed448b85c",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 3780,
@@ -630,6 +717,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8e6b0f7d-b66c-4163-9452-a3196eafde24",
+
+      area: "SouthAmericaCave",
       name: "TreasureField",
       position: {
         x: 3740,
@@ -646,6 +735,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a6a23522-0ede-4fe0-a54a-75fb8c4b6bc0",
+
+      area: "SouthAmericaCave",
       name: "GoldTreasureField",
       position: {
         x: 3240,
@@ -660,6 +751,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "884687c7-0d83-4085-b772-2a673da5fa1f",
+
+      area: "SouthAmericaCave",
       name: "RedTreasureField",
       position: {
         x: 3260,
@@ -674,6 +767,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1ec68d55-f04c-4ad0-8d93-5be6cf3d999d",
+
+      area: "SouthAmericaCave",
       name: "GoldTreasureField",
       position: {
         x: 3740,
@@ -690,6 +785,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "efadc9fb-c0af-41f0-92e8-3901bc0efba3",
+
+      area: "SouthAmericaCave",
       name: "DamageField",
       position: {
         x: 3820,
@@ -704,6 +801,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c2593dd5-ccfb-4bcd-8d9c-095d1778b60b",
+
+      area: "SouthAmericaCave",
       name: "TreasureField",
       position: {
         x: 3780,
@@ -718,6 +817,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "317eef6c-b056-4216-af5a-bd5d0057e25c",
+
+      area: "SouthAmericaCave",
       name: "BattleField",
       position: {
         x: 4320,
@@ -732,6 +833,8 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "bd9f675d-7572-40ad-8016-8ca207caf9a3",
+
+      area: "SouthAmericaCave",
       name: "CollectAllMoneyField",
       position: {
         x: 4360,

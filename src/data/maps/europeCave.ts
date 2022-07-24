@@ -1,8 +1,9 @@
-import { Vertex, Edge } from "../global";
+import { Vertex, Edge } from "global";
 
 const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
   vertices: [
     {
+      area: "EuropeCave",
       position: {
         x: 740,
         y: 660,
@@ -20,6 +21,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "968c0ad3-6616-42b6-87c3-3bd4c3daa9f0",
+
+      area: "EuropeCave",
       name: "TreasureField",
       position: {
         x: 1180,
@@ -34,6 +37,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4d0623fe-09db-44fd-8026-2129324355cd",
+
+      area: "EuropeCave",
       name: "CaveField",
       position: {
         x: 740,
@@ -44,6 +49,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b8216840-1eb2-46e3-9a8a-07aec953441b",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 280,
@@ -58,6 +65,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5b412c38-cf3d-4d28-889f-6cd3e8684d70",
+
+      area: "EuropeCave",
       name: "TreasureField",
       position: {
         x: 320,
@@ -76,6 +85,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "16e53271-b09d-4dbf-8b4d-02184254904e",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 1100,
@@ -92,6 +103,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "df329ffb-ead9-4a8b-ad9a-74fd656d02c5",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 1580,
@@ -108,6 +121,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "23005821-f6a2-4260-bf01-2c51454afcc9",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 2640,
@@ -122,6 +137,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "73bfe278-b7ef-4a53-a5c3-457165dd8df1",
+
+      area: "EuropeCave",
       name: "TreasureField",
       position: {
         x: 1600,
@@ -136,6 +153,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "02f5f206-6b0d-4960-8178-83c5f6e24762",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 2120,
@@ -152,6 +171,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "45951b9e-47cf-44cd-bdb5-1f6bee42a695",
+
+      area: "EuropeCave",
       name: "MagicField",
       position: {
         x: 2660,
@@ -166,6 +187,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "51f9f633-651b-4395-a4e9-3f314c6cd7f1",
+
+      area: "EuropeCave",
       name: "TreasureField",
       position: {
         x: 2100,
@@ -184,6 +207,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "6ac6d928-362e-442a-9e6b-ddbac0744103",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 2660,
@@ -198,6 +223,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "0181cedf-87f8-4a4a-b986-16d12389d308",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 3200,
@@ -212,6 +239,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "408e5e4a-265b-46db-a694-1b2456606c45",
+
+      area: "EuropeCave",
       name: "CollectMoneyField",
       position: {
         x: 3260,
@@ -222,6 +251,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "031011d7-fe5a-49b7-be64-999d5a2b1b4b",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 2120,
@@ -238,6 +269,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "095575ac-c0fb-4fd7-b121-cbccdf9d523d",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 2040,
@@ -252,6 +285,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3858fcfd-0281-41de-a627-adeccd18c767",
+
+      area: "EuropeCave",
       name: "GoldTreasureField",
       position: {
         x: 1480,
@@ -262,6 +297,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "20c5b59a-2c70-4751-8ce9-a0038e30a994",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 1500,
@@ -276,6 +313,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e1525a45-3195-4dc4-b47c-e4a0ecdbe5ed",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 300,
@@ -290,6 +329,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "77ab92cc-9356-4e3c-b2c5-7818ebbfada7",
+
+      area: "EuropeCave",
       name: "RedTreasureField",
       position: {
         x: 880,
@@ -306,6 +347,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1be410d8-9b39-4d60-a487-f090cda3f6e9",
+
+      area: "EuropeCave",
       name: "DamageField",
       position: {
         x: -200,
@@ -320,6 +363,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "790ebe6d-fa0f-40ab-bde3-2d2ba049828e",
+
+      area: "EuropeCave",
       name: "MagicField",
       position: {
         x: -700,
@@ -336,6 +381,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "739da62b-04ea-419a-97a4-866cb4946bcd",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -1180,
@@ -350,6 +397,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f51c3d8a-9ebd-418c-8345-5c1c149dd684",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -1240,
@@ -366,6 +415,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ab9d7261-e7b0-4d1d-9bed-c752daf170a7",
+
+      area: "EuropeCave",
       name: "TreasureField",
       position: {
         x: -1160,
@@ -380,6 +431,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a84ee664-9388-44df-8954-7693248d7cc9",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -700,
@@ -396,6 +449,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8c9194b2-49d7-491d-9c54-636e3e5ec61d",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -640,
@@ -412,6 +467,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b99a657d-e8fa-4185-88ef-141fd39969c5",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 20,
@@ -426,6 +483,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4ff662e0-0691-4092-a168-1db413247482",
+
+      area: "EuropeCave",
       name: "TreasureField",
       position: {
         x: -680,
@@ -442,6 +501,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "6447052c-251c-4531-a0b7-82c3cf02753c",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -640,
@@ -456,6 +517,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4e5fd11d-5008-4077-93fc-3904b8c29deb",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -60,
@@ -470,6 +533,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4e63f8b7-e156-4eec-9bbb-9cfeaf7e5d5a",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 820,
@@ -484,6 +549,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e734d641-cb72-4f52-95ee-b112017bf564",
+
+      area: "EuropeCave",
       name: "MagicField",
       position: {
         x: 880,
@@ -500,6 +567,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f37ead4a-db4f-4290-bed5-137b73202f6a",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 780,
@@ -516,6 +585,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "db313919-5bd7-46c3-9a4f-3f1448c8f9de",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 400,
@@ -530,6 +601,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8c313424-f9d0-4feb-ad8e-616497007b67",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -60,
@@ -544,6 +617,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "67689a4d-e9f1-4700-a43a-b056824514d9",
+
+      area: "EuropeCave",
       name: "TreasureField",
       position: {
         x: -20,
@@ -558,6 +633,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "fe21f966-e074-498d-926e-858dfd7ac960",
+
+      area: "EuropeCave",
       name: "CaveField",
       position: {
         x: 880,
@@ -568,6 +645,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3e8b13d5-c29c-41e8-abfd-2152c4f95ad3",
+
+      area: "EuropeCave",
       name: "DamageField",
       position: {
         x: 2640,
@@ -582,6 +661,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c6c30c96-3baa-40f9-a36b-ac28751e6a07",
+
+      area: "EuropeCave",
       name: "DamageField",
       position: {
         x: 3200,
@@ -596,6 +677,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "12f07d0c-a15b-4061-a5c6-fb01c290b7dd",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 3200,
@@ -610,6 +693,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "dce48050-c2cc-413a-966d-001771e99fa3",
+
+      area: "EuropeCave",
       name: "DamageField",
       position: {
         x: 3200,
@@ -624,6 +709,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "dcdbedf9-c990-42cf-87c5-a8dcaafc3509",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 3200,
@@ -640,6 +727,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "69af20b1-084c-422c-929e-4bfcc7d1cf99",
+
+      area: "EuropeCave",
       name: "TreasureField",
       position: {
         x: 3140,
@@ -654,6 +743,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "9716130c-b168-4e90-ac75-600835a7168f",
+
+      area: "EuropeCave",
       name: "TreasureField",
       position: {
         x: 2140,
@@ -668,6 +759,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "eb0ece28-6f59-4267-830b-09da3b4f356b",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 2080,
@@ -686,6 +779,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1be36d67-c565-4509-bacb-b20e843ac3d5",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 2620,
@@ -700,6 +795,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "78cb59e4-6e70-4a3d-a1a6-f72e62875298",
+
+      area: "EuropeCave",
       name: "CaveField",
       position: {
         x: 2120,
@@ -710,6 +807,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "cf814981-c172-49e4-b955-9e222ed64294",
+
+      area: "EuropeCave",
       name: "GoldTreasureField",
       position: {
         x: 1480,
@@ -724,6 +823,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "80bd602b-223f-4d84-a462-df9ada26fd92",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 900,
@@ -738,6 +839,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b505b12a-a0d7-4996-ab99-d7412c744aa4",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: 320,
@@ -754,6 +857,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a0d10b4c-3076-4d5d-8109-d4e91f5453d5",
+
+      area: "EuropeCave",
       name: "TreasureField",
       position: {
         x: -240,
@@ -770,6 +875,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "9716d05e-535d-4ed2-a1fd-110701923993",
+
+      area: "EuropeCave",
       name: "MagicField",
       position: {
         x: 320,
@@ -784,6 +891,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4fdec21a-9b27-4de4-8b5e-8c614e90f98b",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -220,
@@ -798,6 +907,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5b29439e-dd23-42a5-9075-6c710e144fd4",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -340,
@@ -814,6 +925,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "0af7eb83-4856-4bee-b13e-ea1ca4baa32b",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -700,
@@ -828,6 +941,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c1c4d562-3d7c-496d-a55f-8f829abacc02",
+
+      area: "EuropeCave",
       name: "CaveField",
       position: {
         x: -640,
@@ -838,6 +953,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "cdf46cba-7430-4d6a-916c-fe700cd8bf56",
+
+      area: "EuropeCave",
       name: "DamageField",
       position: {
         x: -940,
@@ -852,6 +969,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e734ac6e-49a1-4153-971b-0fa69d611fc6",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -1560,
@@ -866,6 +985,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "dae89388-7ab3-4588-9388-622901605881",
+
+      area: "EuropeCave",
       name: "TreasureField",
       position: {
         x: -1620,
@@ -880,6 +1001,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "2cae1249-b99e-446a-9861-f1fa629c824b",
+
+      area: "EuropeCave",
       name: "DamageField",
       position: {
         x: -1140,
@@ -894,6 +1017,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "35771a45-a42e-48c3-b55b-2c2209117163",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -1620,
@@ -908,6 +1033,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8b4c82e1-e784-4cb3-89b1-68829c9fa4dd",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -1620,
@@ -922,6 +1049,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8465ff6b-a909-437a-a6c2-a552e88fa308",
+
+      area: "EuropeCave",
       name: "DamageField",
       position: {
         x: -2160,
@@ -936,6 +1065,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3aa1bdd8-18ca-4f95-b5b9-1929d6c610ba",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -2160,
@@ -950,6 +1081,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5f478bd0-2796-4778-9c55-19c2d1adc21f",
+
+      area: "EuropeCave",
       name: "BattleField",
       position: {
         x: -2680,
@@ -964,6 +1097,8 @@ const europeCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "74a2e441-fac5-4dfc-b5df-406f44c220a6",
+
+      area: "EuropeCave",
       name: "KeyTreasureField",
       position: {
         x: -3180,

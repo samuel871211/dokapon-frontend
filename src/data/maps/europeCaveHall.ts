@@ -1,8 +1,9 @@
-import { Vertex, Edge } from "../global";
+import { Vertex, Edge } from "global";
 
 const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
   vertices: [
     {
+      area: "EuropeCaveHall",
       position: {
         x: 380,
         y: 560,
@@ -21,6 +22,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5beaaca7-2c41-4cf6-8516-7cf07477d0f4",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: 920,
@@ -36,6 +39,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "21ccb754-2f35-4c3f-8cde-41f54a42007e",
+
+      area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
         x: -660,
@@ -49,6 +54,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b742acfb-fd17-4fe5-a54e-6d7a2f4de3e9",
+
+      area: "EuropeCaveHall",
       name: "CaveField",
       position: {
         x: 380,
@@ -59,6 +66,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ecefbec2-7bd1-4c0b-9357-e3579daa678b",
+
+      area: "EuropeCaveHall",
       name: "MagicField",
       position: {
         x: 920,
@@ -74,6 +83,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8b06a550-a40d-41fa-af35-78b95a2a25ca",
+
+      area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
         x: 380,
@@ -92,6 +103,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ab98343f-b6bb-4e65-99a2-bb4d8cb31125",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: -140,
@@ -106,6 +119,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "82ee86b0-80ba-43d1-b7c0-1af4643fe22e",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: -660,
@@ -122,6 +137,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "0105fe2d-7ede-4cad-b9b9-5c80bf5db8ef",
+
+      area: "EuropeCaveHall",
       name: "MagicField",
       position: {
         x: -600,
@@ -138,6 +155,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "9f33b95e-d11f-4d39-8322-4fd4516ed0c7",
+
+      area: "EuropeCaveHall",
       name: "DamageField",
       position: {
         x: 280,
@@ -154,6 +173,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "54c232e5-b23e-4c94-bad9-e4a7cd0e78ba",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: 1440,
@@ -168,6 +189,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5eb78328-5f2a-4d83-af98-53a06b124260",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: 780,
@@ -182,6 +205,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "49eac2c9-ffa0-4581-ae86-c00537488b25",
+
+      area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
         x: 1480,
@@ -198,6 +223,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5d1b5b1f-09c1-418d-a970-0b603466717d",
+
+      area: "EuropeCaveHall",
       name: "DamageField",
       position: {
         x: 1360,
@@ -214,6 +241,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "69db8570-6b62-4883-ae55-fd4634f28af1",
+
+      area: "EuropeCaveHall",
       name: "RedTreasureField",
       position: {
         x: 1860,
@@ -230,6 +259,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "dda25ad0-965d-4866-86e4-4245febba1a7",
+
+      area: "EuropeCaveHall",
       name: "RedTreasureField",
       position: {
         x: 2240,
@@ -244,6 +275,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "76439c5a-48f3-46aa-838f-e35df4eb3a7a",
+
+      area: "EuropeCaveHall",
       name: "RedTreasureField",
       position: {
         x: 2240,
@@ -258,6 +291,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "7a3ed1f9-2526-4d5a-bea6-f87eace30550",
+
+      area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
         x: 1820,
@@ -272,6 +307,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "9b5f9dc0-d74c-4ed4-ab31-a559208dfca7",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: 1760,
@@ -286,6 +323,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4a14e719-872e-49e8-b9a0-c929eab417f0",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: 1280,
@@ -302,6 +341,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "eabdc0a8-a8ce-436a-bcc4-fc45be47e029",
+
+      area: "EuropeCaveHall",
       name: "GoldTreasureField",
       position: {
         x: 880,
@@ -317,6 +358,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e281d79d-a476-406d-b933-ba0bcc8ab751",
+
+      area: "EuropeCaveHall",
       name: "DamageField",
       position: {
         x: 1340,
@@ -331,6 +374,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e19bd0c0-7d6b-4c0c-ac7e-7b9657a2672e",
+
+      area: "EuropeCaveHall",
       name: "DamageField",
       position: {
         x: 900,
@@ -347,6 +392,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8abc85c3-7e27-42c4-80d5-285a759c2f76",
+
+      area: "EuropeCaveHall",
       name: "RedTreasureField",
       position: {
         x: 1260,
@@ -361,6 +408,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "85b9fd88-1ff7-443f-8777-67a3e997302b",
+
+      area: "EuropeCaveHall",
       name: "DamageField",
       position: {
         x: 1780,
@@ -375,6 +424,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "31c40d6c-c329-4ce7-81aa-6da8232ce1c3",
+
+      area: "EuropeCaveHall",
       name: "KeyTreasureField",
       position: {
         x: 2340,
@@ -385,6 +436,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "7e523595-c172-4256-9679-2f238ff26a66",
+
+      area: "EuropeCaveHall",
       name: "MagicField",
       position: {
         x: -200,
@@ -401,6 +454,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b7f91dba-adf7-43a0-a840-8f6ff5dd9fd4",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: -180,
@@ -414,6 +469,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c4b57755-a1b4-40f0-b2f9-503f77cc45c9",
+
+      area: "EuropeCaveHall",
       name: "WhiteTreasureField",
       position: {
         x: 320,
@@ -430,6 +487,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "6b636bd3-c5f1-46a3-8701-3fae0dce1728",
+
+      area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
         x: -140,
@@ -446,6 +505,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b3c50da5-e4c3-462f-b23c-ba646ebbbecc",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: 280,
@@ -460,6 +521,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "2bc7c638-64f5-487e-a192-6d0b5e0b0863",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: 780,
@@ -474,6 +537,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "35d6d4c2-e182-4f55-a67e-85dddd43b362",
+
+      area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
         x: 320,
@@ -490,6 +555,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4b28d623-9d4f-4cb3-b5d0-52b4b434c9a4",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: -200,
@@ -506,6 +573,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "7b80b862-ac42-4774-a22b-e7fbc84da615",
+
+      area: "EuropeCaveHall",
       name: "MagicField",
       position: {
         x: -140,
@@ -520,6 +589,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "93e57c8b-a724-48e8-8b8c-0276b7c65b9d",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: 360,
@@ -536,6 +607,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "bb84ee52-aa76-494d-b1a0-e4a34852f35b",
+
+      area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
         x: 320,
@@ -550,6 +623,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ab15fe4a-a97a-43f3-a645-36d8b9852e12",
+
+      area: "EuropeCaveHall",
       name: "DamageField",
       position: {
         x: 960,
@@ -564,6 +639,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "9af7fe94-93c2-4e03-b568-14ede868504c",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: 1560,
@@ -578,6 +655,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b53c7dc2-e0dd-4732-8ce8-2e0d0c638783",
+
+      area: "EuropeCaveHall",
       name: "DamageField",
       position: {
         x: 1560,
@@ -592,6 +671,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b59a2c3d-9203-4ecf-8e5d-910271e51446",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: 960,
@@ -602,6 +683,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "beb09acf-c05c-4527-ad06-87c66173fafa",
+
+      area: "EuropeCaveHall",
       name: "DamageField",
       position: {
         x: -700,
@@ -618,6 +701,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "dffedfc6-ab65-4469-83a5-2ebbd268bf4d",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: -1220,
@@ -632,6 +717,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "15b1af06-26c5-4c48-8fc3-57001782ffdd",
+
+      area: "EuropeCaveHall",
       name: "GoldTreasureField",
       position: {
         x: -580,
@@ -648,6 +735,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "7f93126e-30da-45ad-9464-8a59b8a587a6",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: -660,
@@ -664,6 +753,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a570e52d-8680-40ff-8df8-0af72810c162",
+
+      area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
         x: -1240,
@@ -678,6 +769,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8031e377-b46a-43e8-8138-594ceaeee66b",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: -1200,
@@ -694,6 +787,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "95bf2652-6f20-44fb-8f5d-c2eaad6504fa",
+
+      area: "EuropeCaveHall",
       name: "GoldTreasureField",
       position: {
         x: -600,
@@ -708,6 +803,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "cd05210f-4b04-455b-84fd-1560bdfc40b6",
+
+      area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
         x: -1660,
@@ -722,6 +819,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "6ef35753-d9c9-4b12-8832-5b2f5d695674",
+
+      area: "EuropeCaveHall",
       name: "GoldTreasureField",
       position: {
         x: -1580,
@@ -736,6 +835,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "252e5871-5f5b-4fe3-adcf-f82de3b6ff28",
+
+      area: "EuropeCaveHall",
       name: "BattleField",
       position: {
         x: -1700,
@@ -750,6 +851,8 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "23c56dc0-4265-4efc-93fc-090914d2dcd6",
+
+      area: "EuropeCaveHall",
       name: "GoldTreasureField",
       position: {
         x: -1680,

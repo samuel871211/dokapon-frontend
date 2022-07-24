@@ -1,4 +1,4 @@
-import { Vertex, Edge } from "../global";
+import { Vertex, Edge } from "global";
 
 const example: { vertices: Vertex[]; edges: Edge[] } = {
   vertices: [

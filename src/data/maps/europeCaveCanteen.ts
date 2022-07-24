@@ -1,8 +1,9 @@
-import { Vertex, Edge } from "../global";
+import { Vertex, Edge } from "global";
 
 const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
   vertices: [
     {
+      area: "EuropeCaveCanteen",
       position: {
         x: -80,
         y: -40,
@@ -18,6 +19,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "34aeb47f-17e6-46d5-8d3f-9f333fd94b2a",
+
+      area: "EuropeCaveCanteen",
       name: "MagicField",
       position: {
         x: 460,
@@ -34,6 +37,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "04306521-f418-4bb5-907e-f39bcc9dc113",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: 960,
@@ -48,6 +53,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a324780e-fbd9-4e88-a7ba-bfb1a71920bc",
+
+      area: "EuropeCaveCanteen",
       name: "TreasureField",
       position: {
         x: 420,
@@ -62,6 +69,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3c97ab73-eb8a-4d11-9353-791bfdbce401",
+
+      area: "EuropeCaveCanteen",
       name: "CaveField",
       position: {
         x: 480,
@@ -72,6 +81,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8f1fea03-7388-4d4e-b3f1-0d67c9fdebcd",
+
+      area: "EuropeCaveCanteen",
       name: "TreasureField",
       position: {
         x: -140,
@@ -90,6 +101,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "415cb62e-4c2a-47b6-a89b-ee9f3184f1b6",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: 1020,
@@ -108,6 +121,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "650442b1-1060-4cb0-8446-e6e629895e89",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: -100,
@@ -122,6 +137,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "029d2f03-652b-465c-89e6-f7826da31b7a",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: -560,
@@ -138,6 +155,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d5d15fd5-27a8-4870-ada4-4d58cd55214e",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: -1000,
@@ -154,6 +173,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c21d7bb9-c23e-4d58-aac7-1c325f37236d",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: -920,
@@ -168,6 +189,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "24dd5986-cf88-45f5-8c18-486b6c299635",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: -620,
@@ -182,6 +205,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "07c8175b-34fc-428d-916a-1ddb5818f771",
+
+      area: "EuropeCaveCanteen",
       name: "CollectMoneyField",
       position: {
         x: -120,
@@ -192,6 +217,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "0c676acb-7847-47b8-950d-18627f01bc88",
+
+      area: "EuropeCaveCanteen",
       name: "TreasureField",
       position: {
         x: 1980,
@@ -206,6 +233,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "77a0518d-b204-438a-9c43-20aec60ba6ff",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: 940,
@@ -220,6 +249,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "2d6d5e70-1474-4cc1-9b91-36f18d02f005",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: 1480,
@@ -236,6 +267,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "9ef9227a-bebd-4139-b749-2f2accce65b5",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: 2040,
@@ -252,6 +285,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "689473aa-16d8-4aab-8188-b96fdebac303",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: 1520,
@@ -266,6 +301,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "612cf2b6-6f64-44d9-92c4-57bf3ad47300",
+
+      area: "EuropeCaveCanteen",
       name: "WhiteTreasureField",
       position: {
         x: 920,
@@ -276,6 +313,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "364c75ca-1748-4bf8-9ccc-b6495d8ecf94",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: 1900,
@@ -290,6 +329,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a7cd04e5-2106-4049-9253-947676ee2ebe",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: 1980,
@@ -304,6 +345,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "0f10ea15-7e7d-45b6-a403-29a9140f9fad",
+
+      area: "EuropeCaveCanteen",
       name: "RedTreasureField",
       position: {
         x: 1480,
@@ -318,6 +361,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "45d0eb88-64a3-4466-aec1-24700bd8aac1",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: 1000,
@@ -332,6 +377,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b07f552f-e8a7-46a5-92a2-4f9038b85f2a",
+
+      area: "EuropeCaveCanteen",
       name: "KeyTreasureField",
       position: {
         x: 1040,
@@ -342,6 +389,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a1ac7cf8-ca57-4ea2-a1c1-c5a5bd42d3ef",
+
+      area: "EuropeCaveCanteen",
       name: "MagicField",
       position: {
         x: -940,
@@ -356,6 +405,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "7066ae7e-67e1-4d22-b286-f275d7dacd04",
+
+      area: "EuropeCaveCanteen",
       name: "GoldTreasureField",
       position: {
         x: -980,
@@ -370,6 +421,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "60d35dcb-bd00-460d-b8e6-ef9581cf5050",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: -580,
@@ -384,6 +437,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "0647787f-9edf-4562-8566-8a4d730d9f59",
+
+      area: "EuropeCaveCanteen",
       name: "BattleField",
       position: {
         x: -140,
@@ -398,6 +453,8 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "9d23449c-2cda-4599-9761-07c539f02995",
+
+      area: "EuropeCaveCanteen",
       name: "KeyTreasureField",
       position: {
         x: -220,

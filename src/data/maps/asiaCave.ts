@@ -1,4 +1,4 @@
-import { Vertex, Edge } from "../global";
+import { Vertex, Edge } from "global";
 
 const asiaCave: { vertices: Vertex[]; edges: Edge[] } = {
   vertices: [
@@ -575,6 +575,7 @@ const asiaCave: { vertices: Vertex[]; edges: Edge[] } = {
       area: "AsiaCave",
     },
     {
+      area: "AsiaCave",
       id: "512a89c6-af22-4a10-ab77-66a54ecca026",
       name: "BattleField",
       position: {

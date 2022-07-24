@@ -1,8 +1,9 @@
-import { Vertex, Edge } from "../global";
+import { Vertex, Edge } from "global";
 
 const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
   vertices: [
     {
+      area: "HawaiianIslandsCaveB2Left",
       position: {
         x: 820,
         y: 860,
@@ -20,6 +21,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "de43a84b-fab8-4450-94df-4352818d71e9",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 820,
@@ -34,6 +37,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "7c06e959-e728-4793-9d01-fa9228af040a",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 1440,
@@ -48,6 +53,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "71fb1a9d-b885-493b-b7b8-16b2a179a069",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "CaveField",
       position: {
         x: 820,
@@ -58,6 +65,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a28f87d3-5fae-450b-874c-82ceb839af5d",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "MagicField",
       position: {
         x: 2020,
@@ -72,6 +81,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5dc932fd-4e44-44c6-a267-3004a1d146fe",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: 2020,
@@ -88,6 +99,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c6864fb7-b953-435f-9c05-dad6e9b5b656",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "RedTreasureField",
       position: {
         x: 2600,
@@ -102,6 +115,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "55ed7e8e-ab9a-4678-9374-eb166a380b86",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "DamageField",
       position: {
         x: 2620,
@@ -116,6 +131,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1dd61898-0f88-4707-94ea-46a7751870b6",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 2600,
@@ -130,6 +147,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "33be92d3-de38-47ad-b892-d008fc77fdf5",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: 2640,
@@ -144,6 +163,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8da0dcc5-5576-4caa-a4b0-6ccb92c6704c",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 2580,
@@ -158,6 +179,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "0ac0b986-e0fe-498f-b632-e9fcc1703554",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "MagicField",
       position: {
         x: 2640,
@@ -172,6 +195,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "7e44bb00-1966-4a99-9b04-ca902c4bdb5e",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: 2580,
@@ -186,6 +211,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f2875f5d-5e91-4d61-b808-cd4cb29c58b2",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 2640,
@@ -200,6 +227,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "dd384adb-fdd8-4661-b2fd-dbaefe224eea",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "RedTreasureField",
       position: {
         x: 2560,
@@ -214,6 +243,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5a9ca774-3ad4-4ae4-bfe1-edce61926fb5",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 2620,
@@ -230,6 +261,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "680fb5ac-6e94-4246-9582-463fb515668f",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "DamageField",
       position: {
         x: 2540,
@@ -244,6 +277,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d7c5e7f9-c4c2-4fe3-8027-5b02f929b9f4",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 2000,
@@ -258,6 +293,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5c45eea2-a6e7-47cb-858f-7ad1a0a91d2e",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: 1500,
@@ -274,6 +311,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "eb1ab3c8-6512-4fdf-90cd-43bfcb7e120c",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 1460,
@@ -290,6 +329,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "448abc25-e25f-4183-b750-1ecfb4f97ed9",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 480,
@@ -304,6 +345,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a100d594-0e58-43ed-a629-1dda65fabf1f",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 940,
@@ -318,6 +361,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "fedf7a1b-dc88-476d-9986-e39afc5a24ab",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "KeyTreasureField",
       position: {
         x: 460,
@@ -328,6 +373,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1d646024-3cf5-433e-9285-da5eb537342d",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 480,
@@ -342,6 +389,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c71e4f31-686c-4444-b3d6-3b7731471696",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "MagicField",
       position: {
         x: 480,
@@ -356,6 +405,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3403df36-57b5-4d5c-a9f9-ce116fde7f2d",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "CaveField",
       position: {
         x: 480,
@@ -366,6 +417,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c716eec3-b54e-401a-bdb6-7b658546e5d1",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -680,
@@ -380,6 +433,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "219819e4-0c88-4ecb-970d-0a9ee80a98bc",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "CaveField",
       position: {
         x: -680,
@@ -390,6 +445,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3dbefca2-3a1c-4641-9165-ef17d570dfd4",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -680,
@@ -404,6 +461,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ee496063-89bf-43d8-8bd6-03f42d86e749",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "MagicField",
       position: {
         x: -680,
@@ -420,6 +479,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1fdcdd5e-eec7-4916-8acb-9a98fa00ab90",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -140,
@@ -434,6 +495,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f6d59c80-9927-41ac-814c-3716ab9873a7",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "DamageField",
       position: {
         x: -1220,
@@ -448,6 +511,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a81725cb-6c64-45d3-bf5a-554fa40bf2a2",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "MagicField",
       position: {
         x: -180,
@@ -462,6 +527,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3240154c-f8e1-4f37-a626-5019f6889de9",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -1160,
@@ -476,6 +543,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "441d0a9a-fe4f-4130-aa25-ca6a3c43b823",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "DamageField",
       position: {
         x: -120,
@@ -490,6 +559,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "abff4747-e9bc-449a-90aa-5b47f61fac4a",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: -1240,
@@ -504,6 +575,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f0e7f5dc-d7ca-4776-9bbf-559f952558d5",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -1180,
@@ -518,6 +591,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c0af936a-08eb-4d1b-a918-4a96f87d4004",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: -180,
@@ -532,6 +607,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "afe4c05d-2f74-44fa-99d4-fc8735dcdbe7",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -1700,
@@ -548,6 +625,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5d06fa1f-648c-4ff4-b151-54e5609e7892",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "MagicField",
       position: {
         x: -2660,
@@ -562,6 +641,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "fea9175a-45e7-4ded-be5b-f6587b5ae1ae",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -2660,
@@ -576,6 +657,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "62a12247-7fb7-49b3-bced-68679ec7a6a9",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: -2180,
@@ -590,6 +673,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d9a40154-009b-4dbb-ae05-626144cbabec",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -1700,
@@ -606,6 +691,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "756c3190-fd06-4201-a9ab-9753660d1387",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -1100,
@@ -622,6 +709,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e8ee3b78-9b89-40ef-9105-2f60312c8b70",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: -240,
@@ -638,6 +727,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "21f55603-2200-4a8b-815a-668829b85de9",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 420,
@@ -654,6 +745,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "56da99a1-345c-4e36-9b76-63f85e4f076e",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 420,
@@ -670,6 +763,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "58a8dbae-9013-4fab-a07c-624392c2be83",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: 1400,
@@ -684,6 +779,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ff1c4391-b05b-476e-81c8-dd63903753dd",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "MagicField",
       position: {
         x: 900,
@@ -698,6 +795,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "83dcaea9-6551-4cb1-abd8-d56eccdd3720",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: 1420,
@@ -712,6 +811,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "27f1be05-928e-48ba-8bb8-37dd93f38c00",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "MagicField",
       position: {
         x: -1100,
@@ -726,6 +827,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e7ef98f6-d1b5-414f-920e-4e54c7f18053",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -660,
@@ -742,6 +845,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4f54c668-66c9-4b1a-8ef1-dc5e61aa5645",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -240,
@@ -756,6 +861,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "dd210e8a-ab1e-4b76-ac16-233c5937cae2",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "DamageField",
       position: {
         x: -560,
@@ -770,6 +877,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ae568340-2971-4dca-8213-d29ee877a511",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: -560,
@@ -784,6 +893,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5a207537-6c85-4b76-a876-3c9214134c73",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "RedTreasureField",
       position: {
         x: -560,
@@ -798,6 +909,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "72bc0e42-d1fe-479a-818e-242839e5fd0b",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -560,
@@ -812,6 +925,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8277b405-be4d-4f35-a127-f9835f5e8dcb",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "CaveField",
       position: {
         x: -560,
@@ -822,6 +937,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "bc2e7fb0-4c22-4db0-9e32-0f432fb34a1e",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "CaveField",
       position: {
         x: -2680,
@@ -832,6 +949,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c41f3c74-abef-4412-9b9e-f1931c221cf4",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -2680,
@@ -848,6 +967,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b39f45f0-2c34-4d5a-a811-e165d4843153",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: -2680,
@@ -862,6 +983,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b35cd38a-904f-41a4-8ef7-95b19bcbb0ef",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -3700,
@@ -876,6 +999,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a0ee2b55-c2e7-41c2-976a-832d76cfeafb",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -3700,
@@ -892,6 +1017,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "02a2a096-403f-4ec1-955f-bac06afd9396",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "MagicField",
       position: {
         x: -3200,
@@ -906,6 +1033,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f9a50109-08f3-4167-8ff2-879be94230ad",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: -4280,
@@ -920,6 +1049,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "737ef28c-ce15-49e4-a460-c3b224fe5394",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -4280,
@@ -934,6 +1065,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "7b963933-acc3-4fff-8e7c-16193fb76734",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "RedTreasureField",
       position: {
         x: -4280,
@@ -948,6 +1081,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d128e873-22a1-4305-b03d-98350e3fac5a",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -4280,
@@ -962,6 +1097,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8eb04ba7-0576-4247-a33f-7e7937854a4e",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: -4260,
@@ -976,6 +1113,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d5b69f2a-7f9c-4abc-871e-2179a7038b46",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "DamageField",
       position: {
         x: -4320,
@@ -990,6 +1129,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "14959377-a2f1-4783-8a52-eef6350a20c9",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "MagicField",
       position: {
         x: -4260,
@@ -1004,6 +1145,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3dd1e3e4-9dae-42be-a371-8924cfc54df0",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: -4320,
@@ -1018,6 +1161,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "90084a9d-79e2-47f4-bd55-ccb4e2105346",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -4260,
@@ -1032,6 +1177,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d024e8d4-2b18-43cd-8c02-a00e3b44bd1b",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: -4320,
@@ -1048,6 +1195,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "9f907b37-19f1-4b82-a38f-31ef2fbf8bd5",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -4300,
@@ -1062,6 +1211,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "acc13049-c769-4c17-9539-f77e245c5aba",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "MagicField",
       position: {
         x: -3300,
@@ -1078,6 +1229,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e7395235-85e5-444d-8afa-2c4bee156c94",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "DamageField",
       position: {
         x: -3780,
@@ -1092,6 +1245,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5e2a0e1d-0d28-44ea-9cdd-7a14fda26c3b",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -3280,
@@ -1108,6 +1263,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "28cf8132-3a3f-4b87-b826-c939e803a9a3",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -2760,
@@ -1122,6 +1279,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d27b6101-9800-4181-b1a5-e3d3d357ad71",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "KeyTreasureField",
       position: {
         x: -2200,
@@ -1132,6 +1291,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "cd5fb475-7e70-45f5-9b58-34d2ee1274b2",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "TreasureField",
       position: {
         x: -2400,
@@ -1146,6 +1307,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "0c3c3804-0ce7-47d4-9332-82cf2ee73152",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "DamageField",
       position: {
         x: -2400,
@@ -1160,6 +1323,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "05b37d35-456d-4f43-a960-25f1b70f55da",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "BattleField",
       position: {
         x: -2400,
@@ -1174,6 +1339,8 @@ const hawaiianIslandsCaveB2Left: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e30d3804-f872-4cc6-9e94-48362744d4da",
+
+      area: "HawaiianIslandsCaveB2Left",
       name: "CaveField",
       position: {
         x: -2400,

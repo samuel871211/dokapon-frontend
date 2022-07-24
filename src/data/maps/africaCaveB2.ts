@@ -1,8 +1,9 @@
-import { Vertex, Edge } from "../global";
+import { Vertex, Edge } from "global";
 
 const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
   vertices: [
     {
+      area: "AfricaCaveB2",
       position: {
         x: 920,
         y: 1200,
@@ -18,6 +19,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e7d5a410-f0c6-4c2b-bd79-490ad0185c00",
+
+      area: "AfricaCaveB2",
       name: "CaveField",
       position: {
         x: 860,
@@ -32,6 +35,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "214748e3-3988-4976-a0d7-fdf1c9491907",
+
+      area: "AfricaCaveB2",
       name: "CaveField",
       position: {
         x: 1680,
@@ -46,6 +51,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "121c2a43-5b15-408f-bf45-cac0fff0f969",
+
+      area: "AfricaCaveB2",
       name: "MagicField",
       position: {
         x: 1760,
@@ -60,6 +67,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "33793361-3bf1-445b-9fdb-f344cf60e4c3",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 2520,
@@ -74,6 +83,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f1c127a9-4d62-429b-8b42-cfd669d01689",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: 3220,
@@ -88,6 +99,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "38728806-bcf6-4ec2-bb10-41b85298f0a4",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 3900,
@@ -102,6 +115,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "cc5f18d1-dd44-49e0-8b2d-907a985ba7e4",
+
+      area: "AfricaCaveB2",
       name: "DamageField",
       position: {
         x: 4540,
@@ -116,6 +131,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "89db7df5-37ff-44e1-9bcc-a6d9cf941077",
+
+      area: "AfricaCaveB2",
       name: "MagicField",
       position: {
         x: 5220,
@@ -130,6 +147,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d44327d9-2b2e-4a31-82f2-1027860405fc",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 5260,
@@ -144,6 +163,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ce1aa89d-0c18-4f54-b71a-b60ec3f54e0a",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: 5200,
@@ -158,6 +179,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8e28b52e-e968-4f55-8b45-8377c0075e04",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 5260,
@@ -172,6 +195,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "22defbbc-d21f-4fe4-9578-68a656baf219",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 5180,
@@ -188,6 +213,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "fba02c55-31ac-4d5b-a7dd-51640815dfb5",
+
+      area: "AfricaCaveB2",
       name: "RedTreasureField",
       position: {
         x: 5240,
@@ -202,6 +229,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "66d02b0d-7329-4507-8db4-cd6948cac6c7",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 5140,
@@ -216,6 +245,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1ecce24b-c547-477e-9bde-611b72356efb",
+
+      area: "AfricaCaveB2",
       name: "WhiteTreasureField",
       position: {
         x: 5140,
@@ -226,6 +257,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "626406a1-4b43-4c8e-b352-f82c02fe1800",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 4240,
@@ -242,6 +275,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "fff30218-dcec-4666-92db-98e16636a211",
+
+      area: "AfricaCaveB2",
       name: "DamageField",
       position: {
         x: 3240,
@@ -258,6 +293,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "0c1df5d2-5130-49d0-adf1-8236eb2c6159",
+
+      area: "AfricaCaveB2",
       name: "MagicField",
       position: {
         x: 3180,
@@ -274,6 +311,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8f74734e-f0ff-4def-805b-2b725f119ad8",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 3760,
@@ -288,6 +327,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a34db427-2563-4a26-a68a-99ebbc5b7807",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: 4300,
@@ -302,6 +343,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "47c7c640-1567-4f15-845c-2b013971b60a",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: 2120,
@@ -318,6 +361,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d1a637de-4616-4ae8-b5de-6a337d48cf73",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 1180,
@@ -332,6 +377,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "25dca3ea-4865-44e9-ad28-d754b6421e2b",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 2060,
@@ -346,6 +393,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8a7afc32-9fe7-4710-bbfb-3409b92da5bd",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: 2140,
@@ -360,6 +409,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ef991af1-1fcc-4137-9138-674e6273f760",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 2060,
@@ -374,6 +425,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "67c95e82-9ac8-498d-ba9c-85251098b34b",
+
+      area: "AfricaCaveB2",
       name: "MagicField",
       position: {
         x: 2660,
@@ -390,6 +443,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "6eb1eb8d-bde9-4e11-aec0-9312fc146616",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: 3320,
@@ -404,6 +459,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e68a96b3-6700-490f-bad4-8c46ba3826ef",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 3460,
@@ -418,6 +475,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b3ee3a9b-1f06-4eb9-a6b7-07609b4dea3f",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 2440,
@@ -432,6 +491,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c0d90f3a-4ea0-4c05-9bdd-df796f5a0a0f",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 2920,
@@ -448,6 +509,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "52c869f4-df71-4a20-a988-34e80ebc9a38",
+
+      area: "AfricaCaveB2",
       name: "CaveField",
       position: {
         x: 2860,
@@ -458,6 +521,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "64a03e01-c44b-4c3a-988e-d3fa901c6e80",
+
+      area: "AfricaCaveB2",
       name: "CollectMoneyField",
       position: {
         x: 340,
@@ -474,6 +539,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b331e289-0b5e-4f85-9f5f-494c51043fae",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: 300,
@@ -488,6 +555,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "56ee6693-f804-46e5-9d5e-a853122018c5",
+
+      area: "AfricaCaveB2",
       name: "RedTreasureField",
       position: {
         x: 340,
@@ -502,6 +571,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1b80329f-8fb9-48dc-904e-5900fef30273",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: 260,
@@ -516,6 +587,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d8dfbbff-8a4e-45ee-a69d-faa6a88fb71a",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: 300,
@@ -530,6 +603,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f6b53193-43f9-40e8-b733-8b90c6320f1a",
+
+      area: "AfricaCaveB2",
       name: "CaveField",
       position: {
         x: 260,
@@ -540,6 +615,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "671273b5-4583-40a8-9899-f9087fd191d4",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -400,
@@ -554,6 +631,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "6e69a51e-75c9-4cd6-9424-437c7d45bcf8",
+
+      area: "AfricaCaveB2",
       name: "DamageField",
       position: {
         x: -1160,
@@ -570,6 +649,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e02c532c-3c5a-4845-a632-f49f5164cfe2",
+
+      area: "AfricaCaveB2",
       name: "MagicField",
       position: {
         x: -1120,
@@ -584,6 +665,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "f6cc6fc8-f1e7-4dac-9979-aca81608fb8d",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -1720,
@@ -600,6 +683,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "eb2c25c1-bab1-4796-a323-67a5eea3edec",
+
+      area: "AfricaCaveB2",
       name: "RedTreasureField",
       position: {
         x: -1740,
@@ -614,6 +699,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "232d62a5-1a1d-4e90-a51c-52a5fe7f7561",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: -1140,
@@ -628,6 +715,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "6d369e03-1fac-4fb5-87a9-0687ce11767b",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -1100,
@@ -642,6 +731,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ecf51442-aab0-4810-b171-77c34ae1ea11",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -1700,
@@ -658,6 +749,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "fc57c752-6096-4618-8272-69a37bcb9c46",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: -2360,
@@ -672,6 +765,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4e0b8010-7a6c-4bdd-82ca-616d71561ac6",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -2400,
@@ -688,6 +783,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "bc061849-1cd3-4e18-ae54-4a456550f79f",
+
+      area: "AfricaCaveB2",
       name: "CaveField",
       position: {
         x: -2300,
@@ -698,6 +795,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "cb2bc3e4-6ee3-4b14-b07e-c7a8452d5324",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -2980,
@@ -712,6 +811,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "367cb6a0-ec03-4536-8b8b-cb22b59970f9",
+
+      area: "AfricaCaveB2",
       name: "WhiteTreasureField",
       position: {
         x: -3020,
@@ -722,6 +823,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "65b225a9-96a6-4041-b746-43a0fee3af77",
+
+      area: "AfricaCaveB2",
       name: "MagicField",
       position: {
         x: -2320,
@@ -738,6 +841,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "7d15718c-746a-4766-90b1-cbd45081f10f",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -2840,
@@ -752,6 +857,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4c349edf-ec43-4025-946e-cd96f71b7c95",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: -2900,
@@ -766,6 +873,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "40f779ed-e5a0-4cf4-8c51-67ad85d955b9",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -2820,
@@ -780,6 +889,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "6e8791ab-c473-4fa5-8436-cb0522ac57ae",
+
+      area: "AfricaCaveB2",
       name: "DamageField",
       position: {
         x: -2320,
@@ -796,6 +907,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1589b2a1-95b1-45f5-9366-a05a40436911",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -1300,
@@ -810,6 +923,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "2d69e2d5-d5b4-4b73-a1d1-0d70df66fd01",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: -1360,
@@ -824,6 +939,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "dd7a05d3-f46c-4c29-adc9-02b61236e9bf",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -1300,
@@ -838,6 +955,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "0f5389fc-7bc5-4fab-821f-a0d0b02b37f9",
+
+      area: "AfricaCaveB2",
       name: "MagicField",
       position: {
         x: -1940,
@@ -854,6 +973,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "2537c9ad-4057-4746-8d66-3e3d16693e31",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -2500,
@@ -868,6 +989,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5ab0d305-c95f-4bc0-9c03-948650d5e21c",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: -2500,
@@ -882,6 +1005,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "32faecc5-2b7d-4683-8c76-8d528b00322a",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -1880,
@@ -898,6 +1023,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ddd1d373-416f-4785-ae99-785875422b3a",
+
+      area: "AfricaCaveB2",
       name: "DamageField",
       position: {
         x: -1900,
@@ -912,6 +1039,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e0731ba1-8f79-4fc0-bec0-af57d0a06456",
+
+      area: "AfricaCaveB2",
       name: "RedTreasureField",
       position: {
         x: -1180,
@@ -926,6 +1055,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d8565415-b9ee-445e-ba6c-37ec31141120",
+
+      area: "AfricaCaveB2",
       name: "BattleField",
       position: {
         x: -1180,
@@ -940,6 +1071,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "2186eb8a-be3a-43b7-8001-0cfe426d4495",
+
+      area: "AfricaCaveB2",
       name: "TreasureField",
       position: {
         x: -160,
@@ -954,6 +1087,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "31b2981f-a221-4bc5-9764-dd0f50d74ee8",
+
+      area: "AfricaCaveB2",
       name: "DamageField",
       position: {
         x: 3120,
@@ -968,6 +1103,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a6238586-aaf6-40a1-bfb3-a92e4621e320",
+
+      area: "AfricaCaveB2",
       name: "DamageField",
       position: {
         x: 3120,
@@ -982,6 +1119,8 @@ const africaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "68a9fb6c-6637-42a2-a67b-020006be090e",
+
+      area: "AfricaCaveB2",
       name: "KeyTreasureField",
       position: {
         x: 2500,

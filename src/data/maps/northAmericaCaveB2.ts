@@ -1,8 +1,9 @@
-import { Vertex, Edge } from "../global";
+import { Vertex, Edge } from "global";
 
 const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
   vertices: [
     {
+      area: "NorthAmericaCaveB2",
       position: {
         x: 0,
         y: 0,
@@ -18,6 +19,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ae8733c9-ec73-4fac-91c1-31b22ac7c1d4",
+
+      area: "NorthAmericaCaveB2",
       name: "MagicField",
       position: {
         x: -40,
@@ -32,6 +35,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a8254735-a7ae-4e2c-abc2-0386b1766e74",
+
+      area: "NorthAmericaCaveB2",
       name: "CaveField",
       position: {
         x: 20,
@@ -42,6 +47,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e9a424fc-5022-4a6e-a109-0d314d7b7a8f",
+
+      area: "NorthAmericaCaveB2",
       name: "RedTreasureField",
       position: {
         x: 680,
@@ -56,6 +63,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "480e3fcf-391d-4f9d-9ce3-62933025acb1",
+
+      area: "NorthAmericaCaveB2",
       name: "DamageField",
       position: {
         x: 1360,
@@ -70,6 +79,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "efa8bb70-3cbc-4cb5-ad2b-b62a072d1f6d",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: 1440,
@@ -86,6 +97,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1954ef64-121c-46b7-b45e-d42b08697130",
+
+      area: "NorthAmericaCaveB2",
       name: "TreasureField",
       position: {
         x: 780,
@@ -100,6 +113,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ef5056c8-af12-4ba5-a12d-4426798d00a1",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: 720,
@@ -116,6 +131,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "25b26359-165a-4740-8cdc-0a72614d2fb5",
+
+      area: "NorthAmericaCaveB2",
       name: "DamageField",
       position: {
         x: 2120,
@@ -130,6 +147,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "ba46b29b-70e7-4080-ae23-4c5eaa3cfc2b",
+
+      area: "NorthAmericaCaveB2",
       name: "MagicField",
       position: {
         x: 2180,
@@ -144,6 +163,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b6ff19e9-d200-451d-9a1d-4b5d05163b7b",
+
+      area: "NorthAmericaCaveB2",
       name: "DamageField",
       position: {
         x: 1140,
@@ -158,6 +179,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c70182aa-a316-4a3b-87b4-72aba56c72d9",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: 1680,
@@ -174,6 +197,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4d6defeb-6bea-4078-8aed-7ee0bad1cb5c",
+
+      area: "NorthAmericaCaveB2",
       name: "TreasureField",
       position: {
         x: -360,
@@ -188,6 +213,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "bb2df3a4-6402-416a-8f60-301e03ad2c01",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: -320,
@@ -202,6 +229,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "1c96ef30-8879-4847-bb3d-51e783fbc940",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: -380,
@@ -216,6 +245,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "68de4b32-0790-41dc-afe9-fbd4b95a10bb",
+
+      area: "NorthAmericaCaveB2",
       name: "KeyTreasureField",
       position: {
         x: -440,
@@ -232,6 +263,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "28d000bd-f2b8-449a-9df8-f60cd607fbff",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: -960,
@@ -246,6 +279,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "92ee87ac-f1fd-4cac-b59f-3b73aa4dfc67",
+
+      area: "NorthAmericaCaveB2",
       name: "TreasureField",
       position: {
         x: 140,
@@ -260,6 +295,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "41c56cdf-2ef4-4dfa-ad48-f2998515c163",
+
+      area: "NorthAmericaCaveB2",
       name: "TreasureField",
       position: {
         x: -940,
@@ -274,6 +311,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "6c3d374c-2577-4bf4-8928-3e419d1654b2",
+
+      area: "NorthAmericaCaveB2",
       name: "CollectMoneyField",
       position: {
         x: 120,
@@ -288,6 +327,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "9e4a0e43-e166-4db3-b45d-8af1678e3b5f",
+
+      area: "NorthAmericaCaveB2",
       name: "TreasureField",
       position: {
         x: 1680,
@@ -302,6 +343,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5a9bf65b-f559-476f-bd8c-ea46084e9b9a",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: 1680,
@@ -316,6 +359,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "5aa6f309-c198-41ae-98da-de4583faf89d",
+
+      area: "NorthAmericaCaveB2",
       name: "MagicField",
       position: {
         x: 2200,
@@ -330,6 +375,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "c110454d-beab-4a86-8614-c66382a1f982",
+
+      area: "NorthAmericaCaveB2",
       name: "DamageField",
       position: {
         x: 2220,
@@ -344,6 +391,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b9d95974-d4cd-4b4f-9cbc-4bfdca379008",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: 2820,
@@ -358,6 +407,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "3ac46be2-227c-4fd2-b532-55d22bc5ecd2",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: 2860,
@@ -376,6 +427,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "26b03910-bb65-46d7-ae87-d7cc9d7adc10",
+
+      area: "NorthAmericaCaveB2",
       name: "TreasureField",
       position: {
         x: 2780,
@@ -390,6 +443,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d755353d-05dc-4ab2-9e06-2b2e72a9cbcb",
+
+      area: "NorthAmericaCaveB2",
       name: "RedTreasureField",
       position: {
         x: 2240,
@@ -404,6 +459,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "8330822e-43f0-49c3-b047-5596ee062278",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: 2180,
@@ -418,6 +475,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "fcf536c4-3e06-4f88-ab10-f0d5a5cd2c65",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: 1560,
@@ -432,6 +491,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "cad69427-5805-4118-98d3-ade94c364851",
+
+      area: "NorthAmericaCaveB2",
       name: "DamageField",
       position: {
         x: 1620,
@@ -446,6 +507,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "81ae304c-a25c-463a-a0e1-3f5703fa9f05",
+
+      area: "NorthAmericaCaveB2",
       name: "CollectAllMoneyField",
       position: {
         x: 1580,
@@ -456,6 +519,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "deecf3a2-f249-4727-a8a5-0bb0fb70de72",
+
+      area: "NorthAmericaCaveB2",
       name: "MagicField",
       position: {
         x: 4000,
@@ -472,6 +537,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "09c11be5-a025-4464-823b-7ed085ea7d86",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: 3380,
@@ -486,6 +553,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "e50bb6de-c3a4-49c5-9c2d-35bb73b0ffc9",
+
+      area: "NorthAmericaCaveB2",
       name: "TreasureField",
       position: {
         x: 3980,
@@ -500,6 +569,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4b3cd5f1-9979-4a0c-bc70-2f7c5989f29e",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: 4680,
@@ -516,6 +587,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "d652268c-843b-4906-88e6-27c0aae5afbc",
+
+      area: "NorthAmericaCaveB2",
       name: "TreasureField",
       position: {
         x: 5340,
@@ -530,6 +603,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "4b724f10-d8e3-4cb2-ae9f-b416fecc4b31",
+
+      area: "NorthAmericaCaveB2",
       name: "GoldTreasureField",
       position: {
         x: 4660,
@@ -544,6 +619,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "45529d6f-7ac7-4f08-91aa-9957e133c879",
+
+      area: "NorthAmericaCaveB2",
       name: "DamageField",
       position: {
         x: 4700,
@@ -558,6 +635,8 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "a78c29bf-b716-439a-af50-65ee2678e07b",
+
+      area: "NorthAmericaCaveB2",
       name: "BattleField",
       position: {
         x: 5320,

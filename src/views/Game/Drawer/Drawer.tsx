@@ -149,7 +149,7 @@ function Drawer(props: { state: TransitionStatus }): JSX.Element {
     <div
       {...handleKeyUpAttrs}
       className={classNames(
-        `${styles.container}`,
+        `${styles.drawerContainer}`,
         `${transitionStyles.container[state]}`
       )}
     >

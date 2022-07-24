@@ -6,6 +6,5 @@ export default function registerWindowResizeEvtHandler(): void {
   HTMLEl.style.setProperty("--vw", `${aspectRatioEl.clientWidth / 100}px`);
   window.onresize = () => {
     HTMLEl.style.setProperty("--vw", `${aspectRatioEl.clientWidth / 100}px`);
-    console.log("hello");
   };
 }

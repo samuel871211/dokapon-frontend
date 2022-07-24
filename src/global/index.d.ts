@@ -59,7 +59,7 @@ declare namespace Dokapon {
     right?: string;
     bottom?: string;
     edges: string[];
-    area?: AreaTypes;
+    area: AreaTypes;
     isHide?: true;
   };
   export type Edge = Cell & {
@@ -75,21 +75,37 @@ declare namespace Dokapon {
     | "AsiaCave"
     | "Europe"
     | "EuropeCave"
+    | "EuropeCaveLibrary"
+    | "EuropeCaveCanteen"
+    | "EuropeCaveHall"
     | "Russia"
     | "NorthAmerica"
     | "NorthAmericaCave"
+    | "NorthAmericaCaveB2"
     | "SouthAmerica"
     | "SouthAmericaCave"
+    | "SouthAmericaCaveB2"
+    | "SouthAmericaCaveB3"
     | "Oceania"
     | "OceaniaCave"
     | "Africa"
     | "AfricaCave"
+    | "AfricaCaveB2"
+    | "AfricaCaveB3Right"
+    | "AfricaCaveB3Left"
+    | "AfricaCaveB3Center"
     | "Arctic"
     | "ArcticCave"
     | "Antarctica"
     | "AntarcticaCave"
     | "HawaiianIslands"
     | "HawaiianIslandsCave"
+    | "HawaiianIslandsCaveB2Right"
+    | "HawaiianIslandsCaveB2Left"
+    | "HawaiianIslandsCaveB2Center"
+    | "HawaiianIslandsCaveB3Right"
+    | "HawaiianIslandsCaveB3Left"
+    | "HawaiianIslandsCaveB3Center"
     | "Atlantis";
   export type LangTypes = "jp" | "en" | "cn";
   export type GamePadKeyTypes =
@@ -252,7 +268,12 @@ declare namespace Dokapon {
     };
   };
   export type Item = {
-    type: "roulette" | "crystal" | "jump" | "recovery" | "powerUp" | "guard";
+    type:
+      | "移動系アイテム"
+      | "回復系アイテム"
+      | "強化系アイテム"
+      | "補助系アイテム"
+      | "邪魔系アイテム";
     description: string;
     price: number;
     name: string;
@@ -485,22 +506,90 @@ declare namespace Dokapon {
   namespace Game {
     type UIState = {
       showDrawer: boolean;
+      /**
+       * Drawer的第一個item(移動)
+       */
       showRoulette: boolean;
+      /**
+       * Drawer的第二個item(背包)
+       */
       showBag: boolean;
+      /**
+       * Drawer的第四個item(技能)
+       */
       showTalent: boolean;
+      /**
+       * Drawer的第五個item(資訊)
+       */
       showData: boolean;
+      /**
+       * Drawer的第三個item(查看)
+       */
       showCheck: boolean;
-      isPaperTopLayer: boolean;
-      isCheckTopLayer: boolean;
+      /**
+       * 進入Drawer的第三個item(查看)之後
+       *
+       * 再點擊start對應的鍵盤按鍵，就可以進到overviewmap
+       *
+       * 但只有在mainWorld才有這個選項
+       */
       showOverviewMap: boolean;
-      showNodeAttrsAndDistance: boolean;
+      /**
+       * Check(查看)底下又有overviewMap
+       *
+       * 兩者皆為view級的component
+       *
+       * 根據此值，來決定要focus Check或是overviewMap
+       */
+      isCheckTopLayer: boolean;
+      /**
+       * 骰完骰子之後，會變成true
+       */
+      isPaperTopLayer: boolean;
+      /**
+       * Check(查看)底下的其中一個dialog
+       *
+       * 使用者滑鼠hover到vertex才會觸發
+       */
+      showVertexAttrsAndDistance: boolean;
+      /**
+       * Check(查看)右上角的dialog
+       *
+       * 只有在mainWorld才有...
+       *
+       * 洞窟裡面不會有minimap
+       */
       showMinimap: boolean;
-      showNodeDescription: boolean;
+      /**
+       * Check(查看)左上角的dialog
+       */
       showCheckTip: boolean;
-      showShopList: boolean;
-      showBankList: boolean;
-      showVillageStatus: boolean;
-      showVillageValueList: boolean;
+
+      showBattleFieldCheck: boolean;
+      showMagicFieldCheck: boolean;
+      showTreasureFieldCheck: boolean;
+      showCollectMoneyFieldCheck: boolean;
+      CheckshowCollectAllMoneyField: boolean;
+      CheckshowGoldTreasureField: boolean;
+      CheckshowRedTreasureField: boolean;
+      CheckshowWhiteTreasureField: boolean;
+      CheckshowKeyTreasureField: boolean;
+      CheckshowWorldTransferField: boolean;
+      showChruchFieldCheck: boolean;
+      showWeaponStoreFieldCheck: boolean;
+      showJobStoreFieldCheck: boolean;
+      showGroceryStoreFieldCheck: boolean;
+      showMagicStoreFieldCheck: boolean;
+      showVillageFieldCheck: boolean;
+      showCaveFieldCheck: boolean;
+      showCastleFieldCheck: boolean;
+      showDamageFieldCheck: boolean;
+      curHoverVertex: Vertex;
+      curClickVertex: Vertex;
+      // showNodeDescription: boolean;
+      // showBankList: boolean;
+      // showVillageStatus: boolean;
+      // showVillageValueList: boolean;
     };
     type Action = {
       type: // keyof UIState
@@ -513,11 +602,11 @@ declare namespace Dokapon {
         | "isPaperTopLayer"
         | "isCheckTopLayer"
         | "showOverviewMap"
-        | "showNodeAttrsAndDistance"
+        | "showVertexAttrsAndDistance"
         | "showMinimap"
         | "showNodeDescription"
         | "showCheckTip"
-        | "showShopList"
+        | "showGroceryStoreFieldCheck"
         | "showBankList"
         | "showVillageStatus"
         | "showVillageValueList";

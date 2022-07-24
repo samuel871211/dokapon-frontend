@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import Dokapon from "global";
+import Dokapon, { Vertex } from "global";
 
 const initUIState: Dokapon.Game.UIState = {
   showDrawer: true,
@@ -8,17 +8,37 @@ const initUIState: Dokapon.Game.UIState = {
   showTalent: false,
   showData: false,
   showCheck: false,
-  isPaperTopLayer: false,
-  isCheckTopLayer: false,
   showOverviewMap: false,
-  showNodeAttrsAndDistance: false,
+  isCheckTopLayer: false,
+  isPaperTopLayer: false,
+  showVertexAttrsAndDistance: false,
   showMinimap: false,
-  showNodeDescription: false,
   showCheckTip: false,
-  showShopList: false,
-  showBankList: false,
-  showVillageStatus: false,
-  showVillageValueList: false,
+  showBattleFieldCheck: false,
+  showMagicFieldCheck: false,
+  showTreasureFieldCheck: false,
+  showCollectMoneyFieldCheck: false,
+  CheckshowCollectAllMoneyField: false,
+  CheckshowGoldTreasureField: false,
+  CheckshowRedTreasureField: false,
+  CheckshowWhiteTreasureField: false,
+  CheckshowKeyTreasureField: false,
+  CheckshowWorldTransferField: false,
+  showChruchFieldCheck: false,
+  showWeaponStoreFieldCheck: false,
+  showJobStoreFieldCheck: false,
+  showGroceryStoreFieldCheck: false,
+  showMagicStoreFieldCheck: false,
+  showVillageFieldCheck: false,
+  showCaveFieldCheck: false,
+  showCastleFieldCheck: false,
+  showDamageFieldCheck: false,
+  curHoverVertex: {} as Vertex,
+  curClickVertex: {} as Vertex,
+  // showNodeDescription: false,
+  // showBankList: false,
+  // showVillageStatus: false,
+  // showVillageValueList: false,
 };
 
 const UIStateContext = createContext<Dokapon.Game.Context>({

@@ -59,17 +59,16 @@ export default Check;
  * 所以把這些component提升到跟Check同一個階層，確保showCheck跟isCheckTopLayer都true才focus
  */
 function Check(props: { state: TransitionStatus }): JSX.Element {
-  const { state: checkTransitionState } = props;
-  const { t, UIState, handleKeyUpAttrs } = useMetaData(checkTransitionState);
+  const { state: transitionStatusOfCheck } = props;
+  const { t, UIState, handleKeyUpAttrs } = useMetaData(transitionStatusOfCheck);
 
   return (
-    <>
-      <div {...handleKeyUpAttrs}></div>
+    <div className={styles.checkContainer} {...handleKeyUpAttrs}>
       <Transition
         appear
         in={UIState.showCheckTip}
         timeout={{
-          enter: checkTransitionState === "entered" ? 0 : 1000,
+          enter: transitionStatusOfCheck === "entered" ? 0 : 1000,
           exit: 500,
         }}
       >
@@ -96,9 +95,9 @@ function Check(props: { state: TransitionStatus }): JSX.Element {
         )}
       </Transition>
       <Transition
-        in={UIState.showNodeAttrsAndDistance}
+        in={UIState.showVertexAttrsAndDistance}
         timeout={{
-          enter: checkTransitionState === "entered" ? 0 : 1000,
+          enter: transitionStatusOfCheck === "entered" ? 0 : 1000,
           exit: 500,
         }}
       >
@@ -119,7 +118,10 @@ function Check(props: { state: TransitionStatus }): JSX.Element {
       <Transition
         appear
         in={UIState.showMinimap}
-        timeout={{ enter: 1000, exit: 500 }}
+        timeout={{
+          enter: transitionStatusOfCheck === "entered" ? 0 : 1000,
+          exit: 500,
+        }}
       >
         {(state) => (
           <div
@@ -130,18 +132,7 @@ function Check(props: { state: TransitionStatus }): JSX.Element {
           ></div>
         )}
       </Transition>
-      {/* <Transition in={UIState.showOverviewMap} timeout={{ enter: 500, exit: 500 }}>
-            {state => (
-                <div 
-                    className={classNames(
-                        styles.overviewMap,
-                        transitionStyles.overviewMap[state])}
-                >
-                    <WorldSvg/>
-                </div>
-            )}
-            </Transition> */}
-    </>
+    </div>
   );
 }
 
@@ -178,7 +169,7 @@ function useMetaData(state: TransitionStatus) {
           payload: false,
         });
         UIStateDispatch({
-          type: "showNodeAttrsAndDistance",
+          type: "showVertexAttrsAndDistance",
           payload: false,
         });
         UIStateDispatch({
@@ -200,7 +191,7 @@ function useMetaData(state: TransitionStatus) {
           payload: false,
         });
         UIStateDispatch({
-          type: "showNodeAttrsAndDistance",
+          type: "showVertexAttrsAndDistance",
           payload: false,
         });
         break;

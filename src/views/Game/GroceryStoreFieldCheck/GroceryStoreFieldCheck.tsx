@@ -7,8 +7,9 @@ import {
   SyntheticEvent,
   KeyboardEvent,
   useEffect,
+  useState,
 } from "react";
-import { TransitionStatus } from "react-transition-group";
+import type { TransitionStatus } from "react-transition-group";
 
 // Local application/library specific imports.
 import CustomBorderBottom from "components/CustomBorderBottom";
@@ -17,7 +18,8 @@ import { UIStateContext } from "reducers/Game/UIState";
 import { userPreferenceContext } from "reducers/userPreference";
 import YellowBlock from "layouts/YellowBlock";
 import BottomDialogConfirmCircle from "components/BottomDialogConfirmCircle";
-import styles from "./ShopList.module.css";
+import styles from "./GroceryStoreFieldCheck.module.css";
+import groceryStores from "data/groceryStores";
 
 // Stateless vars declare.
 const transitionStyles = {
@@ -36,19 +38,24 @@ const transitionStyles = {
     unmounted: "",
   },
 };
-export default ShopList;
+export default GroceryStoreFieldCheck;
 
-function ShopList(props: { state: TransitionStatus }): JSX.Element {
+function GroceryStoreFieldCheck(props: {
+  state: TransitionStatus;
+}): JSX.Element {
   const { state } = props;
-  const { handleKeyUpAttrs } = useMetaData(state);
-  console.log(state);
+  const { t, handleKeyUpAttrs, curShowItems } = useMetaData(state);
+
   return (
-    <div {...handleKeyUpAttrs} className={styles.container}>
+    <div
+      {...handleKeyUpAttrs}
+      className={styles.groceryStoreFieldCheckContainer}
+    >
       <div className={`${styles.topArea} ${transitionStyles.topArea[state]}`}>
-        <YellowBlock role="title" className={styles.shopName}>
-          陳昱昇
+        <YellowBlock role="title" className={styles.groceryStoreName}>
+          {t("アイテム屋")}
         </YellowBlock>
-        <YellowBlock role="dialog" className={styles.shopList}>
+        <YellowBlock role="dialog" className={styles.itemList}>
           <div className={styles.listHead}>
             <div className={styles.th}>NAME</div>
             <div className={styles.th}>PRICE</div>
@@ -62,44 +69,44 @@ function ShopList(props: { state: TransitionStatus }): JSX.Element {
             <div className={styles.nameList}>
               <div className={styles.name}>
                 <div className={styles.icon}></div>
-                <div>一二</div>
+                <div>{curShowItems[0]?.name}</div>
               </div>
               <div className={styles.name}>
                 <div className={styles.icon}></div>
-                <div>一二三四五六</div>
+                <div>{curShowItems[1]?.name}</div>
               </div>
               <div className={styles.name}>
                 <div className={styles.icon}></div>
-                <div>一二三四五六七</div>
+                <div>{curShowItems[2]?.name}</div>
               </div>
               <div className={styles.name}>
                 <div className={styles.icon}></div>
-                <div>一二三四五六七</div>
+                <div>{curShowItems[3]?.name}</div>
               </div>
               <div className={styles.name}>
                 <div className={styles.icon}></div>
-                <div>一二三四五六</div>
+                <div>{curShowItems[4]?.name}</div>
               </div>
               <div className={styles.name}>
                 <div className={styles.icon}></div>
-                <div>一二</div>
+                <div>{curShowItems[5]?.name}</div>
               </div>
             </div>
             <div className={styles.priceList}>
-              <div>300000</div>
-              <div>270000</div>
-              <div>820000</div>
-              <div>645000</div>
-              <div>30000</div>
-              <div>7800</div>
+              <div>{curShowItems[0]?.price}</div>
+              <div>{curShowItems[1]?.price}</div>
+              <div>{curShowItems[2]?.price}</div>
+              <div>{curShowItems[3]?.price}</div>
+              <div>{curShowItems[4]?.price}</div>
+              <div>{curShowItems[5]?.price}</div>
             </div>
             <div className={styles.dataList}>
-              <div>陳昱昇是大帥哥</div>
-              <div>陳昱昇是大帥</div>
-              <div>陳昱昇是大</div>
-              <div>陳昱昇是大</div>
-              <div>陳昱昇是大帥</div>
-              <div>陳昱昇是大帥哥</div>
+              <div>{curShowItems[0]?.type}</div>
+              <div>{curShowItems[1]?.type}</div>
+              <div>{curShowItems[2]?.type}</div>
+              <div>{curShowItems[3]?.type}</div>
+              <div>{curShowItems[4]?.type}</div>
+              <div>{curShowItems[5]?.type}</div>
             </div>
             <div className={styles.right}>
               <div className={styles.arrowIcon}></div>
@@ -123,10 +130,20 @@ function ShopList(props: { state: TransitionStatus }): JSX.Element {
 
 function useMetaData(state: TransitionStatus) {
   const focusElement = useRef<HTMLDivElement>(null);
-  const { UIState, UIStateDispatch } = useContext(UIStateContext);
+  const {
+    UIState: {
+      showGroceryStoreFieldCheck,
+      curClickVertex: { area },
+    },
+    UIStateDispatch,
+  } = useContext(UIStateContext);
   const { userPreference } = useContext(userPreferenceContext);
   const { t } = useTranslation(userPreference.lang);
-  const handleKeyUpAttrs = UIState.showShopList
+  const [curListPage, toggleCurListPage] = useState<0 | 1>(1);
+  const curShowItems = groceryStores[area].filter(
+    (item, index) => index >= 6 * curListPage && index < 6 * (curListPage + 1)
+  );
+  const handleKeyUpAttrs = showGroceryStoreFieldCheck
     ? {
         tabIndex: 0,
         onBlur: (event: SyntheticEvent<HTMLDivElement>) =>
@@ -139,23 +156,24 @@ function useMetaData(state: TransitionStatus) {
     switch (e.key.toLowerCase()) {
       case userPreference.R1:
       case userPreference.R2:
-        break;
       case userPreference.L1:
       case userPreference.L2:
+        toggleCurListPage(curListPage === 0 ? 1 : 0);
         break;
       case userPreference.circle:
       case userPreference.triangle:
       case userPreference.square:
       case userPreference.cross:
         UIStateDispatch({
-          type: "showShopList",
+          type: "showGroceryStoreFieldCheck",
           payload: false,
         });
+        toggleCurListPage(0);
         break;
     }
   }
   useEffect(() => {
     if (state === "entered") focusElement.current?.focus();
   }, [state]);
-  return { handleKeyUpAttrs, t };
+  return { handleKeyUpAttrs, t, curShowItems };
 }

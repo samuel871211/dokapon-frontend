@@ -7,9 +7,12 @@ import {
   WheelEvent,
   createElement,
   useMemo,
+  MouseEvent,
+  useContext,
 } from "react";
 
 // Local application/library specific imports.
+import { UIStateContext } from "reducers/Game/UIState";
 import type { Vertex, Edge } from "global";
 import mainWorld from "data/maps/mainWorld";
 import GraphDSA from "graphics/GraphDSA";
@@ -131,8 +134,15 @@ const graphDSA = new GraphDSA(mainWorld);
 export default GraphUI;
 
 function GraphUI(): JSX.Element {
-  const { handlePointerDown, handleWheel, SVGScale, SVGTranslate, Cells } =
-    useMetaData();
+  const {
+    handlePointerOver,
+    handleDoubleClick,
+    handlePointerDown,
+    handleWheel,
+    SVGScale,
+    SVGTranslate,
+    Cells,
+  } = useMetaData();
   return (
     <div className={styles.graphUIcontainer}>
       <svg
@@ -145,6 +155,8 @@ function GraphUI(): JSX.Element {
         className={styles.svg}
         onPointerDown={handlePointerDown}
         onWheel={handleWheel}
+        onDoubleClick={handleDoubleClick}
+        onPointerOver={handlePointerOver}
       >
         <defs>
           <marker
@@ -168,11 +180,106 @@ function GraphUI(): JSX.Element {
 }
 
 function useMetaData() {
+  const { UIStateDispatch } = useContext(UIStateContext);
   const [curGraph, setCurGraph] = useState(mainWorld);
   const [SVGScale, setSVGScale] = useState(1);
   const [SVGTranslate, setSVGTranslate] = useState({ x: 0, y: 0 });
   const Cells = useMemo(() => fromJSON(curGraph), [curGraph]);
 
+  function handlePointerOver(e: PointerEvent<SVGSVGElement>) {
+    if (!(e.target instanceof SVGCircleElement)) {
+      UIStateDispatch({
+        type: "showVertexAttrsAndDistance",
+        payload: false,
+      });
+      return;
+    }
+
+    const vertexId = e.target.parentElement?.id;
+    const vertex = curGraph.vertices.find((item) => item.id === vertexId);
+    if (!vertex) return console.error("no pointer over vertex");
+
+    UIStateDispatch({
+      type: "showVertexAttrsAndDistance",
+      payload: true,
+    });
+  }
+  /**
+   * @todo 除了要處理點擊到vertex，還要處理點擊到monster或player
+   */
+  function handleDoubleClick(e: MouseEvent<SVGSVGElement>) {
+    if (!(e.target instanceof SVGCircleElement)) return;
+
+    const vertexId = e.target.parentElement?.id;
+    const vertex = curGraph.vertices.find((item) => item.id === vertexId);
+    if (!vertex) return console.error("no pointer over vertex");
+
+    // UIStateDispatch({
+    //   type: 'isCheckTopLayer',
+    //   payload: false
+    // })
+    // UIStateDispatch({
+    //     type: 'showMinimap',
+    //     payload: false
+    // })
+    // UIStateDispatch({
+    //     type: 'showCheckTip',
+    //     payload: false
+    // })
+    // UIStateDispatch({
+    //   type: 'showVertexAttrsAndDistance',
+    //   payload: false
+    // })
+    switch (vertex.name) {
+      case "BattleField":
+      case "CastleField":
+      case "CaveField":
+      case "ChruchField":
+      case "CollectAllMoneyField":
+      case "CollectMoneyField":
+      case "DamageField":
+      case "GoldTreasureField":
+        return;
+      case "GroceryStoreField":
+        vertex.area;
+        UIStateDispatch({
+          type: "isCheckTopLayer",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showMinimap",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showCheckTip",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showVertexAttrsAndDistance",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showGroceryStoreFieldCheck",
+          payload: true,
+        });
+        UIStateDispatch({
+          type: "curClickVertex",
+          payload: vertex,
+        });
+        return;
+      case "JobStoreField":
+      case "KeyTreasureField":
+      case "MagicField":
+      case "MagicStoreField":
+      case "RedTreasureField":
+      case "TreasureField":
+      case "VillageField":
+      case "WeaponStoreField":
+      case "WhiteTreasureField":
+      case "WorldTransferField":
+        return;
+    }
+  }
   /**
    * POINTERDOWN註冊在SVG ELEMENT身上
    *
@@ -231,9 +338,9 @@ function useMetaData() {
     setSVGTranslate({ x: newX, y: newY });
   }
   return {
+    handlePointerOver,
+    handleDoubleClick,
     handlePointerDown,
-    // handlePointerMove,
-    // handlePointerUp,
     handleWheel,
     SVGScale,
     SVGTranslate,

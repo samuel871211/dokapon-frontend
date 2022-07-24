@@ -1,7 +1,12 @@
-/* .container {
-    position: relative;
-    transform: translateY(-100%);
-} */
+/* 
+為了避免checkContainer擋到`GraphUI`，所以width跟height都為0
+check底下的`CheckTip` `VertexAttrsAndDistance` `Minimap`
+其position、width、height都是根據aspect radio那一層的container
+*/
+.checkContainer {
+  width: 0px;
+  height: 0px;
+}
 .checkTipContainer {
   position: absolute;
   top: 5%;

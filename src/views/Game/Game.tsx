@@ -13,7 +13,7 @@ import Roulette from "./Roulette";
 import Bag from "./Bag";
 import Check from "./Check";
 import OverviewMap from "./OverviewMap";
-import ShopList from "./ShopList";
+import GroceryStoreFieldCheck from "./GroceryStoreFieldCheck";
 import { useReducer } from "react";
 import {
   initUIState,
@@ -60,147 +60,6 @@ function Game(): JSX.Element {
     });
   }
   useEffect(registerWindowResizeEvtHandler, []);
-  // function registerPaperEventHandler (Paper: joint.dia.Paper): void {
-  //     let dragMouseDownPos = { x: 0, y: 0 }
-  //     let dragAnchorPos = { x: 0, y: 0 }
-  //     Paper.on({
-  //         'cell:pointermove': function (
-  //             cellView: joint.dia.CellView,
-  //             evt: JQuery.Event,
-  //             x: number,
-  //             y: number
-  //         ) {
-  //             const deltaX = (evt.screenX || 0) - dragMouseDownPos.x
-  //             const deltaY = (evt.screenY || 0) - dragMouseDownPos.y
-  //             Paper.translate(
-  //                 dragAnchorPos.x + deltaX,
-  //                 dragAnchorPos.y + deltaY
-  //             )
-  //             UIStateDispatch({
-  //                 type: 'showCheckTip',
-  //                 payload: false
-  //             })
-  //         },
-  //         'cell:pointerup': function (
-  //             cellView: joint.dia.CellView,
-  //             evt: JQuery.Event,
-  //             x: number,
-  //             y: number
-  //         ) {
-  //             UIStateDispatch({
-  //                 type: 'showCheckTip',
-  //                 payload: true
-  //             })
-  //         },
-  //         'cell:mouseover': function (
-  //             cellView: joint.dia.CellView,
-  //             evt: JQuery.Event
-  //         ) {
-  //             if (cellView.model.isLink()) return
-  //             cellView.highlight()
-  //             UIStateDispatch({
-  //                 type: 'showNodeAttrsAndDistance',
-  //                 payload: true
-  //             })
-
-  //         },
-  //         'cell:mouseout': function (
-  //             cellView: joint.dia.CellView,
-  //             evt: JQuery.Event
-  //         ) {
-  //             if (cellView.model.isLink()) return
-  //             cellView.unhighlight()
-  //             UIStateDispatch({
-  //                 type: 'showNodeAttrsAndDistance',
-  //                 payload: false
-  //             })
-  //         },
-  //         /**
-  //          * @todo 需要根據element Type來決定要開啟什麼Dialog
-  //          */
-  //         'cell:pointerdblclick': function (
-  //             cellView: joint.dia.CellView,
-  //             evt: JQuery.Event,
-  //             x: number,
-  //             y: number
-  //         ) {
-  //             if (cellView.model.isLink()) return
-
-  //             const elementType = (cellView.model.prop('type') as string).toLowerCase()
-  //             switch (elementType) {
-  //             case 'dokapon.specialfield':
-  //                 UIStateDispatch({
-  //                     type: 'isCheckTopLayer',
-  //                     payload: false
-  //                 })
-  //                 UIStateDispatch({
-  //                     type: 'showMinimap',
-  //                     payload: false
-  //                 })
-  //                 UIStateDispatch({
-  //                     type: 'showCheckTip',
-  //                     payload: false
-  //                 })
-  //                 UIStateDispatch({
-  //                     type: 'showShopList',
-  //                     payload: true
-  //                 })
-  //                 break
-  //             }
-  //             cellView.model.attr('')
-  //         },
-  //         'blank:mousewheel': function (
-  //             evt: JQuery.Event,
-  //             x: number,
-  //             y: number,
-  //             delta: number
-  //         ) {
-  //             evt.preventDefault()
-  //             const oldScale = Paper.scale().sx
-  //             const { tx, ty } = Paper.translate()
-  //             delta = delta === 1 ? 0.05 : -0.05
-  //             const newScale = parseFloat((oldScale + delta).toFixed(2))
-  //             if (newScale > 9.9 || newScale < 0.1) return
-
-  //             if (oldScale === 1) {
-  //                 Paper.scale(newScale, newScale, x, y)
-  //             } else if (oldScale !== 1) {
-  //                 Paper.translate(
-  //                     parseInt((tx - x * (1 - oldScale)).toFixed(0)),
-  //                     parseInt((ty - y * (1 - oldScale)).toFixed(0))
-  //                 )
-  //                 Paper.scale(1)
-  //                 Paper.scale(newScale, newScale, x, y)
-  //             }
-  //         },
-  //         'blank:pointermove': function (
-  //             evt: JQuery.Event,
-  //             x: number,
-  //             y: number
-  //         ) {
-  //             const deltaX = (evt.screenX || 0) - dragMouseDownPos.x
-  //             const deltaY = (evt.screenY || 0) - dragMouseDownPos.y
-  //             Paper.translate(
-  //                 dragAnchorPos.x + deltaX,
-  //                 dragAnchorPos.y + deltaY
-  //             )
-  //             UIStateDispatch({
-  //                 type: 'showCheckTip',
-  //                 payload: false
-  //             })
-  //         },
-  //         'blank:pointerup': function (
-  //             evt: JQuery.Event,
-  //             x: number,
-  //             y: number
-  //         ) {
-  //             UIStateDispatch({
-  //                 type: 'showCheckTip',
-  //                 payload: true
-  //             })
-  //         },
-  //     })
-  // }
 
   return (
     <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
@@ -251,11 +110,13 @@ function Game(): JSX.Element {
         </Transition>
 
         <Transition
-          in={UIState.showShopList}
+          in={UIState.showGroceryStoreFieldCheck}
           timeout={{ enter: 500, exit: 500 }}
           onExited={showCheck}
         >
-          {(state) => state !== "exited" && <ShopList state={state} />}
+          {(state) =>
+            state !== "exited" && <GroceryStoreFieldCheck state={state} />
+          }
         </Transition>
       </div>
     </UIStateContext.Provider>

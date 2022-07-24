@@ -18,3 +18,10 @@
   background-color: #333333;
   /* display: block; */
 }
+.svg g[data-type="vertex"] circle {
+  transition: all 0.25s;
+}
+.svg g[data-type="vertex"]:hover circle {
+  r: 60;
+  stroke-width: 10;
+}

@@ -109,6 +109,183 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     en: "end",
     cn: "結束",
   },
+  // Game > groceryStore
+  アイテム屋: {
+    en: "grocery store",
+    cn: "雜貨店",
+  },
+  バイン: {
+    cn: "2個輪盤",
+    en: "roulette2",
+  },
+  "３バイン": {
+    cn: "3個輪盤",
+    en: "roulette3",
+  },
+  "４バイン": {
+    cn: "4個輪盤",
+    en: "roulette4",
+  },
+  "５バイン": {
+    cn: "5個輪盤",
+    en: "roulette5",
+  },
+  バイバイン: {
+    cn: "6個輪盤",
+    en: "roulette6",
+  },
+  バババイン: {
+    cn: "特殊輪盤",
+    en: "roulette7",
+  },
+  フリールーレット: {
+    cn: "城堡輪盤",
+    en: "roulette8",
+  },
+  "０のクリスタル": {
+    cn: "0步水晶",
+    en: "crystal0",
+  },
+  "１のクリスタル": {
+    cn: "1步水晶",
+    en: "crystal1",
+  },
+  "２のクリスタル": {
+    cn: "2步水晶",
+    en: "crystal2",
+  },
+  "３のクリスタル": {
+    cn: "3步水晶",
+    en: "crystal3",
+  },
+  "４のクリスタル": {
+    cn: "4步水晶",
+    en: "crystal4",
+  },
+  "５のクリスタル": {
+    cn: "5步水晶",
+    en: "crystal5",
+  },
+  "６のクリスタル": {
+    cn: "6步水晶",
+    en: "crystal6",
+  },
+  マルチクリスタル: {
+    cn: "0~6步水晶",
+    en: "crystalSpecial",
+  },
+  ジャンプ: {
+    cn: "村莊羽毛",
+    en: "featherVillage",
+  },
+  ソトジャンプ: {
+    cn: "離開洞窟羽毛",
+    en: "featherCaveOut",
+  },
+  ハロージャンプ: {
+    cn: "職安羽毛",
+    en: "featherJobStore",
+  },
+  ミセジャンプ: {
+    cn: "雜貨店羽毛",
+    en: "featherGroceryStore",
+  },
+  カエロッカナ: {
+    cn: "我的城堡村莊教會羽毛",
+    en: "featherMyFootPrint",
+  },
+  回復ざい: {
+    cn: "HP50%藥水",
+    en: "recoverHP50",
+  },
+  回復ざいＳＰ: {
+    cn: "HP100%藥水",
+    en: "recoverHP100",
+  },
+  ちりょう薬: {
+    cn: "治療的藥",
+    en: "recoverSomeAbnormalState",
+  },
+  ばんのう薬: {
+    cn: "萬能的藥",
+    en: "recoverMostAbnormalState",
+  },
+  きせきのしずく: {
+    cn: "奇蹟的藥",
+    en: "recoverHPAndAllAbnormalState",
+  },
+  復活ざい: {
+    cn: "復活的藥",
+    en: "recoverRevive",
+  },
+  ヒーリングベル: {
+    cn: "治療的鐘",
+    en: "recoverHPBeforeBattle",
+  },
+  パワーキノコ: {
+    cn: "攻擊蘑菇",
+    en: "mushroomAttack",
+  },
+  ガードキノコ: {
+    cn: "防禦蘑菇",
+    en: "mushroomGuard",
+  },
+  スピードキノコ: {
+    cn: "素早蘑菇",
+    en: "mushroomSpeed",
+  },
+  マジックキノコ: {
+    cn: "魔法蘑菇",
+    en: "mushroomMagic",
+  },
+  魔法の薬: {
+    cn: "魔法的藥",
+    en: "mushroomMagicMedicine",
+  },
+  マモるんです: {
+    cn: "防禦物理必死攻擊",
+    en: "guardPhysicalAttack",
+  },
+  ヨケるんです: {
+    cn: "防禦寶箱壞的結果",
+    en: "guardBadTreasure",
+  },
+  キエるんです: {
+    cn: "就是不戰鬥啦",
+    en: "guardFromBattle",
+  },
+  ミエるんです: {
+    cn: "戰鬥前看到先後攻",
+    en: "guardSeeCardBeforeBattle",
+  },
+  魔法の鏡: {
+    cn: "魔法的鏡",
+    en: "guardMagicAttack",
+  },
+  マトック: {
+    cn: "鏟子",
+    en: "guardRockDestroy",
+  },
+  モノキャッチャー: {
+    cn: "所有物竊取",
+    en: "disturbPossesionSteal",
+  },
+  ゼニキャッチャー: {
+    cn: "所持金竊取",
+    en: "disturbMoneySteal",
+  },
+  ワナ: {
+    cn: "設置陷阱",
+    en: "disturbSetUpTrap",
+  },
+  トーレナ岩: {
+    cn: "設置岩石",
+    en: "disturbSetUpRock",
+  },
+  トーサン像: {
+    cn: "我變成石像了",
+    en: "disturbSelfBeingRock",
+  },
   // SelectCharacter > SelectGoalType
   フリーモード設定: {
     en: "Free mode setting",

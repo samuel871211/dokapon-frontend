@@ -13,7 +13,7 @@ import Roulette from "./Roulette";
 import Bag from "./Bag";
 import Check from "./Check";
 import OverviewMap from "./OverviewMap";
-import GroceryStoreFieldCheck from "./GroceryStoreFieldCheck";
+import GroceryStoreFieldCheck from "./Check/GroceryStoreFieldCheck";
 import { useReducer } from "react";
 import {
   initUIState,
@@ -22,6 +22,7 @@ import {
 } from "reducers/Game/UIState";
 import indexStyles from "index.module.css";
 import GraphUI from "components/GraphUI";
+import WeaponStoreFieldCheck from "./Check/WeaponStoreFieldCheck";
 
 // Stateless vars declare.
 const aspectRatioStyles = {
@@ -116,6 +117,16 @@ function Game(): JSX.Element {
         >
           {(state) =>
             state !== "exited" && <GroceryStoreFieldCheck state={state} />
+          }
+        </Transition>
+
+        <Transition
+          in={UIState.showWeaponStoreFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) =>
+            state !== "exited" && <WeaponStoreFieldCheck state={state} />
           }
         </Transition>
       </div>

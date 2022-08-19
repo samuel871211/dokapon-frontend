@@ -241,7 +241,6 @@ function useMetaData() {
       case "GoldTreasureField":
         return;
       case "GroceryStoreField":
-        vertex.area;
         UIStateDispatch({
           type: "isCheckTopLayer",
           payload: false,
@@ -275,6 +274,31 @@ function useMetaData() {
       case "TreasureField":
       case "VillageField":
       case "WeaponStoreField":
+        UIStateDispatch({
+          type: "isCheckTopLayer",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showMinimap",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showCheckTip",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showVertexAttrsAndDistance",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showWeaponStoreFieldCheck",
+          payload: true,
+        });
+        UIStateDispatch({
+          type: "curClickVertex",
+          payload: vertex,
+        });
+        return;
       case "WhiteTreasureField":
       case "WorldTransferField":
         return;

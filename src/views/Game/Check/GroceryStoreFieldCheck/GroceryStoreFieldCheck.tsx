@@ -67,30 +67,12 @@ function GroceryStoreFieldCheck(props: {
               <div className={styles.arrowIcon}></div>
             </div>
             <div className={styles.nameList}>
-              <div className={styles.name}>
-                <div className={styles.icon}></div>
-                <div>{curShowItems[0]?.name}</div>
-              </div>
-              <div className={styles.name}>
-                <div className={styles.icon}></div>
-                <div>{curShowItems[1]?.name}</div>
-              </div>
-              <div className={styles.name}>
-                <div className={styles.icon}></div>
-                <div>{curShowItems[2]?.name}</div>
-              </div>
-              <div className={styles.name}>
-                <div className={styles.icon}></div>
-                <div>{curShowItems[3]?.name}</div>
-              </div>
-              <div className={styles.name}>
-                <div className={styles.icon}></div>
-                <div>{curShowItems[4]?.name}</div>
-              </div>
-              <div className={styles.name}>
-                <div className={styles.icon}></div>
-                <div>{curShowItems[5]?.name}</div>
-              </div>
+              {curShowItems.map((item) => (
+                <div className={styles.name} key={item.name}>
+                  <div className={styles.icon}></div>
+                  <div>{t(item.name)}</div>
+                </div>
+              ))}
             </div>
             <div className={styles.priceList}>
               <div>{curShowItems[0]?.price}</div>
@@ -101,12 +83,12 @@ function GroceryStoreFieldCheck(props: {
               <div>{curShowItems[5]?.price}</div>
             </div>
             <div className={styles.dataList}>
-              <div>{curShowItems[0]?.type}</div>
-              <div>{curShowItems[1]?.type}</div>
-              <div>{curShowItems[2]?.type}</div>
-              <div>{curShowItems[3]?.type}</div>
-              <div>{curShowItems[4]?.type}</div>
-              <div>{curShowItems[5]?.type}</div>
+              <div>{t(curShowItems[0]?.type)}</div>
+              <div>{t(curShowItems[1]?.type)}</div>
+              <div>{t(curShowItems[2]?.type)}</div>
+              <div>{t(curShowItems[3]?.type)}</div>
+              <div>{t(curShowItems[4]?.type)}</div>
+              <div>{t(curShowItems[5]?.type)}</div>
             </div>
             <div className={styles.right}>
               <div className={styles.arrowIcon}></div>
@@ -118,9 +100,9 @@ function GroceryStoreFieldCheck(props: {
         className={`${styles.bottomArea} ${transitionStyles.bottomArea[state]}`}
       >
         <YellowBlock role="dialog" className={styles.messageContainer}>
-          <div>知道妳會過得有模有樣</div>
-          <div>也知道我哭是為了給妳祝福，別再靠北了</div>
-          <div>今後提起，妳的姓名，談笑我也可以</div>
+          <div>{t("アイテムが買えるマス。")}</div>
+          <div>{t("水曜が定休日。")}</div>
+          <div>{t("日曜は特売日。")}</div>
           <BottomDialogConfirmCircle />
         </YellowBlock>
       </div>
@@ -139,7 +121,7 @@ function useMetaData(state: TransitionStatus) {
   } = useContext(UIStateContext);
   const { userPreference } = useContext(userPreferenceContext);
   const { t } = useTranslation(userPreference.lang);
-  const [curListPage, toggleCurListPage] = useState<0 | 1>(1);
+  const [curListPage, toggleCurListPage] = useState<0 | 1>(0);
   const curShowItems = groceryStores[area].filter(
     (item, index) => index >= 6 * curListPage && index < 6 * (curListPage + 1)
   );

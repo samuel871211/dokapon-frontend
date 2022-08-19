@@ -1,4 +1,4 @@
-.groceryStoreFieldCheckContainer {
+.weaponStoreFieldCheckContainer {
   width: 100%;
   height: 100%;
   transform: translateY(-100%);
@@ -9,7 +9,7 @@
   transform: translateY(-100%);
   transition: transform 0.5s;
 }
-.groceryStoreName {
+.weaponStoreName {
   display: inline-block;
   font-size: 3rem;
   line-height: 3rem;
@@ -59,17 +59,73 @@
 .right > .arrowIcon {
   transform: translateX(50%);
 }
+.nameList {
+  width: 50%;
+}
+.priceList {
+  width: 20%;
+  text-align: end;
+}
+.dataList {
+  width: 30%;
+  /* text-align: end; */
+}
 .nameList,
 .priceList,
 .dataList {
-  flex-grow: 1;
   font-size: 3rem;
   line-height: 4rem;
+  /* 一頁顯示六個item */
+  height: 24rem;
 }
 .nameList > div,
 .priceList > div,
 .dataList > div {
   height: 4rem;
+}
+.dataRow {
+  display: flex;
+  align-items: center;
+}
+.dataRowIcon {
+  margin-left: 3rem;
+  color: white;
+  background-color: black;
+  border-radius: 9999px;
+  width: 4rem;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dataRowNumbers {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.dataRowNumbers > div:nth-child(1) {
+  color: white;
+  -webkit-text-stroke: 0.1rem black;
+  width: 40%;
+  text-align: center;
+}
+.dataRowNumbers > div:nth-child(2) {
+  color: white;
+  -webkit-text-stroke: 0.1rem black;
+  width: 20%;
+}
+.dataRowNumbers > div:nth-child(3) {
+  -webkit-text-stroke: 0.1rem black;
+  width: 40%;
+  text-align: right;
+  padding-right: 10%;
+}
+.dataRowNumbers > div:nth-child(3)[data-larger="true"] {
+  color: var(--larger-green);
+}
+.dataRowNumbers > div:nth-child(3)[data-larger="false"] {
+  color: var(--smaller-red);
 }
 .name {
   display: flex;
@@ -102,7 +158,7 @@
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  line-height: 3rem;
+  /* line-height: 3rem; */
 }
 .topAreaEntered {
   transform: none;

@@ -109,7 +109,620 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     en: "end",
     cn: "結束",
   },
+  // Game > WeaponStore
+  武器屋: {
+    en: "Weapon Store",
+    cn: "武器屋",
+  },
+  はりぼての盾: {
+    en: "Papier-mache shield",
+    cn: "紙製盾牌",
+  },
+  ウッドシールド: {
+    en: "Wood shield",
+    cn: "木盾",
+  },
+  石の盾: {
+    en: "Stone shield",
+    cn: "石盾",
+  },
+  マコトの盾: {
+    en: "Makoto's shield",
+    cn: "誠的盾",
+  },
+  おんみょうの盾: {
+    en: "Onmyo Shield",
+    cn: "陰陽盾",
+  },
+  バックラー: {
+    en: "Buckler",
+    cn: "圓環",
+  },
+  ウィウィシールド: {
+    en: "Wiwi Shield",
+    cn: "維維盾",
+  },
+  ウサチャンガード: {
+    en: "Usachan Guard",
+    cn: "烏薩坎衛隊",
+  },
+  兵士の盾: {
+    en: "Soldier shield",
+    cn: "士兵盾",
+  },
+  忍びの盾: {
+    en: "Stealth Shield",
+    cn: "隱形盾牌",
+  },
+  クマタンガード: {
+    en: "Bear tongue guard",
+    cn: "熊舌盾牌",
+  },
+  ムーンシールド: {
+    en: "Moon shield",
+    cn: "月盾",
+  },
+  アイアンシールド: {
+    en: "Iron shield",
+    cn: "鐵盾",
+  },
+  毛皮の盾: {
+    en: "Fur shield",
+    cn: "毛皮之盾",
+  },
+  エルフの盾: {
+    en: "Elf shield",
+    cn: "精靈盾",
+  },
+  黒の盾: {
+    en: "Black shield",
+    cn: "黑之盾",
+  },
+  聖騎士の盾: {
+    en: "Paladin Shield",
+    cn: "聖騎士之盾",
+  },
+  マンモスシールド: {
+    en: "Mammoth shield",
+    cn: "猛獁象盾",
+  },
+  スパイクガード: {
+    en: "Spike guard",
+    cn: "尖刺後衛",
+  },
+  おおわしの盾: {
+    en: "Steller's sea eagle shield",
+    cn: "斯特勒的海鷹盾牌",
+  },
+  赤き星の盾: {
+    en: "Red star shield",
+    cn: "紅星之盾",
+  },
+  カッターフラワー: {
+    en: "Cutter flower",
+    cn: "切花",
+  },
+  モノアイシールド: {
+    en: "Mono eye shield",
+    cn: "單眼之盾",
+  },
+  シルバーシールド: {
+    en: "Silver shield",
+    cn: "銀盾",
+  },
+  黄金の盾: {
+    en: "Golden shield",
+    cn: "黃金之盾",
+  },
+  ドカポソシールド: {
+    en: "Dokaposo Shield",
+    cn: "多卡波索盾",
+  },
+  ナスカシールド: {
+    en: "Nasca Shield",
+    cn: "納斯卡盾牌",
+  },
+  メタルシールド: {
+    en: "Metal shield",
+    cn: "金屬之盾",
+  },
+  破邪の盾: {
+    en: "Shield of Destruction",
+    cn: "毀滅之盾",
+  },
+  石仮面の盾: {
+    en: "Stone mask shield",
+    cn: "石面具盾",
+  },
+  ドクロの盾: {
+    en: "Skull shield",
+    cn: "骷髏盾",
+  },
+  ウロコの盾: {
+    en: "Scale shield",
+    cn: "鱗盾",
+  },
+  バタフライガード: {
+    en: "Butterfly guard",
+    cn: "蝴蝶之盾",
+  },
+  こうらの盾: {
+    en: "shell shields",
+    cn: "殼盾",
+  },
+  ボヨヨンシールド: {
+    en: "Boyoyon Shield",
+    cn: "博約永盾",
+  },
+  ジュラルミンの盾: {
+    en: "Duralumin shield",
+    cn: "硬鋁盾",
+  },
+  太陽の盾: {
+    en: "Sun shield",
+    cn: "太陽之盾",
+  },
+  ビートルガード: {
+    en: "Beetle guard",
+    cn: "甲蟲之盾",
+  },
+  アイ戦士の盾: {
+    en: "Eye warrior shield",
+    cn: "眼戰士盾",
+  },
+  ウォンバットの盾: {
+    en: "Wombat shield",
+    cn: "袋熊盾",
+  },
+  勇者の盾: {
+    en: "Hero's shield",
+    cn: "英雄之盾",
+  },
+  メカニカルガード: {
+    en: "Mechanical guard",
+    cn: "機械護罩",
+  },
+  デーモンシールド: {
+    en: "Daemon shield",
+    cn: "守護神盾",
+  },
+  ドラゴンシールド: {
+    en: "Dragon shield",
+    cn: "龍盾",
+  },
+  ライフガード: {
+    en: "Lifeguard",
+    cn: "救生員",
+  },
+  ダイヤの盾: {
+    en: "Diamond shield",
+    cn: "鑽石盾",
+  },
+  エンゼルシールド: {
+    en: "Angel shield",
+    cn: "天使盾",
+  },
+  氷河の盾: {
+    en: "Glacier shield",
+    cn: "冰川盾牌",
+  },
+  ふくじゅうの盾: {
+    en: "Shield of obedience",
+    cn: "服從之盾",
+  },
+  ドカポンシールド: {
+    en: "Dokapon Shield",
+    cn: "多卡波盾",
+  },
+  魔の盾ソロモン: {
+    en: "Devil's Shield Solomon",
+    cn: "惡魔之盾所羅門",
+  },
+  血ぬりの盾: {
+    en: "Bloody shield",
+    cn: "血腥盾牌",
+  },
+  やすものの剣: {
+    en: "easy sword",
+    cn: "容易的劍",
+  },
+  竹ざお: {
+    en: "Bamboo",
+    cn: "竹子",
+  },
+  りりむロッド: {
+    en: "Ririmu Rod",
+    cn: "里里姆棒",
+  },
+  コメディステッキ: {
+    en: "Comedy stick",
+    cn: "喜劇棒",
+  },
+  出刃ぼうちょう: {
+    en: "Deba knife",
+    cn: "德巴刀",
+  },
+  こんぼう: {
+    en: "Club",
+    cn: "俱樂部",
+  },
+  青龍刀: {
+    en: "Green Dragon Sword",
+    cn: "青龍刀",
+  },
+  アツアツおでん: {
+    en: "Hot oden",
+    cn: "熱關東煮",
+  },
+  にょいぼう: {
+    en: "Ruyi Jingu",
+    cn: "如意金骨",
+  },
+  聖なるナイフ: {
+    en: "Holy knife",
+    cn: "聖刀",
+  },
+  レイピア: {
+    en: "Rapier",
+    cn: "劍桿",
+  },
+  兵士の槍: {
+    en: "Soldier spear",
+    cn: "士兵長矛",
+  },
+  導師の杖: {
+    en: "Guru's staff",
+    cn: "導師的杖",
+  },
+  ペロペロハンマー: {
+    en: "Licking hammer",
+    cn: "舔錘",
+  },
+  魔女ッ子ステッキ: {
+    en: "Witch girl Cane",
+    cn: "女巫手杖",
+  },
+  ジュリアナせんす: {
+    en: "Juliana folding fan",
+    cn: "朱莉安娜折扇",
+  },
+  しゃくじょう: {
+    en: "Khakkhara",
+    cn: "哈卡拉",
+  },
+  メイス: {
+    en: "Mace",
+    cn: "錘",
+  },
+  ハルバード: {
+    en: "Halberd",
+    cn: "戟",
+  },
+  のうふのカマ: {
+    en: "farmer's sickle",
+    cn: "農夫的鐮刀",
+  },
+  ナイトランス: {
+    en: "Night lance",
+    cn: "夜槍",
+  },
+  メリケンサック: {
+    en: "Brass knuckles",
+    cn: "指節銅環",
+  },
+  クリムゾンワンド: {
+    en: "Crimson wand",
+    cn: "猩紅魔杖",
+  },
+  聖騎士のつるぎ: {
+    en: "Paladin sword",
+    cn: "聖騎士劍",
+  },
+  エンジェルロッド: {
+    en: "Angel rod",
+    cn: "天使棒",
+  },
+  木こりのオノ: {
+    en: "Lumberjack Ax",
+    cn: "伐木工人斧頭",
+  },
+  タンバリン: {
+    en: "Tambourine",
+    cn: "手鼓",
+  },
+  巨大きづち: {
+    en: "Giant Kizuchi",
+    cn: "巨人木土",
+  },
+  スチールナイフ: {
+    en: "Steel knife",
+    cn: "鋼刀",
+  },
+  雷めいのつるぎ: {
+    en: "Lightning sword",
+    cn: "閃電劍",
+  },
+  モーニングスター: {
+    en: "Morning star",
+    cn: "晨星",
+  },
+  スピリットクラブ: {
+    en: "Spirit club",
+    cn: "精神俱樂部",
+  },
+  ピンクの注射器: {
+    en: "Pink syringe",
+    cn: "粉紅色注射器",
+  },
+  打ち出のこづち: {
+    en: "Launch Kozuchi",
+    cn: "發射小津",
+  },
+  シャーマンロッド: {
+    en: "Shaman rod",
+    cn: "薩滿杖",
+  },
+  ジャックのメス: {
+    en: "Jack's female",
+    cn: "傑克的女人",
+  },
+  ハヤブサの槍: {
+    en: "Falcon spear",
+    cn: "獵鷹矛",
+  },
+  和銅一文字: {
+    en: "Wado one letter",
+    cn: "和銅一文字",
+  },
+  シルバーソード: {
+    en: "Silver sword",
+    cn: "銀劍",
+  },
+  ピクシーロッド: {
+    en: "Pixie rod",
+    cn: "小精靈棒",
+  },
+  バトルアックス: {
+    en: "Battle ax",
+    cn: "戰斧",
+  },
+  デジ剣: {
+    en: "Digi sword",
+    cn: "數碼劍",
+  },
+  パールカ: {
+    en: "Pearlka",
+    cn: "皮爾卡",
+  },
+  黄金の杖: {
+    en: "Golden cane",
+    cn: "黃金長杖",
+  },
+  フラワーバトン: {
+    en: "Flower baton",
+    cn: "花接力棒",
+  },
+  ドカポソソード: {
+    en: "Dokaposo Sword",
+    cn: "多卡波索劍",
+  },
+  Mリング: {
+    en: "M ring",
+    cn: "M環",
+  },
+  ボーンダガー: {
+    en: "Bone dagger",
+    cn: "骨匕首",
+  },
+  バイラルフック: {
+    en: "Viral hook",
+    cn: "病毒鉤",
+  },
+  ウォーリアスピア: {
+    en: "Warrior Spear",
+    cn: "戰士長矛",
+  },
+  おおかなづち: {
+    en: "Hammer",
+    cn: "錘子",
+  },
+  真紅のロウソク: {
+    en: "Crimson candle",
+    cn: "深紅色蠟燭",
+  },
+  ギロチンアックス: {
+    en: "Guillotine ax",
+    cn: "斷頭台斧",
+  },
+  バトルホーク: {
+    en: "Battle hawk",
+    cn: "戰鷹",
+  },
+  コンバットナイフ: {
+    en: "Combat knife",
+    cn: "戰鬥刀",
+  },
+  王者のツメ: {
+    en: "King's claw",
+    cn: "國王的爪子",
+  },
+  れんじゅの杖: {
+    en: "Renju's cane",
+    cn: "連珠的長杖",
+  },
+  ヌイグルミ: {
+    en: "Stuffed toy",
+    cn: "毛絨玩具",
+  },
+  しっぷう剣: {
+    en: "Shippu Sword",
+    cn: "七風劍",
+  },
+  ぎしきのナイフ: {
+    en: "Ritual knife",
+    cn: "儀式刀",
+  },
+  ドラゴンクロー: {
+    en: "Dragon claw",
+    cn: "龍爪",
+  },
+  アサシンダガー: {
+    en: "Assassin's Dagger",
+    cn: "刺客匕首",
+  },
+  特大ノコギリ: {
+    en: "Oversized saw",
+    cn: "超大鋸",
+  },
+  ドリルランサー: {
+    en: "Drill lancer",
+    cn: "鑽槍手",
+  },
+  ごくあく注射器: {
+    en: "Very open syringe",
+    cn: "非常開放的注射器",
+  },
+  やいばのおうぎ: {
+    en: "Yaiba no Ougi",
+    cn: "八葉之扇",
+  },
+  スネークロッド: {
+    en: "Snake rod",
+    cn: "蛇杖",
+  },
+  ルーンスタッフ: {
+    en: "Rune staff",
+    cn: "符文法杖",
+  },
+  マーメイドロッド: {
+    en: "Mermaid rod",
+    cn: "美人魚竿",
+  },
+  毒手: {
+    en: "Poisonous hand",
+    cn: "毒手",
+  },
+  破壊のオノ: {
+    en: "Destruction ax",
+    cn: "破壞斧",
+  },
+  ピコピコハンマー: {
+    en: "Pico Pico Hammer",
+    cn: "Pico Pico 錘子",
+  },
+  海神のモリ: {
+    en: "Sea God Mori",
+    cn: "海神森",
+  },
+  コアラのぼう: {
+    en: "Koala bow",
+    cn: "無尾熊弓",
+  },
+  メテオストライク: {
+    en: "Meteor Strike",
+    cn: "流星撞擊",
+  },
+  おしおき棒: {
+    en: "Oshioki stick",
+    cn: "押木棒",
+  },
+  竜殺しの剣: {
+    en: "Dragonslayer sword",
+    cn: "屠龍劍",
+  },
+  よみのカマ: {
+    en: "Sickle of reading",
+    cn: "讀書之鐮",
+  },
+  燃える拳: {
+    en: "Burning fist",
+    cn: "燃燒的拳頭",
+  },
+  王家のハンマー: {
+    en: "Royal hammer",
+    cn: "皇家錘",
+  },
+  めいふの杖: {
+    en: "Meifu Cane",
+    cn: "冥府之杖",
+  },
+  ビートホーク: {
+    en: "Beat hawk",
+    cn: "擊敗鷹",
+  },
+  狂剣ジャブロー: {
+    en: "Mad sword jaburo",
+    cn: "狂劍賈布羅",
+  },
+  吹雪の杖: {
+    en: "Snowstorm cane",
+    cn: "暴風雪手杖",
+  },
+  アトミックアイス: {
+    en: "Atomic ice",
+    cn: "原子冰",
+  },
+  ゴッドブロー: {
+    en: "God blow",
+    cn: "神吹",
+  },
+  にくかい: {
+    en: "Meat",
+    cn: "肉",
+  },
+  支配のナイフ: {
+    en: "Domination knife",
+    cn: "支配之劍",
+  },
+  ドカポンソード: {
+    en: "Dokapon Sword",
+    cn: "多卡波劍",
+  },
+  バケモノの槍: {
+    en: "Bakemono spear",
+    cn: "Bakemono矛",
+  },
+  妖刀ニヒル: {
+    en: "Cursed sword nihil",
+    cn: "詛咒之劍虛無",
+  },
+  神魔合竜剣: {
+    en: "God Devil Dragon Sword",
+    cn: "神魔龍劍",
+  },
   // Game > groceryStore
+  移動系アイテム: {
+    en: "feather items",
+    cn: "移動系物品",
+  },
+  回復系アイテム: {
+    en: "recovery items",
+    cn: "回復系物品",
+  },
+  強化系アイテム: {
+    en: "strengthen items",
+    cn: "強化系物品",
+  },
+  補助系アイテム: {
+    en: "assist items",
+    cn: "補助系物品",
+  },
+  邪魔系アイテム: {
+    en: "disturb items",
+    cn: "邪魔系物品",
+  },
+  "アイテムが買えるマス。": {
+    en: "Mass where you can buy items.",
+    cn: "可以購買物品的地方。",
+  },
+  "水曜が定休日。": {
+    en: "Wednesday is a regular holiday.",
+    cn: "星期三公休。",
+  },
+  "日曜は特売日。": {
+    en: "Sunday is a special sale day.",
+    cn: "星期天特賣。",
+  },
   アイテム屋: {
     en: "grocery store",
     cn: "雜貨店",

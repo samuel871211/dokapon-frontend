@@ -231,12 +231,11 @@ import { Item } from "global";
  *
  * 如此一來，key就可以透過TS自動解析成union type
  */
-const satisfiesRecord =
-  <T>() =>
-  <K extends PropertyKey>(rec: Record<K, T>) =>
-    rec;
+function satisfiesRecords<valueType>() {
+  return <K extends PropertyKey>(record: Record<K, valueType>) => record;
+}
 
-const items = satisfiesRecord<Item>()({
+const items = satisfiesRecords<Item>()({
   roulette2: {
     type: "移動系アイテム",
     description: "",

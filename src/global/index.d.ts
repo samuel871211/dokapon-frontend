@@ -569,12 +569,12 @@ declare namespace Dokapon {
       showMagicFieldCheck: boolean;
       showTreasureFieldCheck: boolean;
       showCollectMoneyFieldCheck: boolean;
-      CheckshowCollectAllMoneyField: boolean;
-      CheckshowGoldTreasureField: boolean;
-      CheckshowRedTreasureField: boolean;
-      CheckshowWhiteTreasureField: boolean;
-      CheckshowKeyTreasureField: boolean;
-      CheckshowWorldTransferField: boolean;
+      showCollectAllMoneyFieldCheck: boolean;
+      showGoldTreasureFieldCheck: boolean;
+      showRedTreasureFieldCheck: boolean;
+      showWhiteTreasureFieldCheck: boolean;
+      showKeyTreasureFieldCheck: boolean;
+      showWorldTransferFieldCheck: boolean;
       showChruchFieldCheck: boolean;
       showWeaponStoreFieldCheck: boolean;
       showJobStoreFieldCheck: boolean;
@@ -586,32 +586,48 @@ declare namespace Dokapon {
       showDamageFieldCheck: boolean;
       curHoverVertex: Vertex;
       curClickVertex: Vertex;
-      // showNodeDescription: boolean;
-      // showBankList: boolean;
-      // showVillageStatus: boolean;
-      // showVillageValueList: boolean;
     };
-    type Action = {
-      type: // keyof UIState
-      | "showDrawer"
-        | "showRoulette"
-        | "showBag"
-        | "showTalent"
-        | "showData"
-        | "showCheck"
-        | "isPaperTopLayer"
-        | "isCheckTopLayer"
-        | "showOverviewMap"
-        | "showVertexAttrsAndDistance"
-        | "showMinimap"
-        | "showNodeDescription"
-        | "showCheckTip"
-        | "showGroceryStoreFieldCheck"
-        | "showBankList"
-        | "showVillageStatus"
-        | "showVillageValueList";
-      payload: boolean;
-    };
+    type Action =
+      | {
+          type: // keyof UIState
+          | "showDrawer"
+            | "showRoulette"
+            | "showBag"
+            | "showTalent"
+            | "showData"
+            | "showCheck"
+            | "showOverviewMap"
+            | "isCheckTopLayer"
+            | "isPaperTopLayer"
+            | "showVertexAttrsAndDistance"
+            | "showMinimap"
+            | "showCheckTip"
+            | "showGroceryStoreFieldCheck"
+            | "showBattleFieldCheck"
+            | "showMagicFieldCheck"
+            | "showTreasureFieldCheck"
+            | "showCollectMoneyFieldCheck"
+            | "showCollectAllMoneyFieldCheck"
+            | "showGoldTreasureFieldCheck"
+            | "showRedTreasureFieldCheck"
+            | "showWhiteTreasureFieldCheck"
+            | "showKeyTreasureFieldCheck"
+            | "showWorldTransferFieldCheck"
+            | "showChruchFieldCheck"
+            | "showWeaponStoreFieldCheck"
+            | "showJobStoreFieldCheck"
+            | "showGroceryStoreFieldCheck"
+            | "showMagicStoreFieldCheck"
+            | "showVillageFieldCheck"
+            | "showCaveFieldCheck"
+            | "showCastleFieldCheck"
+            | "showDamageFieldCheck";
+          payload: boolean;
+        }
+      | {
+          type: "curHoverVertex" | "curClickVertex";
+          payload: Vertex;
+        };
     type Context = {
       UIState: UIState;
       UIStateDispatch: Dispatch<Action>;

@@ -12,17 +12,20 @@ import globalStyles from "assets/styles/globalStyles.module.css";
 
 export default YellowBlock;
 
+/**
+ * @param props.selected 是否要有hover Effect
+ */
 function YellowBlock(props: {
-  children: ReactNode | ReactNode[];
-  role?: "dialog" | "button" | "title";
+  children: ReactNode;
+  role: "dialog" | "button" | "title";
   selected?: boolean;
   className?: string;
-  // borderRadius?: string,
 }): JSX.Element {
   // eslint-disable-next-line
   const { selected, className, children, role } = props;
   return (
     <div
+      data-role={role}
       className={classNames(styles.yellowBlock, className, {
         [globalStyles.hoverEffect]: selected,
       })}

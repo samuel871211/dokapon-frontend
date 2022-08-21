@@ -847,7 +847,7 @@ function satisfiesRecords<valueType>() {
 }
 
 const shields = satisfiesRecords<Shield>()({
-  "Papier-mache shield": {
+  shieldPaper: {
     name: "はりぼての盾",
     price: 50,
     attack: 0,
@@ -864,7 +864,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Wood shield": {
+  shieldWood: {
     name: "ウッドシールド",
     price: 580,
     attack: 0,
@@ -881,7 +881,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Stone shield": {
+  shieldStone: {
     name: "石の盾",
     price: 1250,
     attack: 0,
@@ -898,7 +898,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Makoto's shield": {
+  shieldReal: {
     name: "マコトの盾",
     price: 3400,
     attack: 0,
@@ -915,7 +915,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Onmyo Shield": {
+  shieldYinAndYang: {
     name: "おんみょうの盾",
     price: 5500,
     attack: 0,
@@ -927,7 +927,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["ゴジョー"],
     fromVerticesQuery: [],
   },
-  Buckler: {
+  shieldBuckler: {
     name: "バックラー",
     price: 7500,
     attack: 0,
@@ -944,7 +944,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Wiwi Shield": {
+  shieldWeiWei: {
     name: "ウィウィシールド",
     price: 100000,
     attack: 20,
@@ -956,7 +956,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["ウィウィ"],
     fromVerticesQuery: [],
   },
-  "Usachan Guard": {
+  shieldRabbit: {
     name: "ウサチャンガード",
     price: 3200,
     attack: 1,
@@ -973,7 +973,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Soldier shield": {
+  shieldSoldier: {
     name: "兵士の盾",
     price: 13000,
     attack: 0,
@@ -990,7 +990,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Stealth Shield": {
+  shieldStealth: {
     name: "忍びの盾",
     price: 8500,
     attack: 5,
@@ -1007,7 +1007,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Bear tongue guard": {
+  shieldBear: {
     name: "クマタンガード",
     price: 10000,
     attack: 1,
@@ -1019,7 +1019,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["コロボックル"],
     fromVerticesQuery: [],
   },
-  "Moon shield": {
+  shieldMoon: {
     name: "ムーンシールド",
     price: 13000,
     attack: 0,
@@ -1036,7 +1036,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Iron shield": {
+  shieldIron: {
     name: "アイアンシールド",
     price: 19900,
     attack: 0,
@@ -1053,7 +1053,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Fur shield": {
+  shieldFur: {
     name: "毛皮の盾",
     price: 42000,
     attack: 0,
@@ -1070,7 +1070,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Elf shield": {
+  shieldElf: {
     name: "エルフの盾",
     price: 52000,
     attack: 0,
@@ -1087,7 +1087,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Black shield": {
+  shieldBlack: {
     name: "黒の盾",
     price: 46000,
     attack: 0,
@@ -1104,7 +1104,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Paladin Shield": {
+  shieldPaladin: {
     name: "聖騎士の盾",
     price: 35600,
     attack: 0,
@@ -1116,7 +1116,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["ソードナイト"],
     fromVerticesQuery: [],
   },
-  "Mammoth shield": {
+  shieldMammoth: {
     name: "マンモスシールド",
     price: 68500,
     attack: 0,
@@ -1133,7 +1133,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Spike guard": {
+  shieldSpike: {
     name: "スパイクガード",
     price: 85000,
     attack: 8,
@@ -1145,7 +1145,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["アイスゴーレム"],
     fromVerticesQuery: [],
   },
-  "Steller's sea eagle shield": {
+  shieldSeaEagle: {
     name: "おおわしの盾",
     price: 93000,
     attack: 0,
@@ -1162,7 +1162,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Red star shield": {
+  shieldRedStar: {
     name: "赤き星の盾",
     price: 79800,
     attack: 0,
@@ -1179,7 +1179,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Cutter flower": {
+  shieldCutterFlower: {
     name: "カッターフラワー",
     price: 146500,
     attack: 8,
@@ -1196,7 +1196,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Mono eye shield": {
+  shieldMonoEye: {
     name: "モノアイシールド",
     price: 102000,
     attack: 0,
@@ -1213,7 +1213,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Silver shield": {
+  shieldSilver: {
     name: "シルバーシールド",
     price: 158000,
     attack: 0,
@@ -1230,7 +1230,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Golden shield": {
+  shieldGolden: {
     name: "黄金の盾",
     price: 1400000,
     attack: 0,
@@ -1242,7 +1242,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["ケツアルコアトル"],
     fromVerticesQuery: [],
   },
-  "Dokaposo Shield": {
+  shieldDokaposo: {
     name: "ドカポソシールド",
     price: 165000,
     attack: 0,
@@ -1259,7 +1259,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Nasca Shield": {
+  shieldBird: {
     name: "ナスカシールド",
     price: 183000,
     attack: 0,
@@ -1276,7 +1276,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Metal shield": {
+  shieldMetal: {
     name: "メタルシールド",
     price: 196000,
     attack: 0,
@@ -1293,7 +1293,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Shield of Destruction": {
+  shieldDestruction: {
     name: "破邪の盾",
     price: 252000,
     attack: 0,
@@ -1310,7 +1310,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Stone mask shield": {
+  shieldStoneMask: {
     name: "石仮面の盾",
     price: 291000,
     attack: 0,
@@ -1327,7 +1327,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Skull shield": {
+  shieldSkull: {
     name: "ドクロの盾",
     price: 850,
     attack: 0,
@@ -1339,7 +1339,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["さまようムクロ"],
     fromVerticesQuery: [],
   },
-  "Scale shield": {
+  shieldScale: {
     name: "ウロコの盾",
     price: 439000,
     attack: 0,
@@ -1356,7 +1356,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Butterfly guard": {
+  shieldButterfly: {
     name: "バタフライガード",
     price: 930000,
     attack: 0,
@@ -1373,7 +1373,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "shell shields": {
+  shieldShell: {
     name: "こうらの盾",
     price: 473500,
     attack: 0,
@@ -1390,7 +1390,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Boyoyon Shield": {
+  shieldBoobs: {
     name: "ボヨヨンシールド",
     price: 1060000,
     attack: 0,
@@ -1402,7 +1402,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["コビトペンギン"],
     fromVerticesQuery: [],
   },
-  "Duralumin shield": {
+  shieldDuralumin: {
     name: "ジュラルミンの盾",
     price: 538000,
     attack: 0,
@@ -1419,7 +1419,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Sun shield": {
+  shieldSun: {
     name: "太陽の盾",
     price: 400000,
     attack: 0,
@@ -1431,7 +1431,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["神像イマーヘン"],
     fromVerticesQuery: [],
   },
-  "Beetle guard": {
+  shieldBeetle: {
     name: "ビートルガード",
     price: 741000,
     attack: 5,
@@ -1448,7 +1448,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Eye warrior shield": {
+  shieldWarrior: {
     name: "アイ戦士の盾",
     price: 805000,
     attack: 0,
@@ -1465,7 +1465,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Wombat shield": {
+  shieldWombat: {
     name: "ウォンバットの盾",
     price: 298000,
     attack: 1,
@@ -1477,7 +1477,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["ファーファ"],
     fromVerticesQuery: [],
   },
-  "Hero's shield": {
+  shieldHero: {
     name: "勇者の盾",
     price: 912000,
     attack: 0,
@@ -1494,7 +1494,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Mechanical guard": {
+  shieldMechanical: {
     name: "メカニカルガード",
     price: 988000,
     attack: 0,
@@ -1506,7 +1506,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["ファラオの兵"],
     fromVerticesQuery: [],
   },
-  "Daemon shield": {
+  shieldDaemon: {
     name: "デーモンシールド",
     price: 950,
     attack: 10,
@@ -1523,7 +1523,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Dragon shield": {
+  shieldDragon: {
     name: "ドラゴンシールド",
     price: 1140000,
     attack: 0,
@@ -1535,7 +1535,7 @@ const shields = satisfiesRecords<Shield>()({
     fromMonsters: ["海竜"],
     fromVerticesQuery: [],
   },
-  Lifeguard: {
+  shieldLove: {
     name: "ライフガード",
     price: 1310000,
     attack: 0,
@@ -1560,7 +1560,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Diamond shield": {
+  shieldDiamond: {
     name: "ダイヤの盾",
     price: 1900000,
     attack: 0,
@@ -1577,7 +1577,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Angel shield": {
+  shieldAngel: {
     name: "エンゼルシールド",
     price: 1500000,
     attack: 0,
@@ -1594,7 +1594,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Glacier shield": {
+  shieldGlacier: {
     name: "氷河の盾",
     price: 1500000,
     attack: 0,
@@ -1611,7 +1611,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Shield of obedience": {
+  shieldObedience: {
     name: "ふくじゅうの盾",
     price: 1800000,
     attack: 0,
@@ -1628,7 +1628,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Dokapon Shield": {
+  shieldDokapon: {
     name: "ドカポンシールド",
     price: 1500000,
     attack: 1,
@@ -1645,7 +1645,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Devil's Shield Solomon": {
+  shieldDevil: {
     name: "魔の盾ソロモン",
     price: 111,
     attack: 12,
@@ -1662,7 +1662,7 @@ const shields = satisfiesRecords<Shield>()({
       },
     ],
   },
-  "Bloody shield": {
+  shieldBloody: {
     name: "血ぬりの盾",
     price: 444,
     attack: 0,

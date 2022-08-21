@@ -1572,8 +1572,23 @@ function satisfiesRecords<valueType>() {
   return <K extends PropertyKey>(record: Record<K, valueType>) => record;
 }
 
+/**
+ * 武器分成6種類型
+ *
+ * 1. sword
+ *
+ * 2. stick
+ *
+ * 3. axe
+ *
+ * 4. brassKnuckles
+ *
+ * 5. spear
+ *
+ * 6. hammer
+ */
 const weapons = satisfiesRecords<Weapon>()({
-  "easy sword": {
+  swordNormal: {
     name: "やすものの剣",
     price: 50,
     attack: 2,
@@ -1591,7 +1606,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  Bamboo: {
+  spearBamboo: {
     name: "竹ざお",
     price: 800,
     attack: 6,
@@ -1609,7 +1624,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Ririmu Rod": {
+  stickWitch: {
     name: "りりむロッド",
     price: 500000,
     attack: 7,
@@ -1617,7 +1632,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 50,
     speed: 0,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: ["白ミミック"],
     fromVerticesQuery: [
@@ -1627,7 +1642,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Comedy stick": {
+  stickComedy: {
     name: "コメディステッキ",
     price: 1980,
     attack: 9,
@@ -1635,7 +1650,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 4,
     speed: 0,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
@@ -1645,7 +1660,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Deba knife": {
+  swordKitchen: {
     name: "出刃ぼうちょう",
     price: 3650,
     attack: 13,
@@ -1663,7 +1678,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  Club: {
+  hammerWooden: {
     name: "こんぼう",
     price: 2800,
     attack: 16,
@@ -1681,7 +1696,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Green Dragon Sword": {
+  swordGreenDragon: {
     name: "青龍刀",
     price: 8500,
     attack: 19,
@@ -1699,7 +1714,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Hot oden": {
+  hammerHotOden: {
     name: "アツアツおでん",
     price: 120,
     attack: 22,
@@ -1712,7 +1727,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["ハッカイ"],
     fromVerticesQuery: [],
   },
-  "Ruyi Jingu": {
+  spearRuyiJingu: {
     name: "にょいぼう",
     price: 6800,
     attack: 24,
@@ -1725,7 +1740,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["ゴクウ"],
     fromVerticesQuery: [],
   },
-  "Holy knife": {
+  swordHoly: {
     name: "聖なるナイフ",
     price: 14800,
     attack: 25,
@@ -1743,7 +1758,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  Rapier: {
+  swordRapier: {
     name: "レイピア",
     price: 17600,
     attack: 27,
@@ -1761,7 +1776,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Soldier spear": {
+  spearSoldier: {
     name: "兵士の槍",
     price: 20000,
     attack: 33,
@@ -1779,7 +1794,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Guru's staff": {
+  stickArchMage: {
     name: "導師の杖",
     price: 26000,
     attack: 35,
@@ -1787,7 +1802,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 3,
     speed: 0,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
@@ -1797,7 +1812,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Licking hammer": {
+  hammerLollipop: {
     name: "ペロペロハンマー",
     price: 100,
     attack: 36,
@@ -1810,7 +1825,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["フランケン"],
     fromVerticesQuery: [],
   },
-  "Witch girl Cane": {
+  stickWitchGril: {
     name: "魔女ッ子ステッキ",
     price: 3200,
     attack: 37,
@@ -1818,7 +1833,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 12,
     speed: 0,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
@@ -1828,7 +1843,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Juliana folding fan": {
+  hammerFoldingFan: {
     name: "ジュリアナせんす",
     price: 74500,
     attack: 38,
@@ -1846,7 +1861,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  Khakkhara: {
+  spearMonk: {
     name: "しゃくじょう",
     price: 4800,
     attack: 39,
@@ -1859,7 +1874,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["惨憎法師"],
     fromVerticesQuery: [],
   },
-  Mace: {
+  hammerCleric: {
     name: "メイス",
     price: 26500,
     attack: 40,
@@ -1877,7 +1892,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  Halberd: {
+  spearHalberd: {
     name: "ハルバード",
     price: 34800,
     attack: 41,
@@ -1895,7 +1910,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "farmer's sickle": {
+  axeFarmer: {
     name: "のうふのカマ",
     price: 38000,
     attack: 43,
@@ -1913,7 +1928,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Night lance": {
+  spearNightLance: {
     name: "ナイトランス",
     price: 39400,
     attack: 45,
@@ -1926,7 +1941,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["ブラックアーマー"],
     fromVerticesQuery: [],
   },
-  "Brass knuckles": {
+  brassKnuckles: {
     name: "メリケンサック",
     price: 51000,
     attack: 52,
@@ -1944,7 +1959,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Crimson wand": {
+  stickCrimson: {
     name: "クリムゾンワンド",
     price: 77500,
     attack: 54,
@@ -1952,7 +1967,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 2,
     speed: 0,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
@@ -1962,7 +1977,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Paladin sword": {
+  swordPaladin: {
     name: "聖騎士のつるぎ",
     price: 44000,
     attack: 55,
@@ -1980,7 +1995,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Angel rod": {
+  stickAngel: {
     name: "エンジェルロッド",
     price: 158000,
     attack: 56,
@@ -1988,12 +2003,12 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 15,
     speed: 1,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: ["ラスプーチン"],
     fromVerticesQuery: [],
   },
-  "Lumberjack Ax": {
+  axeLumberjack: {
     name: "木こりのオノ",
     price: 62000,
     attack: 57,
@@ -2011,7 +2026,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  Tambourine: {
+  brassKnucklesTambourine: {
     name: "タンバリン",
     price: 57500,
     attack: 60,
@@ -2024,7 +2039,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["雪原人キッズ"],
     fromVerticesQuery: [],
   },
-  "Giant Kizuchi": {
+  hammerGiant: {
     name: "巨大きづち",
     price: 65000,
     attack: 62,
@@ -2042,7 +2057,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Steel knife": {
+  swordSteel: {
     name: "スチールナイフ",
     price: 95000,
     attack: 63,
@@ -2060,7 +2075,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Lightning sword": {
+  swordLightning: {
     name: "雷めいのつるぎ",
     price: 35000,
     attack: 64,
@@ -2073,7 +2088,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["レッドブリキン"],
     fromVerticesQuery: [],
   },
-  "Morning star": {
+  hammerMorningStar: {
     name: "モーニングスター",
     price: 91500,
     attack: 65,
@@ -2091,7 +2106,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Spirit club": {
+  hammerSpiritClub: {
     name: "スピリットクラブ",
     price: 103800,
     attack: 70,
@@ -2109,7 +2124,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Pink syringe": {
+  spearPink: {
     name: "ピンクの注射器",
     price: 106000,
     attack: 71,
@@ -2127,7 +2142,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Launch Kozuchi": {
+  hammerGolden: {
     name: "打ち出のこづち",
     price: 124000,
     attack: 75,
@@ -2145,7 +2160,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Shaman rod": {
+  stickShaman: {
     name: "シャーマンロッド",
     price: 142000,
     attack: 76,
@@ -2153,7 +2168,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 3,
     speed: 0,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
@@ -2163,7 +2178,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Jack's female": {
+  swordScalpel: {
     name: "ジャックのメス",
     price: 134000,
     attack: 77,
@@ -2181,7 +2196,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Falcon spear": {
+  spearFalcon: {
     name: "ハヤブサの槍",
     price: 206000,
     attack: 78,
@@ -2194,7 +2209,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["トーテマン"],
     fromVerticesQuery: [],
   },
-  "Wado one letter": {
+  swordNinja: {
     name: "和銅一文字",
     price: 50000,
     attack: 80,
@@ -2207,7 +2222,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["ガママル"],
     fromVerticesQuery: [],
   },
-  "Silver sword": {
+  swordSilver: {
     name: "シルバーソード",
     price: 208000,
     attack: 83,
@@ -2225,7 +2240,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Pixie rod": {
+  stickPixie: {
     name: "ピクシーロッド",
     price: 245000,
     attack: 84,
@@ -2233,7 +2248,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 15,
     speed: 0,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
@@ -2243,7 +2258,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Battle ax": {
+  axeBattle: {
     name: "バトルアックス",
     price: 150000,
     attack: 85,
@@ -2261,7 +2276,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Digi sword": {
+  swordDigi: {
     name: "デジ剣",
     price: 210000,
     attack: 92,
@@ -2279,7 +2294,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  Pearlka: {
+  hammerSnowMan: {
     name: "パールカ",
     price: 9000,
     attack: 94,
@@ -2292,7 +2307,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["雪原人ミチエーリ"],
     fromVerticesQuery: [],
   },
-  "Golden cane": {
+  stickGolden: {
     name: "黄金の杖",
     price: 1400000,
     attack: 95,
@@ -2300,12 +2315,12 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 18,
     speed: 0,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: ["テスカポリトカ"],
     fromVerticesQuery: [],
   },
-  "Flower baton": {
+  stickFlower: {
     name: "フラワーバトン",
     price: 254000,
     attack: 96,
@@ -2313,7 +2328,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 5,
     speed: 1,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
@@ -2323,7 +2338,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Dokaposo Sword": {
+  swordDokaposo: {
     name: "ドカポソソード",
     price: 195100,
     attack: 99,
@@ -2341,7 +2356,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "M ring": {
+  brassKnucklesM: {
     name: "Mリング",
     price: 75000,
     attack: 100,
@@ -2359,7 +2374,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Bone dagger": {
+  swordBone: {
     name: "ボーンダガー",
     price: 265000,
     attack: 107,
@@ -2377,7 +2392,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Viral hook": {
+  brassKnucklesHook: {
     name: "バイラルフック",
     price: 300000,
     attack: 108,
@@ -2390,7 +2405,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["バイラル"],
     fromVerticesQuery: [],
   },
-  "Warrior Spear": {
+  spearWarrior: {
     name: "ウォーリアスピア",
     price: 273000,
     attack: 110,
@@ -2408,7 +2423,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  Hammer: {
+  hammer: {
     name: "おおかなづち",
     price: 280000,
     attack: 116,
@@ -2426,7 +2441,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Crimson candle": {
+  hammerCandle: {
     name: "真紅のロウソク",
     price: 397200,
     attack: 117,
@@ -2444,7 +2459,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Guillotine ax": {
+  axeGuillotine: {
     name: "ギロチンアックス",
     price: 368000,
     attack: 118,
@@ -2462,7 +2477,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Battle hawk": {
+  axeHawk: {
     name: "バトルホーク",
     price: 158800,
     attack: 119,
@@ -2475,7 +2490,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["族長タタンカ"],
     fromVerticesQuery: [],
   },
-  "Combat knife": {
+  swordCombat: {
     name: "コンバットナイフ",
     price: 394000,
     attack: 123,
@@ -2493,7 +2508,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "King's claw": {
+  brassKnucklesKing: {
     name: "王者のツメ",
     price: 320000,
     attack: 126,
@@ -2511,7 +2526,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Renju's cane": {
+  stickRenju: {
     name: "れんじゅの杖",
     price: 474000,
     attack: 127,
@@ -2519,7 +2534,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 4,
     speed: 0,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
@@ -2529,7 +2544,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Stuffed toy": {
+  hammerStuffedToy: {
     name: "ヌイグルミ",
     price: 80000,
     attack: 128,
@@ -2542,7 +2557,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["アリサ"],
     fromVerticesQuery: [],
   },
-  "Shippu Sword": {
+  swordShippu: {
     name: "しっぷう剣",
     price: 489000,
     attack: 130,
@@ -2560,7 +2575,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Ritual knife": {
+  swordRitual: {
     name: "ぎしきのナイフ",
     price: 511500,
     attack: 131,
@@ -2578,7 +2593,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Dragon claw": {
+  brassKnucklesDragon: {
     name: "ドラゴンクロー",
     price: 538500,
     attack: 136,
@@ -2596,7 +2611,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Assassin's Dagger": {
+  swordAssassin: {
     name: "アサシンダガー",
     price: 958000,
     attack: 140,
@@ -2614,7 +2629,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Oversized saw": {
+  swordOversized: {
     name: "特大ノコギリ",
     price: 452000,
     attack: 142,
@@ -2632,7 +2647,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Drill lancer": {
+  spearDrill: {
     name: "ドリルランサー",
     price: 593000,
     attack: 146,
@@ -2650,7 +2665,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Very open syringe": {
+  spearPurple: {
     name: "ごくあく注射器",
     price: 638000,
     attack: 147,
@@ -2668,7 +2683,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Yaiba no Ougi": {
+  hammerKunai: {
     name: "やいばのおうぎ",
     price: 610000,
     attack: 149,
@@ -2686,7 +2701,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Snake rod": {
+  stickSnack: {
     name: "スネークロッド",
     price: 44400,
     attack: 150,
@@ -2694,12 +2709,12 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 12,
     speed: 0,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: ["フリルドリザード"],
     fromVerticesQuery: [],
   },
-  "Rune staff": {
+  stickRune: {
     name: "ルーンスタッフ",
     price: 715000,
     attack: 152,
@@ -2707,7 +2722,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 4,
     speed: 2,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
@@ -2717,7 +2732,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Mermaid rod": {
+  stickMermaid: {
     name: "マーメイドロッド",
     price: 600000,
     attack: 154,
@@ -2725,7 +2740,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 10,
     speed: 0,
     hp: 10,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [
@@ -2735,7 +2750,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Poisonous hand": {
+  brassKnucklesPoisonous: {
     name: "毒手",
     price: 5050,
     attack: 160,
@@ -2748,7 +2763,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["シャオロン"],
     fromVerticesQuery: [],
   },
-  "Destruction ax": {
+  axeDestruction: {
     name: "破壊のオノ",
     price: 732000,
     attack: 161,
@@ -2766,7 +2781,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Pico Pico Hammer": {
+  hammerToy: {
     name: "ピコピコハンマー",
     price: 1980,
     attack: 162,
@@ -2784,7 +2799,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Sea God Mori": {
+  spearSeaGod: {
     name: "海神のモリ",
     price: 818000,
     attack: 164,
@@ -2802,7 +2817,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Koala bow": {
+  hammerKoala: {
     name: "コアラのぼう",
     price: 8000,
     attack: 165,
@@ -2815,7 +2830,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["ウンフーク"],
     fromVerticesQuery: [],
   },
-  "Meteor Strike": {
+  hammerMeteor: {
     name: "メテオストライク",
     price: 802000,
     attack: 166,
@@ -2833,7 +2848,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Oshioki stick": {
+  hammerHand: {
     name: "おしおき棒",
     price: 910000,
     attack: 171,
@@ -2851,7 +2866,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Dragonslayer sword": {
+  swordDragonslayer: {
     name: "竜殺しの剣",
     price: 875000,
     attack: 175,
@@ -2869,7 +2884,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Sickle of reading": {
+  axeSickle: {
     name: "よみのカマ",
     price: 259,
     attack: 176,
@@ -2882,7 +2897,7 @@ const weapons = satisfiesRecords<Weapon>()({
     fromMonsters: ["死の呼び子"],
     fromVerticesQuery: [],
   },
-  "Burning fist": {
+  brassKnucklesBurning: {
     name: "燃える拳",
     price: 287600,
     attack: 180,
@@ -2900,7 +2915,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Royal hammer": {
+  hammerRoyal: {
     name: "王家のハンマー",
     price: 1122000,
     attack: 181,
@@ -2918,7 +2933,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Meifu Cane": {
+  stickHell: {
     name: "めいふの杖",
     price: 1020000,
     attack: 185,
@@ -2926,12 +2941,12 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 16,
     speed: -3,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: ["マコンデ"],
     fromVerticesQuery: [],
   },
-  "Beat hawk": {
+  axeBeat: {
     name: "ビートホーク",
     price: 1355000,
     attack: 190,
@@ -2949,7 +2964,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Mad sword jaburo": {
+  swordMad: {
     name: "狂剣ジャブロー",
     price: 1122000,
     attack: 193,
@@ -2967,7 +2982,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Snowstorm cane": {
+  stickSnowstorm: {
     name: "吹雪の杖",
     price: 1500000,
     attack: 199,
@@ -2975,7 +2990,7 @@ const weapons = satisfiesRecords<Weapon>()({
     magic: 10,
     speed: 0,
     hp: 0,
-    additionalDamageJobs: ["magician", "archMage", "necromancer", "elves"],
+    additionalDamageJobs: ["magician", "archmage", "necromancer", "elves"],
     explanation: "",
     fromMonsters: ["ペギゴン"],
     fromVerticesQuery: [
@@ -2985,7 +3000,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Atomic ice": {
+  hammerIce: {
     name: "アトミックアイス",
     price: 1500000,
     attack: 203,
@@ -3003,7 +3018,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "God blow": {
+  brassKnucklesGod: {
     name: "ゴッドブロー",
     price: 1320000,
     attack: 205,
@@ -3021,7 +3036,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  Meat: {
+  hammerMeat: {
     name: "にくかい",
     price: 2929,
     attack: 206,
@@ -3039,7 +3054,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Domination knife": {
+  swordDomination: {
     name: "支配のナイフ",
     price: 1800000,
     attack: 208,
@@ -3057,7 +3072,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Dokapon Sword": {
+  swordDokapon: {
     name: "ドカポンソード",
     price: 1800000,
     attack: 215,
@@ -3075,7 +3090,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Bakemono spear": {
+  spearMonster: {
     name: "バケモノの槍",
     price: 444,
     attack: 230,
@@ -3093,7 +3108,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "Cursed sword nihil": {
+  swordDemon: {
     name: "妖刀ニヒル",
     price: 1110,
     attack: 244,
@@ -3111,7 +3126,7 @@ const weapons = satisfiesRecords<Weapon>()({
       },
     ],
   },
-  "God Devil Dragon Sword": {
+  swordGodDevilDragon: {
     name: "神魔合竜剣",
     price: 888,
     attack: 300,

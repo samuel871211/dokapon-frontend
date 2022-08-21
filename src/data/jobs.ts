@@ -230,7 +230,7 @@ const jobs: Job[] = [
     allowFemale: true,
   },
   {
-    type: "archMage",
+    type: "archmage",
     name: "大魔道",
     levelUpPoint: {
       attack: 1,
@@ -1039,7 +1039,7 @@ export const basicJobTypes: BasicJobTypes[] = [
 export const warriorJobTypes: JobTypes[] = ["warrior", "knight", "bladeMaster"];
 export const magicianJobTypes: JobTypes[] = [
   "magician",
-  "archMage",
+  "archmage",
   "necromancer",
   "elves",
 ];

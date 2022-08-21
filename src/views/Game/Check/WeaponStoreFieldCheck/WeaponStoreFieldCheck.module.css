@@ -121,10 +121,13 @@
   text-align: right;
   padding-right: 10%;
 }
-.dataRowNumbers > div:nth-child(3)[data-larger="true"] {
+.dataRowNumbers > div:nth-child(3) {
+  color: white;
+}
+.dataRowNumbers > div:nth-child(3)[data-larger="true"][data-smaller="false"] {
   color: var(--larger-green);
 }
-.dataRowNumbers > div:nth-child(3)[data-larger="false"] {
+.dataRowNumbers > div:nth-child(3)[data-larger="false"][data-smaller="true"] {
   color: var(--smaller-red);
 }
 .name {

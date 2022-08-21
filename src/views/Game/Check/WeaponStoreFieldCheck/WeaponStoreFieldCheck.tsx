@@ -100,7 +100,7 @@ function WeaponStoreFieldCheck(props: {
                   <div className={styles.dataRowNumbers}>
                     <div>80</div>
                     <div> ➩</div>
-                    <div data-larger={true}>
+                    <div data-larger={false} data-smaller={false}>
                       {isWeapon(item) ? item.attack : item.defense}
                     </div>
                   </div>

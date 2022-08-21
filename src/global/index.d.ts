@@ -285,7 +285,7 @@ declare namespace Dokapon {
     | "cleric"
     | "thief"
     | "knight"
-    | "archMage"
+    | "archmage"
     | "priest"
     | "bladeMaster"
     | "necromancer"

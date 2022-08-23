@@ -164,7 +164,7 @@ function useMetaData(state: TransitionStatus) {
       case userPreference.square:
       case userPreference.cross:
         UIStateDispatch({
-          type: "showGroceryStoreFieldCheck",
+          type: "showWeaponStoreFieldCheck",
           payload: false,
         });
         toggleCurListPage(0);

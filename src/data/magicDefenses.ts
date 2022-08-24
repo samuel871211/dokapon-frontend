@@ -419,7 +419,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     fromMonsters: [],
     fromVerticesQuery: [],
   },
-  southAmeraica1: {
+  southAmerica1: {
     name: "ドマホガドラ",
     price: 86500,
     defense: 85,
@@ -432,7 +432,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
       },
     ],
   },
-  southAmeraica2: {
+  southAmerica2AndOceania3: {
     name: "ドリカバラ",
     price: 214800,
     defense: 60,

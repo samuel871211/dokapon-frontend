@@ -452,7 +452,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
-  europe1AndAfrica1: {
+  europe2Andafrica1: {
     name: "ゼニゲット",
     price: 12000,
     damage: "small",
@@ -465,7 +465,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
-  europe2: {
+  europe3: {
     name: "ハリー",
     price: 23000,
     damage: "small",
@@ -664,7 +664,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
-  africa1: {
+  africa2: {
     name: "ラストルズ",
     price: 365000,
     damage: "medium",
@@ -677,7 +677,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
-  africa2: {
+  africa3: {
     name: "エレクトラ",
     price: 750000,
     damage: "large",
@@ -694,7 +694,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
-  africa3: {
+  africa4: {
     name: "バーニング",
     price: 800000,
     damage: "large",

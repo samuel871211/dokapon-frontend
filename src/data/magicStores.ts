@@ -4,12 +4,12 @@ import magicDefenses from "./magicDefenses";
 import magicBooks from "./magicBooks";
 
 const magicStores: {
-  [key in AreaTypes]: Array<magicAttack | magicDefense | MagicBook | undefined>;
+  [key in AreaTypes]: Array<magicAttack | magicDefense | MagicBook>;
 } = {
   Asia: [
-    undefined,
-    undefined,
-    undefined,
+    magicBooks.statusMagicDown,
+    magicBooks.statusSpeedDown,
+    magicBooks.otherMonsterSummon,
     magicBooks.damageFire1,
     magicBooks.damageIce1,
     magicBooks.damageThunder1,
@@ -41,7 +41,7 @@ const magicStores: {
   ],
   Russia: [
     magicBooks.statusAttackDown,
-    undefined,
+    magicBooks.statusMagicDown,
     magicBooks.statusPoison,
     magicBooks.otherRecoverOpponent,
     magicBooks.otherDestroyBag,
@@ -59,7 +59,7 @@ const magicStores: {
   ],
   NorthAmerica: [
     magicBooks.statusAttackDown,
-    undefined,
+    magicBooks.statusSpeedDown,
     magicBooks.statusPoison,
     magicBooks.statusStartled,
     magicBooks.otherDestroyBag,
@@ -80,8 +80,8 @@ const magicStores: {
     magicDefenses.northAmerica3,
   ],
   SouthAmerica: [
-    undefined,
-    undefined,
+    magicBooks.statusMagicDown,
+    magicBooks.statusSpeedDown,
     magicBooks.statusPoison,
     magicBooks.statusStartled,
     magicBooks.statusSeal,
@@ -103,7 +103,7 @@ const magicStores: {
   ],
   Oceania: [
     magicBooks.statusAttackDown,
-    undefined,
+    magicBooks.statusMagicDown,
     magicBooks.statusStartled,
     magicBooks.statusSeal,
     magicBooks.otherMonsterSummon,

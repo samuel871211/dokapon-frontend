@@ -1,0 +1,124 @@
+.magicStoreFieldCheckContainer {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%);
+}
+.topArea {
+  width: 100%;
+  height: 70%;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+}
+.magicStoreName {
+  display: inline-block;
+  font-size: 3rem;
+  line-height: 3rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  margin-top: calc(var(--vh) * 6);
+  margin-left: 2.5rem;
+  min-width: 35%;
+}
+.itemList {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: calc(var(--vh) * 1);
+  border-radius: 1.5rem;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.listHead {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.th {
+  color: white;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  -webkit-text-stroke: 0.15rem black;
+}
+.listBody {
+  display: flex;
+  width: 100%;
+}
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  width: 2.5%;
+}
+.arrowIcon {
+  width: 3rem;
+  height: 3rem;
+  border: 0.2rem outset var(--border-color);
+}
+.left > .arrowIcon {
+  transform: translateX(-50%);
+}
+.right > .arrowIcon {
+  transform: translateX(50%);
+}
+.nameList {
+  width: 50%;
+}
+.priceList {
+  width: 20%;
+  text-align: end;
+}
+.dataList {
+  width: 30%;
+  text-align: end;
+}
+.nameList,
+.priceList,
+.dataList {
+  font-size: 3rem;
+  line-height: 4rem;
+  /* 一頁顯示六個item */
+  height: 24rem;
+}
+.nameList > div,
+.priceList > div,
+.dataList > div {
+  height: 4rem;
+}
+.name {
+  display: flex;
+  align-items: center;
+}
+.icon {
+  width: 3rem;
+  height: 3rem;
+  border: 0.2rem outset var(--border-color);
+  margin-right: 1rem;
+}
+.bottomArea {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform 0.5s;
+}
+.messageContainer {
+  width: 95%;
+  height: 80%;
+  background-color: var(--bg-color);
+  border: 0.2rem outset var(--border-color);
+  border-radius: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  /* line-height: 3rem; */
+}
+.topAreaEntered {
+  transform: none;
+}
+.bottomAreaEntered {
+  transform: none;
+}

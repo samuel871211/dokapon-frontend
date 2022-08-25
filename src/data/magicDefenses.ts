@@ -11,269 +11,9 @@ function satisfiesRecords<valueType>() {
   return <K extends PropertyKey>(record: Record<K, valueType>) => record;
 }
 
-const magicDefenseList: magicDefense[] = [
-  {
-    name: "マホガド",
-    price: 0,
-    defense: 30,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [],
-  },
-  {
-    name: "キュア",
-    price: 3950,
-    defense: 40,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["Asia"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "リカバ",
-    price: 6600,
-    defense: 30,
-    explanation: "",
-    fromMonsters: ["霊幻導師"],
-    fromVerticesQuery: [
-      {
-        areas: ["Asia"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "ドギューン",
-    price: 10500,
-    defense: 40,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["Europe"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "ドキュア",
-    price: 21000,
-    defense: 55,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["Europe"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "ガチコン",
-    price: 24800,
-    defense: 40,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["Europe"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "シャキット",
-    price: 24800,
-    defense: 40,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["Russia"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "ドマホガド",
-    price: 35000,
-    defense: 60,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["Russia"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "リキュア",
-    price: 42800,
-    defense: 50,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["NorthAmerica"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "マホタブー",
-    price: 55000,
-    defense: 55,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["NorthAmerica"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "ガッツリ",
-    price: 63000,
-    defense: 40,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["NorthAmerica"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "ドリカバ",
-    price: 0,
-    defense: 50,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [],
-  },
-  {
-    name: "ドマホガドラ",
-    price: 86500,
-    defense: 85,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["SouthAmerica"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "ドリカバラ",
-    price: 214800,
-    defense: 60,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["SouthAmerica", "Oceania"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "キリガッツ",
-    price: 126500,
-    defense: 65,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["Oceania"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "リバイブ",
-    price: 165800,
-    defense: 60,
-    explanation: "",
-    fromMonsters: ["ネクロマンサー"],
-    fromVerticesQuery: [
-      {
-        areas: ["Oceania"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "ドリキュアラ",
-    price: 865000,
-    defense: 55,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["Africa"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "ミナアップ",
-    price: 958000,
-    defense: 60,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["Africa"],
-        vertexTypes: ["MagicStoreField"],
-      },
-    ],
-  },
-  {
-    name: "マホリタン",
-    price: 1680000,
-    defense: 100,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["ArcticCave"],
-        vertexTypes: ["MagicStoreField"],
-      },
-      {
-        areas: ["Atlantis"],
-        vertexTypes: ["RedTreasureField"],
-      },
-    ],
-  },
-  {
-    name: "バインド",
-    price: 984000,
-    defense: 60,
-    explanation: "",
-    fromMonsters: [],
-    fromVerticesQuery: [
-      {
-        areas: ["AntarcticaCave"],
-        vertexTypes: ["MagicStoreField"],
-      },
-      {
-        areas: ["Atlantis"],
-        vertexTypes: ["RedTreasureField"],
-      },
-    ],
-  },
-];
-
 const magicDefenses = satisfiesRecords<magicDefense>()({
   basic: {
+    type: "反擊系魔法",
     name: "マホガド",
     price: 0,
     defense: 30,
@@ -282,6 +22,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     fromVerticesQuery: [],
   },
   asia1: {
+    type: "反擊系魔法",
     name: "キュア",
     price: 3950,
     defense: 40,
@@ -295,6 +36,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   asia2: {
+    type: "反擊系魔法",
     name: "リカバ",
     price: 6600,
     defense: 30,
@@ -308,6 +50,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   europe1: {
+    type: "反擊系魔法",
     name: "ドギューン",
     price: 10500,
     defense: 40,
@@ -321,6 +64,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   europe2: {
+    type: "反擊系魔法",
     name: "ドキュア",
     price: 21000,
     defense: 55,
@@ -334,6 +78,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   europe3: {
+    type: "反擊系魔法",
     name: "ガチコン",
     price: 24800,
     defense: 40,
@@ -347,6 +92,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   russia1: {
+    type: "反擊系魔法",
     name: "シャキット",
     price: 24800,
     defense: 40,
@@ -360,6 +106,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   russia2: {
+    type: "反擊系魔法",
     name: "ドマホガド",
     price: 35000,
     defense: 60,
@@ -373,6 +120,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   northAmerica1: {
+    type: "反擊系魔法",
     name: "リキュア",
     price: 42800,
     defense: 50,
@@ -386,6 +134,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   northAmerica2: {
+    type: "反擊系魔法",
     name: "マホタブー",
     price: 55000,
     defense: 55,
@@ -399,6 +148,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   northAmerica3: {
+    type: "反擊系魔法",
     name: "ガッツリ",
     price: 63000,
     defense: 40,
@@ -412,6 +162,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   enemy: {
+    type: "反擊系魔法",
     name: "ドリカバ",
     price: 0,
     defense: 50,
@@ -420,6 +171,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     fromVerticesQuery: [],
   },
   southAmerica1: {
+    type: "反擊系魔法",
     name: "ドマホガドラ",
     price: 86500,
     defense: 85,
@@ -433,6 +185,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   southAmerica2AndOceania3: {
+    type: "反擊系魔法",
     name: "ドリカバラ",
     price: 214800,
     defense: 60,
@@ -446,6 +199,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   oceania1: {
+    type: "反擊系魔法",
     name: "キリガッツ",
     price: 126500,
     defense: 65,
@@ -459,6 +213,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   oceania2: {
+    type: "反擊系魔法",
     name: "リバイブ",
     price: 165800,
     defense: 60,
@@ -472,6 +227,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   africa1: {
+    type: "反擊系魔法",
     name: "ドリキュアラ",
     price: 865000,
     defense: 55,
@@ -485,6 +241,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   africa2: {
+    type: "反擊系魔法",
     name: "ミナアップ",
     price: 958000,
     defense: 60,
@@ -498,6 +255,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   arctic1: {
+    type: "反擊系魔法",
     name: "マホリタン",
     price: 1680000,
     defense: 100,
@@ -515,6 +273,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     ],
   },
   antarctica1: {
+    type: "反擊系魔法",
     name: "バインド",
     price: 984000,
     defense: 60,

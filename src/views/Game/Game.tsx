@@ -23,6 +23,7 @@ import {
 import indexStyles from "index.module.css";
 import GraphUI from "components/GraphUI";
 import WeaponStoreFieldCheck from "./Check/WeaponStoreFieldCheck";
+import MagicStoreFieldCheck from "./Check/MagicStoreFieldCheck";
 
 // Stateless vars declare.
 const aspectRatioStyles = {
@@ -127,6 +128,16 @@ function Game(): JSX.Element {
         >
           {(state) =>
             state !== "exited" && <WeaponStoreFieldCheck state={state} />
+          }
+        </Transition>
+
+        <Transition
+          in={UIState.showMagicStoreFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) =>
+            state !== "exited" && <MagicStoreFieldCheck state={state} />
           }
         </Transition>
       </div>

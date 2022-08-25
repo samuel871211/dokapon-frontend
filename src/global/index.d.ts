@@ -201,8 +201,21 @@ declare namespace Dokapon {
   };
   export type Weapon = Shield & { additionalDamageJobs: JobTypes[] };
   export type Decoration = Shield;
+  export type MagicTypes =
+    | "弱体系魔法"
+    | "変化系魔法"
+    | "召喚系魔法"
+    | "特殊系魔法"
+    | "邢魔系魔法"
+    | "回復系魔法"
+    | "攻擊系魔法"
+    | "破壊系魔法"
+    | "強化系魔法"
+    | "防御系魔法"
+    | "反擊系魔法"
+    | "補助系魔法";
   export type MagicBook = {
-    type: "damage" | "status" | "other";
+    type: MagicTypes;
     name: string;
     price: number;
     explanation: string;
@@ -216,6 +229,7 @@ declare namespace Dokapon {
     }[];
   };
   export type magicAttack = {
+    type: MagicTypes;
     name: string;
     price: number;
     damage?: "small" | "medium" | "large";
@@ -230,6 +244,7 @@ declare namespace Dokapon {
     }[];
   };
   export type magicDefense = {
+    type: MagicTypes;
     name: string;
     price: number;
     defense: number;

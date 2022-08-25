@@ -270,6 +270,31 @@ function useMetaData() {
       case "KeyTreasureField":
       case "MagicField":
       case "MagicStoreField":
+        UIStateDispatch({
+          type: "isCheckTopLayer",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showMinimap",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showCheckTip",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showVertexAttrsAndDistance",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showMagicStoreFieldCheck",
+          payload: true,
+        });
+        UIStateDispatch({
+          type: "curClickVertex",
+          payload: vertex,
+        });
+        return;
       case "RedTreasureField":
       case "TreasureField":
       case "VillageField":

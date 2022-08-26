@@ -109,6 +109,175 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     en: "end",
     cn: "結束",
   },
+  // Game > MagicStore
+  "フィールド魔法や戦闘魔法が買えるマス。": {
+    en: "A place where you can buy magic stuffs.",
+    cn: "可以購買領域魔法和戰鬥魔法的地方。",
+  },
+  マグの書: {
+    en: "damageFire1",
+    cn: "小型火焰",
+  },
+  マグファの書: {
+    en: "damageFire2",
+    cn: "中型火焰",
+  },
+  マグファイアの書: {
+    en: "damageFire3",
+    cn: "大型火焰",
+  },
+  コチの書: {
+    en: "damageIce1",
+    cn: "小型冰鎮",
+  },
+  コチリコの書: {
+    en: "damageIce2",
+    cn: "中型冰鎮",
+  },
+  コチコッチンの書: {
+    en: "damageIce3",
+    cn: "大型冰鎮",
+  },
+  ゴロの書: {
+    en: "damageThunder1",
+    cn: "小型雷電",
+  },
+  ゴロピカの書: {
+    en: "damageThunder2",
+    cn: "中型雷電",
+  },
+  ゴロサンダーの書: {
+    en: "damageThunder3",
+    cn: "大型雷電",
+  },
+  ヒュの書: {
+    en: "damageWind1",
+    cn: "小型龍捲",
+  },
+  ヒュウイの書: {
+    en: "damageWind2",
+    cn: "中型龍捲",
+  },
+  ヒュギューオの書: {
+    en: "damageWind3",
+    cn: "大型龍捲",
+  },
+  グラの書: {
+    en: "damageEarth1",
+    cn: "小型土遁",
+  },
+  グラゴゴの書: {
+    en: "damageEarth2",
+    cn: "中型土遁",
+  },
+  グラズシーンの書: {
+    en: "damageEarth3",
+    cn: "大型土遁",
+  },
+  ポカドンの書: {
+    en: "damageMap",
+    cn: "大型核爆",
+  },
+  ヨワッチの書: {
+    en: "statusAttackDown",
+    cn: "攻擊力下降",
+  },
+  フニャリの書: {
+    en: "statusDefenseDown",
+    cn: "防禦力下降",
+  },
+  ポケラの書: {
+    en: "statusMagicDown",
+    cn: "魔力下降",
+  },
+  ノローの書: {
+    en: "statusSpeedDown",
+    cn: "敏捷下降",
+  },
+  ダウンの書: {
+    en: "statusAllDown",
+    cn: "全屬性下降",
+  },
+  バキュムーンの書: {
+    en: "statusAbsorb",
+    cn: "",
+  },
+  ドクラマグラの書: {
+    en: "statusPoison",
+    cn: "",
+  },
+  ビクビクの書: {
+    en: "statusStartled",
+    cn: "",
+  },
+  ピョコタンの書: {
+    en: "statusCurse",
+    cn: "",
+  },
+  ツカエンゾの書: {
+    en: "statusSeal",
+    cn: "",
+  },
+  プリオンの書: {
+    en: "statusViral",
+    cn: "",
+  },
+  シニガーミの書: {
+    en: "statusDeath",
+    cn: "",
+  },
+  ネムネムの書: {
+    en: "statusSleep",
+    cn: "",
+  },
+  マビンの書: {
+    en: "statusPrison",
+    cn: "",
+  },
+  デロンの書: {
+    en: "summonMonster",
+    cn: "",
+  },
+  ムラデロンの書: {
+    en: "summonBoss",
+    cn: "",
+  },
+  ミナデロンの書: {
+    en: "summonBosses",
+    cn: "",
+  },
+  ヘルプュウの書: {
+    en: "otherRecoverOpponent",
+    cn: "",
+  },
+  メッセヨの書: {
+    en: "otherDestroyBag",
+    cn: "",
+  },
+  ショバチェンの書: {
+    en: "otherLocationSwap",
+    cn: "",
+  },
+  ネンドリーキの書: {
+    en: "otherLocationMove",
+    cn: "",
+  },
+  バランバの書: {
+    en: "otherPossessionSwap",
+    cn: "",
+  },
+  オールゼロの書: {
+    en: "otherVillageDestroy",
+    cn: "",
+  },
+  ビビデブゥの書: {
+    en: "otherUltimate",
+    cn: "",
+  },
+  ヘイカモンの書: {
+    en: "otherLocationSummon",
+    cn: "",
+  },
   // Game > WeaponStore
   武器屋: {
     en: "Weapon Store",

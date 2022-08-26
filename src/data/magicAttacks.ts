@@ -13,7 +13,7 @@ function satisfiesRecords<valueType>() {
 
 const magicAttacks = satisfiesRecords<magicAttack>()({
   basicAndEurope1: {
-    type: "反擊系魔法",
+    type: "弱体系魔法",
     name: "ヨワッチ",
     price: 800,
     damage: "small",
@@ -27,7 +27,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   asia1: {
-    type: "反擊系魔法",
+    type: "弱体系魔法",
     name: "フニャリ",
     price: 800,
     damage: "small",
@@ -41,7 +41,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   asia2: {
-    type: "反擊系魔法",
+    type: "弱体系魔法",
     name: "ポケラ",
     price: 800,
     damage: "small",
@@ -55,7 +55,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   asia3: {
-    type: "反擊系魔法",
+    type: "弱体系魔法",
     name: "ノロー",
     price: 800,
     damage: "small",
@@ -69,7 +69,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   asia4: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "フリジ",
     price: 20000,
     damage: "small",
@@ -82,8 +82,8 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
-  europe2Andafrica1: {
-    type: "反擊系魔法",
+  europe2AndAfrica1: {
+    type: "邢魔系魔法",
     name: "ゼニゲット",
     price: 12000,
     damage: "small",
@@ -97,7 +97,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   europe3: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "ハリー",
     price: 23000,
     damage: "small",
@@ -111,7 +111,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   russia1: {
-    type: "反擊系魔法",
+    type: "変化系魔法",
     name: "クルパー",
     price: 39800,
     damage: "small",
@@ -125,7 +125,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   russia2: {
-    type: "反擊系魔法",
+    type: "変化系魔法",
     name: "ドクラマグラ",
     price: 46000,
     damage: "small",
@@ -139,7 +139,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   russia3: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "エレク",
     price: 60000,
     damage: "small",
@@ -153,7 +153,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   russia4: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "バーン",
     price: 65000,
     damage: "small",
@@ -167,7 +167,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   northAmerica1: {
-    type: "反擊系魔法",
+    type: "破壊系魔法",
     name: "ＤＦマホケス",
     price: 84000,
     damage: "small",
@@ -181,7 +181,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   northAmerica2: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "フリーズ",
     price: 120000,
     damage: "medium",
@@ -195,7 +195,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   northAmerica3: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "ハリーク",
     price: 135000,
     damage: "medium",
@@ -213,7 +213,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   southAmerica1: {
-    type: "反擊系魔法",
+    type: "変化系魔法",
     name: "ハズシャーン",
     price: 152000,
     damage: "small",
@@ -227,7 +227,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   southAmerica2: {
-    type: "反擊系魔法",
+    type: "破壊系魔法",
     name: "ＡＴマホケス",
     price: 198000,
     damage: "small",
@@ -241,7 +241,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   southAmerica3: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "エレクト",
     price: 280000,
     damage: "medium",
@@ -255,7 +255,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   southAmerica4: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "バーニー",
     price: 290000,
     damage: "medium",
@@ -269,7 +269,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   oceania1: {
-    type: "反擊系魔法",
+    type: "変化系魔法",
     name: "ウラミム",
     price: 258000,
     damage: "small",
@@ -283,7 +283,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   oceania2: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "フリーザー",
     price: 450000,
     damage: "large",
@@ -297,7 +297,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   oceania3: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "ハリケーン",
     price: 480000,
     damage: "large",
@@ -311,7 +311,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   africa2: {
-    type: "反擊系魔法",
+    type: "破壊系魔法",
     name: "ラストルズ",
     price: 365000,
     damage: "medium",
@@ -325,7 +325,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   africa3: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "エレクトラ",
     price: 750000,
     damage: "large",
@@ -343,7 +343,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     ],
   },
   africa4: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "バーニング",
     price: 800000,
     damage: "large",
@@ -360,6 +360,9 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
+  /**
+   * @todo type待確定
+   */
   sleep: {
     type: "反擊系魔法",
     name: "ネムネム",
@@ -373,6 +376,9 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
+  /**
+   * @todo type待確定
+   */
   arctic1: {
     type: "反擊系魔法",
     name: "レベゲット",
@@ -387,6 +393,9 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
+  /**
+   * @todo type待確定
+   */
   antarctica1: {
     type: "反擊系魔法",
     name: "ゴウトゥヘル",
@@ -404,6 +413,9 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
+  /**
+   * @todo type待確定
+   */
   enemy: {
     type: "反擊系魔法",
     name: "エネゲット",

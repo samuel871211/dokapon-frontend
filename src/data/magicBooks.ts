@@ -14,7 +14,7 @@ function satisfiesRecords<valueType>() {
 
 const magicBooks = satisfiesRecords<MagicBook>()({
   damageFire1: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "マグの書",
     price: 500,
     explanation: "",
@@ -27,7 +27,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     ],
   },
   damageFire2: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "マグファの書",
     price: 1,
     explanation: "",
@@ -35,7 +35,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   damageFire3: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "マグファイアの書",
     price: 0,
     explanation: "",
@@ -43,7 +43,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   damageIce1: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "コチの書",
     price: 400,
     explanation: "",
@@ -56,7 +56,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     ],
   },
   damageIce2: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "コチリコの書",
     price: 900,
     explanation: "",
@@ -64,7 +64,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   damageIce3: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "コチコッチンの書",
     price: 2,
     explanation: "",
@@ -72,7 +72,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   damageThunder1: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "ゴロの書",
     price: 300,
     explanation: "",
@@ -85,7 +85,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     ],
   },
   damageThunder2: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "ゴロピカの書",
     price: 800,
     explanation: "",
@@ -93,7 +93,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   damageThunder3: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "ゴロサンダーの書",
     price: 1500,
     explanation: "",
@@ -101,7 +101,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   damageWind1: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "ヒュの書",
     price: 500,
     explanation: "",
@@ -114,7 +114,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     ],
   },
   damageWind2: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "ヒュウイの書",
     price: 1,
     explanation: "",
@@ -122,7 +122,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   damageWind3: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "ヒュギューオの書",
     price: 0,
     explanation: "",
@@ -130,7 +130,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   damageEarth1: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "グラの書",
     price: 1,
     explanation: "",
@@ -138,7 +138,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   damageEarth2: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "グラゴゴの書",
     price: 2,
     explanation: "",
@@ -146,7 +146,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   damageEarth3: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "グラズシーンの書",
     price: 4,
     explanation: "",
@@ -154,7 +154,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   damageMap: {
-    type: "反擊系魔法",
+    type: "攻擊系魔法",
     name: "ポカドンの書",
     price: 9,
     explanation: "",
@@ -162,7 +162,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   statusAttackDown: {
-    type: "反擊系魔法",
+    type: "弱体系魔法",
     name: "ヨワッチの書",
     price: 100,
     explanation: "",
@@ -175,7 +175,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     ],
   },
   statusDefenseDown: {
-    type: "反擊系魔法",
+    type: "弱体系魔法",
     name: "フニャリの書",
     price: 100,
     explanation: "",
@@ -188,7 +188,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     ],
   },
   statusMagicDown: {
-    type: "反擊系魔法",
+    type: "弱体系魔法",
     name: "ポケラの書",
     price: 100,
     explanation: "",
@@ -201,7 +201,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     ],
   },
   statusSpeedDown: {
-    type: "反擊系魔法",
+    type: "弱体系魔法",
     name: "ノローの書",
     price: 100,
     explanation: "",
@@ -214,13 +214,16 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     ],
   },
   statusAllDown: {
-    type: "反擊系魔法",
+    type: "弱体系魔法",
     name: "ダウンの書",
     price: 0,
     explanation: "",
     fromMonsters: [],
     fromVerticesQuery: [],
   },
+  /**
+   * @todo type待確定
+   */
   statusAbsorb: {
     type: "反擊系魔法",
     name: "バキュムーンの書",
@@ -230,7 +233,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   statusPoison: {
-    type: "反擊系魔法",
+    type: "変化系魔法",
     name: "ドクラマグラの書",
     price: 600,
     explanation: "",
@@ -238,7 +241,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   statusStartled: {
-    type: "反擊系魔法",
+    type: "変化系魔法",
     name: "ビクビクの書",
     price: 200,
     explanation: "",
@@ -246,7 +249,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   statusCurse: {
-    type: "反擊系魔法",
+    type: "変化系魔法",
     name: "ピョコタンの書",
     price: 5,
     explanation: "",
@@ -254,7 +257,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   statusSeal: {
-    type: "反擊系魔法",
+    type: "変化系魔法",
     name: "ツカエンゾの書",
     price: 800,
     explanation: "",
@@ -267,7 +270,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     ],
   },
   statusViral: {
-    type: "反擊系魔法",
+    type: "弱体系魔法",
     name: "プリオンの書",
     price: 6,
     explanation: "",
@@ -275,13 +278,16 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [],
   },
   statusDeath: {
-    type: "反擊系魔法",
+    type: "邢魔系魔法",
     name: "シニガーミの書",
     price: 0,
     explanation: "",
     fromMonsters: ["フックの魂"],
     fromVerticesQuery: [],
   },
+  /**
+   * @todo type待確定
+   */
   statusSleep: {
     type: "反擊系魔法",
     name: "ネムネムの書",
@@ -290,6 +296,9 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromMonsters: ["キラーフラワー"],
     fromVerticesQuery: [],
   },
+  /**
+   * @todo type待確定
+   */
   statusPrison: {
     type: "反擊系魔法",
     name: "マビンの書",
@@ -298,8 +307,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromMonsters: [],
     fromVerticesQuery: [],
   },
-  otherMonsterSummon: {
-    type: "反擊系魔法",
+  summonMonster: {
+    type: "召喚系魔法",
     name: "デロンの書",
     price: 100,
     explanation: "",
@@ -311,8 +320,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
       },
     ],
   },
-  otherBossSummon: {
-    type: "反擊系魔法",
+  summonBoss: {
+    type: "召喚系魔法",
     name: "ムラデロンの書",
     price: 30,
     explanation: "",
@@ -324,8 +333,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
       },
     ],
   },
-  otherBossesSummon: {
-    type: "反擊系魔法",
+  summonBosses: {
+    type: "召喚系魔法",
     name: "ミナデロンの書",
     price: 0,
     explanation: "",
@@ -338,7 +347,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     ],
   },
   otherRecoverOpponent: {
-    type: "反擊系魔法",
+    type: "特殊系魔法",
     name: "ヘルプュウの書",
     price: 150,
     explanation: "",
@@ -351,13 +360,16 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     ],
   },
   otherDestroyBag: {
-    type: "反擊系魔法",
+    type: "邢魔系魔法",
     name: "メッセヨの書",
     price: 2,
     explanation: "",
     fromMonsters: ["クビカリ族"],
     fromVerticesQuery: [],
   },
+  /**
+   * @todo type待確定
+   */
   otherLocationSwap: {
     type: "反擊系魔法",
     name: "ショバチェンの書",
@@ -371,6 +383,9 @@ const magicBooks = satisfiesRecords<MagicBook>()({
       },
     ],
   },
+  /**
+   * @todo type待確定
+   */
   otherLocationMove: {
     type: "反擊系魔法",
     name: "ネンドリーキの書",
@@ -384,6 +399,9 @@ const magicBooks = satisfiesRecords<MagicBook>()({
       },
     ],
   },
+  /**
+   * @todo type待確定
+   */
   otherPossessionSwap: {
     type: "反擊系魔法",
     name: "バランバの書",
@@ -397,6 +415,9 @@ const magicBooks = satisfiesRecords<MagicBook>()({
       },
     ],
   },
+  /**
+   * @todo type待確定
+   */
   otherVillageDestroy: {
     type: "反擊系魔法",
     name: "オールゼロの書",
@@ -410,6 +431,9 @@ const magicBooks = satisfiesRecords<MagicBook>()({
       },
     ],
   },
+  /**
+   * @todo type待確定
+   */
   otherUltimate: {
     type: "反擊系魔法",
     name: "ビビデブゥの書",
@@ -418,6 +442,9 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromMonsters: [],
     fromVerticesQuery: [],
   },
+  /**
+   * @todo type待確定
+   */
   otherLocationSummon: {
     type: "反擊系魔法",
     name: "ヘイカモンの書",

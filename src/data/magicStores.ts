@@ -9,7 +9,7 @@ const magicStores: {
   Asia: [
     magicBooks.statusMagicDown,
     magicBooks.statusSpeedDown,
-    magicBooks.otherMonsterSummon,
+    magicBooks.summonMonster,
     magicBooks.damageFire1,
     magicBooks.damageIce1,
     magicBooks.damageThunder1,
@@ -25,14 +25,14 @@ const magicStores: {
     magicBooks.statusAttackDown,
     magicBooks.statusDefenseDown,
     magicBooks.statusSeal,
-    magicBooks.otherMonsterSummon,
+    magicBooks.summonMonster,
     magicBooks.damageFire1,
     magicBooks.damageIce1,
     //
     magicBooks.damageThunder1,
     magicBooks.damageWind1,
     magicAttacks.basicAndEurope1,
-    magicAttacks.europe2Andafrica1,
+    magicAttacks.europe2AndAfrica1,
     magicAttacks.europe3,
     magicDefenses.europe1,
     //
@@ -106,7 +106,7 @@ const magicStores: {
     magicBooks.statusMagicDown,
     magicBooks.statusStartled,
     magicBooks.statusSeal,
-    magicBooks.otherMonsterSummon,
+    magicBooks.summonMonster,
     magicBooks.otherRecoverOpponent,
     //
     magicBooks.otherDestroyBag,
@@ -138,7 +138,7 @@ const magicStores: {
     magicBooks.damageWind2,
     magicBooks.damageEarth2,
     //
-    magicAttacks.europe2Andafrica1,
+    magicAttacks.europe2AndAfrica1,
     magicAttacks.africa2,
     magicAttacks.africa3,
     magicAttacks.africa4,

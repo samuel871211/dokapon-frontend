@@ -200,27 +200,27 @@ const texts: { [key: string]: { en: string; cn: string } } = {
   },
   バキュムーンの書: {
     en: "statusAbsorb",
-    cn: "",
+    cn: "吸收",
   },
   ドクラマグラの書: {
     en: "statusPoison",
-    cn: "",
+    cn: "中毒",
   },
   ビクビクの書: {
     en: "statusStartled",
-    cn: "",
+    cn: "驚嚇",
   },
   ピョコタンの書: {
     en: "statusCurse",
-    cn: "",
+    cn: "詛咒",
   },
   ツカエンゾの書: {
     en: "statusSeal",
-    cn: "",
+    cn: "封印",
   },
   プリオンの書: {
     en: "statusViral",
-    cn: "",
+    cn: "病毒",
   },
   シニガーミの書: {
     en: "statusDeath",
@@ -228,55 +228,247 @@ const texts: { [key: string]: { en: string; cn: string } } = {
   },
   ネムネムの書: {
     en: "statusSleep",
-    cn: "",
+    cn: "睡眠",
   },
   マビンの書: {
     en: "statusPrison",
-    cn: "",
+    cn: "犯罪",
   },
   デロンの書: {
     en: "summonMonster",
-    cn: "",
+    cn: "召喚小怪",
   },
   ムラデロンの書: {
     en: "summonBoss",
-    cn: "",
+    cn: "召喚村莊Boss",
   },
   ミナデロンの書: {
     en: "summonBosses",
-    cn: "",
+    cn: "全村召喚Boss",
   },
   ヘルプュウの書: {
     en: "otherRecoverOpponent",
-    cn: "",
+    cn: "恢復對手",
   },
   メッセヨの書: {
     en: "otherDestroyBag",
-    cn: "",
+    cn: "摧毀包包",
   },
   ショバチェンの書: {
     en: "otherLocationSwap",
-    cn: "",
+    cn: "交換位置",
   },
   ネンドリーキの書: {
     en: "otherLocationMove",
-    cn: "",
+    cn: "移動到",
   },
   バランバの書: {
     en: "otherPossessionSwap",
-    cn: "",
+    cn: "所有物交換",
   },
   オールゼロの書: {
     en: "otherVillageDestroy",
-    cn: "",
+    cn: "摧毀村莊",
   },
   ビビデブゥの書: {
     en: "otherUltimate",
-    cn: "",
+    cn: "究極魔法",
   },
   ヘイカモンの書: {
     en: "otherLocationSummon",
-    cn: "",
+    cn: "全員召喚",
+  },
+  ヨワッチ: {
+    en: "basicAndEurope1",
+    cn: "(小)攻擊力下降",
+  },
+  フニャリ: {
+    en: "asia1",
+    cn: "(小)防禦力下降",
+  },
+  ポケラ: {
+    en: "asia2",
+    cn: "(小)魔力下降",
+  },
+  ノロー: {
+    en: "asia3",
+    cn: "(小)敏捷下降",
+  },
+  フリジ: {
+    en: "asia4",
+    cn: "(小)急凍",
+  },
+  ゼニゲット: {
+    en: "europe2AndAfrica1",
+    cn: "(小)偷取1/5金錢",
+  },
+  ハリー: {
+    en: "europe3",
+    cn: "(小)偶爾敏捷下降",
+  },
+  クルパー: {
+    en: "russia1",
+    cn: "(小)混亂",
+  },
+  ドクラマグラ: {
+    en: "russia2",
+    cn: "(小)毒",
+  },
+  エレク: {
+    en: "russia3",
+    cn: "(小)閃電",
+  },
+  バーン: {
+    en: "russia4",
+    cn: "(小)火焰",
+  },
+  ＤＦマホケス: {
+    en: "northAmerica1",
+    cn: "(小)防禦魔法破壞",
+  },
+  フリーズ: {
+    en: "northAmerica2",
+    cn: "(中)急凍",
+  },
+  ハリーク: {
+    en: "northAmerica3",
+    cn: "(中)龍捲",
+  },
+  ハズシャーン: {
+    en: "southAmerica1",
+    cn: "(小)閃光",
+  },
+  ＡＴマホケス: {
+    en: "southAmerica2",
+    cn: "(小)攻擊魔法破壞",
+  },
+  エレクト: {
+    en: "southAmerica3",
+    cn: "(中)雷電",
+  },
+  バーニー: {
+    en: "southAmerica4",
+    cn: "(中)紅蓮",
+  },
+  ウラミム: {
+    en: "oceania1",
+    cn: "(小)咒印",
+  },
+  フリーザー: {
+    en: "oceania2",
+    cn: "(大)冰鎮",
+  },
+  ハリケーン: {
+    en: "oceania3",
+    cn: "(大)龍捲",
+  },
+  ラストルズ: {
+    en: "africa2",
+    cn: "(中)酸雨",
+  },
+  エレクトラ: {
+    en: "africa3",
+    cn: "(大)雷電",
+  },
+  バーニング: {
+    en: "africa4",
+    cn: "(大)業火",
+  },
+  ネムネム: {
+    en: "sleep",
+    cn: "睡眠",
+  },
+  レベゲット: {
+    en: "arctic1",
+    cn: "(小)",
+  },
+  ゴウトゥヘル: {
+    en: "antarctica1",
+    cn: "絕地逢生",
+  },
+  エネゲット: {
+    en: "AbsorbOpponentHalfHP",
+    cn: "吸收敵人一半血量",
+  },
+  マホガド: {
+    en: "basic",
+    cn: "基本魔法防禦",
+  },
+  キュア: {
+    en: "asia1",
+    cn: "40魔防+隨機恢復1種狀態",
+  },
+  リカバ: {
+    en: "asia2",
+    cn: "30魔防+HP小恢復",
+  },
+  ドギューン: {
+    en: "europe1",
+    cn: "40魔防+敏捷上升",
+  },
+  ドキュア: {
+    en: "europe2",
+    cn: "55魔防+恢復全狀態",
+  },
+  ガチコン: {
+    en: "europe3",
+    cn: "40魔防+防禦力上升",
+  },
+  シャキット: {
+    en: "russia1",
+    cn: "40魔防+魔力上升",
+  },
+  ドマホガド: {
+    en: "russia2",
+    cn: "60魔防",
+  },
+  リキュア: {
+    en: "northAmerica1",
+    cn: "50魔防+HP小恢復",
+  },
+  マホタブー: {
+    en: "northAmerica2",
+    cn: "55魔防+禁敵方魔法",
+  },
+  ガッツリ: {
+    en: "northAmerica3",
+    cn: "40魔防+攻擊力上升",
+  },
+  ドリカバ: {
+    en: "enemy",
+    cn: "敵專用魔防",
+  },
+  ドマホガドラ: {
+    en: "southAmerica1",
+    cn: "85魔防",
+  },
+  ドリカバラ: {
+    en: "southAmerica2AndOceania3",
+    cn: "60魔防+HP全恢復",
+  },
+  キリガッツ: {
+    en: "oceania1",
+    cn: "65魔防+魔力攻擊力上升",
+  },
+  リバイブ: {
+    en: "oceania2",
+    cn: "60魔防+死後復活",
+  },
+  ドリキュアラ: {
+    en: "africa1",
+    cn: "55魔防+HP狀態全恢復",
+  },
+  ミナアップ: {
+    en: "africa2",
+    cn: "60魔防+4屬提升",
+  },
+  マホリタン: {
+    en: "arctic1",
+    cn: "待確認...",
+  },
+  バインド: {
+    en: "antarctica1",
+    cn: "待確認...",
   },
   // Game > WeaponStore
   武器屋: {

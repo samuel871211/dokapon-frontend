@@ -17,7 +17,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "攻擊系魔法",
     name: "マグの書",
     price: 500,
-    explanation: "",
+    explanation: "指定した相手を発火させ、\n小ダメージを与える。\n攻撃力:${}",
     fromMonsters: ["ケルベロス"],
     fromVerticesQuery: [
       {
@@ -30,7 +30,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "攻擊系魔法",
     name: "マグファの書",
     price: 1,
-    explanation: "",
+    explanation: "指定した相手を炎でおおい、\n中ダメージを与える。\n攻撃力:${}",
     fromMonsters: [],
     fromVerticesQuery: [],
   },
@@ -46,7 +46,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "攻擊系魔法",
     name: "コチの書",
     price: 400,
-    explanation: "",
+    explanation:
+      "指定したマス内の相手を冷気でこおらせ、\n小ダメージを与える。\n攻撃力:${}",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -59,7 +60,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "攻擊系魔法",
     name: "コチリコの書",
     price: 900,
-    explanation: "",
+    explanation:
+      "指定したマス内の相手を足下からこおらせ、\n中ダメージを与える。\n攻撃力:${}",
     fromMonsters: [],
     fromVerticesQuery: [],
   },
@@ -75,7 +77,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "攻擊系魔法",
     name: "ゴロの書",
     price: 300,
-    explanation: "",
+    explanation:
+      "指定した相手の周りに雷を落とし、\nエリア内にいる全ての者に小ダメージを与える。\n攻撃力:${}",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -88,7 +91,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "攻擊系魔法",
     name: "ゴロピカの書",
     price: 800,
-    explanation: "",
+    explanation:
+      "指定した相手の周りに雷柱を立て、\nエリア内にいる全ての者に中ダメージを与える。\n攻撃力:${}",
     fromMonsters: [],
     fromVerticesQuery: [],
   },
@@ -104,7 +108,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "攻擊系魔法",
     name: "ヒュの書",
     price: 500,
-    explanation: "",
+    explanation:
+      "同マップ内にカマイタチを発生させ、\n人間に小ダメージを与える。(まれに吹き飛ぶ)\n攻撃力:${}",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -117,7 +122,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "攻擊系魔法",
     name: "ヒュウイの書",
     price: 1,
-    explanation: "",
+    explanation:
+      "同マップ内に小さな台風を発生させ、\n人間に中ダメージを与える。(まれに吹き飛ぶ)\n攻擊力:${}",
     fromMonsters: [],
     fromVerticesQuery: [],
   },
@@ -133,7 +139,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "攻擊系魔法",
     name: "グラの書",
     price: 1,
-    explanation: "",
+    explanation:
+      "世界各地に小さな地震を起こし、\n人間に小ダメージを与える。\n攻撃力:${}",
     fromMonsters: [],
     fromVerticesQuery: [],
   },
@@ -141,7 +148,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "攻擊系魔法",
     name: "グラゴゴの書",
     price: 2,
-    explanation: "",
+    explanation:
+      "世界各地に大地震を起こし、\n人間に中ダメージを与える。\n攻撃力:${}",
     fromMonsters: [],
     fromVerticesQuery: [],
   },
@@ -165,7 +173,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "弱体系魔法",
     name: "ヨワッチの書",
     price: 100,
-    explanation: "",
+    explanation:
+      "指定した相手に力が抜けるオーラを当て、\nしばらくの間、攻撃力を下げる。",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -178,7 +187,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "弱体系魔法",
     name: "フニャリの書",
     price: 100,
-    explanation: "",
+    explanation:
+      "指定した相手に体がフニャフニャになるオーラを当て、\nしばらくの間、防御力を下げる。",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -191,7 +201,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "弱体系魔法",
     name: "ポケラの書",
     price: 100,
-    explanation: "",
+    explanation:
+      "指定した相手に頭がスカスカになるオーラを当て、\nしばらくの間、魔力を下げる。",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -204,11 +215,12 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "弱体系魔法",
     name: "ノローの書",
     price: 100,
-    explanation: "",
+    explanation:
+      "指定した相手に重くまとわりつくオーラを当て、\nしばらくの間、素早さを下げる。",
     fromMonsters: [],
     fromVerticesQuery: [
       {
-        areas: ["Asia"],
+        areas: ["Asia", "NorthAmerica"],
         vertexTypes: ["MagicStoreField"],
       },
     ],
@@ -236,7 +248,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "変化系魔法",
     name: "ドクラマグラの書",
     price: 600,
-    explanation: "",
+    explanation:
+      "指定した相手に毒ガスを吹き付け、\n${}毒状態にする。\n毎ターンHP減少。",
     fromMonsters: ["ヤドクガエル"],
     fromVerticesQuery: [],
   },
@@ -244,7 +257,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "変化系魔法",
     name: "ビクビクの書",
     price: 200,
-    explanation: "",
+    explanation: "指定した相手をビビらせて\n${}おくびょう状態にする。",
     fromMonsters: ["ビクビクゴースト"],
     fromVerticesQuery: [],
   },
@@ -252,7 +265,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "変化系魔法",
     name: "ピョコタンの書",
     price: 5,
-    explanation: "",
+    explanation: "指定した相手にカエルの呪いをかけ\n${}ピョコタン状態にする。",
     fromMonsters: [],
     fromVerticesQuery: [],
   },
@@ -260,7 +273,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "変化系魔法",
     name: "ツカエンゾの書",
     price: 800,
-    explanation: "",
+    explanation: "指定した相手に封印をほどこし\n${}封印状態にする。",
     fromMonsters: ["ヴァンパイア"],
     fromVerticesQuery: [
       {
@@ -311,7 +324,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "召喚系魔法",
     name: "デロンの書",
     price: 100,
-    explanation: "",
+    explanation:
+      "モンスター召喚呪文で\n指定した相手のいるマスにモンスターを出現させる。",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -350,7 +364,8 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "特殊系魔法",
     name: "ヘルプュウの書",
     price: 150,
-    explanation: "",
+    explanation:
+      "指定した相手かモンスターに回復の光を注ぎ、\nHPと${}を回復する。\nモンスターに使った場合、パラメータUP",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -363,7 +378,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     type: "邢魔系魔法",
     name: "メッセヨの書",
     price: 2,
-    explanation: "",
+    explanation: "指定した相手のアイテムか魔法を\n1つ破壊する。",
     fromMonsters: ["クビカリ族"],
     fromVerticesQuery: [],
   },

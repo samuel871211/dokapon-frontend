@@ -29,7 +29,8 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "キュア",
     price: 3950,
     defense: 40,
-    explanation: "",
+    explanation:
+      "魔法のダメージを減らし、\nステータスを1つ回復する。\n魔法防御力40",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -43,7 +44,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "リカバ",
     price: 6600,
     defense: 30,
-    explanation: "",
+    explanation: "魔法のダメージを減らし、\nHPを小回復する。\n魔法防御力30",
     fromMonsters: ["霊幻導師"],
     fromVerticesQuery: [
       {
@@ -57,7 +58,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "ドギューン",
     price: 10500,
     defense: 40,
-    explanation: "",
+    explanation: "魔法のダメージを減らし、\n素早さを上げる。\n魔法防御力40",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -71,7 +72,8 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "ドキュア",
     price: 21000,
     defense: 55,
-    explanation: "",
+    explanation:
+      "魔法のダメージを減らし、\nステータスを全て回復する。\n魔法防御力55",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -85,7 +87,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "ガチコン",
     price: 24800,
     defense: 40,
-    explanation: "",
+    explanation: "魔法のダメージを減らし、\n防御力を上げる。\n魔法防御力40",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -99,7 +101,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "シャキット",
     price: 24800,
     defense: 40,
-    explanation: "",
+    explanation: "魔法のダメージを減らし、\n魔力を上げる。\n魔法防御力40",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -113,7 +115,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "ドマホガド",
     price: 35000,
     defense: 60,
-    explanation: "",
+    explanation: "魔力のカベを作り、\n魔法のダメージを減らす。\n魔法防御力60",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -127,7 +129,8 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "リキュア",
     price: 42800,
     defense: 50,
-    explanation: "",
+    explanation:
+      "魔法のダメージを減らし、\nHPとステータスを小回復。\n魔法防御力50",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -141,7 +144,8 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "マホタブー",
     price: 55000,
     defense: 55,
-    explanation: "",
+    explanation:
+      "魔法のダメージを減らし、\nどちらかの魔法を禁ずる。\n魔法防御力55",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -155,7 +159,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "ガッツリ",
     price: 63000,
     defense: 40,
-    explanation: "",
+    explanation: "魔法のダメージを減らし、\n攻撃力を上げる。\n魔法防御力40",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -181,7 +185,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "ドマホガドラ",
     price: 86500,
     defense: 85,
-    explanation: "",
+    explanation: "魔力のカベを作り、\n魔法のダメージを減らす。\n魔法防御力85",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -195,7 +199,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "ドリカバラ",
     price: 214800,
     defense: 60,
-    explanation: "",
+    explanation: "魔法のダメージを減らし、\nHPを完全に回復する。\n魔法防御力60",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -209,7 +213,8 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "キリガッツ",
     price: 126500,
     defense: 65,
-    explanation: "",
+    explanation:
+      "魔法のダメージを減らし、\n魔力を攻撃力に加える。\n魔法防御力65",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -223,7 +228,8 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "リバイブ",
     price: 165800,
     defense: 60,
-    explanation: "",
+    explanation:
+      "魔法のダメージを減らし、\n死亡時に生き返る体にする。\n魔法防御力60",
     fromMonsters: ["ネクロマンサー"],
     fromVerticesQuery: [
       {
@@ -237,7 +243,8 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "ドリキュアラ",
     price: 865000,
     defense: 55,
-    explanation: "",
+    explanation:
+      "魔法のダメージを減らし、\nHPとステータスを全回復。\n魔法防御力55",
     fromMonsters: [],
     fromVerticesQuery: [
       {
@@ -251,7 +258,8 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "ミナアップ",
     price: 958000,
     defense: 60,
-    explanation: "",
+    explanation:
+      "魔法のダメージを減らし、\n4つのパラメータを上げる。\n魔法防御力60",
     fromMonsters: [],
     fromVerticesQuery: [
       {

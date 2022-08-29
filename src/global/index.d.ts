@@ -322,7 +322,7 @@ declare namespace Dokapon {
     | "devil"
     | "anotherDevil";
   export type Job = {
-    type: JobTypes;
+    // type: JobTypes;
     name: string;
     levelUpPoint: {
       attack: number;
@@ -343,6 +343,7 @@ declare namespace Dokapon {
       magic: number;
     };
     masterRounds: number;
+    price: number;
     pay: number;
     explanation: string;
     fieldSpeciality: {

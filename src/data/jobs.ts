@@ -1,8 +1,21 @@
-import type { BasicJobTypes, Job, JobTypes } from "global";
+import type { BasicJobTypes, JobTypes, Job } from "global";
 
-const jobs: Job[] = [
-  {
-    type: "beginner",
+/**
+ * https://stackoverflow.com/questions/70956050/how-do-i-declare-object-value-type-without-declaring-key-type
+ *
+ * 可以在不宣告key type的情況，宣告value的型別
+ *
+ * 如此一來，key就可以透過TS自動解析成union type
+ */
+function satisfiesRecords<valueType>() {
+  return <K extends PropertyKey>(record: Record<K, valueType>) => record;
+}
+
+/**
+ * @todo `pay`尚未校驗
+ */
+const jobs = satisfiesRecords<Job>()({
+  beginner: {
     name: "無職",
     levelUpPoint: {
       attack: 1,
@@ -23,6 +36,7 @@ const jobs: Job[] = [
       magic: 4,
     },
     masterRounds: 12,
+    price: 0,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -39,8 +53,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "warrior",
+  warrior: {
     name: "戦士",
     levelUpPoint: {
       attack: 2,
@@ -61,6 +74,7 @@ const jobs: Job[] = [
       magic: 4,
     },
     masterRounds: 4,
+    price: 1200,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -77,8 +91,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "magician",
+  magician: {
     name: "魔法使い",
     levelUpPoint: {
       attack: 1,
@@ -99,6 +112,7 @@ const jobs: Job[] = [
       magic: 10,
     },
     masterRounds: 4,
+    price: 1200,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -115,8 +129,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "cleric",
+  cleric: {
     name: "僧侶",
     levelUpPoint: {
       attack: 1,
@@ -137,6 +150,7 @@ const jobs: Job[] = [
       magic: 8,
     },
     masterRounds: 4,
+    price: 1200,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -153,8 +167,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "thief",
+  thief: {
     name: "盗賊",
     levelUpPoint: {
       attack: 1,
@@ -175,6 +188,7 @@ const jobs: Job[] = [
       magic: 4,
     },
     masterRounds: 4,
+    price: 1200,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -191,8 +205,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "knight",
+  knight: {
     name: "ナイト",
     levelUpPoint: {
       attack: 2,
@@ -213,6 +226,7 @@ const jobs: Job[] = [
       magic: 4,
     },
     masterRounds: 5,
+    price: 8000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -229,9 +243,8 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "archmage",
-    name: "大魔道",
+  archmage: {
+    name: "大魔導",
     levelUpPoint: {
       attack: 1,
       defense: 0,
@@ -251,6 +264,7 @@ const jobs: Job[] = [
       magic: 12,
     },
     masterRounds: 5,
+    price: 8000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -267,8 +281,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "priest",
+  priest: {
     name: "神官",
     levelUpPoint: {
       attack: 1,
@@ -289,6 +302,7 @@ const jobs: Job[] = [
       magic: 10,
     },
     masterRounds: 5,
+    price: 8000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -305,8 +319,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "bladeMaster",
+  bladeMaster: {
     name: "ソードマスター",
     levelUpPoint: {
       attack: 2,
@@ -327,6 +340,7 @@ const jobs: Job[] = [
       magic: 6,
     },
     masterRounds: 7,
+    price: 30000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -343,8 +357,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "necromancer",
+  necromancer: {
     name: "ネクロマンサー",
     levelUpPoint: {
       attack: 1,
@@ -365,6 +378,7 @@ const jobs: Job[] = [
       magic: 12,
     },
     masterRounds: 7,
+    price: 30000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -381,8 +395,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "exorcist",
+  exorcist: {
     name: "エクソシスト",
     levelUpPoint: {
       attack: 1,
@@ -403,6 +416,7 @@ const jobs: Job[] = [
       magic: 10,
     },
     masterRounds: 7,
+    price: 30000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -419,8 +433,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "pirate",
+  pirate: {
     name: "海賊",
     levelUpPoint: {
       attack: 1,
@@ -441,6 +454,7 @@ const jobs: Job[] = [
       magic: 6,
     },
     masterRounds: 7,
+    price: 20000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -457,8 +471,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "ninja",
+  ninja: {
     name: "忍者",
     levelUpPoint: {
       attack: 1,
@@ -479,6 +492,7 @@ const jobs: Job[] = [
       magic: 6,
     },
     masterRounds: 7,
+    price: 20000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -495,8 +509,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "gamester",
+  gamester: {
     name: "ギャンブラー",
     levelUpPoint: {
       attack: 1,
@@ -517,6 +530,7 @@ const jobs: Job[] = [
       magic: 8,
     },
     masterRounds: 7,
+    price: 20000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -533,8 +547,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "beastTamer",
+  beastTamer: {
     name: "怪獣使い",
     levelUpPoint: {
       attack: 1,
@@ -555,6 +568,7 @@ const jobs: Job[] = [
       magic: 8,
     },
     masterRounds: 8,
+    price: 50000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -571,8 +585,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "robot",
+  robot: {
     name: "機械の体",
     levelUpPoint: {
       attack: 1,
@@ -593,6 +606,7 @@ const jobs: Job[] = [
       magic: 6,
     },
     masterRounds: 8,
+    price: 50000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -609,8 +623,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "carpenter",
+  carpenter: {
     name: "大工",
     levelUpPoint: {
       attack: 2,
@@ -631,6 +644,7 @@ const jobs: Job[] = [
       magic: 4,
     },
     masterRounds: 4,
+    price: 1000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -647,8 +661,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "nurse",
+  nurse: {
     name: "ナース",
     levelUpPoint: {
       attack: 0,
@@ -669,6 +682,7 @@ const jobs: Job[] = [
       magic: 8,
     },
     masterRounds: 4,
+    price: 1000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -685,8 +699,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "monk",
+  monk: {
     name: "モンク",
     levelUpPoint: {
       attack: 1,
@@ -707,6 +720,7 @@ const jobs: Job[] = [
       magic: 6,
     },
     masterRounds: 5,
+    price: 5000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -723,8 +737,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "dancer",
+  dancer: {
     name: "おどり子",
     levelUpPoint: {
       attack: 0,
@@ -745,6 +758,7 @@ const jobs: Job[] = [
       magic: 10,
     },
     masterRounds: 5,
+    price: 5000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -761,8 +775,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "alien",
+  alien: {
     name: "宇宙人",
     levelUpPoint: {
       attack: 0,
@@ -783,6 +796,7 @@ const jobs: Job[] = [
       magic: 12,
     },
     masterRounds: 7,
+    price: 20000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -799,8 +813,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "queen",
+  queen: {
     name: "女王様",
     levelUpPoint: {
       attack: 2,
@@ -821,6 +834,7 @@ const jobs: Job[] = [
       magic: 10,
     },
     masterRounds: 7,
+    price: 20000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -837,8 +851,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "gladiator",
+  gladiator: {
     name: "格闘士",
     levelUpPoint: {
       attack: 1,
@@ -859,6 +872,7 @@ const jobs: Job[] = [
       magic: 6,
     },
     masterRounds: 8,
+    price: 50000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -875,8 +889,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "elves",
+  elves: {
     name: "精霊使い",
     levelUpPoint: {
       attack: 0,
@@ -897,6 +910,7 @@ const jobs: Job[] = [
       magic: 12,
     },
     masterRounds: 8,
+    price: 50000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -913,8 +927,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "royal",
+  royal: {
     name: "王族",
     levelUpPoint: {
       attack: 2,
@@ -935,6 +948,7 @@ const jobs: Job[] = [
       magic: 12,
     },
     masterRounds: 12,
+    price: 300000,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -951,8 +965,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "devil",
+  devil: {
     name: "デビラーマン",
     levelUpPoint: {
       attack: 0,
@@ -973,6 +986,7 @@ const jobs: Job[] = [
       magic: 0,
     },
     masterRounds: 0,
+    price: 0,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -989,8 +1003,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-  {
-    type: "anotherDevil",
+  anotherDevil: {
     name: "アナザーデビラー",
     levelUpPoint: {
       attack: 0,
@@ -1011,6 +1024,7 @@ const jobs: Job[] = [
       magic: 0,
     },
     masterRounds: 0,
+    price: 0,
     pay: 0,
     explanation: "",
     fieldSpeciality: {
@@ -1027,7 +1041,7 @@ const jobs: Job[] = [
     allowMale: true,
     allowFemale: true,
   },
-];
+});
 
 export const basicJobTypes: BasicJobTypes[] = [
   "warrior",
@@ -1051,5 +1065,4 @@ export const thiefJobTypes: JobTypes[] = [
   "gamester",
 ];
 export const gladiatorJobTypes: JobTypes[] = ["monk", "gladiator"];
-
 export default jobs;

@@ -109,6 +109,19 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     en: "end",
     cn: "結束",
   },
+  // Game > JobStore
+  "転職ができるマス。": {
+    en: "転職ができるマス。",
+    cn: "転職ができるマス。",
+  },
+  "土、日曜が定休日。": {
+    en: "土、日曜が定休日。",
+    cn: "土、日曜が定休日。",
+  },
+  職安: {
+    en: "職安",
+    cn: "職安",
+  },
   // Game > MagicStore
   "フィールド魔法や戦闘魔法が買えるマス。": {
     en: "A place where you can buy magic stuffs.",

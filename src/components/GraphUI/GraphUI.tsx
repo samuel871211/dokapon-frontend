@@ -267,6 +267,31 @@ function useMetaData() {
         });
         return;
       case "JobStoreField":
+        UIStateDispatch({
+          type: "isCheckTopLayer",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showMinimap",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showCheckTip",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showVertexAttrsAndDistance",
+          payload: false,
+        });
+        UIStateDispatch({
+          type: "showJobStoreFieldCheck",
+          payload: true,
+        });
+        UIStateDispatch({
+          type: "curClickVertex",
+          payload: vertex,
+        });
+        return;
       case "KeyTreasureField":
       case "MagicField":
       case "MagicStoreField":

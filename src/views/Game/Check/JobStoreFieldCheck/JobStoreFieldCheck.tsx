@@ -65,28 +65,32 @@ function JobStoreFieldCheck(props: { state: TransitionStatus }): JSX.Element {
               <div className={styles.arrowIcon}></div>
             </div>
             <div className={styles.nameList}>
-              {curShowItems.map((item) => (
-                <div className={styles.name} key={item.name}>
+              {curShowItems.map((job) => (
+                <div className={styles.name} key={job.name}>
                   <div className={styles.icon}></div>
-                  <div>{t(item.name)}</div>
+                  <div>{t(job.name)}</div>
                 </div>
               ))}
             </div>
             <div className={styles.priceList}>
-              <div>{curShowItems[0]?.price}</div>
-              <div>{curShowItems[1]?.price}</div>
-              <div>{curShowItems[2]?.price}</div>
-              <div>{curShowItems[3]?.price}</div>
-              <div>{curShowItems[4]?.price}</div>
-              <div>{curShowItems[5]?.price}</div>
+              {curShowItems.map((job) => (
+                <div key={job.name}>{job.price.toLocaleString()}</div>
+              ))}
             </div>
             <div className={styles.dataList}>
-              <div>{curShowItems[0]?.bagSpace.item}</div>
-              <div>{curShowItems[1]?.bagSpace.item}</div>
-              <div>{curShowItems[2]?.bagSpace.item}</div>
-              <div>{curShowItems[3]?.bagSpace.item}</div>
-              <div>{curShowItems[4]?.bagSpace.item}</div>
-              <div>{curShowItems[5]?.bagSpace.item}</div>
+              {curShowItems.map((job) => (
+                <div className={styles.dataListItem} key={job.name}>
+                  <div className={styles.dataListItemIcon}>@</div>
+                  <div className={styles.dataListItemBag}>
+                    <div>ア：</div>
+                    <b>{job.bagSpace.item}</b>
+                  </div>
+                  <div className={styles.dataListItemMagic}>
+                    <div>魔：</div>
+                    <b>{job.bagSpace.magic}</b>
+                  </div>
+                </div>
+              ))}
             </div>
             <div className={styles.right}>
               <div className={styles.arrowIcon}></div>
@@ -132,12 +136,12 @@ function useMetaData(state: TransitionStatus) {
     switch (e.key.toLowerCase()) {
       case userPreference.R1:
       case userPreference.R2:
-        if (curListPage === 3) toggleCurListPage(0);
+        if (curListPage === 4) toggleCurListPage(0);
         else toggleCurListPage(curListPage + 1);
         break;
       case userPreference.L1:
       case userPreference.L2:
-        if (curListPage === 0) toggleCurListPage(3);
+        if (curListPage === 0) toggleCurListPage(4);
         else toggleCurListPage(curListPage - 1);
         break;
       case userPreference.circle:
@@ -148,7 +152,8 @@ function useMetaData(state: TransitionStatus) {
           type: "showJobStoreFieldCheck",
           payload: false,
         });
-        toggleCurListPage(0);
+        // 因為離開的時候，component會直接unmount，所以不需要把state重置
+        // toggleCurListPage(0);
         break;
     }
   }

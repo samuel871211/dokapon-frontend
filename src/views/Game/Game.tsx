@@ -25,6 +25,7 @@ import GraphUI from "components/GraphUI";
 import WeaponStoreFieldCheck from "./Check/WeaponStoreFieldCheck";
 import MagicStoreFieldCheck from "./Check/MagicStoreFieldCheck";
 import JobStoreFieldCheck from "./Check/JobStoreFieldCheck";
+import OnlyBottomDialogFieldCheck from "./Check/OnlyBottomDialogFieldCheck";
 
 // Stateless vars declare.
 const aspectRatioStyles = {
@@ -149,6 +150,16 @@ function Game(): JSX.Element {
         >
           {(state) =>
             state !== "exited" && <JobStoreFieldCheck state={state} />
+          }
+        </Transition>
+
+        <Transition
+          in={UIState.showBattleFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) =>
+            state !== "exited" && <OnlyBottomDialogFieldCheck state={state} />
           }
         </Transition>
       </div>

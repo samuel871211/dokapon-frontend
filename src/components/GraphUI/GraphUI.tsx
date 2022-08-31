@@ -186,6 +186,24 @@ function useMetaData() {
   const [SVGTranslate, setSVGTranslate] = useState({ x: 0, y: 0 });
   const Cells = useMemo(() => fromJSON(curGraph), [curGraph]);
 
+  function closeCheck() {
+    UIStateDispatch({
+      type: "isCheckTopLayer",
+      payload: false,
+    });
+    UIStateDispatch({
+      type: "showMinimap",
+      payload: false,
+    });
+    UIStateDispatch({
+      type: "showCheckTip",
+      payload: false,
+    });
+    UIStateDispatch({
+      type: "showVertexAttrsAndDistance",
+      payload: false,
+    });
+  }
   function handlePointerOver(e: PointerEvent<SVGSVGElement>) {
     if (!(e.target instanceof SVGCircleElement)) {
       UIStateDispatch({
@@ -214,49 +232,38 @@ function useMetaData() {
     const vertex = curGraph.vertices.find((item) => item.id === vertexId);
     if (!vertex) return console.error("no pointer over vertex");
 
-    // UIStateDispatch({
-    //   type: 'isCheckTopLayer',
-    //   payload: false
-    // })
-    // UIStateDispatch({
-    //     type: 'showMinimap',
-    //     payload: false
-    // })
-    // UIStateDispatch({
-    //     type: 'showCheckTip',
-    //     payload: false
-    // })
-    // UIStateDispatch({
-    //   type: 'showVertexAttrsAndDistance',
-    //   payload: false
-    // })
+    // closeCheck();
     switch (vertex.name) {
       case "BattleField":
-      case "CastleField":
+      case "KeyTreasureField":
+      case "MagicField":
+      case "RedTreasureField":
+      case "TreasureField":
+      case "WhiteTreasureField":
+      case "WorldTransferField":
+      case "GoldTreasureField":
+      case "DamageField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showBattleFieldCheck",
+          payload: true,
+        });
+        return;
       case "CaveField":
+        /**
+         * @todo 根據不同洞窟，顯示不同文字
+         */
+        return;
+      case "VillageField":
+        return;
+      case "CastleField":
       case "ChruchField":
+        return;
       case "CollectAllMoneyField":
       case "CollectMoneyField":
-      case "DamageField":
-      case "GoldTreasureField":
         return;
       case "GroceryStoreField":
-        UIStateDispatch({
-          type: "isCheckTopLayer",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showMinimap",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showCheckTip",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showVertexAttrsAndDistance",
-          payload: false,
-        });
+        closeCheck();
         UIStateDispatch({
           type: "showGroceryStoreFieldCheck",
           payload: true,
@@ -267,22 +274,7 @@ function useMetaData() {
         });
         return;
       case "JobStoreField":
-        UIStateDispatch({
-          type: "isCheckTopLayer",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showMinimap",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showCheckTip",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showVertexAttrsAndDistance",
-          payload: false,
-        });
+        closeCheck();
         UIStateDispatch({
           type: "showJobStoreFieldCheck",
           payload: true,
@@ -292,25 +284,8 @@ function useMetaData() {
           payload: vertex,
         });
         return;
-      case "KeyTreasureField":
-      case "MagicField":
       case "MagicStoreField":
-        UIStateDispatch({
-          type: "isCheckTopLayer",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showMinimap",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showCheckTip",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showVertexAttrsAndDistance",
-          payload: false,
-        });
+        closeCheck();
         UIStateDispatch({
           type: "showMagicStoreFieldCheck",
           payload: true,
@@ -320,26 +295,8 @@ function useMetaData() {
           payload: vertex,
         });
         return;
-      case "RedTreasureField":
-      case "TreasureField":
-      case "VillageField":
       case "WeaponStoreField":
-        UIStateDispatch({
-          type: "isCheckTopLayer",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showMinimap",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showCheckTip",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showVertexAttrsAndDistance",
-          payload: false,
-        });
+        closeCheck();
         UIStateDispatch({
           type: "showWeaponStoreFieldCheck",
           payload: true,
@@ -348,9 +305,6 @@ function useMetaData() {
           type: "curClickVertex",
           payload: vertex,
         });
-        return;
-      case "WhiteTreasureField":
-      case "WorldTransferField":
         return;
     }
   }

@@ -154,7 +154,7 @@ function Game(): JSX.Element {
         </Transition>
 
         <Transition
-          in={UIState.showBattleFieldCheck}
+          in={UIState.onlyBottomDialogFieldCheck !== ""}
           timeout={{ enter: 500, exit: 500 }}
           onExited={showCheck}
         >

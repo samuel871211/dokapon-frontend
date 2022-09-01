@@ -245,8 +245,8 @@ function useMetaData() {
       case "DamageField":
         closeCheck();
         UIStateDispatch({
-          type: "showBattleFieldCheck",
-          payload: true,
+          type: "onlyBottomDialogFieldCheck",
+          payload: vertex.name,
         });
         return;
       case "CaveField":

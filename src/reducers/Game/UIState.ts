@@ -14,25 +14,32 @@ const initUIState: Dokapon.Game.UIState = {
   showVertexAttrsAndDistance: false,
   showMinimap: false,
   showCheckTip: false,
-  showBattleFieldCheck: false,
-  showMagicFieldCheck: false,
-  showTreasureFieldCheck: false,
+  onlyBottomDialogFieldCheck: "",
+  // showBattleFieldCheck: false,
+  // showMagicFieldCheck: false,
+  // showTreasureFieldCheck: false,
+  // showGoldTreasureFieldCheck: false,
+  // showRedTreasureFieldCheck: false,
+  // showWhiteTreasureFieldCheck: false,
+  // showKeyTreasureFieldCheck: false,
+  // showWorldTransferFieldCheck: false,
+  // showDamageFieldCheck: false,
+  //
+  showCaveFieldCheck: false,
+  //
   showCollectMoneyFieldCheck: false,
   showCollectAllMoneyFieldCheck: false,
-  showGoldTreasureFieldCheck: false,
-  showRedTreasureFieldCheck: false,
-  showWhiteTreasureFieldCheck: false,
-  showKeyTreasureFieldCheck: false,
-  showWorldTransferFieldCheck: false,
-  showChruchFieldCheck: false,
+  //
   showWeaponStoreFieldCheck: false,
   showJobStoreFieldCheck: false,
   showGroceryStoreFieldCheck: false,
   showMagicStoreFieldCheck: false,
+  //
   showVillageFieldCheck: false,
-  showCaveFieldCheck: false,
+  //
+  showChruchFieldCheck: false,
   showCastleFieldCheck: false,
-  showDamageFieldCheck: false,
+  //
   curHoverVertex: {} as Vertex,
   curClickVertex: {} as Vertex,
 };

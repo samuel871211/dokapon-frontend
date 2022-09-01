@@ -28,17 +28,23 @@ const transitionStyles = {
     unmounted: "",
   },
 };
-// const bottomDialogTexts = {
-//   BattleField:
-//   KeyTreasureField:
-//   MagicField:
-//   RedTreasureField:
-//   TreasureField:
-//   WhiteTreasureField:
-//   WorldTransferField:
-//   GoldTreasureField:
-//   DamageField:
-// }
+const bottomDialogTexts = {
+  BattleField: "ザコモンスターとの戦闘や\nイベントが発生するマス。",
+  KeyTreasureField:
+    "魔法のカギを使わないと開かないが、\n貴重な品を入手できるマス。",
+  MagicField: "フィールド魔法を入手できるマス。",
+  RedTreasureField:
+    "何が起こるか分からない\nハイリスク・ハイリターンの危険なマス。\n止まるからには命を賭けろ!",
+  TreasureField: "アイテムを入手できるマス。",
+  WhiteTreasureField:
+    "普通では手に入らないものを入手できるマス。\nしかし良い物が手に入る確率は2分の1。\n最悪の事態になることも⋯。",
+  WorldTransferField:
+    "別のエリアヘワープできるマス。\n有料だが簡単に移動できるので便利。",
+  GoldTreasureField: "お金を入手できるマス。",
+  DamageField:
+    "止まると一定量のダメージを受けるマス。\n戦闘やイベントも起こる。",
+  "": "",
+};
 
 export default OnlyBottomDialogFieldCheck;
 
@@ -46,6 +52,9 @@ function OnlyBottomDialogFieldCheck(props: {
   state: TransitionStatus;
 }): JSX.Element {
   const { state } = props;
+  const {
+    UIState: { onlyBottomDialogFieldCheck },
+  } = useContext(UIStateContext);
   const { t, handleKeyUpAttrs } = useMetaData(state);
 
   return (
@@ -55,8 +64,11 @@ function OnlyBottomDialogFieldCheck(props: {
         className={`${styles.bottomArea} ${transitionStyles.bottomArea[state]}`}
       >
         <YellowBlock role="dialog" className={styles.messageContainer}>
-          <div>{t("転職ができるマス。")}</div>
-          <div>{t("土、日曜が定休日。")}</div>
+          {bottomDialogTexts[onlyBottomDialogFieldCheck]
+            .split("\n")
+            .map((line) => (
+              <div key={line}>{t(line)}</div>
+            ))}
           <BottomDialogConfirmCircle />
         </YellowBlock>
       </div>
@@ -83,8 +95,8 @@ function useMetaData(state: TransitionStatus) {
       case userPreference.square:
       case userPreference.cross:
         UIStateDispatch({
-          type: "showBattleFieldCheck",
-          payload: false,
+          type: "onlyBottomDialogFieldCheck",
+          payload: "",
         });
         break;
     }

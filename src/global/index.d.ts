@@ -580,33 +580,51 @@ declare namespace Dokapon {
        * Check(查看)左上角的dialog
        */
       showCheckTip: boolean;
-
-      showBattleFieldCheck: boolean;
-      showMagicFieldCheck: boolean;
-      showTreasureFieldCheck: boolean;
+      /**
+       * 這9種FieldCheck，只有單純顯示文字
+       */
+      onlyBottomDialogFieldCheck:
+        | "BattleField"
+        | "MagicField"
+        | "TreasureField"
+        | "GoldTreasureField"
+        | "RedTreasureField"
+        | "WhiteTreasureField"
+        | "KeyTreasureField"
+        | "WorldTransferField"
+        | "DamageField"
+        | "";
+      // showBattleFieldCheck: boolean;
+      // showMagicFieldCheck: boolean;
+      // showTreasureFieldCheck: boolean;
+      // showGoldTreasureFieldCheck: boolean;
+      // showRedTreasureFieldCheck: boolean;
+      // showWhiteTreasureFieldCheck: boolean;
+      // showKeyTreasureFieldCheck: boolean;
+      // showWorldTransferFieldCheck: boolean;
+      // showDamageFieldCheck: boolean;
+      // 洞窟，根據不同地區，顯示不同文字
+      showCaveFieldCheck: boolean;
+      // 集金類型
       showCollectMoneyFieldCheck: boolean;
       showCollectAllMoneyFieldCheck: boolean;
-      showGoldTreasureFieldCheck: boolean;
-      showRedTreasureFieldCheck: boolean;
-      showWhiteTreasureFieldCheck: boolean;
-      showKeyTreasureFieldCheck: boolean;
-      showWorldTransferFieldCheck: boolean;
-      showChruchFieldCheck: boolean;
+      // 商店類型
       showWeaponStoreFieldCheck: boolean;
       showJobStoreFieldCheck: boolean;
       showGroceryStoreFieldCheck: boolean;
       showMagicStoreFieldCheck: boolean;
+      // 村莊類型
       showVillageFieldCheck: boolean;
-      showCaveFieldCheck: boolean;
+      // 金庫類型
+      showChruchFieldCheck: boolean;
       showCastleFieldCheck: boolean;
-      showDamageFieldCheck: boolean;
       curHoverVertex: Vertex;
       curClickVertex: Vertex;
     };
     type Action =
       | {
-          type: // keyof UIState
-          | "showDrawer"
+          type:
+            | "showDrawer"
             | "showRoulette"
             | "showBag"
             | "showTalent"
@@ -618,31 +636,40 @@ declare namespace Dokapon {
             | "showVertexAttrsAndDistance"
             | "showMinimap"
             | "showCheckTip"
-            | "showGroceryStoreFieldCheck"
-            | "showBattleFieldCheck"
-            | "showMagicFieldCheck"
-            | "showTreasureFieldCheck"
+            //
+            // | "showBattleFieldCheck"
+            // | "showMagicFieldCheck"
+            // | "showTreasureFieldCheck"
+            // | "showGoldTreasureFieldCheck"
+            // | "showRedTreasureFieldCheck"
+            // | "showWhiteTreasureFieldCheck"
+            // | "showKeyTreasureFieldCheck"
+            // | "showWorldTransferFieldCheck"
+            // | "showDamageFieldCheck"
+            //
+            | "showCaveFieldCheck"
+            //
             | "showCollectMoneyFieldCheck"
             | "showCollectAllMoneyFieldCheck"
-            | "showGoldTreasureFieldCheck"
-            | "showRedTreasureFieldCheck"
-            | "showWhiteTreasureFieldCheck"
-            | "showKeyTreasureFieldCheck"
-            | "showWorldTransferFieldCheck"
-            | "showChruchFieldCheck"
+            //
             | "showWeaponStoreFieldCheck"
             | "showJobStoreFieldCheck"
             | "showGroceryStoreFieldCheck"
             | "showMagicStoreFieldCheck"
+            //
             | "showVillageFieldCheck"
-            | "showCaveFieldCheck"
-            | "showCastleFieldCheck"
-            | "showDamageFieldCheck";
+            //
+            | "showChruchFieldCheck"
+            | "showCastleFieldCheck";
           payload: boolean;
         }
       | {
           type: "curHoverVertex" | "curClickVertex";
           payload: Vertex;
+        }
+      | {
+          type: "onlyBottomDialogFieldCheck";
+          payload: UIState["onlyBottomDialogFieldCheck"];
         };
     type Context = {
       UIState: UIState;

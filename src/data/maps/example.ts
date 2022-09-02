@@ -10,6 +10,7 @@ const example: { vertices: Vertex[]; edges: Edge[] } = {
       name: "BattleField",
       id: "923bc7a0-ba19-4481-b5be-2bbd68515476",
       edges: [],
+      area: "Africa",
     },
   ],
   edges: [],

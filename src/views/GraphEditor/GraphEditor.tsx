@@ -23,27 +23,7 @@ import type {
   Position,
   AreaTypes,
 } from "global";
-// import mainWorld from 'graphics/mainWorld';
-// import asiaCave from "graphics/asiaCave";
-// import europeCave from "graphics/europeCave";
-// import europeCaveHall from "graphics/europeCaveHall";
-// import europeCaveLibrary from 'graphics/europeCaveLibrary';
-// import europeCaveCanteen from "graphics/europeCaveCanteen";
-// import africaCave from 'graphics/africaCave';
-// import northAmericaCave from 'graphics/northAmericaCave';
-// import hawaiianIslandsCave from 'graphics/hawaiianIslandsCave';
-// import africaCaveB2 from 'graphics/africaCaveB2';
-// import northAmericaCaveB2 from 'graphics/northAmericaCaveB2';
-// import hawaiianIslandsCaveB2Left from 'graphics/hawaiianIslandsCaveB2Left';
-// import hawaiianIslandsCaveB2Center from 'graphics/hawaiianIslandsCaveB2Center';
-// import hawaiianIslandsCaveB2Right from 'graphics/hawaiianIslandsCaveB2Right';
-// import hawaiianIslandsCaveB3Left from 'graphics/hawaiianIslandsCaveB3Left';
-// import hawaiianIslandsCaveB3Center from 'graphics/hawaiianIslandsCaveB3Center';
-// import hawaiianIslandsCaveB3Right from "graphics/hawaiianIslandsCaveB3Right";
-// import africaCaveB3Left from "graphics/africaCaveB3Left";
-// import southAmericaCave from 'graphics/southAmericaCave';
-// import southAmericaCaveB2 from 'graphics/southAmericaCaveB2';
-import southAmericaCaveB3 from "graphics/southAmericaCaveB3";
+import mainWorld from "data/maps/mainWorld";
 import GraphDSA from "graphics/GraphDSA";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
@@ -142,7 +122,7 @@ const selectedVertices: Vertex[] = [];
 const selectedVerticesGroupOffsets: Position[] = [];
 
 // graph資料結構與演算法的實作，整包精華都在這邊
-const graphDSA = new GraphDSA(southAmericaCaveB3);
+const graphDSA = new GraphDSA(mainWorld);
 
 export default GraphEditor;
 
@@ -307,7 +287,7 @@ function GraphEditor(): JSX.Element {
                 <option value="WeaponStoreField">裝備店</option>
                 <option value="JobStoreField">職安所</option>
                 <option value="MagicStoreField">魔法店</option>
-                {/* <option value="WorldTransferField">世界轉移</option> */}
+                <option value="WorldTransferField">世界轉移</option>
                 <option value="DamageField">傷害</option>
                 {/* 集金類型 */}
                 <option value="CollectMoneyField">集金</option>
@@ -367,7 +347,7 @@ function useMetaData() {
     x: -1,
     y: -1,
   });
-  const [curGraph, setCurGraph] = useState(southAmericaCaveB3);
+  const [curGraph, setCurGraph] = useState(mainWorld);
   const [mouseMode, toggleMouseMode] = useState<MouseMode>("edit");
   const [SVGScale, setSVGScale] = useState(1);
   const [selectedArea, setSelectedArea] = useState({
@@ -1080,6 +1060,7 @@ function useMetaData() {
       name: vertexName,
       position: { x: 0, y: 0 },
       edges: [pointerDownEdge.id],
+      area: "Atlantis",
     };
     const { startId, endId, start, end } = pointerDownEdge;
 

@@ -23,7 +23,7 @@ const europeCaveLibrary: { vertices: Vertex[]; edges: Edge[] } = {
       id: "2eef6509-902e-4a86-85f0-2acf1249a977",
 
       area: "EuropeCaveLibrary",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -40,
         y: -580,

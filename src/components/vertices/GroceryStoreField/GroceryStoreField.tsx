@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 
 // Local application/library specific imports.

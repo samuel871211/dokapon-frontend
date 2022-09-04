@@ -1,0 +1,93 @@
+.villageFieldCheckContainer {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%);
+}
+.topArea {
+  width: 100%;
+  height: 70%;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+}
+.empty {
+  height: calc(var(--vh) * 3);
+}
+.villageDetail {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.villageArea {
+  width: 50%;
+}
+.villageArea > div:nth-child(1) {
+  color: white;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  -webkit-text-stroke: 0.15rem black;
+  margin-left: 2.5%;
+}
+.villageArea > div:nth-child(2) {
+  margin-left: 2.5%;
+}
+.namePayTotal {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  row-gap: 0.5rem;
+}
+.namePayTotal > div {
+  width: calc(100% / 3);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.line1 {
+  margin-top: 1rem;
+  color: white;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  -webkit-text-stroke: 0.15rem black;
+}
+.line2 {
+  margin-bottom: 1rem;
+  color: #6d6d81;
+}
+.icon {
+  width: 3rem;
+  height: 3rem;
+  border: 0.2rem outset var(--border-color);
+  margin-right: 1rem;
+}
+.bottomArea {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform 0.5s;
+}
+.messageContainer {
+  width: 95%;
+  height: 80%;
+  background-color: var(--bg-color);
+  border: 0.2rem outset var(--border-color);
+  border-radius: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  /* line-height: 3rem; */
+}
+.topAreaEntered {
+  transform: none;
+}
+.bottomAreaEntered {
+  transform: none;
+}

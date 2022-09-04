@@ -99,7 +99,7 @@ const southAmericaCaveB3: { vertices: Vertex[]; edges: Edge[] } = {
       id: "07980ad3-9b68-4a68-9d7e-f6c4abec1b8e",
 
       area: "SouthAmericaCaveB3",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 960,
         y: -300,
@@ -473,7 +473,7 @@ const southAmericaCaveB3: { vertices: Vertex[]; edges: Edge[] } = {
       id: "f41c8d59-1288-433d-aeb9-027eafbf6402",
 
       area: "SouthAmericaCaveB3",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -1180,
         y: -2600,
@@ -743,7 +743,7 @@ const southAmericaCaveB3: { vertices: Vertex[]; edges: Edge[] } = {
       id: "3e3faf2b-ca54-495d-8304-9f17e730efa5",
 
       area: "SouthAmericaCaveB3",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -5060,
         y: -1420,

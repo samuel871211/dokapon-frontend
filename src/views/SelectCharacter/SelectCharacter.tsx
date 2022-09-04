@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 import { Fragment, useContext, useEffect, useReducer } from "react";
 import classNames from "classnames";

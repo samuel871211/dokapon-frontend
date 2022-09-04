@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 import { useEffect, useContext } from "react";
 import { Transition } from "react-transition-group";
@@ -26,6 +24,19 @@ import WeaponStoreFieldCheck from "./Check/WeaponStoreFieldCheck";
 import MagicStoreFieldCheck from "./Check/MagicStoreFieldCheck";
 import JobStoreFieldCheck from "./Check/JobStoreFieldCheck";
 import OnlyBottomDialogFieldCheck from "./Check/OnlyBottomDialogFieldCheck";
+import CastleFieldCheck from "./Check/CastleFieldCheck";
+import ChurchFieldCheck from "./Check/ChurchFieldCheck";
+import VillageFieldCheck from "./Check/VillageFieldCheck";
+import CollectMoneyFieldCheck from "./Check/CollectMoneyFieldCheck";
+import BattleFieldCheck from "./Check/BattleFieldCheck";
+import DamageFieldCheck from "./Check/DamageFieldCheck";
+import TreasureFieldCheck from "./Check/TreasureFieldCheck";
+import WhiteTreasureFieldCheck from "./Check/WhiteTreasureFieldCheck";
+import RedTreasureFieldCheck from "./Check/RedTreasureFieldCheck";
+import KeyTreasureFieldCheck from "./Check/KeyTreasureFieldCheck";
+import WorldTransferFieldCheck from "./Check/WorldTransferFieldCheck/WorldTransferFieldCheck";
+import MagicBookFieldCheck from "./Check/MagicBookFieldCheck";
+import GoldTreasureFieldCheck from "./Check/GoldTreasureFieldCheck";
 
 // Stateless vars declare.
 const aspectRatioStyles = {
@@ -153,13 +164,133 @@ function Game(): JSX.Element {
           }
         </Transition>
 
-        <Transition
+        {/* <Transition
           in={UIState.onlyBottomDialogFieldCheck !== ""}
           timeout={{ enter: 500, exit: 500 }}
           onExited={showCheck}
         >
           {(state) =>
             state !== "exited" && <OnlyBottomDialogFieldCheck state={state} />
+          }
+        </Transition> */}
+
+        <Transition
+          in={UIState.showCastleFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) => state !== "exited" && <CastleFieldCheck state={state} />}
+        </Transition>
+
+        <Transition
+          in={UIState.showChruchFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) => state !== "exited" && <ChurchFieldCheck state={state} />}
+        </Transition>
+
+        <Transition
+          in={UIState.showVillageFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) => state !== "exited" && <VillageFieldCheck state={state} />}
+        </Transition>
+
+        <Transition
+          in={UIState.showCollectMoneyFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) =>
+            state !== "exited" && <CollectMoneyFieldCheck state={state} />
+          }
+        </Transition>
+
+        <Transition
+          in={UIState.showBattleFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) => state !== "exited" && <BattleFieldCheck state={state} />}
+        </Transition>
+
+        <Transition
+          in={UIState.showDamageFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) => state !== "exited" && <DamageFieldCheck state={state} />}
+        </Transition>
+
+        <Transition
+          in={UIState.showTreasureFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) =>
+            state !== "exited" && <TreasureFieldCheck state={state} />
+          }
+        </Transition>
+
+        <Transition
+          in={UIState.showWhiteTreasureFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) =>
+            state !== "exited" && <WhiteTreasureFieldCheck state={state} />
+          }
+        </Transition>
+
+        <Transition
+          in={UIState.showRedTreasureFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) =>
+            state !== "exited" && <RedTreasureFieldCheck state={state} />
+          }
+        </Transition>
+
+        <Transition
+          in={UIState.showKeyTreasureFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) =>
+            state !== "exited" && <KeyTreasureFieldCheck state={state} />
+          }
+        </Transition>
+
+        <Transition
+          in={UIState.showWorldTransferFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) =>
+            state !== "exited" && <WorldTransferFieldCheck state={state} />
+          }
+        </Transition>
+
+        <Transition
+          in={UIState.showMagicBookFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) =>
+            state !== "exited" && <MagicBookFieldCheck state={state} />
+          }
+        </Transition>
+
+        <Transition
+          in={UIState.showGoldTreasureFieldCheck}
+          timeout={{ enter: 500, exit: 500 }}
+          onExited={showCheck}
+        >
+          {(state) =>
+            state !== "exited" && <GoldTreasureFieldCheck state={state} />
           }
         </Transition>
       </div>

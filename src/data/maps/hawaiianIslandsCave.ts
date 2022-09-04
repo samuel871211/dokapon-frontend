@@ -83,7 +83,7 @@ const hawaiianIslandsCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "003c4322-2927-4b6c-911a-4699a78c8adc",
 
       area: "HawaiianIslandsCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 1160,
         y: -440,
@@ -247,7 +247,7 @@ const hawaiianIslandsCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "c0a36c85-b31e-495c-b903-a5c6e3c844fc",
 
       area: "HawaiianIslandsCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 2240,
         y: -2100,
@@ -331,7 +331,7 @@ const hawaiianIslandsCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "6d1cd74e-d519-4e85-9a93-a659b9c7ecfd",
 
       area: "HawaiianIslandsCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 2780,
         y: -3220,
@@ -477,7 +477,7 @@ const hawaiianIslandsCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "dc335c00-faf0-4804-b5eb-ce5a7fdbf483",
 
       area: "HawaiianIslandsCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -20,
         y: -3100,
@@ -511,7 +511,7 @@ const hawaiianIslandsCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "8a55b791-7a6f-4494-aec1-7fc3165d4f49",
 
       area: "HawaiianIslandsCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -20,
         y: -4560,
@@ -603,7 +603,7 @@ const hawaiianIslandsCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "f6835483-0566-47ff-ab55-befd97e71e80",
 
       area: "HawaiianIslandsCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -1200,
         y: -420,
@@ -801,7 +801,7 @@ const hawaiianIslandsCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "19b41d47-887d-4535-b8a4-5acd468969ae",
 
       area: "HawaiianIslandsCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -1640,
         y: -3680,

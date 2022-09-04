@@ -51,7 +51,7 @@ const africaCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "cb95e296-2a0c-4544-94fb-bec7357c87f8",
 
       area: "AfricaCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -560,
         y: 660,
@@ -329,7 +329,7 @@ const africaCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "17c61d4d-6630-41dc-8054-cd253313ea3c",
 
       area: "AfricaCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 4380,
         y: 2640,
@@ -475,7 +475,7 @@ const africaCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "56e0e175-6a4f-464d-9991-c3f5f9a4ba6d",
 
       area: "AfricaCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 1620,
         y: 4240,
@@ -669,7 +669,7 @@ const africaCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "ca438061-4d50-4f8f-b66a-25c75c61b612",
 
       area: "AfricaCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -2860,
         y: 4720,
@@ -831,7 +831,7 @@ const africaCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "4902edfc-ee6d-4ea7-9fd6-86192e8036b7",
 
       area: "AfricaCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -1240,
         y: 1520,

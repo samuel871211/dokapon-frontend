@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 
 // Local application/library specific imports.
@@ -7,9 +5,9 @@ import { Vertex } from "global";
 
 // Stateless vars declare.
 
-export default MagicField;
+export default MagicBookField;
 
-function MagicField(props: Vertex): JSX.Element {
+function MagicBookField(props: Vertex): JSX.Element {
   const { position, id } = props;
 
   return (

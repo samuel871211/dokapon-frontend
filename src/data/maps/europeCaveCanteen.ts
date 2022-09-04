@@ -21,7 +21,7 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
       id: "34aeb47f-17e6-46d5-8d3f-9f333fd94b2a",
 
       area: "EuropeCaveCanteen",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 460,
         y: 0,
@@ -391,7 +391,7 @@ const europeCaveCanteen: { vertices: Vertex[]; edges: Edge[] } = {
       id: "a1ac7cf8-ca57-4ea2-a1c1-c5a5bd42d3ef",
 
       area: "EuropeCaveCanteen",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -940,
         y: -1620,

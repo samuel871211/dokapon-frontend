@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 import { createRoot } from "react-dom/client";
 import { useEffect, useReducer } from "react";

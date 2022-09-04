@@ -175,7 +175,7 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "d8822b24-80c2-4a1e-b1aa-c730b901f927",
 
       area: "SouthAmericaCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 280,
         y: -220,
@@ -315,7 +315,7 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "028eda39-3228-4f39-969b-deb7b418f859",
 
       area: "SouthAmericaCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -1300,
         y: -1220,
@@ -595,7 +595,7 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "f789ada4-a7a6-4137-b483-4dec9900b029",
 
       area: "SouthAmericaCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 3320,
         y: -3220,
@@ -639,7 +639,7 @@ const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
       id: "3f4c5601-a79a-4ebd-a42e-5ff89906fac7",
 
       area: "SouthAmericaCave",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 2060,
         y: 620,

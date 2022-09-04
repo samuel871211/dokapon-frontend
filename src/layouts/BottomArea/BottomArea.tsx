@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 import { ReactNode } from "react";
 import classNames from "classnames";

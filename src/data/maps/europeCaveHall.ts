@@ -68,7 +68,7 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
       id: "ecefbec2-7bd1-4c0b-9357-e3579daa678b",
 
       area: "EuropeCaveHall",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 920,
         y: 120,
@@ -139,7 +139,7 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
       id: "0105fe2d-7ede-4cad-b9b9-5c80bf5db8ef",
 
       area: "EuropeCaveHall",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -600,
         y: -500,
@@ -438,7 +438,7 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
       id: "7e523595-c172-4256-9679-2f238ff26a66",
 
       area: "EuropeCaveHall",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -200,
         y: -1640,
@@ -575,7 +575,7 @@ const europeCaveHall: { vertices: Vertex[]; edges: Edge[] } = {
       id: "7b80b862-ac42-4774-a22b-e7fbc84da615",
 
       area: "EuropeCaveHall",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -140,
         y: -2780,

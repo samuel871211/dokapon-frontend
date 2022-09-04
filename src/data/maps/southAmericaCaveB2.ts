@@ -87,7 +87,7 @@ const southAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
       id: "d3222f62-2050-4cce-b7d0-a2fe017cb934",
 
       area: "SouthAmericaCaveB2",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -220,
         y: -1200,
@@ -461,7 +461,7 @@ const southAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
       id: "87a3de88-87ce-4850-be9b-3398648e8e22",
 
       area: "SouthAmericaCaveB2",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -2000,
         y: -340,

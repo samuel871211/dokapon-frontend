@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 import classNames from "classnames";
 import {

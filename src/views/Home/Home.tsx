@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 import { useContext, useEffect, useReducer } from "react";
 import { Transition } from "react-transition-group";

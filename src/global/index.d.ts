@@ -17,7 +17,7 @@ declare namespace Dokapon {
   export type CellId = string;
   export type VertexTypes =
     | "BattleField"
-    | "MagicField"
+    | "MagicBookField"
     | "TreasureField"
     | "CollectMoneyField"
     | "CollectAllMoneyField"
@@ -580,29 +580,15 @@ declare namespace Dokapon {
        * Check(查看)左上角的dialog
        */
       showCheckTip: boolean;
-      /**
-       * 這9種FieldCheck，只有單純顯示文字
-       */
-      onlyBottomDialogFieldCheck:
-        | "BattleField"
-        | "MagicField"
-        | "TreasureField"
-        | "GoldTreasureField"
-        | "RedTreasureField"
-        | "WhiteTreasureField"
-        | "KeyTreasureField"
-        | "WorldTransferField"
-        | "DamageField"
-        | "";
-      // showBattleFieldCheck: boolean;
-      // showMagicFieldCheck: boolean;
-      // showTreasureFieldCheck: boolean;
-      // showGoldTreasureFieldCheck: boolean;
-      // showRedTreasureFieldCheck: boolean;
-      // showWhiteTreasureFieldCheck: boolean;
-      // showKeyTreasureFieldCheck: boolean;
-      // showWorldTransferFieldCheck: boolean;
-      // showDamageFieldCheck: boolean;
+      showBattleFieldCheck: boolean;
+      showMagicBookFieldCheck: boolean;
+      showTreasureFieldCheck: boolean;
+      showGoldTreasureFieldCheck: boolean;
+      showRedTreasureFieldCheck: boolean;
+      showWhiteTreasureFieldCheck: boolean;
+      showKeyTreasureFieldCheck: boolean;
+      showWorldTransferFieldCheck: boolean;
+      showDamageFieldCheck: boolean;
       // 洞窟，根據不同地區，顯示不同文字
       showCaveFieldCheck: boolean;
       // 集金類型
@@ -637,15 +623,15 @@ declare namespace Dokapon {
             | "showMinimap"
             | "showCheckTip"
             //
-            // | "showBattleFieldCheck"
-            // | "showMagicFieldCheck"
-            // | "showTreasureFieldCheck"
-            // | "showGoldTreasureFieldCheck"
-            // | "showRedTreasureFieldCheck"
-            // | "showWhiteTreasureFieldCheck"
-            // | "showKeyTreasureFieldCheck"
-            // | "showWorldTransferFieldCheck"
-            // | "showDamageFieldCheck"
+            | "showBattleFieldCheck"
+            | "showMagicBookFieldCheck"
+            | "showTreasureFieldCheck"
+            | "showGoldTreasureFieldCheck"
+            | "showRedTreasureFieldCheck"
+            | "showWhiteTreasureFieldCheck"
+            | "showKeyTreasureFieldCheck"
+            | "showWorldTransferFieldCheck"
+            | "showDamageFieldCheck"
             //
             | "showCaveFieldCheck"
             //
@@ -666,10 +652,6 @@ declare namespace Dokapon {
       | {
           type: "curHoverVertex" | "curClickVertex";
           payload: Vertex;
-        }
-      | {
-          type: "onlyBottomDialogFieldCheck";
-          payload: UIState["onlyBottomDialogFieldCheck"];
         };
     type Context = {
       UIState: UIState;

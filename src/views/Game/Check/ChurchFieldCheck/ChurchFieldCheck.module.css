@@ -1,0 +1,113 @@
+.churchFieldCheckContainer {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%);
+}
+.topArea {
+  width: 100%;
+  height: 70%;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+}
+.churchName {
+  display: inline-block;
+  font-size: 3rem;
+  line-height: 3rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  margin-top: calc(var(--vh) * 6);
+  margin-left: 2.5rem;
+  min-width: 30%;
+}
+.itemList {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: calc(var(--vh) * 1);
+  border-radius: 1.5rem;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.listHead {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.th {
+  font-size: 3rem;
+  line-height: 4rem;
+}
+.listBody {
+  display: flex;
+  width: 100%;
+}
+.nameList {
+  margin-left: 2%;
+}
+.bankList {
+  text-align: end;
+  letter-spacing: 0.25rem;
+}
+div[data-positive="true"] {
+  color: blue;
+}
+div[data-negative="true"] {
+  color: red;
+}
+.specialityList {
+  margin-right: 2%;
+  text-align: end;
+  letter-spacing: 0.25rem;
+}
+.nameList,
+.bankList,
+.specialityList {
+  width: 32%;
+  font-size: 3rem;
+  line-height: 4rem;
+  /* 一頁顯示4個item */
+  height: 16rem;
+}
+.nameList > div,
+.bankList > div,
+.specialityList > div {
+  height: 4rem;
+}
+.name {
+  display: flex;
+  align-items: center;
+}
+.icon {
+  width: 3rem;
+  height: 3rem;
+  border: 0.2rem outset var(--border-color);
+  margin-right: 1rem;
+}
+.bottomArea {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform 0.5s;
+}
+.messageContainer {
+  width: 95%;
+  height: 80%;
+  background-color: var(--bg-color);
+  border: 0.2rem outset var(--border-color);
+  border-radius: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  /* line-height: 3rem; */
+}
+.topAreaEntered {
+  transform: none;
+}
+.bottomAreaEntered {
+  transform: none;
+}

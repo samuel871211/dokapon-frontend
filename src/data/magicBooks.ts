@@ -442,7 +442,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     fromVerticesQuery: [
       {
         areas: ["Atlantis"],
-        vertexTypes: ["MagicField"],
+        vertexTypes: ["MagicBookField"],
       },
     ],
   },

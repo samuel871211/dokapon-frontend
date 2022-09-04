@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 import {
   PointerEvent,
@@ -45,7 +43,7 @@ import VillageField from "components/vertices/VillageField";
 import CaveField from "components/vertices/CaveField";
 import CastleField from "components/vertices/CastleField";
 import TreasureField from "components/vertices/TreasureField";
-import MagicField from "components/vertices/MagicField";
+import MagicBookField from "components/vertices/MagicBookField";
 import BattleField from "components/vertices/BattleField";
 import DamageField from "components/vertices/DamageField";
 import styles from "./GraphEditor.module.css";
@@ -65,7 +63,7 @@ const Components = {
     CollectAllMoneyField,
     CollectMoneyField,
     TreasureField,
-    MagicField,
+    MagicBookField,
     BattleField,
     ChruchField,
     WeaponStoreField,
@@ -294,7 +292,7 @@ function GraphEditor(): JSX.Element {
                 <option value="CollectAllMoneyField">集金(黃)</option>
                 {/* 寶箱類型 */}
                 <option value="TreasureField">道具寶箱</option>
-                <option value="MagicField">魔法寶箱</option>
+                <option value="MagicBookField">魔法寶箱</option>
                 <option value="GoldTreasureField">金錢寶箱</option>
                 <option value="WhiteTreasureField">白色寶箱</option>
                 <option value="RedTreasureField">紅色寶箱</option>

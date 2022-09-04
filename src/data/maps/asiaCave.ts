@@ -160,7 +160,7 @@ const asiaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "b2520dd7-37db-428f-8afa-bc59f20e7d00",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 1860,
         y: -160,
@@ -319,7 +319,7 @@ const asiaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "691dda78-ddf6-4bb7-a5e7-c8b0fabcf0e4",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -1120,
         y: -1020,
@@ -364,7 +364,7 @@ const asiaCave: { vertices: Vertex[]; edges: Edge[] } = {
     },
     {
       id: "2a382445-e1b8-489c-8ba8-c3b354876ffb",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -200,
         y: -1800,

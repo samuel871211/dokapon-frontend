@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 import { useLayoutEffect, useRef, AnimationEvent } from "react";
 

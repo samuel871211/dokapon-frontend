@@ -21,7 +21,7 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
       id: "ae8733c9-ec73-4fac-91c1-31b22ac7c1d4",
 
       area: "NorthAmericaCaveB2",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: -40,
         y: -540,
@@ -149,7 +149,7 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
       id: "ba46b29b-70e7-4080-ae23-4c5eaa3cfc2b",
 
       area: "NorthAmericaCaveB2",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 2180,
         y: 1040,
@@ -361,7 +361,7 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
       id: "5aa6f309-c198-41ae-98da-de4583faf89d",
 
       area: "NorthAmericaCaveB2",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 2200,
         y: 1920,
@@ -521,7 +521,7 @@ const northAmericaCaveB2: { vertices: Vertex[]; edges: Edge[] } = {
       id: "deecf3a2-f249-4727-a8a5-0bb0fb70de72",
 
       area: "NorthAmericaCaveB2",
-      name: "MagicField",
+      name: "MagicBookField",
       position: {
         x: 4000,
         y: 2880,

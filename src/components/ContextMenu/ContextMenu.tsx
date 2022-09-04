@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 import { useEffect, useState, useRef, useContext } from "react";
 

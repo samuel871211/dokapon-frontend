@@ -1,5 +1,3 @@
-// Standard library imports.
-
 // Related third party imports.
 import {
   PointerEvent,
@@ -36,7 +34,7 @@ import VillageField from "components/vertices/VillageField";
 import CaveField from "components/vertices/CaveField";
 import CastleField from "components/vertices/CastleField";
 import TreasureField from "components/vertices/TreasureField";
-import MagicField from "components/vertices/MagicField";
+import MagicBookField from "components/vertices/MagicBookField";
 import BattleField from "components/vertices/BattleField";
 import DamageField from "components/vertices/DamageField";
 import styles from "./GraphUI.module.css";
@@ -81,7 +79,7 @@ const Components = {
     CollectAllMoneyField,
     CollectMoneyField,
     TreasureField,
-    MagicField,
+    MagicBookField,
     BattleField,
     ChruchField,
     WeaponStoreField,
@@ -235,19 +233,72 @@ function useMetaData() {
     // closeCheck();
     switch (vertex.name) {
       case "BattleField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showBattleFieldCheck",
+          payload: true,
+        });
+        break;
       case "KeyTreasureField":
-      case "MagicField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showKeyTreasureFieldCheck",
+          payload: true,
+        });
+        break;
+      case "MagicBookField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showMagicBookFieldCheck",
+          payload: true,
+        });
+        break;
       case "RedTreasureField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showRedTreasureFieldCheck",
+          payload: true,
+        });
+        break;
       case "TreasureField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showTreasureFieldCheck",
+          payload: true,
+        });
+        break;
       case "WhiteTreasureField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showWhiteTreasureFieldCheck",
+          payload: true,
+        });
+        break;
       case "WorldTransferField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showWorldTransferFieldCheck",
+          payload: true,
+        });
+        break;
       case "GoldTreasureField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showGoldTreasureFieldCheck",
+          payload: true,
+        });
+        break;
       case "DamageField":
         closeCheck();
         UIStateDispatch({
-          type: "onlyBottomDialogFieldCheck",
-          payload: vertex.name,
+          type: "showDamageFieldCheck",
+          payload: true,
         });
+        break;
+      case "CollectAllMoneyField":
+        return;
+      case "CollectMoneyField":
+        closeCheck();
         return;
       case "CaveField":
         /**
@@ -255,12 +306,25 @@ function useMetaData() {
          */
         return;
       case "VillageField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showVillageFieldCheck",
+          payload: true,
+        });
         return;
       case "CastleField":
-      case "ChruchField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showCastleFieldCheck",
+          payload: true,
+        });
         return;
-      case "CollectAllMoneyField":
-      case "CollectMoneyField":
+      case "ChruchField":
+        closeCheck();
+        UIStateDispatch({
+          type: "showChruchFieldCheck",
+          payload: true,
+        });
         return;
       case "GroceryStoreField":
         closeCheck();

@@ -299,6 +299,10 @@ function useMetaData() {
         return;
       case "CollectMoneyField":
         closeCheck();
+        UIStateDispatch({
+          type: "showCollectMoneyFieldCheck",
+          payload: true,
+        });
         return;
       case "CaveField":
         /**

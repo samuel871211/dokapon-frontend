@@ -4,6 +4,12 @@
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
 }
+.hoverEffectGreenTransparent {
+  animation: greenToTransparent 500ms, transparentToGreen 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
 @keyframes btnHoverFrom {
   0% {
     background-color: var(--hover-bg-color);
@@ -15,6 +21,29 @@
 @keyframes btnHoverTo {
   0% {
     background-color: var(--bg-color);
+  }
+  100% {
+    background-color: var(--hover-bg-color);
+  }
+}
+
+.confirmDialogBtnHoverEffect {
+  animation: confirmDialogBtnHoverFrom 500ms, confirmDialogBtnHoverTo 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes greenToTransparent {
+  0% {
+    background-color: var(--hover-bg-color);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes transparentToGreen {
+  0% {
+    background-color: transparent;
   }
   100% {
     background-color: var(--hover-bg-color);

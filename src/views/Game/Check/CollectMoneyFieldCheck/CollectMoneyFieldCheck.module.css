@@ -57,6 +57,58 @@
   text-align: end;
   padding-right: 2rem;
 }
+.topFloating {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+  width: 40%;
+  display: flex;
+
+  height: 20px;
+  /* background-color: blue; */
+}
+.topFloatingLeft,
+.topFloatingRight {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.leftTriangle {
+  border-top: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+  border-right: 2rem solid black;
+}
+.leftText {
+  color: white;
+  font-size: 2rem;
+  line-height: 2rem;
+  -webkit-text-stroke: 0.1rem black;
+  position: absolute;
+  right: -0.5rem;
+}
+.rightTriangle {
+  border-top: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+  border-left: 2rem solid black;
+}
+.rightText {
+  color: white;
+  font-size: 2rem;
+  line-height: 2rem;
+  -webkit-text-stroke: 0.1rem black;
+  position: absolute;
+  left: -0.5rem;
+}
+.topFloatingCenter {
+  flex-grow: 1;
+  /* background-color: aqua; */
+}
+.topFloatingRight {
+  color: white;
+  font-size: 2rem;
+  line-height: 2rem;
+  -webkit-text-stroke: 0.1rem black;
+}
 .bottomArea {
   width: 95%;
   height: 76%;

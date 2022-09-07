@@ -1,10 +1,11 @@
 // Related third party imports.
 import CustomBorderBottom from "components/CustomBorderBottom";
 import YellowBlock from "layouts/YellowBlock";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TransitionStatus } from "react-transition-group";
 
 // Local application/library specific imports.
+import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./CollectMoneyFieldCheck.module.css";
 
 // Stateless vars declare.
@@ -15,7 +16,7 @@ export default CollectMoneyFieldCheck;
 
 function CollectMoneyFieldCheck(props: { state: TransitionStatus }) {
   const { state } = props;
-  const { focusElement } = useMetaData(state);
+  const { currentListPage } = useMetaData(state);
   return (
     <div className={styles.collectMoneyFieldCheckContainer}>
       <YellowBlock
@@ -35,6 +36,19 @@ function CollectMoneyFieldCheck(props: { state: TransitionStatus }) {
             </div>
             <CustomBorderBottom width="98%" />
           </div>
+          <div className={styles.topFloating}>
+            <div className={styles.topFloatingLeft}>
+              <div className={styles.leftTriangle}></div>
+              <div className={styles.leftText}>L</div>
+            </div>
+            <div
+              className={`${styles.topFloatingCenter} ${globalStyles.hoverEffectGreenTransparent}`}
+            ></div>
+            <div className={styles.topFloatingRight}>
+              <div className={styles.rightText}>R</div>
+              <div className={styles.rightTriangle}></div>
+            </div>
+          </div>
         </div>
         <div className={styles.bottomArea}></div>
       </YellowBlock>
@@ -44,8 +58,9 @@ function CollectMoneyFieldCheck(props: { state: TransitionStatus }) {
 
 function useMetaData(state: TransitionStatus) {
   const focusElement = useRef<HTMLDivElement>(null);
+  const [currentListPage, setCurrentListPage] = useState(0);
   useEffect(() => {
     if (state === "entered") focusElement.current?.focus();
   }, [state]);
-  return { focusElement };
+  return { currentListPage };
 }

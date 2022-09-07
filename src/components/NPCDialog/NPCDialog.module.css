@@ -116,7 +116,7 @@
 }
 @keyframes confirmDialogBtnHoverFrom {
   0% {
-    background-color: #9bd65b;
+    background-color: var(--hover-bg-color);
   }
   100% {
     background-color: transparent;
@@ -127,7 +127,7 @@
     background-color: transparent;
   }
   100% {
-    background-color: #9bd65b;
+    background-color: var(--hover-bg-color);
   }
 }
 @keyframes slideLeft {

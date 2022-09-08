@@ -56,6 +56,7 @@
   line-height: 3rem;
   text-align: end;
   padding-right: 2rem;
+  letter-spacing: 2px;
 }
 .topFloating {
   position: absolute;
@@ -63,9 +64,6 @@
   transform: translateY(-50%);
   width: 40%;
   display: flex;
-
-  height: 20px;
-  /* background-color: blue; */
 }
 .topFloatingLeft,
 .topFloatingRight {
@@ -101,7 +99,27 @@
 }
 .topFloatingCenter {
   flex-grow: 1;
-  /* background-color: aqua; */
+  display: flex;
+}
+.circle {
+  width: calc(100% / 7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle::after {
+  content: "";
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: black;
+  border-radius: 50%;
+}
+.circle[data-selected="true"]::after {
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
+  border: 0.2rem solid black;
+  transition: width 0.25s, height 0.25s;
 }
 .topFloatingRight {
   color: white;
@@ -116,4 +134,58 @@
   border-radius: 1.5rem;
   padding-left: 3rem;
   padding-right: 3rem;
+}
+.listHead {
+  display: flex;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.listHead > div:nth-child(1),
+.listRow > div:nth-child(1) {
+  width: 37.5%;
+}
+.listHead > div:nth-child(2),
+.listRow > div:nth-child(2) {
+  width: 25%;
+}
+.listHead > div:nth-child(3),
+.listRow > div:nth-child(3) {
+  width: 37.5%;
+}
+.listBody {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.listRow {
+  display: flex;
+}
+.villageName {
+  display: flex;
+  align-items: center;
+}
+.villagePrice {
+  text-align: end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  letter-spacing: 2px;
+}
+.villagePrice::after {
+  content: "Ð";
+  margin-left: 0.5rem;
+}
+.villageAccumulatedPrice {
+  text-align: end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  letter-spacing: 2px;
+}
+.villageAccumulatedPrice::after {
+  content: "Ð";
+  margin-left: 0.5rem;
+  /* width: 3rem; */
+  /* height: 100%; */
+  /* border: 1px solid black; */
 }

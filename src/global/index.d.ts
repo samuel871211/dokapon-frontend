@@ -149,6 +149,11 @@ declare namespace Dokapon {
     gender: GenderTypes;
     color: ColorTypes;
     job: JobTypes;
+    jobsMasterStatus?: { [key in JobTypes]: { level: number; rounds: number } };
+    possession?: {
+      items: Item[];
+      magicBooks: MagicBook[];
+    };
     isNPC: false;
   };
   type NPCPlayerAttrs = CharacterAttrs & {

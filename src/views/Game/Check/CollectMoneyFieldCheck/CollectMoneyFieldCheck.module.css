@@ -27,7 +27,7 @@
   padding-right: 3rem;
 }
 .topLeft {
-  flex-grow: 1;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -46,7 +46,7 @@
   padding-left: 2rem;
 }
 .topRight {
-  flex-grow: 1;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -134,6 +134,8 @@
   border-radius: 1.5rem;
   padding-left: 3rem;
   padding-right: 3rem;
+  display: flex;
+  flex-direction: column;
 }
 .listHead {
   display: flex;
@@ -156,9 +158,14 @@
 .listBody {
   font-size: 3rem;
   line-height: 3rem;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .listRow {
   display: flex;
+  height: calc(100% / 9);
 }
 .villageName {
   display: flex;

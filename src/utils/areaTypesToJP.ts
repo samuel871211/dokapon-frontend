@@ -35,7 +35,7 @@ function areaTypesToJP(area: AreaTypes) {
     case "SouthAmericaCaveB3":
       return area;
     case "Oceania":
-      return " オセアニア";
+      return "オセアニア";
     case "OceaniaCave":
       return area;
     case "Africa":

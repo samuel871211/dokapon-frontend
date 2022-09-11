@@ -4,7 +4,6 @@ import classNames from "classnames";
 
 // Local application/library specific imports.
 import guide from "assets/images/guide.png";
-import { BASICJOBS } from "graphics/characters";
 import ContextMenu from "components/ContextMenu";
 import TitleArea from "./TitleArea";
 import NPCDialog from "components/NPCDialog";
@@ -161,7 +160,7 @@ function SelectCharacter(): JSX.Element {
             messages:
               selectedJob === ""
                 ? [`${name}\n勇者偏好什麼職業`]
-                : [BASICJOBS[selectedJob].chineseIntro],
+                : [selectedJob],
             confirmBtnDisplay: false,
             confirmDialogDisplay: false,
             shouldHandleKeyEvent: false,

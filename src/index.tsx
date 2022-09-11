@@ -7,7 +7,7 @@ import styles from "./index.module.css";
 import "./index.css";
 import "@samuel871211/utils";
 import Game from "views/Game";
-// import SelectCharacter from "views/SelectCharacter";
+import SelectCharacter from "views/SelectCharacter";
 // import Home from "views/Home";
 // import GraphEditor from "views/GraphEditor/GraphEditor";
 import {
@@ -59,7 +59,8 @@ function App(): JSX.Element {
       <userPreferenceContext.Provider
         value={{ userPreference, userPreferenceDispatch }}
       >
-        <Game />
+        {/* <Game /> */}
+        <SelectCharacter />
         {/* <GraphEditor /> */}
       </userPreferenceContext.Provider>
     </gameProgressContext.Provider>

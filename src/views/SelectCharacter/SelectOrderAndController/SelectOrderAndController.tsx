@@ -7,7 +7,6 @@ import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./SelectOrderAndController.module.css";
 import { gameProgressContext } from "reducers/gameProgress";
 import { UIStateContext } from "reducers/SelectCharacter/UIState";
-import { NPCLEVELS } from "graphics/characters";
 
 // Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
@@ -231,7 +230,7 @@ function PlayerCard(props: {
   shuffleIndex: number;
   showOrderNumberIdx: number;
   gender: Dokapon.GenderTypes;
-  job: Dokapon.BasicJobTypes;
+  job: Dokapon.JobTypes;
   color: Dokapon.ColorTypes;
   name: string;
   npcLevel: Dokapon.NPCLevelTypes | "";
@@ -325,9 +324,10 @@ function PlayerCard(props: {
                     : styles.hide
                 }`}
       >
-        {npcLevel === ""
+        {/* {npcLevel === ""
           ? `搖桿${controllerNumber}`
-          : NPCLEVELS[npcLevel].chinese}
+          : NPCLEVELS[npcLevel].chinese} */}
+        {`搖桿${controllerNumber}`}
       </div>
     </div>
   );

@@ -155,6 +155,8 @@ declare namespace Dokapon {
       magicBooks: MagicBook[];
     };
     isNPC: false;
+    npcLevel: "";
+    controllerNumber: number;
   };
   type NPCPlayerAttrs = CharacterAttrs & {
     gender: GenderTypes;
@@ -162,6 +164,7 @@ declare namespace Dokapon {
     job: JobTypes;
     isNPC: true;
     npcLevel: NPCLevelTypes;
+    controllerNumber: number;
   };
   type EnemyAttrs = CharacterAttrs & {
     job: JobTypes;

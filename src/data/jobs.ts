@@ -1043,7 +1043,7 @@ const jobs = satisfiesRecords<Job>()({
   },
 });
 
-export const basicJobTypes: BasicJobTypes[] = [
+export const basicJobTypes: JobTypes[] = [
   "warrior",
   "magician",
   "cleric",

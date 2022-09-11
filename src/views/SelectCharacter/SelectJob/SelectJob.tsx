@@ -11,10 +11,10 @@ import {
 import ExampleCharacterImg from "../ExampleCharacterImg";
 import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./SelectJob.module.css";
-import { BASICJOBS } from "graphics/characters";
 import { gameProgressContext } from "reducers/gameProgress";
 import { UIStateContext } from "reducers/SelectCharacter/UIState";
 import { basicJobTypes } from "data/jobs";
+import { BasicJobTypes } from "global";
 
 // Stateless vars declare.
 
@@ -26,6 +26,7 @@ function SelectJob(): JSX.Element {
   const { UIStateDispatch } = useContext(UIStateContext);
   const { numberOfPlayers, currentPlayer, playersAttrs } = gameProgress;
   const { color, gender, job } = playersAttrs[currentPlayer - 1];
+  console.log(job);
   const focusElement = useRef<HTMLDivElement>(null);
   const [selectedIdx, setSelectedIdx] = useState(basicJobTypes.indexOf(job));
   const [isLeave, toggleIsLeave] = useState(false);
@@ -36,7 +37,8 @@ function SelectJob(): JSX.Element {
         const newIdx = selectedIdx === 0 ? 4 : selectedIdx - 1;
         UIStateDispatch({
           type: "selectedJob",
-          payload: basicJobTypes[newIdx],
+          payload: basicJobTypes[newIdx] as BasicJobTypes,
+          // payload: basicJobTypes[newIdx],
         });
         setSelectedIdx(newIdx);
         break;
@@ -45,7 +47,7 @@ function SelectJob(): JSX.Element {
         const newIdx = selectedIdx === 4 ? 0 : selectedIdx + 1;
         UIStateDispatch({
           type: "selectedJob",
-          payload: basicJobTypes[newIdx],
+          payload: basicJobTypes[newIdx] as BasicJobTypes,
         });
         setSelectedIdx(newIdx);
         break;
@@ -92,7 +94,7 @@ function SelectJob(): JSX.Element {
     if (e.animationName.includes("slideRight")) {
       gameProgressDispatch({
         type: "job",
-        payload: basicJobTypes[selectedIdx],
+        payload: basicJobTypes[selectedIdx] as BasicJobTypes,
       });
       const nextStep = determineNextStep();
       UIStateDispatch({
@@ -108,20 +110,6 @@ function SelectJob(): JSX.Element {
         payload: newCurrentPlayer,
       });
     }
-  }
-
-  function generateJobRows() {
-    const jobRows = [];
-    for (const [job, { chinese }] of Object.entries(BASICJOBS)) {
-      jobRows.push(
-        <JobBtn
-          name={chinese}
-          selected={job === basicJobTypes[selectedIdx]}
-          key={job}
-        />
-      );
-    }
-    return jobRows;
   }
 
   return (
@@ -144,7 +132,13 @@ function SelectJob(): JSX.Element {
                 ${isLeave ? styles.leave : ""}`}
         onAnimationEnd={handleAnimationEnd}
       >
-        {generateJobRows()}
+        {basicJobTypes.map((basicJob, idx) => (
+          <JobBtn
+            name={basicJob}
+            selected={idx === selectedIdx}
+            key={basicJob}
+          />
+        ))}
       </div>
     </div>
   );

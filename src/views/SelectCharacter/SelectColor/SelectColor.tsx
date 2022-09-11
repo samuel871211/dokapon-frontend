@@ -11,10 +11,10 @@ import {
 import ExampleCharacterImg from "../ExampleCharacterImg";
 import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./SelectColor.module.css";
-import { COLORS } from "graphics/characters";
-import colors from "data/colors";
 import { gameProgressContext } from "reducers/gameProgress";
 import { UIStateContext } from "reducers/SelectCharacter/UIState";
+import { ColorTypes } from "global";
+import colors from "constants/colors";
 
 // Stateless vars declare.
 
@@ -52,21 +52,14 @@ function SelectColor(): JSX.Element {
     return remainColors;
   }
 
-  function generateColorRows() {
-    const colorRows = [];
-    for (const color of remainColors) {
-      const { rgb, chinese } = COLORS[color];
-      colorRows.push(
-        <ColorBtn
-          rgb={rgb}
-          name={chinese}
-          selected={color === remainColors[selectedIdx]}
-          key={color}
-        />
-      );
-    }
-    return colorRows;
-  }
+  const remainColorRows = remainColors.map((color) => (
+    <ColorBtn
+      rgb={color}
+      name={color}
+      selected={color === remainColors[selectedIdx]}
+      key={color}
+    />
+  ));
 
   function handleKeyUp(e: KeyboardEvent) {
     switch (e.key.toLowerCase()) {
@@ -147,7 +140,7 @@ function SelectColor(): JSX.Element {
                 ${isLeave ? styles.leave : ""}`}
         onAnimationEnd={handleAnimationEnd}
       >
-        {generateColorRows()}
+        {remainColorRows}
       </div>
     </div>
   );

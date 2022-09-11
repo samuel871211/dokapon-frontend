@@ -12,8 +12,8 @@ import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./SelectNPCLevel.module.css";
 import { gameProgressContext } from "reducers/gameProgress";
 import { UIStateContext } from "reducers/SelectCharacter/UIState";
-import npcLevels from "data/npcLevels";
-import { NPCLEVELS } from "graphics/characters";
+import { NPCLevelTypes } from "global";
+import npcLevels from "constants/npcLevels";
 
 // Stateless vars declare.
 
@@ -35,7 +35,6 @@ function SelectNPCLevel(): JSX.Element {
         setSelectedIdx(selectedIdx === 2 ? 0 : selectedIdx + 1);
         break;
       case "d":
-        console.log(npcLevels[selectedIdx]);
         gameProgressDispatch({
           type: "npcLevel",
           payload: npcLevels[selectedIdx],
@@ -56,20 +55,6 @@ function SelectNPCLevel(): JSX.Element {
       default:
         break;
     }
-  }
-
-  function generateLevelRows() {
-    const aiLevelRows = [];
-    for (const npcLevel of npcLevels) {
-      aiLevelRows.push(
-        <NPCLevelBtn
-          npcLevel={npcLevel}
-          selected={npcLevels[selectedIdx] === npcLevel}
-          key={npcLevel}
-        />
-      );
-    }
-    return aiLevelRows;
   }
 
   function handleAnimationEnd(e: AnimationEvent<HTMLDivElement>) {
@@ -96,7 +81,15 @@ function SelectNPCLevel(): JSX.Element {
       onAnimationEnd={handleAnimationEnd}
     >
       <div className={styles.emptyArea}></div>
-      <div className={styles.btnGroup}>{generateLevelRows()}</div>
+      <div className={styles.btnGroup}>
+        {npcLevels.map((npcLevel) => (
+          <NPCLevelBtn
+            npcLevel={npcLevel}
+            selected={npcLevels[selectedIdx] === npcLevel}
+            key={npcLevel}
+          />
+        ))}
+      </div>
     </div>
   );
 }
@@ -110,7 +103,7 @@ function NPCLevelBtn(props: {
     <div
       className={`${styles.btn} ${selected ? globalStyles.hoverEffect : ""}`}
     >
-      {NPCLEVELS[npcLevel].chinese}
+      {npcLevel}
     </div>
   );
 }

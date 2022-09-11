@@ -16,7 +16,7 @@
     ]
   },
   "dependencies": {
-    "@samuel871211/utils": "^0.4.0",
+    "@samuel871211/utils": "^0.4.1",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "react": "^18.2.0",

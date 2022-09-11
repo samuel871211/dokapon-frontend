@@ -14,13 +14,11 @@ import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./NPCGenerateDialog.module.css";
 import { gameProgressContext } from "reducers/gameProgress";
 import { UIStateContext } from "reducers/SelectCharacter/UIState";
-import { COLORS, BASICJOBS, NPCLEVELS } from "graphics/characters";
 import nameInputChars from "data/nameInputChars";
 import Dokapon from "global";
-import { basicJobTypes } from "data/jobs";
-import colors from "data/colors";
-import npcLevels from "data/npcLevels";
-import genders from "data/genders";
+import colors from "constants/colors";
+import npcLevels from "constants/npcLevels";
+import genders from "constants/genders";
 
 // Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
@@ -57,8 +55,7 @@ function NPCGenerateDialog(): JSX.Element {
     });
     gameProgressDispatch({
       type: "job",
-      payload:
-        basicJobTypes[Math.getRandomIntInclusive(0, basicJobTypes.length - 1)],
+      payload: "beginner",
     });
     gameProgressDispatch({
       type: "npcLevel",
@@ -189,17 +186,14 @@ function NPCGenerateDialog(): JSX.Element {
         <div className={styles.btnGroup}>
           <Btn
             selected={selectedIdx === 0}
-            content={npcLevel === "" ? "" : NPCLEVELS[npcLevel].chinese}
+            content={npcLevel === "" ? "" : npcLevel}
           />
           <Btn
             selected={selectedIdx === 1}
             content={gender === "male" ? "男" : "女"}
           />
-          <Btn selected={selectedIdx === 2} content={COLORS[color].chinese} />
-          <Btn
-            selected={selectedIdx === 3}
-            content={BASICJOBS[job]?.chinese || ""}
-          />
+          <Btn selected={selectedIdx === 2} content={color} />
+          <Btn selected={selectedIdx === 3} content={job} />
           <ConfirmBtn selected={selectedIdx === 4} content="決定" />
         </div>
       </div>

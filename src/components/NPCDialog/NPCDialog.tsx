@@ -9,6 +9,7 @@ import {
   TransitionEvent,
   AnimationEvent,
 } from "react";
+import classNames from "classnames";
 
 // Local application/library specific imports.
 import { gameProgressContext } from "reducers/gameProgress";
@@ -241,32 +242,24 @@ function ConfirmDialog(props: {
   const { selectedIdx, show } = props;
   return (
     <div
-      className={`
-            ${styles.confirmDialogContainer}
-            ${show ? "" : styles.confirmDialogSlideOut}`}
+      className={classNames(styles.confirmDialogContainer, {
+        [styles.confirmDialogSlideOut]: !show,
+      })}
     >
       <div className={styles.confirmDialogBtn}>
         <div
-          className={`
-                    ${styles.confirmDialogBtnText}
-                    ${
-                      selectedIdx === 0
-                        ? styles.confirmDialogBtnHoverEffect
-                        : ""
-                    }`}
+          className={classNames(styles.confirmDialogBtnText, {
+            [styles.confirmDialogBtnHoverEffect]: selectedIdx === 0,
+          })}
         >
           是
         </div>
       </div>
       <div className={styles.confirmDialogBtn}>
         <div
-          className={`
-                    ${styles.confirmDialogBtnText}
-                    ${
-                      selectedIdx === 1
-                        ? styles.confirmDialogBtnHoverEffect
-                        : ""
-                    }`}
+          className={classNames(styles.confirmDialogBtnText, {
+            [styles.confirmDialogBtnHoverEffect]: selectedIdx === 1,
+          })}
         >
           不是
         </div>

@@ -12,8 +12,9 @@ import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./SelectNPCLevel.module.css";
 import { gameProgressContext } from "reducers/gameProgress";
 import { UIStateContext } from "reducers/SelectCharacter/UIState";
-import { NPCLevelTypes } from "global";
-import npcLevels from "constants/npcLevels";
+import npcLevels from "data/npcLevels";
+import npcLevelsToJP from "data/npcLevelsToJP";
+import useTranslation from "hooks/useTranslation";
 
 // Stateless vars declare.
 
@@ -25,6 +26,7 @@ function SelectNPCLevel(): JSX.Element {
   const { UIStateDispatch } = useContext(UIStateContext);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [isLeave, toggleIsLeave] = useState(false);
+  const { t } = useTranslation();
 
   function handleKeyUp(e: KeyboardEvent) {
     switch (e.key.toLowerCase()) {
@@ -84,7 +86,7 @@ function SelectNPCLevel(): JSX.Element {
       <div className={styles.btnGroup}>
         {npcLevels.map((npcLevel) => (
           <NPCLevelBtn
-            npcLevel={npcLevel}
+            text={t(npcLevelsToJP[npcLevel])}
             selected={npcLevels[selectedIdx] === npcLevel}
             key={npcLevel}
           />
@@ -94,16 +96,13 @@ function SelectNPCLevel(): JSX.Element {
   );
 }
 
-function NPCLevelBtn(props: {
-  npcLevel: "weak" | "normal" | "strong";
-  selected: boolean;
-}): JSX.Element {
-  const { npcLevel, selected } = props;
+function NPCLevelBtn(props: { text: string; selected: boolean }): JSX.Element {
+  const { text, selected } = props;
   return (
     <div
       className={`${styles.btn} ${selected ? globalStyles.hoverEffect : ""}`}
     >
-      {npcLevel}
+      {text}
     </div>
   );
 }

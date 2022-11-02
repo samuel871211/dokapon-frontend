@@ -52,7 +52,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
   const { userPreference, userPreferenceDispatch } = useContext(
     userPreferenceContext
   );
-  const { t } = useTranslation(userPreference.lang);
+  const { t } = useTranslation();
   const [preserveduserPreference, initPreserveduserPreference] =
     useState<typeof userPreference>();
   const [selectedLang, setSelectedLang] = useState<LangTypes>("cn");

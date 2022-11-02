@@ -1,5 +1,5 @@
 import { MagicBook } from "global";
-import areas from "constants/areas";
+import areas from "data/areas";
 
 /**
  * https://stackoverflow.com/questions/70956050/how-do-i-declare-object-value-type-without-declaring-key-type

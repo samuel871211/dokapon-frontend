@@ -1,0 +1,17 @@
+.verticalButtonGroup {
+  height: 100%;
+  /* 因為此時exampleCharacterImg不會顯示，所以verticalButtonGroup必須靠右 */
+  float: right;
+  gap: 1rem;
+}
+.verticalButtonGroup.verticalButtonGroup {
+  /* 為了覆寫topAreaStyle.verticalButtonGroup的css */
+  justify-content: center;
+}
+.NPCLevelButton {
+  font-size: var(--font-size-325);
+  line-height: 4.5rem;
+  text-align: center;
+  width: 84%;
+  margin-left: 5%;
+}

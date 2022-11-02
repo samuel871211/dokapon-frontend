@@ -5,7 +5,9 @@ import {
   useContext,
   KeyboardEvent,
   AnimationEvent,
+  useEffect,
 } from "react";
+import classNames from "classnames";
 
 // Local application/library specific imports.
 import ExampleCharacterImg from "../ExampleCharacterImg";
@@ -13,8 +15,10 @@ import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./SelectColor.module.css";
 import { gameProgressContext } from "reducers/gameProgress";
 import { UIStateContext } from "reducers/SelectCharacter/UIState";
-import { ColorTypes } from "global";
-import colors from "constants/colors";
+import colors from "data/colors";
+import colorsToRGB from "data/colorsToRGB";
+import colorsToJP from "data/colorsToJP";
+import useTranslation from "hooks/useTranslation";
 
 // Stateless vars declare.
 
@@ -24,25 +28,38 @@ function SelectColor(): JSX.Element {
   const { gameProgress, gameProgressDispatch } =
     useContext(gameProgressContext);
   const { UIStateDispatch } = useContext(UIStateContext);
-  const { currentPlayer, playersAttrs, numberOfPlayers } = gameProgress;
+  const {
+    currentPlayerNumber,
+    playersAttrs,
+    numberOfPlayers,
+    componentsStates,
+  } = gameProgress;
+  const {
+    SelectColor: { selectedIndex },
+  } = componentsStates;
   const {
     color: currentPlayerColor,
-    gender,
-    job,
-  } = playersAttrs[currentPlayer - 1];
+    gender: currentPlayerGender,
+    job: currentPlayerJob,
+  } = playersAttrs[currentPlayerNumber - 1];
   const focusElement = useRef<HTMLDivElement>(null);
   const [isLeave, toggleIsLeave] = useState(false);
   const remainColors = getRemainColors();
-  const initSelectedIdx = remainColors.indexOf(currentPlayerColor);
-  const [selectedIdx, setSelectedIdx] = useState(
-    initSelectedIdx === -1 ? 0 : initSelectedIdx
-  );
+  const { t } = useTranslation();
+  useEffect(() => {
+    componentsStates.SelectColor.selectedIndex =
+      remainColors.indexOf(currentPlayerColor);
+    gameProgressDispatch({
+      type: "updateAll",
+      payload: gameProgress,
+    });
+  }, []);
 
   function getRemainColors() {
     const remainColors = [...colors];
     for (
       let playerNumber = 0;
-      playerNumber < currentPlayer - 1;
+      playerNumber < currentPlayerNumber - 1;
       playerNumber++
     ) {
       const usedColor = playersAttrs[playerNumber].color;
@@ -52,36 +69,33 @@ function SelectColor(): JSX.Element {
     return remainColors;
   }
 
-  const remainColorRows = remainColors.map((color) => (
-    <ColorBtn
-      rgb={color}
-      name={color}
-      selected={color === remainColors[selectedIdx]}
-      key={color}
-    />
-  ));
-
   function handleKeyUp(e: KeyboardEvent) {
     switch (e.key.toLowerCase()) {
       case "arrowup":
-        setSelectedIdx(
-          selectedIdx === 0 ? remainColors.length - 1 : selectedIdx - 1
-        );
+        componentsStates.SelectColor.selectedIndex =
+          selectedIndex === 0 ? remainColors.length - 1 : selectedIndex - 1;
+        gameProgressDispatch({
+          type: "updateAll",
+          payload: gameProgress,
+        });
         break;
       case "arrowdown":
-        setSelectedIdx(
-          selectedIdx === remainColors.length - 1 ? 0 : selectedIdx + 1
-        );
+        componentsStates.SelectColor.selectedIndex =
+          selectedIndex === remainColors.length - 1 ? 0 : selectedIndex + 1;
+        gameProgressDispatch({
+          type: "updateAll",
+          payload: gameProgress,
+        });
         break;
       case "d":
         gameProgressDispatch({
           type: "color",
-          payload: remainColors[selectedIdx],
+          payload: remainColors[selectedIndex],
         });
         UIStateDispatch({
           type: "currentStep",
           payload:
-            numberOfPlayers >= currentPlayer
+            numberOfPlayers >= currentPlayerNumber
               ? "SelectJob"
               : "NPCGenerateDialog",
         });
@@ -113,7 +127,7 @@ function SelectColor(): JSX.Element {
       UIStateDispatch({
         type: "currentStep",
         payload:
-          numberOfPlayers >= currentPlayer
+          numberOfPlayers >= currentPlayerNumber
             ? "BeforeNameInput"
             : "NPCGenerateDialog",
       });
@@ -129,18 +143,25 @@ function SelectColor(): JSX.Element {
       onKeyUp={handleKeyUp}
     >
       <ExampleCharacterImg
-        color={remainColors[selectedIdx]}
-        job={job}
-        gender={gender}
+        color={remainColors[selectedIndex]}
+        job={currentPlayerJob}
+        gender={currentPlayerGender}
         isFadeOut={isLeave}
       />
       <div
-        className={`
-                ${styles.btnGroup}
-                ${isLeave ? styles.leave : ""}`}
+        className={classNames(styles.btnGroup, {
+          [styles.leave]: isLeave,
+        })}
         onAnimationEnd={handleAnimationEnd}
       >
-        {remainColorRows}
+        {remainColors.map((color) => (
+          <ColorBtn
+            rgb={colorsToRGB[color]}
+            name={t(colorsToJP[color])}
+            selected={color === remainColors[selectedIndex]}
+            key={color}
+          />
+        ))}
       </div>
     </div>
   );

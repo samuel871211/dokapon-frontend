@@ -15,10 +15,13 @@ import styles from "./NPCGenerateDialog.module.css";
 import { gameProgressContext } from "reducers/gameProgress";
 import { UIStateContext } from "reducers/SelectCharacter/UIState";
 import nameInputChars from "data/nameInputChars";
-import Dokapon from "global";
-import colors from "constants/colors";
-import npcLevels from "constants/npcLevels";
-import genders from "constants/genders";
+import colors from "data/colors";
+import npcLevels from "data/npcLevels";
+import { ColorTypes } from "global";
+import useTranslation from "hooks/useTranslation";
+import colorsToJP from "data/colorsToJP";
+import npcLevelsToJP from "data/npcLevelsToJP";
+import jobsToJP from "data/jobsToJP";
 
 // Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
@@ -28,21 +31,27 @@ export default NPCGenerateDialog;
 function NPCGenerateDialog(): JSX.Element {
   const { gameProgress, gameProgressDispatch } =
     useContext(gameProgressContext);
-  const { currentPlayer, playersAttrs, numberOfPlayers } = gameProgress;
+  const {
+    currentPlayerNumber,
+    playersAttrs,
+    numberOfPlayers,
+    componentsStates,
+  } = gameProgress;
+  const {
+    NPCGenerateDialog: { selectedIndex },
+  } = componentsStates;
   const { UIState, UIStateDispatch } = useContext(UIStateContext);
   const { npcsAttrsRegenerated } = UIState;
-  const currentPlayerAttrs = playersAttrs[currentPlayer - 1];
-  const { gender, color, job, npcLevel } = currentPlayerAttrs;
+  const currentPlayer = playersAttrs[currentPlayerNumber - 1];
+  const { gender, color, job, npcLevel } = currentPlayer;
   const focusElement = useRef<HTMLDivElement>(null);
-  const [selectedIdx, setSelectedIdx] = useState(4);
   const [isLeave, toggleIsLeave] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(function reGenerateNPCAttrs() {
-    if (npcsAttrsRegenerated[currentPlayer - 1]) return;
+    if (npcsAttrsRegenerated[currentPlayerNumber - 1]) return;
 
-    function removeUsedColors(
-      colorList: Dokapon.ColorTypes[]
-    ): Dokapon.ColorTypes[] {
+    function removeUsedColors(colorList: ColorTypes[]) {
       playersAttrs.forEach((attrs) => {
         colorList.splice(colorList.indexOf(attrs.color), 1);
       });
@@ -63,10 +72,10 @@ function NPCGenerateDialog(): JSX.Element {
     });
     gameProgressDispatch({
       type: "gender",
-      payload: genders[Math.getRandomIntInclusive(0, genders.length - 1)],
+      payload: Math.getRandomIntInclusive(0, 1) === 0 ? "male" : "female",
     });
     const newPayload: typeof npcsAttrsRegenerated = [...npcsAttrsRegenerated];
-    newPayload[currentPlayer - 1] = true;
+    newPayload[currentPlayerNumber - 1] = true;
     UIStateDispatch({
       type: "npcsAttrsRegenerated",
       payload: newPayload,
@@ -76,16 +85,26 @@ function NPCGenerateDialog(): JSX.Element {
   function handleKeyUp(e: KeyboardEvent) {
     switch (e.key.toLowerCase()) {
       case "arrowup":
-        setSelectedIdx(selectedIdx === 0 ? 4 : selectedIdx - 1);
+        componentsStates.NPCGenerateDialog.selectedIndex =
+          selectedIndex === 0 ? 4 : selectedIndex - 1;
+        gameProgressDispatch({
+          type: "updateAll",
+          payload: gameProgress,
+        });
         break;
       case "arrowdown":
-        setSelectedIdx(selectedIdx === 4 ? 0 : selectedIdx + 1);
+        componentsStates.NPCGenerateDialog.selectedIndex =
+          selectedIndex === 4 ? 0 : selectedIndex + 1;
+        gameProgressDispatch({
+          type: "updateAll",
+          payload: gameProgress,
+        });
         break;
       case "d":
         if (!focusElement.current) return;
         toggleIsLeave(true);
         focusElement.current.onanimationend = function handleConfirm() {
-          switch (selectedIdx) {
+          switch (selectedIndex) {
             case 0:
               UIStateDispatch({
                 type: "currentStep",
@@ -115,16 +134,16 @@ function NPCGenerateDialog(): JSX.Element {
                 type: "name",
                 payload: generateRandomName(),
               });
-              if (currentPlayer === 4) {
+              if (currentPlayerNumber === 4) {
                 UIStateDispatch({
                   type: "currentStep",
                   payload: "PlayerAttrsCollected",
                 });
               }
-              if (currentPlayer !== 4) {
+              if (currentPlayerNumber !== 4) {
                 gameProgressDispatch({
-                  type: "currentPlayer",
-                  payload: currentPlayer + 1,
+                  type: "currentPlayerNumber",
+                  payload: currentPlayerNumber + 1,
                 });
                 UIStateDispatch({
                   type: "currentStep",
@@ -141,9 +160,9 @@ function NPCGenerateDialog(): JSX.Element {
         if (!focusElement.current) return;
         toggleIsLeave(true);
         focusElement.current.onanimationend = function handleCancel() {
-          const newCurrentPlayer = currentPlayer - 1;
+          const newCurrentPlayer = currentPlayerNumber - 1;
           gameProgressDispatch({
-            type: "currentPlayer",
+            type: "currentPlayerNumber",
             payload: newCurrentPlayer,
           });
           UIStateDispatch({
@@ -185,16 +204,16 @@ function NPCGenerateDialog(): JSX.Element {
         </div>
         <div className={styles.btnGroup}>
           <Btn
-            selected={selectedIdx === 0}
-            content={npcLevel === "" ? "" : npcLevel}
+            selected={selectedIndex === 0}
+            content={npcLevel === "" ? "" : t(npcLevelsToJP[npcLevel])}
           />
           <Btn
-            selected={selectedIdx === 1}
-            content={gender === "male" ? "男" : "女"}
+            selected={selectedIndex === 1}
+            content={gender === "male" ? t("男") : t("女")}
           />
-          <Btn selected={selectedIdx === 2} content={color} />
-          <Btn selected={selectedIdx === 3} content={job} />
-          <ConfirmBtn selected={selectedIdx === 4} content="決定" />
+          <Btn selected={selectedIndex === 2} content={t(colorsToJP[color])} />
+          <Btn selected={selectedIndex === 3} content={t(jobsToJP[job])} />
+          <ConfirmBtn selected={selectedIndex === 4} content={t("決定")} />
         </div>
       </div>
     </div>

@@ -1,7 +1,15 @@
 // Related third party imports.
 import { useContext, useLayoutEffect, useRef, useState } from "react";
+import classNames from "classnames";
 
 // Local application/library specific imports.
+import type {
+  GenderTypes,
+  JobTypes,
+  ColorTypes,
+  NPCLevelTypes,
+  SelectCharacter,
+} from "global";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./SelectOrderAndController.module.css";
@@ -196,10 +204,10 @@ function SelectOrderAndController(): JSX.Element {
 
   return (
     <div
-      className={`
-            ${styles.container}
-            ${currentStep === "SelectOrderStep1" ? styles.center : ""}
-            ${containerSlideOut ? styles.containerSlideOut : ""}`}
+      className={classNames(styles.container, {
+        [styles.center]: currentStep === "SelectOrderStep1",
+        [styles.containerSlideOut]: containerSlideOut,
+      })}
       {...handleKeyUpAttrs}
       onTransitionEnd={handleTransitionEnd}
       onAnimationEnd={handleAnimationEnd}
@@ -229,12 +237,12 @@ function PlayerCard(props: {
   index: number;
   shuffleIndex: number;
   showOrderNumberIdx: number;
-  gender: Dokapon.GenderTypes;
-  job: Dokapon.JobTypes;
-  color: Dokapon.ColorTypes;
+  gender: GenderTypes;
+  job: JobTypes;
+  color: ColorTypes;
   name: string;
-  npcLevel: Dokapon.NPCLevelTypes | "";
-  currentStep: Dokapon.SelectCharacter.Steps;
+  npcLevel: NPCLevelTypes | "";
+  currentStep: SelectCharacter.Steps;
   numberOfPlayers: number;
   controllerNumber: number;
   selected: boolean;
@@ -253,27 +261,25 @@ function PlayerCard(props: {
     controllerNumber,
     selected,
   } = props;
+  const showOrderNumber =
+    currentStep === "SelectOrderStep2" && showOrderNumberIdx >= index;
+  const isStep1 = currentStep === "SelectOrderStep1";
   return (
     <div
-      className={`
-            ${styles.playerCardContainer}
-            ${
-              currentStep === "SelectOrderStep1"
-                ? styles[`gatherToCenter${index}` as keyof typeof styles]
-                : ""
-            }
-            ${currentStep === "SelectOrderStep2" ? styles.slideRight : ""}`}
+      className={classNames(styles.playerCardContainer, {
+        [styles.gatherToCenter0]: isStep1 && index === 0,
+        [styles.gatherToCenter1]: isStep1 && index === 1,
+        [styles.gatherToCenter2]: isStep1 && index === 2,
+        [styles.gatherToCenter3]: isStep1 && index === 3,
+        [styles.slideRight]: currentStep === "SelectOrderStep2",
+      })}
       style={{ zIndex: shuffleIndex }}
     >
       <div
-        className={`
-                ${styles.orderNumber}
-                ${
-                  currentStep === "SelectOrderStep2" &&
-                  showOrderNumberIdx >= index
-                    ? styles.showOrderNumber
-                    : styles.hide
-                }`}
+        className={classNames(styles.orderNumber, {
+          [styles.hide]: !showOrderNumber,
+          [styles.showOrderNumber]: showOrderNumber,
+        })}
       >
         {index}
       </div>
@@ -283,20 +289,17 @@ function PlayerCard(props: {
         <CustomBorderBottom />
       </div>
       <div
-        className={`
-                ${styles.selectControllerContainer}
-                ${selected ? globalStyles.hoverEffect : ""}
-                ${
-                  numberOfPlayers >= index + 1 &&
-                  currentStep === "SelectController"
-                    ? styles.show
-                    : styles.hide
-                }`}
+        className={classNames(styles.selectControllerContainer, {
+          [globalStyles.hoverEffect]: selected,
+          [styles.show]:
+            numberOfPlayers >= index + 1 && currentStep === "SelectController",
+          [styles.hide]: !(
+            numberOfPlayers >= index + 1 && currentStep === "SelectController"
+          ),
+        })}
       >
         <div
-          className={`
-                    ${styles.leftTriangle}
-                    ${styles.leftTriangleHoverEffect}`}
+          className={`${styles.leftTriangle}, ${styles.leftTriangleHoverEffect}`}
           style={{
             visibility: `${
               selected && controllerNumber !== 1 ? "visible" : "hidden"
@@ -305,9 +308,7 @@ function PlayerCard(props: {
         ></div>
         <div className={styles.centeredText}>搖桿{controllerNumber}</div>
         <div
-          className={`
-                    ${styles.rightTriangle}
-                    ${styles.rightTriangleHoverEffect}`}
+          className={`${styles.rightTriangle} ${styles.rightTriangleHoverEffect}`}
           style={{
             visibility: `${
               selected && controllerNumber !== 4 ? "visible" : "hidden"
@@ -316,18 +317,12 @@ function PlayerCard(props: {
         ></div>
       </div>
       <div
-        className={`
-                ${styles.controllerConfirmContainer}
-                ${
-                  currentStep === "SelectControllerConfirm"
-                    ? styles.show
-                    : styles.hide
-                }`}
+        className={classNames(styles.controllerConfirmContainer, {
+          [styles.show]: currentStep === "SelectControllerConfirm",
+          [styles.hide]: currentStep !== "SelectControllerConfirm",
+        })}
       >
-        {/* {npcLevel === ""
-          ? `搖桿${controllerNumber}`
-          : NPCLEVELS[npcLevel].chinese} */}
-        {`搖桿${controllerNumber}`}
+        {npcLevel === "" ? `搖桿${controllerNumber}` : npcLevel}
       </div>
     </div>
   );

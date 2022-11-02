@@ -7,6 +7,6 @@ import styles from "./BottomDialogConfirmCircle.module.css";
 
 export default BottomDialogConfirmCircle;
 
-function BottomDialogConfirmCircle(): JSX.Element {
+function BottomDialogConfirmCircle() {
   return <div className={styles.confirmCircle}></div>;
 }

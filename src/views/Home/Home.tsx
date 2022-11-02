@@ -27,10 +27,10 @@ const aspectRatioStyles = {
 
 export default Home;
 
-function Home(): JSX.Element {
+function Home() {
   const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState);
   const { userPreference } = useContext(userPreferenceContext);
-  const { t } = useTranslation(userPreference.lang);
+  const { t } = useTranslation();
   useEffect(registerWindowResizeEvtHandler, []);
   return (
     <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
@@ -41,14 +41,14 @@ function Home(): JSX.Element {
       >
         <div className={styles.view1}>
           <h1 className={styles.title}>{t("ドカポン・ザ・ワールド")}</h1>
-          <Transition appear in={UIState.showBtnGroup} timeout={1000}>
+          <Transition appear in={UIState.showBtnGroup} timeout={500}>
             {(state) => <BtnGroup state={state} />}
           </Transition>
         </div>
-        <Transition in={UIState.showSetting} timeout={1000}>
+        <Transition in={UIState.showSetting} timeout={500}>
           {(state) => <Settings state={state} />}
         </Transition>
-        <Transition in={UIState.showKeyMappingDialog} timeout={1000}>
+        <Transition in={UIState.showKeyMappingDialog} timeout={500}>
           {(state) => <KeyMappingDialog state={state} />}
         </Transition>
       </div>

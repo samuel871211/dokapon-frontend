@@ -1,9 +1,270 @@
-import { Dispatch } from "react";
+import type { TextsKeys } from "data/texts";
 
 export = Dokapon;
 export as namespace Dokapon;
 
 declare namespace Dokapon {
+  export type BottomDialogProps = {
+    // dialogTexts: TextsKeys[];
+    /**
+     * It uses `display: none` to hide Component if not show
+     *
+     * @default false
+     */
+    show: boolean;
+    /**
+     * `small` allow 2 lines of `dialogText`
+     *
+     * `normal` allow 3 lines of `dialogText`
+     *
+     * @default "normal"
+     */
+    size?: "small" | "normal";
+    /**
+     * If empty, it will not render the the top left name block.
+     *
+     * Assume `name` is already translated.
+     */
+    name?: string;
+    /**
+     * @todo 如果`dialogText`的顯示是word by word，最後一個字顯示完，才會出現這個
+     *
+     * If enabled, `showConfirmDialog` must be false
+     *
+     * @default false
+     */
+    showConfirmCircle?: true;
+    /**
+     * If enabled, `showConfirmCircle` must be false
+     *
+     * @default false
+     */
+    showConfirmDialog?: true;
+  };
+  export type BattleModeSelectCharacterComponentTypes =
+    | "SelectGoalType"
+    | "GoalInputDialog"
+    | "SelectNumberOfPlayers"
+    | "OnlyOnePlayer"
+    | "SelectGender"
+    | "AskForName"
+    | "NameInputDialog"
+    | "SelectColor"
+    | "SelectJob"
+    | "ThereShouldBeFourPlayers"
+    | "AskForNthNPC"
+    | "NPCGenerateDialog"
+    | "SelectNPCLevel"
+    | "SelectNPCGender"
+    | "SelectNPCColor"
+    | "SelectNPCJob"
+    | "FourPlayersGenerated"
+    | "SelectController"
+    | "SelectControllerConfirm"
+    | "ShuffleOrder"
+    | "ShuffleOrderComplete"
+    | "TakePlayerToDokaponTheWorld";
+  export type StoryModeSelectCharacterComponentTypes =
+    | "SelectNumberOfPlayers"
+    | "OnlyOnePlayer"
+    | "SelectGender"
+    | "AskForName"
+    | "NameInputDialog"
+    | "SelectColor"
+    | "SelectJob"
+    | "ThereShouldBeFourPlayers"
+    | "AskForNthNPC"
+    | "NPCGenerateDialog"
+    | "SelectNPCLevel"
+    | "SelectNPCGender"
+    | "SelectNPCColor"
+    | "SelectNPCJob"
+    | "FourPlayersGenerated"
+    | "SelectController"
+    | "SelectControllerConfirm"
+    | "ShuffleOrder"
+    | "ShuffleOrderComplete"
+    | "TakePlayerToDokaponTheWorld";
+  export type NewGameProgress = {
+    timeStamp: string;
+    /**
+     * `BottomDialog`的ConfirmDialog
+     */
+    isHoverOnConfirm: boolean;
+    goalType: GoalTypes;
+    /**
+     * `1 ~ 999` if `goalType === 'period'`
+     *
+     * `1 ~ 999,999,999` if `goalType === 'money'`
+     */
+    goalInput: number;
+    /**
+     * 1 ~ 4
+     */
+    numberOfPlayers: number;
+    /**
+     * 0 ~ 3
+     */
+    currentPlayerIdx: number;
+    /**
+     * 1 ~ 7
+     */
+    currentDayOfWeek: number;
+    /**
+     * 1 ~ 999
+     */
+    currentWeek: number;
+    curSentenceIdx: number;
+    /**
+     * Assume sentences are already tranlated.
+     */
+    bottomDialogSentencesQueue: string[];
+    currentView: ViewTypes;
+    Home: Record<string, never>;
+    BattleModeSelectCharacter: {
+      curComponent: BattleModeSelectCharacterComponentTypes;
+      GoalInputDialog: { selectedIdx: number };
+      NameInputDialog: {
+        /**
+         * length = 8
+         *
+         * 如為空字串，請使用全形的空白符號來填充
+         */
+        nameInputArray: string[];
+        /**
+         * 0 ~ 7
+         */
+        curNameInputIdx: number;
+        /**
+         * 0 ~ 2
+         */
+        selectedSectionIdx: number;
+        selectedWordIdx: number;
+        keyboardType: "hiragana" | "katakana" | "special";
+      };
+      NPCGenerateDialog: {
+        /**
+         * 0 ~ 4
+         *
+         * @default 4
+         */
+        selectedIdx: number;
+      };
+      SelectNPCLevel: {
+        prevSelectedNPCLevel: NPCLevelTypes;
+      };
+      SelectNPCGender: {
+        prevSelectedGender: GenderTypes;
+      };
+      SelectNPCColor: {
+        prevSelectedColor: ColorTypes;
+      };
+      SelectNPCJob: {
+        prevSelectedJob: JobTypes;
+      };
+      ShuffleOrder: {
+        /**
+         * length = 4
+         *
+         * `number` from 0 ~ 3
+         */
+        shuffleIndexes: number[];
+        intervalId: number;
+      };
+    };
+    StoryModeSelectCharacter: {
+      curComponent: StoryModeSelectCharacterComponentTypes;
+      NameInputDialog: {
+        /**
+         * length = 8
+         *
+         * 如為空字串，請使用全形的空白符號來填充
+         */
+        nameInputArray: string[];
+        /**
+         * 0 ~ 7
+         */
+        curNameInputIdx: number;
+        /**
+         * 0 ~ 2
+         */
+        selectedSectionIdx: number;
+        selectedWordIdx: number;
+        keyboardType: "hiragana" | "katakana" | "special";
+      };
+      NPCGenerateDialog: {
+        /**
+         * 0 ~ 4
+         *
+         * @default 4
+         */
+        selectedIdx: number;
+      };
+      SelectNPCLevel: {
+        prevSelectedNPCLevel: NPCLevelTypes;
+      };
+      SelectNPCGender: {
+        prevSelectedGender: GenderTypes;
+      };
+      SelectNPCColor: {
+        prevSelectedColor: ColorTypes;
+      };
+      SelectNPCJob: {
+        prevSelectedJob: JobTypes;
+      };
+      ShuffleOrder: {
+        /**
+         * length = 4
+         *
+         * `number` from 0 ~ 3
+         */
+        shuffleIndexes: number[];
+        intervalId: number;
+      };
+    };
+    playersAttrs: [
+      PlayerAttrs | NPCPlayerAttrs,
+      PlayerAttrs | NPCPlayerAttrs,
+      PlayerAttrs | NPCPlayerAttrs,
+      PlayerAttrs | NPCPlayerAttrs
+    ];
+    userPreference: {
+      lang: LangTypes;
+      aspectRatio: AspectRatioTypes;
+    };
+    gamePadSetting: {
+      [key in GamePadKeyTypes]: string;
+    };
+  };
+  export type ViewTypes =
+    | "Home"
+    | "BattleModeSelectCharacter"
+    | "StoryModeSelectCharacter"
+    | "DokaponTheWorld"
+    | "BetweenDimensions";
+  // | "Home"
+  // | "SelectCharacter"
+  // | "GameStartIndex"
+  // | "Battle"
+  // | "WeaponStore"
+  // | "MagicStore"
+  // | "GroceryStore"
+  // | "JobStore"
+  // // 驚嘆號代表是地圖隨機出現的事件
+  // | "beggarGrandpa!"
+  // | "goddess!"
+  // | "keroro!"
+  // | "trader!"
+  // | "weapon!"
+  // | "deliveryBird!"
+  // | "houseOfKill!"
+  // | "paperScissors!"
+  // | "photographer!"
+  // | "bigEater!"
+  // | "chef!"
+  // | "darkDweller!"
+  // | "job!"
+  // | "nurse!";
   export type Position = {
     x: number;
     y: number;
@@ -125,7 +386,7 @@ declare namespace Dokapon {
     | "ANALOG"
     | "START";
   export type AspectRatioTypes = "16:9" | "4:3" | "stretch";
-  type ColorTypes =
+  export type ColorTypes =
     | "red"
     | "orange"
     | "yellow"
@@ -136,11 +397,16 @@ declare namespace Dokapon {
     | "pink"
     | "gray"
     | "white";
-  type BasicJobTypes = "warrior" | "magician" | "thief" | "cleric" | "beginner";
-  type NPCLevelTypes = "weak" | "normal" | "strong";
-  type GenderTypes = "male" | "female" | "other";
-  type GoalTypes = "period" | "money";
-  type CharacterTypes = "player" | "npcPlayer" | "enemy" | "allied";
+  export type BasicJobTypes =
+    | "warrior"
+    | "magician"
+    | "thief"
+    | "cleric"
+    | "beginner";
+  export type NPCLevelTypes = "weak" | "normal" | "strong";
+  export type GenderTypes = "male" | "female" | "other";
+  export type GoalTypes = "period" | "money";
+  export type CharacterTypes = "player" | "npcPlayer" | "enemy" | "allied";
   type CharacterAttrs = {
     name: string;
     isNPC: boolean;
@@ -162,6 +428,11 @@ declare namespace Dokapon {
     gender: GenderTypes;
     color: ColorTypes;
     job: JobTypes;
+    jobsMasterStatus?: { [key in JobTypes]: { level: number; rounds: number } };
+    possession?: {
+      items: Item[];
+      magicBooks: MagicBook[];
+    };
     isNPC: true;
     npcLevel: NPCLevelTypes;
     controllerNumber: number;
@@ -173,24 +444,114 @@ declare namespace Dokapon {
   type AlliedAttrs = CharacterAttrs & {
     isNPC: true;
   };
+  type ComponentTypes =
+    | "NPCTopLeftImgArea"
+    | "TitleArea"
+    | "NPCDialog"
+    | "SelectGoalType"
+    | "GoalInputDialog"
+    | "SelectNumberOfPlayers"
+    | "SelectGender"
+    | "NameInputDialog"
+    | "SelectColor"
+    | "SelectJob"
+    | "NPCGenerateDialog"
+    | "SelectNPCLevel"
+    | "SelectOrderAndController";
   type GameProgress = {
     /**
      * 資料送到後端的時候才會產生
      */
     readonly timeStamp: string;
     goalType: GoalTypes;
+    /**
+     * `goalType`為money的時候，`goalInput`區間為 1 ~ 999,999,999
+     *
+     * `goalType`為period的時候，`goalInput`區間為 1 ~ 999
+     */
     goalInput: number;
+    /**
+     * 1 ~ 4
+     */
     numberOfPlayers: number;
-    currentPlayer: number;
+    /**
+     * 1 ~ 4
+     */
+    currentPlayerNumber: number;
+    /**
+     * 1 ~ 999
+     */
+    currentWeek: number;
+    /**
+     * 1 ~ 7
+     */
+    currentDayOfWeek: number;
+    currentView:
+      | "Home"
+      | "SelectCharacter"
+      | "GameStartIndex"
+      | "Battle"
+      | "WeaponStore"
+      | "MagicStore"
+      | "GroceryStore"
+      | "JobStore"
+      // 驚嘆號代表是地圖隨機出現的事件
+      | "beggarGrandpa!"
+      | "goddess!"
+      | "keroro!"
+      | "trader!"
+      | "weapon!"
+      | "deliveryBird!"
+      | "houseOfKill!"
+      | "paperScissors!"
+      | "photographer!"
+      | "bigEater!"
+      | "chef!"
+      | "darkDweller!"
+      | "job!"
+      | "nurse!";
+    currentComponents: ComponentTypes[];
+    componentsStates: {
+      SelectGoalType: {
+        show: boolean;
+      };
+      TitleArea: {
+        show: boolean;
+      };
+      GoalInputDialog: {
+        selectedIndex: number;
+      };
+      NameInputDialog: {
+        selectedSectionIdx: 0 | 1 | 2;
+        selectedWordIdx: number;
+        keyboardType: "hiragana" | "katakana" | "special";
+      };
+      SelectColor: {
+        selectedIndex: number;
+      };
+      SelectJob: {
+        selectedIndex: number;
+      };
+      NPCGenerateDialog: {
+        selectedIndex: number;
+      };
+    };
     playersAttrs: [
       PlayerAttrs | NPCPlayerAttrs,
       PlayerAttrs | NPCPlayerAttrs,
       PlayerAttrs | NPCPlayerAttrs,
       PlayerAttrs | NPCPlayerAttrs
     ];
+    userPreference: {
+      lang: LangTypes;
+      aspectRatio: AspectRatioTypes;
+      gamePadSetting: {
+        [key in GamePadKeyTypes]: string;
+      };
+    };
   };
   export type Shield = {
-    name: string;
+    name: TextsKeys;
     price: number;
     attack: number;
     defense: number;
@@ -224,7 +585,7 @@ declare namespace Dokapon {
     | "補助系魔法";
   export type MagicBook = {
     type: MagicTypes;
-    name: string;
+    name: TextsKeys;
     price: number;
     explanation: string;
     /**
@@ -238,7 +599,7 @@ declare namespace Dokapon {
   };
   export type magicAttack = {
     type: MagicTypes;
-    name: string;
+    name: TextsKeys;
     price: number;
     damage?: "small" | "medium" | "large";
     explanation: string;
@@ -253,7 +614,7 @@ declare namespace Dokapon {
   };
   export type magicDefense = {
     type: MagicTypes;
-    name: string;
+    name: TextsKeys;
     price: number;
     defense: number;
     explanation: string;
@@ -299,7 +660,7 @@ declare namespace Dokapon {
       | "邪魔系アイテム";
     description: string;
     price: number;
-    name: string;
+    name: TextsKeys;
   };
   export type JobTypes =
     | "beginner"
@@ -331,7 +692,7 @@ declare namespace Dokapon {
     | "anotherDevil";
   export type Job = {
     // type: JobTypes;
-    name: string;
+    name: TextsKeys;
     levelUpPoint: {
       attack: number;
       defense: number;
@@ -372,9 +733,13 @@ declare namespace Dokapon {
   namespace GameProgress {
     type Context = {
       gameProgress: GameProgress;
-      gameProgressDispatch: Dispatch<Action>;
+      gameProgressDispatch: (val: Action) => void;
     };
     type Action =
+      | {
+          type: "updateAll";
+          payload: GameProgress;
+        }
       | {
           type: "goalType";
           payload: GoalTypes;
@@ -384,7 +749,7 @@ declare namespace Dokapon {
           payload: number;
         }
       | {
-          type: "numberOfPlayers" | "currentPlayer";
+          type: "numberOfPlayers" | "currentPlayerNumber";
           payload: number;
         }
       | {
@@ -416,8 +781,8 @@ declare namespace Dokapon {
   //   type ElementTypes = "";
   //   type LinkTypes = "";
   // }
-  namespace SelectCharacter {
-    type Steps =
+  export namespace SelectCharacter {
+    export type Steps =
       | "SelectGoalType"
       | "GoalInputDialog"
       | "SelectNumberOfPlayers"
@@ -442,7 +807,7 @@ declare namespace Dokapon {
       showNPCDialog: boolean;
       showConfirmDialog: boolean;
       showSelectCharacter: boolean;
-      selectedJob: Dokapon.BasicJobTypes | "";
+      selectedJob: BasicJobTypes | "";
       confirmDialogSelectedIdx: number;
       npcsAttrsRegenerated: [boolean, boolean, boolean, boolean];
       currentStep: Steps;
@@ -475,7 +840,7 @@ declare namespace Dokapon {
         };
     type Context = {
       UIState: UIState;
-      UIStateDispatch: Dispatch<Action>;
+      UIStateDispatch: (val: Action) => void;
     };
   }
   namespace Home {
@@ -495,7 +860,7 @@ declare namespace Dokapon {
     };
     type Context = {
       UIState: UIState;
-      UIStateDispatch: Dispatch<Action>;
+      UIStateDispatch: (val: Action) => void;
     };
   }
   namespace Settings {
@@ -524,7 +889,7 @@ declare namespace Dokapon {
         };
     type Context = {
       userPreference: UserPreference;
-      userPreferenceDispatch: Dispatch<Action>;
+      userPreferenceDispatch: (val: Action) => void;
     };
   }
   namespace Game {
@@ -663,7 +1028,7 @@ declare namespace Dokapon {
         };
     type Context = {
       UIState: UIState;
-      UIStateDispatch: Dispatch<Action>;
+      UIStateDispatch: (val: Action) => void;
     };
   }
 }

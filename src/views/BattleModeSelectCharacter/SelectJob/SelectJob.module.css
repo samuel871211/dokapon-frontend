@@ -1,0 +1,7 @@
+.jobButton {
+  font-size: var(--font-size-325);
+  line-height: 4.25rem;
+  width: 82%;
+  margin-left: 6.5%;
+  text-align: center;
+}

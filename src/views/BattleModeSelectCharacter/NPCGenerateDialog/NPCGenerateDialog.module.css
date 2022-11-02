@@ -1,0 +1,78 @@
+.NPCGenerateDialog {
+  --margin-top: 2.75rem;
+  --confirm-button-bg-color: #feac30;
+  padding: 0.75rem;
+  margin: auto;
+  margin-top: var(--margin-top);
+  width: 87%;
+  height: calc(100% - var(--margin-top));
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  text-align: center;
+  font-size: var(--font-size-325);
+  line-height: var(--font-size-325);
+  padding-bottom: 0.75rem;
+}
+.bottomArea {
+  display: flex;
+  flex-grow: 1;
+}
+.bottomLeftArea {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.bottomLeftArea img {
+  margin-left: 5%;
+  width: 83%;
+  background-color: #f4c36e;
+  border-radius: 1.5rem;
+}
+.bottomRightArea {
+  margin-top: 0.75rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+.bottomRightArea .button {
+  margin-right: 2.5%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  font-size: var(--font-size-325);
+}
+.confirmBtn {
+  color: white;
+  background-color: var(--confirm-button-bg-color);
+  -webkit-text-stroke: 0.15rem black;
+}
+.confirmBtn[data-selected="true"] {
+  animation: btnHoverFrom 500ms, btnHoverTo 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes btnHoverFrom {
+  0% {
+    background-color: var(--hover-bg-color);
+  }
+  100% {
+    background-color: var(--confirm-button-bg-color);
+  }
+}
+@keyframes btnHoverTo {
+  0% {
+    background-color: var(--confirm-button-bg-color);
+  }
+  100% {
+    background-color: var(--hover-bg-color);
+  }
+}

@@ -28,7 +28,6 @@ function SelectNumberOfPlayers(): JSX.Element {
     gameProgress: { numberOfPlayers },
   } = useContext(gameProgressContext);
   const [isLeave, toggleIsLeave] = useState(false);
-  const [selectedPlayerNum, setSelectedPlayerNum] = useState(numberOfPlayers);
   const [keyDownEvtRegister, toggleKeyDownRegister] = useState(true);
 
   function keyDownAttrs() {
@@ -48,17 +47,19 @@ function SelectNumberOfPlayers(): JSX.Element {
   function handleKeyUp(e: KeyboardEvent) {
     switch (e.key.toLowerCase()) {
       case "arrowup":
-        setSelectedPlayerNum(
-          selectedPlayerNum === 1 ? 4 : selectedPlayerNum - 1
-        );
+        gameProgressDispatch({
+          type: "numberOfPlayers",
+          payload: numberOfPlayers === 1 ? 4 : numberOfPlayers - 1,
+        });
         break;
       case "arrowdown":
-        setSelectedPlayerNum(
-          selectedPlayerNum === 4 ? 1 : selectedPlayerNum + 1
-        );
+        gameProgressDispatch({
+          type: "numberOfPlayers",
+          payload: numberOfPlayers === 4 ? 1 : numberOfPlayers + 1,
+        });
         break;
       case "d":
-        if (selectedPlayerNum === 1) {
+        if (numberOfPlayers === 1) {
           UIStateDispatch({
             type: "currentStep",
             payload: "OnlyOnePlayer",
@@ -69,10 +70,6 @@ function SelectNumberOfPlayers(): JSX.Element {
         if (!focusElement.current) break;
         toggleIsLeave(true);
         focusElement.current.onanimationend = function handleNextComponent() {
-          gameProgressDispatch({
-            type: "numberOfPlayers",
-            payload: selectedPlayerNum,
-          });
           UIStateDispatch({
             type: "currentStep",
             payload: "SelectGender",
@@ -89,7 +86,6 @@ function SelectNumberOfPlayers(): JSX.Element {
         break;
     }
   }
-
   function handleAnimationEnd(e: AnimationEvent<HTMLDivElement>): void {
     if (e.animationName === styles.slideIn) {
       focusElement.current?.focus();
@@ -102,13 +98,15 @@ function SelectNumberOfPlayers(): JSX.Element {
   return (
     <div
       ref={focusElement}
-      className={`${styles.btnGroup} ${isLeave ? styles.leave : ""}`}
+      className={`${styles.selectNumberOfPlayersContainer} ${
+        isLeave ? styles.leave : ""
+      }`}
       {...keyDownAttrs()}
     >
-      <NumberOfPlayersBtn playerNum={1} selected={selectedPlayerNum === 1} />
-      <NumberOfPlayersBtn playerNum={2} selected={selectedPlayerNum === 2} />
-      <NumberOfPlayersBtn playerNum={3} selected={selectedPlayerNum === 3} />
-      <NumberOfPlayersBtn playerNum={4} selected={selectedPlayerNum === 4} />
+      <NumberOfPlayersBtn playerNum={1} selected={numberOfPlayers === 1} />
+      <NumberOfPlayersBtn playerNum={2} selected={numberOfPlayers === 2} />
+      <NumberOfPlayersBtn playerNum={3} selected={numberOfPlayers === 3} />
+      <NumberOfPlayersBtn playerNum={4} selected={numberOfPlayers === 4} />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import {
   AnimationEvent,
   KeyboardEvent,
 } from "react";
+import classNames from "classnames";
 
 // Local application/library specific imports.
 import nameInputChars from "data/nameInputChars";
@@ -16,72 +17,33 @@ import { UIStateContext } from "reducers/SelectCharacter/UIState";
 
 // Stateless vars declare.
 
-type wordType = "hiragana" | "katakana" | "special";
-
 export default NameInputDialog;
 
+/**
+ * @todo 上方的nameInputChars跟下方的keyboardKeys，hoverEffect希望能同步
+ */
 function NameInputDialog(): JSX.Element {
   const focusElement = useRef<HTMLDivElement>(null);
   const { gameProgress, gameProgressDispatch } =
     useContext(gameProgressContext);
+  const { currentPlayerNumber, playersAttrs, componentsStates } = gameProgress;
+  const {
+    NameInputDialog: { selectedSectionIdx, selectedWordIdx, keyboardType },
+  } = componentsStates;
   const { UIStateDispatch } = useContext(UIStateContext);
-  const [wordType, setWordType] = useState<wordType>("hiragana");
   const [isLeave, toggleIsLeave] = useState(false);
   const [nameInputWords, setNameInputWords] = useState(getInitNameArr());
   const [curNameInputIdx, setCurNameInputIdx] = useState(getInitInputIdx());
-  const [selectedSection, setSelectedSection] = useState(0);
-  const [selectedWordIdx, setSelectedWordIdx] = useState(0);
 
   function getInitNameArr() {
-    const { currentPlayer, playersAttrs } = gameProgress;
-    const initName = playersAttrs[currentPlayer - 1].name;
+    const initName = playersAttrs[currentPlayerNumber - 1].name;
     const result = initName.split("");
     while (result.length < 8) result.push("　");
     return result;
   }
   function getInitInputIdx() {
-    const { currentPlayer, playersAttrs } = gameProgress;
-    const initName = playersAttrs[currentPlayer - 1].name.trim();
+    const initName = playersAttrs[currentPlayerNumber - 1].name.trim();
     return initName.length === 0 ? 0 : initName.length - 1;
-  }
-  function generateKeyBoardKeys(section: 0 | 1) {
-    const rows: JSX.Element[] = [];
-    nameInputChars[wordType][section].forEach((word, index) => {
-      rows.push(
-        <KeyBoardKey
-          word={word}
-          key={index}
-          selected={selectedSection === section && selectedWordIdx === index}
-        />
-      );
-    });
-    return rows;
-  }
-  function generateKeyBoardMenuItems() {
-    const rows: JSX.Element[] = [];
-    nameInputChars.menu.forEach((word, index) => {
-      rows.push(
-        <KeyBoardMenuItem
-          word={word}
-          key={index}
-          selected={selectedSection === 2 && selectedWordIdx === index}
-        />
-      );
-    });
-    return rows;
-  }
-  function generateNameInputWords() {
-    const rows: JSX.Element[] = [];
-    nameInputWords.forEach((word, index) => {
-      rows.push(
-        <NameInputWord
-          word={word}
-          current={curNameInputIdx === index}
-          key={index}
-        />
-      );
-    });
-    return rows;
   }
   function handleAnimationEnd(e: AnimationEvent<HTMLDivElement>): void {
     if (e.animationName.includes("slideLeft")) {
@@ -93,7 +55,7 @@ function NameInputDialog(): JSX.Element {
     switch (e.key.toLowerCase()) {
       case "arrowup":
         (function handleSelectedWordIdx() {
-          switch (selectedSection) {
+          switch (selectedSectionIdx) {
             case 0:
             case 1:
               switch (selectedWordIdx) {
@@ -102,24 +64,37 @@ function NameInputDialog(): JSX.Element {
                 case 2:
                 case 3:
                 case 4:
-                  setSelectedWordIdx(selectedWordIdx + 40);
+                  componentsStates.NameInputDialog.selectedWordIdx =
+                    selectedWordIdx + 40;
+                  gameProgressDispatch({
+                    type: "updateAll",
+                    payload: gameProgress,
+                  });
                   break;
                 default:
-                  setSelectedWordIdx(selectedWordIdx - 5);
+                  componentsStates.NameInputDialog.selectedWordIdx =
+                    selectedWordIdx - 5;
+                  gameProgressDispatch({
+                    type: "updateAll",
+                    payload: gameProgress,
+                  });
                   break;
               }
               break;
             case 2:
-              setSelectedWordIdx(
-                selectedWordIdx === 0 ? 8 : selectedWordIdx - 1
-              );
+              componentsStates.NameInputDialog.selectedWordIdx =
+                selectedWordIdx === 0 ? 8 : selectedWordIdx - 1;
+              gameProgressDispatch({
+                type: "updateAll",
+                payload: gameProgress,
+              });
               break;
           }
         })();
         break;
       case "arrowdown":
         (function handleSelectedWordIdx() {
-          switch (selectedSection) {
+          switch (selectedSectionIdx) {
             case 0:
             case 1:
               switch (selectedWordIdx) {
@@ -128,80 +103,131 @@ function NameInputDialog(): JSX.Element {
                 case 42:
                 case 43:
                 case 44:
-                  setSelectedWordIdx(selectedWordIdx - 40);
+                  componentsStates.NameInputDialog.selectedWordIdx =
+                    selectedWordIdx - 40;
+                  gameProgressDispatch({
+                    type: "updateAll",
+                    payload: gameProgress,
+                  });
                   break;
                 default:
-                  setSelectedWordIdx(selectedWordIdx + 5);
+                  componentsStates.NameInputDialog.selectedWordIdx =
+                    selectedWordIdx + 5;
+                  gameProgressDispatch({
+                    type: "updateAll",
+                    payload: gameProgress,
+                  });
                   break;
               }
               break;
             case 2:
-              setSelectedWordIdx(
-                selectedWordIdx === 8 ? 0 : selectedWordIdx + 1
-              );
+              componentsStates.NameInputDialog.selectedWordIdx =
+                selectedWordIdx === 8 ? 0 : selectedWordIdx + 1;
+              gameProgressDispatch({
+                type: "updateAll",
+                payload: gameProgress,
+              });
               break;
           }
         })();
         break;
       case "arrowleft":
         (function handleSelectedWordIdx() {
-          switch (selectedSection) {
+          switch (selectedSectionIdx) {
             case 0:
               if (selectedWordIdx % 5 === 0) {
-                setSelectedSection(2);
-                setSelectedWordIdx(Math.floor(selectedWordIdx / 5));
+                componentsStates.NameInputDialog.selectedSectionIdx = 2;
+                componentsStates.NameInputDialog.selectedWordIdx = Math.floor(
+                  selectedWordIdx / 5
+                );
               } else if (selectedWordIdx % 5 !== 0) {
-                setSelectedWordIdx(selectedWordIdx - 1);
+                componentsStates.NameInputDialog.selectedWordIdx =
+                  selectedWordIdx - 1;
               }
+              gameProgressDispatch({
+                type: "updateAll",
+                payload: gameProgress,
+              });
               break;
             case 1:
               if (selectedWordIdx % 5 === 0) {
-                setSelectedSection(0);
-                setSelectedWordIdx(selectedWordIdx + 4);
+                componentsStates.NameInputDialog.selectedSectionIdx = 0;
+                componentsStates.NameInputDialog.selectedWordIdx =
+                  selectedWordIdx + 4;
               } else if (selectedWordIdx % 5 !== 0) {
-                setSelectedWordIdx(selectedWordIdx - 1);
+                componentsStates.NameInputDialog.selectedWordIdx =
+                  selectedWordIdx - 1;
               }
+              gameProgressDispatch({
+                type: "updateAll",
+                payload: gameProgress,
+              });
               break;
             case 2:
-              setSelectedSection(1);
-              setSelectedWordIdx(selectedWordIdx * 5 + 4);
+              componentsStates.NameInputDialog.selectedSectionIdx = 1;
+              componentsStates.NameInputDialog.selectedWordIdx =
+                selectedWordIdx * 5 + 4;
+              gameProgressDispatch({
+                type: "updateAll",
+                payload: gameProgress,
+              });
               break;
           }
         })();
         break;
       case "arrowright":
         (function handleSelectedWordIdx() {
-          switch (selectedSection) {
+          switch (selectedSectionIdx) {
             case 0:
               if (selectedWordIdx % 5 === 4) {
-                setSelectedSection(1);
-                setSelectedWordIdx(selectedWordIdx - 4);
+                componentsStates.NameInputDialog.selectedSectionIdx = 1;
+                componentsStates.NameInputDialog.selectedWordIdx =
+                  selectedWordIdx - 4;
               } else if (selectedWordIdx % 5 !== 4) {
-                setSelectedWordIdx(selectedWordIdx + 1);
+                componentsStates.NameInputDialog.selectedWordIdx =
+                  selectedWordIdx + 1;
               }
+              gameProgressDispatch({
+                type: "updateAll",
+                payload: gameProgress,
+              });
               break;
             case 1:
               if (selectedWordIdx % 5 === 4) {
-                setSelectedSection(2);
-                setSelectedWordIdx(Math.floor(selectedWordIdx / 5));
+                componentsStates.NameInputDialog.selectedSectionIdx = 2;
+                componentsStates.NameInputDialog.selectedWordIdx = Math.floor(
+                  selectedWordIdx / 5
+                );
               } else if (selectedWordIdx % 5 !== 4) {
-                setSelectedWordIdx(selectedWordIdx + 1);
+                componentsStates.NameInputDialog.selectedWordIdx =
+                  selectedWordIdx + 1;
               }
+              gameProgressDispatch({
+                type: "updateAll",
+                payload: gameProgress,
+              });
               break;
             case 2:
-              setSelectedSection(0);
-              setSelectedWordIdx(selectedWordIdx * 5);
+              componentsStates.NameInputDialog.selectedSectionIdx = 0;
+              componentsStates.NameInputDialog.selectedWordIdx =
+                selectedWordIdx * 5;
+              gameProgressDispatch({
+                type: "updateAll",
+                payload: gameProgress,
+              });
               break;
           }
         })();
         break;
       case "d":
-        switch (selectedSection) {
+        switch (selectedSectionIdx) {
           case 0:
           case 1:
             (function handleNameInput() {
               const word =
-                nameInputChars[wordType][selectedSection][selectedWordIdx];
+                nameInputChars[keyboardType][selectedSectionIdx][
+                  selectedWordIdx
+                ];
               if (word.trim() === "") return;
 
               // replace/add word to current idx
@@ -211,8 +237,12 @@ function NameInputDialog(): JSX.Element {
 
               if (curNameInputIdx === 7) {
                 // focus to 'ＯＫ' when input complete
-                setSelectedSection(2);
-                setSelectedWordIdx(8);
+                componentsStates.NameInputDialog.selectedSectionIdx = 2;
+                componentsStates.NameInputDialog.selectedWordIdx = 8;
+                gameProgressDispatch({
+                  type: "updateAll",
+                  payload: gameProgress,
+                });
               } else {
                 // otherwise, focus to next idx
                 setCurNameInputIdx(curNameInputIdx + 1);
@@ -224,13 +254,25 @@ function NameInputDialog(): JSX.Element {
               const word = nameInputChars.menu[selectedWordIdx];
               switch (word) {
                 case "平假名":
-                  setWordType("hiragana");
+                  componentsStates.NameInputDialog.keyboardType = "hiragana";
+                  gameProgressDispatch({
+                    type: "updateAll",
+                    payload: gameProgress,
+                  });
                   break;
                 case "片假名":
-                  setWordType("katakana");
+                  componentsStates.NameInputDialog.keyboardType = "katakana";
+                  gameProgressDispatch({
+                    type: "updateAll",
+                    payload: gameProgress,
+                  });
                   break;
                 case "ＡＢＣ":
-                  setWordType("special");
+                  componentsStates.NameInputDialog.keyboardType = "special";
+                  gameProgressDispatch({
+                    type: "updateAll",
+                    payload: gameProgress,
+                  });
                   break;
                 case "前進":
                   if (curNameInputIdx === 7) break;
@@ -319,20 +361,52 @@ function NameInputDialog(): JSX.Element {
 
   return (
     <div
-      className={`
-            ${styles.container}
-            ${isLeave ? styles.leave : ""}`}
+      className={classNames(styles.nameInputDialogContainer, {
+        [styles.leave]: isLeave,
+      })}
       onAnimationEnd={handleAnimationEnd}
       tabIndex={0}
       ref={focusElement}
       onBlur={(event) => event.target.focus()}
       onKeyUp={handleKeyUp}
     >
-      <div className={styles.nameDisplayArea}>{generateNameInputWords()}</div>
+      <div className={styles.nameDisplayArea}>
+        {nameInputWords.map((word, index) => (
+          <NameInputWord
+            word={word}
+            current={curNameInputIdx === index}
+            key={index}
+          />
+        ))}
+      </div>
       <div className={styles.keyboardArea}>
-        <div className={styles.keyboardSection}>{generateKeyBoardKeys(0)}</div>
-        <div className={styles.keyboardSection}>{generateKeyBoardKeys(1)}</div>
-        <div className={styles.keyboardMenu}>{generateKeyBoardMenuItems()}</div>
+        <div className={styles.keyboardSection}>
+          {nameInputChars[keyboardType][0].map((word, index) => (
+            <KeyBoardKey
+              word={word}
+              key={index}
+              selected={selectedSectionIdx === 0 && selectedWordIdx === index}
+            />
+          ))}
+        </div>
+        <div className={styles.keyboardSection}>
+          {nameInputChars[keyboardType][1].map((word, index) => (
+            <KeyBoardKey
+              word={word}
+              key={index}
+              selected={selectedSectionIdx === 1 && selectedWordIdx === index}
+            />
+          ))}
+        </div>
+        <div className={styles.keyboardMenu}>
+          {nameInputChars.menu.map((word, index) => (
+            <KeyBoardMenuItem
+              word={word}
+              key={index}
+              selected={selectedSectionIdx === 2 && selectedWordIdx === index}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

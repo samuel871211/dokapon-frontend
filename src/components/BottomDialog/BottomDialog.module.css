@@ -1,0 +1,123 @@
+.bottomDialogContainer {
+  width: 100%;
+  height: 30%;
+  position: relative;
+  --confirm-dialog-width: 22%;
+}
+.bottomDialogContainer[data-show="false"] {
+  display: none;
+}
+.topLeftName {
+  position: absolute;
+  width: 31.5%;
+  /* height: 4.5rem; */
+  /* line-height: 4.5rem; */
+  border-radius: 9999px;
+  left: 6rem;
+  top: -2.5rem;
+  font-size: 3rem;
+  text-align: center;
+  z-index: 2;
+}
+.topLeftName:empty {
+  visibility: hidden;
+}
+.innerContainer {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  /* 用padding-top會導致confirmDialog的定位錯誤 */
+  /* padding-top: 1rem; */
+  margin-top: 0.5rem;
+  z-index: 1;
+}
+.bottomDialog {
+  position: relative;
+  width: 96%;
+  height: 100%;
+  margin: auto;
+}
+.bottomDialog.verticalSmall {
+  margin-top: 4.2rem;
+  height: 57%;
+}
+.dialogTextArea {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+.dialogTextArea.horizontalSmall {
+  width: calc(100% - var(--confirm-dialog-width));
+}
+.dialogSingleText {
+  display: inline-block;
+}
+.confirmDialog {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  right: 0.5%;
+  height: 80%;
+  width: var(--confirm-dialog-width);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+/*
+這邊有一個比較tricky的地方
+首先，z-index的作用，應該是要在元素們處於同一個position才有效果
+所以我把before跟btnText都設定為absolute
+但這樣會導致btn內的元素都已經跳脫定位，btn內沒有元素，height = 0
+所以這邊我把btn的height設定為3rem，讓元素自動撐開
+*/
+.confirmDialogBtnContainer {
+  width: 80%;
+  height: 3rem;
+  margin: 0% 10%;
+  position: relative;
+}
+.confirmDialogBtn {
+  font-size: 3rem;
+  line-height: 3rem;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  border-radius: 0.15rem;
+}
+.confirmDialogBtn[data-selected="true"] {
+  animation: confirmDialogBtnHoverFrom 500ms, confirmDialogBtnHoverTo 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+.confirmDialogBtnContainer::before {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 40%;
+  background-color: var(--sub-bg-color);
+  z-index: 0;
+}
+@keyframes confirmDialogBtnHoverFrom {
+  0% {
+    background-color: var(--hover-bg-color);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes confirmDialogBtnHoverTo {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--hover-bg-color);
+  }
+}

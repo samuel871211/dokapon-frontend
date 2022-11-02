@@ -13,47 +13,71 @@ import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./SelectJob.module.css";
 import { gameProgressContext } from "reducers/gameProgress";
 import { UIStateContext } from "reducers/SelectCharacter/UIState";
-import { basicJobTypes } from "data/jobs";
+import { basicJobs } from "data/jobs";
 import { BasicJobTypes } from "global";
+import jobsToJP from "data/jobsToJP";
+import useTranslation from "hooks/useTranslation";
 
 // Stateless vars declare.
 
 export default SelectJob;
 
+/**
+ * @todo set selectedIndex to currentPlayer.job when entering
+ */
 function SelectJob(): JSX.Element {
   const { gameProgress, gameProgressDispatch } =
     useContext(gameProgressContext);
   const { UIStateDispatch } = useContext(UIStateContext);
-  const { numberOfPlayers, currentPlayer, playersAttrs } = gameProgress;
-  const { color, gender, job } = playersAttrs[currentPlayer - 1];
-  console.log(job);
+  const {
+    numberOfPlayers,
+    currentPlayerNumber,
+    playersAttrs,
+    componentsStates,
+  } = gameProgress;
+  const {
+    color: currentPlayerColor,
+    gender: currentPlayerGender,
+    job: currentPlayerJob,
+  } = playersAttrs[currentPlayerNumber - 1];
+  const indexWhenPrevStep = basicJobs.indexOf(currentPlayerJob);
+  const {
+    SelectJob: { selectedIndex },
+  } = componentsStates;
   const focusElement = useRef<HTMLDivElement>(null);
-  const [selectedIdx, setSelectedIdx] = useState(basicJobTypes.indexOf(job));
   const [isLeave, toggleIsLeave] = useState(false);
+  const { t } = useTranslation();
 
   function handleKeyUp(e: KeyboardEvent) {
     switch (e.key.toLowerCase()) {
       case "arrowup": {
-        const newIdx = selectedIdx === 0 ? 4 : selectedIdx - 1;
+        const newIdx = selectedIndex === 0 ? 4 : selectedIndex - 1;
         UIStateDispatch({
           type: "selectedJob",
-          payload: basicJobTypes[newIdx] as BasicJobTypes,
-          // payload: basicJobTypes[newIdx],
+          payload: basicJobs[newIdx] as BasicJobTypes,
         });
-        setSelectedIdx(newIdx);
+        componentsStates.SelectJob.selectedIndex = newIdx;
+        gameProgressDispatch({
+          type: "updateAll",
+          payload: gameProgress,
+        });
         break;
       }
       case "arrowdown": {
-        const newIdx = selectedIdx === 4 ? 0 : selectedIdx + 1;
+        const newIdx = selectedIndex === 4 ? 0 : selectedIndex + 1;
         UIStateDispatch({
           type: "selectedJob",
-          payload: basicJobTypes[newIdx] as BasicJobTypes,
+          payload: basicJobs[newIdx] as BasicJobTypes,
         });
-        setSelectedIdx(newIdx);
+        componentsStates.SelectJob.selectedIndex = newIdx;
+        gameProgressDispatch({
+          type: "updateAll",
+          payload: gameProgress,
+        });
         break;
       }
       case "d":
-        if (currentPlayer === numberOfPlayers) {
+        if (currentPlayerNumber === numberOfPlayers) {
           UIStateDispatch({
             type: "showTitleArea",
             payload: false,
@@ -70,7 +94,7 @@ function SelectJob(): JSX.Element {
         UIStateDispatch({
           type: "currentStep",
           payload:
-            numberOfPlayers >= currentPlayer
+            numberOfPlayers >= currentPlayerNumber
               ? "SelectColor"
               : "NPCGenerateDialog",
         });
@@ -82,9 +106,10 @@ function SelectJob(): JSX.Element {
 
   function handleAnimationEnd(e: AnimationEvent<HTMLDivElement>) {
     function determineNextStep() {
-      if (currentPlayer < numberOfPlayers) return "SelectGender";
-      if (currentPlayer === 4) return "PlayerAttrsCollected";
-      if (currentPlayer === numberOfPlayers) return "BeforeNPCGenerateDialog";
+      if (currentPlayerNumber < numberOfPlayers) return "SelectGender";
+      if (currentPlayerNumber === 4) return "PlayerAttrsCollected";
+      if (currentPlayerNumber === numberOfPlayers)
+        return "BeforeNPCGenerateDialog";
       return "NPCGenerateDialog";
     }
     if (e.animationName.includes("slideLeft")) {
@@ -94,7 +119,7 @@ function SelectJob(): JSX.Element {
     if (e.animationName.includes("slideRight")) {
       gameProgressDispatch({
         type: "job",
-        payload: basicJobTypes[selectedIdx] as BasicJobTypes,
+        payload: basicJobs[selectedIndex] as BasicJobTypes,
       });
       const nextStep = determineNextStep();
       UIStateDispatch({
@@ -103,10 +128,10 @@ function SelectJob(): JSX.Element {
       });
 
       if (nextStep === "NPCGenerateDialog") return;
-      if (currentPlayer === 4) return;
-      const newCurrentPlayer = currentPlayer + 1;
+      if (currentPlayerNumber === 4) return;
+      const newCurrentPlayer = currentPlayerNumber + 1;
       gameProgressDispatch({
-        type: "currentPlayer",
+        type: "currentPlayerNumber",
         payload: newCurrentPlayer,
       });
     }
@@ -121,9 +146,9 @@ function SelectJob(): JSX.Element {
       onKeyUp={handleKeyUp}
     >
       <ExampleCharacterImg
-        color={color}
-        job={basicJobTypes[selectedIdx]}
-        gender={gender}
+        color={currentPlayerColor}
+        job={basicJobs[selectedIndex]}
+        gender={currentPlayerGender}
         isFadeOut={isLeave}
       />
       <div
@@ -132,10 +157,10 @@ function SelectJob(): JSX.Element {
                 ${isLeave ? styles.leave : ""}`}
         onAnimationEnd={handleAnimationEnd}
       >
-        {basicJobTypes.map((basicJob, idx) => (
+        {basicJobs.map((basicJob, idx) => (
           <JobBtn
-            name={basicJob}
-            selected={idx === selectedIdx}
+            name={t(jobsToJP[basicJob])}
+            selected={idx === selectedIndex}
             key={basicJob}
           />
         ))}

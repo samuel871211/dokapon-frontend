@@ -10,7 +10,7 @@ import {
 } from "react";
 
 // Local application/library specific imports.
-import { UIStateContext } from "reducers/Game/UIState";
+import { UIStateContext } from "reducers/DokaponTheWorld/UIState";
 import type { Vertex, Edge } from "global";
 import mainWorld from "data/maps/mainWorld";
 import GraphDSA from "graphics/GraphDSA";

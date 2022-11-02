@@ -1,7 +1,7 @@
 import axios from "axios";
-import Dokapon from "global";
+import type { GameProgress } from "global";
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
-type response = { status: number; data: Dokapon.GameProgress | null };
+type response = { status: number; data: GameProgress | null };
 
 const gameProgressClient = axios.create({
   baseURL: `${backendBaseUrl}/gameProgress`,
@@ -18,10 +18,10 @@ export {
 
 async function getGameProgress(): Promise<{
   status: number;
-  data: Dokapon.GameProgress[];
+  data: GameProgress[];
 }> {
   try {
-    const response = await gameProgressClient.get<Dokapon.GameProgress[]>("/");
+    const response = await gameProgressClient.get<GameProgress[]>("/");
     return { status: response.status, data: response.data };
   } catch (e: unknown) {
     if (axios.isAxiosError(e) && e.response) {
@@ -33,7 +33,7 @@ async function getGameProgress(): Promise<{
 }
 async function findGameProgressBackup(slotIdx: number): Promise<response> {
   try {
-    const response = await gameProgressClient.get<Dokapon.GameProgress>(
+    const response = await gameProgressClient.get<GameProgress>(
       `backup/${slotIdx}`
     );
     return { status: response.status, data: response.data };
@@ -47,9 +47,7 @@ async function findGameProgressBackup(slotIdx: number): Promise<response> {
 }
 async function findGameProgress(slotIdx: number): Promise<response> {
   try {
-    const response = await gameProgressClient.get<Dokapon.GameProgress>(
-      `/${slotIdx}`
-    );
+    const response = await gameProgressClient.get<GameProgress>(`/${slotIdx}`);
     return { status: response.status, data: response.data };
   } catch (e: unknown) {
     if (axios.isAxiosError(e) && e.response) {
@@ -61,10 +59,10 @@ async function findGameProgress(slotIdx: number): Promise<response> {
 }
 async function updateGameProgress(
   slotIdx: number,
-  data: Dokapon.GameProgress
+  data: GameProgress
 ): Promise<response> {
   try {
-    const response = await gameProgressClient.put<Dokapon.GameProgress>(
+    const response = await gameProgressClient.put<GameProgress>(
       `/${slotIdx}`,
       data
     );

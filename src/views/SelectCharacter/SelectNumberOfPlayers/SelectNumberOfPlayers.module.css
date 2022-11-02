@@ -1,25 +1,24 @@
-.btnGroup {
-  width: 80%;
+.selectNumberOfPlayersContainer {
+  width: 65%;
   height: 80%;
-  margin: auto;
-  flex-direction: column;
+  margin-left: 15%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   animation: slideIn 1s;
 }
 .btn {
   width: 80%;
-  height: 15%;
-  margin-top: 5%;
+  height: 5rem;
+  margin-top: 3%;
   display: flex;
   padding-left: 5%;
   align-items: center;
-  font-weight: bold;
   font-size: 3rem;
   border-radius: 9999px;
   border: 0.2rem outset var(--border-color);
-  background-color: #fee59a;
+  background-color: var(--bg-color);
 }
 .btnText {
   display: flex;

@@ -1,12 +1,41 @@
 import { createContext } from "react";
-import Dokapon from "global";
+import type { GameProgress } from "global";
 
-const initGameProgress: Dokapon.GameProgress = {
+const initGameProgress: GameProgress = {
   timeStamp: "",
   goalType: "period",
   goalInput: 1,
   numberOfPlayers: 1,
-  currentPlayer: 1,
+  currentPlayerNumber: 1,
+  currentWeek: 1,
+  currentDayOfWeek: 1,
+  currentComponents: [],
+  currentView: "SelectCharacter",
+  componentsStates: {
+    SelectGoalType: {
+      show: true,
+    },
+    TitleArea: {
+      show: true,
+    },
+    GoalInputDialog: {
+      selectedIndex: 0,
+    },
+    NameInputDialog: {
+      keyboardType: "hiragana",
+      selectedSectionIdx: 0,
+      selectedWordIdx: 0,
+    },
+    SelectColor: {
+      selectedIndex: 0,
+    },
+    SelectJob: {
+      selectedIndex: 0,
+    },
+    NPCGenerateDialog: {
+      selectedIndex: 4,
+    },
+  },
   playersAttrs: [
     {
       gender: "male",
@@ -45,23 +74,46 @@ const initGameProgress: Dokapon.GameProgress = {
       controllerNumber: 0,
     },
   ],
+  userPreference: {
+    aspectRatio: "16:9",
+    lang: "cn",
+    gamePadSetting: {
+      arrowUp: "arrowup",
+      arrowDown: "arrowdown",
+      arrowLeft: "arrowleft",
+      arrowRight: "arrowright",
+      triangle: "s",
+      circle: "d",
+      square: "z",
+      cross: "x",
+      L1: "q",
+      L2: "1",
+      R1: "e",
+      R2: "3",
+      SELECT: "c",
+      ANALOG: "b",
+      START: "v",
+    },
+  },
 };
 
-const gameProgressContext = createContext<Dokapon.GameProgress.Context>({
+const gameProgressContext = createContext<GameProgress.Context>({
   gameProgress: initGameProgress,
-  gameProgressDispatch: function (action: Dokapon.GameProgress.Action) {
-    console.error("Dokapon.GameProgress.Context did not provide a value");
+  gameProgressDispatch: function (action: GameProgress.Action) {
+    console.error("GameProgress.Context did not provide a value");
   },
 });
 
 function gameProgressReducer(
-  state: Dokapon.GameProgress,
-  action: Dokapon.GameProgress.Action
-): Dokapon.GameProgress {
+  state: GameProgress,
+  action: GameProgress.Action
+): GameProgress {
   switch (action.type) {
+    case "updateAll":
+      return { ...action.payload };
     case "goalType":
     case "goalInput":
-    case "currentPlayer": {
+    case "currentPlayerNumber": {
       return {
         ...state,
         [action.type]: action.payload,
@@ -92,7 +144,7 @@ function gameProgressReducer(
     case "color":
     case "job":
     case "name": {
-      const curPlayerIdx = state.currentPlayer - 1;
+      const curPlayerIdx = state.currentPlayerNumber - 1;
       const newState = { ...state };
       const playerAttrs = {
         ...newState.playersAttrs[curPlayerIdx],

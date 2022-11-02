@@ -19,25 +19,20 @@ export default SelectGoalType;
 
 function SelectGoalType(): JSX.Element {
   const focusElement = useRef<HTMLDivElement>(null);
-  const { gameProgressDispatch, gameProgress } =
+  const { gameProgress, gameProgressDispatch } =
     useContext(gameProgressContext);
   const { UIStateDispatch } = useContext(UIStateContext);
-
   const { goalType } = gameProgress;
   const [isLeave, toggleIsLeave] = useState(false);
-  const [selectedGoalType, toggleSelectedGoalType] = useState(goalType);
 
   function handleKeyUp(e: KeyboardEvent) {
     switch (e.key.toLowerCase()) {
       case "arrowup":
-        toggleSelectedGoalType(
-          selectedGoalType === "period" ? "money" : "period"
-        );
-        break;
       case "arrowdown":
-        toggleSelectedGoalType(
-          selectedGoalType === "period" ? "money" : "period"
-        );
+        gameProgressDispatch({
+          type: "goalType",
+          payload: goalType === "period" ? "money" : "period",
+        });
         break;
       case "d":
         if (!focusElement.current) break;
@@ -50,10 +45,6 @@ function SelectGoalType(): JSX.Element {
           });
         })();
         focusElement.current.onanimationend = function handleNextComponent() {
-          gameProgressDispatch({
-            type: "goalType",
-            payload: selectedGoalType,
-          });
           UIStateDispatch({
             type: "currentStep",
             payload: "GoalInputDialog",
@@ -78,14 +69,16 @@ function SelectGoalType(): JSX.Element {
   return (
     <div
       ref={focusElement}
-      className={`${styles.container} ${isLeave ? styles.leave : ""}`}
+      className={`${styles.selectGoalTypeContainer} ${
+        isLeave ? styles.leave : ""
+      }`}
       tabIndex={0}
       onBlur={(event) => event.target.focus()}
       onKeyUp={handleKeyUp}
       onAnimationEnd={autoFocusElement}
     >
-      <IconTextBtn text="期間目標" selected={selectedGoalType === "period"} />
-      <IconTextBtn text="金額目標" selected={selectedGoalType === "money"} />
+      <IconTextBtn text="期間目標" selected={goalType === "period"} />
+      <IconTextBtn text="金額目標" selected={goalType === "money"} />
     </div>
   );
 }

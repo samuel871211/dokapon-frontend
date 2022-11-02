@@ -11,10 +11,14 @@
   --main-border-radius: 1.5rem;
   --main-border-width: 0.2rem;
   --sub-border-width: 0.15rem;
+  --font-size-325: 3.25rem;
+  --font-size-300: 3rem;
+  --font-size-275: 2.75rem;
+  /* --default-
   --main-title: 3rem;
   --sub-title: 2.5rem;
   --title: 2rem;
-  --small-title: 1.5rem;
+  --small-title: 1.5rem; */
 }
 :root,
 body,
@@ -42,4 +46,26 @@ body,
 }
 g[data-type="dokapon.player"] {
   transition: transform 0.5s;
+}
+.selectedEffectGreenYellow {
+  animation: greenToYellow 500ms, yellowToGreen 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes greenToYellow {
+  0% {
+    background-color: var(--hover-bg-color);
+  }
+  100% {
+    background-color: var(--bg-color);
+  }
+}
+@keyframes yellowToGreen {
+  0% {
+    background-color: var(--bg-color);
+  }
+  100% {
+    background-color: var(--hover-bg-color);
+  }
 }

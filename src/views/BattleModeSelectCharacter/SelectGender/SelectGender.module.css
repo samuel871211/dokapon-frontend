@@ -1,0 +1,26 @@
+.topRightContentArea {
+  display: flex;
+  width: 75%;
+  height: 100%;
+  margin: 0 auto;
+}
+.genderBlock {
+  width: 50%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.genderBlock img[data-selected="false"] {
+  filter: brightness(70%);
+}
+.genderButton {
+  width: 80%;
+  font-size: var(--font-size-325);
+  line-height: 4.5rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}

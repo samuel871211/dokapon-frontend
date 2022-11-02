@@ -1,10 +1,10 @@
 import { createContext } from "react";
-import Dokapon from "global";
+import type { Settings } from "global";
 
 /**
  * use lower case string as value only because it's better to handle switch case
  */
-const inituserPreference: Dokapon.Settings.UserPreference = {
+const inituserPreference: Settings.UserPreference = {
   lang: "cn",
   aspectRatio: "16:9",
   arrowUp: "arrowup",
@@ -24,17 +24,17 @@ const inituserPreference: Dokapon.Settings.UserPreference = {
   START: "v",
 };
 
-const userPreferenceContext = createContext<Dokapon.Settings.Context>({
+const userPreferenceContext = createContext<Settings.Context>({
   userPreference: inituserPreference,
-  userPreferenceDispatch: function (action: Dokapon.Settings.Action) {
+  userPreferenceDispatch: function (action: Settings.Action) {
     console.error("Settings.Context did not provide a value");
   },
 });
 
 function userPreferenceReducer(
-  state: Dokapon.Settings.UserPreference,
-  action: Dokapon.Settings.Action
-): Dokapon.Settings.UserPreference {
+  state: Settings.UserPreference,
+  action: Settings.Action
+): Settings.UserPreference {
   switch (action.type) {
     case "update":
       return action.payload;

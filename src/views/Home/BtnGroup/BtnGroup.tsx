@@ -15,6 +15,7 @@ import { UIStateContext } from "reducers/Home/UIState";
 import useTranslation from "hooks/useTranslation";
 import { userPreferenceContext } from "reducers/userPreference";
 import YellowBlock from "layouts/YellowBlock";
+import { newGameProgressContext } from "reducers/newGameProgress";
 
 // Stateless vars declare.
 const transitionStyles = {
@@ -27,15 +28,17 @@ const transitionStyles = {
 
 export default BtnGroup;
 
-function BtnGroup(props: { state: TransitionStatus }): JSX.Element {
+function BtnGroup(props: { state: TransitionStatus }) {
   const { state } = props;
-  const { handleKeyUpAttrs, selectedBtnIdx, t } = useMetaData(state);
+  const { t } = useTranslation();
+  const { handleKeyUpAttrs, selectedBtnIdx } = useMetaData(state);
   return (
     <div className={transitionStyles[state]} {...handleKeyUpAttrs}>
       <YellowBlock
         role="button"
         selected={selectedBtnIdx === 0}
         className={styles.btn}
+        borderRadius="9999px"
       >
         <img className={styles.img} />
         {t("はじめから")}
@@ -44,6 +47,7 @@ function BtnGroup(props: { state: TransitionStatus }): JSX.Element {
         role="button"
         selected={selectedBtnIdx === 1}
         className={styles.btn}
+        borderRadius="9999px"
       >
         <img className={styles.img} />
         {t("フリー対戦")}
@@ -52,6 +56,7 @@ function BtnGroup(props: { state: TransitionStatus }): JSX.Element {
         role="button"
         selected={selectedBtnIdx === 2}
         className={styles.btn}
+        borderRadius="9999px"
       >
         <img className={styles.img} />
         {t("図鑑")}
@@ -60,6 +65,7 @@ function BtnGroup(props: { state: TransitionStatus }): JSX.Element {
         role="button"
         selected={selectedBtnIdx === 3}
         className={styles.btn}
+        borderRadius="9999px"
       >
         <img className={styles.img} />
         {t("設定")}
@@ -72,8 +78,8 @@ function useMetaData(state: TransitionStatus) {
   const [selectedBtnIdx, setSelectedBtnIdx] = useState(0);
   const { UIState, UIStateDispatch } = useContext(UIStateContext);
   const { userPreference } = useContext(userPreferenceContext);
-  const { t } = useTranslation(userPreference.lang);
   const focusElement = useRef<HTMLDivElement>(null);
+  const { setNewGameProgress } = useContext(newGameProgressContext);
   const handleKeyUpAttrs = UIState.showBtnGroup
     ? {
         tabIndex: 0,
@@ -94,8 +100,16 @@ function useMetaData(state: TransitionStatus) {
       case userPreference.circle: {
         switch (selectedBtnIdx) {
           case 0:
+            setNewGameProgress((prev) => {
+              prev.currentView = "StoryModeSelectCharacter";
+              return { ...prev };
+            });
+            return;
           case 1:
-            window.location.assign("/select-character");
+            setNewGameProgress((prev) => {
+              prev.currentView = "BattleModeSelectCharacter";
+              return { ...prev };
+            });
             return;
           case 2:
             UIStateDispatch({
@@ -133,6 +147,5 @@ function useMetaData(state: TransitionStatus) {
   return {
     handleKeyUpAttrs,
     selectedBtnIdx,
-    t,
   };
 }

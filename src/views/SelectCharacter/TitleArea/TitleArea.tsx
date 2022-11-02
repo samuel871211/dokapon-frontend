@@ -1,5 +1,6 @@
 // Related third party imports.
 import { useContext, AnimationEvent } from "react";
+import classNames from "classnames";
 
 // Local application/library specific imports.
 import { UIStateContext } from "reducers/SelectCharacter/UIState";
@@ -27,9 +28,9 @@ function TitleArea(props: { title: string }): JSX.Element {
 
   return (
     <div
-      className={`
-            ${styles.container}
-            ${showTitleArea ? "" : styles.leave}`}
+      className={classNames(styles.titleAreaContainer, {
+        [styles.leave]: !showTitleArea,
+      })}
       onAnimationEnd={handleAnimation}
     >
       {title}

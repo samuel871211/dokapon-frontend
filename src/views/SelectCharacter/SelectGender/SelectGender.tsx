@@ -2,6 +2,7 @@
 import React, { useRef, useState, useContext } from "react";
 
 // Local application/library specific imports.
+import type { SelectCharacter } from "global";
 import { gameProgressContext } from "reducers/gameProgress";
 import { UIStateContext } from "reducers/SelectCharacter/UIState";
 import globalStyles from "assets/styles/globalStyles.module.css";
@@ -18,17 +19,18 @@ function SelectGender(): JSX.Element {
   const { gameProgress, gameProgressDispatch } =
     useContext(gameProgressContext);
   const { UIStateDispatch } = useContext(UIStateContext);
-  const { currentPlayer, numberOfPlayers } = gameProgress;
+  const { currentPlayerNumber, numberOfPlayers, playersAttrs } = gameProgress;
+  const gender = playersAttrs[currentPlayerNumber - 1].gender;
   const [isLeave, toggleIsLeave] = useState(false);
-  const [selectedGender, toggleSelectedGender] = useState<gender>("male");
 
   function handleKeyUp(e: React.KeyboardEvent) {
     switch (e.key.toLowerCase()) {
       case "arrowleft":
-        toggleSelectedGender(selectedGender === "male" ? "female" : "male");
-        break;
       case "arrowright":
-        toggleSelectedGender(selectedGender === "male" ? "female" : "male");
+        gameProgressDispatch({
+          type: "gender",
+          payload: gender === "male" ? "female" : "male",
+        });
         break;
       case "d":
         toggleIsLeave(true);
@@ -38,12 +40,11 @@ function SelectGender(): JSX.Element {
         });
         break;
       case "x": {
-        const nextStep =
-          (function determineNextStep(): Dokapon.SelectCharacter.Steps {
-            if (currentPlayer === 1) return "SelectNumberOfPlayers";
-            else if (numberOfPlayers >= currentPlayer) return "SelectJob";
-            else return "NPCGenerateDialog";
-          })();
+        const nextStep = (function determineNextStep(): SelectCharacter.Steps {
+          if (currentPlayerNumber === 1) return "SelectNumberOfPlayers";
+          else if (numberOfPlayers >= currentPlayerNumber) return "SelectJob";
+          else return "NPCGenerateDialog";
+        })();
 
         UIStateDispatch({
           type: "currentStep",
@@ -51,8 +52,8 @@ function SelectGender(): JSX.Element {
         });
         if (nextStep === "SelectJob") {
           gameProgressDispatch({
-            type: "currentPlayer",
-            payload: currentPlayer - 1,
+            type: "currentPlayerNumber",
+            payload: currentPlayerNumber - 1,
           });
           UIStateDispatch({
             type: "selectedJob",
@@ -77,14 +78,14 @@ function SelectGender(): JSX.Element {
         type: "showTitleArea",
         payload: true,
       });
-      gameProgressDispatch({
-        type: "gender",
-        payload: selectedGender,
-      });
+      // gameProgressDispatch({
+      //   type: "gender",
+      //   payload: gender,
+      // });
       UIStateDispatch({
         type: "currentStep",
         payload:
-          numberOfPlayers >= currentPlayer
+          numberOfPlayers >= currentPlayerNumber
             ? "BeforeNameInput"
             : "NPCGenerateDialog",
       });
@@ -100,8 +101,8 @@ function SelectGender(): JSX.Element {
       onKeyUp={handleKeyUp}
       onAnimationEnd={handleAnimationEnd}
     >
-      <GenderBlockBtn gender="male" selected={selectedGender === "male"} />
-      <GenderBlockBtn gender="female" selected={selectedGender === "female"} />
+      <GenderBlockBtn gender="male" selected={gender === "male"} />
+      <GenderBlockBtn gender="female" selected={gender === "female"} />
     </div>
   );
 }

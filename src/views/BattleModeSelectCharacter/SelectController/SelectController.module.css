@@ -1,0 +1,160 @@
+.selectControllerContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 1rem;
+  --player-card-gap: 1.25rem;
+  gap: var(--player-card-gap);
+}
+.playerCardContainer {
+  position: relative;
+  left: -3%;
+  display: flex;
+  width: 87%;
+  height: 20%;
+  border-radius: calc(var(--vh) * 10) 1.5rem 1.5rem calc(var(--vh) * 10);
+  transition: transform 1s;
+}
+.gatherToCenter0 {
+  transform: translate(18%, calc(150% + var(--player-card-gap) * 1.5));
+}
+.gatherToCenter1 {
+  transform: translate(18%, calc(50% + var(--player-card-gap) * 0.5));
+}
+.gatherToCenter2 {
+  transform: translate(18%, calc(-50% - var(--player-card-gap) * 0.5));
+}
+.gatherToCenter3 {
+  transform: translate(18%, calc(-150% - var(--player-card-gap) * 1.5));
+}
+.orderNumber {
+  position: absolute;
+  left: -15%;
+  width: 15%;
+  height: 100%;
+  font-size: 5rem;
+  color: white;
+  -webkit-text-stroke: 0.15rem black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 要有一個放大的特效 */
+}
+.orderNumber[data-show="false"] {
+  visibility: hidden;
+}
+.controllerConfirmContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 30%;
+  transform: translateY(-50%);
+  width: 52%;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  /* transition: opacity 0.5s; */
+}
+.controllerConfirmContainer[data-show="false"] {
+  opacity: 0;
+}
+.playerCardContainer img {
+  width: calc(var(--vh) * 65 / 5);
+}
+.nameContainer {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nameArea {
+  display: block;
+  width: 95%;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.selectControllerButton {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: -7%;
+  transform: translateY(-35%);
+  width: 68%;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  /* transition: opacity 0.5s; */
+}
+.selectControllerButton[data-show="false"] {
+  opacity: 0;
+}
+.selectControllerButton[data-valid="false"] .centeredText {
+  color: #db2121;
+}
+.leftTriangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 1.3rem calc(1.732 * 1.3rem) 1.3rem 1.5rem;
+  border-color: transparent var(--border-color) transparent transparent;
+  animation: leftTriangleHoverFrom 500ms, leftTriangleHoverTo 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+.leftTriangle[data-show="false"] {
+  visibility: hidden;
+}
+.centeredText {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rightTriangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 1.3rem 1.5rem 1.3rem calc(1.732 * 1.3rem);
+  border-color: transparent transparent transparent var(--border-color);
+  animation: rightTriangleHoverFrom 500ms, rightTriangleHoverTo 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+.rightTriangle[data-show="false"] {
+  visibility: hidden;
+}
+@keyframes leftTriangleHoverFrom {
+  0% {
+    border-color: transparent black transparent transparent;
+  }
+  100% {
+    border-color: transparent transparent transparent transparent;
+  }
+}
+@keyframes leftTriangleHoverTo {
+  0% {
+    border-color: transparent transparent transparent transparent;
+  }
+  100% {
+    border-color: transparent black transparent transparent;
+  }
+}
+@keyframes rightTriangleHoverFrom {
+  0% {
+    border-color: transparent transparent transparent black;
+  }
+  100% {
+    border-color: transparent transparent transparent transparent;
+  }
+}
+@keyframes rightTriangleHoverTo {
+  0% {
+    border-color: transparent transparent transparent transparent;
+  }
+  100% {
+    border-color: transparent transparent transparent black;
+  }
+}

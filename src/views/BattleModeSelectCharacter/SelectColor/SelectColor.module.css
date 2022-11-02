@@ -1,0 +1,24 @@
+.topRightContentArea {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.colorButton {
+  font-size: 2rem;
+  line-height: 2.25rem;
+  width: 59%;
+  margin-left: 27%;
+  display: flex;
+  align-items: center;
+}
+.colorButton > div:first-child {
+  margin-left: 1rem;
+  width: 3rem;
+  height: 2rem;
+  border: 0.2rem solid black;
+  border-radius: 50%;
+}
+.colorButton > div:last-child {
+  flex-grow: 1;
+  text-align: center;
+}

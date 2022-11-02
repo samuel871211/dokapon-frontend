@@ -1,80 +1,84 @@
+import { TextsKeys } from "data/texts";
 import { AreaTypes } from "global";
 
 export default areaTypesToJP;
 
-function areaTypesToJP(area: AreaTypes) {
+/**
+ * @todo 部分地區的翻譯檔尚未完成
+ */
+function areaTypesToJP(area: AreaTypes): TextsKeys {
   switch (area) {
     case "Asia":
       return "アジア";
     case "AsiaCave":
-      return area;
+      return "";
     case "Europe":
       return "ヨーロッパ";
     case "EuropeCave":
-      return area;
+      return "";
     case "EuropeCaveLibrary":
-      return area;
+      return "";
     case "EuropeCaveCanteen":
-      return area;
+      return "";
     case "EuropeCaveHall":
-      return area;
+      return "";
     case "Russia":
       return "ロシア";
     case "NorthAmerica":
       return "北米";
     case "NorthAmericaCave":
-      return area;
+      return "";
     case "NorthAmericaCaveB2":
-      return area;
+      return "";
     case "SouthAmerica":
       return "南米";
     case "SouthAmericaCave":
-      return area;
+      return "";
     case "SouthAmericaCaveB2":
-      return area;
+      return "";
     case "SouthAmericaCaveB3":
-      return area;
+      return "";
     case "Oceania":
       return "オセアニア";
     case "OceaniaCave":
-      return area;
+      return "";
     case "Africa":
       return "アフリカ";
     case "AfricaCave":
-      return area;
+      return "";
     case "AfricaCaveB2":
-      return area;
+      return "";
     case "AfricaCaveB3Right":
-      return area;
+      return "";
     case "AfricaCaveB3Left":
-      return area;
+      return "";
     case "AfricaCaveB3Center":
-      return area;
+      return "";
     case "Arctic":
-      return area;
+      return "";
     case "ArcticCave":
-      return area;
+      return "";
     case "Antarctica":
-      return area;
+      return "";
     case "AntarcticaCave":
-      return area;
+      return "";
     case "HawaiianIslands":
-      return area;
+      return "";
     case "HawaiianIslandsCave":
-      return area;
+      return "";
     case "HawaiianIslandsCaveB2Right":
-      return area;
+      return "";
     case "HawaiianIslandsCaveB2Left":
-      return area;
+      return "";
     case "HawaiianIslandsCaveB2Center":
-      return area;
+      return "";
     case "HawaiianIslandsCaveB3Right":
-      return area;
+      return "";
     case "HawaiianIslandsCaveB3Left":
-      return area;
+      return "";
     case "HawaiianIslandsCaveB3Center":
-      return area;
+      return "";
     case "Atlantis":
-      return area;
+      return "";
   }
 }

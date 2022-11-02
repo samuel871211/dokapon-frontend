@@ -1,4 +1,4 @@
-.container {
+.selectGoalTypeContainer {
   width: 80%;
   height: 80%;
   margin: auto;
@@ -12,20 +12,18 @@
   animation: slideOut 1s;
 }
 .btn {
-  width: 75%;
+  width: 65%;
   margin-top: 1vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   font-size: 3rem;
+  line-height: 4rem;
   border-radius: 9999px;
   border: 0.2rem outset var(--border-color);
   background-color: var(--bg-color);
 }
 .imgContainer {
-  position: absolute;
-  left: 5%;
+  margin-left: 1.5rem;
+  margin-right: 1rem;
   display: flex;
   align-items: center;
 }

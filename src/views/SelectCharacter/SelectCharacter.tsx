@@ -1,10 +1,10 @@
 // Related third party imports.
-import { Fragment, useContext, useEffect, useReducer } from "react";
+import { Fragment, useContext, useReducer } from "react";
 import classNames from "classnames";
 
 // Local application/library specific imports.
 import guide from "assets/images/guide.png";
-import ContextMenu from "components/ContextMenu";
+// import ContextMenu from "components/ContextMenu";
 import TitleArea from "./TitleArea";
 import NPCDialog from "components/NPCDialog";
 import NPCTopLeftImgArea from "./NPCTopLeftImgArea";
@@ -18,22 +18,26 @@ import GoalInputDialog from "./GoalInputDialog";
 import NPCGenerateDialog from "./NPCGenerateDialog";
 import NameInputDialog from "./NameInputDialog";
 import SelectOrderAndController from "./SelectOrderAndController";
-import registerWindowResizeEvtHandler from "utils/windowResizeEvtHandler";
 import { gameProgressContext } from "reducers/gameProgress";
-import { userPreferenceContext } from "reducers/userPreference";
 import {
   initUIState,
   UIStateContext,
   UIStateReducer,
 } from "reducers/SelectCharacter/UIState";
 import styles from "./SelectCharacter.module.css";
-import indexStyles from "index.module.css";
 
 // Stateless vars declare.
-const aspectRatioStyles = {
-  "16:9": indexStyles.wideAspectRatio,
-  "4:3": indexStyles.traditionalAspectRatio,
-  stretch: indexStyles.stretchAspectRatio,
+const basicJobsExplanation = {
+  warrior:
+    "攻撃力でガンガン行く職業ですぅ。\n物理攻撃が得意ですけど、\n魔力が上がらないので魔法には弱いですぅ。",
+  magician:
+    "高い魔力でビシビシ行く職業ですぅ。\n魔法攻撃は強力ですけど、\n防御力が上がらないので打たれ弱いですぅ。",
+  thief:
+    "素早さがピカイチの職業ですぅ。\n素早く攻撃をよけたりしますけど、\n他にこれといった特徴が無いですぅ。",
+  cleric:
+    "HPが高い職業ですぅ。\n打たれ強さはありますけど、\n素早さが上がらないのでミスしやすいですぅ。",
+  beginner:
+    "職業にはつかない自由人ですぅ。\n何のメリットもなく、給料ももらえないので、\n生活はキビシイですぅ。",
 };
 const digitToFullWidth = ["", "１", "２", "３", "４"];
 
@@ -64,10 +68,9 @@ function SelectCharacter(): JSX.Element {
   // data
   const { gameProgress } = useContext(gameProgressContext);
   const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState);
-  const { userPreference } = useContext(userPreferenceContext);
-  const { goalType, playersAttrs, currentPlayer } = gameProgress;
+  const { goalType, playersAttrs, currentPlayerNumber } = gameProgress;
   const { currentStep, selectedJob, showSelectCharacter } = UIState;
-  const name = playersAttrs[currentPlayer - 1].name;
+  const name = playersAttrs[currentPlayerNumber - 1].name;
 
   function steps(step: typeof currentStep) {
     switch (step) {
@@ -116,7 +119,7 @@ function SelectCharacter(): JSX.Element {
           title: "性別選擇",
           npcDialog: {
             messages: [
-              `第${digitToFullWidth[currentPlayer]}個勇者\n勇者的性別為何？`,
+              `第${digitToFullWidth[currentPlayerNumber]}個勇者\n勇者的性別為何？`,
             ],
             confirmBtnDisplay: false,
             confirmDialogDisplay: false,
@@ -160,7 +163,7 @@ function SelectCharacter(): JSX.Element {
             messages:
               selectedJob === ""
                 ? [`${name}\n勇者偏好什麼職業`]
-                : [selectedJob],
+                : [basicJobsExplanation[selectedJob]],
             confirmBtnDisplay: false,
             confirmDialogDisplay: false,
             shouldHandleKeyEvent: false,
@@ -173,8 +176,8 @@ function SelectCharacter(): JSX.Element {
             messages: [
               "國王招募的勇者有4人。",
               "換句話說現在還缺少勇者。",
-              `還需要${5 - currentPlayer}個人。`,
-              `想詢問第${currentPlayer}位勇者`,
+              `還需要${5 - currentPlayerNumber}個人。`,
+              `想詢問第${currentPlayerNumber}位勇者`,
             ],
             confirmBtnDisplay: true,
             confirmDialogDisplay: false,
@@ -266,8 +269,6 @@ function SelectCharacter(): JSX.Element {
     }
   }
 
-  useEffect(registerWindowResizeEvtHandler, []);
-
   // template
   return (
     <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
@@ -275,10 +276,9 @@ function SelectCharacter(): JSX.Element {
         className={classNames({
           [styles.container]: true,
           [styles.fadeOut]: !showSelectCharacter,
-          [aspectRatioStyles[userPreference.aspectRatio]]: true,
         })}
       >
-        <ContextMenu />
+        {/* <ContextMenu /> */}
         {currentStep === "NameInputDialog" && <NameInputDialog />}
 
         {currentStep !== "NameInputDialog" && (

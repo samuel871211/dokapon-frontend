@@ -1,0 +1,69 @@
+.topArea {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  --top-right-title-area-height: 19%;
+}
+.topArea[data-show="false"] {
+  display: none;
+}
+.topLeftArea {
+  width: 40%;
+  height: 100%;
+}
+.topLeftImgContainer {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.topLeftImgContainer > img {
+  display: block;
+}
+.topRightArea {
+  width: 57.5%;
+  height: 100%;
+}
+.topRightTitleArea {
+  width: 100%;
+  height: var(--top-right-title-area-height);
+  display: flex;
+  align-items: flex-end;
+}
+.topRightTitleArea[data-show="false"] {
+  display: none;
+}
+.topRightTitle {
+  width: 67.5%;
+  margin: 0% auto;
+  text-align: center;
+  font-size: var(--font-size-325);
+  line-height: 4.5rem;
+}
+.topRightContentArea {
+  width: 100%;
+  height: 100%;
+}
+/* 用在SelectColor跟SelectJob */
+.topRightContentArea .exampleImgContainer {
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.exampleImgContainer[data-show="false"] {
+  display: none;
+}
+/* 用在SelectColor跟SelectJob */
+.topRightContentArea .verticalButtonGroup {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+/* 用在SelectColor跟SelectJob */
+.topRightContentArea[data-flex="true"] {
+  display: flex;
+}
+.topRightTitleArea[data-show="true"] + .topRightContentArea {
+  height: calc(100% - var(--top-right-title-area-height));
+}

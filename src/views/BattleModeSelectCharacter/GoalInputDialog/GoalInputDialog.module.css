@@ -1,0 +1,33 @@
+.topRightContentArea {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.goalInputDialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 42%;
+  font-size: var(--font-size-325);
+}
+.goalInputDialog > .bottomArea {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.goalInputBlock {
+  display: flex;
+  padding: 0.5rem 2rem;
+}
+.goalInputButton {
+  text-align: center;
+  font-size: var(--font-size-325);
+  line-height: var(--font-size-325);
+  width: var(--font-size-325);
+  height: var(--font-size-325);
+}

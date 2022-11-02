@@ -83,5 +83,15 @@ const nameInputChars = {
       '　　　',
       'ＯＫ'
   ]
-}
+};
+const nameInputCharList = [
+  ...nameInputChars.hiragana[0],
+  ...nameInputChars.hiragana[1],
+  ...nameInputChars.katakana[0],
+  ...nameInputChars.katakana[1],
+  ...nameInputChars.special[0],
+  ...nameInputChars.special[1],
+].filter((char) => char !== "　");
+
 export default nameInputChars;
+export { nameInputCharList };

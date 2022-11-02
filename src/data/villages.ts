@@ -1,6 +1,7 @@
 import { AreaTypes } from "global";
+import { TextsKeys } from "./texts";
 
-const villages: { [key in AreaTypes]: { name: string; value: number }[] } = {
+const villages: { [key in AreaTypes]: { name: TextsKeys; value: number }[] } = {
   Asia: [
     {
       name: "トーキョ一村",

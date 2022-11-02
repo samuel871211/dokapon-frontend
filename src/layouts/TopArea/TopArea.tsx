@@ -14,7 +14,7 @@ export default TopArea;
  */
 function TopArea(props: {
   className?: string;
-  children?: ReactNode | ReactNode[];
+  children?: ReactNode;
   height?: string;
   flex?: true;
 }): JSX.Element {
@@ -24,7 +24,7 @@ function TopArea(props: {
       className={classNames(styles.topArea, className, { [styles.flex]: flex })}
       style={{ height }}
     >
-      <>{children}</>
+      {children}
     </div>
   );
 }

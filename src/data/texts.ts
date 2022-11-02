@@ -1,4 +1,9 @@
-const texts: { [key: string]: { en: string; cn: string } } = {
+const texts = {
+  // fallback
+  "": {
+    en: "",
+    cn: "",
+  },
   // Home > Settings
   語言: {
     en: "Language",
@@ -101,6 +106,9 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     cn: "魔法",
   },
   // Game > VillageFieldCheck
+  /**
+   * @todo 部分地區的翻譯檔尚未完成
+   */
   アジア: {
     en: "Asia",
     cn: "亞洲",
@@ -148,7 +156,176 @@ const texts: { [key: string]: { en: string; cn: string } } = {
       en: "有料でステータス異常を回復できたり、\n金庫にお金、王様に特産品を送ったりできるマス。\n死んだ時は、最後に立ち寄った教会から復活する。",
       cn: "有料でステータス異常を回復できたり、\n金庫にお金、王様に特産品を送ったりできるマス。\n死んだ時は、最後に立ち寄った教会から復活する。",
     },
+  // decorations
+  力のグローブ: {
+    en: "力のグローブ",
+    cn: "力のグローブ",
+  },
+  守のグローブ: {
+    en: "守のグローブ",
+    cn: "守のグローブ",
+  },
+  気のグローブ: {
+    en: "気のグローブ",
+    cn: "気のグローブ",
+  },
+  速のグローブ: {
+    en: "速のグローブ",
+    cn: "速のグローブ",
+  },
+  体のグローブ: {
+    en: "体のグローブ",
+    cn: "体のグローブ",
+  },
+  剛のグローブ: {
+    en: "剛のグローブ",
+    cn: "剛のグローブ",
+  },
+  鉄のグローブ: {
+    en: "鉄のグローブ",
+    cn: "鉄のグローブ",
+  },
+  法のグローブ: {
+    en: "法のグローブ",
+    cn: "法のグローブ",
+  },
+  忍のグローブ: {
+    en: "忍のグローブ",
+    cn: "忍のグローブ",
+  },
+  命のグローブ: {
+    en: "命のグローブ",
+    cn: "命のグローブ",
+  },
+  女神のリング: {
+    en: "女神のリング",
+    cn: "女神のリング",
+  },
+  ロードオブリング: {
+    en: "ロードオブリング",
+    cn: "ロードオブリング",
+  },
+  破壊のリング: {
+    en: "破壊のリング",
+    cn: "破壊のリング",
+  },
+  神速のリング: {
+    en: "神速のリング",
+    cn: "神速のリング",
+  },
+  魔人リング: {
+    en: "魔人リング",
+    cn: "魔人リング",
+  },
+  超人リング: {
+    en: "超人リング",
+    cn: "超人リング",
+  },
+  炎のうでわ: {
+    en: "炎のうでわ",
+    cn: "炎のうでわ",
+  },
+  氷のうでわ: {
+    en: "氷のうでわ",
+    cn: "氷のうでわ",
+  },
+  雷のうでわ: {
+    en: "雷のうでわ",
+    cn: "雷のうでわ",
+  },
+  風のうでわ: {
+    en: "風のうでわ",
+    cn: "風のうでわ",
+  },
+  地のうでわ: {
+    en: "地のうでわ",
+    cn: "地のうでわ",
+  },
+  ぼうえんゴーグル: {
+    en: "ぼうえんゴーグル",
+    cn: "ぼうえんゴーグル",
+  },
+  みかわしゴーグル: {
+    en: "みかわしゴーグル",
+    cn: "みかわしゴーグル",
+  },
+  水晶のネックレス: {
+    en: "水晶のネックレス",
+    cn: "水晶のネックレス",
+  },
+  変化のネックレス: {
+    en: "変化のネックレス",
+    cn: "変化のネックレス",
+  },
+  鏡のネックレス: {
+    en: "鏡のネックレス",
+    cn: "鏡のネックレス",
+  },
+  回避のネックレス: {
+    en: "回避のネックレス",
+    cn: "回避のネックレス",
+  },
+  天使のネックレス: {
+    en: "天使のネックレス",
+    cn: "天使のネックレス",
+  },
+  ハートのくつ: {
+    en: "ハートのくつ",
+    cn: "ハートのくつ",
+  },
+  勇者のくつ: {
+    en: "勇者のくつ",
+    cn: "勇者のくつ",
+  },
+  金のくつ: {
+    en: "金のくつ",
+    cn: "金のくつ",
+  },
+  ヒョウがら額当て: {
+    en: "ヒョウがら額当て",
+    cn: "ヒョウがら額当て",
+  },
+  ゼブラがら額当て: {
+    en: "ゼブラがら額当て",
+    cn: "ゼブラがら額当て",
+  },
+  ピーポのバッジ: {
+    en: "ピーポのバッジ",
+    cn: "ピーポのバッジ",
+  },
+  ワルサーバッジ: {
+    en: "ワルサーバッジ",
+    cn: "ワルサーバッジ",
+  },
+  ウイウイバッジ: {
+    en: "ウイウイバッジ",
+    cn: "ウイウイバッジ",
+  },
+  誠のピアス: {
+    en: "誠のピアス",
+    cn: "誠のピアス",
+  },
+  愛のピアス: {
+    en: "愛のピアス",
+    cn: "愛のピアス",
+  },
+  極悪ピアス: {
+    en: "極悪ピアス",
+    cn: "極悪ピアス",
+  },
+  ドカポンクラウン: {
+    en: "ドカポンクラウン",
+    cn: "ドカポンクラウン",
+  },
+  魔王の王かん: {
+    en: "魔王の王かん",
+    cn: "魔王の王かん",
+  },
   // Game > CastleFieldCheck
+  ドカポン城: {
+    en: "Dokapon Castle",
+    cn: "多卡波王城",
+  },
   名前: {
     en: "name",
     cn: "姓名",
@@ -477,6 +654,58 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     cn: "職安",
   },
   // Game > MagicStore
+  弱体系魔法: {
+    en: "弱体系魔法",
+    cn: "弱体系魔法",
+  },
+  変化系魔法: {
+    en: "変化系魔法",
+    cn: "変化系魔法",
+  },
+  召喚系魔法: {
+    en: "召喚系魔法",
+    cn: "召喚系魔法",
+  },
+  特殊系魔法: {
+    en: "特殊系魔法",
+    cn: "特殊系魔法",
+  },
+  邢魔系魔法: {
+    en: "邢魔系魔法",
+    cn: "邢魔系魔法",
+  },
+  回復系魔法: {
+    en: "回復系魔法",
+    cn: "回復系魔法",
+  },
+  攻擊系魔法: {
+    en: "攻擊系魔法",
+    cn: "攻擊系魔法",
+  },
+  破壊系魔法: {
+    en: "破壊系魔法",
+    cn: "破壊系魔法",
+  },
+  強化系魔法: {
+    en: "強化系魔法",
+    cn: "強化系魔法",
+  },
+  防御系魔法: {
+    en: "防御系魔法",
+    cn: "防御系魔法",
+  },
+  反擊系魔法: {
+    en: "反擊系魔法",
+    cn: "反擊系魔法",
+  },
+  補助系魔法: {
+    en: "補助系魔法",
+    cn: "補助系魔法",
+  },
+  魔法屋: {
+    en: "Magic Store",
+    cn: "魔法屋",
+  },
   "フィールド魔法や戦闘魔法が買えるマス。": {
     en: "A place where you can buy magic stuffs.",
     cn: "可以購買領域魔法和戰鬥魔法的地方。",
@@ -1645,8 +1874,8 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     cn: "導航",
   },
   "どちらのモードで遊びますか?": {
-    en: "請問您要選擇什麼模式？",
-    cn: "Which mode do you play in?",
+    en: "Which mode do you play in?",
+    cn: "請問您要選擇什麼模式？",
   },
   // SelectCharacter > GoalInputDialog
   "週数を決めてください。": {
@@ -1683,22 +1912,22 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     cn: "好孤單...",
   },
   // SelectCharacter > SelectGender
-  "1人目の勇者様。\n勇者様の性別は何ですか?": {
-    en: "The first hero.\nWhat is the gender of the hero?",
-    cn: "第1個勇者。\n勇者的性別是什麼？",
+  "{playerNumber}人目の勇者様。\n勇者様の性別は何ですか?": {
+    en: "The {playerNumber} hero.\nWhat is the gender of the hero?",
+    cn: "第{playerNumber}個勇者。\n勇者的性別是什麼？",
   },
-  "2人目の勇者様。\n勇者様の性別は何ですか?": {
-    en: "The first hero.\nWhat is the gender of the hero?",
-    cn: "第2個勇者。\n勇者的性別是什麼？",
-  },
-  "3人目の勇者様。\n勇者様の性別は何ですか?": {
-    en: "The third hero.\nWhat is the gender of the hero?",
-    cn: "第3個勇者。\n勇者的性別是什麼？",
-  },
-  "4人目の勇者様。\n勇者様の性別は何ですか?": {
-    en: "The fourth hero.\nWhat is the gender of the hero?",
-    cn: "第4個勇者。\n勇者的性別是什麼？",
-  },
+  // "2人目の勇者様。\n勇者様の性別は何ですか?": {
+  //   en: "The second hero.\nWhat is the gender of the hero?",
+  //   cn: "第2個勇者。\n勇者的性別是什麼？",
+  // },
+  // "3人目の勇者様。\n勇者様の性別は何ですか?": {
+  //   en: "The third hero.\nWhat is the gender of the hero?",
+  //   cn: "第3個勇者。\n勇者的性別是什麼？",
+  // },
+  // "4人目の勇者様。\n勇者様の性別は何ですか?": {
+  //   en: "The fourth hero.\nWhat is the gender of the hero?",
+  //   cn: "第4個勇者。\n勇者的性別是什麼？",
+  // },
   性別選択: {
     en: "Gender selection",
     cn: "選擇性別",
@@ -1710,6 +1939,10 @@ const texts: { [key: string]: { en: string; cn: string } } = {
   女: {
     en: "Female",
     cn: "女",
+  },
+  其他: {
+    en: "Other",
+    cn: "其他",
   },
   // SelectCharacter > NameInputDialog
   "勇者様の名前を教えてください。": {
@@ -1737,6 +1970,10 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     cn: "刪除",
   },
   // SelectCharacter > SelectColor
+  色選択: {
+    en: "Select Color",
+    cn: "選擇顏色",
+  },
   "それでは{name}様にお聞きしますぅ。\n勇者様は何色がお好きですか?": {
     en: "Then I would like to ask hero {name}.\nWhat color do you like?",
     cn: "那麼我想問一下{name}。\n請問勇者您喜歡什麼顏色？",
@@ -1782,29 +2019,149 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     cn: "白色",
   },
   // SelectCharacter > SelectJob
+  職業選択: {
+    en: "Select Job",
+    cn: "職業選擇",
+  },
   "{name}様。\n勇者様はどの職業につきますか?": {
     en: "{name}.\nWhich profession does the hero have?",
     cn: "{name}。\n請問勇者大人要選擇什麼職業？",
   },
-  戦士: {
-    en: "Warrior",
-    cn: "戰士",
-  },
-  魔法使い: {
-    en: "Magician",
-    cn: "魔法師",
-  },
-  僧侶: {
-    en: "Cleric",
-    cn: "僧侶",
-  },
-  盜賊: {
-    en: "Thief",
-    cn: "盜賊",
-  },
+  // 戦士: {
+  //   en: "Warrior",
+  //   cn: "戰士",
+  // },
+  // 魔法使い: {
+  //   en: "Magician",
+  //   cn: "魔法師",
+  // },
+  // 僧侶: {
+  //   en: "Cleric",
+  //   cn: "僧侶",
+  // },
+  // 盜賊: {
+  //   en: "Thief",
+  //   cn: "盜賊",
+  // },
   つかない: {
     en: "None",
     cn: "不選擇",
+  },
+  無職: {
+    en: "beginner",
+    cn: "無職",
+  },
+  戦士: {
+    en: "warrior",
+    cn: "戰士",
+  },
+  魔法使い: {
+    en: "magician",
+    cn: "魔法師",
+  },
+  僧侶: {
+    en: "cleric",
+    cn: "僧侶",
+  },
+  盗賊: {
+    en: "thief",
+    cn: "盜賊",
+  },
+  盜賊: {
+    en: "thief",
+    cn: "盜賊",
+  },
+  ナイト: {
+    en: "knight",
+    cn: "ナイト",
+  },
+  大魔導: {
+    en: "archmage",
+    cn: "大魔導",
+  },
+  神官: {
+    en: "priest",
+    cn: "神官",
+  },
+  ソードマスター: {
+    en: "bladeMaster",
+    cn: "ソードマスター",
+  },
+  ネクロマンサー: {
+    en: "necromancer",
+    cn: "ネクロマンサー",
+  },
+  エクソシスト: {
+    en: "exorcist",
+    cn: "エクソシスト",
+  },
+  海賊: {
+    en: "pirate",
+    cn: "海賊",
+  },
+  忍者: {
+    en: "ninja",
+    cn: "忍者",
+  },
+  ギャンブラー: {
+    en: "gamester",
+    cn: "ギャンブラー",
+  },
+  怪獣使い: {
+    en: "beastTamer",
+    cn: "怪獸使い",
+  },
+  怪獸使い: {
+    en: "beastTamer",
+    cn: "怪獸使い",
+  },
+  機械の体: {
+    en: "robot",
+    cn: "機械の体",
+  },
+  大工: {
+    en: "carpenter",
+    cn: "大工",
+  },
+  ナース: {
+    en: "nurse",
+    cn: "ナース",
+  },
+  モンク: {
+    en: "monk",
+    cn: "モンク",
+  },
+  おどり子: {
+    en: "dancer",
+    cn: "おどり子",
+  },
+  宇宙人: {
+    en: "alien",
+    cn: "宇宙人",
+  },
+  女王様: {
+    en: "queen",
+    cn: "女王様",
+  },
+  格闘士: {
+    en: "gladiator",
+    cn: "格闘士",
+  },
+  精霊使い: {
+    en: "elves",
+    cn: "精霊使い",
+  },
+  王族: {
+    en: "royal",
+    cn: "王族",
+  },
+  デビラーマン: {
+    en: "devil",
+    cn: "デビラーマン",
+  },
+  アナザーデビラー: {
+    en: "anotherDevil",
+    cn: "アナザーデビラー",
   },
   "攻撃力でガンガン行く職業ですぅ。\n物理攻撃が得意ですけど、\n魔力が上がらないので魔法には弱いですぅ。":
     {
@@ -1840,13 +2197,13 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     en: "That means there are not enough heroes.",
     cn: "這意味著沒有足夠的勇者。",
   },
-  "あと{count}人必要ですぅ。": {
-    en: "I need {count} more people.",
-    cn: "我還需要{count}個人。",
+  "あと{remainPlayerCount}人必要ですぅ。": {
+    en: "I need {remainPlayerCount} more people.",
+    cn: "我還需要{remainPlayerCount}個人。",
   },
-  "{count}人目の勇者様についてお聞きしますぅ。": {
-    en: "I would like to ask you about the {count} hero.",
-    cn: "我想問你關於第{count}個勇者的事。",
+  "{playerNumber}人目の勇者様についてお聞きしますぅ。": {
+    en: "I would like to ask you about the {playerNumber} hero.",
+    cn: "我想問你關於第{playerNumber}個勇者的事。",
   },
   "こんな方を募集します。\n気に入らない場所があったら直してください。": {
     en: "We are looking for people like this.\nIf you find something you don't like, please fix it.",
@@ -1879,11 +2236,36 @@ const texts: { [key: string]: { en: string; cn: string } } = {
   },
   "強さはどのくらいの人がよろしいですか?": {
     en: "How strong should you be?",
-    cn: "強度要幾個人好呢？",
+    cn: "強度要多強好呢？",
+  },
+  "男女どちらがお好みですか?": {
+    en: "Which do you prefer, male or female?",
+    cn: "要男的還女的？",
+  },
+  "どんな色の人がよろしいですか?": {
+    en: "What color would you like?",
+    cn: "想要什麼顏色？",
+  },
+  "どんな職業の人がよろしいですか?": {
+    en: "What kind of job would you like?",
+    cn: "要選什麼職業？",
   },
   "これで4人の勇者様が全員そろいました!": {
     en: "Now you have all four heroes!",
     cn: "這樣四位勇者大人都到齊了！",
+  },
+  // SelectCharacter > FourPlayersGenerated
+  "分かりました!": {
+    en: "All right!",
+    cn: "好的",
+  },
+  "それでは探してきますう!": {
+    en: "Then I'll look for it!",
+    cn: "那我去找找!",
+  },
+  "勇者様~!": {
+    en: "Hero~!",
+    cn: "勇者~!",
   },
   // SelectCharacter > SelectOrderAndController
   "使うコントローラを決めてください!": {
@@ -1914,5 +2296,31 @@ const texts: { [key: string]: { en: string; cn: string } } = {
     en: "Then, I will guide you to the Kingdom of Dokapon!",
     cn: "那麼，就讓我帶你去多卡波王國！",
   },
+  // SelectCharacter > TakePlayerToDokaponTheWorld
+  "それでは、みなさんを\nドカポン王国にご案内しますう。": {
+    en: `Now, I'm going to talk to you all.\nI will show you to the Kingdom of Dokapon.`,
+    cn: "那麼，讓我們引導大家\n多卡波王國。",
+  },
+  "でも、みなさん自身が次元の壁を\n越えることはできません。": {
+    en: `But you cannot cross the\ndimensional barrier yourself.`,
+    cn: `但是你不能自己跨越維度障礙。`,
+  },
+  "なので、魔法を使って心の一部だけ、\nこちらの次元に連れてきますう。": {
+    en: `So I'm going to use magic to make a part of my mind.\nI will bring you to this dimension.`,
+    cn: `所以，使用魔法，只是我內心的一部分，\n我帶你到這個維度。`,
+  },
+  "それでは行きますよー!": {
+    en: `Let's go then!`,
+    cn: `那我們走吧!`,
+  },
+  "えーいっ!": {
+    en: `Yes!`,
+    cn: `是的!`,
+  },
+  "ドカっと一発勇者でポーンっ!": {
+    en: `A big one-shot hero and a pawn!`,
+    cn: `一個大英雄和一個棋子！`,
+  },
 };
 export default texts;
+export type TextsKeys = keyof typeof texts;

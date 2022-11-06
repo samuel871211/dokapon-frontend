@@ -1,4 +1,4 @@
-.container {
+.bagContainer {
   width: 100%;
   height: 100%;
   transform: translateY(-100%);
@@ -6,7 +6,7 @@
 .topArea {
   width: 100%;
   height: 15%;
-  transform: translateY(-100%);
+  /* transform: translateY(-100%); */
 }
 .swiperContainer {
   display: flex;
@@ -42,7 +42,7 @@
 .centerArea {
   width: 100%;
   height: 55%;
-  transform: translateX(-100%);
+  /* transform: translateX(-100%); */
 }
 .itemAndMagicContainer {
   position: relative;
@@ -119,7 +119,7 @@
 .bottomArea {
   width: 100%;
   height: 30%;
-  transform: translateY(100%);
+  /* transform: translateY(100%); */
 }
 .messageContainer {
   width: 100%;
@@ -147,33 +147,33 @@
   border-radius: 1.5rem;
   border: 0.2rem outset var(--border-color);
 }
-.topAreaEntering {
+/* .topAreaEntering {
   visibility: hidden;
-}
-.topAreaEntered {
+} */
+/* .topAreaEntered {
   transform: none;
   transition: transform 0.5s;
-}
-.topAreaExiting {
+} */
+/* .topAreaExiting {
   transform: translateY(-100%);
   transition: transform 0.5s;
-}
-.centerAreaEntered {
+} */
+/* .centerAreaEntered {
   transform: none;
   transition: transform 0.5s;
-}
-.centerAreaExiting {
+} */
+/* .centerAreaExiting {
   transform: translateX(-100%);
   transition: transform 0.5s;
-}
-.bottomAreaEntered {
+} */
+/* .bottomAreaEntered {
   transform: none;
   transition: transform 0.5s;
-}
-.bottomAreaExiting {
+} */
+/* .bottomAreaExiting {
   transform: translateY(100%);
   transition: transform 0.5s;
-}
+} */
 .hoverEffect {
   animation: btnHoverFrom 500ms, btnHoverTo 500ms;
   animation-iteration-count: infinite;

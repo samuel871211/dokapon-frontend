@@ -5,12 +5,14 @@
   display: flex;
   flex-wrap: wrap;
 }
+
 .topLeft {
   width: 25%;
   height: 25%;
   display: flex;
   align-items: center;
 }
+
 .weeklyInfo {
   width: 100%;
   height: 80%;
@@ -20,6 +22,7 @@
   border-left: none;
   background-color: var(--bg-color);
 }
+
 .weeklyInfo > div:nth-child(1) {
   width: 55%;
   padding-left: 10%;
@@ -29,6 +32,7 @@
   justify-content: space-around;
   background-color: var(--bg-color);
 }
+
 .weeklyInfo > div:nth-child(2) {
   width: 45%;
   height: 100%;
@@ -36,6 +40,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .week {
   background-color: black;
   color: white;
@@ -49,6 +54,7 @@
   box-shadow: -0.15rem -0.15rem #909090;
   height: 40%;
 }
+
 .activity {
   display: flex;
   justify-content: center;
@@ -59,6 +65,7 @@
   height: 30%;
   border: 0.15rem outset var(--border-color);
 }
+
 .weekIcon {
   width: 90%;
   height: 90%;
@@ -69,16 +76,19 @@
   align-items: center;
   border: 0.2rem outset var(--border-color);
 }
+
 .weekIcon > div:nth-child(1) {
   font-size: 5.625rem;
   line-height: 5.625rem;
 }
+
 .weekIcon > div:nth-child(2) {
   font-size: 1.5rem;
   line-height: 1.5rem;
   color: white;
   -webkit-text-stroke: 0.15rem black;
 }
+
 .topRight {
   width: 75%;
   height: 25%;
@@ -86,6 +96,7 @@
   align-items: flex-end;
   justify-content: right;
 }
+
 .detailedPlayerInfos {
   width: 95%;
   height: 90%;
@@ -95,6 +106,7 @@
   border-right: none;
   background-color: var(--bg-color);
 }
+
 .detailedPlayerInfos > div:nth-child(1) {
   width: 20%;
   height: 100%;
@@ -106,6 +118,7 @@
     border-radius: 50% 0% 0% 50%;
     background-color: var(--bg-color); */
 }
+
 .detailedPlayerInfos > div:nth-child(2) {
   display: flex;
   /* border-style: solid;
@@ -115,24 +128,28 @@
   width: 80%;
   height: 100%;
 }
+
 .detailedPlayerInfos > div:nth-child(2) > div:nth-child(1) {
   width: 14%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .detailedPlayerInfos > div:nth-child(2) > div:nth-child(2) {
   width: 42%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .detailedPlayerInfos > div:nth-child(2) > div:nth-child(3) {
   width: 44%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .verticalCircles {
   width: 100%;
   height: 50%;
@@ -140,18 +157,21 @@
   justify-content: center;
   align-items: center;
 }
+
 .playerArea {
   width: 100%;
   height: 50%;
   display: flex;
   flex-direction: column;
 }
+
 .moneyArea {
   width: 100%;
   height: 50%;
   display: flex;
   flex-direction: column;
 }
+
 .hpArea {
   width: 100%;
   height: 50%;
@@ -159,6 +179,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .playerArea > div:nth-child(1),
 .moneyArea > div:nth-child(1) {
   flex-grow: 1;
@@ -167,23 +188,28 @@
   line-height: 2rem;
   -webkit-text-stroke: 0.15rem black;
 }
+
 .playerArea > div:nth-child(1) {
   padding-left: calc(2.5% + 5px);
 }
+
 .moneyArea > div:nth-child(1) {
   padding-left: calc(2.5% + 5px);
 }
+
 .playerArea > div:nth-child(2) {
   font-size: 2rem;
   line-height: 2rem;
   margin-left: calc(2.5% + 10px);
 }
+
 .moneyArea > div:nth-child(2) {
   font-size: 2rem;
   line-height: 2rem;
   margin-right: calc(2.5% + 10px);
   text-align: right;
 }
+
 .attrsCircle {
   width: 100%;
   height: 50%;
@@ -191,6 +217,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .circlesContainer {
   width: 100%;
   height: 50%;
@@ -198,6 +225,7 @@
   align-items: center;
   justify-content: space-around;
 }
+
 .circlesContainer > div {
   width: calc(100% / 3);
   height: 100%;
@@ -205,10 +233,12 @@
   justify-content: center;
   align-items: center;
 }
+
 .playerImg {
   width: 100%;
   height: 90%;
 }
+
 .hpArea > div:nth-child(1) {
   width: 85%;
   height: 80%;
@@ -218,6 +248,7 @@
   flex-direction: column;
   box-shadow: 0.15rem 0.15rem #909090;
 }
+
 .hpArea > div:nth-child(1) > div:nth-child(1) {
   display: flex;
   width: 100%;
@@ -229,6 +260,7 @@
   align-items: center;
   padding: 0px calc(var(--vh) * 4.5) 0px calc(var(--vh) * 4.5);
 }
+
 .hpArea > div:nth-child(1) > div:nth-child(2) {
   width: 100%;
   height: 50%;
@@ -239,12 +271,13 @@
   justify-content: center;
   align-items: center;
 }
+
 .hpBar {
   margin-left: 0.5rem;
   height: 2rem;
-  flex-grow: 1;
   background: linear-gradient(90deg, #28dbff, #0165c9);
 }
+
 .ranking {
   width: 100%;
   height: 15%;
@@ -254,16 +287,19 @@
   color: white;
   -webkit-text-stroke: 0.1rem black;
 }
+
 .ranking > div {
   flex-grow: 1;
   text-align: center;
   font-size: 1.5rem;
   line-height: 1.5rem;
 }
+
 .ranking span {
   font-size: 2rem;
   line-height: 2rem;
 }
+
 .bottomLeft {
   width: 25%;
   height: 75%;
@@ -271,12 +307,14 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
+
 .floatingActionBtn {
   width: 100%;
   height: calc(100% / 6);
   display: flex;
   align-items: center;
 }
+
 .floatingActionBtn > div:nth-child(1) {
   width: 30%;
   height: 100%;
@@ -291,6 +329,7 @@
   border-width: 0.2rem;
   background-color: var(--bg-color);
 }
+
 .floatingActionBtn > div:nth-child(2) {
   width: 70%;
   height: 70%;
@@ -304,6 +343,7 @@
   align-items: center;
   /* transition: opacity 0.1s; */
 }
+
 .floatingActionBtn > div:nth-child(2) > div:nth-child(1) {
   /* 100% of parent width - 50% of parent height */
   width: calc(17.5rem - (17.5 * var(--vh) * 0.7 * 0.8 * 0.5));
@@ -315,6 +355,7 @@
   display: flex;
   /* align-items: center; */
 }
+
 .bottomRight {
   width: 75%;
   height: 75%;
@@ -322,20 +363,25 @@
   flex-direction: column;
   align-items: flex-end;
 }
+
 .briefPlayerInfos {
   width: 45%;
   height: calc(100% / 6);
   display: flex;
 }
+
 .briefPlayerInfos:nth-child(1) {
   transform: translateY(-0.2rem);
 }
+
 .briefPlayerInfos:nth-child(2) {
   transform: translateY(-0.4rem);
 }
+
 .briefPlayerInfos:nth-child(3) {
   transform: translateY(-0.6rem);
 }
+
 .briefPlayerInfos > div:nth-child(1) {
   width: 30%;
   height: 100%;
@@ -345,6 +391,7 @@
   border-color: var(--border-color);
   background-color: var(--bg-color);
 }
+
 .briefPlayerInfos > div:nth-child(2) {
   width: 70%;
   height: 100%;
@@ -355,11 +402,13 @@
   display: flex;
   flex-direction: column;
 }
+
 .briefPlayerInfos > div:nth-child(2) > div:nth-child(1) {
   display: flex;
   width: 100%;
   height: 50%;
 }
+
 .briefPlayerInfos > div:nth-child(2) > div:nth-child(2) {
   display: flex;
   width: 100%;
@@ -368,6 +417,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .briefHPArea {
   width: 85%;
   height: 80%;
@@ -378,11 +428,13 @@
   box-shadow: -0.15rem -0.15rem #909090;
   padding: 0px calc(var(--vh) * 2.5) 0px calc(var(--vh) * 2.5);
 }
+
 .briefHPArea > div:nth-child(1) {
   color: white;
   font-size: 2rem;
   line-height: 2rem;
 }
+
 .level {
   width: 20%;
   height: 100%;
@@ -390,6 +442,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .nameArea {
   width: 80%;
   height: 100%;
@@ -398,50 +451,52 @@
   font-size: 2rem;
   line-height: 2rem;
 }
+
 .nameArea > div:nth-child(1) {
   flex-grow: 1;
   margin-left: calc(2.5% + 10px);
   display: flex;
   align-items: flex-end;
 }
-.topLeftEntering {
+
+/* .topLeftEntering {
   transform: translateX(-100%);
-}
-.topLeftEntered {
+} */
+/* .topLeftEntered {
   transform: none;
   transition: transform 1s;
-}
-.topLeftExiting {
+} */
+/* .topLeftExiting {
   transform: translateX(-100%);
   transition: transform 1s;
-}
-.topRightEntering {
+} */
+/* .topRightEntering {
   transform: translateX(100%);
-}
-.topRightEntered {
+} */
+/* .topRightEntered {
   transform: none;
   transition: transform 1s;
-}
-.topRightExiting {
+} */
+/* .topRightExiting {
   transform: translateX(100%);
   transition: transform 1s;
-}
-.exited {
+} */
+/* .exited {
   display: none;
-}
+} */
 /* .bottomLeftSlideIn {
-    transform: none;
-    transition: transform 1s;
-}
-.bottomLeftSlideOut {
-    transform: translateX(-100%);
-    transition: transform 1s;
-}
-.bottomRightSlideIn {
-    transform: none;
-    transition: transform 1s;
-}
-.bottomRightSlideOut {
-    transform: translateX(100%);
-    transition: transform 1s;
+  transform: none;
+  transition: transform 1s;
+} */
+/* .bottomLeftSlideOut {
+  transform: translateX(-100%);
+  transition: transform 1s;
+} */
+/* .bottomRightSlideIn {
+  transform: none;
+  transition: transform 1s;
+} */
+/* .bottomRightSlideOut {
+  transform: translateX(100%);
+  transition: transform 1s;
 } */

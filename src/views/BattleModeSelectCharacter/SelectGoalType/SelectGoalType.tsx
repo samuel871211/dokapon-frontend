@@ -6,7 +6,7 @@ import styles from "./SelectGoalType.module.css";
 import YellowBlock from "layouts/YellowBlock";
 import SVGIcon from "layouts/SVGIcon";
 import useTranslation from "hooks/useTranslation";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
 
@@ -41,7 +41,7 @@ function SelectGoalType() {
 }
 
 function useMetaData() {
-  const { newGameProgress } = useContext(newGameProgressContext);
-  const { goalType } = newGameProgress;
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { goalType } = gameProgress;
   return { goalType };
 }

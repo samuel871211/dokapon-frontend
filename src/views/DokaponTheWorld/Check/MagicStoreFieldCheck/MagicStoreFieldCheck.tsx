@@ -1,50 +1,26 @@
 // Related third party imports.
-import {
-  useContext,
-  useRef,
-  SyntheticEvent,
-  KeyboardEvent,
-  useEffect,
-  useState,
-} from "react";
-import type { TransitionStatus } from "react-transition-group";
+import { useContext, useState } from "react";
 
 // Local application/library specific imports.
 import CustomBorderBottom from "components/CustomBorderBottom";
 import useTranslation from "hooks/useTranslation";
-import { UIStateContext } from "reducers/DokaponTheWorld/UIState";
-import { userPreferenceContext } from "reducers/userPreference";
 import YellowBlock from "layouts/YellowBlock";
-import BottomDialogConfirmCircle from "components/BottomDialogConfirmCircle";
 import styles from "./MagicStoreFieldCheck.module.css";
 import magicStores from "data/magicStores";
+import BottomDialog from "components/BottomDialog";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
-const transitionStyles = {
-  topArea: {
-    entering: "",
-    entered: styles.topAreaEntered,
-    exiting: "",
-    exited: "",
-    unmounted: "",
-  },
-  bottomArea: {
-    entering: "",
-    entered: styles.bottomAreaEntered,
-    exiting: "",
-    exited: "",
-    unmounted: "",
-  },
-};
+
 export default MagicStoreFieldCheck;
 
-function MagicStoreFieldCheck(props: { state: TransitionStatus }): JSX.Element {
-  const { state } = props;
-  const { t, handleKeyUpAttrs, curShowItems } = useMetaData(state);
+function MagicStoreFieldCheck() {
+  const { t } = useTranslation();
+  const { curShowItems } = useMetaData();
 
   return (
-    <div {...handleKeyUpAttrs} className={styles.magicStoreFieldCheckContainer}>
-      <div className={`${styles.topArea} ${transitionStyles.topArea[state]}`}>
+    <div className={styles.magicStoreFieldCheckContainer}>
+      <div className={styles.topArea}>
         <YellowBlock role="title" className={styles.magicStoreName}>
           {t("魔法屋")}
         </YellowBlock>
@@ -68,20 +44,14 @@ function MagicStoreFieldCheck(props: { state: TransitionStatus }): JSX.Element {
               ))}
             </div>
             <div className={styles.priceList}>
-              <div>{curShowItems[0]?.price}</div>
-              <div>{curShowItems[1]?.price}</div>
-              <div>{curShowItems[2]?.price}</div>
-              <div>{curShowItems[3]?.price}</div>
-              <div>{curShowItems[4]?.price}</div>
-              <div>{curShowItems[5]?.price}</div>
+              {curShowItems.map((curShowItem, idx) => (
+                <div key={idx}>{curShowItem.price}</div>
+              ))}
             </div>
             <div className={styles.dataList}>
-              <div>{t(curShowItems[0]?.type)}</div>
-              <div>{t(curShowItems[1]?.type)}</div>
-              <div>{t(curShowItems[2]?.type)}</div>
-              <div>{t(curShowItems[3]?.type)}</div>
-              <div>{t(curShowItems[4]?.type)}</div>
-              <div>{t(curShowItems[5]?.type)}</div>
+              {curShowItems.map((curShowItem, idx) => (
+                <div key={idx}>{curShowItem.type}</div>
+              ))}
             </div>
             <div className={styles.right}>
               <div className={styles.arrowIcon}></div>
@@ -89,66 +59,19 @@ function MagicStoreFieldCheck(props: { state: TransitionStatus }): JSX.Element {
           </div>
         </YellowBlock>
       </div>
-      <div
-        className={`${styles.bottomArea} ${transitionStyles.bottomArea[state]}`}
-      >
-        <YellowBlock role="dialog" className={styles.messageContainer}>
-          <div>{t("フィールド魔法や戦闘魔法が買えるマス。")}</div>
-          <div>{t("水曜が定休日。")}</div>
-          <div>{t("日曜は特売日。")}</div>
-          <BottomDialogConfirmCircle />
-        </YellowBlock>
-      </div>
+      <BottomDialog show showConfirmCircle></BottomDialog>
     </div>
   );
 }
 
-function useMetaData(state: TransitionStatus) {
-  const focusElement = useRef<HTMLDivElement>(null);
+function useMetaData() {
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { curListPage } = gameProgress.DokaponTheWorld.MagicStoreFieldCheck;
   const {
-    UIState: {
-      showMagicStoreFieldCheck,
-      curClickVertex: { area },
-    },
-    UIStateDispatch,
-  } = useContext(UIStateContext);
-  const { userPreference } = useContext(userPreferenceContext);
-  const { t } = useTranslation();
-  const [curListPage, toggleCurListPage] = useState<0 | 1>(0);
+    curClickVertex: { area },
+  } = gameProgress.DokaponTheWorld;
   const curShowItems = magicStores[area].filter(
     (item, index) => index >= 6 * curListPage && index < 6 * (curListPage + 1)
   );
-  const handleKeyUpAttrs = showMagicStoreFieldCheck
-    ? {
-        tabIndex: 0,
-        onBlur: (event: SyntheticEvent<HTMLDivElement>) =>
-          event.currentTarget?.focus(),
-        ref: focusElement,
-        onKeyUp: handleKeyUp,
-      }
-    : {};
-  function handleKeyUp(e: KeyboardEvent) {
-    switch (e.key.toLowerCase()) {
-      case userPreference.R1:
-      case userPreference.R2:
-      case userPreference.L1:
-      case userPreference.L2:
-        toggleCurListPage(curListPage === 0 ? 1 : 0);
-        break;
-      case userPreference.circle:
-      case userPreference.triangle:
-      case userPreference.square:
-      case userPreference.cross:
-        UIStateDispatch({
-          type: "showMagicStoreFieldCheck",
-          payload: false,
-        });
-        toggleCurListPage(0);
-        break;
-    }
-  }
-  useEffect(() => {
-    if (state === "entered") focusElement.current?.focus();
-  }, [state]);
-  return { handleKeyUpAttrs, t, curShowItems };
+  return { curShowItems };
 }

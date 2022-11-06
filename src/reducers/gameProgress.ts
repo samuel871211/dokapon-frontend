@@ -1,177 +1,790 @@
-import { createContext } from "react";
-import type { GameProgress } from "global";
+// Related third party imports.
+import { createContext, Dispatch, SetStateAction } from "react";
 
+// Local application/library specific imports.
+import { GameProgress, Vertex } from "global";
+
+// Stateless vars declare.
 const initGameProgress: GameProgress = {
   timeStamp: "",
+  isHoverOnConfirm: false,
   goalType: "period",
   goalInput: 1,
   numberOfPlayers: 1,
-  currentPlayerNumber: 1,
-  currentWeek: 1,
+  currentPlayerIdx: 0,
   currentDayOfWeek: 1,
-  currentComponents: [],
-  currentView: "SelectCharacter",
-  componentsStates: {
-    SelectGoalType: {
-      show: true,
-    },
-    TitleArea: {
-      show: true,
-    },
-    GoalInputDialog: {
-      selectedIndex: 0,
-    },
+  currentWeek: 1,
+  curSentenceIdx: 0,
+  bottomDialogSentencesQueue: [],
+  currentView: "DokaponTheWorld",
+  Home: {},
+  BattleModeSelectCharacter: {
+    curComponent: "SelectGoalType",
+    GoalInputDialog: { selectedIdx: 0 },
     NameInputDialog: {
-      keyboardType: "hiragana",
       selectedSectionIdx: 0,
       selectedWordIdx: 0,
+      keyboardType: "hiragana",
+      nameInputArray: ["　", "　", "　", "　", "　", "　", "　", "　"],
+      curNameInputIdx: 0,
     },
-    SelectColor: {
-      selectedIndex: 0,
+    NPCGenerateDialog: { selectedIdx: 4 },
+    SelectNPCColor: { prevSelectedColor: "red" },
+    SelectNPCGender: { prevSelectedGender: "male" },
+    SelectNPCJob: { prevSelectedJob: "beginner" },
+    SelectNPCLevel: { prevSelectedNPCLevel: "weak" },
+    ShuffleOrder: {
+      shuffleIndexes: [0, 1, 2, 3],
+      intervalId: 0,
     },
-    SelectJob: {
-      selectedIndex: 0,
+  },
+  StoryModeSelectCharacter: {
+    curComponent: "SelectNumberOfPlayers",
+    NameInputDialog: {
+      selectedSectionIdx: 0,
+      selectedWordIdx: 0,
+      keyboardType: "hiragana",
+      nameInputArray: ["　", "　", "　", "　", "　", "　", "　", "　"],
+      curNameInputIdx: 0,
     },
-    NPCGenerateDialog: {
-      selectedIndex: 4,
+    NPCGenerateDialog: { selectedIdx: 4 },
+    SelectNPCColor: { prevSelectedColor: "red" },
+    SelectNPCGender: { prevSelectedGender: "male" },
+    SelectNPCJob: { prevSelectedJob: "beginner" },
+    SelectNPCLevel: { prevSelectedNPCLevel: "weak" },
+    ShuffleOrder: {
+      shuffleIndexes: [0, 1, 2, 3],
+      intervalId: 0,
     },
+  },
+  DokaponTheWorld: {
+    curComponent: "Drawer",
+    curClickVertex: {} as Vertex,
+    showVertexAttrsAndDistance: false,
+    showCheckTip: true,
+    Drawer: { selectedIdx: 0 },
+    Bag: {
+      currentBag: "items",
+      selectedIdx: 0,
+    },
+    Roulette: { result: -1 },
+    GroceryStoreFieldCheck: { curListPage: 0 },
+    JobStoreFieldCheck: { curListPage: 0 },
+    MagicStoreFieldCheck: { curListPage: 0 },
+    WeaponStoreFieldCheck: { curListPage: 0 },
   },
   playersAttrs: [
     {
+      level: 1,
+      attack: {
+        total: 17,
+        base: 15,
+        weapon: 2,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      defense: {
+        total: 17,
+        base: 15,
+        weapon: 0,
+        shield: 2,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      speed: {
+        total: 15,
+        base: 15,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      magic: {
+        total: 15,
+        base: 15,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      hp: {
+        current: 150,
+        total: 150,
+        base: 150,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      currentArea: "Asia",
+      currentVertex: "571e15e0-7324-4e98-925e-2aac78952e6c",
       gender: "male",
       name: "",
       color: "red",
       job: "warrior",
       isNPC: false,
-      npcLevel: "",
+      npcLevel: "weak",
       controllerNumber: 1,
+      jobsMasterStatus: {
+        beginner: {
+          level: 1,
+          rounds: 0,
+        },
+        warrior: {
+          level: 1,
+          rounds: 0,
+        },
+        magician: {
+          level: 1,
+          rounds: 0,
+        },
+        cleric: {
+          level: 1,
+          rounds: 0,
+        },
+        thief: {
+          level: 1,
+          rounds: 0,
+        },
+        knight: {
+          level: 1,
+          rounds: 0,
+        },
+        archmage: {
+          level: 1,
+          rounds: 0,
+        },
+        priest: {
+          level: 1,
+          rounds: 0,
+        },
+        bladeMaster: {
+          level: 1,
+          rounds: 0,
+        },
+        necromancer: {
+          level: 1,
+          rounds: 0,
+        },
+        exorcist: {
+          level: 1,
+          rounds: 0,
+        },
+        pirate: {
+          level: 1,
+          rounds: 0,
+        },
+        ninja: {
+          level: 1,
+          rounds: 0,
+        },
+        gamester: {
+          level: 1,
+          rounds: 0,
+        },
+        beastTamer: {
+          level: 1,
+          rounds: 0,
+        },
+        robot: {
+          level: 1,
+          rounds: 0,
+        },
+        carpenter: {
+          level: 1,
+          rounds: 0,
+        },
+        nurse: {
+          level: 1,
+          rounds: 0,
+        },
+        monk: {
+          level: 1,
+          rounds: 0,
+        },
+        dancer: {
+          level: 1,
+          rounds: 0,
+        },
+        alien: {
+          level: 1,
+          rounds: 0,
+        },
+        queen: {
+          level: 1,
+          rounds: 0,
+        },
+        gladiator: {
+          level: 1,
+          rounds: 0,
+        },
+        elves: {
+          level: 1,
+          rounds: 0,
+        },
+        royal: {
+          level: 1,
+          rounds: 0,
+        },
+        devil: {
+          level: 1,
+          rounds: 0,
+        },
+        anotherDevil: {
+          level: 1,
+          rounds: 0,
+        },
+      },
+      availableJobs: ["beginner", "warrior", "magician", "cleric", "thief"],
+      possession: {
+        items: [],
+        magicBooks: [],
+        money: 0,
+        treasury: 0,
+      },
     },
     {
+      level: 1,
+      attack: {
+        total: 17,
+        base: 15,
+        weapon: 2,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      defense: {
+        total: 17,
+        base: 15,
+        weapon: 0,
+        shield: 2,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      speed: {
+        total: 15,
+        base: 15,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      magic: {
+        total: 15,
+        base: 15,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      hp: {
+        current: 150,
+        total: 150,
+        base: 150,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      currentArea: "Asia",
+      currentVertex: "571e15e0-7324-4e98-925e-2aac78952e6c",
       gender: "male",
       name: "",
       color: "red",
       job: "warrior",
       isNPC: true,
       npcLevel: "weak",
-      controllerNumber: 0,
+      controllerNumber: 1,
+      jobsMasterStatus: {
+        beginner: {
+          level: 1,
+          rounds: 0,
+        },
+        warrior: {
+          level: 1,
+          rounds: 0,
+        },
+        magician: {
+          level: 1,
+          rounds: 0,
+        },
+        cleric: {
+          level: 1,
+          rounds: 0,
+        },
+        thief: {
+          level: 1,
+          rounds: 0,
+        },
+        knight: {
+          level: 1,
+          rounds: 0,
+        },
+        archmage: {
+          level: 1,
+          rounds: 0,
+        },
+        priest: {
+          level: 1,
+          rounds: 0,
+        },
+        bladeMaster: {
+          level: 1,
+          rounds: 0,
+        },
+        necromancer: {
+          level: 1,
+          rounds: 0,
+        },
+        exorcist: {
+          level: 1,
+          rounds: 0,
+        },
+        pirate: {
+          level: 1,
+          rounds: 0,
+        },
+        ninja: {
+          level: 1,
+          rounds: 0,
+        },
+        gamester: {
+          level: 1,
+          rounds: 0,
+        },
+        beastTamer: {
+          level: 1,
+          rounds: 0,
+        },
+        robot: {
+          level: 1,
+          rounds: 0,
+        },
+        carpenter: {
+          level: 1,
+          rounds: 0,
+        },
+        nurse: {
+          level: 1,
+          rounds: 0,
+        },
+        monk: {
+          level: 1,
+          rounds: 0,
+        },
+        dancer: {
+          level: 1,
+          rounds: 0,
+        },
+        alien: {
+          level: 1,
+          rounds: 0,
+        },
+        queen: {
+          level: 1,
+          rounds: 0,
+        },
+        gladiator: {
+          level: 1,
+          rounds: 0,
+        },
+        elves: {
+          level: 1,
+          rounds: 0,
+        },
+        royal: {
+          level: 1,
+          rounds: 0,
+        },
+        devil: {
+          level: 1,
+          rounds: 0,
+        },
+        anotherDevil: {
+          level: 1,
+          rounds: 0,
+        },
+      },
+      availableJobs: ["beginner", "warrior", "magician", "cleric", "thief"],
+      possession: {
+        items: [],
+        magicBooks: [],
+        money: 0,
+        treasury: 0,
+      },
     },
     {
+      level: 1,
+      attack: {
+        total: 17,
+        base: 15,
+        weapon: 2,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      defense: {
+        total: 17,
+        base: 15,
+        weapon: 0,
+        shield: 2,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      speed: {
+        total: 15,
+        base: 15,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      magic: {
+        total: 15,
+        base: 15,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      hp: {
+        current: 150,
+        total: 150,
+        base: 150,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      currentArea: "Asia",
+      currentVertex: "571e15e0-7324-4e98-925e-2aac78952e6c",
       gender: "male",
       name: "",
       color: "red",
       job: "warrior",
       isNPC: true,
       npcLevel: "weak",
-      controllerNumber: 0,
+      controllerNumber: 1,
+      jobsMasterStatus: {
+        beginner: {
+          level: 1,
+          rounds: 0,
+        },
+        warrior: {
+          level: 1,
+          rounds: 0,
+        },
+        magician: {
+          level: 1,
+          rounds: 0,
+        },
+        cleric: {
+          level: 1,
+          rounds: 0,
+        },
+        thief: {
+          level: 1,
+          rounds: 0,
+        },
+        knight: {
+          level: 1,
+          rounds: 0,
+        },
+        archmage: {
+          level: 1,
+          rounds: 0,
+        },
+        priest: {
+          level: 1,
+          rounds: 0,
+        },
+        bladeMaster: {
+          level: 1,
+          rounds: 0,
+        },
+        necromancer: {
+          level: 1,
+          rounds: 0,
+        },
+        exorcist: {
+          level: 1,
+          rounds: 0,
+        },
+        pirate: {
+          level: 1,
+          rounds: 0,
+        },
+        ninja: {
+          level: 1,
+          rounds: 0,
+        },
+        gamester: {
+          level: 1,
+          rounds: 0,
+        },
+        beastTamer: {
+          level: 1,
+          rounds: 0,
+        },
+        robot: {
+          level: 1,
+          rounds: 0,
+        },
+        carpenter: {
+          level: 1,
+          rounds: 0,
+        },
+        nurse: {
+          level: 1,
+          rounds: 0,
+        },
+        monk: {
+          level: 1,
+          rounds: 0,
+        },
+        dancer: {
+          level: 1,
+          rounds: 0,
+        },
+        alien: {
+          level: 1,
+          rounds: 0,
+        },
+        queen: {
+          level: 1,
+          rounds: 0,
+        },
+        gladiator: {
+          level: 1,
+          rounds: 0,
+        },
+        elves: {
+          level: 1,
+          rounds: 0,
+        },
+        royal: {
+          level: 1,
+          rounds: 0,
+        },
+        devil: {
+          level: 1,
+          rounds: 0,
+        },
+        anotherDevil: {
+          level: 1,
+          rounds: 0,
+        },
+      },
+      availableJobs: ["beginner", "warrior", "magician", "cleric", "thief"],
+      possession: {
+        items: [],
+        magicBooks: [],
+        money: 0,
+        treasury: 0,
+      },
     },
     {
+      level: 1,
+      attack: {
+        total: 17,
+        base: 15,
+        weapon: 2,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      defense: {
+        total: 17,
+        base: 15,
+        weapon: 0,
+        shield: 2,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      speed: {
+        total: 15,
+        base: 15,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      magic: {
+        total: 15,
+        base: 15,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      hp: {
+        current: 150,
+        total: 150,
+        base: 150,
+        weapon: 0,
+        shield: 0,
+        buffRatio: 1,
+        nerfRatio: 1,
+      },
+      currentArea: "Asia",
+      currentVertex: "571e15e0-7324-4e98-925e-2aac78952e6c",
       gender: "male",
       name: "",
       color: "red",
       job: "warrior",
       isNPC: true,
       npcLevel: "weak",
-      controllerNumber: 0,
+      controllerNumber: 1,
+      jobsMasterStatus: {
+        beginner: {
+          level: 1,
+          rounds: 0,
+        },
+        warrior: {
+          level: 1,
+          rounds: 0,
+        },
+        magician: {
+          level: 1,
+          rounds: 0,
+        },
+        cleric: {
+          level: 1,
+          rounds: 0,
+        },
+        thief: {
+          level: 1,
+          rounds: 0,
+        },
+        knight: {
+          level: 1,
+          rounds: 0,
+        },
+        archmage: {
+          level: 1,
+          rounds: 0,
+        },
+        priest: {
+          level: 1,
+          rounds: 0,
+        },
+        bladeMaster: {
+          level: 1,
+          rounds: 0,
+        },
+        necromancer: {
+          level: 1,
+          rounds: 0,
+        },
+        exorcist: {
+          level: 1,
+          rounds: 0,
+        },
+        pirate: {
+          level: 1,
+          rounds: 0,
+        },
+        ninja: {
+          level: 1,
+          rounds: 0,
+        },
+        gamester: {
+          level: 1,
+          rounds: 0,
+        },
+        beastTamer: {
+          level: 1,
+          rounds: 0,
+        },
+        robot: {
+          level: 1,
+          rounds: 0,
+        },
+        carpenter: {
+          level: 1,
+          rounds: 0,
+        },
+        nurse: {
+          level: 1,
+          rounds: 0,
+        },
+        monk: {
+          level: 1,
+          rounds: 0,
+        },
+        dancer: {
+          level: 1,
+          rounds: 0,
+        },
+        alien: {
+          level: 1,
+          rounds: 0,
+        },
+        queen: {
+          level: 1,
+          rounds: 0,
+        },
+        gladiator: {
+          level: 1,
+          rounds: 0,
+        },
+        elves: {
+          level: 1,
+          rounds: 0,
+        },
+        royal: {
+          level: 1,
+          rounds: 0,
+        },
+        devil: {
+          level: 1,
+          rounds: 0,
+        },
+        anotherDevil: {
+          level: 1,
+          rounds: 0,
+        },
+      },
+      availableJobs: ["beginner", "warrior", "magician", "cleric", "thief"],
+      possession: {
+        items: [],
+        magicBooks: [],
+        money: 0,
+        treasury: 0,
+      },
     },
   ],
   userPreference: {
-    aspectRatio: "16:9",
     lang: "cn",
-    gamePadSetting: {
-      arrowUp: "arrowup",
-      arrowDown: "arrowdown",
-      arrowLeft: "arrowleft",
-      arrowRight: "arrowright",
-      triangle: "s",
-      circle: "d",
-      square: "z",
-      cross: "x",
-      L1: "q",
-      L2: "1",
-      R1: "e",
-      R2: "3",
-      SELECT: "c",
-      ANALOG: "b",
-      START: "v",
-    },
+    aspectRatio: "16:9",
+  },
+  gamePadSetting: {
+    arrowUp: "arrowup",
+    arrowDown: "arrowdown",
+    arrowLeft: "arrowleft",
+    arrowRight: "arrowright",
+    triangle: "s",
+    circle: "d",
+    square: "z",
+    cross: "x",
+    L1: "q",
+    L2: "1",
+    R1: "e",
+    R2: "3",
+    SELECT: "c",
+    ANALOG: "b",
+    START: "v",
   },
 };
-
-const gameProgressContext = createContext<GameProgress.Context>({
+const gameProgressCtx = createContext<{
+  gameProgress: GameProgress;
+  setGameProgress: Dispatch<SetStateAction<GameProgress>>;
+}>({
   gameProgress: initGameProgress,
-  gameProgressDispatch: function (action: GameProgress.Action) {
-    console.error("GameProgress.Context did not provide a value");
+  setGameProgress: () => {
+    throw new Error("context value no provided");
   },
 });
 
-function gameProgressReducer(
-  state: GameProgress,
-  action: GameProgress.Action
-): GameProgress {
-  switch (action.type) {
-    case "updateAll":
-      return { ...action.payload };
-    case "goalType":
-    case "goalInput":
-    case "currentPlayerNumber": {
-      return {
-        ...state,
-        [action.type]: action.payload,
-      };
-    }
-    // after numberOfPlayers is determined, we can mark the rest players as NPC
-    case "numberOfPlayers": {
-      const newState = {
-        ...state,
-        [action.type]: action.payload,
-      };
-      newState.playersAttrs.forEach((playerAttrs, index) => {
-        const isNPC = newState.numberOfPlayers <= index;
-        if (isNPC) {
-          playerAttrs.isNPC = true;
-          playerAttrs.controllerNumber = 0;
-          playerAttrs.npcLevel = "weak";
-        } else {
-          playerAttrs.isNPC = false;
-          playerAttrs.controllerNumber = 1;
-          playerAttrs.npcLevel = "";
-        }
-      });
-      return newState;
-    }
-    case "npcLevel":
-    case "gender":
-    case "color":
-    case "job":
-    case "name": {
-      const curPlayerIdx = state.currentPlayerNumber - 1;
-      const newState = { ...state };
-      const playerAttrs = {
-        ...newState.playersAttrs[curPlayerIdx],
-        [action.type]: action.payload,
-      };
-      newState.playersAttrs[curPlayerIdx] = playerAttrs;
-      return newState;
-    }
-    case "controllerNumber": {
-      const newState = { ...state };
-      newState.playersAttrs.forEach((playerAttrs, index) => {
-        playerAttrs.controllerNumber = action.payload[index];
-      });
-      return newState;
-    }
-    case "shuffle": {
-      return {
-        ...state,
-        playersAttrs: [
-          state.playersAttrs[action.payload[0]],
-          state.playersAttrs[action.payload[1]],
-          state.playersAttrs[action.payload[2]],
-          state.playersAttrs[action.payload[3]],
-        ],
-      };
-    }
-  }
-}
-
-export { initGameProgress, gameProgressContext, gameProgressReducer };
+export { initGameProgress, gameProgressCtx };

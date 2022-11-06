@@ -5,7 +5,7 @@ import { useContext } from "react";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
 import styles from "./SelectNPCLevel.module.css";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 import topAreaStyles from "../TopArea/TopArea.module.css";
 
 export default SelectNPCLevel;
@@ -46,8 +46,8 @@ function SelectNPCLevel() {
 }
 
 function useMetaData() {
-  const { newGameProgress } = useContext(newGameProgressContext);
-  const { currentPlayerIdx, playersAttrs } = newGameProgress;
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { currentPlayerIdx, playersAttrs } = gameProgress;
   const currentPlayerNPCLevel = playersAttrs[currentPlayerIdx].npcLevel;
   return { currentPlayerNPCLevel };
 }

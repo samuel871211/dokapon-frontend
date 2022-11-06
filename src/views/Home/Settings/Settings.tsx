@@ -13,11 +13,10 @@ import classNames from "classnames";
 // Local application/library specific imports.
 import styles from "./Settings.module.css";
 import { AspectRatioTypes, LangTypes } from "global";
-import { UIStateContext } from "reducers/Home/UIState";
-import { userPreferenceContext } from "reducers/userPreference";
 import KEYBOARDMAP from "./KeyBoardMap";
 import useTranslation from "hooks/useTranslation";
 import { GamePadKeyTypes } from "global";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
 const transitionStyles = {
@@ -46,32 +45,17 @@ const gamePadKeys: GamePadKeyTypes[] = [
 ];
 export default Settings;
 
-function Settings(props: { state: TransitionStatus }): JSX.Element {
-  const { state } = props;
-  const { UIState, UIStateDispatch } = useContext(UIStateContext);
-  const { userPreference, userPreferenceDispatch } = useContext(
-    userPreferenceContext
-  );
+function Settings(): JSX.Element {
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { gamePadSetting } = gameProgress;
   const { t } = useTranslation();
   const [preserveduserPreference, initPreserveduserPreference] =
-    useState<typeof userPreference>();
+    useState<typeof gamePadSetting>();
   const [selectedLang, setSelectedLang] = useState<LangTypes>("cn");
   const [selectedAspectRatio, setSelectedAspectRatio] =
     useState<AspectRatioTypes>("16:9");
   const focusElement = useRef<HTMLDivElement>(null);
   const [currentAxis, setCurrentAxis] = useState({ row: 0, col: 0 });
-  const handleKeyUpAttrs =
-    state === "entered"
-      ? {
-          tabIndex: 0,
-          ref: focusElement,
-          onKeyUp: UIState.showKeyMappingDialog
-            ? handleKeyMapping
-            : handleKeyUp,
-          onBlur: (event: SyntheticEvent<HTMLDivElement>) =>
-            event.currentTarget.focus(),
-        }
-      : {};
   /**
    * normally KEYBOARDMAP[x][y] is typeof "" | LangTypes | AspectRatioTypes | GamePadKeyTypes | "確定" | "取消"
    * but we have to make sure it's GamePadKeyTypes
@@ -82,56 +66,56 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
     const maybeGamePadKey = KEYBOARDMAP[row][col] as GamePadKeyTypes;
     if (!gamePadKeys.includes(maybeGamePadKey)) return;
 
-    const oldKeyBoardKey = userPreference[maybeGamePadKey];
+    const oldKeyBoardKey = gamePadSetting[maybeGamePadKey];
     const newKeyBoardKey = e.key.toLowerCase();
 
-    userPreferenceDispatch({
-      type: maybeGamePadKey,
-      payload: newKeyBoardKey,
-    });
+    // userPreferenceDispatch({
+    //   type: maybeGamePadKey,
+    //   payload: newKeyBoardKey,
+    // });
 
     // avoid two gamepad key mapping to the same keyboard key
     for (const gamePadKey of gamePadKeys) {
-      if (userPreference[gamePadKey] === newKeyBoardKey) {
-        userPreferenceDispatch({
-          type: gamePadKey,
-          payload: oldKeyBoardKey,
-        });
+      if (gamePadSetting[gamePadKey] === newKeyBoardKey) {
+        // userPreferenceDispatch({
+        //   type: gamePadKey,
+        //   payload: oldKeyBoardKey,
+        // });
         break;
       }
     }
-    UIStateDispatch({
-      type: "showKeyMappingDialog",
-      payload: false,
-    });
+    // UIStateDispatch({
+    //   type: "showKeyMappingDialog",
+    //   payload: false,
+    // });
   }
   function handleKeyUp(e: KeyboardEvent): void {
     switch (e.key.toLowerCase()) {
-      case userPreference.arrowUp:
+      case gamePadSetting.arrowUp:
         setCurrentAxis({
           col: currentAxis.col,
           row: currentAxis.row === 0 ? 9 : currentAxis.row - 1,
         });
         break;
-      case userPreference.arrowDown:
+      case gamePadSetting.arrowDown:
         setCurrentAxis({
           col: currentAxis.col,
           row: currentAxis.row === 9 ? 0 : currentAxis.row + 1,
         });
         break;
-      case userPreference.arrowLeft:
+      case gamePadSetting.arrowLeft:
         setCurrentAxis({
           col: currentAxis.col === 0 ? 2 : currentAxis.col - 1,
           row: currentAxis.row,
         });
         break;
-      case userPreference.arrowRight:
+      case gamePadSetting.arrowRight:
         setCurrentAxis({
           col: currentAxis.col === 2 ? 0 : currentAxis.col + 1,
           row: currentAxis.row,
         });
         break;
-      case userPreference.circle: {
+      case gamePadSetting.circle: {
         const { row, col } = currentAxis;
         const key = KEYBOARDMAP[row][col];
         switch (key) {
@@ -139,40 +123,40 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
           case "en":
           case "jp":
             setSelectedLang(key);
-            userPreferenceDispatch({
-              type: "lang",
-              payload: key,
-            });
+            // userPreferenceDispatch({
+            //   type: "lang",
+            //   payload: key,
+            // });
             break;
           case "16:9":
           case "4:3":
           case "stretch":
             setSelectedAspectRatio(key);
-            userPreferenceDispatch({
-              type: "aspectRatio",
-              payload: key,
-            });
+            // userPreferenceDispatch({
+            //   type: "aspectRatio",
+            //   payload: key,
+            // });
             break;
           case "確定":
           case "取消": {
             const payload =
               key === "確定"
-                ? userPreference
-                : preserveduserPreference || userPreference;
-            UIStateDispatch({
-              type: "showSetting",
-              payload: false,
-            });
-            UIStateDispatch({
-              type: "showBtnGroup",
-              payload: true,
-            });
-            userPreferenceDispatch({
-              type: "update",
-              payload,
-            });
-            setSelectedLang(payload.lang);
-            setSelectedAspectRatio(payload.aspectRatio);
+                ? gamePadSetting
+                : preserveduserPreference || gamePadSetting;
+            // UIStateDispatch({
+            //   type: "showSetting",
+            //   payload: false,
+            // });
+            // UIStateDispatch({
+            //   type: "showBtnGroup",
+            //   payload: true,
+            // });
+            // userPreferenceDispatch({
+            //   type: "update",
+            //   payload,
+            // });
+            // setSelectedLang(payload.lang);
+            // setSelectedAspectRatio(payload.aspectRatio);
             setCurrentAxis({ row: 0, col: 0 });
             break;
           }
@@ -191,25 +175,19 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
           case "SELECT":
           case "ANALOG":
           case "START":
-            UIStateDispatch({
-              type: "showKeyMappingDialog",
-              payload: true,
-            });
+            // UIStateDispatch({
+            //   type: "showKeyMappingDialog",
+            //   payload: true,
+            // });
             break;
         }
         break;
       }
     }
   }
-  useEffect(() => initPreserveduserPreference(userPreference), []);
-  useEffect(() => {
-    if (state === "entered") focusElement.current?.focus();
-  }, [state]);
+  useEffect(() => initPreserveduserPreference(gamePadSetting), []);
   return (
-    <div
-      className={`${styles.container} ${transitionStyles[state]}`}
-      {...handleKeyUpAttrs}
-    >
+    <div className={styles.container}>
       <div className={styles.dialog}>
         <div className={styles.dialogContent}>
           <div>{t("語言")}</div>
@@ -319,7 +297,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 0 && currentAxis.row === 2,
                 })}
               >
-                {userPreference.arrowUp}
+                {gamePadSetting.arrowUp}
               </div>
             </div>
             <div className={styles.cell}>
@@ -330,7 +308,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 0 && currentAxis.row === 3,
                 })}
               >
-                {userPreference.arrowDown}
+                {gamePadSetting.arrowDown}
               </div>
             </div>
             <div className={styles.cell}>
@@ -341,7 +319,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 0 && currentAxis.row === 4,
                 })}
               >
-                {userPreference.arrowRight}
+                {gamePadSetting.arrowRight}
               </div>
             </div>
             <div className={styles.cell}>
@@ -352,7 +330,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 0 && currentAxis.row === 5,
                 })}
               >
-                {userPreference.arrowLeft}
+                {gamePadSetting.arrowLeft}
               </div>
             </div>
             <div className={styles.cell}>
@@ -363,7 +341,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 0 && currentAxis.row === 6,
                 })}
               >
-                {userPreference.triangle}
+                {gamePadSetting.triangle}
               </div>
             </div>
             <div className={styles.cell}>
@@ -374,7 +352,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 0 && currentAxis.row === 7,
                 })}
               >
-                {userPreference.circle}
+                {gamePadSetting.circle}
               </div>
             </div>
             <div className={styles.cell}>
@@ -385,7 +363,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 0 && currentAxis.row === 8,
                 })}
               >
-                {userPreference.square}
+                {gamePadSetting.square}
               </div>
             </div>
             <div className={styles.cell}>
@@ -396,7 +374,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 0 && currentAxis.row === 9,
                 })}
               >
-                {userPreference.cross}
+                {gamePadSetting.cross}
               </div>
             </div>
           </div>
@@ -488,7 +466,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 2 && currentAxis.row === 2,
                 })}
               >
-                {userPreference.L1}
+                {gamePadSetting.L1}
               </div>
             </div>
             <div className={styles.cell}>
@@ -499,7 +477,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 2 && currentAxis.row === 3,
                 })}
               >
-                {userPreference.L2}
+                {gamePadSetting.L2}
               </div>
             </div>
             <div className={styles.cell}>
@@ -510,7 +488,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 2 && currentAxis.row === 4,
                 })}
               >
-                {userPreference.R1}
+                {gamePadSetting.R1}
               </div>
             </div>
             <div className={styles.cell}>
@@ -521,7 +499,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 2 && currentAxis.row === 5,
                 })}
               >
-                {userPreference.R2}
+                {gamePadSetting.R2}
               </div>
             </div>
             <div className={styles.cell}>
@@ -532,7 +510,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 2 && currentAxis.row === 6,
                 })}
               >
-                {userPreference.SELECT}
+                {gamePadSetting.SELECT}
               </div>
             </div>
             <div className={styles.cell}>
@@ -543,7 +521,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 2 && currentAxis.row === 7,
                 })}
               >
-                {userPreference.ANALOG}
+                {gamePadSetting.ANALOG}
               </div>
             </div>
             <div className={styles.cell}>
@@ -554,7 +532,7 @@ function Settings(props: { state: TransitionStatus }): JSX.Element {
                     currentAxis.col === 2 && currentAxis.row === 8,
                 })}
               >
-                {userPreference.START}
+                {gamePadSetting.START}
               </div>
             </div>
             <div className={styles.actions}>

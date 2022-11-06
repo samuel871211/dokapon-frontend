@@ -1,6 +1,6 @@
 // Related third party imports.
 import { createRoot } from "react-dom/client";
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useState } from "react";
 
 // Local application/library specific imports.
 import styles from "./index.module.css";
@@ -12,20 +12,8 @@ import DokaponTheWorld from "views/DokaponTheWorld";
 import StoryModeSelectCharacter from "views/StoryModeSelectCharacter";
 import BattleModeSelectCharacter from "views/BattleModeSelectCharacter";
 import registerWindowResizeEvtHandler from "utils/windowResizeEvtHandler";
-import {
-  initGameProgress,
-  gameProgressContext,
-  gameProgressReducer,
-} from "reducers/gameProgress";
-import {
-  initNewGameProgress,
-  newGameProgressContext,
-} from "reducers/newGameProgress";
-import {
-  inituserPreference,
-  userPreferenceContext,
-  userPreferenceReducer,
-} from "reducers/userPreference";
+import { initGameProgress, gameProgressCtx } from "reducers/gameProgress";
+
 import type { ViewTypes } from "global";
 
 // Stateless vars declare.
@@ -44,20 +32,12 @@ const Views: { [key in ViewTypes]: () => JSX.Element } = {
   DokaponTheWorld,
   Home,
   StoryModeSelectCharacter,
-  BetweenDimensions: () => <></>,
 };
 
 function App() {
-  const [gameProgress, gameProgressDispatch] = useReducer(
-    gameProgressReducer,
-    initGameProgress
-  );
-  const [userPreference, userPreferenceDispatch] = useReducer(
-    userPreferenceReducer,
-    inituserPreference
-  );
-  const [newGameProgress, setNewGameProgress] = useState(initNewGameProgress);
-  const View = Views[newGameProgress.currentView];
+  const [gameProgress, setGameProgress] = useState(initGameProgress);
+  const { userPreference } = gameProgress;
+  const View = Views[gameProgress.currentView];
   useEffect(
     function switchAspectRatio() {
       const aspectRatioEl = document.getElementById("root")?.children[0];
@@ -73,22 +53,12 @@ function App() {
   useEffect(registerWindowResizeEvtHandler, []);
 
   return (
-    <gameProgressContext.Provider
-      value={{ gameProgress, gameProgressDispatch }}
-    >
-      <userPreferenceContext.Provider
-        value={{ userPreference, userPreferenceDispatch }}
-      >
-        <newGameProgressContext.Provider
-          value={{ newGameProgress, setNewGameProgress }}
-        >
-          <div className={rootStyles[userPreference.aspectRatio]}>
-            <View />
-          </div>
-        </newGameProgressContext.Provider>
-        {/* <GraphEditor /> */}
-      </userPreferenceContext.Provider>
-    </gameProgressContext.Provider>
+    <gameProgressCtx.Provider value={{ gameProgress, setGameProgress }}>
+      <div className={rootStyles[userPreference.aspectRatio]}>
+        <View />
+      </div>
+      {/* <GraphEditor /> */}
+    </gameProgressCtx.Provider>
   );
 }
 

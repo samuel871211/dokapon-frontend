@@ -1,9 +1,8 @@
 // Related third party imports.
-import { useEffect, useContext } from "react";
-import { Transition } from "react-transition-group";
+import { useEffect, useContext, KeyboardEvent, useRef } from "react";
+import classNames from "classnames";
 
 // Local application/library specific imports.
-import { userPreferenceContext } from "reducers/userPreference";
 import styles from "./DokaponTheWorld.module.css";
 import registerWindowResizeEvtHandler from "utils/windowResizeEvtHandler";
 import Drawer from "./Drawer";
@@ -12,31 +11,22 @@ import Bag from "./Bag";
 import Check from "./Check";
 import OverviewMap from "./OverviewMap";
 import GroceryStoreFieldCheck from "./Check/GroceryStoreFieldCheck";
-import { useReducer } from "react";
-import {
-  initUIState,
-  UIStateContext,
-  UIStateReducer,
-} from "reducers/DokaponTheWorld/UIState";
 import indexStyles from "index.module.css";
 import GraphUI from "components/GraphUI";
 import WeaponStoreFieldCheck from "./Check/WeaponStoreFieldCheck";
 import MagicStoreFieldCheck from "./Check/MagicStoreFieldCheck";
 import JobStoreFieldCheck from "./Check/JobStoreFieldCheck";
-import OnlyBottomDialogFieldCheck from "./Check/OnlyBottomDialogFieldCheck";
 import CastleFieldCheck from "./Check/CastleFieldCheck";
 import ChurchFieldCheck from "./Check/ChurchFieldCheck";
 import VillageFieldCheck from "./Check/VillageFieldCheck";
 import CollectMoneyFieldCheck from "./Check/CollectMoneyFieldCheck";
-import BattleFieldCheck from "./Check/BattleFieldCheck";
-import DamageFieldCheck from "./Check/DamageFieldCheck";
-import TreasureFieldCheck from "./Check/TreasureFieldCheck";
-import WhiteTreasureFieldCheck from "./Check/WhiteTreasureFieldCheck";
-import RedTreasureFieldCheck from "./Check/RedTreasureFieldCheck";
-import KeyTreasureFieldCheck from "./Check/KeyTreasureFieldCheck";
-import WorldTransferFieldCheck from "./Check/WorldTransferFieldCheck/WorldTransferFieldCheck";
-import MagicBookFieldCheck from "./Check/MagicBookFieldCheck";
-import GoldTreasureFieldCheck from "./Check/GoldTreasureFieldCheck";
+import OnlyBottomDialogFieldCheck from "./Check/OnlyBottomDialogFieldCheck";
+import { gameProgressCtx } from "reducers/gameProgress";
+import type { DokaponTheWorldComponentTypes } from "global";
+import type { TextsKeys } from "data/texts";
+import jobs from "data/jobs";
+import magicStores from "data/magicStores";
+import useTranslation from "hooks/useTranslation";
 
 // Stateless vars declare.
 const aspectRatioStyles = {
@@ -44,256 +34,433 @@ const aspectRatioStyles = {
   "4:3": indexStyles.traditionalAspectRatio,
   stretch: indexStyles.stretchAspectRatio,
 };
+const test: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
+  BattleFieldCheck: ["ザコモンスターとの戦闘や\nイベントが発生するマス。"],
+  DamageFieldCheck: [
+    "止まると一定量のダメージを受けるマス。\n戦闘やイベントも起こる。",
+  ],
+  TreasureFieldCheck: ["アイテムを入手できるマス。"],
+  MagicBookFieldCheck: ["フィールド魔法を入手できるマス。"],
+  GoldTreasureFieldCheck: ["お金を入手できるマス。"],
+  KeyTreasureFieldCheck: [
+    "魔法のカギを使わないと開かないが、\n貴重な品を入手できるマス。",
+  ],
+  RedTreasureFieldCheck: [
+    "何が起こるか分からない\nハイリスク・ハイリターンの危険なマス。\n止まるからには命を賭けろ!",
+  ],
+  WhiteTreasureFieldCheck: [
+    "普通では手に入らないものを入手できるマス。\nしかし良い物が手に入る確率は2分の1。\n最悪の事態になることも⋯。",
+  ],
+  WorldTransferFieldCheck: [
+    "別のエリアヘワープできるマス。\n有料だが簡単に移動できるので便利。",
+  ],
+  GraphUI: [],
+  Drawer: [],
+  OverviewMap: [],
+  Bag: [],
+  Check: [],
+  Roulette: [],
+  CastleFieldCheck: [
+    "世界の中心、スタートマス。\n集めたお金をここにある世界平和金庫に戻そう!\n全てのステータス異常を無料で回復してくれる。",
+  ],
+  ChurchFieldCheck: [
+    "有料でステータス異常を回復できたり、\n金庫にお金、王様に特産品を送ったりできるマス。\n死んだ時は、最後に立ち寄った教会から復活する。",
+  ],
+  CollectMoneyFieldCheck: [
+    "持ち村の内1つから、上納金を集金するか、\nレベルアップさせるかを選べるマス。\n集金すると特産品もいっしょに回収できる。",
+  ],
+  GroceryStoreFieldCheck: [
+    "アイテムが買えるマス。\n水曜が定休日。\n日曜は特売日。",
+  ],
+  JobStoreFieldCheck: ["転職ができるマス\n土、日曜が定休日。"],
+  MagicStoreFieldCheck: [
+    "フィールド魔法や戦闘魔法が買えるマス。\n水曜が定休日。\n日曜は特売日。",
+  ],
+  VillageFieldCheck: [
+    "手に入れると、お金や特産品などがもらえるマス。\n泊まるとHPが全回復する。\nモンスターがいる場合、戦闘になる。",
+  ],
+  WeaponStoreFieldCheck: [
+    "武器や盾が買えるマス。\n水曜が定休日。\n日曜は特売日。",
+  ],
+};
+const Components: {
+  [key in DokaponTheWorldComponentTypes]: () => JSX.Element;
+} = {
+  GraphUI: () => <></>,
+  Drawer,
+  OverviewMap,
+  Bag,
+  Check,
+  Roulette,
+  CastleFieldCheck,
+  ChurchFieldCheck,
+  VillageFieldCheck,
+  CollectMoneyFieldCheck,
+  GroceryStoreFieldCheck,
+  JobStoreFieldCheck,
+  MagicStoreFieldCheck,
+  WeaponStoreFieldCheck,
+  BattleFieldCheck: OnlyBottomDialogFieldCheck,
+  DamageFieldCheck: OnlyBottomDialogFieldCheck,
+  MagicBookFieldCheck: OnlyBottomDialogFieldCheck,
+  GoldTreasureFieldCheck: OnlyBottomDialogFieldCheck,
+  KeyTreasureFieldCheck: OnlyBottomDialogFieldCheck,
+  RedTreasureFieldCheck: OnlyBottomDialogFieldCheck,
+  TreasureFieldCheck: OnlyBottomDialogFieldCheck,
+  WhiteTreasureFieldCheck: OnlyBottomDialogFieldCheck,
+  WorldTransferFieldCheck: OnlyBottomDialogFieldCheck,
+};
 
 export default DokaponTheWorld;
 
 function DokaponTheWorld(): JSX.Element {
-  const { userPreference } = useContext(userPreferenceContext);
-  const [UIState, UIStateDispatch] = useReducer(UIStateReducer, initUIState);
-  function showDrawer() {
-    UIStateDispatch({
-      type: "showDrawer",
-      payload: true,
-    });
-  }
-  function showCheck() {
-    UIStateDispatch({
-      type: "showCheck",
-      payload: true,
-    });
-    UIStateDispatch({
-      type: "isCheckTopLayer",
-      payload: true,
-    });
-    UIStateDispatch({
-      type: "showCheckTip",
-      payload: true,
-    });
-    UIStateDispatch({
-      type: "showMinimap",
-      payload: true,
-    });
-  }
-  useEffect(registerWindowResizeEvtHandler, []);
+  const { containerRefEl, userPreference, handleKeyUp, Component } =
+    useMetaData();
 
   return (
-    <UIStateContext.Provider value={{ UIState, UIStateDispatch }}>
-      <div
-        className={`${styles.container} ${
-          aspectRatioStyles[userPreference.aspectRatio]
-        }`}
-      >
-        <GraphUI />
-        {/* in order to hold drawer state, only set css display none when exited */}
-        <Transition
-          appear
-          in={UIState.showDrawer}
-          timeout={{ enter: 0, exit: 1000 }}
-        >
-          {(state) => <Drawer state={state} />}
-        </Transition>
-
-        <Transition
-          in={UIState.showRoulette}
-          timeout={{ enter: 1000, exit: 0 }}
-        >
-          {(state) => state !== "exited" && <Roulette state={state} />}
-        </Transition>
-
-        <Transition
-          in={UIState.showBag}
-          timeout={{ enter: 1000, exit: 500 }}
-          onExited={showDrawer}
-        >
-          {(state) => state !== "exited" && <Bag state={state} />}
-        </Transition>
-
-        <Transition
-          in={UIState.showCheck}
-          timeout={{ enter: 1000, exit: 500 }}
-          onExited={showDrawer}
-        >
-          {(state) => state !== "exited" && <Check state={state} />}
-        </Transition>
-
-        <Transition
-          in={UIState.showOverviewMap}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) => state !== "exited" && <OverviewMap state={state} />}
-        </Transition>
-
-        <Transition
-          in={UIState.showGroceryStoreFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <GroceryStoreFieldCheck state={state} />
-          }
-        </Transition>
-
-        <Transition
-          in={UIState.showWeaponStoreFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <WeaponStoreFieldCheck state={state} />
-          }
-        </Transition>
-
-        <Transition
-          in={UIState.showMagicStoreFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <MagicStoreFieldCheck state={state} />
-          }
-        </Transition>
-
-        <Transition
-          in={UIState.showJobStoreFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <JobStoreFieldCheck state={state} />
-          }
-        </Transition>
-
-        {/* <Transition
-          in={UIState.onlyBottomDialogFieldCheck !== ""}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <OnlyBottomDialogFieldCheck state={state} />
-          }
-        </Transition> */}
-
-        <Transition
-          in={UIState.showCastleFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) => state !== "exited" && <CastleFieldCheck state={state} />}
-        </Transition>
-
-        <Transition
-          in={UIState.showChruchFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) => state !== "exited" && <ChurchFieldCheck state={state} />}
-        </Transition>
-
-        <Transition
-          in={UIState.showVillageFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) => state !== "exited" && <VillageFieldCheck state={state} />}
-        </Transition>
-
-        <Transition
-          in={UIState.showCollectMoneyFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <CollectMoneyFieldCheck state={state} />
-          }
-        </Transition>
-
-        <Transition
-          in={UIState.showBattleFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) => state !== "exited" && <BattleFieldCheck state={state} />}
-        </Transition>
-
-        <Transition
-          in={UIState.showDamageFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) => state !== "exited" && <DamageFieldCheck state={state} />}
-        </Transition>
-
-        <Transition
-          in={UIState.showTreasureFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <TreasureFieldCheck state={state} />
-          }
-        </Transition>
-
-        <Transition
-          in={UIState.showWhiteTreasureFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <WhiteTreasureFieldCheck state={state} />
-          }
-        </Transition>
-
-        <Transition
-          in={UIState.showRedTreasureFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <RedTreasureFieldCheck state={state} />
-          }
-        </Transition>
-
-        <Transition
-          in={UIState.showKeyTreasureFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <KeyTreasureFieldCheck state={state} />
-          }
-        </Transition>
-
-        <Transition
-          in={UIState.showWorldTransferFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <WorldTransferFieldCheck state={state} />
-          }
-        </Transition>
-
-        <Transition
-          in={UIState.showMagicBookFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <MagicBookFieldCheck state={state} />
-          }
-        </Transition>
-
-        <Transition
-          in={UIState.showGoldTreasureFieldCheck}
-          timeout={{ enter: 500, exit: 500 }}
-          onExited={showCheck}
-        >
-          {(state) =>
-            state !== "exited" && <GoldTreasureFieldCheck state={state} />
-          }
-        </Transition>
-      </div>
-    </UIStateContext.Provider>
+    <div
+      ref={containerRefEl}
+      tabIndex={0}
+      onBlur={(e) => e.currentTarget.focus()}
+      onKeyUp={handleKeyUp}
+      className={classNames(
+        styles.container,
+        aspectRatioStyles[userPreference.aspectRatio]
+      )}
+    >
+      <GraphUI />
+      <Component />
+    </div>
   );
+}
+
+function useMetaData() {
+  const { t } = useTranslation();
+  const containerRefEl = useRef<HTMLDivElement>(null);
+  const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
+  const {
+    userPreference,
+    DokaponTheWorld,
+    gamePadSetting,
+    currentPlayerIdx,
+    playersAttrs,
+    bottomDialogSentencesQueue,
+  } = gameProgress;
+  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const {
+    curComponent,
+    Drawer,
+    Bag,
+    Roulette,
+    GroceryStoreFieldCheck,
+    JobStoreFieldCheck,
+    MagicStoreFieldCheck,
+    WeaponStoreFieldCheck,
+  } = DokaponTheWorld;
+  /**
+   * 搖桿的 O, X, 正方形, 三角形
+   */
+  const mainFourKeys = [
+    gamePadSetting.circle,
+    gamePadSetting.cross,
+    gamePadSetting.triangle,
+    gamePadSetting.square,
+  ];
+  function handleKeyUp(e: KeyboardEvent<HTMLDivElement>) {
+    switch (curComponent) {
+      case "Drawer":
+        return handleKeyUpForDrawer(e);
+      case "Bag":
+        return handleKeyUpForBag(e);
+      case "Roulette":
+        return handleKeyUpForRoulette(e);
+      case "Check":
+        return handleKeyUpForCheck(e);
+      case "OverviewMap":
+        return handleKeyUpForOverviewMap(e);
+      case "BattleFieldCheck":
+      case "DamageFieldCheck":
+      case "TreasureFieldCheck":
+      case "MagicBookFieldCheck":
+      case "GoldTreasureFieldCheck":
+      case "KeyTreasureFieldCheck":
+      case "RedTreasureFieldCheck":
+      case "WhiteTreasureFieldCheck":
+      case "WorldTransferFieldCheck":
+      case "CastleFieldCheck":
+      case "ChurchFieldCheck":
+      case "VillageFieldCheck":
+        return backToCheck(e);
+      case "GroceryStoreFieldCheck":
+        return handleKeyUpForGroceryStoreFieldCheck(e);
+      case "JobStoreFieldCheck":
+        return handleKeyUpForJobStoreFieldCheck(e);
+      case "MagicStoreFieldCheck":
+        return handleKeyUpForMagicStoreFieldCheck(e);
+      case "WeaponStoreFieldCheck":
+        return handleKeyUpForWeaponStoreFieldCheck(e);
+      case "CollectMoneyFieldCheck":
+        /**
+         * 比較特殊，分成兩個步驟
+         */
+        return handleKeyUpForCollectMoneyFieldCheck(e);
+    }
+  }
+  function handleKeyUpForDrawer(e: KeyboardEvent<HTMLDivElement>) {
+    const { selectedIdx } = Drawer;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.arrowUp:
+        Drawer.selectedIdx = selectedIdx === 0 ? 4 : selectedIdx - 1;
+        break;
+      case gamePadSetting.arrowDown:
+        Drawer.selectedIdx = selectedIdx === 4 ? 0 : selectedIdx + 1;
+        break;
+      case gamePadSetting.square:
+        DokaponTheWorld.curComponent = "Check";
+        break;
+      case gamePadSetting.circle:
+        switch (selectedIdx) {
+          case 0: // 移動
+            DokaponTheWorld.curComponent = "Roulette";
+            break;
+          case 1: // 背包
+            DokaponTheWorld.curComponent = "Bag";
+            break;
+          case 2: // 查看
+            DokaponTheWorld.curComponent = "Check";
+            break;
+          case 3: // 特技
+            break;
+          case 4: // 資訊
+            break;
+        }
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  /**
+   * @todo handle bottomDialogQueue and bottomDialogProps
+   */
+  function handleKeyUpForBag(e: KeyboardEvent<HTMLDivElement>) {
+    const { currentBag, selectedIdx } = Bag;
+    const space = jobs[currentPlayer.job].bagSpace[currentBag];
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.arrowUp:
+        switch (selectedIdx) {
+          case 0:
+            Bag.selectedIdx = space - 2;
+            break;
+          case 1:
+            Bag.selectedIdx = space - 1;
+            break;
+          default:
+            Bag.selectedIdx -= 2;
+            break;
+        }
+        break;
+      case gamePadSetting.arrowDown:
+        switch (selectedIdx) {
+          case space - 2:
+            Bag.selectedIdx = 0;
+            break;
+          case space - 1:
+            Bag.selectedIdx = 1;
+            break;
+          default:
+            Bag.selectedIdx += 2;
+            break;
+        }
+        break;
+      case gamePadSetting.arrowLeft:
+      case gamePadSetting.arrowRight:
+        switch (selectedIdx % 2) {
+          case 0:
+            Bag.selectedIdx += 1;
+            break;
+          case 1:
+            Bag.selectedIdx -= 1;
+            break;
+        }
+        break;
+      case gamePadSetting.R1:
+      case gamePadSetting.R2:
+      case gamePadSetting.L1:
+      case gamePadSetting.L2:
+        Bag.currentBag = currentBag === "items" ? "magicBooks" : "items";
+        Bag.selectedIdx = 0;
+        break;
+      case gamePadSetting.circle:
+        /**
+         * @todo 使用道具，尚未實做
+         */
+        break;
+      case gamePadSetting.cross:
+        DokaponTheWorld.curComponent = "Drawer";
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  function handleKeyUpForRoulette(e: KeyboardEvent<HTMLDivElement>) {
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.circle:
+        Roulette.result =
+          Math.getRandomIntInclusive(0, 3) + Math.getRandomIntInclusive(0, 3);
+        setGameProgress({ ...gameProgress });
+        setTimeout(() => {
+          DokaponTheWorld.curComponent = "GraphUI";
+          setGameProgress({ ...gameProgress });
+        }, 1000);
+        break;
+      case gamePadSetting.cross:
+        DokaponTheWorld.curComponent = "Drawer";
+        setGameProgress({ ...gameProgress });
+        break;
+    }
+  }
+  function handleKeyUpForCheck(e: KeyboardEvent<HTMLDivElement>) {
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.START:
+        DokaponTheWorld.curComponent = "OverviewMap";
+        break;
+      case gamePadSetting.cross:
+        DokaponTheWorld.curComponent = "Drawer";
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  function handleKeyUpForOverviewMap(e: KeyboardEvent<HTMLDivElement>) {
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.triangle:
+        break;
+      case gamePadSetting.cross:
+        DokaponTheWorld.curComponent = "Check";
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  function handleKeyUpForGroceryStoreFieldCheck(
+    e: KeyboardEvent<HTMLDivElement>
+  ) {
+    const { curListPage } = GroceryStoreFieldCheck;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.circle:
+      case gamePadSetting.cross:
+      case gamePadSetting.square:
+      case gamePadSetting.triangle:
+        DokaponTheWorld.curComponent = "Check";
+        GroceryStoreFieldCheck.curListPage = 0;
+        break;
+      case gamePadSetting.R1:
+      case gamePadSetting.R2:
+      case gamePadSetting.L1:
+      case gamePadSetting.L2:
+        GroceryStoreFieldCheck.curListPage = curListPage === 0 ? 1 : 0;
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  function handleKeyUpForJobStoreFieldCheck(e: KeyboardEvent<HTMLDivElement>) {
+    const { availableJobs } = currentPlayer;
+    const { curListPage } = JobStoreFieldCheck;
+    const maxPage = Math.ceil(availableJobs.length / 6);
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.circle:
+      case gamePadSetting.cross:
+      case gamePadSetting.square:
+      case gamePadSetting.triangle:
+        DokaponTheWorld.curComponent = "Check";
+        JobStoreFieldCheck.curListPage = 0;
+        break;
+      case gamePadSetting.R1:
+      case gamePadSetting.R2:
+        if (curListPage === maxPage - 1) JobStoreFieldCheck.curListPage = 0;
+        else JobStoreFieldCheck.curListPage = curListPage + 1;
+        break;
+      case gamePadSetting.L1:
+      case gamePadSetting.L2:
+        if (curListPage === 0) JobStoreFieldCheck.curListPage = maxPage - 1;
+        else JobStoreFieldCheck.curListPage = curListPage - 1;
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  function handleKeyUpForMagicStoreFieldCheck(
+    e: KeyboardEvent<HTMLDivElement>
+  ) {
+    const {
+      curClickVertex: { area },
+    } = DokaponTheWorld;
+    const magicStore = magicStores[area];
+    const maxPage = Math.ceil(magicStore.length / 6);
+    const { curListPage } = MagicStoreFieldCheck;
+
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.circle:
+      case gamePadSetting.cross:
+      case gamePadSetting.square:
+      case gamePadSetting.triangle:
+        DokaponTheWorld.curComponent = "Check";
+        MagicStoreFieldCheck.curListPage = 0;
+        break;
+      case gamePadSetting.R1:
+      case gamePadSetting.R2:
+        if (curListPage === maxPage - 1) MagicStoreFieldCheck.curListPage = 0;
+        else MagicStoreFieldCheck.curListPage = curListPage + 1;
+        break;
+      case gamePadSetting.L1:
+      case gamePadSetting.L2:
+        if (curListPage === 0) MagicStoreFieldCheck.curListPage = maxPage - 1;
+        else MagicStoreFieldCheck.curListPage = curListPage - 1;
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  function handleKeyUpForWeaponStoreFieldCheck(
+    e: KeyboardEvent<HTMLDivElement>
+  ) {
+    const { curListPage } = WeaponStoreFieldCheck;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.circle:
+      case gamePadSetting.cross:
+      case gamePadSetting.square:
+      case gamePadSetting.triangle:
+        DokaponTheWorld.curComponent = "Check";
+        WeaponStoreFieldCheck.curListPage = 0;
+        break;
+      case gamePadSetting.R1:
+      case gamePadSetting.R2:
+      case gamePadSetting.L1:
+      case gamePadSetting.L2:
+        WeaponStoreFieldCheck.curListPage = curListPage === 0 ? 1 : 0;
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  function handleKeyUpForCollectMoneyFieldCheck(
+    e: KeyboardEvent<HTMLDivElement>
+  ) {
+    return;
+  }
+  function backToCheck(e: KeyboardEvent<HTMLDivElement>) {
+    const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
+    if (!isMainFourKeys) return;
+
+    DokaponTheWorld.curComponent = "Check";
+    setGameProgress({ ...gameProgress });
+  }
+  function handleBottomDialogQueue() {
+    bottomDialogSentencesQueue.length = 0;
+    for (const sentence of test[curComponent]) {
+      bottomDialogSentencesQueue.push(t(sentence));
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  useEffect(handleBottomDialogQueue, [curComponent]);
+  useEffect(registerWindowResizeEvtHandler, []);
+  useEffect(() => containerRefEl.current?.focus(), []);
+  return {
+    containerRefEl,
+    userPreference,
+    handleKeyUp,
+    Component: Components[curComponent],
+  };
 }

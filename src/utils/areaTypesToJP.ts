@@ -80,5 +80,7 @@ function areaTypesToJP(area: AreaTypes): TextsKeys {
       return "";
     case "Atlantis":
       return "";
+    case "BetweenDimensions":
+      return "";
   }
 }

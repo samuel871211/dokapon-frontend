@@ -116,6 +116,7 @@ const groceryStores: { [key in AreaTypes]: Item[] } = {
   HawaiianIslandsCaveB3Left: [],
   HawaiianIslandsCaveB3Center: [],
   Atlantis: [],
+  BetweenDimensions: [],
 };
 
 export default groceryStores;

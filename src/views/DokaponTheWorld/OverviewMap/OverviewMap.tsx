@@ -1,48 +1,17 @@
 // Related third party imports.
-import classNames from "classnames";
-import {
-  useContext,
-  useRef,
-  SyntheticEvent,
-  KeyboardEvent,
-  useEffect,
-} from "react";
-import { TransitionStatus } from "react-transition-group";
 
 // Local application/library specific imports.
 import useTranslation from "hooks/useTranslation";
-import { UIStateContext } from "reducers/DokaponTheWorld/UIState";
-import { userPreferenceContext } from "reducers/userPreference";
 import styles from "./OverviewMap.module.css";
 
 // Stateless vars declare.
-const transitionStyles = {
-  svg: {
-    entering: styles.fadeInEntering,
-    entered: styles.fadeInEntered,
-    exiting: styles.fadeOutExiting,
-    exited: "",
-    unmounted: "",
-  },
-  tip: {
-    entering: styles.fadeInEntering,
-    entered: styles.fadeInEntered,
-    exiting: styles.fadeOutExiting,
-    exited: "",
-    unmounted: "",
-  },
-};
 
 export default OverviewMap;
 
-function OverviewMap(props: { state: TransitionStatus }): JSX.Element {
-  const { state } = props;
-  const { handleKeyUpAttrs, t } = useMetaData(state);
+function OverviewMap() {
+  const { t } = useTranslation();
   return (
-    <div
-      className={classNames(styles.overviewMap, transitionStyles.svg[state])}
-      {...handleKeyUpAttrs}
-    >
+    <div className={styles.overviewMap}>
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
@@ -500,7 +469,7 @@ function OverviewMap(props: { state: TransitionStatus }): JSX.Element {
           />
         </g>
       </svg>
-      <div className={classNames(styles.tip, transitionStyles.tip[state])}>
+      <div className={styles.tip}>
         <div className={styles.tipIcon}></div>
         <div>{t("スケール")}</div>
         <div className={styles.space}></div>
@@ -509,48 +478,4 @@ function OverviewMap(props: { state: TransitionStatus }): JSX.Element {
       </div>
     </div>
   );
-}
-
-function useMetaData(state: TransitionStatus) {
-  const { UIState, UIStateDispatch } = useContext(UIStateContext);
-  const { userPreference } = useContext(userPreferenceContext);
-  const { t } = useTranslation();
-  const focusElement = useRef<HTMLDivElement>(null);
-  const handleKeyUpAttrs = UIState.showOverviewMap
-    ? {
-        tabIndex: 0,
-        ref: focusElement,
-        onBlur: (event: SyntheticEvent<HTMLDivElement>) =>
-          event.currentTarget.focus(),
-        onKeyUp: handleKeyUp,
-      }
-    : {};
-  function handleKeyUp(e: KeyboardEvent) {
-    switch (e.key.toLowerCase()) {
-      case userPreference.triangle:
-        break;
-      case userPreference.cross:
-        UIStateDispatch({
-          type: "showOverviewMap",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "isCheckTopLayer",
-          payload: true,
-        });
-        UIStateDispatch({
-          type: "showCheckTip",
-          payload: true,
-        });
-        UIStateDispatch({
-          type: "showMinimap",
-          payload: true,
-        });
-        break;
-    }
-  }
-  useEffect(() => {
-    if (state === "entered") focusElement.current?.focus();
-  }, [state]);
-  return { handleKeyUpAttrs, t };
 }

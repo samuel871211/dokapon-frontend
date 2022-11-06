@@ -10,10 +10,8 @@ import {
 } from "react";
 
 // Local application/library specific imports.
-import { UIStateContext } from "reducers/DokaponTheWorld/UIState";
 import type { Vertex, Edge } from "global";
-import mainWorld from "data/maps/mainWorld";
-import GraphDSA from "graphics/GraphDSA";
+import dokaponTheWorld from "data/maps/dokaponTheWorld";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
 import TwoWayHEdge from "components/edges/TwoWayHEdge";
@@ -38,6 +36,7 @@ import MagicBookField from "components/vertices/MagicBookField";
 import BattleField from "components/vertices/BattleField";
 import DamageField from "components/vertices/DamageField";
 import styles from "./GraphUI.module.css";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare
 /**
@@ -124,14 +123,9 @@ const pointerDownPage = { x: -1, y: -1 };
  */
 const pointerDownTranslate = { x: -1, y: -1 };
 
-/**
- * graph資料結構與演算法的實作，整包精華都在這邊
- */
-const graphDSA = new GraphDSA(mainWorld);
-
 export default GraphUI;
 
-function GraphUI(): JSX.Element {
+function GraphUI() {
   const {
     handlePointerOver,
     handleDoubleClick,
@@ -178,36 +172,17 @@ function GraphUI(): JSX.Element {
 }
 
 function useMetaData() {
-  const { UIStateDispatch } = useContext(UIStateContext);
-  const [curGraph, setCurGraph] = useState(mainWorld);
+  const [curGraph, setCurGraph] = useState(dokaponTheWorld);
   const [SVGScale, setSVGScale] = useState(1);
   const [SVGTranslate, setSVGTranslate] = useState({ x: 0, y: 0 });
+  const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
+  const { DokaponTheWorld } = gameProgress;
   const Cells = useMemo(() => fromJSON(curGraph), [curGraph]);
 
-  function closeCheck() {
-    UIStateDispatch({
-      type: "isCheckTopLayer",
-      payload: false,
-    });
-    UIStateDispatch({
-      type: "showMinimap",
-      payload: false,
-    });
-    UIStateDispatch({
-      type: "showCheckTip",
-      payload: false,
-    });
-    UIStateDispatch({
-      type: "showVertexAttrsAndDistance",
-      payload: false,
-    });
-  }
   function handlePointerOver(e: PointerEvent<SVGSVGElement>) {
     if (!(e.target instanceof SVGCircleElement)) {
-      UIStateDispatch({
-        type: "showVertexAttrsAndDistance",
-        payload: false,
-      });
+      DokaponTheWorld.showVertexAttrsAndDistance = false;
+      setGameProgress({ ...gameProgress });
       return;
     }
 
@@ -215,10 +190,8 @@ function useMetaData() {
     const vertex = curGraph.vertices.find((item) => item.id === vertexId);
     if (!vertex) return console.error("no pointer over vertex");
 
-    UIStateDispatch({
-      type: "showVertexAttrsAndDistance",
-      payload: true,
-    });
+    DokaponTheWorld.showVertexAttrsAndDistance = true;
+    setGameProgress({ ...gameProgress });
   }
   /**
    * @todo 除了要處理點擊到vertex，還要處理點擊到monster或player
@@ -230,151 +203,67 @@ function useMetaData() {
     const vertex = curGraph.vertices.find((item) => item.id === vertexId);
     if (!vertex) return console.error("no pointer over vertex");
 
-    // closeCheck();
+    DokaponTheWorld.curClickVertex = vertex;
     switch (vertex.name) {
       case "BattleField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showBattleFieldCheck",
-          payload: true,
-        });
+        DokaponTheWorld.curComponent = "BattleFieldCheck";
         break;
       case "KeyTreasureField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showKeyTreasureFieldCheck",
-          payload: true,
-        });
+        DokaponTheWorld.curComponent = "TreasureFieldCheck";
         break;
       case "MagicBookField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showMagicBookFieldCheck",
-          payload: true,
-        });
+        DokaponTheWorld.curComponent = "MagicBookFieldCheck";
         break;
       case "RedTreasureField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showRedTreasureFieldCheck",
-          payload: true,
-        });
+        DokaponTheWorld.curComponent = "RedTreasureFieldCheck";
         break;
       case "TreasureField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showTreasureFieldCheck",
-          payload: true,
-        });
+        DokaponTheWorld.curComponent = "TreasureFieldCheck";
         break;
       case "WhiteTreasureField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showWhiteTreasureFieldCheck",
-          payload: true,
-        });
+        DokaponTheWorld.curComponent = "WhiteTreasureFieldCheck";
         break;
       case "WorldTransferField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showWorldTransferFieldCheck",
-          payload: true,
-        });
+        DokaponTheWorld.curComponent = "WorldTransferFieldCheck";
         break;
       case "GoldTreasureField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showGoldTreasureFieldCheck",
-          payload: true,
-        });
+        DokaponTheWorld.curComponent = "GoldTreasureFieldCheck";
         break;
       case "DamageField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showDamageFieldCheck",
-          payload: true,
-        });
+        DokaponTheWorld.curComponent = "DamageFieldCheck";
         break;
       case "CollectAllMoneyField":
-        return;
+        DokaponTheWorld.curComponent = "CollectMoneyFieldCheck";
+        break;
       case "CollectMoneyField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showCollectMoneyFieldCheck",
-          payload: true,
-        });
-        return;
+        DokaponTheWorld.curComponent = "CollectMoneyFieldCheck";
+        break;
       case "CaveField":
-        /**
-         * @todo 根據不同洞窟，顯示不同文字
-         */
-        return;
+        DokaponTheWorld.curComponent = "CastleFieldCheck";
+        break;
       case "VillageField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showVillageFieldCheck",
-          payload: true,
-        });
-        return;
+        DokaponTheWorld.curComponent = "VillageFieldCheck";
+        break;
       case "CastleField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showCastleFieldCheck",
-          payload: true,
-        });
-        return;
+        DokaponTheWorld.curComponent = "CastleFieldCheck";
+        break;
       case "ChruchField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showChruchFieldCheck",
-          payload: true,
-        });
-        return;
+        DokaponTheWorld.curComponent = "ChurchFieldCheck";
+        break;
       case "GroceryStoreField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showGroceryStoreFieldCheck",
-          payload: true,
-        });
-        UIStateDispatch({
-          type: "curClickVertex",
-          payload: vertex,
-        });
-        return;
+        DokaponTheWorld.curComponent = "GroceryStoreFieldCheck";
+        break;
       case "JobStoreField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showJobStoreFieldCheck",
-          payload: true,
-        });
-        UIStateDispatch({
-          type: "curClickVertex",
-          payload: vertex,
-        });
-        return;
+        DokaponTheWorld.curComponent = "JobStoreFieldCheck";
+        break;
       case "MagicStoreField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showMagicStoreFieldCheck",
-          payload: true,
-        });
-        UIStateDispatch({
-          type: "curClickVertex",
-          payload: vertex,
-        });
-        return;
+        DokaponTheWorld.curComponent = "MagicStoreFieldCheck";
+        break;
       case "WeaponStoreField":
-        closeCheck();
-        UIStateDispatch({
-          type: "showWeaponStoreFieldCheck",
-          payload: true,
-        });
-        UIStateDispatch({
-          type: "curClickVertex",
-          payload: vertex,
-        });
-        return;
+        DokaponTheWorld.curComponent = "WeaponStoreFieldCheck";
+        break;
     }
+    setGameProgress({ ...gameProgress });
   }
   /**
    * POINTERDOWN註冊在SVG ELEMENT身上
@@ -392,6 +281,8 @@ function useMetaData() {
     pointerDownPage.y = e.pageY;
     pointerDownTranslate.x = SVGTranslate.x;
     pointerDownTranslate.y = SVGTranslate.y;
+    DokaponTheWorld.showCheckTip = false;
+    setGameProgress({ ...gameProgress });
     window.addEventListener("pointermove", handlePointerMove);
     window.addEventListener("pointerup", handlePointerUp);
   }
@@ -412,6 +303,8 @@ function useMetaData() {
     setCurGraph({ ...curGraph });
     window.removeEventListener("pointermove", handlePointerMove);
     window.removeEventListener("pointerup", handlePointerUp);
+    DokaponTheWorld.showCheckTip = true;
+    setGameProgress({ ...gameProgress });
   }
 
   /**

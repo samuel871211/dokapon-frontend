@@ -1,57 +1,41 @@
 // Related third party imports.
-import {
-  useContext,
-  useRef,
-  SyntheticEvent,
-  KeyboardEvent,
-  useEffect,
-  useState,
-} from "react";
-import type { TransitionStatus } from "react-transition-group";
+import { useContext } from "react";
 
 // Local application/library specific imports.
 import CustomBorderBottom from "components/CustomBorderBottom";
 import useTranslation from "hooks/useTranslation";
-import { UIStateContext } from "reducers/DokaponTheWorld/UIState";
-import { userPreferenceContext } from "reducers/userPreference";
 import YellowBlock from "layouts/YellowBlock";
-import BottomDialogConfirmCircle from "components/BottomDialogConfirmCircle";
 import styles from "./JobStoreFieldCheck.module.css";
-import JobStore from "data/jobStore";
+import jobs from "data/jobs";
+import BottomDialog from "components/BottomDialog";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
-const transitionStyles = {
-  topArea: {
-    entering: "",
-    entered: styles.topAreaEntered,
-    exiting: "",
-    exited: "",
-    unmounted: "",
-  },
-  bottomArea: {
-    entering: "",
-    entered: styles.bottomAreaEntered,
-    exiting: "",
-    exited: "",
-    unmounted: "",
-  },
-};
+
 export default JobStoreFieldCheck;
 
 /**
  * @todo 根據現在的角色，filter可轉職的職業
  */
-function JobStoreFieldCheck(props: { state: TransitionStatus }): JSX.Element {
-  const { state } = props;
-  const { t, handleKeyUpAttrs, curShowItems } = useMetaData(state);
+function JobStoreFieldCheck() {
+  const { t } = useTranslation();
+  const { curShowJobs } = useMetaData();
 
   return (
-    <div {...handleKeyUpAttrs} className={styles.jobStoreFieldCheckContainer}>
-      <div className={`${styles.topArea} ${transitionStyles.topArea[state]}`}>
-        <YellowBlock role="title" className={styles.jobStoreName}>
+    <div className={styles.jobStoreFieldCheckContainer}>
+      <div className={styles.topArea}>
+        <YellowBlock
+          role="title"
+          borderRadius="1.5rem"
+          className={styles.jobStoreName}
+        >
           {t("職安")}
         </YellowBlock>
-        <YellowBlock role="dialog" className={styles.itemList}>
+        <YellowBlock
+          role="dialog"
+          borderRadius="1.5rem"
+          className={styles.itemList}
+        >
           <div className={styles.listHead}>
             <div className={styles.th}>NAME</div>
             <div className={styles.th}>PRICE</div>
@@ -63,29 +47,31 @@ function JobStoreFieldCheck(props: { state: TransitionStatus }): JSX.Element {
               <div className={styles.arrowIcon}></div>
             </div>
             <div className={styles.nameList}>
-              {curShowItems.map((job) => (
-                <div className={styles.name} key={job.name}>
+              {curShowJobs.map((job) => (
+                <div className={styles.name} key={jobs[job].name}>
                   <div className={styles.icon}></div>
-                  <div>{t(job.name)}</div>
+                  <div>{t(jobs[job].name)}</div>
                 </div>
               ))}
             </div>
             <div className={styles.priceList}>
-              {curShowItems.map((job) => (
-                <div key={job.name}>{job.price.toLocaleString()}</div>
+              {curShowJobs.map((job) => (
+                <div key={jobs[job].name}>
+                  {jobs[job].price.toLocaleString()}
+                </div>
               ))}
             </div>
             <div className={styles.dataList}>
-              {curShowItems.map((job) => (
-                <div className={styles.dataListItem} key={job.name}>
+              {curShowJobs.map((job) => (
+                <div className={styles.dataListItem} key={jobs[job].name}>
                   <div className={styles.dataListItemIcon}>@</div>
                   <div className={styles.dataListItemBag}>
                     <div>ア：</div>
-                    <b>{job.bagSpace.item}</b>
+                    <b>{jobs[job].bagSpace.items}</b>
                   </div>
                   <div className={styles.dataListItemMagic}>
                     <div>魔：</div>
-                    <b>{job.bagSpace.magic}</b>
+                    <b>{jobs[job].bagSpace.magicBooks}</b>
                   </div>
                 </div>
               ))}
@@ -96,67 +82,18 @@ function JobStoreFieldCheck(props: { state: TransitionStatus }): JSX.Element {
           </div>
         </YellowBlock>
       </div>
-      <div
-        className={`${styles.bottomArea} ${transitionStyles.bottomArea[state]}`}
-      >
-        <YellowBlock role="dialog" className={styles.messageContainer}>
-          <div>{t("転職ができるマス。")}</div>
-          <div>{t("土、日曜が定休日。")}</div>
-          <BottomDialogConfirmCircle />
-        </YellowBlock>
-      </div>
+      <BottomDialog show showConfirmCircle></BottomDialog>
     </div>
   );
 }
 
-function useMetaData(state: TransitionStatus) {
-  const focusElement = useRef<HTMLDivElement>(null);
-  const {
-    UIState: { showJobStoreFieldCheck },
-    UIStateDispatch,
-  } = useContext(UIStateContext);
-  const { userPreference } = useContext(userPreferenceContext);
-  const { t } = useTranslation();
-  const [curListPage, toggleCurListPage] = useState(0);
-  const curShowItems = JobStore.filter(
+function useMetaData() {
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { currentPlayerIdx, playersAttrs } = gameProgress;
+  const { availableJobs } = playersAttrs[currentPlayerIdx];
+  const { curListPage } = gameProgress.DokaponTheWorld.JobStoreFieldCheck;
+  const curShowJobs = availableJobs.filter(
     (item, index) => index >= 6 * curListPage && index < 6 * (curListPage + 1)
   );
-  const handleKeyUpAttrs = showJobStoreFieldCheck
-    ? {
-        tabIndex: 0,
-        onBlur: (event: SyntheticEvent<HTMLDivElement>) =>
-          event.currentTarget?.focus(),
-        ref: focusElement,
-        onKeyUp: handleKeyUp,
-      }
-    : {};
-  function handleKeyUp(e: KeyboardEvent) {
-    switch (e.key.toLowerCase()) {
-      case userPreference.R1:
-      case userPreference.R2:
-        if (curListPage === 4) toggleCurListPage(0);
-        else toggleCurListPage(curListPage + 1);
-        break;
-      case userPreference.L1:
-      case userPreference.L2:
-        if (curListPage === 0) toggleCurListPage(4);
-        else toggleCurListPage(curListPage - 1);
-        break;
-      case userPreference.circle:
-      case userPreference.triangle:
-      case userPreference.square:
-      case userPreference.cross:
-        UIStateDispatch({
-          type: "showJobStoreFieldCheck",
-          payload: false,
-        });
-        // 因為離開的時候，component會直接unmount，所以不需要把state重置
-        // toggleCurListPage(0);
-        break;
-    }
-  }
-  useEffect(() => {
-    if (state === "entered") focusElement.current?.focus();
-  }, [state]);
-  return { handleKeyUpAttrs, t, curShowItems };
+  return { curShowJobs };
 }

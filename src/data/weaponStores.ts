@@ -110,6 +110,7 @@ const weaponStores: { [key in AreaTypes]: Array<Weapon | Shield> } = {
   HawaiianIslandsCaveB3Left: [],
   HawaiianIslandsCaveB3Center: [],
   Atlantis: [],
+  BetweenDimensions: [],
 };
 
 export default weaponStores;

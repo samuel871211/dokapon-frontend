@@ -1,15 +1,8 @@
 // Related third party imports.
-import { useEffect, useState, useRef, useContext } from "react";
+import { useEffect, useState, useRef } from "react";
 
 // Local application/library specific imports.
 import styles from "./ContextMenu.module.css";
-import {
-  getGameProgress,
-  findGameProgress,
-  findGameProgressBackup,
-  updateGameProgress,
-} from "api/gameProgress";
-import { gameProgressContext } from "reducers/gameProgress";
 
 // Stateless vars declare.
 
@@ -21,7 +14,6 @@ function ContextMenu(): JSX.Element {
   const writeFileMenu = useRef<HTMLDivElement>(null);
   const readFileMenu = useRef<HTMLDivElement>(null);
   const fileInput = useRef<HTMLInputElement>(null);
-  const { gameProgress } = useContext(gameProgressContext);
   const [ctxMenuPos, setCtxMenuPos] = useState({ x: -1, y: -1 });
   const [innerMenuPos, setInnerMenuPos] = useState({ x: 188, y: -3 });
   const [ctxMenuOpen, toggleCtxMenuOpen] = useState(false);
@@ -57,33 +49,29 @@ function ContextMenu(): JSX.Element {
 
   /**
    * @todo handle error => ui提示
-   * @param slotIdx
+   * @todo call api
    */
   async function saveFileToSlot(slotIdx: number): Promise<void> {
     setSelectedSlotIdx({ value: slotIdx });
     toggleCtxMenuOpen(false);
     toggleWriteFileMenuOpen(false);
-    const response = await updateGameProgress(slotIdx, gameProgress);
-    console.log(response);
   }
   /**
    * @todo 讀檔之後的行為 => 更新ui state
+   * @todo api call
    */
   async function readBackUp(): Promise<void> {
     toggleCtxMenuOpen(false);
     toggleReadFileMenuOpen(false);
-    const response = await findGameProgressBackup(selectedSlotIdx.value);
-    console.log(response);
   }
   /**
    * @todo 讀檔之後的行為 => 更新ui state
+   * @todo api call
    */
   async function readFileFromSlot(slotIdx: number): Promise<void> {
     setSelectedSlotIdx({ value: slotIdx });
     toggleCtxMenuOpen(false);
     toggleReadFileMenuOpen(false);
-    const response = await findGameProgress(slotIdx);
-    console.log(response);
   }
 
   function openWriteFileMenu(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
@@ -196,27 +184,30 @@ function ContextMenu(): JSX.Element {
       toggleCtxMenuOpen(false);
     };
   }
+  /**
+   * @todo api call
+   */
   function getAllSlotsDataTimeStamp(): void {
-    Promise.all([
-      getGameProgress(),
-      findGameProgressBackup(selectedSlotIdx.value),
-    ])
-      .then((responses) => {
-        const [res1, res2] = responses;
-        const newSlotsTimeStamp = [...slotsTimeStamp];
-        if (res1.status === 200) {
-          for (let i = 0; i <= 9; i++) {
-            newSlotsTimeStamp[i].timeStamp = res1.data[i].timeStamp;
-          }
-        }
-        if (res2.status === 200) {
-          newSlotsTimeStamp[10].timeStamp = res2.data?.timeStamp || "";
-        } else if (res2.status === 404) {
-          newSlotsTimeStamp[10].timeStamp = "";
-        }
-        setSlotsTimeStamp(newSlotsTimeStamp);
-      })
-      .catch((err) => console.log(err));
+    // Promise.all([
+    //   getGameProgress(),
+    //   findGameProgressBackup(selectedSlotIdx.value),
+    // ])
+    //   .then((responses) => {
+    //     const [res1, res2] = responses;
+    //     const newSlotsTimeStamp = [...slotsTimeStamp];
+    //     if (res1.status === 200) {
+    //       for (let i = 0; i <= 9; i++) {
+    //         newSlotsTimeStamp[i].timeStamp = res1.data[i].timeStamp;
+    //       }
+    //     }
+    //     if (res2.status === 200) {
+    //       newSlotsTimeStamp[10].timeStamp = res2.data?.timeStamp || "";
+    //     } else if (res2.status === 404) {
+    //       newSlotsTimeStamp[10].timeStamp = "";
+    //     }
+    //     setSlotsTimeStamp(newSlotsTimeStamp);
+    //   })
+    //   .catch((err) => console.log(err));
   }
   useEffect(getAllSlotsDataTimeStamp, [selectedSlotIdx]);
   useEffect(registerRootEventHandler, []);

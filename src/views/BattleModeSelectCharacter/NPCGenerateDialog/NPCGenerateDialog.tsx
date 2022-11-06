@@ -10,7 +10,7 @@ import styles from "./NPCGenerateDialog.module.css";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
@@ -82,15 +82,15 @@ function NPCGenerateDialog() {
 }
 
 function useMetaData() {
-  const { newGameProgress } = useContext(newGameProgressContext);
-  const { playersAttrs, currentPlayerIdx, currentView } = newGameProgress;
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { playersAttrs, currentPlayerIdx, currentView } = gameProgress;
   if (
     currentView !== "BattleModeSelectCharacter" &&
     currentView !== "StoryModeSelectCharacter"
   )
     throw new Error("currentView is not SelectCharacter");
 
-  const { selectedIdx } = newGameProgress[currentView].NPCGenerateDialog;
+  const { selectedIdx } = gameProgress[currentView].NPCGenerateDialog;
   const currentPlayer = playersAttrs[currentPlayerIdx];
   const { job, gender, color } = playersAttrs[currentPlayerIdx];
   const imgSrc = `${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`;

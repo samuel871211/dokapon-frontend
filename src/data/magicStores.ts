@@ -174,6 +174,7 @@ const magicStores: {
   HawaiianIslandsCaveB3Left: [],
   HawaiianIslandsCaveB3Center: [],
   Atlantis: [],
+  BetweenDimensions: [],
 };
 
 export default magicStores;

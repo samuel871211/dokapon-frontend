@@ -15908,7 +15908,7 @@ const atlantisVertices: Vertex[] = [
   },
 ];
 
-const mainWorld: { vertices: Vertex[]; edges: Edge[] } = {
+const dokaponTheWorld: { vertices: Vertex[]; edges: Edge[] } = {
   vertices: [
     ...asiaVertices,
     ...europeVertices,
@@ -32291,4 +32291,4 @@ const mainWorld: { vertices: Vertex[]; edges: Edge[] } = {
     },
   ],
 };
-export default mainWorld;
+export default dokaponTheWorld;

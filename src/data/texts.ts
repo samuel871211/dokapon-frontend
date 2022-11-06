@@ -58,7 +58,7 @@ const texts = {
     en: "Setting",
     cn: "設定",
   },
-  // Game > Drawer > FloatingActionBtn
+  // DokaponTheWorld > Drawer > FloatingActionBtn
   移動: {
     en: "move",
     cn: "移動",
@@ -79,7 +79,7 @@ const texts = {
     en: "data",
     cn: "資訊",
   },
-  // Game > Walk
+  // DokaponTheWorld > Walk
   おまかせ: {
     en: "appoint",
     cn: "委託",
@@ -92,7 +92,7 @@ const texts = {
     en: "Speed up",
     cn: "加速",
   },
-  // Game > Bag
+  // DokaponTheWorld > Bag
   戻る: {
     en: "return",
     cn: "返回",
@@ -105,7 +105,7 @@ const texts = {
     en: "magic",
     cn: "魔法",
   },
-  // Game > VillageFieldCheck
+  // DokaponTheWorld > VillageFieldCheck
   /**
    * @todo 部分地區的翻譯檔尚未完成
    */
@@ -146,7 +146,7 @@ const texts = {
       en: "手に入れると、お金や特産品などがもらえるマス。\n泊まるとHPが全回復する。\nモンスターがいる場合、戦闘になる。",
       cn: "手に入れると、お金や特産品などがもらえるマス。\n泊まるとHPが全回復する。\nモンスターがいる場合、戦闘になる。",
     },
-  // Game > ChurchFieldCheck
+  // DokaponTheWorld > ChurchFieldCheck
   教会: {
     en: "church",
     cn: "教會",
@@ -321,7 +321,7 @@ const texts = {
     en: "魔王の王かん",
     cn: "魔王の王かん",
   },
-  // Game > CastleFieldCheck
+  // DokaponTheWorld > CastleFieldCheck
   ドカポン城: {
     en: "Dokapon Castle",
     cn: "多卡波王城",
@@ -343,7 +343,7 @@ const texts = {
       en: "世界の中心、スタートマス。\n集めたお金をここにある世界平和金庫に戻そう!\n全てのステータス異常を無料で回復してくれる。",
       cn: "世界の中心、スタートマス。\n集めたお金をここにある世界平和金庫に戻そう!\n全てのステータス異常を無料で回復してくれる。",
     },
-  // Game > OverviewMap
+  // DokaponTheWorld > OverviewMap
   スケール: {
     en: "scale",
     cn: "放大",
@@ -352,7 +352,7 @@ const texts = {
     en: "end",
     cn: "結束",
   },
-  // Game > CollectMoneyField
+  // DokaponTheWorld > CollectMoneyField
   村名: {
     en: "Village name",
     cn: "村名",
@@ -601,7 +601,13 @@ const texts = {
     en: "マダガスカル村",
     cn: "マダガスカル村",
   },
-  // Game > OnlyBottomDialogFieldCheck
+  // DokaponTheWorld > CollectMoneyField
+  "持ち村の内1つから、上納金を集金するか、\nレベルアップさせるかを選べるマス。\n集金すると特産品もいっしょに回収できる。":
+    {
+      en: "持ち村の内1つから、上納金を集金するか、\nレベルアップさせるかを選べるマス。\n集金すると特産品もいっしょに回収できる。",
+      cn: "持ち村の内1つから、上納金を集金するか、\nレベルアップさせるかを選べるマス。\n集金すると特産品もいっしょに回収できる。",
+    },
+  // DokaponTheWorld > OnlyBottomDialogFieldCheck
   "ザコモンスターとの戦闘や\nイベントが発生するマス。": {
     en: "ザコモンスターとの戦闘や\nイベントが発生するマス。",
     cn: "ザコモンスターとの戦闘や\nイベントが発生するマス。",
@@ -640,20 +646,16 @@ const texts = {
     en: "止まると一定量のダメージを受けるマス。\n戦闘やイベントも起こる。",
     cn: "止まると一定量のダメージを受けるマス。\n戦闘やイベントも起こる。",
   },
-  // Game > JobStore
-  "転職ができるマス。": {
-    en: "転職ができるマス。",
-    cn: "転職ができるマス。",
-  },
-  "土、日曜が定休日。": {
-    en: "土、日曜が定休日。",
-    cn: "土、日曜が定休日。",
+  // DokaponTheWorld > JobStore
+  "転職ができるマス\n土、日曜が定休日。": {
+    en: "転職ができるマス\n土、日曜が定休日。",
+    cn: "転職ができるマス\n土、日曜が定休日。",
   },
   職安: {
     en: "職安",
     cn: "職安",
   },
-  // Game > MagicStore
+  // DokaponTheWorld > MagicStore
   弱体系魔法: {
     en: "弱体系魔法",
     cn: "弱体系魔法",
@@ -706,9 +708,9 @@ const texts = {
     en: "Magic Store",
     cn: "魔法屋",
   },
-  "フィールド魔法や戦闘魔法が買えるマス。": {
-    en: "A place where you can buy magic stuffs.",
-    cn: "可以購買領域魔法和戰鬥魔法的地方。",
+  "フィールド魔法や戦闘魔法が買えるマス。\n水曜が定休日。\n日曜は特売日。": {
+    en: "A place where you can buy magic stuffs.\nWednesday is a regular holiday.\nSunday is a special sale day.",
+    cn: "可以購買領域魔法和戰鬥魔法的地方。\n星期三公休。\n星期天特賣。",
   },
   マグの書: {
     en: "damageFire1",
@@ -1066,7 +1068,11 @@ const texts = {
     en: "antarctica1",
     cn: "待確認...",
   },
-  // Game > WeaponStore
+  // DokaponTheWorld > WeaponStore
+  "武器や盾が買えるマス。\n水曜が定休日。\n日曜は特売日。": {
+    en: "Mass where you can buy weapons and shields.\nWednesday is a regular holiday.\nSunday is a special sale day.",
+    cn: "可以購買武器跟盾牌的地方。\n星期三公休。\n星期天特賣。",
+  },
   武器屋: {
     en: "Weapon Store",
     cn: "武器屋",
@@ -1647,7 +1653,7 @@ const texts = {
     en: "God Devil Dragon Sword",
     cn: "神魔龍劍",
   },
-  // Game > groceryStore
+  // DokaponTheWorld > groceryStore
   移動系アイテム: {
     en: "feather items",
     cn: "移動系物品",
@@ -1668,17 +1674,9 @@ const texts = {
     en: "disturb items",
     cn: "邪魔系物品",
   },
-  "アイテムが買えるマス。": {
-    en: "Mass where you can buy items.",
-    cn: "可以購買物品的地方。",
-  },
-  "水曜が定休日。": {
-    en: "Wednesday is a regular holiday.",
-    cn: "星期三公休。",
-  },
-  "日曜は特売日。": {
-    en: "Sunday is a special sale day.",
-    cn: "星期天特賣。",
+  "アイテムが買えるマス。\n水曜が定休日。\n日曜は特売日。": {
+    en: "Mass where you can buy items.\nWednesday is a regular holiday.\nSunday is a special sale day.",
+    cn: "可以購買物品的地方。\n星期三公休。\n星期天特賣。",
   },
   アイテム屋: {
     en: "grocery store",

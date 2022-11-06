@@ -7,7 +7,7 @@ import { basicJobs } from "data/jobs";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
 import styles from "./SelectJob.module.css";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 import topAreaStyles from "../TopArea/TopArea.module.css";
 
 // Stateless vars declare.
@@ -36,8 +36,8 @@ function SelectJob() {
 }
 
 function useMetaData() {
-  const { newGameProgress } = useContext(newGameProgressContext);
-  const { playersAttrs, currentPlayerIdx } = newGameProgress;
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { playersAttrs, currentPlayerIdx } = gameProgress;
   const currentPlayerJob = playersAttrs[currentPlayerIdx].job;
   return { currentPlayerJob };
 }

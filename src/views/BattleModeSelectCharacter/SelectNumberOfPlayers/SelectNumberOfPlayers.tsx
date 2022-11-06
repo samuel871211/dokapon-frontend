@@ -5,7 +5,7 @@ import { useContext } from "react";
 import styles from "./SelectNumberOfPlayers.module.css";
 import YellowBlock from "layouts/YellowBlock";
 import useTranslation from "hooks/useTranslation";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 import SVGIcon from "layouts/SVGIcon";
 
 // Stateless vars declare.
@@ -78,7 +78,7 @@ function SelectNumberOfPlayers() {
 }
 
 function useMetaData() {
-  const { newGameProgress } = useContext(newGameProgressContext);
-  const { numberOfPlayers } = newGameProgress;
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { numberOfPlayers } = gameProgress;
   return { numberOfPlayers };
 }

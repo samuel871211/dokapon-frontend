@@ -8,7 +8,7 @@ import YellowBlock from "layouts/YellowBlock";
 import useTranslation from "hooks/useTranslation";
 import SVGIcon from "layouts/SVGIcon";
 import { useContext } from "react";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
@@ -59,8 +59,8 @@ function SelectGender() {
 }
 
 function useMetaData() {
-  const { newGameProgress } = useContext(newGameProgressContext);
-  const { currentPlayerIdx, playersAttrs } = newGameProgress;
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { currentPlayerIdx, playersAttrs } = gameProgress;
   const currentPlayerGender = playersAttrs[currentPlayerIdx].gender;
   return { currentPlayerGender };
 }

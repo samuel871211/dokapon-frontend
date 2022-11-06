@@ -1,14 +1,14 @@
 import texts from "data/texts";
 import { useContext } from "react";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 const defaultLang = "jp";
 
 export default useTranslation;
 
 function useTranslation() {
-  const { newGameProgress } = useContext(newGameProgressContext);
-  const lang = newGameProgress.userPreference.lang;
+  const { gameProgress } = useContext(gameProgressCtx);
+  const lang = gameProgress.userPreference.lang;
   function t(key: keyof typeof texts) {
     if (lang === defaultLang) return key;
     const textObj = texts[key];

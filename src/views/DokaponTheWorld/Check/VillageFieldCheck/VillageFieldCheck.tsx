@@ -1,51 +1,37 @@
 // Related third party imports.
-import {
-  useContext,
-  useRef,
-  SyntheticEvent,
-  KeyboardEvent,
-  useEffect,
-} from "react";
-import type { TransitionStatus } from "react-transition-group";
+import { useContext } from "react";
 
 // Local application/library specific imports.
 import areaTypesToJP from "utils/areaTypesToJP";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import useTranslation from "hooks/useTranslation";
-import { UIStateContext } from "reducers/DokaponTheWorld/UIState";
-import { userPreferenceContext } from "reducers/userPreference";
 import YellowBlock from "layouts/YellowBlock";
-import BottomDialogConfirmCircle from "components/BottomDialogConfirmCircle";
 import styles from "./VillageFieldCheck.module.css";
+import BottomDialog from "components/BottomDialog";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
-const transitionStyles = {
-  topArea: {
-    entering: "",
-    entered: styles.topAreaEntered,
-    exiting: "",
-    exited: "",
-    unmounted: "",
-  },
-  bottomArea: {
-    entering: "",
-    entered: styles.bottomAreaEntered,
-    exiting: "",
-    exited: "",
-    unmounted: "",
-  },
-};
+
 export default VillageFieldCheck;
 
-function VillageFieldCheck(props: { state: TransitionStatus }): JSX.Element {
-  const { state } = props;
-  const { t, handleKeyUpAttrs, area } = useMetaData(state);
+/**
+ * @todo village name
+ * @todo village pay
+ * @todo village total
+ */
+function VillageFieldCheck() {
+  const { t } = useTranslation();
+  const { area } = useMetaData();
 
   return (
-    <div {...handleKeyUpAttrs} className={styles.villageFieldCheckContainer}>
-      <div className={`${styles.topArea} ${transitionStyles.topArea[state]}`}>
+    <div className={styles.villageFieldCheckContainer}>
+      <div className={styles.topArea}>
         <div className={styles.empty}></div>
-        <YellowBlock role="dialog" className={styles.villageDetail}>
+        <YellowBlock
+          role="dialog"
+          borderRadius="1.5rem"
+          className={styles.villageDetail}
+        >
           <div className={styles.villageArea}>
             <div>AREA</div>
             <div>{`${t(areaTypesToJP(area))}${t("エリア")}`}</div>
@@ -70,57 +56,15 @@ function VillageFieldCheck(props: { state: TransitionStatus }): JSX.Element {
           </div>
         </YellowBlock>
       </div>
-      <div
-        className={`${styles.bottomArea} ${transitionStyles.bottomArea[state]}`}
-      >
-        <YellowBlock role="dialog" className={styles.messageContainer}>
-          {t(`手に入れると、お金や特産品などがもらえるマス。
-泊まるとHPが全回復する。
-モンスターがいる場合、戦闘になる。`)
-            .split("\n")
-            .map((line) => (
-              <div key={line}>{line}</div>
-            ))}
-          <BottomDialogConfirmCircle />
-        </YellowBlock>
-      </div>
+      <BottomDialog show showConfirmCircle></BottomDialog>
     </div>
   );
 }
 
-function useMetaData(state: TransitionStatus) {
-  const focusElement = useRef<HTMLDivElement>(null);
+function useMetaData() {
+  const { gameProgress } = useContext(gameProgressCtx);
   const {
-    UIState: {
-      showVillageFieldCheck,
-      curClickVertex: { area },
-    },
-    UIStateDispatch,
-  } = useContext(UIStateContext);
-  const { userPreference } = useContext(userPreferenceContext);
-  const { t } = useTranslation();
-  const handleKeyUpAttrs = showVillageFieldCheck && {
-    tabIndex: 0,
-    onBlur: (event: SyntheticEvent<HTMLDivElement>) =>
-      event.currentTarget?.focus(),
-    ref: focusElement,
-    onKeyUp: handleKeyUp,
-  };
-  function handleKeyUp(e: KeyboardEvent) {
-    switch (e.key.toLowerCase()) {
-      case userPreference.circle:
-      case userPreference.triangle:
-      case userPreference.square:
-      case userPreference.cross:
-        UIStateDispatch({
-          type: "showVillageFieldCheck",
-          payload: false,
-        });
-        break;
-    }
-  }
-  useEffect(() => {
-    if (state === "entered") focusElement.current?.focus();
-  }, [state]);
-  return { handleKeyUpAttrs, t, area };
+    curClickVertex: { area },
+  } = gameProgress.DokaponTheWorld;
+  return { area };
 }

@@ -21,7 +21,8 @@ import type {
   Position,
   AreaTypes,
 } from "global";
-import mainWorld from "data/maps/mainWorld";
+import dokaponTheWorld from "data/maps/dokaponTheWorld";
+import betweenDimensions from "data/maps/betweenDimensions";
 import GraphDSA from "graphics/GraphDSA";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
@@ -120,7 +121,7 @@ const selectedVertices: Vertex[] = [];
 const selectedVerticesGroupOffsets: Position[] = [];
 
 // graph資料結構與演算法的實作，整包精華都在這邊
-const graphDSA = new GraphDSA(mainWorld);
+const graphDSA = new GraphDSA(betweenDimensions);
 
 export default GraphEditor;
 
@@ -345,7 +346,7 @@ function useMetaData() {
     x: -1,
     y: -1,
   });
-  const [curGraph, setCurGraph] = useState(mainWorld);
+  const [curGraph, setCurGraph] = useState(dokaponTheWorld);
   const [mouseMode, toggleMouseMode] = useState<MouseMode>("edit");
   const [SVGScale, setSVGScale] = useState(1);
   const [selectedArea, setSelectedArea] = useState({

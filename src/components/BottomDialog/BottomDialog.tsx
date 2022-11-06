@@ -7,7 +7,7 @@ import BottomDialogConfirmCircle from "components/BottomDialogConfirmCircle";
 import { BottomDialogProps } from "global";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 import styles from "./BottomDialog.module.css";
 
 // Stateless vars declare.
@@ -88,8 +88,8 @@ function BottomDialog(props: BottomDialogProps) {
 }
 
 function useMetaData() {
-  const { newGameProgress } = useContext(newGameProgressContext);
-  const { bottomDialogSentencesQueue, isHoverOnConfirm } = newGameProgress;
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { bottomDialogSentencesQueue, isHoverOnConfirm } = gameProgress;
   const bottomDialogSentence = bottomDialogSentencesQueue[0] || "";
   return { bottomDialogSentence, isHoverOnConfirm };
 }

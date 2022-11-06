@@ -37,6 +37,7 @@ const areas: AreaTypes[] = [
   "HawaiianIslandsCaveB3Left",
   "HawaiianIslandsCaveB3Center",
   "Atlantis",
+  "BetweenDimensions",
 ];
 
 export default areas;

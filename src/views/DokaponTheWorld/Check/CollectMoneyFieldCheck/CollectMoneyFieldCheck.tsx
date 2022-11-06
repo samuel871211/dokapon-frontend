@@ -1,15 +1,8 @@
 // Related third party imports.
 import CustomBorderBottom from "components/CustomBorderBottom";
 import YellowBlock from "layouts/YellowBlock";
-import {
-  useEffect,
-  useRef,
-  useState,
-  SyntheticEvent,
-  useContext,
-  KeyboardEvent,
-} from "react";
-import { TransitionStatus } from "react-transition-group";
+import { useRef, useState, useContext, KeyboardEvent } from "react";
+import classNames from "classnames";
 
 // Local application/library specific imports.
 import areaTypesToJP from "utils/areaTypesToJP";
@@ -17,8 +10,6 @@ import villages from "data/villages";
 import sevenContinents from "data/sevenContinents";
 import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./CollectMoneyFieldCheck.module.css";
-import classNames from "classnames";
-import { userPreferenceContext } from "reducers/userPreference";
 import useTranslation from "hooks/useTranslation";
 
 // Stateless vars declare.
@@ -32,14 +23,11 @@ export default CollectMoneyFieldCheck;
  * @todo 字體有分紅、藍、黑色，黑色的邏輯尚不清楚，還沒實作
  * @todo Boss的ICON、角色的ICON
  */
-function CollectMoneyFieldCheck(props: { state: TransitionStatus }) {
-  const { state } = props;
-  const { currentListPage, handleKeyUpAttrs, t } = useMetaData(state);
+function CollectMoneyFieldCheck() {
+  const { t } = useTranslation();
+  const { currentListPage } = useMetaData();
   return (
-    <div
-      className={styles.collectMoneyFieldCheckContainer}
-      {...handleKeyUpAttrs}
-    >
+    <div className={styles.collectMoneyFieldCheckContainer}>
       <YellowBlock
         role="dialog"
         className={styles.collectMoneyFieldCheckDialog}
@@ -112,32 +100,19 @@ function CollectMoneyFieldCheck(props: { state: TransitionStatus }) {
   );
 }
 
-function useMetaData(state: TransitionStatus) {
-  const focusElement = useRef<HTMLDivElement>(null);
+function useMetaData() {
   const [currentListPage, setCurrentListPage] = useState(0);
-  const { userPreference } = useContext(userPreferenceContext);
-  const { t } = useTranslation();
-  const handleKeyUpAttrs = state === "entered" && {
-    tabIndex: 0,
-    ref: focusElement,
-    onBlur: (event: SyntheticEvent<HTMLDivElement>) =>
-      event.currentTarget.focus(),
-    onKeyUp: handleKeyUp,
-  };
-  function handleKeyUp(e: KeyboardEvent) {
-    switch (e.key.toLowerCase()) {
-      case userPreference.L1:
-      case userPreference.L2:
-        setCurrentListPage(currentListPage === 0 ? 6 : currentListPage - 1);
-        return;
-      case userPreference.R1:
-      case userPreference.R2:
-        setCurrentListPage(currentListPage === 6 ? 0 : currentListPage + 1);
-        return;
-    }
-  }
-  useEffect(() => {
-    if (state === "entered") focusElement.current?.focus();
-  }, [state]);
-  return { currentListPage, handleKeyUpAttrs, t };
+  // function handleKeyUp(e: KeyboardEvent) {
+  //   switch (e.key.toLowerCase()) {
+  //     case userPreference.L1:
+  //     case userPreference.L2:
+  //       setCurrentListPage(currentListPage === 0 ? 6 : currentListPage - 1);
+  //       return;
+  //     case userPreference.R1:
+  //     case userPreference.R2:
+  //       setCurrentListPage(currentListPage === 6 ? 0 : currentListPage + 1);
+  //       return;
+  //   }
+  // }
+  return { currentListPage };
 }

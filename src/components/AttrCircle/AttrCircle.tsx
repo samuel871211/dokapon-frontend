@@ -11,8 +11,12 @@ function AttrCircle(props: {
   attr: string;
   value: number;
   fontSize: string;
-}): JSX.Element {
-  const { attr, value, fontSize } = props;
+  /**
+   * color of value text
+   */
+  color?: string;
+}) {
+  const { attr, value, fontSize, color } = props;
 
   return (
     <div
@@ -20,7 +24,7 @@ function AttrCircle(props: {
       style={{ fontSize, lineHeight: fontSize }}
     >
       <div>{attr}</div>
-      <div>{value}</div>
+      <div style={{ color }}>{value}</div>
     </div>
   );
 }

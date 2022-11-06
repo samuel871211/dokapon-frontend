@@ -4,7 +4,7 @@ import { useContext } from "react";
 // Local application/library specific imports.
 import CustomBorderBottom from "components/CustomBorderBottom";
 import YellowBlock from "layouts/YellowBlock";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 import styles from "./SelectController.module.css";
 import useTranslation from "hooks/useTranslation";
 import npcLevelsToJP from "data/npcLevelsToJP";
@@ -114,9 +114,9 @@ function SelectController() {
             className={styles.controllerConfirmContainer}
             data-show={showControllerConfirm}
           >
-            {playerAttrs.npcLevel === ""
-              ? `${t("コントローラ")}${playerAttrs.controllerNumber}`
-              : `${t(npcLevelsToJP[playerAttrs.npcLevel])}`}
+            {playerAttrs.isNPC
+              ? `${t(npcLevelsToJP[playerAttrs.npcLevel])}`
+              : `${t("コントローラ")}${playerAttrs.controllerNumber}`}
           </YellowBlock>
         </YellowBlock>
       ))}
@@ -125,16 +125,16 @@ function SelectController() {
 }
 
 function useMetaData() {
-  const { newGameProgress } = useContext(newGameProgressContext);
+  const { gameProgress } = useContext(gameProgressCtx);
   const { playersAttrs, numberOfPlayers, currentPlayerIdx, currentView } =
-    newGameProgress;
+    gameProgress;
   if (
     currentView !== "BattleModeSelectCharacter" &&
     currentView !== "StoryModeSelectCharacter"
   )
     throw new Error("currentView is not SelectCharacter");
 
-  const { curComponent, ShuffleOrder } = newGameProgress[currentView];
+  const { curComponent, ShuffleOrder } = gameProgress[currentView];
   const { shuffleIndexes } = ShuffleOrder;
   const showOrderNumber = curComponent === "ShuffleOrderComplete";
   const showControllerButton = curComponent === "SelectController";

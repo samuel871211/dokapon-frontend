@@ -7,7 +7,7 @@ import styles from "./GoalInputDialog.module.css";
 import YellowBlock from "layouts/YellowBlock";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import useTranslation from "hooks/useTranslation";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
 
@@ -51,12 +51,12 @@ function GoalInputDialog() {
 }
 
 function useMetaData() {
-  const { newGameProgress } = useContext(newGameProgressContext);
+  const { gameProgress } = useContext(gameProgressCtx);
   const {
     goalType,
     goalInput,
     BattleModeSelectCharacter: { GoalInputDialog },
-  } = newGameProgress;
+  } = gameProgress;
   const { selectedIdx } = GoalInputDialog;
   const goalInputLen = goalType === "period" ? 3 : 9;
   const transferGoalInputToArray = useCallback(

@@ -282,6 +282,7 @@ const villages: { [key in AreaTypes]: { name: TextsKeys; value: number }[] } = {
   HawaiianIslandsCaveB3Left: [],
   HawaiianIslandsCaveB3Center: [],
   Atlantis: [],
+  BetweenDimensions: [],
 };
 
 export default villages;

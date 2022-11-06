@@ -1,28 +1,21 @@
 // Related third party imports.
-import { TransitionStatus } from "react-transition-group";
-import {
-  useRef,
-  useContext,
-  useEffect,
-  SyntheticEvent,
-  KeyboardEvent,
-  useState,
-} from "react";
+import { useContext } from "react";
 import classNames from "classnames";
 
 // Local application/library specific imports.
 import styles from "./Roulette.module.css";
-import { userPreferenceContext } from "reducers/userPreference";
-import { UIStateContext } from "reducers/DokaponTheWorld/UIState";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
-const transitionStyles = {
-  entering: "",
-  entered: styles.entered,
-  exiting: "",
-  exited: "",
-  unmounted: "",
-};
+const stopAt = [
+  styles.stopAt0,
+  styles.stopAt1,
+  styles.stopAt2,
+  styles.stopAt3,
+  styles.stopAt4,
+  styles.stopAt5,
+  styles.stopAt6,
+];
 
 export default Roulette;
 
@@ -45,63 +38,11 @@ export default Roulette;
  *
  * 6 => 1/16
  */
-function Roulette(props: { state: TransitionStatus }): JSX.Element {
-  const { state } = props;
-  const [rouletteResult, setRouletteResult] = useState(-1);
-  const { userPreference } = useContext(userPreferenceContext);
-  const { UIState, UIStateDispatch } = useContext(UIStateContext);
-  const focusElement = useRef<HTMLDivElement>(null);
-  const handleKeyUpAttrs = UIState.showRoulette
-    ? {
-        tabIndex: 0,
-        ref: focusElement,
-        onBlur: (event: SyntheticEvent<HTMLDivElement>) =>
-          event.currentTarget.focus(),
-        onKeyUp: handleKeyUp,
-      }
-    : {};
-  function getRouletteEndCss(): keyof typeof styles {
-    return `stopAt${rouletteResult}` as keyof typeof styles;
-  }
-  function handleKeyUp(e: KeyboardEvent) {
-    switch (e.key.toLowerCase()) {
-      case userPreference.circle:
-        setRouletteResult(
-          Math.getRandomIntInclusive(0, 3) + Math.getRandomIntInclusive(0, 3)
-        );
-        return;
-      case userPreference.cross:
-        UIStateDispatch({
-          type: "showRoulette",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "showDrawer",
-          payload: true,
-        });
-        return;
-    }
-  }
-  useEffect(() => {
-    if (rouletteResult !== -1) {
-      setTimeout(() => {
-        UIStateDispatch({
-          type: "showRoulette",
-          payload: false,
-        });
-        UIStateDispatch({
-          type: "isPaperTopLayer",
-          payload: true,
-        });
-      }, 1000);
-    }
-  }, [rouletteResult]);
-  useEffect(() => {
-    if (state === "entered") focusElement.current?.focus();
-  }, [state]);
+function Roulette() {
+  const { rouletteResult } = useMetaData();
   return (
-    <div {...handleKeyUpAttrs} className={styles.container}>
-      <div className={classNames(styles.roulette, transitionStyles[state])}>
+    <div className={styles.rouletteContainer}>
+      <div className={styles.roulette}>
         <svg
           className={styles.svg}
           viewBox="0 0 600 600"
@@ -311,7 +252,7 @@ function Roulette(props: { state: TransitionStatus }): JSX.Element {
               className={classNames({
                 [styles.arrow]: true,
                 [styles.arrowRotate]: rouletteResult === -1,
-                [getRouletteEndCss()]: rouletteResult !== -1,
+                [stopAt[rouletteResult]]: rouletteResult !== -1,
               })}
               fill="#ffffff"
               stroke="#000000"
@@ -324,4 +265,10 @@ function Roulette(props: { state: TransitionStatus }): JSX.Element {
       </div>
     </div>
   );
+}
+
+function useMetaData() {
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { result: rouletteResult } = gameProgress.DokaponTheWorld.Roulette;
+  return { rouletteResult };
 }

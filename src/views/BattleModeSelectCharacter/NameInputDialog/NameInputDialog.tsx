@@ -6,7 +6,7 @@ import nameInputChars from "data/nameInputChars";
 import styles from "./NameInputDialog.module.css";
 import globalStyles from "assets/styles/globalStyles.module.css";
 import YellowBlock from "layouts/YellowBlock";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
 
@@ -16,8 +16,8 @@ export default NameInputDialog;
  * @todo 上方的nameInputChars跟下方的keyboardKeys，hoverEffect希望能同步
  */
 function NameInputDialog() {
-  const { newGameProgress } = useContext(newGameProgressContext);
-  const { currentView } = newGameProgress;
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { currentView } = gameProgress;
   if (
     currentView !== "BattleModeSelectCharacter" &&
     currentView !== "StoryModeSelectCharacter"
@@ -32,7 +32,7 @@ function NameInputDialog() {
       selectedWordIdx,
       curNameInputIdx,
     },
-  } = newGameProgress[currentView];
+  } = gameProgress[currentView];
 
   return (
     <div className={styles.nameInputDialogContainer}>

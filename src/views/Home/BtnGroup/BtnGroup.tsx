@@ -1,39 +1,21 @@
 // Related third party imports.
-import { TransitionStatus } from "react-transition-group";
-import {
-  useState,
-  useEffect,
-  useRef,
-  useContext,
-  SyntheticEvent,
-  KeyboardEvent,
-} from "react";
+import { useState, useContext, KeyboardEvent } from "react";
 
 // Local application/library specific imports.
 import styles from "./BtnGroup.module.css";
-import { UIStateContext } from "reducers/Home/UIState";
 import useTranslation from "hooks/useTranslation";
-import { userPreferenceContext } from "reducers/userPreference";
 import YellowBlock from "layouts/YellowBlock";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
-const transitionStyles = {
-  exiting: styles.fadeOut,
-  exited: styles.fadeOut,
-  unmounted: styles.fadeOut,
-  entering: styles.fadeIn,
-  entered: styles.fadeIn,
-};
 
 export default BtnGroup;
 
-function BtnGroup(props: { state: TransitionStatus }) {
-  const { state } = props;
+function BtnGroup() {
   const { t } = useTranslation();
-  const { handleKeyUpAttrs, selectedBtnIdx } = useMetaData(state);
+  const { selectedBtnIdx } = useMetaData();
   return (
-    <div className={transitionStyles[state]} {...handleKeyUpAttrs}>
+    <div>
       <YellowBlock
         role="button"
         selected={selectedBtnIdx === 0}
@@ -74,62 +56,51 @@ function BtnGroup(props: { state: TransitionStatus }) {
   );
 }
 
-function useMetaData(state: TransitionStatus) {
+function useMetaData() {
   const [selectedBtnIdx, setSelectedBtnIdx] = useState(0);
-  const { UIState, UIStateDispatch } = useContext(UIStateContext);
-  const { userPreference } = useContext(userPreferenceContext);
-  const focusElement = useRef<HTMLDivElement>(null);
-  const { setNewGameProgress } = useContext(newGameProgressContext);
-  const handleKeyUpAttrs = UIState.showBtnGroup
-    ? {
-        tabIndex: 0,
-        ref: focusElement,
-        onBlur: (event: SyntheticEvent<HTMLDivElement>) =>
-          event.currentTarget.focus(),
-        onKeyUp: handleKeyUp,
-      }
-    : {};
+  const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
+  const { gamePadSetting } = gameProgress;
   function handleKeyUp(e: KeyboardEvent) {
     switch (e.key.toLowerCase()) {
-      case userPreference.arrowUp:
+      case gamePadSetting.arrowUp:
         setSelectedBtnIdx(selectedBtnIdx === 0 ? 3 : selectedBtnIdx - 1);
         return;
-      case userPreference.arrowDown:
+      case gamePadSetting.arrowDown:
         setSelectedBtnIdx(selectedBtnIdx === 3 ? 0 : selectedBtnIdx + 1);
         return;
-      case userPreference.circle: {
+      case gamePadSetting.circle: {
         switch (selectedBtnIdx) {
           case 0:
-            setNewGameProgress((prev) => {
+            setGameProgress((prev) => {
               prev.currentView = "StoryModeSelectCharacter";
               return { ...prev };
             });
             return;
           case 1:
-            setNewGameProgress((prev) => {
+            setGameProgress((prev) => {
               prev.currentView = "BattleModeSelectCharacter";
               return { ...prev };
             });
             return;
           case 2:
-            UIStateDispatch({
-              type: "showBook",
-              payload: true,
-            });
-            UIStateDispatch({
-              type: "showBtnGroup",
-              payload: false,
-            });
+            // UIStateDispatch({
+            //   type: "showBook",
+            //   payload: true,
+            // });
+            // UIStateDispatch({
+            //   type: "showBtnGroup",
+            //   payload: false,
+            // });
             return;
           case 3:
-            UIStateDispatch({
-              type: "showSetting",
-              payload: true,
-            });
-            UIStateDispatch({
-              type: "showBtnGroup",
-              payload: false,
-            });
+            // UIStateDispatch({
+            //   type: "showSetting",
+            //   payload: true,
+            // });
+            // UIStateDispatch({
+            //   type: "showBtnGroup",
+            //   payload: false,
+            // });
             return;
           default:
             return;
@@ -139,13 +110,6 @@ function useMetaData(state: TransitionStatus) {
         return;
     }
   }
-  function focusOnEntered() {
-    if (state === "entered") focusElement.current?.focus();
-  }
 
-  useEffect(focusOnEntered, [state]);
-  return {
-    handleKeyUpAttrs,
-    selectedBtnIdx,
-  };
+  return { selectedBtnIdx };
 }

@@ -1,229 +1,216 @@
 // Related third party imports.
-import {
-  useState,
-  useContext,
-  useRef,
-  useEffect,
-  SyntheticEvent,
-  KeyboardEvent,
-} from "react";
-import classNames from "classnames";
-import { TransitionStatus } from "react-transition-group";
+import { useContext } from "react";
 
 // Local application/library specific imports.
 import AttrCircle from "components/AttrCircle";
-import { SomeKindOfIcon } from "components/icons";
+import SomeKindOfIcon from "components/icons";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import styles from "./Drawer.module.css";
 import useTranslation from "hooks/useTranslation";
-import { userPreferenceContext } from "reducers/userPreference";
-import { UIStateContext } from "reducers/DokaponTheWorld/UIState";
+import { gameProgressCtx } from "reducers/gameProgress";
+import { PlayerAttrs } from "global";
 
 // Stateless vars declare.
+class Node {
+  public value = 0;
+  public next: Node | undefined = undefined;
+  constructor(value: number) {
+    this.value = value;
+    this.next = undefined;
+  }
+}
+const zero = new Node(0);
+const one = new Node(1);
+const two = new Node(2);
+const three = new Node(3);
+zero.next = one;
+one.next = two;
+two.next = three;
+three.next = zero;
+const weekToChinese = ["月", "火", "水", "木", "金", "土", "日"];
+const weekToEnglish = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
-const transitionStyles = {
-  container: {
-    entering: "",
-    entered: "",
-    exiting: "",
-    exited: styles.exited,
-    unmounted: "",
-  },
-  topLeft: {
-    entering: styles.topLeftEntering,
-    entered: styles.topLeftEntered,
-    exiting: styles.topLeftExiting,
-    exited: styles.exited,
-    unmounted: "",
-  },
-  topRight: {
-    entering: styles.topRightEntering,
-    entered: styles.topRightEntered,
-    exiting: styles.topRightExiting,
-    exited: styles.exited,
-    unmounted: "",
-  },
-  bottomLeft: {
-    entering: styles.topLeftEntering,
-    entered: styles.topLeftEntered,
-    exiting: styles.topLeftExiting,
-    exited: styles.exited,
-    unmounted: "",
-  },
-  bottomRight: {
-    entering: styles.topRightEntering,
-    entered: styles.topRightEntered,
-    exiting: styles.topRightExiting,
-    exited: styles.exited,
-    unmounted: "",
-  },
-};
 
 export default Drawer;
 
-function Drawer(props: { state: TransitionStatus }): JSX.Element {
-  const { state } = props;
-  const [selectedBtnIdx, setSelectedBtnIdx] = useState(0);
-  const { UIState, UIStateDispatch } = useContext(UIStateContext);
-  const { userPreference } = useContext(userPreferenceContext);
+function Drawer() {
   const { t } = useTranslation();
-  const focusElement = useRef<HTMLDivElement>(null);
-  const handleKeyUpAttrs = UIState.showDrawer
-    ? {
-        tabIndex: 0,
-        ref: focusElement,
-        onBlur: (event: SyntheticEvent<HTMLDivElement>) =>
-          event.currentTarget.focus(),
-        onKeyUp: handleKeyUp,
-      }
-    : {};
-
-  function handleKeyUp(e: KeyboardEvent) {
-    switch (e.key.toLowerCase()) {
-      case userPreference.arrowUp:
-        setSelectedBtnIdx(selectedBtnIdx === 0 ? 4 : selectedBtnIdx - 1);
-        return;
-      case userPreference.arrowDown:
-        setSelectedBtnIdx(selectedBtnIdx === 4 ? 0 : selectedBtnIdx + 1);
-        return;
-      case userPreference.circle:
-        switch (selectedBtnIdx) {
-          case 0: // 移動
-            UIStateDispatch({
-              type: "showDrawer",
-              payload: false,
-            });
-            UIStateDispatch({
-              type: "showRoulette",
-              payload: true,
-            });
-            return;
-          case 1: // 背包
-            UIStateDispatch({
-              type: "showDrawer",
-              payload: false,
-            });
-            UIStateDispatch({
-              type: "showBag",
-              payload: true,
-            });
-            return;
-          case 2: // 查看
-            UIStateDispatch({
-              type: "showDrawer",
-              payload: false,
-            });
-            UIStateDispatch({
-              type: "showCheck",
-              payload: true,
-            });
-            UIStateDispatch({
-              type: "isCheckTopLayer",
-              payload: true,
-            });
-            UIStateDispatch({
-              type: "showCheckTip",
-              payload: true,
-            });
-            UIStateDispatch({
-              type: "showMinimap",
-              payload: true,
-            });
-            return;
-          case 3: // 特技
-            return;
-          case 4: // 資訊
-            return;
-        }
-        return;
-    }
-  }
-
-  useEffect(() => {
-    if (state === "entered") focusElement.current?.focus();
-  }, [state]);
-
+  const {
+    selectedIdx,
+    currentWeek,
+    currentDayOfWeek,
+    currentPlayer,
+    getNthNextPlayerByCurPlayerIdx,
+  } = useMetaData();
   return (
-    <div
-      {...handleKeyUpAttrs}
-      className={classNames(
-        `${styles.drawerContainer}`,
-        `${transitionStyles.container[state]}`
-      )}
-    >
-      <div
-        className={classNames(styles.topLeft, transitionStyles.topLeft[state])}
-      >
-        <WeeklyInfo />
+    <div className={styles.drawerContainer}>
+      <div className={styles.topLeft}>
+        <div className={styles.weeklyInfo}>
+          <div>
+            <div className={styles.week}>
+              <div>week</div>
+              <div>{currentWeek}</div>
+            </div>
+            <div className={styles.activity}>職安休</div>
+          </div>
+          <div>
+            <div className={styles.weekIcon}>
+              <div>{weekToChinese[currentDayOfWeek - 1]}</div>
+              <div>{weekToEnglish[currentDayOfWeek - 1]}</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div
-        className={classNames(
-          styles.topRight,
-          transitionStyles.topRight[state]
-        )}
-      >
-        <DetailedPlayerInfos />
+      <div className={styles.topRight}>
+        <div className={styles.detailedPlayerInfos}>
+          <div>
+            <div className={styles.playerImg}>
+              <img
+                width="100%"
+                height="100%"
+                src={`${backendBaseUrl}/imgs/${currentPlayer.job}_${currentPlayer.gender}_${currentPlayer.color}_front.png`}
+              />
+            </div>
+            <div className={styles.ranking}>
+              <div>
+                RANKING
+                <span> 2</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div className={styles.verticalCircles}>
+                <AttrCircle
+                  attr="LV"
+                  value={currentPlayer.level}
+                  fontSize="2rem"
+                />
+              </div>
+              <div className={styles.verticalCircles}>
+                <AttrCircle
+                  attr="AT"
+                  value={currentPlayer.attack.total}
+                  fontSize="2rem"
+                />
+              </div>
+            </div>
+            <div>
+              <div className={styles.playerArea}>
+                <div>PLAYER</div>
+                <div>{currentPlayer.name}</div>
+                <CustomBorderBottom />
+              </div>
+              <div className={styles.circlesContainer}>
+                <div>
+                  <AttrCircle
+                    attr="DF"
+                    value={currentPlayer.defense.total}
+                    fontSize="2rem"
+                  />
+                </div>
+                <div>
+                  <AttrCircle
+                    attr="MG"
+                    value={currentPlayer.magic.total}
+                    fontSize="2rem"
+                  />
+                </div>
+                <div>
+                  <AttrCircle
+                    attr="SP"
+                    value={currentPlayer.speed.total}
+                    fontSize="2rem"
+                  />
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className={styles.moneyArea}>
+                <div>MONEY</div>
+                <div>{currentPlayer.possession.money.toLocaleString()}</div>
+                <CustomBorderBottom />
+              </div>
+              <div className={styles.hpArea}>
+                <div>
+                  <div>
+                    <div>HP</div>
+                    <div
+                      className={styles.hpBar}
+                      style={{
+                        width: `${
+                          (currentPlayer.hp.current / currentPlayer.hp.total) *
+                          100
+                        }%`,
+                      }}
+                    ></div>
+                  </div>
+                  <div>{`${currentPlayer.hp.current} / ${currentPlayer.hp.total}`}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div
-        className={classNames(
-          styles.bottomLeft,
-          transitionStyles.bottomLeft[state]
-        )}
-      >
-        <FloatingActionBtn selected={selectedBtnIdx === 0}>
+      <div className={styles.bottomLeft}>
+        <FloatingActionBtn selected={selectedIdx === 0}>
           {t("移動")}
         </FloatingActionBtn>
-        <FloatingActionBtn selected={selectedBtnIdx === 1}>
+        <FloatingActionBtn selected={selectedIdx === 1}>
           {t("カバン")}
         </FloatingActionBtn>
-        <FloatingActionBtn selected={selectedBtnIdx === 2}>
+        <FloatingActionBtn selected={selectedIdx === 2}>
           {t("チェック")}
         </FloatingActionBtn>
-        <FloatingActionBtn selected={selectedBtnIdx === 3}>
+        <FloatingActionBtn selected={selectedIdx === 3}>
           {t("特技")}
         </FloatingActionBtn>
-        <FloatingActionBtn selected={selectedBtnIdx === 4}>
+        <FloatingActionBtn selected={selectedIdx === 4}>
           {t("データ")}
         </FloatingActionBtn>
       </div>
-      <div
-        className={classNames(
-          styles.bottomRight,
-          transitionStyles.bottomRight[state]
-        )}
-      >
-        <BriefPlayerInfos />
-        <BriefPlayerInfos />
-        <BriefPlayerInfos />
+      <div className={styles.bottomRight}>
+        <BriefPlayerInfos playerAttrs={getNthNextPlayerByCurPlayerIdx(1)} />
+        <BriefPlayerInfos playerAttrs={getNthNextPlayerByCurPlayerIdx(2)} />
+        <BriefPlayerInfos playerAttrs={getNthNextPlayerByCurPlayerIdx(3)} />
       </div>
     </div>
   );
 }
 
-function WeeklyInfo(): JSX.Element {
-  return (
-    <div className={styles.weeklyInfo}>
-      <div>
-        <div className={styles.week}>
-          <div>week</div>
-          <div>90</div>
-        </div>
-        <div className={styles.activity}>職安休</div>
-      </div>
-      <div>
-        <div className={styles.weekIcon}>
-          <div>月</div>
-          <div>MON</div>
-        </div>
-      </div>
-    </div>
-  );
+function useMetaData() {
+  const { gameProgress } = useContext(gameProgressCtx);
+  const {
+    DokaponTheWorld,
+    currentWeek,
+    currentDayOfWeek,
+    currentPlayerIdx,
+    playersAttrs,
+  } = gameProgress;
+  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const { selectedIdx } = DokaponTheWorld.Drawer;
+  function getNthNextPlayerByCurPlayerIdx(n: 1 | 2 | 3) {
+    if (n === 1) return playersAttrs[currentPlayerIdx + 1] || playersAttrs[0];
+    if (n === 2 && currentPlayerIdx <= 1)
+      return playersAttrs[currentPlayerIdx + 2];
+    if (n === 2 && currentPlayerIdx >= 2)
+      return playersAttrs[currentPlayerIdx - 2];
+    if (n === 3 && currentPlayerIdx === 0)
+      return playersAttrs[currentPlayerIdx + 3];
+    if (n === 3 && currentPlayerIdx > 0)
+      return playersAttrs[currentPlayerIdx - 1];
+    return playersAttrs[0];
+  }
+  return {
+    selectedIdx,
+    currentWeek,
+    currentDayOfWeek,
+    currentPlayer,
+    getNthNextPlayerByCurPlayerIdx,
+  };
 }
 
-function FloatingActionBtn(props: {
-  selected: boolean;
-  children: string;
-}): JSX.Element {
+function FloatingActionBtn(props: { selected: boolean; children: string }) {
   const { selected, children } = props;
   return (
     <div className={styles.floatingActionBtn}>
@@ -237,96 +224,38 @@ function FloatingActionBtn(props: {
   );
 }
 
-function DetailedPlayerInfos(): JSX.Element {
-  return (
-    <div className={styles.detailedPlayerInfos}>
-      <div>
-        <div className={styles.playerImg}>
-          <img
-            width="100%"
-            height="100%"
-            src={`${backendBaseUrl}/imgs/magician_male_red_front.png`}
-          />
-        </div>
-        <div className={styles.ranking}>
-          <div>
-            RANKING
-            <span> 2</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div>
-          <div className={styles.verticalCircles}>
-            <AttrCircle attr="LV" value={11} fontSize="2rem" />
-          </div>
-          <div className={styles.verticalCircles}>
-            <AttrCircle attr="AT" value={61} fontSize="2rem" />
-          </div>
-        </div>
-        <div>
-          <div className={styles.playerArea}>
-            <div>PLAYER</div>
-            <div>NAME</div>
-            <CustomBorderBottom />
-          </div>
-          <div className={styles.circlesContainer}>
-            <div>
-              <AttrCircle attr="DF" value={65} fontSize="2rem" />
-            </div>
-            <div>
-              <AttrCircle attr="MG" value={59} fontSize="2rem" />
-            </div>
-            <div>
-              <AttrCircle attr="SP" value={59} fontSize="2rem" />
-            </div>
-          </div>
-        </div>
-        <div>
-          <div className={styles.moneyArea}>
-            <div>MONEY</div>
-            <div>14,700,000</div>
-            <CustomBorderBottom />
-          </div>
-          <div className={styles.hpArea}>
-            <div>
-              <div>
-                <div>HP</div>
-                <div className={styles.hpBar}></div>
-              </div>
-              <div>1000 / 1000</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function BriefPlayerInfos(): JSX.Element {
+function BriefPlayerInfos(props: { playerAttrs: PlayerAttrs }) {
+  const { playerAttrs } = props;
   return (
     <div className={styles.briefPlayerInfos}>
       <div>
         <img
           width="100%"
           height="100%"
-          src={`${backendBaseUrl}/imgs/magician_male_red_front.png`}
+          src={`${backendBaseUrl}/imgs/${playerAttrs.job}_${playerAttrs.gender}_${playerAttrs.color}_front.png`}
         />
       </div>
       <div>
         <div>
           <div className={styles.level}>
-            <AttrCircle attr="LV" value={11} fontSize="1.6rem" />
+            <AttrCircle attr="LV" value={playerAttrs.level} fontSize="1.6rem" />
           </div>
           <div className={styles.nameArea}>
-            <div>NAME</div>
+            <div>{playerAttrs.name}</div>
             <CustomBorderBottom />
           </div>
         </div>
         <div>
           <div className={styles.briefHPArea}>
             <div>HP</div>
-            <div className={styles.hpBar}></div>
+            <div
+              className={styles.hpBar}
+              style={{
+                width: `${
+                  (playerAttrs.hp.current / playerAttrs.hp.total) * 100
+                }%`,
+              }}
+            ></div>
           </div>
         </div>
       </div>

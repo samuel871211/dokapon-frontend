@@ -4,7 +4,7 @@ import { useContext, useMemo } from "react";
 // Local application/library specific imports.
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
-import { newGameProgressContext } from "reducers/newGameProgress";
+import { gameProgressCtx } from "reducers/gameProgress";
 import topAreaStyles from "../TopArea/TopArea.module.css";
 import colors from "data/colors";
 import colorsToRGB from "data/colorsToRGB";
@@ -37,8 +37,8 @@ function SelectColor() {
 }
 
 function useMetaData() {
-  const { newGameProgress } = useContext(newGameProgressContext);
-  const { playersAttrs, currentPlayerIdx } = newGameProgress;
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { playersAttrs, currentPlayerIdx } = gameProgress;
   const remainColors = useMemo(() => {
     const usedColors = playersAttrs
       .slice(0, currentPlayerIdx)

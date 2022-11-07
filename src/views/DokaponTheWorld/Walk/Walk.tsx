@@ -1,5 +1,4 @@
 // Related third party imports.
-import { TransitionStatus } from "react-transition-group";
 
 // Local application/library specific imports.
 
@@ -7,6 +6,6 @@ import { TransitionStatus } from "react-transition-group";
 
 export default Walk;
 
-function Walk(props: { state: TransitionStatus }): JSX.Element {
+function Walk() {
   return <div></div>;
 }

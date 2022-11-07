@@ -1,21 +1,17 @@
-.container {
+.keyMappingDialogContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
-  transform: translate(100%, -200%);
-  transition: transform 0.5s;
+  transform: translate(-50%, -50%);
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.dialog {
-  border-radius: 1.5rem;
+.keyMappingDialog {
   font-size: 3rem;
   line-height: 3rem;
   padding: 1rem;
-}
-.slideIn {
-  transform: translate(0%, -200%);
-}
-.slideOut {
-  transform: translate(100%, -200%);
 }

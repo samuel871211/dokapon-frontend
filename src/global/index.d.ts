@@ -104,6 +104,7 @@ export type DokaponTheWorldComponentTypes =
   | "WeaponStoreFieldCheck"
   | "WhiteTreasureFieldCheck"
   | "WorldTransferFieldCheck";
+export type HomeComponentTypes = "ButtonGroup" | "Settings" | "Book";
 export type GameProgress = {
   timeStamp: string;
   /**
@@ -139,7 +140,32 @@ export type GameProgress = {
    */
   bottomDialogSentencesQueue: string[];
   currentView: ViewTypes;
-  Home: Record<string, never>;
+  Home: {
+    curComponent: HomeComponentTypes;
+    ButtonGroupState: {
+      /**
+       * 0 ~ 3
+       */
+      selectedIdx: number;
+    };
+    SettingsState: {
+      showKeyMappingDialog: boolean;
+      currentAxis: {
+        /**
+         * 0 ~ 9
+         */
+        row: number;
+        /**
+         * 0 ~ 2
+         */
+        col: number;
+      };
+      /**
+       * 使用者如果選擇`取消`，要回到設定前的狀態
+       */
+      prevGamePadSetting: GameProgress["gamePadSetting"];
+    };
+  };
   BattleModeSelectCharacter: {
     curComponent: BattleModeSelectCharacterComponentTypes;
     GoalInputDialog: { selectedIdx: number };

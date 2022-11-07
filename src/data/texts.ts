@@ -5,6 +5,10 @@ const texts = {
     cn: "",
   },
   // Home > Settings
+  任意のキーボードボタンをクリックします: {
+    en: "Press any key to override",
+    cn: "點擊任何鍵盤按鈕",
+  },
   語言: {
     en: "Language",
     cn: "語言",

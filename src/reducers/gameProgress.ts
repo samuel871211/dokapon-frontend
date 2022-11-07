@@ -16,8 +16,16 @@ const initGameProgress: GameProgress = {
   currentWeek: 1,
   curSentenceIdx: 0,
   bottomDialogSentencesQueue: [],
-  currentView: "DokaponTheWorld",
-  Home: {},
+  currentView: "Home",
+  Home: {
+    curComponent: "ButtonGroup",
+    ButtonGroupState: { selectedIdx: 0 },
+    SettingsState: {
+      showKeyMappingDialog: false,
+      currentAxis: { row: 0, col: 0 },
+      prevGamePadSetting: {} as GameProgress["gamePadSetting"],
+    },
+  },
   BattleModeSelectCharacter: {
     curComponent: "SelectGoalType",
     GoalInputDialog: { selectedIdx: 0 },

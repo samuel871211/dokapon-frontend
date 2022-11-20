@@ -267,8 +267,8 @@ export type GameProgress = {
       intervalId: number;
     };
   };
-  DokaponTheWorld: {
-    curComponent: DokaponTheWorldComponentTypes;
+  DokaponTheWorldState: {
+    curComponents: DokaponTheWorldComponentTypes[];
     curClickVertex: Vertex;
     showVertexAttrsAndDistance: boolean;
     showCheckTip: boolean;
@@ -584,9 +584,9 @@ type PlayerAttrs = CharacterAttrs & {
    */
   currentArea: AreaTypes;
   /**
-   * vertex id
+   * 因為地圖不會變，所以可以直接用index取值
    */
-  currentVertex: string;
+  currentVertexIdx: number;
   gender: GenderTypes;
   color: ColorTypes;
   job: JobTypes;

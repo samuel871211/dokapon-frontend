@@ -1,0 +1,19 @@
+.gameProgressCtxMenu {
+  position: fixed;
+  border-radius: 1.5rem;
+  border: 0.2rem outset var(--border-color);
+  background-color: var(--bg-color);
+  z-index: -1; /* 預設隱藏，不能用display: none，因為要計算ctxMenu的寬度 */
+  font-size: 3rem;
+  line-height: 4rem;
+  padding: 1rem;
+}
+.gameProgressCtxMenu[data-open="true"] {
+  z-index: 1;
+}
+.menuItem {
+  min-width: 100px;
+}
+.menuItem:hover {
+  background-color: var(--hover-bg-color);
+}

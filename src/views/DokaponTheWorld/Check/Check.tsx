@@ -52,8 +52,8 @@ function Check() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { DokaponTheWorld } = gameProgress;
+  const { DokaponTheWorldState } = gameProgress;
   const { showVertexAttrsAndDistance, showCheckTip } =
-    gameProgress.DokaponTheWorld;
+    gameProgress.DokaponTheWorldState;
   return { showVertexAttrsAndDistance, showCheckTip };
 }

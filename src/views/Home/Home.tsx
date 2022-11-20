@@ -6,7 +6,6 @@ import styles from "./Home.module.css";
 import Settings from "./Settings";
 import ButtonGroup from "./ButtonGroup";
 import KEYBOARDMAP from "./Settings/KeyBoardMap";
-import registerWindowResizeEvtHandler from "utils/windowResizeEvtHandler";
 import { gameProgressCtx } from "reducers/gameProgress";
 import type { GamePadKeyTypes, HomeComponentTypes } from "global";
 
@@ -21,7 +20,6 @@ export default Home;
 
 function Home() {
   const { containerRefEl, handleKeyUp, Component } = useMetaData();
-  useEffect(registerWindowResizeEvtHandler, []);
   return (
     <div
       tabIndex={0}

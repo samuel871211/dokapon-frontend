@@ -11,10 +11,9 @@ import GraphEditor from "views/GraphEditor";
 import DokaponTheWorld from "views/DokaponTheWorld";
 import StoryModeSelectCharacter from "views/StoryModeSelectCharacter";
 import BattleModeSelectCharacter from "views/BattleModeSelectCharacter";
-import registerWindowResizeEvtHandler from "utils/windowResizeEvtHandler";
 import { initGameProgress, gameProgressCtx } from "reducers/gameProgress";
-
 import type { ViewTypes } from "global";
+import GameProgressCtxMenu from "components/GameProgressCtxMenu";
 
 // Stateless vars declare.
 const HTMLStyles = {
@@ -33,33 +32,55 @@ const Views: { [key in ViewTypes]: () => JSX.Element } = {
   Home,
   StoryModeSelectCharacter,
 };
+function resizeEvtHandlerEffect() {
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}
+function handleResize() {
+  const HTMLEl = document.documentElement;
+  const aspectRatioEl = document.getElementById("root")?.children[0];
+  if (!aspectRatioEl) return;
+
+  HTMLEl.style.setProperty("--vw", `${aspectRatioEl.clientWidth / 100}px`);
+}
 
 function App() {
-  const [gameProgress, setGameProgress] = useState(initGameProgress);
-  const { userPreference } = gameProgress;
-  const View = Views[gameProgress.currentView];
-  useEffect(
-    function switchAspectRatio() {
-      const aspectRatioEl = document.getElementById("root")?.children[0];
-      const HTMLEl = document.documentElement;
-      if (!aspectRatioEl) return;
-
-      HTMLEl.removeAttribute("class");
-      HTMLEl.classList.add(HTMLStyles[userPreference.aspectRatio]);
-      HTMLEl.style.setProperty("--vw", `${aspectRatioEl.clientWidth / 100}px`);
-    },
-    [userPreference.aspectRatio]
-  );
-  useEffect(registerWindowResizeEvtHandler, []);
+  const { gameProgress, setGameProgress, aspectRatio, View } = useMetaData();
 
   return (
     <gameProgressCtx.Provider value={{ gameProgress, setGameProgress }}>
-      <div className={rootStyles[userPreference.aspectRatio]}>
+      <div className={rootStyles[aspectRatio]}>
         <View />
       </div>
-      {/* <GraphEditor /> */}
+      <GameProgressCtxMenu />
     </gameProgressCtx.Provider>
   );
+}
+
+function useMetaData() {
+  const [gameProgress, setGameProgress] = useState(initGameProgress);
+  const {
+    currentView,
+    userPreference: { aspectRatio },
+  } = gameProgress;
+  const View = Views[currentView];
+  function switchAspectRatio() {
+    const HTMLEl = document.documentElement;
+    const aspectRatioEl = document.getElementById("root")?.children[0];
+    if (!aspectRatioEl) return;
+
+    HTMLEl.removeAttribute("class");
+    HTMLEl.classList.add(HTMLStyles[aspectRatio]);
+    HTMLEl.style.setProperty("--vw", `${aspectRatioEl.clientWidth / 100}px`);
+  }
+  useEffect(switchAspectRatio, [aspectRatio]);
+  useEffect(resizeEvtHandlerEffect, []);
+  return {
+    gameProgress,
+    setGameProgress,
+    aspectRatio,
+    View,
+  };
 }
 
 const container = document.getElementById("root");

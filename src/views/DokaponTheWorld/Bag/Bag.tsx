@@ -88,9 +88,9 @@ function Item(props: { selected: boolean; text: string; icon: JSX.Element }) {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { currentPlayerIdx, playersAttrs, DokaponTheWorld } = gameProgress;
+  const { currentPlayerIdx, playersAttrs, DokaponTheWorldState } = gameProgress;
   const currentPlayer = playersAttrs[currentPlayerIdx];
-  const { selectedIdx, currentBag } = DokaponTheWorld.Bag;
+  const { selectedIdx, currentBag } = DokaponTheWorldState.Bag;
   const { possession } = currentPlayer;
   const { bagSpace } = jobs[currentPlayer.job];
   return {

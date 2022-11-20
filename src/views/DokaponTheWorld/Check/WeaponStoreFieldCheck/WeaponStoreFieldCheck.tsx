@@ -98,10 +98,11 @@ function WeaponStoreFieldCheck() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { curListPage } = gameProgress.DokaponTheWorld.WeaponStoreFieldCheck;
+  const { curListPage } =
+    gameProgress.DokaponTheWorldState.WeaponStoreFieldCheck;
   const {
     curClickVertex: { area },
-  } = gameProgress.DokaponTheWorld;
+  } = gameProgress.DokaponTheWorldState;
   const curShowItems = weaponStores[area].filter(
     (item, index) => index >= 6 * curListPage && index < 6 * (curListPage + 1)
   );

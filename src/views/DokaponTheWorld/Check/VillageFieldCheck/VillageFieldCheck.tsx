@@ -65,6 +65,6 @@ function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
   const {
     curClickVertex: { area },
-  } = gameProgress.DokaponTheWorld;
+  } = gameProgress.DokaponTheWorldState;
   return { area };
 }

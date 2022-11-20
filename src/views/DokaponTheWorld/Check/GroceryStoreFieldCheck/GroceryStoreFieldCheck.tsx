@@ -76,8 +76,9 @@ function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
   const {
     curClickVertex: { area },
-  } = gameProgress.DokaponTheWorld;
-  const { curListPage } = gameProgress.DokaponTheWorld.GroceryStoreFieldCheck;
+  } = gameProgress.DokaponTheWorldState;
+  const { curListPage } =
+    gameProgress.DokaponTheWorldState.GroceryStoreFieldCheck;
   const curShowItems = groceryStores[area].filter(
     (item, index) => index >= 6 * curListPage && index < 6 * (curListPage + 1)
   );

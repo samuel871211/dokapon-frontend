@@ -181,14 +181,14 @@ function Drawer() {
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
   const {
-    DokaponTheWorld,
+    DokaponTheWorldState,
     currentWeek,
     currentDayOfWeek,
     currentPlayerIdx,
     playersAttrs,
   } = gameProgress;
   const currentPlayer = playersAttrs[currentPlayerIdx];
-  const { selectedIdx } = DokaponTheWorld.Drawer;
+  const { selectedIdx } = DokaponTheWorldState.Drawer;
   function getNthNextPlayerByCurPlayerIdx(n: 1 | 2 | 3) {
     if (n === 1) return playersAttrs[currentPlayerIdx + 1] || playersAttrs[0];
     if (n === 2 && currentPlayerIdx <= 1)

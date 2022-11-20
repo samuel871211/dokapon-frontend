@@ -1,17 +1,14 @@
 // Related third party imports.
 import { useEffect, useContext, KeyboardEvent, useRef } from "react";
-import classNames from "classnames";
 
 // Local application/library specific imports.
 import styles from "./DokaponTheWorld.module.css";
-import registerWindowResizeEvtHandler from "utils/windowResizeEvtHandler";
 import Drawer from "./Drawer";
 import Roulette from "./Roulette";
 import Bag from "./Bag";
 import Check from "./Check";
 import OverviewMap from "./OverviewMap";
 import GroceryStoreFieldCheck from "./Check/GroceryStoreFieldCheck";
-import indexStyles from "index.module.css";
 import GraphUI from "components/GraphUI";
 import WeaponStoreFieldCheck from "./Check/WeaponStoreFieldCheck";
 import MagicStoreFieldCheck from "./Check/MagicStoreFieldCheck";
@@ -29,12 +26,7 @@ import magicStores from "data/magicStores";
 import useTranslation from "hooks/useTranslation";
 
 // Stateless vars declare.
-const aspectRatioStyles = {
-  "16:9": indexStyles.wideAspectRatio,
-  "4:3": indexStyles.traditionalAspectRatio,
-  stretch: indexStyles.stretchAspectRatio,
-};
-const test: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
+const text: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
   BattleFieldCheck: ["ザコモンスターとの戦闘や\nイベントが発生するマス。"],
   DamageFieldCheck: [
     "止まると一定量のダメージを受けるマス。\n戦闘やイベントも起こる。",
@@ -113,9 +105,8 @@ const Components: {
 
 export default DokaponTheWorld;
 
-function DokaponTheWorld(): JSX.Element {
-  const { containerRefEl, userPreference, handleKeyUp, Component } =
-    useMetaData();
+function DokaponTheWorld() {
+  const { containerRefEl, handleKeyUp, Component } = useMetaData();
 
   return (
     <div
@@ -123,10 +114,7 @@ function DokaponTheWorld(): JSX.Element {
       tabIndex={0}
       onBlur={(e) => e.currentTarget.focus()}
       onKeyUp={handleKeyUp}
-      className={classNames(
-        styles.container,
-        aspectRatioStyles[userPreference.aspectRatio]
-      )}
+      className={styles.dokaponTheWorldContainer}
     >
       <GraphUI />
       <Component />
@@ -139,8 +127,7 @@ function useMetaData() {
   const containerRefEl = useRef<HTMLDivElement>(null);
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
   const {
-    userPreference,
-    DokaponTheWorld,
+    DokaponTheWorldState,
     gamePadSetting,
     currentPlayerIdx,
     playersAttrs,
@@ -148,7 +135,7 @@ function useMetaData() {
   } = gameProgress;
   const currentPlayer = playersAttrs[currentPlayerIdx];
   const {
-    curComponent,
+    curComponents,
     Drawer,
     Bag,
     Roulette,
@@ -156,7 +143,7 @@ function useMetaData() {
     JobStoreFieldCheck,
     MagicStoreFieldCheck,
     WeaponStoreFieldCheck,
-  } = DokaponTheWorld;
+  } = DokaponTheWorldState;
   /**
    * 搖桿的 O, X, 正方形, 三角形
    */
@@ -167,7 +154,7 @@ function useMetaData() {
     gamePadSetting.square,
   ];
   function handleKeyUp(e: KeyboardEvent<HTMLDivElement>) {
-    switch (curComponent) {
+    switch (curComponents[0]) {
       case "Drawer":
         return handleKeyUpForDrawer(e);
       case "Bag":
@@ -216,18 +203,18 @@ function useMetaData() {
         Drawer.selectedIdx = selectedIdx === 4 ? 0 : selectedIdx + 1;
         break;
       case gamePadSetting.square:
-        DokaponTheWorld.curComponent = "Check";
+        DokaponTheWorldState.curComponents = ["Check"];
         break;
       case gamePadSetting.circle:
         switch (selectedIdx) {
           case 0: // 移動
-            DokaponTheWorld.curComponent = "Roulette";
+            DokaponTheWorldState.curComponents = ["Roulette"];
             break;
           case 1: // 背包
-            DokaponTheWorld.curComponent = "Bag";
+            DokaponTheWorldState.curComponents = ["Bag"];
             break;
           case 2: // 查看
-            DokaponTheWorld.curComponent = "Check";
+            DokaponTheWorldState.curComponents = ["Check"];
             break;
           case 3: // 特技
             break;
@@ -294,7 +281,7 @@ function useMetaData() {
          */
         break;
       case gamePadSetting.cross:
-        DokaponTheWorld.curComponent = "Drawer";
+        DokaponTheWorldState.curComponents = ["Drawer"];
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -306,12 +293,12 @@ function useMetaData() {
           Math.getRandomIntInclusive(0, 3) + Math.getRandomIntInclusive(0, 3);
         setGameProgress({ ...gameProgress });
         setTimeout(() => {
-          DokaponTheWorld.curComponent = "GraphUI";
+          DokaponTheWorldState.curComponents = ["GraphUI"];
           setGameProgress({ ...gameProgress });
         }, 1000);
         break;
       case gamePadSetting.cross:
-        DokaponTheWorld.curComponent = "Drawer";
+        DokaponTheWorldState.curComponents = ["Drawer"];
         setGameProgress({ ...gameProgress });
         break;
     }
@@ -319,10 +306,10 @@ function useMetaData() {
   function handleKeyUpForCheck(e: KeyboardEvent<HTMLDivElement>) {
     switch (e.key.toLowerCase()) {
       case gamePadSetting.START:
-        DokaponTheWorld.curComponent = "OverviewMap";
+        DokaponTheWorldState.curComponents = ["OverviewMap"];
         break;
       case gamePadSetting.cross:
-        DokaponTheWorld.curComponent = "Drawer";
+        DokaponTheWorldState.curComponents = ["Drawer"];
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -332,7 +319,7 @@ function useMetaData() {
       case gamePadSetting.triangle:
         break;
       case gamePadSetting.cross:
-        DokaponTheWorld.curComponent = "Check";
+        DokaponTheWorldState.curComponents = ["Check"];
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -346,7 +333,7 @@ function useMetaData() {
       case gamePadSetting.cross:
       case gamePadSetting.square:
       case gamePadSetting.triangle:
-        DokaponTheWorld.curComponent = "Check";
+        DokaponTheWorldState.curComponents = ["Check"];
         GroceryStoreFieldCheck.curListPage = 0;
         break;
       case gamePadSetting.R1:
@@ -367,7 +354,7 @@ function useMetaData() {
       case gamePadSetting.cross:
       case gamePadSetting.square:
       case gamePadSetting.triangle:
-        DokaponTheWorld.curComponent = "Check";
+        DokaponTheWorldState.curComponents = ["Check"];
         JobStoreFieldCheck.curListPage = 0;
         break;
       case gamePadSetting.R1:
@@ -386,9 +373,7 @@ function useMetaData() {
   function handleKeyUpForMagicStoreFieldCheck(
     e: KeyboardEvent<HTMLDivElement>
   ) {
-    const {
-      curClickVertex: { area },
-    } = DokaponTheWorld;
+    const { area } = DokaponTheWorldState.curClickVertex;
     const magicStore = magicStores[area];
     const maxPage = Math.ceil(magicStore.length / 6);
     const { curListPage } = MagicStoreFieldCheck;
@@ -398,7 +383,7 @@ function useMetaData() {
       case gamePadSetting.cross:
       case gamePadSetting.square:
       case gamePadSetting.triangle:
-        DokaponTheWorld.curComponent = "Check";
+        DokaponTheWorldState.curComponents = ["Check"];
         MagicStoreFieldCheck.curListPage = 0;
         break;
       case gamePadSetting.R1:
@@ -423,7 +408,7 @@ function useMetaData() {
       case gamePadSetting.cross:
       case gamePadSetting.square:
       case gamePadSetting.triangle:
-        DokaponTheWorld.curComponent = "Check";
+        DokaponTheWorldState.curComponents = ["Check"];
         WeaponStoreFieldCheck.curListPage = 0;
         break;
       case gamePadSetting.R1:
@@ -444,23 +429,21 @@ function useMetaData() {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
 
-    DokaponTheWorld.curComponent = "Check";
+    DokaponTheWorldState.curComponents = ["Check"];
     setGameProgress({ ...gameProgress });
   }
   function handleBottomDialogQueue() {
     bottomDialogSentencesQueue.length = 0;
-    for (const sentence of test[curComponent]) {
+    for (const sentence of text[curComponents[0]]) {
       bottomDialogSentencesQueue.push(t(sentence));
     }
     setGameProgress({ ...gameProgress });
   }
-  useEffect(handleBottomDialogQueue, [curComponent]);
-  useEffect(registerWindowResizeEvtHandler, []);
+  useEffect(handleBottomDialogQueue, [curComponents[0]]);
   useEffect(() => containerRefEl.current?.focus(), []);
   return {
     containerRefEl,
-    userPreference,
     handleKeyUp,
-    Component: Components[curComponent],
+    Component: Components[curComponents[0]],
   };
 }

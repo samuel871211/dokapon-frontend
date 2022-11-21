@@ -10,7 +10,12 @@ import {
 } from "react";
 
 // Local application/library specific imports.
-import type { Vertex, Edge } from "global";
+import type {
+  Vertex,
+  Edge,
+  VertexTypes,
+  DokaponTheWorldComponentTypes,
+} from "global";
 import dokaponTheWorld from "data/maps/dokaponTheWorld";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
@@ -36,8 +41,8 @@ import MagicBookField from "components/vertices/MagicBookField";
 import BattleField from "components/vertices/BattleField";
 import DamageField from "components/vertices/DamageField";
 import PlayerChess from "components/PlayerChess";
-import styles from "./GraphUI.module.css";
 import { gameProgressCtx } from "reducers/gameProgress";
+import styles from "./GraphUI.module.css";
 
 // Stateless vars declare
 /**
@@ -179,7 +184,8 @@ function useMetaData() {
   const [SVGScale, setSVGScale] = useState(1);
   const [SVGTranslate, setSVGTranslate] = useState({ x: 0, y: 0 });
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
-  const { DokaponTheWorldState, playersAttrs } = gameProgress;
+  const { DokaponTheWorldState, playersAttrs, currentPlayerIdx } = gameProgress;
+  const currentPlayer = playersAttrs[currentPlayerIdx];
   const Cells = useMemo(() => renderCells(curGraph), [curGraph]);
   const PlayersChess = playersAttrs.map((playerAttrs, idx) => (
     <PlayerChess
@@ -191,18 +197,6 @@ function useMetaData() {
       color={playerAttrs.color}
     />
   ));
-  // const Player1Chess = useMemo(
-  //   ,
-  //   [
-  //     playersAttrs[0].currentVertexIdx,
-  //     playersAttrs[0].job,
-  //     playersAttrs[0].gender,
-  //     playersAttrs[0].color
-  //   ]
-  // );
-  // const Player2Chess = useMemo(() => <></>, [playersAttrs[1].currentVertexIdx]);
-  // const Player3Chess = useMemo(() => <></>, [playersAttrs[2].currentVertexIdx]);
-  // const Player4Chess = useMemo(() => <></>, [playersAttrs[3].currentVertexIdx]);
 
   function handlePointerOver(e: PointerEvent<SVGSVGElement>) {
     if (!(e.target instanceof SVGCircleElement)) {
@@ -219,73 +213,109 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   /**
-   * @todo 除了要處理點擊到vertex，還要處理點擊到monster或player
+   * @todo click on enemy
+   * @todo click on monster
    */
   function handleDoubleClick(e: MouseEvent<SVGSVGElement>) {
-    if (!(e.target instanceof SVGCircleElement)) return;
+    if (
+      !(e.target instanceof SVGImageElement) &&
+      !(e.target instanceof SVGCircleElement)
+    )
+      return;
 
-    const vertexId = e.target.parentElement?.id;
+    // get vertex id from <g> attribute
+    const isClickOnVertex = e.target instanceof SVGCircleElement;
+    const vertexId = isClickOnVertex
+      ? e.target.parentElement?.id
+      : e.target.parentElement?.getAttribute("data-vertex-id");
+    if (!vertexId) return console.error("no vertexId");
+
+    // get vertex from `curGraph.vertices`
     const vertex = curGraph.vertices.find((item) => item.id === vertexId);
-    if (!vertex) return console.error("no pointer over vertex");
+    if (!vertex) return console.error("no clicked vertex");
 
+    // reset `curComponents`
+    DokaponTheWorldState.curComponents.length = 0;
+
+    // check if player (self excluded), enemy or monster is clicked
+    const clickedPlayers = playersAttrs.filter(
+      (playerAttrs) =>
+        curGraph.vertices[playerAttrs.currentVertexIdx] === vertex &&
+        playerAttrs !== currentPlayer
+    );
+    const clickedEnemies = [];
+    const clickedMonsters = [];
+    const totalClickedCharactersCount =
+      clickedPlayers.length + clickedEnemies.length + clickedMonsters.length;
+    if (totalClickedCharactersCount === 1) {
+      DokaponTheWorldState.curComponents.push("PlayerVsCharacterDialogs");
+    } else if (totalClickedCharactersCount > 1) {
+      DokaponTheWorldState.curComponents.push("SelectCharacterToCompare");
+    }
+
+    // handle click on vertex
     DokaponTheWorldState.curClickVertex = vertex;
     switch (vertex.name) {
       case "BattleField":
-        DokaponTheWorldState.curComponents = ["BattleFieldCheck"];
+        DokaponTheWorldState.curComponents.push("BattleFieldCheck");
         break;
       case "KeyTreasureField":
-        DokaponTheWorldState.curComponents = ["TreasureFieldCheck"];
+        DokaponTheWorldState.curComponents.push("TreasureFieldCheck");
         break;
       case "MagicBookField":
-        DokaponTheWorldState.curComponents = ["MagicBookFieldCheck"];
+        DokaponTheWorldState.curComponents.push("MagicBookFieldCheck");
         break;
       case "RedTreasureField":
-        DokaponTheWorldState.curComponents = ["RedTreasureFieldCheck"];
+        DokaponTheWorldState.curComponents.push("RedTreasureFieldCheck");
         break;
       case "TreasureField":
-        DokaponTheWorldState.curComponents = ["TreasureFieldCheck"];
+        DokaponTheWorldState.curComponents.push("TreasureFieldCheck");
         break;
       case "WhiteTreasureField":
-        DokaponTheWorldState.curComponents = ["WhiteTreasureFieldCheck"];
+        DokaponTheWorldState.curComponents.push("WhiteTreasureFieldCheck");
         break;
       case "WorldTransferField":
-        DokaponTheWorldState.curComponents = ["WorldTransferFieldCheck"];
+        DokaponTheWorldState.curComponents.push("WorldTransferFieldCheck");
         break;
       case "GoldTreasureField":
-        DokaponTheWorldState.curComponents = ["GoldTreasureFieldCheck"];
+        DokaponTheWorldState.curComponents.push("GoldTreasureFieldCheck");
         break;
       case "DamageField":
-        DokaponTheWorldState.curComponents = ["DamageFieldCheck"];
+        DokaponTheWorldState.curComponents.push("DamageFieldCheck");
         break;
       case "CollectAllMoneyField":
-        DokaponTheWorldState.curComponents = ["CollectMoneyFieldCheck"];
+        DokaponTheWorldState.curComponents.push("CollectMoneyFieldCheck");
         break;
       case "CollectMoneyField":
-        DokaponTheWorldState.curComponents = ["CollectMoneyFieldCheck"];
+        DokaponTheWorldState.curComponents.push("CollectMoneyFieldCheck");
         break;
       case "CaveField":
-        DokaponTheWorldState.curComponents = ["CastleFieldCheck"];
+        DokaponTheWorldState.curComponents.push("CastleFieldCheck");
         break;
       case "VillageField":
-        DokaponTheWorldState.curComponents = ["VillageFieldCheck"];
+        DokaponTheWorldState.curComponents.push("VillageFieldCheck");
         break;
       case "CastleField":
-        DokaponTheWorldState.curComponents = ["CastleFieldCheck"];
+        DokaponTheWorldState.curComponents.push("CastleFieldCheck");
         break;
       case "ChruchField":
-        DokaponTheWorldState.curComponents = ["ChurchFieldCheck"];
+        DokaponTheWorldState.curComponents.push("ChurchFieldCheck");
         break;
       case "GroceryStoreField":
-        DokaponTheWorldState.curComponents = ["GroceryStoreFieldCheck"];
+        DokaponTheWorldState.curComponents.push("GroceryStoreFieldCheck");
         break;
       case "JobStoreField":
-        DokaponTheWorldState.curComponents = ["JobStoreFieldCheck"];
+        DokaponTheWorldState.curComponents.push("JobStoreFieldCheck");
         break;
       case "MagicStoreField":
-        DokaponTheWorldState.curComponents = ["MagicStoreFieldCheck"];
+        DokaponTheWorldState.curComponents.push("MagicStoreFieldCheck");
         break;
       case "WeaponStoreField":
-        DokaponTheWorldState.curComponents = ["WeaponStoreFieldCheck"];
+        DokaponTheWorldState.curComponents.push("WeaponStoreFieldCheck");
+        break;
+      default:
+        // 滑鼠hover上去，型別應該要是`never`，才代表所有case都有涵蓋到
+        vertex.name;
         break;
     }
     setGameProgress({ ...gameProgress });

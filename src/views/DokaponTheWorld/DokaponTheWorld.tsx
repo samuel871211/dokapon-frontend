@@ -9,7 +9,7 @@ import Bag from "./Bag";
 import Check from "./Check";
 import OverviewMap from "./OverviewMap";
 import GroceryStoreFieldCheck from "./Check/GroceryStoreFieldCheck";
-import GraphUI from "components/GraphUI";
+import GraphUI from "views/DokaponTheWorld/GraphUI";
 import WeaponStoreFieldCheck from "./Check/WeaponStoreFieldCheck";
 import MagicStoreFieldCheck from "./Check/MagicStoreFieldCheck";
 import JobStoreFieldCheck from "./Check/JobStoreFieldCheck";
@@ -74,6 +74,8 @@ const text: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
   WeaponStoreFieldCheck: [
     "武器や盾が買えるマス。\n水曜が定休日。\n日曜は特売日。",
   ],
+  SelectCharacterToCompare: [],
+  PlayerVsCharacterDialogs: [],
 };
 const Components: {
   [key in DokaponTheWorldComponentTypes]: () => JSX.Element;
@@ -101,6 +103,8 @@ const Components: {
   TreasureFieldCheck: OnlyBottomDialogFieldCheck,
   WhiteTreasureFieldCheck: OnlyBottomDialogFieldCheck,
   WorldTransferFieldCheck: OnlyBottomDialogFieldCheck,
+  SelectCharacterToCompare: () => <></>,
+  PlayerVsCharacterDialogs: () => <></>,
 };
 
 export default DokaponTheWorld;
@@ -154,7 +158,8 @@ function useMetaData() {
     gamePadSetting.square,
   ];
   function handleKeyUp(e: KeyboardEvent<HTMLDivElement>) {
-    switch (curComponents[0]) {
+    const curComponent = curComponents[0];
+    switch (curComponent) {
       case "Drawer":
         return handleKeyUpForDrawer(e);
       case "Bag":
@@ -191,6 +196,16 @@ function useMetaData() {
          * 比較特殊，分成兩個步驟
          */
         return handleKeyUpForCollectMoneyFieldCheck(e);
+      case "SelectCharacterToCompare":
+        return;
+      case "PlayerVsCharacterDialogs":
+        return;
+      case "GraphUI":
+        return;
+      default:
+        // 滑鼠hover上去，型別應該要是`never`，才代表所有的case都有涵蓋到
+        curComponent;
+        return;
     }
   }
   function handleKeyUpForDrawer(e: KeyboardEvent<HTMLDivElement>) {

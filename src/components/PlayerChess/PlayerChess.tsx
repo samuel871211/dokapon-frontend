@@ -21,7 +21,8 @@ function PlayerChess(props: {
     <g
       transform={`translate(${position.x}, ${position.y})`}
       data-type="playerChess"
-      id={id}
+      data-vertex-id={id}
+      // id={id}
     >
       <image href={href} width={128} height={128} x={-64} y={-64}></image>
     </g>

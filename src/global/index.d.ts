@@ -103,7 +103,9 @@ export type DokaponTheWorldComponentTypes =
   | "VillageFieldCheck"
   | "WeaponStoreFieldCheck"
   | "WhiteTreasureFieldCheck"
-  | "WorldTransferFieldCheck";
+  | "WorldTransferFieldCheck"
+  | "PlayerVsCharacterDialogs"
+  | "SelectCharacterToCompare";
 export type HomeComponentTypes = "ButtonGroup" | "Settings" | "Book";
 export type GameProgress = {
   timeStamp: string;
@@ -584,7 +586,7 @@ type PlayerAttrs = CharacterAttrs & {
    */
   currentArea: AreaTypes;
   /**
-   * 因為地圖不會變，所以可以直接用index取值
+   * 因為地圖的JSON資料不會變，所以可以直接用index當作reference
    */
   currentVertexIdx: number;
   gender: GenderTypes;

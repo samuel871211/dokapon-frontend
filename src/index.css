@@ -6,6 +6,7 @@
   --confirm-circle: #b43d3b;
   --larger-green: #09d131;
   --smaller-red: #db2121;
+  user-select: none;
 
   /* experimental，還不確定這些case有沒有辦法cover所有的possibility */
   --main-border-radius: 1.5rem;

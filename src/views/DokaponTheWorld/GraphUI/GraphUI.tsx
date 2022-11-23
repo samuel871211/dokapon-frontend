@@ -10,12 +10,7 @@ import {
 } from "react";
 
 // Local application/library specific imports.
-import type {
-  Vertex,
-  Edge,
-  VertexTypes,
-  DokaponTheWorldComponentTypes,
-} from "global";
+import type { Vertex, Edge } from "global";
 import dokaponTheWorld from "data/maps/dokaponTheWorld";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
@@ -215,13 +210,15 @@ function useMetaData() {
   /**
    * @todo click on enemy
    * @todo click on monster
+   * @todo 釐清 集金 跟 全集金 的差別
    */
   function handleDoubleClick(e: MouseEvent<SVGSVGElement>) {
     if (
       !(e.target instanceof SVGImageElement) &&
       !(e.target instanceof SVGCircleElement)
-    )
+    ) {
       return;
+    }
 
     // get vertex id from <g> attribute
     const isClickOnVertex = e.target instanceof SVGCircleElement;
@@ -234,7 +231,8 @@ function useMetaData() {
     const vertex = curGraph.vertices.find((item) => item.id === vertexId);
     if (!vertex) return console.error("no clicked vertex");
 
-    // reset `curComponents`
+    // reset `curComponents` and close `showVertexAttrsAndDistance`
+    DokaponTheWorldState.showVertexAttrsAndDistance = false;
     DokaponTheWorldState.curComponents.length = 0;
 
     // check if player (self excluded), enemy or monster is clicked
@@ -284,10 +282,10 @@ function useMetaData() {
         DokaponTheWorldState.curComponents.push("DamageFieldCheck");
         break;
       case "CollectAllMoneyField":
-        DokaponTheWorldState.curComponents.push("CollectMoneyFieldCheck");
+        DokaponTheWorldState.curComponents.push("BeforeCollectMoneyFieldCheck");
         break;
       case "CollectMoneyField":
-        DokaponTheWorldState.curComponents.push("CollectMoneyFieldCheck");
+        DokaponTheWorldState.curComponents.push("BeforeCollectMoneyFieldCheck");
         break;
       case "CaveField":
         DokaponTheWorldState.curComponents.push("CastleFieldCheck");
@@ -314,7 +312,7 @@ function useMetaData() {
         DokaponTheWorldState.curComponents.push("WeaponStoreFieldCheck");
         break;
       default:
-        // 滑鼠hover上去，型別應該要是`never`，才代表所有case都有涵蓋到
+        // 滑鼠hover上去`name`，型別應該要是`never`，才代表所有case都有涵蓋到
         vertex.name;
         break;
     }
@@ -336,13 +334,19 @@ function useMetaData() {
     pointerDownPage.y = e.pageY;
     pointerDownTranslate.x = SVGTranslate.x;
     pointerDownTranslate.y = SVGTranslate.y;
-    DokaponTheWorldState.showCheckTip = false;
-    setGameProgress({ ...gameProgress });
     window.addEventListener("pointermove", handlePointerMove);
     window.addEventListener("pointerup", handlePointerUp);
   }
   function handlePointerMove(e: globalThis.PointerEvent) {
     if (!isPointerDown) return;
+
+    // 關閉`checkTip`跟`minimap`
+    if (DokaponTheWorldState.showCheckTip) {
+      DokaponTheWorldState.showCheckTip = false;
+      setGameProgress({ ...gameProgress });
+    }
+
+    // 計算SVG偏移量
     const { pageX, pageY } = e;
     const { x: anchorX, y: anchorY } = pointerDownTranslate;
     const deltaX = pageX - pointerDownPage.x;
@@ -351,7 +355,6 @@ function useMetaData() {
     const newY = parseInt((anchorY + deltaY).toFixed(0));
     if (newX === SVGTranslate.x && newY === SVGTranslate.y) return;
     setSVGTranslate({ x: newX, y: newY });
-    return;
   }
   function handlePointerUp(e: globalThis.PointerEvent) {
     isPointerDown = false;

@@ -52,6 +52,9 @@ const text: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
   Bag: [],
   Check: [],
   Roulette: [],
+  BeforeCollectMoneyFieldCheck: [
+    "持ち村の内1つから、上納金を集金するか、\nレベルアップさせるかを選べるマス。\n集金すると特産品もいっしょに回収できる。",
+  ],
   CastleFieldCheck: [
     "世界の中心、スタートマス。\n集めたお金をここにある世界平和金庫に戻そう!\n全てのステータス異常を無料で回復してくれる。",
   ],
@@ -103,6 +106,7 @@ const Components: {
   TreasureFieldCheck: OnlyBottomDialogFieldCheck,
   WhiteTreasureFieldCheck: OnlyBottomDialogFieldCheck,
   WorldTransferFieldCheck: OnlyBottomDialogFieldCheck,
+  BeforeCollectMoneyFieldCheck: OnlyBottomDialogFieldCheck,
   SelectCharacterToCompare: () => <></>,
   PlayerVsCharacterDialogs: () => <></>,
 };
@@ -147,6 +151,7 @@ function useMetaData() {
     JobStoreFieldCheck,
     MagicStoreFieldCheck,
     WeaponStoreFieldCheck,
+    CollectMoneyFieldCheckState,
   } = DokaponTheWorldState;
   /**
    * 搖桿的 O, X, 正方形, 三角形
@@ -191,10 +196,9 @@ function useMetaData() {
         return handleKeyUpForMagicStoreFieldCheck(e);
       case "WeaponStoreFieldCheck":
         return handleKeyUpForWeaponStoreFieldCheck(e);
+      case "BeforeCollectMoneyFieldCheck":
+        return handleKeyUpForBeforeCollectMoneyFieldCheck(e);
       case "CollectMoneyFieldCheck":
-        /**
-         * 比較特殊，分成兩個步驟
-         */
         return handleKeyUpForCollectMoneyFieldCheck(e);
       case "SelectCharacterToCompare":
         return;
@@ -435,10 +439,37 @@ function useMetaData() {
     }
     setGameProgress({ ...gameProgress });
   }
+  function handleKeyUpForBeforeCollectMoneyFieldCheck(
+    e: KeyboardEvent<HTMLDivElement>
+  ) {
+    const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
+    if (!isMainFourKeys) return;
+
+    DokaponTheWorldState.curComponents = ["CollectMoneyFieldCheck"];
+    setGameProgress({ ...gameProgress });
+  }
   function handleKeyUpForCollectMoneyFieldCheck(
     e: KeyboardEvent<HTMLDivElement>
   ) {
-    return;
+    const { curListPage } = CollectMoneyFieldCheckState;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.circle:
+      case gamePadSetting.cross:
+        DokaponTheWorldState.curComponents = ["Check"];
+        CollectMoneyFieldCheckState.curListPage = 0;
+        break;
+      case gamePadSetting.R1:
+      case gamePadSetting.R2:
+        CollectMoneyFieldCheckState.curListPage =
+          curListPage === 6 ? 0 : curListPage + 1;
+        break;
+      case gamePadSetting.L1:
+      case gamePadSetting.L2:
+        CollectMoneyFieldCheckState.curListPage =
+          curListPage === 0 ? 6 : curListPage - 1;
+        break;
+    }
+    setGameProgress({ ...gameProgress });
   }
   function backToCheck(e: KeyboardEvent<HTMLDivElement>) {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());

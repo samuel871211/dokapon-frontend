@@ -90,6 +90,7 @@ export type DokaponTheWorldComponentTypes =
   | "BattleFieldCheck"
   | "CastleFieldCheck"
   | "ChurchFieldCheck"
+  | "BeforeCollectMoneyFieldCheck"
   | "CollectMoneyFieldCheck"
   | "DamageFieldCheck"
   | "GoldTreasureFieldCheck"
@@ -326,6 +327,16 @@ export type GameProgress = {
     };
     WeaponStoreFieldCheck: {
       /**
+       * @default 0
+       *
+       * 退出的時候，要reset回0
+       */
+      curListPage: number;
+    };
+    CollectMoneyFieldCheckState: {
+      /**
+       * 0 ~ 6
+       *
        * @default 0
        *
        * 退出的時候，要reset回0

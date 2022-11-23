@@ -80,6 +80,7 @@ const initGameProgress: GameProgress = {
     JobStoreFieldCheck: { curListPage: 0 },
     MagicStoreFieldCheck: { curListPage: 0 },
     WeaponStoreFieldCheck: { curListPage: 0 },
+    CollectMoneyFieldCheckState: { curListPage: 0 },
   },
   playersAttrs: [
     {

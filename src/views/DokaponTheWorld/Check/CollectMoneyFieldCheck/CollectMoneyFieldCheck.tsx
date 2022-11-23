@@ -1,7 +1,5 @@
 // Related third party imports.
-import CustomBorderBottom from "components/CustomBorderBottom";
-import YellowBlock from "layouts/YellowBlock";
-import { useRef, useState, useContext, KeyboardEvent } from "react";
+import { useContext } from "react";
 import classNames from "classnames";
 
 // Local application/library specific imports.
@@ -11,21 +9,23 @@ import sevenContinents from "data/sevenContinents";
 import globalStyles from "assets/styles/globalStyles.module.css";
 import styles from "./CollectMoneyFieldCheck.module.css";
 import useTranslation from "hooks/useTranslation";
+import CustomBorderBottom from "components/CustomBorderBottom";
+import YellowBlock from "layouts/YellowBlock";
+import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
-const money = 999999999;
+const ArrOf7 = [0, 0, 0, 0, 0, 0, 0];
 
 export default CollectMoneyFieldCheck;
 
 /**
  * @todo 需要得知目前所有玩家各自擁有的村莊
- * @todo 需要得知目前玩家的金錢
  * @todo 字體有分紅、藍、黑色，黑色的邏輯尚不清楚，還沒實作
  * @todo Boss的ICON、角色的ICON
  */
 function CollectMoneyFieldCheck() {
   const { t } = useTranslation();
-  const { currentListPage } = useMetaData();
+  const { curListPage, currentPlayerMoney } = useMetaData();
   return (
     <div className={styles.collectMoneyFieldCheckContainer}>
       <YellowBlock
@@ -36,14 +36,14 @@ function CollectMoneyFieldCheck() {
           <div className={styles.topLeft}>
             <div className={styles.topLeftTitle}>AREA</div>
             <div className={styles.topLeftContent}>
-              {t(areaTypesToJP(sevenContinents[currentListPage]))}
+              {t(areaTypesToJP(sevenContinents[curListPage]))}
             </div>
             <CustomBorderBottom width="98%" />
           </div>
           <div className={styles.topRight}>
             <div className={styles.topRightTitle}>MONEY</div>
             <div className={styles.topRightContent}>
-              {money.toLocaleString()}
+              {currentPlayerMoney.toLocaleString()}
             </div>
             <CustomBorderBottom width="98%" />
           </div>
@@ -58,15 +58,13 @@ function CollectMoneyFieldCheck() {
                 globalStyles.hoverEffectGreenTransparent
               )}
             >
-              {Array(7)
-                .fill(0)
-                .map((item, idx) => (
-                  <div
-                    key={idx}
-                    className={styles.circle}
-                    data-selected={currentListPage === idx}
-                  />
-                ))}
+              {ArrOf7.map((item, idx) => (
+                <div
+                  key={idx}
+                  className={styles.circle}
+                  data-selected={curListPage === idx}
+                />
+              ))}
             </div>
             <div className={styles.topFloatingRight}>
               <div className={styles.rightText}>R</div>
@@ -82,7 +80,7 @@ function CollectMoneyFieldCheck() {
           </div>
           <CustomBorderBottom width="99%" />
           <div className={styles.listBody}>
-            {villages[sevenContinents[currentListPage]].map((village) => (
+            {villages[sevenContinents[curListPage]].map((village) => (
               <div className={styles.listRow} key={village.name}>
                 <div className={styles.villageName}>{t(village.name)}</div>
                 <div className={styles.villagePrice}>
@@ -101,18 +99,13 @@ function CollectMoneyFieldCheck() {
 }
 
 function useMetaData() {
-  const [currentListPage, setCurrentListPage] = useState(0);
-  // function handleKeyUp(e: KeyboardEvent) {
-  //   switch (e.key.toLowerCase()) {
-  //     case userPreference.L1:
-  //     case userPreference.L2:
-  //       setCurrentListPage(currentListPage === 0 ? 6 : currentListPage - 1);
-  //       return;
-  //     case userPreference.R1:
-  //     case userPreference.R2:
-  //       setCurrentListPage(currentListPage === 6 ? 0 : currentListPage + 1);
-  //       return;
-  //   }
-  // }
-  return { currentListPage };
+  const { gameProgress } = useContext(gameProgressCtx);
+  const currentPlayer =
+    gameProgress.playersAttrs[gameProgress.currentPlayerIdx];
+  const { curListPage } =
+    gameProgress.DokaponTheWorldState.CollectMoneyFieldCheckState;
+  return {
+    curListPage,
+    currentPlayerMoney: currentPlayer.possession.money,
+  };
 }

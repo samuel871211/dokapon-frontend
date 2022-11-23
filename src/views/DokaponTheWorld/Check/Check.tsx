@@ -11,9 +11,9 @@ import { gameProgressCtx } from "reducers/gameProgress";
 export default Check;
 
 /**
- * 因為Check底下又有很多獨立的view級component(畫面佔整頁，且需要handleKeyUp的)
- *
- * 所以把這些component提升到跟Check同一個階層，確保showCheck跟isCheckTopLayer都true才focus
+ * @todo 得知目前的`vertex.type`
+ * @todo 如果為battleField，需知道地形
+ * @todo 計算與目前玩家的距離
  */
 function Check() {
   const { t } = useTranslation();
@@ -52,7 +52,6 @@ function Check() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { DokaponTheWorldState } = gameProgress;
   const { showVertexAttrsAndDistance, showCheckTip } =
     gameProgress.DokaponTheWorldState;
   return { showVertexAttrsAndDistance, showCheckTip };

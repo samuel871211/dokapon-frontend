@@ -357,6 +357,11 @@ const texts = {
     cn: "結束",
   },
   // DokaponTheWorld > CollectMoneyField
+  "持ち村の内1つから、上納金を集金するか、\nレベルアップさせるかを選べるマス。\n集金すると特産品もいっしょに回収できる。":
+    {
+      en: "From one of your villages, you can choose to\n collect the top payment or level up. If you collect money,\n you can also collect special products.",
+      cn: "從您的村莊之一，\n您可以選擇收取最高付款或升級。\n收了錢，還可以收特產。",
+    },
   村名: {
     en: "Village name",
     cn: "村名",
@@ -605,12 +610,6 @@ const texts = {
     en: "マダガスカル村",
     cn: "マダガスカル村",
   },
-  // DokaponTheWorld > CollectMoneyField
-  "持ち村の内1つから、上納金を集金するか、\nレベルアップさせるかを選べるマス。\n集金すると特産品もいっしょに回収できる。":
-    {
-      en: "持ち村の内1つから、上納金を集金するか、\nレベルアップさせるかを選べるマス。\n集金すると特産品もいっしょに回収できる。",
-      cn: "持ち村の内1つから、上納金を集金するか、\nレベルアップさせるかを選べるマス。\n集金すると特産品もいっしょに回収できる。",
-    },
   // DokaponTheWorld > OnlyBottomDialogFieldCheck
   "ザコモンスターとの戦闘や\nイベントが発生するマス。": {
     en: "ザコモンスターとの戦闘や\nイベントが発生するマス。",

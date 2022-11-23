@@ -269,6 +269,7 @@ function Roulette() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { result: rouletteResult } = gameProgress.DokaponTheWorldState.Roulette;
+  const { result: rouletteResult } =
+    gameProgress.DokaponTheWorldState.RouletteState;
   return { rouletteResult };
 }

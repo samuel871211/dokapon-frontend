@@ -90,7 +90,7 @@ function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { currentPlayerIdx, playersAttrs, DokaponTheWorldState } = gameProgress;
   const currentPlayer = playersAttrs[currentPlayerIdx];
-  const { selectedIdx, currentBag } = DokaponTheWorldState.Bag;
+  const { selectedIdx, currentBag } = DokaponTheWorldState.BagState;
   const { possession } = currentPlayer;
   const { bagSpace } = jobs[currentPlayer.job];
   return {

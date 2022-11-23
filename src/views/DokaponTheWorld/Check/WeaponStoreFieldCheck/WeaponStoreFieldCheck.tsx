@@ -99,7 +99,7 @@ function WeaponStoreFieldCheck() {
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListPage } =
-    gameProgress.DokaponTheWorldState.WeaponStoreFieldCheck;
+    gameProgress.DokaponTheWorldState.WeaponStoreFieldCheckState;
   const {
     curClickVertex: { area },
   } = gameProgress.DokaponTheWorldState;

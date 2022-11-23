@@ -9,6 +9,10 @@ import YellowBlock from "layouts/YellowBlock";
 import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
+const viewToViewStateMapping = {
+  BattleModeSelectCharacter: "BattleModeSelectCharacterState" as const,
+  StoryModeSelectCharacter: "StoryModeSelectCharacterState" as const,
+};
 
 export default NameInputDialog;
 
@@ -21,18 +25,19 @@ function NameInputDialog() {
   if (
     currentView !== "BattleModeSelectCharacter" &&
     currentView !== "StoryModeSelectCharacter"
-  )
+  ) {
     throw new Error("currentView is not SelectCharacter");
+  }
 
   const {
-    NameInputDialog: {
+    NameInputDialogState: {
       keyboardType,
       nameInputArray,
       selectedSectionIdx,
       selectedWordIdx,
       curNameInputIdx,
     },
-  } = gameProgress[currentView];
+  } = gameProgress[viewToViewStateMapping[currentView]];
 
   return (
     <div className={styles.nameInputDialogContainer}>

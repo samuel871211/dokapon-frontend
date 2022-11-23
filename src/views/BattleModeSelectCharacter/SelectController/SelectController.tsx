@@ -17,7 +17,10 @@ const gatherToCenter = [
   styles.gatherToCenter2,
   styles.gatherToCenter3,
 ];
-
+const viewToViewStateMapping = {
+  BattleModeSelectCharacter: "BattleModeSelectCharacterState" as const,
+  StoryModeSelectCharacter: "StoryModeSelectCharacterState" as const,
+};
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 
 export default SelectController;
@@ -131,11 +134,13 @@ function useMetaData() {
   if (
     currentView !== "BattleModeSelectCharacter" &&
     currentView !== "StoryModeSelectCharacter"
-  )
+  ) {
     throw new Error("currentView is not SelectCharacter");
+  }
 
-  const { curComponent, ShuffleOrder } = gameProgress[currentView];
-  const { shuffleIndexes } = ShuffleOrder;
+  const { curComponent, ShuffleOrderState } =
+    gameProgress[viewToViewStateMapping[currentView]];
+  const { shuffleIndexes } = ShuffleOrderState;
   const showOrderNumber = curComponent === "ShuffleOrderComplete";
   const showControllerButton = curComponent === "SelectController";
   const showControllerConfirm = curComponent === "SelectControllerConfirm";

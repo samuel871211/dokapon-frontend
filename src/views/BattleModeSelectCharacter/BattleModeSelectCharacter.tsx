@@ -389,11 +389,11 @@ function useMetaData() {
   const containerRefEl = useRef<HTMLDivElement>(null);
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
   const {
-    isHoverOnConfirm,
+    isHoverOnConfirmBtn,
     goalType,
     numberOfPlayers,
     gamePadSetting,
-    BattleModeSelectCharacter,
+    BattleModeSelectCharacterState,
     currentPlayerIdx,
     playersAttrs,
     bottomDialogSentencesQueue,
@@ -418,15 +418,15 @@ function useMetaData() {
     "front.png";
   const {
     curComponent,
-    GoalInputDialog,
-    NameInputDialog,
-    NPCGenerateDialog,
-    SelectNPCColor,
-    SelectNPCJob,
-    SelectNPCGender,
-    SelectNPCLevel,
-    ShuffleOrder,
-  } = BattleModeSelectCharacter;
+    GoalInputDialogState,
+    NameInputDialogState,
+    NPCGenerateDialogState,
+    SelectNPCColorState,
+    SelectNPCJobState,
+    SelectNPCGenderState,
+    SelectNPCLevelState,
+    ShuffleOrderState,
+  } = BattleModeSelectCharacterState;
   /**
    * 根據`playersAttrs`跟`currentPlayerIdx`的變動，重新計算剩餘可用的顏色
    */
@@ -497,8 +497,8 @@ function useMetaData() {
         setGameProgress({ ...gameProgress });
         return;
       case gamePadSetting.circle:
-        GoalInputDialog.selectedIdx = goalType === "period" ? 2 : 8;
-        BattleModeSelectCharacter.curComponent = "GoalInputDialog";
+        GoalInputDialogState.selectedIdx = goalType === "period" ? 2 : 8;
+        BattleModeSelectCharacterState.curComponent = "GoalInputDialog";
         setGameProgress({ ...gameProgress });
         return;
       case gamePadSetting.cross:
@@ -509,7 +509,7 @@ function useMetaData() {
   }
   function handleGoalInputDialog(e: KeyboardEvent<HTMLDivElement>) {
     const goalInputLen = gameProgress.goalType === "period" ? 3 : 9;
-    const { selectedIdx } = GoalInputDialog;
+    const { selectedIdx } = GoalInputDialogState;
     const isEmptyInput = goalInput === 0;
     const isReachRight = selectedIdx === goalInputLen - 1;
     const isReachLeft = selectedIdx === 0;
@@ -517,10 +517,10 @@ function useMetaData() {
     switch (e.key.toLowerCase()) {
       case gamePadSetting.circle:
         if (isEmptyInput) return;
-        BattleModeSelectCharacter.curComponent = "SelectNumberOfPlayers";
+        BattleModeSelectCharacterState.curComponent = "SelectNumberOfPlayers";
         break;
       case gamePadSetting.cross:
-        BattleModeSelectCharacter.curComponent = "SelectGoalType";
+        BattleModeSelectCharacterState.curComponent = "SelectGoalType";
         gameProgress.goalInput = defaultGoalInput;
         break;
       case gamePadSetting.arrowDown: {
@@ -548,11 +548,11 @@ function useMetaData() {
         break;
       }
       case gamePadSetting.arrowLeft:
-        if (!isReachLeft) GoalInputDialog.selectedIdx = selectedIdx - 1;
+        if (!isReachLeft) GoalInputDialogState.selectedIdx = selectedIdx - 1;
         else gameProgress.goalInput = maxGoalInput;
         break;
       case gamePadSetting.arrowRight:
-        if (!isReachRight) GoalInputDialog.selectedIdx = selectedIdx + 1;
+        if (!isReachRight) GoalInputDialogState.selectedIdx = selectedIdx + 1;
         else gameProgress.goalInput = 0;
         break;
     }
@@ -569,7 +569,7 @@ function useMetaData() {
           numberOfPlayers === 4 ? 1 : numberOfPlayers + 1;
         break;
       case gamePadSetting.circle:
-        BattleModeSelectCharacter.curComponent =
+        BattleModeSelectCharacterState.curComponent =
           numberOfPlayers === 1 ? "OnlyOnePlayer" : "SelectGender";
 
         // 重新assign每個玩家的isNPC
@@ -579,7 +579,7 @@ function useMetaData() {
         });
         break;
       case gamePadSetting.cross:
-        BattleModeSelectCharacter.curComponent = "GoalInputDialog";
+        BattleModeSelectCharacterState.curComponent = "GoalInputDialog";
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -589,7 +589,7 @@ function useMetaData() {
     if (!isMainFourKeys) return;
     bottomDialogSentencesQueue.shift();
     if (bottomDialogSentencesQueue.length === 0) {
-      BattleModeSelectCharacter.curComponent = "SelectGender";
+      BattleModeSelectCharacterState.curComponent = "SelectGender";
     }
     setGameProgress({ ...gameProgress });
   }
@@ -602,7 +602,7 @@ function useMetaData() {
         currentPlayer.gender = curGender === "male" ? "female" : "male";
         break;
       case gamePadSetting.cross:
-        BattleModeSelectCharacter.curComponent = isFirstPlayer
+        BattleModeSelectCharacterState.curComponent = isFirstPlayer
           ? "SelectNumberOfPlayers"
           : "SelectJob";
         gameProgress.currentPlayerIdx = isFirstPlayer
@@ -610,7 +610,7 @@ function useMetaData() {
           : currentPlayerIdx - 1;
         break;
       case gamePadSetting.circle:
-        BattleModeSelectCharacter.curComponent = "AskForName";
+        BattleModeSelectCharacterState.curComponent = "AskForName";
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -619,16 +619,18 @@ function useMetaData() {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
 
-    BattleModeSelectCharacter.curComponent = "NameInputDialog";
+    BattleModeSelectCharacterState.curComponent = "NameInputDialog";
     const { name: curName } = currentPlayer;
 
     // reset NameInputDialog previous player UI State
-    NameInputDialog.keyboardType = "hiragana";
-    NameInputDialog.selectedSectionIdx = 0;
-    NameInputDialog.selectedWordIdx = 0;
-    NameInputDialog.curNameInputIdx =
+    NameInputDialogState.keyboardType = "hiragana";
+    NameInputDialogState.selectedSectionIdx = 0;
+    NameInputDialogState.selectedWordIdx = 0;
+    NameInputDialogState.curNameInputIdx =
       curName.length === 0 ? 0 : curName.length - 1;
-    NameInputDialog.nameInputArray = curName.padEnd(8, emptyWord).split("");
+    NameInputDialogState.nameInputArray = curName
+      .padEnd(8, emptyWord)
+      .split("");
 
     setGameProgress({ ...gameProgress });
   }
@@ -639,7 +641,7 @@ function useMetaData() {
       selectedSectionIdx,
       selectedWordIdx,
       keyboardType,
-    } = NameInputDialog;
+    } = NameInputDialogState;
     const isKeySection = selectedSectionIdx === 0 || selectedSectionIdx === 1;
     const isMenuSection = selectedSectionIdx === 2;
     const isReachingTop =
@@ -651,11 +653,11 @@ function useMetaData() {
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
         if (isKeySection) {
-          NameInputDialog.selectedWordIdx = isReachingTop
+          NameInputDialogState.selectedWordIdx = isReachingTop
             ? selectedWordIdx + 40
             : selectedWordIdx - 5;
         } else if (isMenuSection) {
-          NameInputDialog.selectedWordIdx = isReachingTop
+          NameInputDialogState.selectedWordIdx = isReachingTop
             ? 8
             : selectedWordIdx - 1;
         }
@@ -663,11 +665,11 @@ function useMetaData() {
         return;
       case gamePadSetting.arrowDown:
         if (isKeySection) {
-          NameInputDialog.selectedWordIdx = isReachingEnd
+          NameInputDialogState.selectedWordIdx = isReachingEnd
             ? selectedWordIdx - 40
             : selectedWordIdx + 5;
         } else if (isMenuSection) {
-          NameInputDialog.selectedWordIdx = isReachingEnd
+          NameInputDialogState.selectedWordIdx = isReachingEnd
             ? 0
             : selectedWordIdx + 1;
         }
@@ -677,25 +679,27 @@ function useMetaData() {
         switch (selectedSectionIdx) {
           case 0:
             if (selectedWordIdx % 5 === 0) {
-              NameInputDialog.selectedSectionIdx = 2;
-              NameInputDialog.selectedWordIdx = Math.floor(selectedWordIdx / 5);
+              NameInputDialogState.selectedSectionIdx = 2;
+              NameInputDialogState.selectedWordIdx = Math.floor(
+                selectedWordIdx / 5
+              );
             } else if (selectedWordIdx % 5 !== 0) {
-              NameInputDialog.selectedWordIdx = selectedWordIdx - 1;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx - 1;
             }
             setGameProgress({ ...gameProgress });
             return;
           case 1:
             if (selectedWordIdx % 5 === 0) {
-              NameInputDialog.selectedSectionIdx = 0;
-              NameInputDialog.selectedWordIdx = selectedWordIdx + 4;
+              NameInputDialogState.selectedSectionIdx = 0;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx + 4;
             } else if (selectedWordIdx % 5 !== 0) {
-              NameInputDialog.selectedWordIdx = selectedWordIdx - 1;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx - 1;
             }
             setGameProgress({ ...gameProgress });
             return;
           case 2:
-            NameInputDialog.selectedSectionIdx = 1;
-            NameInputDialog.selectedWordIdx = selectedWordIdx * 5 + 4;
+            NameInputDialogState.selectedSectionIdx = 1;
+            NameInputDialogState.selectedWordIdx = selectedWordIdx * 5 + 4;
             setGameProgress({ ...gameProgress });
             return;
         }
@@ -704,25 +708,27 @@ function useMetaData() {
         switch (selectedSectionIdx) {
           case 0:
             if (selectedWordIdx % 5 === 4) {
-              NameInputDialog.selectedSectionIdx = 1;
-              NameInputDialog.selectedWordIdx = selectedWordIdx - 4;
+              NameInputDialogState.selectedSectionIdx = 1;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx - 4;
             } else if (selectedWordIdx % 5 !== 4) {
-              NameInputDialog.selectedWordIdx = selectedWordIdx + 1;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx + 1;
             }
             setGameProgress({ ...gameProgress });
             return;
           case 1:
             if (selectedWordIdx % 5 === 4) {
-              NameInputDialog.selectedSectionIdx = 2;
-              NameInputDialog.selectedWordIdx = Math.floor(selectedWordIdx / 5);
+              NameInputDialogState.selectedSectionIdx = 2;
+              NameInputDialogState.selectedWordIdx = Math.floor(
+                selectedWordIdx / 5
+              );
             } else if (selectedWordIdx % 5 !== 4) {
-              NameInputDialog.selectedWordIdx = selectedWordIdx + 1;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx + 1;
             }
             setGameProgress({ ...gameProgress });
             return;
           case 2:
-            NameInputDialog.selectedSectionIdx = 0;
-            NameInputDialog.selectedWordIdx = selectedWordIdx * 5;
+            NameInputDialogState.selectedSectionIdx = 0;
+            NameInputDialogState.selectedWordIdx = selectedWordIdx * 5;
             setGameProgress({ ...gameProgress });
             return;
         }
@@ -740,15 +746,15 @@ function useMetaData() {
             // replace/add word to current idx
             const newNameInputArray = [...nameInputArray];
             newNameInputArray[curNameInputIdx] = keyboardWord;
-            NameInputDialog.nameInputArray = newNameInputArray;
+            NameInputDialogState.nameInputArray = newNameInputArray;
 
             if (curNameInputIdx === 7) {
               // focus to 'ＯＫ' when input complete
-              NameInputDialog.selectedSectionIdx = 2;
-              NameInputDialog.selectedWordIdx = 8;
+              NameInputDialogState.selectedSectionIdx = 2;
+              NameInputDialogState.selectedWordIdx = 8;
             } else {
               // otherwise, focus to next idx
-              NameInputDialog.curNameInputIdx = curNameInputIdx + 1;
+              NameInputDialogState.curNameInputIdx = curNameInputIdx + 1;
             }
             setGameProgress({ ...gameProgress });
             return;
@@ -757,20 +763,20 @@ function useMetaData() {
             const word = nameInputChars.menu[selectedWordIdx];
             switch (word) {
               case "平假名":
-                NameInputDialog.keyboardType = "hiragana";
+                NameInputDialogState.keyboardType = "hiragana";
                 break;
               case "片假名":
-                NameInputDialog.keyboardType = "katakana";
+                NameInputDialogState.keyboardType = "katakana";
                 break;
               case "ＡＢＣ":
-                NameInputDialog.keyboardType = "special";
+                NameInputDialogState.keyboardType = "special";
                 break;
               case "前進":
-                NameInputDialog.curNameInputIdx =
+                NameInputDialogState.curNameInputIdx =
                   curNameInputIdx === 7 ? 7 : curNameInputIdx + 1;
                 break;
               case "後退":
-                NameInputDialog.curNameInputIdx =
+                NameInputDialogState.curNameInputIdx =
                   curNameInputIdx === 0 ? 0 : curNameInputIdx - 1;
                 break;
               case "刪除":
@@ -779,13 +785,13 @@ function useMetaData() {
                   for (let idx = 7; idx >= curNameInputIdx; idx--) {
                     if (newNameInputArray[idx] !== emptyWord) {
                       newNameInputArray[idx] = emptyWord;
-                      NameInputDialog.nameInputArray = newNameInputArray;
+                      NameInputDialogState.nameInputArray = newNameInputArray;
                       break;
                     }
                   }
                   break;
                 }
-                NameInputDialog.curNameInputIdx =
+                NameInputDialogState.curNameInputIdx =
                   curNameInputIdx === 0 ? 0 : curNameInputIdx - 1;
                 break;
               case "ＯＫ": {
@@ -794,7 +800,7 @@ function useMetaData() {
                 );
                 if (emptyWords.length === nameInputArray.length) break;
                 currentPlayer.name = nameInputArray.join("").trim();
-                BattleModeSelectCharacter.curComponent = "SelectColor";
+                BattleModeSelectCharacterState.curComponent = "SelectColor";
                 currentPlayer.color = remainColors[0];
                 break;
               }
@@ -812,15 +818,15 @@ function useMetaData() {
 
         if (hasWordToDelete) {
           nameInputArray[curNameInputIdx] = emptyWord;
-          NameInputDialog.nameInputArray = [...nameInputArray];
+          NameInputDialogState.nameInputArray = [...nameInputArray];
         }
 
         if (isAtStartIndex && !hasWordToDelete) {
-          BattleModeSelectCharacter.curComponent = "SelectGender";
+          BattleModeSelectCharacterState.curComponent = "SelectGender";
         }
 
         if (!isAtStartIndex && !hasWordToDelete) {
-          NameInputDialog.curNameInputIdx = curNameInputIdx - 1;
+          NameInputDialogState.curNameInputIdx = curNameInputIdx - 1;
         }
 
         setGameProgress({ ...gameProgress });
@@ -847,10 +853,10 @@ function useMetaData() {
         currentPlayer.color = remainColors[curColorIdx];
         break;
       case gamePadSetting.circle:
-        BattleModeSelectCharacter.curComponent = "SelectJob";
+        BattleModeSelectCharacterState.curComponent = "SelectJob";
         break;
       case gamePadSetting.cross:
-        BattleModeSelectCharacter.curComponent = "AskForName";
+        BattleModeSelectCharacterState.curComponent = "AskForName";
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -885,18 +891,19 @@ function useMetaData() {
         break;
       case gamePadSetting.circle: {
         if (isNextPlayerNPC) {
-          BattleModeSelectCharacter.curComponent = "ThereShouldBeFourPlayers";
+          BattleModeSelectCharacterState.curComponent =
+            "ThereShouldBeFourPlayers";
           gameProgress.currentPlayerIdx = currentPlayerIdx + 1;
         } else if (isNextPlayerReal) {
-          BattleModeSelectCharacter.curComponent = "SelectGender";
+          BattleModeSelectCharacterState.curComponent = "SelectGender";
           gameProgress.currentPlayerIdx = currentPlayerIdx + 1;
         } else if (isFourPlayersGenerated) {
-          BattleModeSelectCharacter.curComponent = "FourPlayersGenerated";
+          BattleModeSelectCharacterState.curComponent = "FourPlayersGenerated";
         }
         break;
       }
       case gamePadSetting.cross:
-        BattleModeSelectCharacter.curComponent = "SelectColor";
+        BattleModeSelectCharacterState.curComponent = "SelectColor";
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -908,12 +915,12 @@ function useMetaData() {
 
     bottomDialogSentencesQueue.shift();
     if (bottomDialogSentencesQueue.length === 0) {
-      BattleModeSelectCharacter.curComponent = "AskForNthNPC";
+      BattleModeSelectCharacterState.curComponent = "AskForNthNPC";
     }
     setGameProgress({ ...gameProgress });
   }
   function handleAskForNthNPC(e: KeyboardEvent<HTMLDivElement>) {
-    BattleModeSelectCharacter.curComponent = "NPCGenerateDialog";
+    BattleModeSelectCharacterState.curComponent = "NPCGenerateDialog";
 
     // shuffle nth NPC player
     const npcPlayer = playersAttrs[currentPlayerIdx];
@@ -932,25 +939,27 @@ function useMetaData() {
     npcPlayer.gender = basicGenders[newGenderIdx];
     npcPlayer.name = nameInputCharList[newNameIdx];
 
-    SelectNPCLevel.prevSelectedNPCLevel = npcLevels[newNPCLevelIdx];
-    SelectNPCColor.prevSelectedColor = remainColors[newColorIdx];
-    SelectNPCGender.prevSelectedGender = basicGenders[newGenderIdx];
-    SelectNPCJob.prevSelectedJob = basicJobs[newJobIdx];
+    SelectNPCLevelState.prevSelectedNPCLevel = npcLevels[newNPCLevelIdx];
+    SelectNPCColorState.prevSelectedColor = remainColors[newColorIdx];
+    SelectNPCGenderState.prevSelectedGender = basicGenders[newGenderIdx];
+    SelectNPCJobState.prevSelectedJob = basicJobs[newJobIdx];
 
     setGameProgress({ ...gameProgress });
   }
   function handleNPCGenerateDialog(e: KeyboardEvent<HTMLDivElement>) {
     if (!currentPlayer.isNPC) throw new Error("currentPlayer is not NPC");
 
-    const { selectedIdx } = NPCGenerateDialog;
+    const { selectedIdx } = NPCGenerateDialogState;
     const isPrevPlayerNPC =
       numberOfPlayers <= 2 && numberOfPlayers <= currentPlayerIdx - 1;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
-        NPCGenerateDialog.selectedIdx = selectedIdx === 0 ? 4 : selectedIdx - 1;
+        NPCGenerateDialogState.selectedIdx =
+          selectedIdx === 0 ? 4 : selectedIdx - 1;
         break;
       case gamePadSetting.arrowDown:
-        NPCGenerateDialog.selectedIdx = selectedIdx === 4 ? 0 : selectedIdx + 1;
+        NPCGenerateDialogState.selectedIdx =
+          selectedIdx === 4 ? 0 : selectedIdx + 1;
         break;
       case gamePadSetting.circle: {
         const ButtonStepMapping: BattleModeSelectCharacterComponentTypes[] = [
@@ -960,17 +969,18 @@ function useMetaData() {
           "SelectNPCJob",
           currentPlayerIdx === 3 ? "FourPlayersGenerated" : "AskForNthNPC",
         ];
-        BattleModeSelectCharacter.curComponent = ButtonStepMapping[selectedIdx];
-        SelectNPCGender.prevSelectedGender = currentPlayer.gender;
-        SelectNPCColor.prevSelectedColor = currentPlayer.color;
-        SelectNPCJob.prevSelectedJob = currentPlayer.job;
-        SelectNPCLevel.prevSelectedNPCLevel = currentPlayer.npcLevel;
+        BattleModeSelectCharacterState.curComponent =
+          ButtonStepMapping[selectedIdx];
+        SelectNPCGenderState.prevSelectedGender = currentPlayer.gender;
+        SelectNPCColorState.prevSelectedColor = currentPlayer.color;
+        SelectNPCJobState.prevSelectedJob = currentPlayer.job;
+        SelectNPCLevelState.prevSelectedNPCLevel = currentPlayer.npcLevel;
         if (currentPlayerIdx !== 3 && selectedIdx === 4)
           gameProgress.currentPlayerIdx = currentPlayerIdx + 1;
         break;
       }
       case gamePadSetting.cross:
-        BattleModeSelectCharacter.curComponent = isPrevPlayerNPC
+        BattleModeSelectCharacterState.curComponent = isPrevPlayerNPC
           ? "AskForNthNPC"
           : "SelectJob";
         gameProgress.currentPlayerIdx = currentPlayerIdx - 1;
@@ -981,7 +991,7 @@ function useMetaData() {
   function handleSelectNPCLevel(e: KeyboardEvent<HTMLDivElement>) {
     if (!currentPlayer.isNPC) return;
 
-    const { prevSelectedNPCLevel } = SelectNPCLevel;
+    const { prevSelectedNPCLevel } = SelectNPCLevelState;
     let curNPCLevelIdx = npcLevels.indexOf(currentPlayer.npcLevel);
     // 如果是不合法的強度，就先強制改成正確的
     if (curNPCLevelIdx === -1) {
@@ -998,17 +1008,17 @@ function useMetaData() {
         currentPlayer.npcLevel = npcLevels[curNPCLevelIdx];
         break;
       case gamePadSetting.circle:
-        BattleModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        BattleModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
       case gamePadSetting.cross:
         currentPlayer.npcLevel = prevSelectedNPCLevel;
-        BattleModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        BattleModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
     }
     setGameProgress({ ...gameProgress });
   }
   function handleSelectNPCGender(e: KeyboardEvent<HTMLDivElement>) {
-    const { prevSelectedGender } = SelectNPCGender;
+    const { prevSelectedGender } = SelectNPCGenderState;
     const { gender: curGender } = currentPlayer;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowRight:
@@ -1016,17 +1026,17 @@ function useMetaData() {
         currentPlayer.gender = curGender === "male" ? "female" : "male";
         break;
       case gamePadSetting.circle:
-        BattleModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        BattleModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
       case gamePadSetting.cross:
         currentPlayer.gender = prevSelectedGender;
-        BattleModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        BattleModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
     }
     setGameProgress({ ...gameProgress });
   }
   function handleSelectNPCColor(e: KeyboardEvent<HTMLDivElement>) {
-    const { prevSelectedColor } = SelectNPCColor;
+    const { prevSelectedColor } = SelectNPCColorState;
     let curColorIdx = remainColors.indexOf(currentPlayer.color);
     // 如果是不合法的顏色，就先強制改成正確的
     if (curColorIdx === -1) {
@@ -1047,17 +1057,17 @@ function useMetaData() {
         break;
       }
       case gamePadSetting.circle:
-        BattleModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        BattleModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
       case gamePadSetting.cross:
         currentPlayer.color = prevSelectedColor;
-        BattleModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        BattleModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
     }
     setGameProgress({ ...gameProgress });
   }
   function handleSelectNPCJob(e: KeyboardEvent<HTMLDivElement>) {
-    const { prevSelectedJob } = SelectNPCJob;
+    const { prevSelectedJob } = SelectNPCJobState;
     let curJobIdx = basicJobs.indexOf(currentPlayer.job);
     // 如果是不合法的職業，就先強制改成正確的
     if (curJobIdx === -1) {
@@ -1074,11 +1084,11 @@ function useMetaData() {
         currentPlayer.job = basicJobs[curJobIdx];
         break;
       case gamePadSetting.circle:
-        BattleModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        BattleModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
       case gamePadSetting.cross:
         currentPlayer.job = prevSelectedJob;
-        BattleModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        BattleModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -1087,7 +1097,7 @@ function useMetaData() {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
 
-    BattleModeSelectCharacter.curComponent = "SelectController";
+    BattleModeSelectCharacterState.curComponent = "SelectController";
     // 選擇controller的時候，預設會從第0個人開始選
     gameProgress.currentPlayerIdx = 0;
     setGameProgress({ ...gameProgress });
@@ -1115,7 +1125,8 @@ function useMetaData() {
       case gamePadSetting.circle: {
         const isValidControllerNumber = controllerNumber <= 2;
         if (isValidControllerNumber) {
-          BattleModeSelectCharacter.curComponent = "SelectControllerConfirm";
+          BattleModeSelectCharacterState.curComponent =
+            "SelectControllerConfirm";
           break;
         }
         bottomDialogSentencesQueue.length = 0;
@@ -1125,25 +1136,25 @@ function useMetaData() {
         break;
       }
       case gamePadSetting.cross:
-        BattleModeSelectCharacter.curComponent = "AskForNthNPC";
+        BattleModeSelectCharacterState.curComponent = "AskForNthNPC";
         gameProgress.currentPlayerIdx = 3;
         break;
     }
     setGameProgress({ ...gameProgress });
   }
   function handleSelectControllerConfirm(e: KeyboardEvent<HTMLDivElement>) {
-    const { shuffleIndexes } = ShuffleOrder;
+    const { shuffleIndexes } = ShuffleOrderState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
       case gamePadSetting.arrowDown:
-        gameProgress.isHoverOnConfirm = !isHoverOnConfirm;
+        gameProgress.isHoverOnConfirmBtn = !isHoverOnConfirmBtn;
         break;
       case gamePadSetting.circle:
-        BattleModeSelectCharacter.curComponent = isHoverOnConfirm
+        BattleModeSelectCharacterState.curComponent = isHoverOnConfirmBtn
           ? "ShuffleOrder"
           : "SelectController";
-        if (isHoverOnConfirm) {
-          ShuffleOrder.intervalId = window.setInterval(() => {
+        if (isHoverOnConfirmBtn) {
+          ShuffleOrderState.intervalId = window.setInterval(() => {
             shuffleIndexes.shuffle();
             setGameProgress({ ...gameProgress });
           }, 50);
@@ -1156,22 +1167,22 @@ function useMetaData() {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
 
-    window.clearInterval(ShuffleOrder.intervalId);
-    const { shuffleIndexes } = ShuffleOrder;
+    window.clearInterval(ShuffleOrderState.intervalId);
+    const { shuffleIndexes } = ShuffleOrderState;
     gameProgress.playersAttrs = [
       playersAttrs[shuffleIndexes[0]],
       playersAttrs[shuffleIndexes[1]],
       playersAttrs[shuffleIndexes[2]],
       playersAttrs[shuffleIndexes[3]],
     ];
-    BattleModeSelectCharacter.curComponent = "ShuffleOrderComplete";
+    BattleModeSelectCharacterState.curComponent = "ShuffleOrderComplete";
     setGameProgress({ ...gameProgress });
   }
   function handleShuffleOrderComplete(e: KeyboardEvent<HTMLDivElement>) {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
 
-    BattleModeSelectCharacter.curComponent = "TakePlayerToDokaponTheWorld";
+    BattleModeSelectCharacterState.curComponent = "TakePlayerToDokaponTheWorld";
     setGameProgress({ ...gameProgress });
   }
   function handleTakePlayerToDokaponTheWorld(e: KeyboardEvent<HTMLDivElement>) {

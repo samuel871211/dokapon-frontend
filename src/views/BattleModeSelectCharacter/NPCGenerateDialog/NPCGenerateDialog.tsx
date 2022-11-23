@@ -14,6 +14,10 @@ import { gameProgressCtx } from "reducers/gameProgress";
 
 // Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
+const viewToViewStateMapping = {
+  BattleModeSelectCharacter: "BattleModeSelectCharacterState" as const,
+  StoryModeSelectCharacter: "StoryModeSelectCharacterState" as const,
+};
 
 export default NPCGenerateDialog;
 
@@ -87,10 +91,12 @@ function useMetaData() {
   if (
     currentView !== "BattleModeSelectCharacter" &&
     currentView !== "StoryModeSelectCharacter"
-  )
+  ) {
     throw new Error("currentView is not SelectCharacter");
+  }
 
-  const { selectedIdx } = gameProgress[currentView].NPCGenerateDialog;
+  const { selectedIdx } =
+    gameProgress[viewToViewStateMapping[currentView]].NPCGenerateDialogState;
   const currentPlayer = playersAttrs[currentPlayerIdx];
   const { job, gender, color } = playersAttrs[currentPlayerIdx];
   const imgSrc = `${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`;

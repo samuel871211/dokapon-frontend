@@ -55,9 +55,9 @@ function useMetaData() {
   const {
     goalType,
     goalInput,
-    BattleModeSelectCharacter: { GoalInputDialog },
+    BattleModeSelectCharacterState: { GoalInputDialogState },
   } = gameProgress;
-  const { selectedIdx } = GoalInputDialog;
+  const { selectedIdx } = GoalInputDialogState;
   const goalInputLen = goalType === "period" ? 3 : 9;
   const transferGoalInputToArray = useCallback(
     (fillEmpty: string) => {

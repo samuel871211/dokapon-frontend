@@ -379,10 +379,10 @@ function useMetaData() {
   const containerRefEl = useRef<HTMLDivElement>(null);
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
   const {
-    isHoverOnConfirm,
+    isHoverOnConfirmBtn,
     numberOfPlayers,
     gamePadSetting,
-    StoryModeSelectCharacter,
+    StoryModeSelectCharacterState,
     currentPlayerIdx,
     playersAttrs,
     bottomDialogSentencesQueue,
@@ -406,14 +406,14 @@ function useMetaData() {
     "front.png";
   const {
     curComponent,
-    NameInputDialog,
-    NPCGenerateDialog,
-    SelectNPCColor,
-    SelectNPCJob,
-    SelectNPCGender,
-    SelectNPCLevel,
-    ShuffleOrder,
-  } = StoryModeSelectCharacter;
+    NameInputDialogState,
+    NPCGenerateDialogState,
+    SelectNPCColorState,
+    SelectNPCJobState,
+    SelectNPCGenderState,
+    SelectNPCLevelState,
+    ShuffleOrderState,
+  } = StoryModeSelectCharacterState;
   /**
    * 根據`playersAttrs`跟`currentPlayerIdx`的變動，重新計算剩餘可用的顏色
    */
@@ -483,7 +483,7 @@ function useMetaData() {
           numberOfPlayers === 4 ? 1 : numberOfPlayers + 1;
         break;
       case gamePadSetting.circle:
-        StoryModeSelectCharacter.curComponent =
+        StoryModeSelectCharacterState.curComponent =
           numberOfPlayers === 1 ? "OnlyOnePlayer" : "SelectGender";
 
         // 重新assign每個玩家的isNPC
@@ -500,7 +500,7 @@ function useMetaData() {
     if (!isMainFourKeys) return;
     bottomDialogSentencesQueue.shift();
     if (bottomDialogSentencesQueue.length === 0) {
-      StoryModeSelectCharacter.curComponent = "SelectGender";
+      StoryModeSelectCharacterState.curComponent = "SelectGender";
     }
     setGameProgress({ ...gameProgress });
   }
@@ -513,7 +513,7 @@ function useMetaData() {
         currentPlayer.gender = curGender === "male" ? "female" : "male";
         break;
       case gamePadSetting.cross:
-        StoryModeSelectCharacter.curComponent = isFirstPlayer
+        StoryModeSelectCharacterState.curComponent = isFirstPlayer
           ? "SelectNumberOfPlayers"
           : "SelectJob";
         gameProgress.currentPlayerIdx = isFirstPlayer
@@ -521,7 +521,7 @@ function useMetaData() {
           : currentPlayerIdx - 1;
         break;
       case gamePadSetting.circle:
-        StoryModeSelectCharacter.curComponent = "AskForName";
+        StoryModeSelectCharacterState.curComponent = "AskForName";
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -530,16 +530,18 @@ function useMetaData() {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
 
-    StoryModeSelectCharacter.curComponent = "NameInputDialog";
+    StoryModeSelectCharacterState.curComponent = "NameInputDialog";
     const { name: curName } = currentPlayer;
 
     // reset NameInputDialog previous player UI State
-    NameInputDialog.keyboardType = "hiragana";
-    NameInputDialog.selectedSectionIdx = 0;
-    NameInputDialog.selectedWordIdx = 0;
-    NameInputDialog.curNameInputIdx =
+    NameInputDialogState.keyboardType = "hiragana";
+    NameInputDialogState.selectedSectionIdx = 0;
+    NameInputDialogState.selectedWordIdx = 0;
+    NameInputDialogState.curNameInputIdx =
       curName.length === 0 ? 0 : curName.length - 1;
-    NameInputDialog.nameInputArray = curName.padEnd(8, emptyWord).split("");
+    NameInputDialogState.nameInputArray = curName
+      .padEnd(8, emptyWord)
+      .split("");
 
     setGameProgress({ ...gameProgress });
   }
@@ -550,7 +552,7 @@ function useMetaData() {
       selectedSectionIdx,
       selectedWordIdx,
       keyboardType,
-    } = NameInputDialog;
+    } = NameInputDialogState;
     const isKeySection = selectedSectionIdx === 0 || selectedSectionIdx === 1;
     const isMenuSection = selectedSectionIdx === 2;
     const isReachingTop =
@@ -562,11 +564,11 @@ function useMetaData() {
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
         if (isKeySection) {
-          NameInputDialog.selectedWordIdx = isReachingTop
+          NameInputDialogState.selectedWordIdx = isReachingTop
             ? selectedWordIdx + 40
             : selectedWordIdx - 5;
         } else if (isMenuSection) {
-          NameInputDialog.selectedWordIdx = isReachingTop
+          NameInputDialogState.selectedWordIdx = isReachingTop
             ? 8
             : selectedWordIdx - 1;
         }
@@ -574,11 +576,11 @@ function useMetaData() {
         return;
       case gamePadSetting.arrowDown:
         if (isKeySection) {
-          NameInputDialog.selectedWordIdx = isReachingEnd
+          NameInputDialogState.selectedWordIdx = isReachingEnd
             ? selectedWordIdx - 40
             : selectedWordIdx + 5;
         } else if (isMenuSection) {
-          NameInputDialog.selectedWordIdx = isReachingEnd
+          NameInputDialogState.selectedWordIdx = isReachingEnd
             ? 0
             : selectedWordIdx + 1;
         }
@@ -588,25 +590,27 @@ function useMetaData() {
         switch (selectedSectionIdx) {
           case 0:
             if (selectedWordIdx % 5 === 0) {
-              NameInputDialog.selectedSectionIdx = 2;
-              NameInputDialog.selectedWordIdx = Math.floor(selectedWordIdx / 5);
+              NameInputDialogState.selectedSectionIdx = 2;
+              NameInputDialogState.selectedWordIdx = Math.floor(
+                selectedWordIdx / 5
+              );
             } else if (selectedWordIdx % 5 !== 0) {
-              NameInputDialog.selectedWordIdx = selectedWordIdx - 1;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx - 1;
             }
             setGameProgress({ ...gameProgress });
             return;
           case 1:
             if (selectedWordIdx % 5 === 0) {
-              NameInputDialog.selectedSectionIdx = 0;
-              NameInputDialog.selectedWordIdx = selectedWordIdx + 4;
+              NameInputDialogState.selectedSectionIdx = 0;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx + 4;
             } else if (selectedWordIdx % 5 !== 0) {
-              NameInputDialog.selectedWordIdx = selectedWordIdx - 1;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx - 1;
             }
             setGameProgress({ ...gameProgress });
             return;
           case 2:
-            NameInputDialog.selectedSectionIdx = 1;
-            NameInputDialog.selectedWordIdx = selectedWordIdx * 5 + 4;
+            NameInputDialogState.selectedSectionIdx = 1;
+            NameInputDialogState.selectedWordIdx = selectedWordIdx * 5 + 4;
             setGameProgress({ ...gameProgress });
             return;
         }
@@ -615,25 +619,27 @@ function useMetaData() {
         switch (selectedSectionIdx) {
           case 0:
             if (selectedWordIdx % 5 === 4) {
-              NameInputDialog.selectedSectionIdx = 1;
-              NameInputDialog.selectedWordIdx = selectedWordIdx - 4;
+              NameInputDialogState.selectedSectionIdx = 1;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx - 4;
             } else if (selectedWordIdx % 5 !== 4) {
-              NameInputDialog.selectedWordIdx = selectedWordIdx + 1;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx + 1;
             }
             setGameProgress({ ...gameProgress });
             return;
           case 1:
             if (selectedWordIdx % 5 === 4) {
-              NameInputDialog.selectedSectionIdx = 2;
-              NameInputDialog.selectedWordIdx = Math.floor(selectedWordIdx / 5);
+              NameInputDialogState.selectedSectionIdx = 2;
+              NameInputDialogState.selectedWordIdx = Math.floor(
+                selectedWordIdx / 5
+              );
             } else if (selectedWordIdx % 5 !== 4) {
-              NameInputDialog.selectedWordIdx = selectedWordIdx + 1;
+              NameInputDialogState.selectedWordIdx = selectedWordIdx + 1;
             }
             setGameProgress({ ...gameProgress });
             return;
           case 2:
-            NameInputDialog.selectedSectionIdx = 0;
-            NameInputDialog.selectedWordIdx = selectedWordIdx * 5;
+            NameInputDialogState.selectedSectionIdx = 0;
+            NameInputDialogState.selectedWordIdx = selectedWordIdx * 5;
             setGameProgress({ ...gameProgress });
             return;
         }
@@ -651,15 +657,15 @@ function useMetaData() {
             // replace/add word to current idx
             const newNameInputArray = [...nameInputArray];
             newNameInputArray[curNameInputIdx] = keyboardWord;
-            NameInputDialog.nameInputArray = newNameInputArray;
+            NameInputDialogState.nameInputArray = newNameInputArray;
 
             if (curNameInputIdx === 7) {
               // focus to 'ＯＫ' when input complete
-              NameInputDialog.selectedSectionIdx = 2;
-              NameInputDialog.selectedWordIdx = 8;
+              NameInputDialogState.selectedSectionIdx = 2;
+              NameInputDialogState.selectedWordIdx = 8;
             } else {
               // otherwise, focus to next idx
-              NameInputDialog.curNameInputIdx = curNameInputIdx + 1;
+              NameInputDialogState.curNameInputIdx = curNameInputIdx + 1;
             }
             setGameProgress({ ...gameProgress });
             return;
@@ -668,20 +674,20 @@ function useMetaData() {
             const word = nameInputChars.menu[selectedWordIdx];
             switch (word) {
               case "平假名":
-                NameInputDialog.keyboardType = "hiragana";
+                NameInputDialogState.keyboardType = "hiragana";
                 break;
               case "片假名":
-                NameInputDialog.keyboardType = "katakana";
+                NameInputDialogState.keyboardType = "katakana";
                 break;
               case "ＡＢＣ":
-                NameInputDialog.keyboardType = "special";
+                NameInputDialogState.keyboardType = "special";
                 break;
               case "前進":
-                NameInputDialog.curNameInputIdx =
+                NameInputDialogState.curNameInputIdx =
                   curNameInputIdx === 7 ? 7 : curNameInputIdx + 1;
                 break;
               case "後退":
-                NameInputDialog.curNameInputIdx =
+                NameInputDialogState.curNameInputIdx =
                   curNameInputIdx === 0 ? 0 : curNameInputIdx - 1;
                 break;
               case "刪除":
@@ -690,13 +696,13 @@ function useMetaData() {
                   for (let idx = 7; idx >= curNameInputIdx; idx--) {
                     if (newNameInputArray[idx] !== emptyWord) {
                       newNameInputArray[idx] = emptyWord;
-                      NameInputDialog.nameInputArray = newNameInputArray;
+                      NameInputDialogState.nameInputArray = newNameInputArray;
                       break;
                     }
                   }
                   break;
                 }
-                NameInputDialog.curNameInputIdx =
+                NameInputDialogState.curNameInputIdx =
                   curNameInputIdx === 0 ? 0 : curNameInputIdx - 1;
                 break;
               case "ＯＫ": {
@@ -705,7 +711,7 @@ function useMetaData() {
                 );
                 if (emptyWords.length === nameInputArray.length) break;
                 currentPlayer.name = nameInputArray.join("").trim();
-                StoryModeSelectCharacter.curComponent = "SelectColor";
+                StoryModeSelectCharacterState.curComponent = "SelectColor";
                 currentPlayer.color = remainColors[0];
                 break;
               }
@@ -723,15 +729,15 @@ function useMetaData() {
 
         if (hasWordToDelete) {
           nameInputArray[curNameInputIdx] = emptyWord;
-          NameInputDialog.nameInputArray = [...nameInputArray];
+          NameInputDialogState.nameInputArray = [...nameInputArray];
         }
 
         if (isAtStartIndex && !hasWordToDelete) {
-          StoryModeSelectCharacter.curComponent = "SelectGender";
+          StoryModeSelectCharacterState.curComponent = "SelectGender";
         }
 
         if (!isAtStartIndex && !hasWordToDelete) {
-          NameInputDialog.curNameInputIdx = curNameInputIdx - 1;
+          NameInputDialogState.curNameInputIdx = curNameInputIdx - 1;
         }
 
         setGameProgress({ ...gameProgress });
@@ -758,10 +764,10 @@ function useMetaData() {
         currentPlayer.color = remainColors[curColorIdx];
         break;
       case gamePadSetting.circle:
-        StoryModeSelectCharacter.curComponent = "SelectJob";
+        StoryModeSelectCharacterState.curComponent = "SelectJob";
         break;
       case gamePadSetting.cross:
-        StoryModeSelectCharacter.curComponent = "AskForName";
+        StoryModeSelectCharacterState.curComponent = "AskForName";
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -796,18 +802,19 @@ function useMetaData() {
         break;
       case gamePadSetting.circle: {
         if (isNextPlayerNPC) {
-          StoryModeSelectCharacter.curComponent = "ThereShouldBeFourPlayers";
+          StoryModeSelectCharacterState.curComponent =
+            "ThereShouldBeFourPlayers";
           gameProgress.currentPlayerIdx = currentPlayerIdx + 1;
         } else if (isNextPlayerReal) {
-          StoryModeSelectCharacter.curComponent = "SelectGender";
+          StoryModeSelectCharacterState.curComponent = "SelectGender";
           gameProgress.currentPlayerIdx = currentPlayerIdx + 1;
         } else if (isFourPlayersGenerated) {
-          StoryModeSelectCharacter.curComponent = "FourPlayersGenerated";
+          StoryModeSelectCharacterState.curComponent = "FourPlayersGenerated";
         }
         break;
       }
       case gamePadSetting.cross:
-        StoryModeSelectCharacter.curComponent = "SelectColor";
+        StoryModeSelectCharacterState.curComponent = "SelectColor";
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -819,12 +826,12 @@ function useMetaData() {
 
     bottomDialogSentencesQueue.shift();
     if (bottomDialogSentencesQueue.length === 0) {
-      StoryModeSelectCharacter.curComponent = "AskForNthNPC";
+      StoryModeSelectCharacterState.curComponent = "AskForNthNPC";
     }
     setGameProgress({ ...gameProgress });
   }
   function handleAskForNthNPC(e: KeyboardEvent<HTMLDivElement>) {
-    StoryModeSelectCharacter.curComponent = "NPCGenerateDialog";
+    StoryModeSelectCharacterState.curComponent = "NPCGenerateDialog";
 
     // shuffle nth NPC player
     const npcPlayer = playersAttrs[currentPlayerIdx];
@@ -843,25 +850,27 @@ function useMetaData() {
     npcPlayer.gender = basicGenders[newGenderIdx];
     npcPlayer.name = nameInputCharList[newNameIdx];
 
-    SelectNPCLevel.prevSelectedNPCLevel = npcLevels[newNPCLevelIdx];
-    SelectNPCColor.prevSelectedColor = remainColors[newColorIdx];
-    SelectNPCGender.prevSelectedGender = basicGenders[newGenderIdx];
-    SelectNPCJob.prevSelectedJob = basicJobs[newJobIdx];
+    SelectNPCLevelState.prevSelectedNPCLevel = npcLevels[newNPCLevelIdx];
+    SelectNPCColorState.prevSelectedColor = remainColors[newColorIdx];
+    SelectNPCGenderState.prevSelectedGender = basicGenders[newGenderIdx];
+    SelectNPCJobState.prevSelectedJob = basicJobs[newJobIdx];
 
     setGameProgress({ ...gameProgress });
   }
   function handleNPCGenerateDialog(e: KeyboardEvent<HTMLDivElement>) {
     if (!currentPlayer.isNPC) throw new Error("currentPlayer is not NPC");
 
-    const { selectedIdx } = NPCGenerateDialog;
+    const { selectedIdx } = NPCGenerateDialogState;
     const isPrevPlayerNPC =
       numberOfPlayers <= 2 && numberOfPlayers <= currentPlayerIdx - 1;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
-        NPCGenerateDialog.selectedIdx = selectedIdx === 0 ? 4 : selectedIdx - 1;
+        NPCGenerateDialogState.selectedIdx =
+          selectedIdx === 0 ? 4 : selectedIdx - 1;
         break;
       case gamePadSetting.arrowDown:
-        NPCGenerateDialog.selectedIdx = selectedIdx === 4 ? 0 : selectedIdx + 1;
+        NPCGenerateDialogState.selectedIdx =
+          selectedIdx === 4 ? 0 : selectedIdx + 1;
         break;
       case gamePadSetting.circle: {
         const ButtonStepMapping: StoryModeSelectCharacterComponentTypes[] = [
@@ -871,17 +880,18 @@ function useMetaData() {
           "SelectNPCJob",
           currentPlayerIdx === 3 ? "FourPlayersGenerated" : "AskForNthNPC",
         ];
-        StoryModeSelectCharacter.curComponent = ButtonStepMapping[selectedIdx];
-        SelectNPCGender.prevSelectedGender = currentPlayer.gender;
-        SelectNPCColor.prevSelectedColor = currentPlayer.color;
-        SelectNPCJob.prevSelectedJob = currentPlayer.job;
-        SelectNPCLevel.prevSelectedNPCLevel = currentPlayer.npcLevel;
+        StoryModeSelectCharacterState.curComponent =
+          ButtonStepMapping[selectedIdx];
+        SelectNPCGenderState.prevSelectedGender = currentPlayer.gender;
+        SelectNPCColorState.prevSelectedColor = currentPlayer.color;
+        SelectNPCJobState.prevSelectedJob = currentPlayer.job;
+        SelectNPCLevelState.prevSelectedNPCLevel = currentPlayer.npcLevel;
         if (currentPlayerIdx !== 3 && selectedIdx === 4)
           gameProgress.currentPlayerIdx = currentPlayerIdx + 1;
         break;
       }
       case gamePadSetting.cross:
-        StoryModeSelectCharacter.curComponent = isPrevPlayerNPC
+        StoryModeSelectCharacterState.curComponent = isPrevPlayerNPC
           ? "AskForNthNPC"
           : "SelectJob";
         gameProgress.currentPlayerIdx = currentPlayerIdx - 1;
@@ -892,7 +902,7 @@ function useMetaData() {
   function handleSelectNPCLevel(e: KeyboardEvent<HTMLDivElement>) {
     if (!currentPlayer.isNPC) return;
 
-    const { prevSelectedNPCLevel } = SelectNPCLevel;
+    const { prevSelectedNPCLevel } = SelectNPCLevelState;
     let curNPCLevelIdx = npcLevels.indexOf(currentPlayer.npcLevel);
     // 如果是不合法的強度，就先強制改成正確的
     if (curNPCLevelIdx === -1) {
@@ -909,17 +919,17 @@ function useMetaData() {
         currentPlayer.npcLevel = npcLevels[curNPCLevelIdx];
         break;
       case gamePadSetting.circle:
-        StoryModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        StoryModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
       case gamePadSetting.cross:
         currentPlayer.npcLevel = prevSelectedNPCLevel;
-        StoryModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        StoryModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
     }
     setGameProgress({ ...gameProgress });
   }
   function handleSelectNPCGender(e: KeyboardEvent<HTMLDivElement>) {
-    const { prevSelectedGender } = SelectNPCGender;
+    const { prevSelectedGender } = SelectNPCGenderState;
     const { gender: curGender } = currentPlayer;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowRight:
@@ -927,17 +937,17 @@ function useMetaData() {
         currentPlayer.gender = curGender === "male" ? "female" : "male";
         break;
       case gamePadSetting.circle:
-        StoryModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        StoryModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
       case gamePadSetting.cross:
         currentPlayer.gender = prevSelectedGender;
-        StoryModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        StoryModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
     }
     setGameProgress({ ...gameProgress });
   }
   function handleSelectNPCColor(e: KeyboardEvent<HTMLDivElement>) {
-    const { prevSelectedColor } = SelectNPCColor;
+    const { prevSelectedColor } = SelectNPCColorState;
     let curColorIdx = remainColors.indexOf(currentPlayer.color);
     // 如果是不合法的顏色，就先強制改成正確的
     if (curColorIdx === -1) {
@@ -958,17 +968,17 @@ function useMetaData() {
         break;
       }
       case gamePadSetting.circle:
-        StoryModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        StoryModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
       case gamePadSetting.cross:
         currentPlayer.color = prevSelectedColor;
-        StoryModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        StoryModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
     }
     setGameProgress({ ...gameProgress });
   }
   function handleSelectNPCJob(e: KeyboardEvent<HTMLDivElement>) {
-    const { prevSelectedJob } = SelectNPCJob;
+    const { prevSelectedJob } = SelectNPCJobState;
     let curJobIdx = basicJobs.indexOf(currentPlayer.job);
     // 如果是不合法的職業，就先強制改成正確的
     if (curJobIdx === -1) {
@@ -985,11 +995,11 @@ function useMetaData() {
         currentPlayer.job = basicJobs[curJobIdx];
         break;
       case gamePadSetting.circle:
-        StoryModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        StoryModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
       case gamePadSetting.cross:
         currentPlayer.job = prevSelectedJob;
-        StoryModeSelectCharacter.curComponent = "NPCGenerateDialog";
+        StoryModeSelectCharacterState.curComponent = "NPCGenerateDialog";
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -1000,7 +1010,7 @@ function useMetaData() {
 
     bottomDialogSentencesQueue.shift();
     if (bottomDialogSentencesQueue.length === 0) {
-      StoryModeSelectCharacter.curComponent = "SelectController";
+      StoryModeSelectCharacterState.curComponent = "SelectController";
     }
     // 選擇controller的時候，預設會從第0個人開始選
     gameProgress.currentPlayerIdx = 0;
@@ -1029,7 +1039,8 @@ function useMetaData() {
       case gamePadSetting.circle: {
         const isValidControllerNumber = controllerNumber <= 2;
         if (isValidControllerNumber) {
-          StoryModeSelectCharacter.curComponent = "SelectControllerConfirm";
+          StoryModeSelectCharacterState.curComponent =
+            "SelectControllerConfirm";
           break;
         }
         bottomDialogSentencesQueue.length = 0;
@@ -1039,25 +1050,25 @@ function useMetaData() {
         break;
       }
       case gamePadSetting.cross:
-        StoryModeSelectCharacter.curComponent = "AskForNthNPC";
+        StoryModeSelectCharacterState.curComponent = "AskForNthNPC";
         gameProgress.currentPlayerIdx = 3;
         break;
     }
     setGameProgress({ ...gameProgress });
   }
   function handleSelectControllerConfirm(e: KeyboardEvent<HTMLDivElement>) {
-    const { shuffleIndexes } = ShuffleOrder;
+    const { shuffleIndexes } = ShuffleOrderState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
       case gamePadSetting.arrowDown:
-        gameProgress.isHoverOnConfirm = !isHoverOnConfirm;
+        gameProgress.isHoverOnConfirmBtn = !isHoverOnConfirmBtn;
         break;
       case gamePadSetting.circle:
-        StoryModeSelectCharacter.curComponent = isHoverOnConfirm
+        StoryModeSelectCharacterState.curComponent = isHoverOnConfirmBtn
           ? "ShuffleOrder"
           : "SelectController";
-        if (isHoverOnConfirm) {
-          ShuffleOrder.intervalId = window.setInterval(() => {
+        if (isHoverOnConfirmBtn) {
+          ShuffleOrderState.intervalId = window.setInterval(() => {
             shuffleIndexes.shuffle();
             setGameProgress({ ...gameProgress });
           }, 50);
@@ -1070,22 +1081,22 @@ function useMetaData() {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
 
-    window.clearInterval(ShuffleOrder.intervalId);
-    const { shuffleIndexes } = ShuffleOrder;
+    window.clearInterval(ShuffleOrderState.intervalId);
+    const { shuffleIndexes } = ShuffleOrderState;
     gameProgress.playersAttrs = [
       playersAttrs[shuffleIndexes[0]],
       playersAttrs[shuffleIndexes[1]],
       playersAttrs[shuffleIndexes[2]],
       playersAttrs[shuffleIndexes[3]],
     ];
-    StoryModeSelectCharacter.curComponent = "ShuffleOrderComplete";
+    StoryModeSelectCharacterState.curComponent = "ShuffleOrderComplete";
     setGameProgress({ ...gameProgress });
   }
   function handleShuffleOrderComplete(e: KeyboardEvent<HTMLDivElement>) {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
 
-    StoryModeSelectCharacter.curComponent = "TakePlayerToDokaponTheWorld";
+    StoryModeSelectCharacterState.curComponent = "TakePlayerToDokaponTheWorld";
     setGameProgress({ ...gameProgress });
   }
   function handleTakePlayerToDokaponTheWorld(e: KeyboardEvent<HTMLDivElement>) {

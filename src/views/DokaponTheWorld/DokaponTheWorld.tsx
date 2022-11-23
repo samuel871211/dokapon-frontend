@@ -144,13 +144,13 @@ function useMetaData() {
   const currentPlayer = playersAttrs[currentPlayerIdx];
   const {
     curComponents,
-    Drawer,
-    Bag,
-    Roulette,
-    GroceryStoreFieldCheck,
-    JobStoreFieldCheck,
-    MagicStoreFieldCheck,
-    WeaponStoreFieldCheck,
+    DrawerState,
+    BagState,
+    RouletteState,
+    GroceryStoreFieldCheckState,
+    JobStoreFieldCheckState,
+    MagicStoreFieldCheckState,
+    WeaponStoreFieldCheckState,
     CollectMoneyFieldCheckState,
   } = DokaponTheWorldState;
   /**
@@ -213,13 +213,13 @@ function useMetaData() {
     }
   }
   function handleKeyUpForDrawer(e: KeyboardEvent<HTMLDivElement>) {
-    const { selectedIdx } = Drawer;
+    const { selectedIdx } = DrawerState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
-        Drawer.selectedIdx = selectedIdx === 0 ? 4 : selectedIdx - 1;
+        DrawerState.selectedIdx = selectedIdx === 0 ? 4 : selectedIdx - 1;
         break;
       case gamePadSetting.arrowDown:
-        Drawer.selectedIdx = selectedIdx === 4 ? 0 : selectedIdx + 1;
+        DrawerState.selectedIdx = selectedIdx === 4 ? 0 : selectedIdx + 1;
         break;
       case gamePadSetting.square:
         DokaponTheWorldState.curComponents = ["Check"];
@@ -247,32 +247,32 @@ function useMetaData() {
    * @todo handle bottomDialogQueue and bottomDialogProps
    */
   function handleKeyUpForBag(e: KeyboardEvent<HTMLDivElement>) {
-    const { currentBag, selectedIdx } = Bag;
+    const { currentBag, selectedIdx } = BagState;
     const space = jobs[currentPlayer.job].bagSpace[currentBag];
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
         switch (selectedIdx) {
           case 0:
-            Bag.selectedIdx = space - 2;
+            BagState.selectedIdx = space - 2;
             break;
           case 1:
-            Bag.selectedIdx = space - 1;
+            BagState.selectedIdx = space - 1;
             break;
           default:
-            Bag.selectedIdx -= 2;
+            BagState.selectedIdx -= 2;
             break;
         }
         break;
       case gamePadSetting.arrowDown:
         switch (selectedIdx) {
           case space - 2:
-            Bag.selectedIdx = 0;
+            BagState.selectedIdx = 0;
             break;
           case space - 1:
-            Bag.selectedIdx = 1;
+            BagState.selectedIdx = 1;
             break;
           default:
-            Bag.selectedIdx += 2;
+            BagState.selectedIdx += 2;
             break;
         }
         break;
@@ -280,10 +280,10 @@ function useMetaData() {
       case gamePadSetting.arrowRight:
         switch (selectedIdx % 2) {
           case 0:
-            Bag.selectedIdx += 1;
+            BagState.selectedIdx += 1;
             break;
           case 1:
-            Bag.selectedIdx -= 1;
+            BagState.selectedIdx -= 1;
             break;
         }
         break;
@@ -291,8 +291,8 @@ function useMetaData() {
       case gamePadSetting.R2:
       case gamePadSetting.L1:
       case gamePadSetting.L2:
-        Bag.currentBag = currentBag === "items" ? "magicBooks" : "items";
-        Bag.selectedIdx = 0;
+        BagState.currentBag = currentBag === "items" ? "magicBooks" : "items";
+        BagState.selectedIdx = 0;
         break;
       case gamePadSetting.circle:
         /**
@@ -308,7 +308,7 @@ function useMetaData() {
   function handleKeyUpForRoulette(e: KeyboardEvent<HTMLDivElement>) {
     switch (e.key.toLowerCase()) {
       case gamePadSetting.circle:
-        Roulette.result =
+        RouletteState.result =
           Math.getRandomIntInclusive(0, 3) + Math.getRandomIntInclusive(0, 3);
         setGameProgress({ ...gameProgress });
         setTimeout(() => {
@@ -346,27 +346,27 @@ function useMetaData() {
   function handleKeyUpForGroceryStoreFieldCheck(
     e: KeyboardEvent<HTMLDivElement>
   ) {
-    const { curListPage } = GroceryStoreFieldCheck;
+    const { curListPage } = GroceryStoreFieldCheckState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.circle:
       case gamePadSetting.cross:
       case gamePadSetting.square:
       case gamePadSetting.triangle:
         DokaponTheWorldState.curComponents = ["Check"];
-        GroceryStoreFieldCheck.curListPage = 0;
+        GroceryStoreFieldCheckState.curListPage = 0;
         break;
       case gamePadSetting.R1:
       case gamePadSetting.R2:
       case gamePadSetting.L1:
       case gamePadSetting.L2:
-        GroceryStoreFieldCheck.curListPage = curListPage === 0 ? 1 : 0;
+        GroceryStoreFieldCheckState.curListPage = curListPage === 0 ? 1 : 0;
         break;
     }
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForJobStoreFieldCheck(e: KeyboardEvent<HTMLDivElement>) {
     const { availableJobs } = currentPlayer;
-    const { curListPage } = JobStoreFieldCheck;
+    const { curListPage } = JobStoreFieldCheckState;
     const maxPage = Math.ceil(availableJobs.length / 6);
     switch (e.key.toLowerCase()) {
       case gamePadSetting.circle:
@@ -374,17 +374,19 @@ function useMetaData() {
       case gamePadSetting.square:
       case gamePadSetting.triangle:
         DokaponTheWorldState.curComponents = ["Check"];
-        JobStoreFieldCheck.curListPage = 0;
+        JobStoreFieldCheckState.curListPage = 0;
         break;
       case gamePadSetting.R1:
       case gamePadSetting.R2:
-        if (curListPage === maxPage - 1) JobStoreFieldCheck.curListPage = 0;
-        else JobStoreFieldCheck.curListPage = curListPage + 1;
+        if (curListPage === maxPage - 1)
+          JobStoreFieldCheckState.curListPage = 0;
+        else JobStoreFieldCheckState.curListPage = curListPage + 1;
         break;
       case gamePadSetting.L1:
       case gamePadSetting.L2:
-        if (curListPage === 0) JobStoreFieldCheck.curListPage = maxPage - 1;
-        else JobStoreFieldCheck.curListPage = curListPage - 1;
+        if (curListPage === 0)
+          JobStoreFieldCheckState.curListPage = maxPage - 1;
+        else JobStoreFieldCheckState.curListPage = curListPage - 1;
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -395,7 +397,7 @@ function useMetaData() {
     const { area } = DokaponTheWorldState.curClickVertex;
     const magicStore = magicStores[area];
     const maxPage = Math.ceil(magicStore.length / 6);
-    const { curListPage } = MagicStoreFieldCheck;
+    const { curListPage } = MagicStoreFieldCheckState;
 
     switch (e.key.toLowerCase()) {
       case gamePadSetting.circle:
@@ -403,17 +405,19 @@ function useMetaData() {
       case gamePadSetting.square:
       case gamePadSetting.triangle:
         DokaponTheWorldState.curComponents = ["Check"];
-        MagicStoreFieldCheck.curListPage = 0;
+        MagicStoreFieldCheckState.curListPage = 0;
         break;
       case gamePadSetting.R1:
       case gamePadSetting.R2:
-        if (curListPage === maxPage - 1) MagicStoreFieldCheck.curListPage = 0;
-        else MagicStoreFieldCheck.curListPage = curListPage + 1;
+        if (curListPage === maxPage - 1)
+          MagicStoreFieldCheckState.curListPage = 0;
+        else MagicStoreFieldCheckState.curListPage = curListPage + 1;
         break;
       case gamePadSetting.L1:
       case gamePadSetting.L2:
-        if (curListPage === 0) MagicStoreFieldCheck.curListPage = maxPage - 1;
-        else MagicStoreFieldCheck.curListPage = curListPage - 1;
+        if (curListPage === 0)
+          MagicStoreFieldCheckState.curListPage = maxPage - 1;
+        else MagicStoreFieldCheckState.curListPage = curListPage - 1;
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -421,20 +425,20 @@ function useMetaData() {
   function handleKeyUpForWeaponStoreFieldCheck(
     e: KeyboardEvent<HTMLDivElement>
   ) {
-    const { curListPage } = WeaponStoreFieldCheck;
+    const { curListPage } = WeaponStoreFieldCheckState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.circle:
       case gamePadSetting.cross:
       case gamePadSetting.square:
       case gamePadSetting.triangle:
         DokaponTheWorldState.curComponents = ["Check"];
-        WeaponStoreFieldCheck.curListPage = 0;
+        WeaponStoreFieldCheckState.curListPage = 0;
         break;
       case gamePadSetting.R1:
       case gamePadSetting.R2:
       case gamePadSetting.L1:
       case gamePadSetting.L2:
-        WeaponStoreFieldCheck.curListPage = curListPage === 0 ? 1 : 0;
+        WeaponStoreFieldCheckState.curListPage = curListPage === 0 ? 1 : 0;
         break;
     }
     setGameProgress({ ...gameProgress });

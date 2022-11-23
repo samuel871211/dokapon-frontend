@@ -358,7 +358,8 @@ function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { gamePadSetting, userPreference } = gameProgress;
   const { lang, aspectRatio } = userPreference;
-  const { showKeyMappingDialog, currentAxis } = gameProgress.Home.SettingsState;
+  const { showKeyMappingDialog, currentAxis } =
+    gameProgress.HomeState.SettingsState;
   const { row, col } = currentAxis;
   return { lang, aspectRatio, row, col, gamePadSetting, showKeyMappingDialog };
 }

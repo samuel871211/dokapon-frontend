@@ -91,7 +91,8 @@ function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { currentPlayerIdx, playersAttrs } = gameProgress;
   const { availableJobs } = playersAttrs[currentPlayerIdx];
-  const { curListPage } = gameProgress.DokaponTheWorldState.JobStoreFieldCheck;
+  const { curListPage } =
+    gameProgress.DokaponTheWorldState.JobStoreFieldCheckState;
   const curShowJobs = availableJobs.filter(
     (item, index) => index >= 6 * curListPage && index < 6 * (curListPage + 1)
   );

@@ -37,8 +37,8 @@ function Home() {
 function useMetaData() {
   const containerRefEl = useRef<HTMLDivElement>(null);
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
-  const { gamePadSetting, Home, userPreference } = gameProgress;
-  const { curComponent, ButtonGroupState, SettingsState } = Home;
+  const { gamePadSetting, HomeState, userPreference } = gameProgress;
+  const { curComponent, ButtonGroupState, SettingsState } = HomeState;
   /**
    * 有些可以hover的按鈕，但不是`gamePadKey`，透過此function來確定
    */
@@ -79,10 +79,10 @@ function useMetaData() {
         } else if (isBattleModeSelectCharacter) {
           gameProgress.currentView = "BattleModeSelectCharacter";
         } else if (isBook) {
-          // Home.curComponent = 'Book';
+          // HomeState.curComponent = 'Book';
           alert("尚未實做!!!");
         } else if (isSetting) {
-          Home.curComponent = "Settings";
+          HomeState.curComponent = "Settings";
           SettingsState.prevGamePadSetting = { ...gamePadSetting };
         }
     }
@@ -151,14 +151,14 @@ function useMetaData() {
           case "確定": {
             currentAxis.row = 0;
             currentAxis.col = 0;
-            Home.curComponent = "ButtonGroup";
+            HomeState.curComponent = "ButtonGroup";
             break;
           }
           case "取消": {
             currentAxis.row = 0;
             currentAxis.col = 0;
             gameProgress.gamePadSetting = SettingsState.prevGamePadSetting;
-            Home.curComponent = "ButtonGroup";
+            HomeState.curComponent = "ButtonGroup";
             break;
           }
           case "arrowUp":

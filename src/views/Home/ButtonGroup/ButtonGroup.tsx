@@ -59,6 +59,6 @@ function ButtonGroup() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { selectedIdx } = gameProgress.Home.ButtonGroupState;
+  const { selectedIdx } = gameProgress.HomeState.ButtonGroupState;
   return { selectedIdx };
 }

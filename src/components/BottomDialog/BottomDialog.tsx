@@ -24,7 +24,7 @@ export default BottomDialog;
 function BottomDialog(props: BottomDialogProps) {
   const { show, size, name, showConfirmCircle } = props;
   const showConfirmDialog = props.showConfirmDialog && !showConfirmCircle;
-  const { bottomDialogSentence, isHoverOnConfirm } = useMetaData();
+  const { bottomDialogSentence, isHoverOnConfirmBtn } = useMetaData();
   const { t } = useTranslation();
   return (
     <div className={styles.bottomDialogContainer} data-show={show}>
@@ -66,7 +66,7 @@ function BottomDialog(props: BottomDialogProps) {
           >
             <div className={styles.confirmDialogBtnContainer}>
               <div
-                data-selected={isHoverOnConfirm}
+                data-selected={isHoverOnConfirmBtn}
                 className={styles.confirmDialogBtn}
               >
                 {t("はい")}
@@ -74,7 +74,7 @@ function BottomDialog(props: BottomDialogProps) {
             </div>
             <div className={styles.confirmDialogBtnContainer}>
               <div
-                data-selected={!isHoverOnConfirm}
+                data-selected={!isHoverOnConfirmBtn}
                 className={styles.confirmDialogBtn}
               >
                 {t("いいえ")}
@@ -89,7 +89,7 @@ function BottomDialog(props: BottomDialogProps) {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { bottomDialogSentencesQueue, isHoverOnConfirm } = gameProgress;
+  const { bottomDialogSentencesQueue, isHoverOnConfirmBtn } = gameProgress;
   const bottomDialogSentence = bottomDialogSentencesQueue[0] || "";
-  return { bottomDialogSentence, isHoverOnConfirm };
+  return { bottomDialogSentence, isHoverOnConfirmBtn };
 }

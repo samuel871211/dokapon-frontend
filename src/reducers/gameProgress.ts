@@ -2,22 +2,21 @@
 import { createContext, Dispatch, SetStateAction } from "react";
 
 // Local application/library specific imports.
-import { GameProgress, Vertex } from "global";
+import type { GameProgress, Vertex } from "global";
 
 // Stateless vars declare.
 const initGameProgress: GameProgress = {
   timeStamp: "",
-  isHoverOnConfirm: false,
+  isHoverOnConfirmBtn: false,
   goalType: "period",
   goalInput: 1,
   numberOfPlayers: 1,
   currentPlayerIdx: 0,
   currentDayOfWeek: 1,
   currentWeek: 1,
-  curSentenceIdx: 0,
   bottomDialogSentencesQueue: [],
   currentView: "Home",
-  Home: {
+  HomeState: {
     curComponent: "ButtonGroup",
     ButtonGroupState: { selectedIdx: 0 },
     SettingsState: {
@@ -26,41 +25,41 @@ const initGameProgress: GameProgress = {
       prevGamePadSetting: {} as GameProgress["gamePadSetting"],
     },
   },
-  BattleModeSelectCharacter: {
+  BattleModeSelectCharacterState: {
     curComponent: "SelectGoalType",
-    GoalInputDialog: { selectedIdx: 0 },
-    NameInputDialog: {
+    GoalInputDialogState: { selectedIdx: 0 },
+    NameInputDialogState: {
       selectedSectionIdx: 0,
       selectedWordIdx: 0,
       keyboardType: "hiragana",
       nameInputArray: ["　", "　", "　", "　", "　", "　", "　", "　"],
       curNameInputIdx: 0,
     },
-    NPCGenerateDialog: { selectedIdx: 4 },
-    SelectNPCColor: { prevSelectedColor: "red" },
-    SelectNPCGender: { prevSelectedGender: "male" },
-    SelectNPCJob: { prevSelectedJob: "beginner" },
-    SelectNPCLevel: { prevSelectedNPCLevel: "weak" },
-    ShuffleOrder: {
+    NPCGenerateDialogState: { selectedIdx: 4 },
+    SelectNPCColorState: { prevSelectedColor: "red" },
+    SelectNPCGenderState: { prevSelectedGender: "male" },
+    SelectNPCJobState: { prevSelectedJob: "beginner" },
+    SelectNPCLevelState: { prevSelectedNPCLevel: "weak" },
+    ShuffleOrderState: {
       shuffleIndexes: [0, 1, 2, 3],
       intervalId: 0,
     },
   },
-  StoryModeSelectCharacter: {
+  StoryModeSelectCharacterState: {
     curComponent: "SelectNumberOfPlayers",
-    NameInputDialog: {
+    NameInputDialogState: {
       selectedSectionIdx: 0,
       selectedWordIdx: 0,
       keyboardType: "hiragana",
       nameInputArray: ["　", "　", "　", "　", "　", "　", "　", "　"],
       curNameInputIdx: 0,
     },
-    NPCGenerateDialog: { selectedIdx: 4 },
-    SelectNPCColor: { prevSelectedColor: "red" },
-    SelectNPCGender: { prevSelectedGender: "male" },
-    SelectNPCJob: { prevSelectedJob: "beginner" },
-    SelectNPCLevel: { prevSelectedNPCLevel: "weak" },
-    ShuffleOrder: {
+    NPCGenerateDialogState: { selectedIdx: 4 },
+    SelectNPCColorState: { prevSelectedColor: "red" },
+    SelectNPCGenderState: { prevSelectedGender: "male" },
+    SelectNPCJobState: { prevSelectedJob: "beginner" },
+    SelectNPCLevelState: { prevSelectedNPCLevel: "weak" },
+    ShuffleOrderState: {
       shuffleIndexes: [0, 1, 2, 3],
       intervalId: 0,
     },
@@ -70,16 +69,16 @@ const initGameProgress: GameProgress = {
     curClickVertex: {} as Vertex,
     showVertexAttrsAndDistance: false,
     showCheckTip: true,
-    Drawer: { selectedIdx: 0 },
-    Bag: {
+    DrawerState: { selectedIdx: 0 },
+    BagState: {
       currentBag: "items",
       selectedIdx: 0,
     },
-    Roulette: { result: -1 },
-    GroceryStoreFieldCheck: { curListPage: 0 },
-    JobStoreFieldCheck: { curListPage: 0 },
-    MagicStoreFieldCheck: { curListPage: 0 },
-    WeaponStoreFieldCheck: { curListPage: 0 },
+    RouletteState: { result: -1 },
+    GroceryStoreFieldCheckState: { curListPage: 0 },
+    JobStoreFieldCheckState: { curListPage: 0 },
+    MagicStoreFieldCheckState: { curListPage: 0 },
+    WeaponStoreFieldCheckState: { curListPage: 0 },
     CollectMoneyFieldCheckState: { curListPage: 0 },
   },
   playersAttrs: [

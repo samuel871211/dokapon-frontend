@@ -113,7 +113,7 @@ export type GameProgress = {
   /**
    * `BottomDialog`的ConfirmDialog
    */
-  isHoverOnConfirm: boolean;
+  isHoverOnConfirmBtn: boolean;
   goalType: GoalTypes;
   /**
    * `1 ~ 999` if `goalType === 'period'`
@@ -137,13 +137,12 @@ export type GameProgress = {
    * 1 ~ 999
    */
   currentWeek: number;
-  curSentenceIdx: number;
   /**
    * Assume sentences are already tranlated.
    */
   bottomDialogSentencesQueue: string[];
   currentView: ViewTypes;
-  Home: {
+  HomeState: {
     curComponent: HomeComponentTypes;
     ButtonGroupState: {
       /**
@@ -169,10 +168,12 @@ export type GameProgress = {
       prevGamePadSetting: GameProgress["gamePadSetting"];
     };
   };
-  BattleModeSelectCharacter: {
+  BattleModeSelectCharacterState: {
     curComponent: BattleModeSelectCharacterComponentTypes;
-    GoalInputDialog: { selectedIdx: number };
-    NameInputDialog: {
+    GoalInputDialogState: {
+      selectedIdx: number;
+    };
+    NameInputDialogState: {
       /**
        * length = 8
        *
@@ -190,7 +191,7 @@ export type GameProgress = {
       selectedWordIdx: number;
       keyboardType: "hiragana" | "katakana" | "special";
     };
-    NPCGenerateDialog: {
+    NPCGenerateDialogState: {
       /**
        * 0 ~ 4
        *
@@ -198,19 +199,19 @@ export type GameProgress = {
        */
       selectedIdx: number;
     };
-    SelectNPCLevel: {
+    SelectNPCLevelState: {
       prevSelectedNPCLevel: NPCLevelTypes;
     };
-    SelectNPCGender: {
+    SelectNPCGenderState: {
       prevSelectedGender: GenderTypes;
     };
-    SelectNPCColor: {
+    SelectNPCColorState: {
       prevSelectedColor: ColorTypes;
     };
-    SelectNPCJob: {
+    SelectNPCJobState: {
       prevSelectedJob: JobTypes;
     };
-    ShuffleOrder: {
+    ShuffleOrderState: {
       /**
        * length = 4
        *
@@ -220,9 +221,9 @@ export type GameProgress = {
       intervalId: number;
     };
   };
-  StoryModeSelectCharacter: {
+  StoryModeSelectCharacterState: {
     curComponent: StoryModeSelectCharacterComponentTypes;
-    NameInputDialog: {
+    NameInputDialogState: {
       /**
        * length = 8
        *
@@ -240,7 +241,7 @@ export type GameProgress = {
       selectedWordIdx: number;
       keyboardType: "hiragana" | "katakana" | "special";
     };
-    NPCGenerateDialog: {
+    NPCGenerateDialogState: {
       /**
        * 0 ~ 4
        *
@@ -248,19 +249,19 @@ export type GameProgress = {
        */
       selectedIdx: number;
     };
-    SelectNPCLevel: {
+    SelectNPCLevelState: {
       prevSelectedNPCLevel: NPCLevelTypes;
     };
-    SelectNPCGender: {
+    SelectNPCGenderState: {
       prevSelectedGender: GenderTypes;
     };
-    SelectNPCColor: {
+    SelectNPCColorState: {
       prevSelectedColor: ColorTypes;
     };
-    SelectNPCJob: {
+    SelectNPCJobState: {
       prevSelectedJob: JobTypes;
     };
-    ShuffleOrder: {
+    ShuffleOrderState: {
       /**
        * length = 4
        *
@@ -275,7 +276,7 @@ export type GameProgress = {
     curClickVertex: Vertex;
     showVertexAttrsAndDistance: boolean;
     showCheckTip: boolean;
-    Drawer: {
+    DrawerState: {
       /**
        * 0 ~ 4
        *
@@ -291,17 +292,17 @@ export type GameProgress = {
        */
       selectedIdx: number;
     };
-    Bag: {
+    BagState: {
       currentBag: "items" | "magicBooks";
       selectedIdx: number;
     };
-    Roulette: {
+    RouletteState: {
       /**
        * @default -1
        */
       result: number;
     };
-    GroceryStoreFieldCheck: {
+    GroceryStoreFieldCheckState: {
       /**
        * @default 0
        *
@@ -309,7 +310,7 @@ export type GameProgress = {
        */
       curListPage: number;
     };
-    JobStoreFieldCheck: {
+    JobStoreFieldCheckState: {
       /**
        * @default 0
        *
@@ -317,7 +318,7 @@ export type GameProgress = {
        */
       curListPage: number;
     };
-    MagicStoreFieldCheck: {
+    MagicStoreFieldCheckState: {
       /**
        * @default 0
        *
@@ -325,7 +326,7 @@ export type GameProgress = {
        */
       curListPage: number;
     };
-    WeaponStoreFieldCheck: {
+    WeaponStoreFieldCheckState: {
       /**
        * @default 0
        *

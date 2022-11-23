@@ -67,7 +67,7 @@ function MagicStoreFieldCheck() {
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListPage } =
-    gameProgress.DokaponTheWorldState.MagicStoreFieldCheck;
+    gameProgress.DokaponTheWorldState.MagicStoreFieldCheckState;
   const {
     curClickVertex: { area },
   } = gameProgress.DokaponTheWorldState;

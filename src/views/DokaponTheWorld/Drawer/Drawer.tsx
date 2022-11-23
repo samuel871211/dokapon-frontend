@@ -11,22 +11,22 @@ import { gameProgressCtx } from "reducers/gameProgress";
 import { PlayerAttrs } from "global";
 
 // Stateless vars declare.
-class Node {
-  public value = 0;
-  public next: Node | undefined = undefined;
-  constructor(value: number) {
-    this.value = value;
-    this.next = undefined;
-  }
-}
-const zero = new Node(0);
-const one = new Node(1);
-const two = new Node(2);
-const three = new Node(3);
-zero.next = one;
-one.next = two;
-two.next = three;
-three.next = zero;
+// class Node {
+//   public value = 0;
+//   public next: Node | undefined = undefined;
+//   constructor(value: number) {
+//     this.value = value;
+//     this.next = undefined;
+//   }
+// }
+// const zero = new Node(0);
+// const one = new Node(1);
+// const two = new Node(2);
+// const three = new Node(3);
+// zero.next = one;
+// one.next = two;
+// two.next = three;
+// three.next = zero;
 const weekToChinese = ["月", "火", "水", "木", "金", "土", "日"];
 const weekToEnglish = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
@@ -188,7 +188,7 @@ function useMetaData() {
     playersAttrs,
   } = gameProgress;
   const currentPlayer = playersAttrs[currentPlayerIdx];
-  const { selectedIdx } = DokaponTheWorldState.Drawer;
+  const { selectedIdx } = DokaponTheWorldState.DrawerState;
   function getNthNextPlayerByCurPlayerIdx(n: 1 | 2 | 3) {
     if (n === 1) return playersAttrs[currentPlayerIdx + 1] || playersAttrs[0];
     if (n === 2 && currentPlayerIdx <= 1)

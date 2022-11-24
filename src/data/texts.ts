@@ -110,9 +110,6 @@ const texts = {
     cn: "魔法",
   },
   // DokaponTheWorld > VillageFieldCheck
-  /**
-   * @todo 部分地區的翻譯檔尚未完成
-   */
   アジア: {
     en: "Asia",
     cn: "亞洲",

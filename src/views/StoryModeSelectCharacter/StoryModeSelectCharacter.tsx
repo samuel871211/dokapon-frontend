@@ -1108,12 +1108,6 @@ function useMetaData() {
       gameProgress.currentView = "DokaponTheWorld";
       playersAttrs.forEach((playerAttrs) => {
         playerAttrs.currentArea = "BetweenDimensions";
-        playerAttrs.possession.items = Array(
-          jobs[playerAttrs.job].bagSpace.items
-        ).fill("");
-        playerAttrs.possession.magicBooks = Array(
-          jobs[playerAttrs.job].bagSpace.magicBooks
-        ).fill("");
       });
     }
     setGameProgress({ ...gameProgress });

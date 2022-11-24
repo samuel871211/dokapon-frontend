@@ -2,7 +2,7 @@
 import { useContext } from "react";
 
 // Local application/library specific imports.
-import areaTypesToJP from "utils/areaTypesToJP";
+import areaTypesToJP from "data/areaTypesToJP";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
@@ -34,7 +34,7 @@ function VillageFieldCheck() {
         >
           <div className={styles.villageArea}>
             <div>AREA</div>
-            <div>{`${t(areaTypesToJP(area))}${t("エリア")}`}</div>
+            <div>{`${t(areaTypesToJP[area])}${t("エリア")}`}</div>
             <CustomBorderBottom />
           </div>
           <div className={styles.namePayTotal}>

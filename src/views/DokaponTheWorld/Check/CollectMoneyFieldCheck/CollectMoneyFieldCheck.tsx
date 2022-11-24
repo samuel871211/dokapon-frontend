@@ -3,7 +3,7 @@ import { useContext } from "react";
 import classNames from "classnames";
 
 // Local application/library specific imports.
-import areaTypesToJP from "utils/areaTypesToJP";
+import areaTypesToJP from "data/areaTypesToJP";
 import villages from "data/villages";
 import sevenContinents from "data/sevenContinents";
 import globalStyles from "assets/styles/globalStyles.module.css";
@@ -36,7 +36,7 @@ function CollectMoneyFieldCheck() {
           <div className={styles.topLeft}>
             <div className={styles.topLeftTitle}>AREA</div>
             <div className={styles.topLeftContent}>
-              {t(areaTypesToJP(sevenContinents[curListPage]))}
+              {t(areaTypesToJP[sevenContinents[curListPage]])}
             </div>
             <CustomBorderBottom width="98%" />
           </div>

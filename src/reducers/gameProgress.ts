@@ -22,7 +22,23 @@ const initGameProgress: GameProgress = {
     SettingsState: {
       showKeyMappingDialog: false,
       currentAxis: { row: 0, col: 0 },
-      prevGamePadSetting: {} as GameProgress["gamePadSetting"],
+      prevGamePadSetting: {
+        arrowUp: "arrowup",
+        arrowDown: "arrowdown",
+        arrowLeft: "arrowleft",
+        arrowRight: "arrowright",
+        triangle: "s",
+        circle: "d",
+        square: "z",
+        cross: "x",
+        L1: "q",
+        L2: "1",
+        R1: "e",
+        R2: "3",
+        SELECT: "c",
+        ANALOG: "b",
+        START: "v",
+      },
     },
   },
   BattleModeSelectCharacterState: {
@@ -66,7 +82,21 @@ const initGameProgress: GameProgress = {
   },
   DokaponTheWorldState: {
     curComponents: ["Drawer"],
-    curClickVertex: {} as Vertex,
+    curClickVertex: {
+      position: {
+        x: 4960,
+        y: 2940,
+      },
+      name: "CastleField",
+      id: "571e15e0-7324-4e98-925e-2aac78952e6c",
+      left: "ca9c14d0-8009-4bdd-b60b-907d7aca81a4",
+      right: "09eff9ac-05cf-418c-9f8b-04547ea045b2",
+      edges: [
+        "deb81b1e-097c-442a-bb12-af84909d8999",
+        "36e56502-933e-4105-b0c7-c8db8e4f8cde",
+      ],
+      area: "Asia",
+    },
     showVertexAttrsAndDistance: false,
     showCheckTip: true,
     DrawerState: { selectedIdx: 0 },
@@ -791,7 +821,7 @@ const gameProgressCtx = createContext<{
 }>({
   gameProgress: initGameProgress,
   setGameProgress: () => {
-    throw new Error("context value no provided");
+    throw new Error("context value not provided");
   },
 });
 

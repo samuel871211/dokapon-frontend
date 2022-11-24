@@ -29,21 +29,21 @@ const devGameProgress: GameProgress = {
         "col": 0
       },
       "prevGamePadSetting": {
-        arrowUp: "arrowup",
-        arrowDown: "arrowdown",
-        arrowLeft: "arrowleft",
-        arrowRight: "arrowright",
-        triangle: "s",
-        circle: "d",
-        square: "z",
-        cross: "x",
-        L1: "q",
-        L2: "1",
-        R1: "e",
-        R2: "3",
-        SELECT: "c",
-        ANALOG: "b",
-        START: "v",
+        "arrowUp": "arrowup",
+        "arrowDown": "arrowdown",
+        "arrowLeft": "arrowleft",
+        "arrowRight": "arrowright",
+        "triangle": "s",
+        "circle": "d",
+        "square": "z",
+        "cross": "x",
+        "L1": "q",
+        "L2": "1",
+        "R1": "e",
+        "R2": "3",
+        "SELECT": "c",
+        "ANALOG": "b",
+        "START": "v"
       }
     }
   },
@@ -141,22 +141,26 @@ const devGameProgress: GameProgress = {
       "Drawer"
     ],
     "curClickVertex": {
-      position: {
-        x: 4960,
-        y: 2940,
+      "position": {
+        "x": 4960,
+        "y": 2940
       },
-      name: "CastleField",
-      id: "571e15e0-7324-4e98-925e-2aac78952e6c",
-      left: "ca9c14d0-8009-4bdd-b60b-907d7aca81a4",
-      right: "09eff9ac-05cf-418c-9f8b-04547ea045b2",
-      edges: [
+      "name": "CastleField",
+      "id": "571e15e0-7324-4e98-925e-2aac78952e6c",
+      "left": "ca9c14d0-8009-4bdd-b60b-907d7aca81a4",
+      "right": "09eff9ac-05cf-418c-9f8b-04547ea045b2",
+      "edges": [
         "deb81b1e-097c-442a-bb12-af84909d8999",
-        "36e56502-933e-4105-b0c7-c8db8e4f8cde",
+        "36e56502-933e-4105-b0c7-c8db8e4f8cde"
       ],
-      area: "Asia",
+      "area": "Asia"
     },
-    "showVertexAttrsAndDistance": false,
-    "showCheckTip": true,
+    "CheckState": {
+      "showVertexNameAndDistance": false,
+      "showCheckTip": true,
+      "curHoverVertexDistance": 0,
+      "curHoverVertexName": ""
+    },
     "DrawerState": {
       "selectedIdx": 0
     },

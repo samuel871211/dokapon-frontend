@@ -36,6 +36,7 @@ import MagicBookField from "components/vertices/MagicBookField";
 import BattleField from "components/vertices/BattleField";
 import DamageField from "components/vertices/DamageField";
 import PlayerChess from "components/PlayerChess";
+import GraphDSA from "graphics/GraphDSA";
 import { gameProgressCtx } from "reducers/gameProgress";
 import styles from "./GraphUI.module.css";
 
@@ -123,6 +124,10 @@ const pointerDownPage = { x: -1, y: -1 };
  * 紀錄SVG偏移的基準點，之後再加上滑鼠移動距離，就會是最新的偏移量
  */
 const pointerDownTranslate = { x: -1, y: -1 };
+/**
+ * @todo 根據目前玩家所在的地圖，讀取不同地圖檔案
+ */
+const graphDSA = new GraphDSA(dokaponTheWorld);
 
 export default GraphUI;
 
@@ -180,6 +185,7 @@ function useMetaData() {
   const [SVGTranslate, setSVGTranslate] = useState({ x: 0, y: 0 });
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
   const { DokaponTheWorldState, playersAttrs, currentPlayerIdx } = gameProgress;
+  const { curComponents, CheckState } = DokaponTheWorldState;
   const currentPlayer = playersAttrs[currentPlayerIdx];
   const Cells = useMemo(() => renderCells(curGraph), [curGraph]);
   const PlayersChess = playersAttrs.map((playerAttrs, idx) => (
@@ -193,18 +199,39 @@ function useMetaData() {
     />
   ));
 
+  /**
+   * `vertex.name`要轉成日文，要做一個mapping table
+   */
   function handlePointerOver(e: PointerEvent<SVGSVGElement>) {
-    if (!(e.target instanceof SVGCircleElement)) {
-      DokaponTheWorldState.showVertexAttrsAndDistance = false;
+    if (
+      !(e.target instanceof SVGCircleElement) &&
+      !(e.target instanceof SVGImageElement)
+    ) {
+      CheckState.showVertexNameAndDistance = false;
       setGameProgress({ ...gameProgress });
       return;
     }
 
-    const vertexId = e.target.parentElement?.id;
-    const vertex = curGraph.vertices.find((item) => item.id === vertexId);
-    if (!vertex) return console.error("no pointer over vertex");
+    // get vertex id from <g> attribute
+    const isClickOnVertex = e.target instanceof SVGCircleElement;
+    const vertexId = isClickOnVertex
+      ? e.target.parentElement?.id
+      : e.target.parentElement?.getAttribute("data-vertex-id");
+    if (!vertexId) return console.error("no vertexId");
 
-    DokaponTheWorldState.showVertexAttrsAndDistance = true;
+    // get vertex from `curGraph.vertices`
+    const vertex = curGraph.vertices.find((item) => item.id === vertexId);
+    if (!vertex) return console.error("no clicked vertex");
+
+    // show Vertex Name And Distance
+    const curPlayerVertex = curGraph.vertices[currentPlayer.currentVertexIdx];
+    const distance = graphDSA.calMinDistanceBetween(
+      curPlayerVertex.id,
+      vertex.id
+    );
+    CheckState.curHoverVertexDistance = distance;
+    CheckState.showVertexNameAndDistance = true;
+    CheckState.curHoverVertexName = vertex.name;
     setGameProgress({ ...gameProgress });
   }
   /**
@@ -231,9 +258,9 @@ function useMetaData() {
     const vertex = curGraph.vertices.find((item) => item.id === vertexId);
     if (!vertex) return console.error("no clicked vertex");
 
-    // reset `curComponents` and close `showVertexAttrsAndDistance`
-    DokaponTheWorldState.showVertexAttrsAndDistance = false;
-    DokaponTheWorldState.curComponents.length = 0;
+    // reset `curComponents` and close `showVertexNameAndDistance`
+    CheckState.showVertexNameAndDistance = false;
+    curComponents.length = 0;
 
     // check if player (self excluded), enemy or monster is clicked
     const clickedPlayers = playersAttrs.filter(
@@ -246,70 +273,70 @@ function useMetaData() {
     const totalClickedCharactersCount =
       clickedPlayers.length + clickedEnemies.length + clickedMonsters.length;
     if (totalClickedCharactersCount === 1) {
-      DokaponTheWorldState.curComponents.push("PlayerVsCharacterDialogs");
+      curComponents.push("PlayerVsCharacterDialogs");
     } else if (totalClickedCharactersCount > 1) {
-      DokaponTheWorldState.curComponents.push("SelectCharacterToCompare");
+      curComponents.push("SelectCharacterToCompare");
     }
 
     // handle click on vertex
     DokaponTheWorldState.curClickVertex = vertex;
     switch (vertex.name) {
       case "BattleField":
-        DokaponTheWorldState.curComponents.push("BattleFieldCheck");
+        curComponents.push("BattleFieldCheck");
         break;
       case "KeyTreasureField":
-        DokaponTheWorldState.curComponents.push("TreasureFieldCheck");
+        curComponents.push("TreasureFieldCheck");
         break;
       case "MagicBookField":
-        DokaponTheWorldState.curComponents.push("MagicBookFieldCheck");
+        curComponents.push("MagicBookFieldCheck");
         break;
       case "RedTreasureField":
-        DokaponTheWorldState.curComponents.push("RedTreasureFieldCheck");
+        curComponents.push("RedTreasureFieldCheck");
         break;
       case "TreasureField":
-        DokaponTheWorldState.curComponents.push("TreasureFieldCheck");
+        curComponents.push("TreasureFieldCheck");
         break;
       case "WhiteTreasureField":
-        DokaponTheWorldState.curComponents.push("WhiteTreasureFieldCheck");
+        curComponents.push("WhiteTreasureFieldCheck");
         break;
       case "WorldTransferField":
-        DokaponTheWorldState.curComponents.push("WorldTransferFieldCheck");
+        curComponents.push("WorldTransferFieldCheck");
         break;
       case "GoldTreasureField":
-        DokaponTheWorldState.curComponents.push("GoldTreasureFieldCheck");
+        curComponents.push("GoldTreasureFieldCheck");
         break;
       case "DamageField":
-        DokaponTheWorldState.curComponents.push("DamageFieldCheck");
+        curComponents.push("DamageFieldCheck");
         break;
       case "CollectAllMoneyField":
-        DokaponTheWorldState.curComponents.push("BeforeCollectMoneyFieldCheck");
+        curComponents.push("BeforeCollectMoneyFieldCheck");
         break;
       case "CollectMoneyField":
-        DokaponTheWorldState.curComponents.push("BeforeCollectMoneyFieldCheck");
+        curComponents.push("BeforeCollectMoneyFieldCheck");
         break;
       case "CaveField":
-        DokaponTheWorldState.curComponents.push("CastleFieldCheck");
+        curComponents.push("CastleFieldCheck");
         break;
       case "VillageField":
-        DokaponTheWorldState.curComponents.push("VillageFieldCheck");
+        curComponents.push("VillageFieldCheck");
         break;
       case "CastleField":
-        DokaponTheWorldState.curComponents.push("CastleFieldCheck");
+        curComponents.push("CastleFieldCheck");
         break;
       case "ChruchField":
-        DokaponTheWorldState.curComponents.push("ChurchFieldCheck");
+        curComponents.push("ChurchFieldCheck");
         break;
       case "GroceryStoreField":
-        DokaponTheWorldState.curComponents.push("GroceryStoreFieldCheck");
+        curComponents.push("GroceryStoreFieldCheck");
         break;
       case "JobStoreField":
-        DokaponTheWorldState.curComponents.push("JobStoreFieldCheck");
+        curComponents.push("JobStoreFieldCheck");
         break;
       case "MagicStoreField":
-        DokaponTheWorldState.curComponents.push("MagicStoreFieldCheck");
+        curComponents.push("MagicStoreFieldCheck");
         break;
       case "WeaponStoreField":
-        DokaponTheWorldState.curComponents.push("WeaponStoreFieldCheck");
+        curComponents.push("WeaponStoreFieldCheck");
         break;
       default:
         // 滑鼠hover上去`name`，型別應該要是`never`，才代表所有case都有涵蓋到
@@ -341,8 +368,8 @@ function useMetaData() {
     if (!isPointerDown) return;
 
     // 關閉`checkTip`跟`minimap`
-    if (DokaponTheWorldState.showCheckTip) {
-      DokaponTheWorldState.showCheckTip = false;
+    if (CheckState.showCheckTip) {
+      CheckState.showCheckTip = false;
       setGameProgress({ ...gameProgress });
     }
 
@@ -361,7 +388,7 @@ function useMetaData() {
     setCurGraph({ ...curGraph });
     window.removeEventListener("pointermove", handlePointerMove);
     window.removeEventListener("pointerup", handlePointerUp);
-    DokaponTheWorldState.showCheckTip = true;
+    CheckState.showCheckTip = true;
     setGameProgress({ ...gameProgress });
   }
 

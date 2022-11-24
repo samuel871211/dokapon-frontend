@@ -17,7 +17,12 @@ export default Check;
  */
 function Check() {
   const { t } = useTranslation();
-  const { showVertexAttrsAndDistance, showCheckTip } = useMetaData();
+  const {
+    showVertexNameAndDistance,
+    showCheckTip,
+    curHoverVertexDistance,
+    curHoverVertexName,
+  } = useMetaData();
 
   return (
     <div className={styles.checkContainer}>
@@ -37,11 +42,11 @@ function Check() {
           </div>
         </div>
       ) : null}
-      {showVertexAttrsAndDistance ? (
+      {showVertexNameAndDistance ? (
         <div className={styles.nodeAttrsAndDistance}>
-          <div className={styles.nodeType}>草原拉我</div>
+          <div className={styles.nodeType}>{curHoverVertexName}</div>
           <div className={styles.nodeDistance}>
-            總共是 <b>28</b> 步
+            總共是 <b>{curHoverVertexDistance}</b> 步
           </div>
         </div>
       ) : null}
@@ -52,7 +57,16 @@ function Check() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { showVertexAttrsAndDistance, showCheckTip } =
-    gameProgress.DokaponTheWorldState;
-  return { showVertexAttrsAndDistance, showCheckTip };
+  const {
+    showVertexNameAndDistance,
+    showCheckTip,
+    curHoverVertexDistance,
+    curHoverVertexName,
+  } = gameProgress.DokaponTheWorldState.CheckState;
+  return {
+    showVertexNameAndDistance,
+    showCheckTip,
+    curHoverVertexDistance,
+    curHoverVertexName,
+  };
 }

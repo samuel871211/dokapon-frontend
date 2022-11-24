@@ -12,8 +12,8 @@ class GraphDSA {
   } = {};
   #untraversedQueues: { [key: number]: CellId[] } = {};
   #adjacentVertexs: CellId[] = [];
-  #nextVertex: CellId | undefined = undefined;
-  #startVertex: CellId = "";
+  #nextVertexId: CellId | undefined = undefined;
+  #startVertexId: CellId = "";
   #stepCount = 0;
 
   constructor(graph: { edges: Edge[]; vertices: Vertex[] }) {
@@ -70,22 +70,28 @@ class GraphDSA {
     this.#ends = [];
     this.#endPositions = [];
     this.#adjacentVertexs = [];
-    this.#nextVertex = undefined;
+    this.#nextVertexId = undefined;
     this.#traversedQueues = { 0: [] };
-    this.#untraversedQueues = { 0: [this.#startVertex] };
+    this.#untraversedQueues = { 0: [this.#startVertexId] };
     for (let i = 1; i <= this.#stepCount; i++) {
       this.#traversedQueues[i] = [];
       this.#untraversedQueues[i] = [];
     }
   }
   // eslint-disable-next-line
-  getAllPaths(startVertex: CellId, stepCount: number) {
+  getAllPaths(startVertexId: CellId, stepCount: number) {
     if (this.#stepCount < 0) return this.#getResult();
-    this.#startVertex = startVertex;
+    this.#startVertexId = startVertexId;
     this.#stepCount = stepCount;
     this.#init();
     this.#traversal();
     return this.#getResult();
+  }
+  /**
+   * @todo 實作
+   */
+  calMinDistanceBetween(startVertexId: CellId, endVertexId: CellId): number {
+    return 2;
   }
   // eslint-disable-next-line
   #getResult() {
@@ -113,7 +119,7 @@ class GraphDSA {
    */
   #addVertexToUntraversedQueues(filters: { duplicateEnd: boolean }): void {
     if (!this.#adjacentVertexs || this.#adjacentVertexs.length === 0) {
-      console.log(this.#nextVertex);
+      console.log(this.#nextVertexId);
       console.log(this.#adjacentVertexs);
       throw new Error(`adjacencyLists有錯`);
     }
@@ -165,23 +171,23 @@ class GraphDSA {
   #traversal(): void {
     // eslint-disable-next-line
     while (true) {
-      // console.count(this.#startVertex)
-      this.#nextVertex = this.#untraversedQueues[this.#path.length].shift();
+      // console.count(this.#startVertexId)
+      this.#nextVertexId = this.#untraversedQueues[this.#path.length].shift();
 
       // go back until untravered queue is not empty
       while (
-        !this.#nextVertex &&
+        !this.#nextVertexId &&
         this.#path.length !== 0 &&
         this.#untraversedQueues[this.#path.length].length === 0
       ) {
         this.#path.pop();
-        this.#nextVertex = this.#untraversedQueues[this.#path.length].shift();
+        this.#nextVertexId = this.#untraversedQueues[this.#path.length].shift();
       }
-      if (!this.#nextVertex && this.#path.length === 0) break;
-      if (this.#nextVertex) {
+      if (!this.#nextVertexId && this.#path.length === 0) break;
+      if (this.#nextVertexId) {
         // start to traverse
-        this.#adjacentVertexs = this.#adjacencyLists[this.#nextVertex];
-        this.#path.push(this.#nextVertex);
+        this.#adjacentVertexs = this.#adjacencyLists[this.#nextVertexId];
+        this.#path.push(this.#nextVertexId);
         this.#addVertexToTraversedQueues();
         const IsReachEnd = this.#path.length === this.#stepCount + 1;
         const IsPenultimate = this.#path.length === this.#stepCount;
@@ -189,7 +195,7 @@ class GraphDSA {
         else if (IsPenultimate)
           this.#addVertexToUntraversedQueues({ duplicateEnd: true });
         else this.#addVertexToUntraversedQueues({ duplicateEnd: false });
-        this.#nextVertex = undefined;
+        this.#nextVertexId = undefined;
       }
     }
   }

@@ -274,8 +274,15 @@ export type GameProgress = {
   DokaponTheWorldState: {
     curComponents: DokaponTheWorldComponentTypes[];
     curClickVertex: Vertex;
-    showVertexAttrsAndDistance: boolean;
-    showCheckTip: boolean;
+    CheckState: {
+      showVertexNameAndDistance: boolean;
+      showCheckTip: boolean;
+      /**
+       * 0 ~ 30
+       */
+      curHoverVertexDistance: number;
+      curHoverVertexName: string;
+    };
     DrawerState: {
       /**
        * 0 ~ 4

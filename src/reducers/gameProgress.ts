@@ -97,8 +97,12 @@ const initGameProgress: GameProgress = {
       ],
       area: "Asia",
     },
-    showVertexAttrsAndDistance: false,
-    showCheckTip: true,
+    CheckState: {
+      showVertexNameAndDistance: false,
+      showCheckTip: true,
+      curHoverVertexDistance: 0,
+      curHoverVertexName: "",
+    },
     DrawerState: { selectedIdx: 0 },
     BagState: {
       currentBag: "items",

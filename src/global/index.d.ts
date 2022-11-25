@@ -1,5 +1,9 @@
 import type { TextsKeys } from "data/texts";
 
+export type GraphJSON = {
+  vertices: Vertex[];
+  edges: Edge[];
+};
 export type BottomDialogProps = {
   /**
    * It uses `display: none` to hide Component if not show

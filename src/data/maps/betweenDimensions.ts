@@ -1,6 +1,6 @@
-import { Vertex, Edge } from "global";
+import type { GraphJSON } from "global";
 
-const betweenDimensions: { vertices: Vertex[]; edges: Edge[] } = {
+const betweenDimensions: GraphJSON = {
   vertices: [
     {
       position: {

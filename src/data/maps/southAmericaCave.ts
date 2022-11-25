@@ -1,6 +1,6 @@
-import { Vertex, Edge } from "global";
+import type { GraphJSON } from "global";
 
-const southAmericaCave: { vertices: Vertex[]; edges: Edge[] } = {
+const southAmericaCave: GraphJSON = {
   vertices: [
     {
       area: "SouthAmericaCave",

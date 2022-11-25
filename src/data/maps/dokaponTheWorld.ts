@@ -1,4 +1,4 @@
-import { Vertex, Edge } from "global";
+import type { GraphJSON, Vertex } from "global";
 
 const asiaVertices: Vertex[] = [
   {
@@ -15908,7 +15908,7 @@ const atlantisVertices: Vertex[] = [
   },
 ];
 
-const dokaponTheWorld: { vertices: Vertex[]; edges: Edge[] } = {
+const dokaponTheWorld: GraphJSON = {
   vertices: [
     ...asiaVertices,
     ...europeVertices,

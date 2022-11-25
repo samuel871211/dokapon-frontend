@@ -10,7 +10,7 @@ import {
 } from "react";
 
 // Local application/library specific imports.
-import type { Vertex, Edge } from "global";
+import type { Vertex, GraphJSON } from "global";
 import dokaponTheWorld from "data/maps/dokaponTheWorld";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
@@ -44,7 +44,7 @@ import styles from "./GraphUI.module.css";
 /**
  * 要先生成Edge，再生成Vertex，這樣Vertex才可以把LINK蓋住
  */
-function renderCells(graph: { vertices: Vertex[]; edges: Edge[] }) {
+function renderCells(graph: GraphJSON) {
   const vertices = graph.vertices.map((vertex) =>
     createElement(Components.vertices[vertex.name], {
       key: vertex.id,

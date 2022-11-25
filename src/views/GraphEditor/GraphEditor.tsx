@@ -20,6 +20,7 @@ import type {
   Area,
   Position,
   AreaTypes,
+  GraphJSON,
 } from "global";
 import dokaponTheWorld from "data/maps/dokaponTheWorld";
 import betweenDimensions from "data/maps/betweenDimensions";
@@ -1147,7 +1148,7 @@ function useMetaData() {
 /**
  * 要先生成Edge，再生成Vertex，這樣Vertex才可以把LINK蓋住
  */
-function fromJSON(graph: { vertices: Vertex[]; edges: Edge[] }) {
+function fromJSON(graph: GraphJSON) {
   const vertices = graph.vertices.map((vertex) =>
     createElement(Components.vertices[vertex.name], {
       key: vertex.id,

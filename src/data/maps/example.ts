@@ -1,6 +1,6 @@
-import { Vertex, Edge } from "global";
+import type { GraphJSON } from "global";
 
-const example: { vertices: Vertex[]; edges: Edge[] } = {
+const example: GraphJSON = {
   vertices: [
     {
       position: {

@@ -1,6 +1,6 @@
-import { Vertex, Edge } from "global";
+import type { GraphJSON } from "global";
 
-const asiaCave: { vertices: Vertex[]; edges: Edge[] } = {
+const asiaCave: GraphJSON = {
   vertices: [
     {
       position: {

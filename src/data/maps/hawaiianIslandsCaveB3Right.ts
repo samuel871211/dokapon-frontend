@@ -1,6 +1,6 @@
-import { Vertex, Edge } from "global";
+import type { GraphJSON } from "global";
 
-const hawaiianIslandsCaveB3Right: { vertices: Vertex[]; edges: Edge[] } = {
+const hawaiianIslandsCaveB3Right: GraphJSON = {
   vertices: [
     {
       area: "HawaiianIslandsCaveB3Right",

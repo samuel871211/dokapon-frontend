@@ -11,7 +11,7 @@ import {
 
 // Local application/library specific imports.
 import type { Vertex, GraphJSON } from "global";
-import dokaponTheWorld from "data/maps/dokaponTheWorld";
+import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
 import TwoWayHEdge from "components/edges/TwoWayHEdge";
@@ -127,7 +127,7 @@ const pointerDownTranslate = { x: -1, y: -1 };
 /**
  * @todo 根據目前玩家所在的地圖，讀取不同地圖檔案
  */
-const graphDSA = new GraphDSA(dokaponTheWorld);
+const graphDSA = new GraphDSA(dokaponTheWorldMap);
 
 export default GraphUI;
 
@@ -180,7 +180,7 @@ function GraphUI() {
 }
 
 function useMetaData() {
-  const [curGraph, setCurGraph] = useState(dokaponTheWorld);
+  const [curGraph, setCurGraph] = useState(dokaponTheWorldMap);
   const [SVGScale, setSVGScale] = useState(1);
   const [SVGTranslate, setSVGTranslate] = useState({ x: 0, y: 0 });
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);

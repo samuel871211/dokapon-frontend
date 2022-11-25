@@ -15908,7 +15908,7 @@ const atlantisVertices: Vertex[] = [
   },
 ];
 
-const dokaponTheWorld: GraphJSON = {
+const dokaponTheWorldMap: GraphJSON = {
   vertices: [
     ...asiaVertices,
     ...europeVertices,
@@ -32291,4 +32291,4 @@ const dokaponTheWorld: GraphJSON = {
     },
   ],
 };
-export default dokaponTheWorld;
+export default dokaponTheWorldMap;

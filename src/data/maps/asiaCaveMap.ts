@@ -1,6 +1,6 @@
 import type { GraphJSON } from "global";
 
-const asiaCave: GraphJSON = {
+const asiaCaveMap: GraphJSON = {
   vertices: [
     {
       position: {
@@ -1211,4 +1211,4 @@ const asiaCave: GraphJSON = {
     },
   ],
 };
-export default asiaCave;
+export default asiaCaveMap;

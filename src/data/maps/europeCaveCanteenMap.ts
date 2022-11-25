@@ -1,6 +1,6 @@
 import type { GraphJSON } from "global";
 
-const europeCaveCanteen: GraphJSON = {
+const europeCaveCanteenMap: GraphJSON = {
   vertices: [
     {
       area: "EuropeCaveCanteen",
@@ -901,4 +901,4 @@ const europeCaveCanteen: GraphJSON = {
     },
   ],
 };
-export default europeCaveCanteen;
+export default europeCaveCanteenMap;

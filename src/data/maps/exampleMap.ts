@@ -1,6 +1,6 @@
 import type { GraphJSON } from "global";
 
-const example: GraphJSON = {
+const exampleMap: GraphJSON = {
   vertices: [
     {
       position: {
@@ -15,4 +15,4 @@ const example: GraphJSON = {
   ],
   edges: [],
 };
-export default example;
+export default exampleMap;

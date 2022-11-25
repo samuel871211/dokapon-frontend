@@ -1,6 +1,6 @@
 import type { GraphJSON } from "global";
 
-const betweenDimensions: GraphJSON = {
+const betweenDimensionsMap: GraphJSON = {
   vertices: [
     {
       position: {
@@ -676,4 +676,4 @@ const betweenDimensions: GraphJSON = {
     },
   ],
 };
-export default betweenDimensions;
+export default betweenDimensionsMap;

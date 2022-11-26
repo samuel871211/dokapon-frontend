@@ -22,9 +22,16 @@ import type {
   AreaTypes,
   GraphJSON,
 } from "global";
-import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
-import betweenDimensionsMap from "data/maps/betweenDimensionsMap";
-import GraphDSA from "graphics/GraphDSA";
+// import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
+// import arcticCaveMap from 'data/maps/arcticCaveMap';
+// import arcticCaveB2Map from 'data/maps/arcticCaveB2Map';
+// import arcticCaveB3Map from 'data/maps/arcticCaveB3Map';
+// import oceaniaCaveMap from 'data/maps/oceaniaCaveMap';
+// import oceaniaCaveB1Map from 'data/maps/oceaniaCaveB1Map';
+// import oceaniaCaveB2Map from 'data/maps/oceaniaCaveB2Map';
+// import antarcticaCaveMap from 'data/maps/antarcticaCaveMap';
+// import antarcticaCaveB2Map from 'data/maps/antarcticaCaveB2Map';
+import antarcticaCaveB3Map from "data/maps/antarcticaCaveB3Map";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
 import TwoWayHEdge from "components/edges/TwoWayHEdge";
@@ -52,6 +59,7 @@ import styles from "./GraphEditor.module.css";
 
 // Stateless vars declare
 type MouseMode = "edit" | "drag";
+const currentArea: AreaTypes = "AntarcticaCaveB3";
 const directions: Directions[] = ["top", "left", "right", "bottom"];
 
 // 透過cell.name mapping到react component的mapping table
@@ -120,9 +128,6 @@ const pointerDownRelatedEdges: Edge[] = [];
 // 群組移動的vertices跟群組偏移
 const selectedVertices: Vertex[] = [];
 const selectedVerticesGroupOffsets: Position[] = [];
-
-// graph資料結構與演算法的實作，整包精華都在這邊
-const graphDSA = new GraphDSA(betweenDimensionsMap);
 
 export default GraphEditor;
 
@@ -347,7 +352,7 @@ function useMetaData() {
     x: -1,
     y: -1,
   });
-  const [curGraph, setCurGraph] = useState(dokaponTheWorldMap);
+  const [curGraph, setCurGraph] = useState(antarcticaCaveB3Map);
   const [mouseMode, toggleMouseMode] = useState<MouseMode>("edit");
   const [SVGScale, setSVGScale] = useState(1);
   const [selectedArea, setSelectedArea] = useState({
@@ -360,7 +365,7 @@ function useMetaData() {
   const vertexSelectEl = useRef<HTMLSelectElement>(null);
   const edgeSelectEl = useRef<HTMLSelectElement>(null);
   const selectedAreaSelectEl = useRef<HTMLSelectElement>(null);
-  const Cells = useMemo(() => fromJSON(curGraph), [curGraph]);
+  const Cells = useMemo(() => renderCells(curGraph), [curGraph]);
   // const HighLights = useMemo(() =>
   //     result.endPositions.map((position, index) =>
   //         <rect
@@ -670,16 +675,6 @@ function useMetaData() {
         height: bottom - top,
       });
   }
-  /**
-   *
-   * @param vertex
-   *
-   * vertex.position是vertex的中心點
-   *
-   * 所以x要減掉1/2的width，y要減掉1/2的height
-   *
-   * 這樣才會是左上角的座標
-   */
   function getVertexArea(vertex: Vertex): Area {
     const vertexEl = document.getElementById(vertex.id);
     if (!(vertexEl instanceof SVGGElement))
@@ -687,6 +682,10 @@ function useMetaData() {
     let { width, height } = vertexEl.getBBox();
     width = Math.nearestMultiple({ of: width, to: gridSize });
     height = Math.nearestMultiple({ of: height, to: gridSize });
+
+    // vertex.position是vertex的中心點
+    // 所以x要減掉1/2的width，y要減掉1/2的height
+    // 這樣才會是左上角的座標
     const vertexArea = {
       x: vertex.position.x - width / 2,
       y: vertex.position.y - height / 2,
@@ -1060,7 +1059,7 @@ function useMetaData() {
       name: vertexName,
       position: { x: 0, y: 0 },
       edges: [pointerDownEdge.id],
-      area: "Atlantis",
+      area: currentArea,
     };
     const { startId, endId, start, end } = pointerDownEdge;
 
@@ -1148,7 +1147,7 @@ function useMetaData() {
 /**
  * 要先生成Edge，再生成Vertex，這樣Vertex才可以把LINK蓋住
  */
-function fromJSON(graph: GraphJSON) {
+function renderCells(graph: GraphJSON) {
   const vertices = graph.vertices.map((vertex) =>
     createElement(Components.vertices[vertex.name], {
       key: vertex.id,

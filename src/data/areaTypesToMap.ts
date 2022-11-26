@@ -26,6 +26,15 @@ import northAmericaCaveB2Map from "./maps/northAmericaCaveB2Map";
 import southAmericaCaveMap from "./maps/southAmericaCaveMap";
 import southAmericaCaveB2Map from "./maps/southAmericaCaveB2Map";
 import southAmericaCaveB3Map from "./maps/southAmericaCaveB3Map";
+import oceaniaCaveMap from "./maps/oceaniaCaveMap";
+import oceaniaCaveB1Map from "./maps/oceaniaCaveB1Map";
+import oceaniaCaveB2Map from "./maps/oceaniaCaveB2Map";
+import arcticCaveMap from "./maps/arcticCaveMap";
+import arcticCaveB2Map from "./maps/arcticCaveB2Map";
+import arcticCaveB3Map from "./maps/arcticCaveB3Map";
+import antarcticaCaveMap from "./maps/antarcticaCaveMap";
+import antarcticaCaveB2Map from "./maps/antarcticaCaveB2Map";
+import antarcticaCaveB3Map from "./maps/antarcticaCaveB3Map";
 
 // Stateless vars declare.
 const emptyGraphJSON = { vertices: [], edges: [] };
@@ -46,10 +55,9 @@ const areaTypesToMap: { [key in AreaTypes]: GraphJSON } = {
   SouthAmericaCaveB2: southAmericaCaveB2Map,
   SouthAmericaCaveB3: southAmericaCaveB3Map,
   Oceania: dokaponTheWorldMap,
-  /**
-   * @todo 尚未實作
-   */
-  OceaniaCave: emptyGraphJSON,
+  OceaniaCave: oceaniaCaveMap,
+  OceaniaCaveB1: oceaniaCaveB1Map,
+  OceaniaCaveB2: oceaniaCaveB2Map,
   Africa: dokaponTheWorldMap,
   AfricaCave: africaCaveMap,
   AfricaCaveB2: africaCaveB2Map,
@@ -57,15 +65,13 @@ const areaTypesToMap: { [key in AreaTypes]: GraphJSON } = {
   AfricaCaveB3Left: africaCaveB3LeftMap,
   AfricaCaveB3Center: africaCaveB3CenterMap,
   Arctic: dokaponTheWorldMap,
-  /**
-   * @todo 尚未實作
-   */
-  ArcticCave: emptyGraphJSON,
+  ArcticCave: arcticCaveMap,
+  ArcticCaveB2: arcticCaveB2Map,
+  ArcticCaveB3: arcticCaveB3Map,
   Antarctica: dokaponTheWorldMap,
-  /**
-   * @todo 尚未實作
-   */
-  AntarcticaCave: emptyGraphJSON,
+  AntarcticaCave: antarcticaCaveMap,
+  AntarcticaCaveB2: antarcticaCaveB2Map,
+  AntarcticaCaveB3: antarcticaCaveB3Map,
   HawaiianIslands: dokaponTheWorldMap,
   HawaiianIslandsCave: hawaiianIslandsCaveMap,
   HawaiianIslandsCaveB2Right: hawaiianIslandsCaveB2RightMap,

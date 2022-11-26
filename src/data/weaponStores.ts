@@ -2,6 +2,9 @@ import { AreaTypes, Shield, Weapon } from "global";
 import shields from "./shields";
 import weapons from "./weapons";
 
+/**
+ * @todo 北極洞窟跟南極洞窟，都有武器商店
+ */
 const weaponStores: { [key in AreaTypes]: Array<Weapon | Shield> } = {
   Asia: [
     weapons.swordNormal,
@@ -92,6 +95,8 @@ const weaponStores: { [key in AreaTypes]: Array<Weapon | Shield> } = {
   SouthAmericaCaveB2: [],
   SouthAmericaCaveB3: [],
   OceaniaCave: [],
+  OceaniaCaveB1: [],
+  OceaniaCaveB2: [],
   AfricaCave: [],
   AfricaCaveB2: [],
   AfricaCaveB3Right: [],
@@ -99,8 +104,12 @@ const weaponStores: { [key in AreaTypes]: Array<Weapon | Shield> } = {
   AfricaCaveB3Center: [],
   Arctic: [],
   ArcticCave: [],
+  ArcticCaveB2: [],
+  ArcticCaveB3: [],
   Antarctica: [],
   AntarcticaCave: [],
+  AntarcticaCaveB2: [],
+  AntarcticaCaveB3: [],
   HawaiianIslands: [],
   HawaiianIslandsCave: [],
   HawaiianIslandsCaveB2Right: [],

@@ -53,6 +53,7 @@ function App() {
         <View />
       </div>
       <GameProgressCtxMenu />
+      {/* <GraphEditor/> */}
     </gameProgressCtx.Provider>
   );
 }

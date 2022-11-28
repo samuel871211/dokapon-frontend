@@ -813,7 +813,8 @@ export type Job = {
   masterRounds: number;
   price: number;
   pay: number;
-  explanation: string;
+  briefExplanation: string;
+  fullExplanation: string;
   fieldSpeciality: {
     name: string;
     briefExplanation: string;

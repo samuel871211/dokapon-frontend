@@ -268,9 +268,6 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
       },
     ],
   },
-  /**
-   * @todo type待確定
-   */
   arctic1: {
     type: "反擊系魔法",
     name: "マホリタン",
@@ -289,9 +286,6 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
       },
     ],
   },
-  /**
-   * @todo type待確定
-   */
   antarctica1: {
     type: "反擊系魔法",
     name: "バインド",

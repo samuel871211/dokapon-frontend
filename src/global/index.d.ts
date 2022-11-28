@@ -680,7 +680,8 @@ export type MagicTypes =
   | "強化系魔法"
   | "防御系魔法"
   | "反擊系魔法"
-  | "補助系魔法";
+  | "補助系魔法"
+  | "吸收系魔法";
 export type MagicBook = {
   type: MagicTypes;
   name: TextsKeys;

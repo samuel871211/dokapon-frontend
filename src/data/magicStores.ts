@@ -3,9 +3,6 @@ import magicAttacks from "./magicAttacks";
 import magicDefenses from "./magicDefenses";
 import magicBooks from "./magicBooks";
 
-/**
- * @todo 北極洞窟跟南極洞窟，都有魔法商店
- */
 const magicStores: {
   [key in AreaTypes]: Array<magicAttack | magicDefense | MagicBook>;
 } = {
@@ -167,13 +164,33 @@ const magicStores: {
   AfricaCaveB3Left: [],
   AfricaCaveB3Center: [],
   Arctic: [],
-  ArcticCave: [],
+  ArcticCave: [
+    magicBooks.statusAllDown,
+    magicBooks.statusPoison,
+    magicBooks.statusCurse,
+    magicBooks.statusSeal,
+    magicBooks.damageIce3,
+    magicBooks.damageThunder3,
+    //
+    magicAttacks.arctic1,
+    magicDefenses.arctic1,
+  ],
   ArcticCaveB2: [],
   ArcticCaveB3: [],
   Antarctica: [],
+  AntarcticaCave: [
+    magicBooks.statusAttackDown,
+    magicBooks.statusDefenseDown,
+    magicBooks.statusMagicDown,
+    magicBooks.damageFire3,
+    magicBooks.damageWind3,
+    magicBooks.damageEarth3,
+    //
+    magicAttacks.antarctica1,
+    magicDefenses.antarctica1,
+  ],
   AntarcticaCaveB2: [],
   AntarcticaCaveB3: [],
-  AntarcticaCave: [],
   HawaiianIslands: [],
   HawaiianIslandsCave: [],
   HawaiianIslandsCaveB2Right: [],

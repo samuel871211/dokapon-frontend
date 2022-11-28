@@ -400,11 +400,8 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
-  /**
-   * @todo type待確定
-   */
   arctic1: {
-    type: "反擊系魔法",
+    type: "吸收系魔法",
     name: "レベゲット",
     price: 1130000,
     damage: "small",
@@ -417,11 +414,8 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
       },
     ],
   },
-  /**
-   * @todo type待確定
-   */
   antarctica1: {
-    type: "反擊系魔法",
+    type: "召喚系魔法",
     name: "ゴウトゥヘル",
     price: 1666000,
     explanation: "",

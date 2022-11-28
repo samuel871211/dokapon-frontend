@@ -267,10 +267,12 @@ const antarcticaCaveB3Map: GraphJSON = {
       edges: [
         "97537f30-b249-4dc0-b5ff-ef041493cf95",
         "23765559-2994-485c-8564-76f1e53320fa",
+        "4017da5d-def6-406e-9cb6-20e176013da3",
       ],
       area: "AntarcticaCaveB3",
       bottom: "a6adfd5e-3d62-48aa-87e2-27467bec64de",
       left: "a4e17439-0e75-4ee5-b574-10dbfc030e9a",
+      top: "5a896848-60ee-4b79-821b-8aba0ee2502e",
     },
     {
       id: "fff3f3b6-0567-4860-b764-47da3b62cf52",
@@ -986,6 +988,62 @@ const antarcticaCaveB3Map: GraphJSON = {
       edges: ["22ffb35f-7391-4e73-96e1-54dd423dda69"],
       area: "AntarcticaCaveB3",
       bottom: "26901b05-063f-4e08-b604-117e1e391623",
+    },
+    {
+      id: "5a896848-60ee-4b79-821b-8aba0ee2502e",
+      name: "BattleField",
+      position: {
+        x: -380,
+        y: -3300,
+      },
+      edges: [
+        "4017da5d-def6-406e-9cb6-20e176013da3",
+        "b2174c03-c22a-4c99-b888-4b0eab83c533",
+      ],
+      area: "AntarcticaCaveB3",
+      bottom: "1f2a17f7-f11b-4aa5-bf0c-21c16eac930f",
+      right: "e848379e-96bc-4c87-8317-3f801c5e3e49",
+    },
+    {
+      id: "e848379e-96bc-4c87-8317-3f801c5e3e49",
+      name: "BattleField",
+      position: {
+        x: 140,
+        y: -3320,
+      },
+      edges: [
+        "b2174c03-c22a-4c99-b888-4b0eab83c533",
+        "a10e1537-cf6b-41c5-920c-13dab63754f2",
+      ],
+      area: "AntarcticaCaveB3",
+      left: "5a896848-60ee-4b79-821b-8aba0ee2502e",
+      top: "bff9ed50-d71c-4fa9-ab8a-ca34b8c6dfd9",
+    },
+    {
+      id: "bff9ed50-d71c-4fa9-ab8a-ca34b8c6dfd9",
+      name: "BattleField",
+      position: {
+        x: 120,
+        y: -3780,
+      },
+      edges: [
+        "a10e1537-cf6b-41c5-920c-13dab63754f2",
+        "b4b8719a-ba8d-4ae7-9903-8c26ade9c40f",
+      ],
+      area: "AntarcticaCaveB3",
+      bottom: "e848379e-96bc-4c87-8317-3f801c5e3e49",
+      top: "75f333d9-fdb4-43df-935d-b77ddff6fc77",
+    },
+    {
+      id: "75f333d9-fdb4-43df-935d-b77ddff6fc77",
+      name: "KeyTreasureField",
+      position: {
+        x: 100,
+        y: -4220,
+      },
+      edges: ["b4b8719a-ba8d-4ae7-9903-8c26ade9c40f"],
+      area: "AntarcticaCaveB3",
+      bottom: "bff9ed50-d71c-4fa9-ab8a-ca34b8c6dfd9",
     },
   ],
   edges: [
@@ -1968,6 +2026,62 @@ const antarcticaCaveB3Map: GraphJSON = {
       endId: "87b88e87-7443-43fd-a736-e317bd2b290a",
       name: "TwoWayVEdge",
       id: "22ffb35f-7391-4e73-96e1-54dd423dda69",
+    },
+    {
+      start: {
+        x: -420,
+        y: -2860,
+      },
+      startId: "1f2a17f7-f11b-4aa5-bf0c-21c16eac930f",
+      end: {
+        x: -380,
+        y: -3300,
+      },
+      endId: "5a896848-60ee-4b79-821b-8aba0ee2502e",
+      name: "TwoWayVEdge",
+      id: "4017da5d-def6-406e-9cb6-20e176013da3",
+    },
+    {
+      start: {
+        x: -380,
+        y: -3300,
+      },
+      startId: "5a896848-60ee-4b79-821b-8aba0ee2502e",
+      end: {
+        x: 140,
+        y: -3320,
+      },
+      endId: "e848379e-96bc-4c87-8317-3f801c5e3e49",
+      name: "TwoWayHEdge",
+      id: "b2174c03-c22a-4c99-b888-4b0eab83c533",
+    },
+    {
+      start: {
+        x: 140,
+        y: -3320,
+      },
+      startId: "e848379e-96bc-4c87-8317-3f801c5e3e49",
+      end: {
+        x: 120,
+        y: -3780,
+      },
+      endId: "bff9ed50-d71c-4fa9-ab8a-ca34b8c6dfd9",
+      name: "TwoWayVEdge",
+      id: "a10e1537-cf6b-41c5-920c-13dab63754f2",
+    },
+    {
+      start: {
+        x: 120,
+        y: -3780,
+      },
+      startId: "bff9ed50-d71c-4fa9-ab8a-ca34b8c6dfd9",
+      end: {
+        x: 100,
+        y: -4220,
+      },
+      endId: "75f333d9-fdb4-43df-935d-b77ddff6fc77",
+      name: "TwoWayVEdge",
+      id: "b4b8719a-ba8d-4ae7-9903-8c26ade9c40f",
     },
   ],
 };

@@ -37,7 +37,6 @@ import antarcticaCaveB2Map from "./maps/antarcticaCaveB2Map";
 import antarcticaCaveB3Map from "./maps/antarcticaCaveB3Map";
 
 // Stateless vars declare.
-const emptyGraphJSON = { vertices: [], edges: [] };
 const areaTypesToMap: { [key in AreaTypes]: GraphJSON } = {
   Asia: dokaponTheWorldMap,
   AsiaCave: asiaCaveMap,

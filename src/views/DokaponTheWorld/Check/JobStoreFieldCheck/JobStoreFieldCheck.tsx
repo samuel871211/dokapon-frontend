@@ -14,9 +14,6 @@ import { gameProgressCtx } from "reducers/gameProgress";
 
 export default JobStoreFieldCheck;
 
-/**
- * @todo 根據現在的角色，filter可轉職的職業
- */
 function JobStoreFieldCheck() {
   const { t } = useTranslation();
   const { curShowJobs } = useMetaData();

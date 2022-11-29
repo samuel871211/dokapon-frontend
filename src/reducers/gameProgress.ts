@@ -2,7 +2,7 @@
 import { createContext, Dispatch, SetStateAction } from "react";
 
 // Local application/library specific imports.
-import type { GameProgress, Vertex } from "global";
+import type { GameProgress } from "global";
 
 // Stateless vars declare.
 const initGameProgress: GameProgress = {
@@ -163,6 +163,8 @@ const initGameProgress: GameProgress = {
       currentVertexIdx: 36,
       gender: "male",
       name: "",
+      weapon: "swordNormal",
+      shield: "shieldPaper",
       color: "red",
       job: "warrior",
       isNPC: false,
@@ -333,6 +335,8 @@ const initGameProgress: GameProgress = {
       currentVertexIdx: 36,
       gender: "male",
       name: "",
+      weapon: "swordNormal",
+      shield: "shieldPaper",
       color: "red",
       job: "warrior",
       isNPC: true,
@@ -503,6 +507,8 @@ const initGameProgress: GameProgress = {
       currentVertexIdx: 36,
       gender: "male",
       name: "",
+      weapon: "swordNormal",
+      shield: "shieldPaper",
       color: "red",
       job: "warrior",
       isNPC: true,
@@ -673,6 +679,8 @@ const initGameProgress: GameProgress = {
       currentVertexIdx: 36,
       gender: "male",
       name: "",
+      weapon: "swordNormal",
+      shield: "shieldPaper",
       color: "red",
       job: "warrior",
       isNPC: true,

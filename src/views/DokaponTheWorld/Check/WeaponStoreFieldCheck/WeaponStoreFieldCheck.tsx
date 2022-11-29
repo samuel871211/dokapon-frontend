@@ -1,5 +1,6 @@
 // Related third party imports.
-import { useContext, useState } from "react";
+import { useContext } from "react";
+import classNames from "classnames";
 
 // Local application/library specific imports.
 import { Shield, Weapon } from "global";
@@ -7,10 +8,11 @@ import weaponStores from "data/weaponStores";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
-import BottomDialogConfirmCircle from "components/BottomDialogConfirmCircle";
 import styles from "./WeaponStoreFieldCheck.module.css";
 import { gameProgressCtx } from "reducers/gameProgress";
 import BottomDialog from "components/BottomDialog";
+import weapons from "data/weapons";
+import shields from "data/shields";
 
 // Stateless vars declare.
 function dataRowIconText(item: Weapon | Shield | undefined) {
@@ -24,12 +26,9 @@ function isWeapon(item: Weapon | Shield): item is Weapon {
 
 export default WeaponStoreFieldCheck;
 
-/**
- * @todo 需要得知目前角色穿著的武器跟盾牌
- */
 function WeaponStoreFieldCheck() {
   const { t } = useTranslation();
-  const { curShowItems } = useMetaData();
+  const { curShowItems, curPlayerWeapon, curPlayerShield } = useMetaData();
 
   return (
     <div className={styles.weaponStoreFieldCheckContainer}>
@@ -76,9 +75,24 @@ function WeaponStoreFieldCheck() {
                     {dataRowIconText(item)}
                   </div>
                   <div className={styles.dataRowNumbers}>
-                    <div>80</div>
+                    <div>
+                      {isWeapon(item)
+                        ? curPlayerWeapon.attack
+                        : curPlayerShield.defense}
+                    </div>
                     <div> ➩</div>
-                    <div data-larger={false} data-smaller={false}>
+                    <div
+                      data-larger={
+                        isWeapon(item)
+                          ? curPlayerWeapon.attack < item.attack
+                          : curPlayerShield.defense < item.defense
+                      }
+                      data-smaller={
+                        isWeapon(item)
+                          ? curPlayerWeapon.attack > item.attack
+                          : curPlayerShield.defense > item.defense
+                      }
+                    >
                       {isWeapon(item) ? item.attack : item.defense}
                     </div>
                   </div>
@@ -100,11 +114,13 @@ function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListPage } =
     gameProgress.DokaponTheWorldState.WeaponStoreFieldCheckState;
-  const {
-    curClickVertex: { area },
-  } = gameProgress.DokaponTheWorldState;
-  const curShowItems = weaponStores[area].filter(
+  const { curClickVertex } = gameProgress.DokaponTheWorldState;
+  const curPlayer = gameProgress.playersAttrs[gameProgress.currentPlayerIdx];
+  const curPlayerWeapon = weapons[curPlayer.weapon];
+  const curPlayerShield = shields[curPlayer.shield];
+  const weaponStore = weaponStores[curClickVertex.area];
+  const curShowItems = weaponStore.filter(
     (item, index) => index >= 6 * curListPage && index < 6 * (curListPage + 1)
   );
-  return { curShowItems };
+  return { curShowItems, curPlayerWeapon, curPlayerShield };
 }

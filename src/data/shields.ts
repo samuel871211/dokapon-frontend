@@ -1682,3 +1682,4 @@ const shields = satisfiesRecords<Shield>()({
 });
 
 export default shields;
+export type shieldTypes = keyof typeof shields;

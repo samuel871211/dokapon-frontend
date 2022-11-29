@@ -1,4 +1,6 @@
+import { shieldTypes } from "data/shields";
 import type { TextsKeys } from "data/texts";
+import { weaponTypes } from "data/weapons";
 
 export type GraphJSON = {
   vertices: Vertex[];
@@ -544,6 +546,9 @@ export type BasicJobTypes =
 export type NPCLevelTypes = "weak" | "normal" | "strong";
 export type GenderTypes = "male" | "female" | "other";
 export type GoalTypes = "period" | "money";
+/**
+ * @todo 將 玩家、NPC玩家、敵人、同伴、Boss、Monster的屬性區分
+ */
 export type CharacterTypes = "player" | "npcPlayer" | "enemy" | "allied";
 type CharacterAttrs = {
   name: string;
@@ -621,6 +626,13 @@ type PlayerAttrs = CharacterAttrs & {
   gender: GenderTypes;
   color: ColorTypes;
   job: JobTypes;
+  weapon: weaponTypes;
+  shield: shieldTypes;
+  /**
+   * 各職業master是5等
+   *
+   * 各職業，每升1等需要的回合數不一樣
+   */
   jobsMasterStatus: { [key in JobTypes]: { level: number; rounds: number } };
   availableJobs: JobTypes[];
   possession: {

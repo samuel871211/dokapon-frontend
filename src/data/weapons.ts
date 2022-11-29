@@ -3142,3 +3142,4 @@ const weapons = satisfiesRecords<Weapon>()({
 });
 
 export default weapons;
+export type weaponTypes = keyof typeof weapons;

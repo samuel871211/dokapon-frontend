@@ -1,19 +1,34 @@
-import type { Vertex, CellId, Position, Edge } from "global";
+import type { Vertex, VertexId, Position, Edge } from "global";
 
 class GraphDSA {
-  #verticesForDSA: { [key: CellId]: Vertex } = {};
-  #adjacencyLists: { [key: CellId]: CellId[] } = {};
-  #paths: CellId[][] = [];
-  #path: CellId[] = [];
-  #ends: CellId[] = [];
+  /**
+   * constructor階段建立
+   */
+  #verticesMap: { [key: VertexId]: Vertex } = {};
+  /**
+   * constructor階段建立
+   */
+  #adjacencyLists: { [key: VertexId]: VertexId[] } = {};
+  #paths: VertexId[][] = [];
+  #path: VertexId[] = [];
+  /**
+   * 用來篩選重複的結尾，優化演算法效能
+   */
+  #ends: VertexId[] = [];
+  /**
+   * 用此來渲染UI，N步所能到達的vertex
+   */
   #endPositions: Position[] = [];
-  #traversedQueues: {
-    [key: number]: { vertex: CellId; prevVertex: CellId }[];
-  } = {};
-  #untraversedQueues: { [key: number]: CellId[] } = {};
-  #adjacentVertices: CellId[] = [];
-  #nextVertexId: CellId | undefined = undefined;
-  #startVertexId: CellId = "";
+  #traversedQueues: { vertexId: VertexId; prevVertexId: VertexId }[][] = [];
+  #untraversedQueues: VertexId[][] = [];
+  /**
+   * 從`adjacencyLists`取出來的(會assign新的陣列)
+   *
+   * 會先經過篩選，才丟進`untraversedQueues`
+   */
+  #adjacentVertexIds: VertexId[] = [];
+  #nextVertexId: VertexId | undefined = undefined;
+  #startVertexId: VertexId = "";
   #stepCount = 0;
 
   constructor(graph: { edges: Edge[]; vertices: Vertex[] }) {
@@ -57,46 +72,55 @@ class GraphDSA {
   #buildAdjacencyLists(vertices: Vertex[]): void {
     for (const vertex of vertices) {
       this.#adjacencyLists[vertex.id] = [];
-      this.#verticesForDSA[vertex.id] = vertex;
+      this.#verticesMap[vertex.id] = vertex;
       if (vertex.top) this.#adjacencyLists[vertex.id].push(vertex.top);
       if (vertex.bottom) this.#adjacencyLists[vertex.id].push(vertex.bottom);
       if (vertex.left) this.#adjacencyLists[vertex.id].push(vertex.left);
       if (vertex.right) this.#adjacencyLists[vertex.id].push(vertex.right);
     }
   }
-  #init(): void {
+  /**
+   * 陣列全部assign新的，確保舊的計算結果不會被重置
+   */
+  #initPrivateVariables(): void {
     this.#paths = [];
     this.#path = [];
     this.#ends = [];
     this.#endPositions = [];
-    this.#adjacentVertices = [];
+    this.#adjacentVertexIds = [];
     this.#nextVertexId = undefined;
-    this.#traversedQueues = { 0: [] };
-    this.#untraversedQueues = { 0: [this.#startVertexId] };
-    for (let i = 1; i <= this.#stepCount; i++) {
+    for (let i = 0; i <= this.#stepCount; i++) {
       this.#traversedQueues[i] = [];
       this.#untraversedQueues[i] = [];
     }
+    // 將起點放入，後續traversal才能正常啟動
+    this.#untraversedQueues[0].push(this.#startVertexId);
   }
   // eslint-disable-next-line
-  getAllPaths(startVertexId: CellId, stepCount: number) {
+  getAllPaths(startVertexId: VertexId, stepCount: number) {
     if (this.#stepCount < 0) return this.#getResult();
     this.#startVertexId = startVertexId;
     this.#stepCount = stepCount;
-    this.#init();
+    this.#initPrivateVariables();
     this.#traversal();
     return this.#getResult();
   }
   /**
-   * @todo 實作
+   * 呼叫此method之前
+   *
+   * 會先計算目前使用者所在位置，30步能到達的所有組合
+   *
+   * 接下來只要從`traversedQueues`去尋找，就可以找到最短距離
    */
-  calMinDistanceBetween(startVertexId: CellId, endVertexId: CellId): number {
-    return 2;
+  calMinDistanceTo(endVertexId: VertexId): number {
+    return this.#traversedQueues.findIndex((traversedQueue) =>
+      traversedQueue.find(({ vertexId }) => vertexId === endVertexId)
+    );
   }
   // eslint-disable-next-line
   #getResult() {
     return {
-      result: this.#paths,
+      paths: this.#paths,
       traversedQueues: this.#traversedQueues,
       untraversedQueues: this.#untraversedQueues,
       ends: this.#ends,
@@ -104,10 +128,10 @@ class GraphDSA {
     };
   }
   #addResultAndGoBack(): void {
-    const end = this.#path[this.#path.length - 1];
+    const endVertexId = this.#path[this.#path.length - 1];
     this.#paths.push([...this.#path]);
-    this.#ends.push(end);
-    this.#endPositions.push(this.#verticesForDSA[end].position);
+    this.#ends.push(endVertexId);
+    this.#endPositions.push(this.#verticesMap[endVertexId].position);
     this.#path.pop();
   }
   /**
@@ -117,56 +141,53 @@ class GraphDSA {
    *
    * 3. IsDuplicateEnd：結尾不得相同(要到倒數第二步才知道)
    */
-  #addVertexToUntraversedQueues(filters: { duplicateEnd: boolean }): void {
+  #addVertexIdToUntraversedQueues(filters: { duplicateEnd: boolean }): void {
     const { duplicateEnd } = filters;
-    if (!this.#adjacentVertices || this.#adjacentVertices.length === 0) {
+    if (!this.#adjacentVertexIds || this.#adjacentVertexIds.length === 0) {
       console.log(this.#nextVertexId);
-      console.log(this.#adjacentVertices);
+      console.log(this.#adjacentVertexIds);
       throw new Error(`adjacencyLists有錯`);
     }
-    for (const adjacentVertex of this.#adjacentVertices) {
-      const IsDuplicateEnd = duplicateEnd ? this.#ends.includes(adjacentVertex) : false;
-      const IsGoBackward = adjacentVertex == this.#path[this.#path.length - 2];
-      const IsTraversed = this.#IsTraversed(adjacentVertex);
+    for (const adjacentVertexId of this.#adjacentVertexIds) {
+      const IsDuplicateEnd = duplicateEnd
+        ? this.#ends.includes(adjacentVertexId)
+        : false;
+      const IsGoBackward =
+        adjacentVertexId == this.#path[this.#path.length - 2];
+      const IsTraversed = this.#IsTraversed(adjacentVertexId);
       if (!IsDuplicateEnd && !IsGoBackward && !IsTraversed) {
-        this.#untraversedQueues[this.#path.length].push(adjacentVertex);
+        this.#untraversedQueues[this.#path.length].push(adjacentVertexId);
       }
     }
   }
-  #IsTraversed(adjacentVertex: CellId): boolean {
+  #IsTraversed(adjacentVertexId: VertexId): boolean {
     const traversedQueue = this.#traversedQueues[this.#path.length];
     const curLastVertex = this.#path[this.#path.length - 1];
-    for (const { vertex, prevVertex } of traversedQueue) {
-      if (adjacentVertex === vertex && curLastVertex === prevVertex) return true;
-    };
-    return false;
+    return Boolean(
+      traversedQueue.find(
+        ({ vertexId, prevVertexId }) =>
+          adjacentVertexId === vertexId && curLastVertex === prevVertexId
+      )
+    );
   }
-  /**
-   * 開頭不需要紀錄，因為一定不會重複
-   *
-   * 尾巴不需要紀錄，因為ends會紀錄
-   */
   #addVertexToTraversedQueues(): void {
-    if (this.#path.length === this.#stepCount + 1) return;
-    if (this.#path.length === 1) return;
-
-    const vertexToBeAdded = this.#path[this.#path.length - 1];
-    const prevVertexToBeAdded = this.#path[this.#path.length - 2];
-    for (const { vertex, prevVertex } of this.#traversedQueues[
-      this.#path.length - 1
-    ]) {
-      if (vertex === vertexToBeAdded && prevVertex === prevVertexToBeAdded)
-        return console.error("why");
-    }
-    this.#traversedQueues[this.#path.length - 1].push({
-      vertex: vertexToBeAdded,
-      prevVertex: prevVertexToBeAdded,
+    const vertexIdToBeAdded = this.#path[this.#path.length - 1];
+    const prevVertexIdToBeAdded = this.#path[this.#path.length - 2];
+    const traversedQueue = this.#traversedQueues[this.#path.length - 1];
+    const duplicateSubPath = traversedQueue.find(
+      (traversedSubPath) =>
+        traversedSubPath.vertexId === vertexIdToBeAdded &&
+        traversedSubPath.prevVertexId === prevVertexIdToBeAdded
+    );
+    if (duplicateSubPath) return console.error("why");
+    traversedQueue.push({
+      vertexId: vertexIdToBeAdded,
+      prevVertexId: prevVertexIdToBeAdded,
     });
   }
   #traversal(): void {
     // eslint-disable-next-line
     while (true) {
-      // console.count(this.#startVertexId)
       this.#nextVertexId = this.#untraversedQueues[this.#path.length].shift();
 
       // go back until untravered queue is not empty
@@ -181,15 +202,15 @@ class GraphDSA {
       if (!this.#nextVertexId && this.#path.length === 0) break;
       if (this.#nextVertexId) {
         // start to traverse
-        this.#adjacentVertices = this.#adjacencyLists[this.#nextVertexId];
+        this.#adjacentVertexIds = [...this.#adjacencyLists[this.#nextVertexId]];
         this.#path.push(this.#nextVertexId);
         this.#addVertexToTraversedQueues();
         const IsReachEnd = this.#path.length === this.#stepCount + 1;
         const IsPenultimate = this.#path.length === this.#stepCount;
         if (IsReachEnd) this.#addResultAndGoBack();
         else if (IsPenultimate)
-          this.#addVertexToUntraversedQueues({ duplicateEnd: true });
-        else this.#addVertexToUntraversedQueues({ duplicateEnd: false });
+          this.#addVertexIdToUntraversedQueues({ duplicateEnd: true });
+        else this.#addVertexIdToUntraversedQueues({ duplicateEnd: false });
         this.#nextVertexId = undefined;
       }
     }
@@ -197,3 +218,4 @@ class GraphDSA {
 }
 
 export default GraphDSA;
+// const a: { [key: number]: string } = [''];

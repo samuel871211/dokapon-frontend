@@ -42,7 +42,7 @@ import styles from "./GraphUI.module.css";
 
 // Stateless vars declare
 /**
- * 要先生成Edge，再生成Vertex，這樣Vertex才可以把LINK蓋住
+ * 要先生成Edge，再生成Vertex，這樣Vertex才可以把Edge蓋住
  */
 function renderCells(graph: GraphJSON) {
   const vertices = graph.vertices.map((vertex) =>
@@ -141,6 +141,7 @@ function GraphUI() {
     SVGTranslate,
     Cells,
     PlayersChess,
+    HighLights,
   } = useMetaData();
   return (
     <div className={styles.graphUIcontainer}>
@@ -173,6 +174,7 @@ function GraphUI() {
         >
           {Cells}
           {PlayersChess}
+          {HighLights}
         </g>
       </svg>
     </div>
@@ -186,8 +188,29 @@ function useMetaData() {
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
   const { DokaponTheWorldState, playersAttrs, currentPlayerIdx } = gameProgress;
   const { curComponents, CheckState } = DokaponTheWorldState;
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const curPlayer = playersAttrs[currentPlayerIdx];
+  const currPlayerVertexId = curGraph.vertices[curPlayer.currentVertexIdx].id;
   const Cells = useMemo(() => renderCells(curGraph), [curGraph]);
+  const resultDSA = useMemo(
+    () => graphDSA.getAllPaths(currPlayerVertexId, 30),
+    [currPlayerVertexId]
+  );
+  const HighLights = useMemo(
+    () =>
+      resultDSA.endPositions.map((position, index) => (
+        <rect
+          key={index}
+          width="100"
+          height="100"
+          x={position.x - 50}
+          y={position.y - 50}
+          fill="none"
+          stroke="#99e3b7"
+          strokeWidth="5"
+        />
+      )),
+    [resultDSA]
+  );
   const PlayersChess = playersAttrs.map((playerAttrs, idx) => (
     <PlayerChess
       key={idx}
@@ -224,11 +247,8 @@ function useMetaData() {
     if (!vertex) return console.error("no clicked vertex");
 
     // show Vertex Name And Distance
-    const curPlayerVertex = curGraph.vertices[currentPlayer.currentVertexIdx];
-    const distance = graphDSA.calMinDistanceBetween(
-      curPlayerVertex.id,
-      vertex.id
-    );
+    const curPlayerVertex = curGraph.vertices[curPlayer.currentVertexIdx];
+    const distance = graphDSA.calMinDistanceTo(vertex.id);
     CheckState.curHoverVertexDistance = distance;
     CheckState.showVertexNameAndDistance = true;
     CheckState.curHoverVertexName = vertex.name;
@@ -266,7 +286,7 @@ function useMetaData() {
     const clickedPlayers = playersAttrs.filter(
       (playerAttrs) =>
         curGraph.vertices[playerAttrs.currentVertexIdx] === vertex &&
-        playerAttrs !== currentPlayer
+        playerAttrs !== curPlayer
     );
     const clickedEnemies = [];
     const clickedMonsters = [];
@@ -420,5 +440,6 @@ function useMetaData() {
     SVGTranslate,
     Cells,
     PlayersChess,
+    HighLights,
   };
 }

@@ -53,6 +53,9 @@ check底下的`CheckTip` `VertexAttrsAndDistance` `Minimap`
   line-height: 3.5rem;
   text-align: center;
 }
+.nodeDistance[data-show="false"] {
+  display: none;
+}
 .nodeDistance > b {
   font-size: 3rem;
   color: blue;

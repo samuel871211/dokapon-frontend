@@ -45,7 +45,10 @@ function Check() {
       {showVertexNameAndDistance ? (
         <div className={styles.nodeAttrsAndDistance}>
           <div className={styles.nodeType}>{curHoverVertexName}</div>
-          <div className={styles.nodeDistance}>
+          <div
+            className={styles.nodeDistance}
+            data-show={curHoverVertexDistance !== -1}
+          >
             總共是 <b>{curHoverVertexDistance}</b> 步
           </div>
         </div>

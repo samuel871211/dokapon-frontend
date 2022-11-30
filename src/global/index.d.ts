@@ -408,7 +408,7 @@ export type Area = {
   width: number;
   height: number;
 };
-export type CellId = string;
+export type VertexId = string;
 export type VertexTypes =
   | "BattleField"
   | "MagicBookField"

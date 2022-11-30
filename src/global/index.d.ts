@@ -148,6 +148,14 @@ export type GameProgress = {
    */
   bottomDialogSentencesQueue: string[];
   currentView: ViewTypes;
+  playersAttrs: [PlayerAttrs, PlayerAttrs, PlayerAttrs, PlayerAttrs];
+  gamePadSetting: {
+    [key in GamePadKeyTypes]: string;
+  };
+  userPreference: {
+    lang: LangTypes;
+    aspectRatio: AspectRatioTypes;
+  };
   HomeState: {
     curComponent: HomeComponentTypes;
     ButtonGroupState: {
@@ -280,6 +288,10 @@ export type GameProgress = {
   DokaponTheWorldState: {
     curComponents: DokaponTheWorldComponentTypes[];
     curClickVertex: Vertex;
+    GraphUIState: {
+      SVGScale: number;
+      SVGTranslate: { x: number; y: number };
+    };
     CheckState: {
       showVertexNameAndDistance: boolean;
       showCheckTip: boolean;
@@ -357,17 +369,6 @@ export type GameProgress = {
        */
       curListPage: number;
     };
-  };
-  playersAttrs: [PlayerAttrs, PlayerAttrs, PlayerAttrs, PlayerAttrs];
-  userPreference: {
-    lang: LangTypes;
-    aspectRatio: AspectRatioTypes;
-  };
-  /**
-   * value must be lowercase
-   */
-  gamePadSetting: {
-    [key in GamePadKeyTypes]: string;
   };
 };
 export type ViewTypes =
@@ -618,11 +619,11 @@ type PlayerAttrs = CharacterAttrs & {
   /**
    * use this to render map
    */
-  currentArea: AreaTypes;
+  area: AreaTypes;
   /**
    * 因為地圖的JSON資料不會變，所以可以直接用index當作reference
    */
-  currentVertexIdx: number;
+  vertexIdx: number;
   gender: GenderTypes;
   color: ColorTypes;
   job: JobTypes;

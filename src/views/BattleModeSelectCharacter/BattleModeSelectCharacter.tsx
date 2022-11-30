@@ -1191,7 +1191,7 @@ function useMetaData() {
 
     gameProgress.currentView = "DokaponTheWorld";
     playersAttrs.forEach((playerAttrs) => {
-      playerAttrs.currentArea = "Asia";
+      playerAttrs.area = "Asia";
     });
     setGameProgress({ ...gameProgress });
   }

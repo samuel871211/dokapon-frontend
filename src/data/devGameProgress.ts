@@ -155,6 +155,10 @@ const devGameProgress: GameProgress = {
       ],
       "area": "Asia"
     },
+    "GraphUIState": {
+      "SVGScale": 1,
+      "SVGTranslate": { "x": 0, "y": 0 }
+    },
     "CheckState": {
       "showVertexNameAndDistance": false,
       "showCheckTip": true,
@@ -231,8 +235,8 @@ const devGameProgress: GameProgress = {
         "buffRatio": 1,
         "nerfRatio": 1
       },
-      "currentArea": "Asia",
-      "currentVertexIdx": 36,
+      "area": "Asia",
+      "vertexIdx": 36,
       "gender": "male",
       "name": "いいいいいいいい",
       "weapon": "swordNormal",
@@ -409,8 +413,8 @@ const devGameProgress: GameProgress = {
         "buffRatio": 1,
         "nerfRatio": 1
       },
-      "currentArea": "Asia",
-      "currentVertexIdx": 36,
+      "area": "Asia",
+      "vertexIdx": 36,
       "gender": "female",
       "name": "うううううううう",
       "weapon": "swordNormal",
@@ -587,8 +591,8 @@ const devGameProgress: GameProgress = {
         "buffRatio": 1,
         "nerfRatio": 1
       },
-      "currentArea": "Asia",
-      "currentVertexIdx": 36,
+      "area": "Asia",
+      "vertexIdx": 36,
       "gender": "male",
       "name": "ああああああああ",
       "weapon": "swordNormal",
@@ -765,8 +769,8 @@ const devGameProgress: GameProgress = {
         "buffRatio": 1,
         "nerfRatio": 1
       },
-      "currentArea": "Asia",
-      "currentVertexIdx": 36,
+      "area": "Asia",
+      "vertexIdx": 36,
       "gender": "female",
       "name": "ええええええええ",
       "weapon": "swordNormal",

@@ -1107,7 +1107,7 @@ function useMetaData() {
     if (bottomDialogSentencesQueue.length === 0) {
       gameProgress.currentView = "DokaponTheWorld";
       playersAttrs.forEach((playerAttrs) => {
-        playerAttrs.currentArea = "BetweenDimensions";
+        playerAttrs.area = "BetweenDimensions";
       });
     }
     setGameProgress({ ...gameProgress });

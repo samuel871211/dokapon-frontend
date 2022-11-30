@@ -1,7 +1,6 @@
 // Related third party imports.
 import {
   PointerEvent,
-  useState,
   WheelEvent,
   createElement,
   useMemo,
@@ -10,7 +9,7 @@ import {
 } from "react";
 
 // Local application/library specific imports.
-import type { Vertex, GraphJSON } from "global";
+import type { GraphJSON, AreaTypes } from "global";
 import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
@@ -36,9 +35,10 @@ import MagicBookField from "components/vertices/MagicBookField";
 import BattleField from "components/vertices/BattleField";
 import DamageField from "components/vertices/DamageField";
 import PlayerChess from "components/PlayerChess";
-import GraphDSA from "graphics/GraphDSA";
+import GraphDSA from "utils/GraphDSA";
 import { gameProgressCtx } from "reducers/gameProgress";
 import styles from "./GraphUI.module.css";
+import areaTypesToMap from "data/areaTypesToMap";
 
 // Stateless vars declare
 /**
@@ -51,22 +51,14 @@ function renderCells(graph: GraphJSON) {
       ...vertex,
     })
   );
-  const edges = graph.edges.map((edge) => {
-    if (pointerDownVertex?.edges.includes(edge.id)) {
-      if (edge.startId === pointerDownVertex.id) {
-        edge.start = pointerDownVertex.position;
-      } else if (edge.endId === pointerDownVertex.id) {
-        edge.end = pointerDownVertex.position;
-      }
-    }
-    return createElement(Components.edges[edge.name], {
+  const edges = graph.edges.map((edge) =>
+    createElement(Components.edges[edge.name], {
       key: edge.id,
       ...edge,
-    });
-  });
+    })
+  );
   return [...edges, ...vertices];
 }
-
 /**
  * 透過cell.name mapping到react component的mapping table
  */
@@ -99,35 +91,82 @@ const Components = {
     TwoWayVEdge,
   },
 };
-
 /**
  * 要先有pointerDown，pointerMove的動作才會成立
  */
 let isPointerDown = false;
-
-/**
- * 從curGraph取得該vertex or edge以及index，並且後續更新屬性也不用再遍歷array
- */
-let pointerDownVertex: Vertex;
-
 /**
  * 背景點點的間隔
  */
 const gridSize = 20;
-
 /**
  * 用來計算滑鼠移動距離的基準點
  */
 const pointerDownPage = { x: -1, y: -1 };
-
 /**
  * 紀錄SVG偏移的基準點，之後再加上滑鼠移動距離，就會是最新的偏移量
  */
 const pointerDownTranslate = { x: -1, y: -1 };
+
+const dokaponTheWorldMapGraphDSA = new GraphDSA(dokaponTheWorldMap);
 /**
- * @todo 根據目前玩家所在的地圖，讀取不同地圖檔案
+ * 僅先載入主地圖，其餘地圖等玩家有進入再載入
  */
-const graphDSA = new GraphDSA(dokaponTheWorldMap);
+const GraphDSAs: { [key in AreaTypes]: GraphDSA } = {
+  Asia: dokaponTheWorldMapGraphDSA,
+  Europe: dokaponTheWorldMapGraphDSA,
+  Russia: dokaponTheWorldMapGraphDSA,
+  NorthAmerica: dokaponTheWorldMapGraphDSA,
+  SouthAmerica: dokaponTheWorldMapGraphDSA,
+  Oceania: dokaponTheWorldMapGraphDSA,
+  Africa: dokaponTheWorldMapGraphDSA,
+  Arctic: dokaponTheWorldMapGraphDSA,
+  Antarctica: dokaponTheWorldMapGraphDSA,
+  HawaiianIslands: dokaponTheWorldMapGraphDSA,
+  Atlantis: dokaponTheWorldMapGraphDSA,
+  //
+  AsiaCave: {} as GraphDSA,
+  //
+  EuropeCave: {} as GraphDSA,
+  EuropeCaveLibrary: {} as GraphDSA,
+  EuropeCaveCanteen: {} as GraphDSA,
+  EuropeCaveHall: {} as GraphDSA,
+  //
+  NorthAmericaCave: {} as GraphDSA,
+  NorthAmericaCaveB2: {} as GraphDSA,
+  //
+  SouthAmericaCave: {} as GraphDSA,
+  SouthAmericaCaveB2: {} as GraphDSA,
+  SouthAmericaCaveB3: {} as GraphDSA,
+  //
+  OceaniaCave: {} as GraphDSA,
+  OceaniaCaveB1: {} as GraphDSA,
+  OceaniaCaveB2: {} as GraphDSA,
+  //
+  AfricaCave: {} as GraphDSA,
+  AfricaCaveB2: {} as GraphDSA,
+  AfricaCaveB3Right: {} as GraphDSA,
+  AfricaCaveB3Left: {} as GraphDSA,
+  AfricaCaveB3Center: {} as GraphDSA,
+  //
+  ArcticCave: {} as GraphDSA,
+  ArcticCaveB2: {} as GraphDSA,
+  ArcticCaveB3: {} as GraphDSA,
+  //
+  AntarcticaCave: {} as GraphDSA,
+  AntarcticaCaveB2: {} as GraphDSA,
+  AntarcticaCaveB3: {} as GraphDSA,
+  //
+  HawaiianIslandsCave: {} as GraphDSA,
+  HawaiianIslandsCaveB2Right: {} as GraphDSA,
+  HawaiianIslandsCaveB2Left: {} as GraphDSA,
+  HawaiianIslandsCaveB2Center: {} as GraphDSA,
+  HawaiianIslandsCaveB3Right: {} as GraphDSA,
+  HawaiianIslandsCaveB3Left: {} as GraphDSA,
+  HawaiianIslandsCaveB3Center: {} as GraphDSA,
+  //
+  BetweenDimensions: {} as GraphDSA,
+};
 
 export default GraphUI;
 
@@ -181,19 +220,24 @@ function GraphUI() {
   );
 }
 
+/**
+ * @todo 當玩家座標or變動，重新計算30個點的所有路徑
+ */
 function useMetaData() {
-  const [curGraph, setCurGraph] = useState(dokaponTheWorldMap);
-  const [SVGScale, setSVGScale] = useState(1);
-  const [SVGTranslate, setSVGTranslate] = useState({ x: 0, y: 0 });
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
   const { DokaponTheWorldState, playersAttrs, currentPlayerIdx } = gameProgress;
-  const { curComponents, CheckState } = DokaponTheWorldState;
+  const { curComponents, CheckState, GraphUIState } = DokaponTheWorldState;
+  const { SVGScale, SVGTranslate } = GraphUIState;
   const curPlayer = playersAttrs[currentPlayerIdx];
-  const currPlayerVertexId = curGraph.vertices[curPlayer.currentVertexIdx].id;
+  const curGraph = useMemo(
+    () => areaTypesToMap[curPlayer.area],
+    [curPlayer.area]
+  );
   const Cells = useMemo(() => renderCells(curGraph), [curGraph]);
+  const curPlayerVertexId = curGraph.vertices[curPlayer.vertexIdx].id;
   const resultDSA = useMemo(
-    () => graphDSA.getAllPaths(currPlayerVertexId, 30),
-    [currPlayerVertexId]
+    () => dokaponTheWorldMapGraphDSA.getAllPaths(curPlayerVertexId, 30),
+    [curPlayerVertexId]
   );
   const HighLights = useMemo(
     () =>
@@ -214,8 +258,8 @@ function useMetaData() {
   const PlayersChess = playersAttrs.map((playerAttrs, idx) => (
     <PlayerChess
       key={idx}
-      id={curGraph.vertices[playerAttrs.currentVertexIdx].id}
-      position={curGraph.vertices[playerAttrs.currentVertexIdx].position}
+      id={curGraph.vertices[playerAttrs.vertexIdx].id}
+      position={curGraph.vertices[playerAttrs.vertexIdx].position}
       job={playerAttrs.job}
       gender={playerAttrs.gender}
       color={playerAttrs.color}
@@ -247,8 +291,8 @@ function useMetaData() {
     if (!vertex) return console.error("no clicked vertex");
 
     // show Vertex Name And Distance
-    const curPlayerVertex = curGraph.vertices[curPlayer.currentVertexIdx];
-    const distance = graphDSA.calMinDistanceTo(vertex.id);
+    const curPlayerVertex = curGraph.vertices[curPlayer.vertexIdx];
+    const distance = dokaponTheWorldMapGraphDSA.calMinDistanceTo(vertex.id);
     CheckState.curHoverVertexDistance = distance;
     CheckState.showVertexNameAndDistance = true;
     CheckState.curHoverVertexName = vertex.name;
@@ -285,7 +329,7 @@ function useMetaData() {
     // check if player (self excluded), enemy or monster is clicked
     const clickedPlayers = playersAttrs.filter(
       (playerAttrs) =>
-        curGraph.vertices[playerAttrs.currentVertexIdx] === vertex &&
+        curGraph.vertices[playerAttrs.vertexIdx] === vertex &&
         playerAttrs !== curPlayer
     );
     const clickedEnemies = [];
@@ -401,11 +445,11 @@ function useMetaData() {
     const newX = parseInt((anchorX + deltaX).toFixed(0));
     const newY = parseInt((anchorY + deltaY).toFixed(0));
     if (newX === SVGTranslate.x && newY === SVGTranslate.y) return;
-    setSVGTranslate({ x: newX, y: newY });
+    GraphUIState.SVGTranslate = { x: newX, y: newY };
+    setGameProgress({ ...gameProgress });
   }
   function handlePointerUp(e: globalThis.PointerEvent) {
     isPointerDown = false;
-    setCurGraph({ ...curGraph });
     window.removeEventListener("pointermove", handlePointerMove);
     window.removeEventListener("pointerup", handlePointerUp);
     CheckState.showCheckTip = true;
@@ -428,8 +472,9 @@ function useMetaData() {
     const newY = parseInt((y - originOffsetYBasedOnSVG * delta).toFixed(0));
     if (newScale > 9.9 || newScale < 0.1) return;
     if (newX === SVGTranslate.x && newY === SVGTranslate.y) return;
-    setSVGScale(newScale);
-    setSVGTranslate({ x: newX, y: newY });
+    GraphUIState.SVGScale = newScale;
+    GraphUIState.SVGTranslate = { x: newX, y: newY };
+    setGameProgress({ ...gameProgress });
   }
   return {
     handlePointerOver,

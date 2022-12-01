@@ -1,0 +1,7 @@
+.highLightVertex {
+  stroke: #99e3b7;
+  transition: stroke 0.5s;
+}
+.highLightVertex[data-show="false"] {
+  stroke: transparent;
+}

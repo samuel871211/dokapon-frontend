@@ -39,6 +39,7 @@ import GraphDSA from "utils/GraphDSA";
 import { gameProgressCtx } from "reducers/gameProgress";
 import styles from "./GraphUI.module.css";
 import areaTypesToMap from "data/areaTypesToMap";
+import HighLightVertex from "components/HighLightVertex";
 
 // Stateless vars declare
 /**
@@ -228,11 +229,10 @@ function useMetaData() {
   const { DokaponTheWorldState, playersAttrs, currentPlayerIdx } = gameProgress;
   const { curComponents, CheckState, GraphUIState } = DokaponTheWorldState;
   const { SVGScale, SVGTranslate } = GraphUIState;
+  const showHighLight = true;
   const curPlayer = playersAttrs[currentPlayerIdx];
-  const curGraph = useMemo(
-    () => areaTypesToMap[curPlayer.area],
-    [curPlayer.area]
-  );
+  const curArea = curPlayer.area;
+  const curGraph = useMemo(() => areaTypesToMap[curArea], [curArea]);
   const Cells = useMemo(() => renderCells(curGraph), [curGraph]);
   const curPlayerVertexId = curGraph.vertices[curPlayer.vertexIdx].id;
   const resultDSA = useMemo(
@@ -242,18 +242,9 @@ function useMetaData() {
   const HighLights = useMemo(
     () =>
       resultDSA.endPositions.map((position, index) => (
-        <rect
-          key={index}
-          width="100"
-          height="100"
-          x={position.x - 50}
-          y={position.y - 50}
-          fill="none"
-          stroke="#99e3b7"
-          strokeWidth="5"
-        />
+        <HighLightVertex key={index} position={position} show={showHighLight} />
       )),
-    [resultDSA]
+    [resultDSA.endPositions, showHighLight]
   );
   const PlayersChess = playersAttrs.map((playerAttrs, idx) => (
     <PlayerChess

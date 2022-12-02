@@ -95,7 +95,7 @@ const Components = {
 /**
  * 要先有pointerDown，pointerMove的動作才會成立
  */
-let isPointerDown = false;
+const isPointerDown = false;
 /**
  * 背景點點的間隔
  */
@@ -107,7 +107,7 @@ const pointerDownPage = { x: -1, y: -1 };
 /**
  * 紀錄SVG偏移的基準點，之後再加上滑鼠移動距離，就會是最新的偏移量
  */
-const pointerDownTranslate = { x: -1, y: -1 };
+// const pointerDownTranslate = { x: -1, y: -1 };
 
 const dokaponTheWorldMapGraphDSA = new GraphDSA(dokaponTheWorldMap);
 /**
@@ -173,9 +173,9 @@ export default GraphUI;
 
 function GraphUI() {
   const {
-    handlePointerOver,
-    handleDoubleClick,
-    handlePointerDown,
+    // handlePointerOver,
+    // handleDoubleClick,
+    // handlePointerDown,
     handleWheel,
     SVGScale,
     SVGTranslate,
@@ -186,17 +186,17 @@ function GraphUI() {
   return (
     <div className={styles.graphUIcontainer}>
       <svg
-        style={{
-          backgroundSize: `${gridSize * SVGScale}px ${gridSize * SVGScale}px`,
-          backgroundPosition: `${
-            gridSize * SVGScale * -0.5 + SVGTranslate.x
-          }px ${gridSize * SVGScale * -0.5 + SVGTranslate.y}px`,
-        }}
+        // style={{
+        //   backgroundSize: `${gridSize * SVGScale}px ${gridSize * SVGScale}px`,
+        //   backgroundPosition: `${
+        //     gridSize * SVGScale * -0.5 + SVGTranslate.x
+        //   }px ${gridSize * SVGScale * -0.5 + SVGTranslate.y}px`,
+        // }}
         className={styles.svg}
-        onPointerDown={handlePointerDown}
+        // onPointerDown={handlePointerDown}
         onWheel={handleWheel}
-        onDoubleClick={handleDoubleClick}
-        onPointerOver={handlePointerOver}
+        // onDoubleClick={handleDoubleClick}
+        // onPointerOver={handlePointerOver}
       >
         <defs>
           <marker
@@ -210,6 +210,8 @@ function GraphUI() {
           </marker>
         </defs>
         <g
+          id="cellsGroup"
+          // transform={`translate(${SVGTranslate.x}, ${SVGTranslate.y})`}
           transform={`matrix(${SVGScale}, 0, 0, ${SVGScale}, ${SVGTranslate.x}, ${SVGTranslate.y})`}
         >
           {Cells}
@@ -260,146 +262,146 @@ function useMetaData() {
   /**
    * `vertex.name`要轉成日文，要做一個mapping table
    */
-  function handlePointerOver(e: PointerEvent<SVGSVGElement>) {
-    if (
-      !(e.target instanceof SVGCircleElement) &&
-      !(e.target instanceof SVGImageElement)
-    ) {
-      CheckState.showVertexNameAndDistance = false;
-      setGameProgress({ ...gameProgress });
-      return;
-    }
+  // function handlePointerOver(e: PointerEvent<SVGSVGElement>) {
+  //   if (
+  //     !(e.target instanceof SVGCircleElement) &&
+  //     !(e.target instanceof SVGImageElement)
+  //   ) {
+  //     CheckState.showVertexNameAndDistance = false;
+  //     setGameProgress({ ...gameProgress });
+  //     return;
+  //   }
 
-    // get vertex id from <g> attribute
-    const isClickOnVertex = e.target instanceof SVGCircleElement;
-    const vertexId = isClickOnVertex
-      ? e.target.parentElement?.id
-      : e.target.parentElement?.getAttribute("data-vertex-id");
-    if (!vertexId) return console.error("no vertexId");
+  //   // get vertex id from <g> attribute
+  //   const isClickOnVertex = e.target instanceof SVGCircleElement;
+  //   const vertexId = isClickOnVertex
+  //     ? e.target.parentElement?.id
+  //     : e.target.parentElement?.getAttribute("data-vertex-id");
+  //   if (!vertexId) return console.error("no vertexId");
 
-    // get vertex from `curGraph.vertices`
-    const vertex = curGraph.vertices.find((item) => item.id === vertexId);
-    if (!vertex) return console.error("no clicked vertex");
+  //   // get vertex from `curGraph.vertices`
+  //   const vertex = curGraph.vertices.find((item) => item.id === vertexId);
+  //   if (!vertex) return console.error("no clicked vertex");
 
-    // show Vertex Name And Distance
-    const curPlayerVertex = curGraph.vertices[curPlayer.vertexIdx];
-    const distance = dokaponTheWorldMapGraphDSA.calMinDistanceTo(vertex.id);
-    CheckState.curHoverVertexDistance = distance;
-    CheckState.showVertexNameAndDistance = true;
-    CheckState.curHoverVertexName = vertex.name;
-    setGameProgress({ ...gameProgress });
-  }
+  //   // show Vertex Name And Distance
+  //   const curPlayerVertex = curGraph.vertices[curPlayer.vertexIdx];
+  //   const distance = dokaponTheWorldMapGraphDSA.calMinDistanceTo(vertex.id);
+  //   CheckState.curHoverVertexDistance = distance;
+  //   CheckState.showVertexNameAndDistance = true;
+  //   CheckState.curHoverVertexName = vertex.name;
+  //   setGameProgress({ ...gameProgress });
+  // }
   /**
    * @todo click on enemy
    * @todo click on monster
    * @todo 釐清 集金 跟 全集金 的差別
    */
-  function handleDoubleClick(e: MouseEvent<SVGSVGElement>) {
-    if (
-      !(e.target instanceof SVGImageElement) &&
-      !(e.target instanceof SVGCircleElement)
-    ) {
-      return;
-    }
+  // function handleDoubleClick(e: MouseEvent<SVGSVGElement>) {
+  //   if (
+  //     !(e.target instanceof SVGImageElement) &&
+  //     !(e.target instanceof SVGCircleElement)
+  //   ) {
+  //     return;
+  //   }
 
-    // get vertex id from <g> attribute
-    const isClickOnVertex = e.target instanceof SVGCircleElement;
-    const vertexId = isClickOnVertex
-      ? e.target.parentElement?.id
-      : e.target.parentElement?.getAttribute("data-vertex-id");
-    if (!vertexId) return console.error("no vertexId");
+  //   // get vertex id from <g> attribute
+  //   const isClickOnVertex = e.target instanceof SVGCircleElement;
+  //   const vertexId = isClickOnVertex
+  //     ? e.target.parentElement?.id
+  //     : e.target.parentElement?.getAttribute("data-vertex-id");
+  //   if (!vertexId) return console.error("no vertexId");
 
-    // get vertex from `curGraph.vertices`
-    const vertex = curGraph.vertices.find((item) => item.id === vertexId);
-    if (!vertex) return console.error("no clicked vertex");
+  //   // get vertex from `curGraph.vertices`
+  //   const vertex = curGraph.vertices.find((item) => item.id === vertexId);
+  //   if (!vertex) return console.error("no clicked vertex");
 
-    // reset `curComponents` and close `showVertexNameAndDistance`
-    CheckState.showVertexNameAndDistance = false;
-    curComponents.length = 0;
+  //   // reset `curComponents` and close `showVertexNameAndDistance`
+  //   CheckState.showVertexNameAndDistance = false;
+  //   curComponents.length = 0;
 
-    // check if player (self excluded), enemy or monster is clicked
-    const clickedPlayers = playersAttrs.filter(
-      (playerAttrs) =>
-        curGraph.vertices[playerAttrs.vertexIdx] === vertex &&
-        playerAttrs !== curPlayer
-    );
-    const clickedEnemies = [];
-    const clickedMonsters = [];
-    const totalClickedCharactersCount =
-      clickedPlayers.length + clickedEnemies.length + clickedMonsters.length;
-    if (totalClickedCharactersCount === 1) {
-      curComponents.push("PlayerVsCharacterDialogs");
-    } else if (totalClickedCharactersCount > 1) {
-      curComponents.push("SelectCharacterToCompare");
-    }
+  //   // check if player (self excluded), enemy or monster is clicked
+  //   const clickedPlayers = playersAttrs.filter(
+  //     (playerAttrs) =>
+  //       curGraph.vertices[playerAttrs.vertexIdx] === vertex &&
+  //       playerAttrs !== curPlayer
+  //   );
+  //   const clickedEnemies = [];
+  //   const clickedMonsters = [];
+  //   const totalClickedCharactersCount =
+  //     clickedPlayers.length + clickedEnemies.length + clickedMonsters.length;
+  //   if (totalClickedCharactersCount === 1) {
+  //     curComponents.push("PlayerVsCharacterDialogs");
+  //   } else if (totalClickedCharactersCount > 1) {
+  //     curComponents.push("SelectCharacterToCompare");
+  //   }
 
-    // handle click on vertex
-    DokaponTheWorldState.curClickVertex = vertex;
-    switch (vertex.name) {
-      case "BattleField":
-        curComponents.push("BattleFieldCheck");
-        break;
-      case "KeyTreasureField":
-        curComponents.push("TreasureFieldCheck");
-        break;
-      case "MagicBookField":
-        curComponents.push("MagicBookFieldCheck");
-        break;
-      case "RedTreasureField":
-        curComponents.push("RedTreasureFieldCheck");
-        break;
-      case "TreasureField":
-        curComponents.push("TreasureFieldCheck");
-        break;
-      case "WhiteTreasureField":
-        curComponents.push("WhiteTreasureFieldCheck");
-        break;
-      case "WorldTransferField":
-        curComponents.push("WorldTransferFieldCheck");
-        break;
-      case "GoldTreasureField":
-        curComponents.push("GoldTreasureFieldCheck");
-        break;
-      case "DamageField":
-        curComponents.push("DamageFieldCheck");
-        break;
-      case "CollectAllMoneyField":
-        curComponents.push("BeforeCollectMoneyFieldCheck");
-        break;
-      case "CollectMoneyField":
-        curComponents.push("BeforeCollectMoneyFieldCheck");
-        break;
-      case "CaveField":
-        curComponents.push("CastleFieldCheck");
-        break;
-      case "VillageField":
-        curComponents.push("VillageFieldCheck");
-        break;
-      case "CastleField":
-        curComponents.push("CastleFieldCheck");
-        break;
-      case "ChruchField":
-        curComponents.push("ChurchFieldCheck");
-        break;
-      case "GroceryStoreField":
-        curComponents.push("GroceryStoreFieldCheck");
-        break;
-      case "JobStoreField":
-        curComponents.push("JobStoreFieldCheck");
-        break;
-      case "MagicStoreField":
-        curComponents.push("MagicStoreFieldCheck");
-        break;
-      case "WeaponStoreField":
-        curComponents.push("WeaponStoreFieldCheck");
-        break;
-      default:
-        // 滑鼠hover上去`name`，型別應該要是`never`，才代表所有case都有涵蓋到
-        vertex.name;
-        break;
-    }
-    setGameProgress({ ...gameProgress });
-  }
+  //   // handle click on vertex
+  //   DokaponTheWorldState.curClickVertex = vertex;
+  //   switch (vertex.name) {
+  //     case "BattleField":
+  //       curComponents.push("BattleFieldCheck");
+  //       break;
+  //     case "KeyTreasureField":
+  //       curComponents.push("TreasureFieldCheck");
+  //       break;
+  //     case "MagicBookField":
+  //       curComponents.push("MagicBookFieldCheck");
+  //       break;
+  //     case "RedTreasureField":
+  //       curComponents.push("RedTreasureFieldCheck");
+  //       break;
+  //     case "TreasureField":
+  //       curComponents.push("TreasureFieldCheck");
+  //       break;
+  //     case "WhiteTreasureField":
+  //       curComponents.push("WhiteTreasureFieldCheck");
+  //       break;
+  //     case "WorldTransferField":
+  //       curComponents.push("WorldTransferFieldCheck");
+  //       break;
+  //     case "GoldTreasureField":
+  //       curComponents.push("GoldTreasureFieldCheck");
+  //       break;
+  //     case "DamageField":
+  //       curComponents.push("DamageFieldCheck");
+  //       break;
+  //     case "CollectAllMoneyField":
+  //       curComponents.push("BeforeCollectMoneyFieldCheck");
+  //       break;
+  //     case "CollectMoneyField":
+  //       curComponents.push("BeforeCollectMoneyFieldCheck");
+  //       break;
+  //     case "CaveField":
+  //       curComponents.push("CastleFieldCheck");
+  //       break;
+  //     case "VillageField":
+  //       curComponents.push("VillageFieldCheck");
+  //       break;
+  //     case "CastleField":
+  //       curComponents.push("CastleFieldCheck");
+  //       break;
+  //     case "ChruchField":
+  //       curComponents.push("ChurchFieldCheck");
+  //       break;
+  //     case "GroceryStoreField":
+  //       curComponents.push("GroceryStoreFieldCheck");
+  //       break;
+  //     case "JobStoreField":
+  //       curComponents.push("JobStoreFieldCheck");
+  //       break;
+  //     case "MagicStoreField":
+  //       curComponents.push("MagicStoreFieldCheck");
+  //       break;
+  //     case "WeaponStoreField":
+  //       curComponents.push("WeaponStoreFieldCheck");
+  //       break;
+  //     default:
+  //       // 滑鼠hover上去`name`，型別應該要是`never`，才代表所有case都有涵蓋到
+  //       vertex.name;
+  //       break;
+  //   }
+  //   setGameProgress({ ...gameProgress });
+  // }
   /**
    * POINTERDOWN註冊在SVG ELEMENT身上
    *
@@ -409,43 +411,43 @@ function useMetaData() {
    *
    * 並且不會因為遊戲的其他小視窗蓋上地圖上，中斷POINTERMOVE
    */
-  function handlePointerDown(e: PointerEvent<SVGSVGElement>) {
-    if (e.button !== 0) return;
-    isPointerDown = true;
-    pointerDownPage.x = e.pageX;
-    pointerDownPage.y = e.pageY;
-    pointerDownTranslate.x = SVGTranslate.x;
-    pointerDownTranslate.y = SVGTranslate.y;
-    window.addEventListener("pointermove", handlePointerMove);
-    window.addEventListener("pointerup", handlePointerUp);
-  }
-  function handlePointerMove(e: globalThis.PointerEvent) {
-    if (!isPointerDown) return;
+  // function handlePointerDown(e: PointerEvent<SVGSVGElement>) {
+  //   if (e.button !== 0) return;
+  //   isPointerDown = true;
+  //   pointerDownPage.x = e.pageX;
+  //   pointerDownPage.y = e.pageY;
+  //   pointerDownTranslate.x = SVGTranslate.x;
+  //   pointerDownTranslate.y = SVGTranslate.y;
+  //   window.addEventListener("pointermove", handlePointerMove);
+  //   window.addEventListener("pointerup", handlePointerUp);
+  // }
+  // function handlePointerMove(e: globalThis.PointerEvent) {
+  //   if (!isPointerDown) return;
 
-    // 關閉`checkTip`跟`minimap`
-    if (CheckState.showCheckTip) {
-      CheckState.showCheckTip = false;
-      setGameProgress({ ...gameProgress });
-    }
+  //   // 關閉`checkTip`跟`minimap`
+  //   if (CheckState.showCheckTip) {
+  //     CheckState.showCheckTip = false;
+  //     setGameProgress({ ...gameProgress });
+  //   }
 
-    // 計算SVG偏移量
-    const { pageX, pageY } = e;
-    const { x: anchorX, y: anchorY } = pointerDownTranslate;
-    const deltaX = pageX - pointerDownPage.x;
-    const deltaY = pageY - pointerDownPage.y;
-    const newX = parseInt((anchorX + deltaX).toFixed(0));
-    const newY = parseInt((anchorY + deltaY).toFixed(0));
-    if (newX === SVGTranslate.x && newY === SVGTranslate.y) return;
-    GraphUIState.SVGTranslate = { x: newX, y: newY };
-    setGameProgress({ ...gameProgress });
-  }
-  function handlePointerUp(e: globalThis.PointerEvent) {
-    isPointerDown = false;
-    window.removeEventListener("pointermove", handlePointerMove);
-    window.removeEventListener("pointerup", handlePointerUp);
-    CheckState.showCheckTip = true;
-    setGameProgress({ ...gameProgress });
-  }
+  //   // 計算SVG偏移量
+  //   const { pageX, pageY } = e;
+  //   const { x: anchorX, y: anchorY } = pointerDownTranslate;
+  //   const deltaX = pageX - pointerDownPage.x;
+  //   const deltaY = pageY - pointerDownPage.y;
+  //   const newX = parseInt((anchorX + deltaX).toFixed(0));
+  //   const newY = parseInt((anchorY + deltaY).toFixed(0));
+  //   if (newX === SVGTranslate.x && newY === SVGTranslate.y) return;
+  //   GraphUIState.SVGTranslate = { x: newX, y: newY };
+  //   setGameProgress({ ...gameProgress });
+  // }
+  // function handlePointerUp(e: globalThis.PointerEvent) {
+  //   isPointerDown = false;
+  //   window.removeEventListener("pointermove", handlePointerMove);
+  //   window.removeEventListener("pointerup", handlePointerUp);
+  //   CheckState.showCheckTip = true;
+  //   setGameProgress({ ...gameProgress });
+  // }
 
   /**
    * deltaY = -150 | 150，分別代表上滾(放大)跟下滾(縮小)
@@ -468,9 +470,9 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   return {
-    handlePointerOver,
-    handleDoubleClick,
-    handlePointerDown,
+    // handlePointerOver,
+    // handleDoubleClick,
+    // handlePointerDown,
     handleWheel,
     SVGScale,
     SVGTranslate,

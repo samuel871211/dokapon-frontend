@@ -1,5 +1,5 @@
 // Related third party imports.
-import { useEffect, useContext, KeyboardEvent, useRef } from "react";
+import { useEffect, useContext, KeyboardEvent, useRef, useState } from "react";
 
 // Local application/library specific imports.
 import styles from "./DokaponTheWorld.module.css";
@@ -26,6 +26,8 @@ import magicStores from "data/magicStores";
 import useTranslation from "hooks/useTranslation";
 
 // Stateless vars declare.
+let curIntervalId: number;
+const copyOfSVGTranslate = { x: 0, y: 0 };
 const text: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
   BattleFieldCheck: ["ザコモンスターとの戦闘や\nイベントが発生するマス。"],
   DamageFieldCheck: [
@@ -114,7 +116,8 @@ const Components: {
 export default DokaponTheWorld;
 
 function DokaponTheWorld() {
-  const { containerRefEl, handleKeyUp, Component } = useMetaData();
+  const { containerRefEl, handleKeyUp, Component, handleKeyDown } =
+    useMetaData();
 
   return (
     <div
@@ -122,6 +125,7 @@ function DokaponTheWorld() {
       tabIndex={0}
       onBlur={(e) => e.currentTarget.focus()}
       onKeyUp={handleKeyUp}
+      onKeyDown={handleKeyDown}
       className={styles.dokaponTheWorldContainer}
     >
       <GraphUI />
@@ -132,6 +136,13 @@ function DokaponTheWorld() {
 
 function useMetaData() {
   const { t } = useTranslation();
+  const [keyDownArrows, setKeyDownArrows] = useState({
+    up: false,
+    down: false,
+    left: false,
+    right: false,
+    square: false,
+  });
   const containerRefEl = useRef<HTMLDivElement>(null);
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
   const {
@@ -145,6 +156,7 @@ function useMetaData() {
   const {
     curComponents,
     DrawerState,
+    GraphUIState,
     BagState,
     RouletteState,
     GroceryStoreFieldCheckState,
@@ -324,6 +336,26 @@ function useMetaData() {
   }
   function handleKeyUpForCheck(e: KeyboardEvent<HTMLDivElement>) {
     switch (e.key.toLowerCase()) {
+      case gamePadSetting.arrowUp:
+        if (!keyDownArrows.up) break;
+        setKeyDownArrows({ ...keyDownArrows, up: false });
+        break;
+      case gamePadSetting.arrowDown:
+        if (!keyDownArrows.down) break;
+        setKeyDownArrows({ ...keyDownArrows, down: false });
+        break;
+      case gamePadSetting.arrowLeft:
+        if (!keyDownArrows.left) break;
+        setKeyDownArrows({ ...keyDownArrows, left: false });
+        break;
+      case gamePadSetting.arrowRight:
+        if (!keyDownArrows.right) break;
+        setKeyDownArrows({ ...keyDownArrows, right: false });
+        break;
+      case gamePadSetting.square:
+        if (!keyDownArrows.square) break;
+        setKeyDownArrows({ ...keyDownArrows, square: false });
+        break;
       case gamePadSetting.START:
         DokaponTheWorldState.curComponents = ["OverviewMap"];
         break;
@@ -489,10 +521,106 @@ function useMetaData() {
     }
     setGameProgress({ ...gameProgress });
   }
+  function handleKeyDown(e: KeyboardEvent<HTMLDivElement>) {
+    const curComponent = curComponents[0];
+    switch (curComponent) {
+      case "Check":
+        return handleKeyDownForCheck(e);
+    }
+  }
+  function handleKeyDownForCheck(e: KeyboardEvent<HTMLDivElement>) {
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.arrowDown:
+        if (keyDownArrows.down) break;
+        setKeyDownArrows({ ...keyDownArrows, down: true });
+        break;
+      case gamePadSetting.arrowUp:
+        if (keyDownArrows.up) break;
+        setKeyDownArrows({ ...keyDownArrows, up: true });
+        break;
+      case gamePadSetting.arrowLeft:
+        if (keyDownArrows.left) break;
+        setKeyDownArrows({ ...keyDownArrows, left: true });
+        break;
+      case gamePadSetting.arrowRight:
+        if (keyDownArrows.right) break;
+        setKeyDownArrows({ ...keyDownArrows, right: true });
+        break;
+      case gamePadSetting.square:
+        if (keyDownArrows.square) break;
+        setKeyDownArrows({ ...keyDownArrows, square: true });
+        break;
+    }
+  }
+  /**
+   * 這邊採取直接操作DOM的方式
+   *
+   * 因為地圖的移動，是頻繁觸發的事件
+   *
+   * 等到移動結束，再去更新context
+   */
+  function handleMapMove() {
+    // const { SVGScale } = GraphUIState;
+    const { up, down, left, right, square: shouldAccelerate } = keyDownArrows;
+    const verticalChill = (up && down) || (!up && !down);
+    const horizontalChill = (left && right) || (!left && !right);
+    const standStill = verticalChill && horizontalChill;
+    const goLeft = left && !right && verticalChill;
+    const goRight = right && !left && verticalChill;
+    const goUp = up && !down && horizontalChill;
+    const goDown = down && !up && horizontalChill;
+    const goUpLeft = up && !down && left && !right;
+    const goUpRight = up && !down && !left && right;
+    const goDownLeft = !up && down && left && !right;
+    const goDownRight = !up && down && !left && right;
+    const delta = shouldAccelerate ? 4 : 2;
+
+    // 先清除上一個move的動作
+    window.clearInterval(curIntervalId);
+
+    if (standStill) return updateSVGTranslate();
+    if (goUp) return moveSVGMap({ deltaX: 0, deltaY: delta });
+    if (goDown) return moveSVGMap({ deltaX: 0, deltaY: -delta });
+    if (goLeft) return moveSVGMap({ deltaX: delta, deltaY: 0 });
+    if (goRight) return moveSVGMap({ deltaX: -delta, deltaY: 0 });
+    if (goUpLeft) return moveSVGMap({ deltaX: delta, deltaY: delta });
+    if (goUpRight) return moveSVGMap({ deltaX: -delta, deltaY: delta });
+    if (goDownLeft) return moveSVGMap({ deltaX: delta, deltaY: -delta });
+    if (goDownRight) return moveSVGMap({ deltaX: -delta, deltaY: -delta });
+  }
+  function updateSVGTranslate() {
+    GraphUIState.SVGTranslate = { ...copyOfSVGTranslate };
+    setGameProgress({ ...gameProgress });
+  }
+  function moveSVGMap(position: { deltaX: number; deltaY: number }) {
+    const { deltaX, deltaY } = position;
+    const { SVGScale } = GraphUIState;
+    const cellsGroupEl = document.getElementById("cellsGroup");
+    if (!cellsGroupEl) return console.error("no cellsGroupEl");
+
+    curIntervalId = window.setInterval(() => {
+      copyOfSVGTranslate.x += deltaX;
+      copyOfSVGTranslate.y += deltaY;
+      const { x, y } = copyOfSVGTranslate;
+      cellsGroupEl.setAttribute(
+        "transform",
+        `matrix(${SVGScale}, 0, 0, ${SVGScale}, ${x}, ${y})`
+      );
+    }, 1);
+  }
+  useEffect(handleMapMove, [keyDownArrows]);
   useEffect(handleBottomDialogQueue, [curComponents[0]]);
-  useEffect(() => containerRefEl.current?.focus(), []);
+  useEffect(() => {
+    // Auto focus when component mounted
+    containerRefEl.current?.focus();
+
+    // Get copy of SVGTranslate when component mounted
+    copyOfSVGTranslate.x = GraphUIState.SVGTranslate.x;
+    copyOfSVGTranslate.y = GraphUIState.SVGTranslate.y;
+  }, []);
   return {
     containerRefEl,
+    handleKeyDown,
     handleKeyUp,
     Component: Components[curComponents[0]],
   };

@@ -31,7 +31,8 @@ import type {
 // import oceaniaCaveB2Map from 'data/maps/oceaniaCaveB2Map';
 // import antarcticaCaveMap from 'data/maps/antarcticaCaveMap';
 // import antarcticaCaveB2Map from 'data/maps/antarcticaCaveB2Map';
-import antarcticaCaveB3Map from "data/maps/antarcticaCaveB3Map";
+// import antarcticaCaveB3Map from "data/maps/antarcticaCaveB3Map";
+import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
 import TwoWayHEdge from "components/edges/TwoWayHEdge";
@@ -352,7 +353,7 @@ function useMetaData() {
     x: -1,
     y: -1,
   });
-  const [curGraph, setCurGraph] = useState(antarcticaCaveB3Map);
+  const [curGraph, setCurGraph] = useState(dokaponTheWorldMap);
   const [mouseMode, toggleMouseMode] = useState<MouseMode>("edit");
   const [SVGScale, setSVGScale] = useState(1);
   const [selectedArea, setSelectedArea] = useState({

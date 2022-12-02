@@ -9,7 +9,7 @@
 .svg {
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(black 1.5px, transparent 0);
+  /* background-image: radial-gradient(black 1.5px, transparent 0); */
   /* 以圓心為中心，畫一個1px黑色的圈圈，剩下都透明 */
   /* background-size: 20px 20px; */
   /* gridSize */
@@ -18,10 +18,10 @@
   background-color: #333333;
   /* display: block; */
 }
-.svg g[data-type="vertex"] circle {
+/* .svg g[data-type="vertex"] circle {
   transition: all 0.25s;
 }
 .svg g[data-type="vertex"]:hover circle {
   r: 60;
   stroke-width: 10;
-}
+} */

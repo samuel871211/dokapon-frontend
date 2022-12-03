@@ -5,6 +5,7 @@ import { useContext } from "react";
 import styles from "./Check.module.css";
 import useTranslation from "hooks/useTranslation";
 import { gameProgressCtx } from "reducers/gameProgress";
+import ids from "../ids";
 
 // Stateless vars declare.
 
@@ -22,6 +23,11 @@ function Check() {
     showCheckTip,
     curHoverVertexDistance,
     curHoverVertexName,
+    player1Position,
+    player2Position,
+    player3Position,
+    player4Position,
+    curAreaPosition,
   } = useMetaData();
 
   return (
@@ -53,7 +59,16 @@ function Check() {
           </div>
         </div>
       ) : null}
-      <div className={styles.minimap}></div>
+      <div className={styles.minimap}>
+        <div
+          id={ids.miniMapCurArea}
+          className={styles.currentArea}
+          style={{
+            top: `${curAreaPosition.y}%`,
+            left: `${curAreaPosition.x}%`,
+          }}
+        />
+      </div>
     </div>
   );
 }
@@ -65,11 +80,23 @@ function useMetaData() {
     showCheckTip,
     curHoverVertexDistance,
     curHoverVertexName,
+    miniMap: {
+      player1Position,
+      player2Position,
+      player3Position,
+      player4Position,
+      curAreaPosition,
+    },
   } = gameProgress.DokaponTheWorldState.CheckState;
   return {
     showVertexNameAndDistance,
     showCheckTip,
     curHoverVertexDistance,
     curHoverVertexName,
+    player1Position,
+    player2Position,
+    player3Position,
+    player4Position,
+    curAreaPosition,
   };
 }

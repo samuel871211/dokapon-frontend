@@ -24,10 +24,20 @@ import type { TextsKeys } from "data/texts";
 import jobs from "data/jobs";
 import magicStores from "data/magicStores";
 import useTranslation from "hooks/useTranslation";
+import areaTypesToCellsGroupBBox from "data/areaTypesToCellsGroupBBox";
+import ids from "./ids";
 
 // Stateless vars declare.
+/**
+ * 使用`window.setInterval`來讓地圖平滑移動
+ *
+ * 當移動方向改變時，必須先清除上一個interval
+ */
 let curIntervalId: number;
-const copyOfSVGTranslate = { x: 0, y: 0 };
+/**
+ * SVG Element的寬度跟高度，會在`window.resize`觸發之後更新
+ */
+const svgViewBox = { width: 0, height: 0 };
 const text: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
   BattleFieldCheck: ["ザコモンスターとの戦闘や\nイベントが発生するマス。"],
   DamageFieldCheck: [
@@ -134,6 +144,9 @@ function DokaponTheWorld() {
   );
 }
 
+/**
+ * @todo 剛開始移動地圖時，右上角的小地圖會有斷層，需要在一開始先更新小地圖的定位
+ */
 function useMetaData() {
   const { t } = useTranslation();
   const [keyDownArrows, setKeyDownArrows] = useState({
@@ -153,18 +166,21 @@ function useMetaData() {
     bottomDialogSentencesQueue,
   } = gameProgress;
   const currentPlayer = playersAttrs[currentPlayerIdx];
+  const curCellsGroupBBox = areaTypesToCellsGroupBBox[currentPlayer.area];
   const {
     curComponents,
     DrawerState,
     GraphUIState,
     BagState,
     RouletteState,
+    CheckState,
     GroceryStoreFieldCheckState,
     JobStoreFieldCheckState,
     MagicStoreFieldCheckState,
     WeaponStoreFieldCheckState,
     CollectMoneyFieldCheckState,
   } = DokaponTheWorldState;
+  const { SVGTranslate } = GraphUIState;
   /**
    * 搖桿的 O, X, 正方形, 三角形
    */
@@ -552,19 +568,10 @@ function useMetaData() {
         break;
     }
   }
-  /**
-   * 這邊採取直接操作DOM的方式
-   *
-   * 因為地圖的移動，是頻繁觸發的事件
-   *
-   * 等到移動結束，再去更新context
-   */
   function handleMapMove() {
-    // const { SVGScale } = GraphUIState;
     const { up, down, left, right, square: shouldAccelerate } = keyDownArrows;
     const verticalChill = (up && down) || (!up && !down);
     const horizontalChill = (left && right) || (!left && !right);
-    const standStill = verticalChill && horizontalChill;
     const goLeft = left && !right && verticalChill;
     const goRight = right && !left && verticalChill;
     const goUp = up && !down && horizontalChill;
@@ -573,50 +580,86 @@ function useMetaData() {
     const goUpRight = up && !down && !left && right;
     const goDownLeft = !up && down && left && !right;
     const goDownRight = !up && down && !left && right;
-    const delta = shouldAccelerate ? 4 : 2;
+    const delta = shouldAccelerate ? 9 : 3;
 
     // 先清除上一個move的動作
     window.clearInterval(curIntervalId);
 
-    if (standStill) return updateSVGTranslate();
-    if (goUp) return moveSVGMap({ deltaX: 0, deltaY: delta });
-    if (goDown) return moveSVGMap({ deltaX: 0, deltaY: -delta });
-    if (goLeft) return moveSVGMap({ deltaX: delta, deltaY: 0 });
-    if (goRight) return moveSVGMap({ deltaX: -delta, deltaY: 0 });
-    if (goUpLeft) return moveSVGMap({ deltaX: delta, deltaY: delta });
-    if (goUpRight) return moveSVGMap({ deltaX: -delta, deltaY: delta });
-    if (goDownLeft) return moveSVGMap({ deltaX: delta, deltaY: -delta });
-    if (goDownRight) return moveSVGMap({ deltaX: -delta, deltaY: -delta });
+    if (goUp) return moveMap({ deltaX: 0, deltaY: delta });
+    if (goDown) return moveMap({ deltaX: 0, deltaY: -delta });
+    if (goLeft) return moveMap({ deltaX: delta, deltaY: 0 });
+    if (goRight) return moveMap({ deltaX: -delta, deltaY: 0 });
+    if (goUpLeft) return moveMap({ deltaX: delta, deltaY: delta });
+    if (goUpRight) return moveMap({ deltaX: -delta, deltaY: delta });
+    if (goDownLeft) return moveMap({ deltaX: delta, deltaY: -delta });
+    if (goDownRight) return moveMap({ deltaX: -delta, deltaY: -delta });
   }
-  function updateSVGTranslate() {
-    GraphUIState.SVGTranslate = { ...copyOfSVGTranslate };
-    setGameProgress({ ...gameProgress });
-  }
-  function moveSVGMap(position: { deltaX: number; deltaY: number }) {
+  /**
+   * 這邊採取直接操作DOM的方式
+   *
+   * 因為地圖的移動，是頻繁觸發的事件
+   *
+   * 同時也會直接更新`SVGTranslate`
+   *
+   * 只是不會去dispatch setState action，避免react頻繁觸發re-render
+   */
+  function moveMap(position: { deltaX: number; deltaY: number }) {
     const { deltaX, deltaY } = position;
-    const { SVGScale } = GraphUIState;
-    const cellsGroupEl = document.getElementById("cellsGroup");
-    if (!cellsGroupEl) return console.error("no cellsGroupEl");
+    const { curAreaPosition } = CheckState.miniMap;
+    const { x: bx, y: by, width: bWidth, height: bHeight } = curCellsGroupBBox;
+    const { width: vWidth, height: vHeight } = svgViewBox;
+    const SVGTranslateX1 = (bx - vWidth / 2) * -1;
+    const SVGTranslateX2 = (bx + bWidth) * -1 + vWidth / 2;
+    const SVGTranslateY1 = (by - vHeight / 2) * -1;
+    const SVGTranslateY2 = (by + bHeight) * -1 + vHeight / 2;
+    const fullWidth = Math.abs(SVGTranslateX2 - SVGTranslateX1);
+    const fullHeight = Math.abs(SVGTranslateY2 - SVGTranslateY1);
+    const cellsGroupEl = document.getElementById(ids.cellsGroup);
+    const miniMapCurAreaEl = document.getElementById(ids.miniMapCurArea);
+    if (!miniMapCurAreaEl) return console.error(`no ${ids.miniMapCurArea}`);
+    if (!cellsGroupEl) return console.error(`no ${ids.cellsGroup}`);
 
     curIntervalId = window.setInterval(() => {
-      copyOfSVGTranslate.x += deltaX;
-      copyOfSVGTranslate.y += deltaY;
-      const { x, y } = copyOfSVGTranslate;
-      cellsGroupEl.setAttribute(
-        "transform",
-        `matrix(${SVGScale}, 0, 0, ${SVGScale}, ${x}, ${y})`
+      // 移動delta的距離
+      SVGTranslate.x += deltaX;
+      SVGTranslate.y += deltaY;
+
+      // 修正邊界，預留1/2螢幕寬高的border，讓vertex不會直接切到螢幕邊緣
+      if (SVGTranslate.x >= SVGTranslateX1) SVGTranslate.x = SVGTranslateX1;
+      if (SVGTranslate.x <= SVGTranslateX2) SVGTranslate.x = SVGTranslateX2;
+      if (SVGTranslate.y >= SVGTranslateY1) SVGTranslate.y = SVGTranslateY1;
+      if (SVGTranslate.y <= SVGTranslateY2) SVGTranslate.y = SVGTranslateY2;
+
+      // 操作DOM
+      const { x, y } = SVGTranslate;
+      curAreaPosition.y = parseFloat(
+        ((Math.abs(y - SVGTranslateY1) / fullHeight) * 100).toFixed(1)
       );
+      curAreaPosition.x = parseFloat(
+        ((Math.abs(x - SVGTranslateX1) / fullWidth) * 100).toFixed(1)
+      );
+      miniMapCurAreaEl.style.top = `${curAreaPosition.y}%`;
+      miniMapCurAreaEl.style.left = `${curAreaPosition.x}%`;
+      cellsGroupEl.setAttribute("transform", `translate(${x}, ${y})`);
     }, 1);
   }
   useEffect(handleMapMove, [keyDownArrows]);
   useEffect(handleBottomDialogQueue, [curComponents[0]]);
   useEffect(() => {
-    // Auto focus when component mounted
+    // AUTO FOCUS CONTAINER ELEMENT WHEN COMPONENT MOUNTED
     containerRefEl.current?.focus();
 
-    // Get copy of SVGTranslate when component mounted
-    copyOfSVGTranslate.x = GraphUIState.SVGTranslate.x;
-    copyOfSVGTranslate.y = GraphUIState.SVGTranslate.y;
+    // ADD WINDOW RESIZE EVENT HANDLER
+    function updateSVGViewBox() {
+      const graphSVGEl = document.getElementById(ids.graphSVG);
+      if (!graphSVGEl) return console.error("no viewEl");
+
+      svgViewBox.width = graphSVGEl.clientWidth;
+      svgViewBox.height = graphSVGEl.clientHeight;
+    }
+    updateSVGViewBox();
+    window.addEventListener("resize", updateSVGViewBox);
+    return () => window.removeEventListener("resize", updateSVGViewBox);
   }, []);
   return {
     containerRefEl,

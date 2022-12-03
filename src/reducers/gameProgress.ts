@@ -98,7 +98,6 @@ const initGameProgress: GameProgress = {
       area: "Asia",
     },
     GraphUIState: {
-      SVGScale: 1,
       SVGTranslate: { x: 0, y: 0 },
     },
     CheckState: {
@@ -106,6 +105,13 @@ const initGameProgress: GameProgress = {
       showCheckTip: true,
       curHoverVertexDistance: 0,
       curHoverVertexName: "",
+      miniMap: {
+        player1Position: { x: 0, y: 0 },
+        player2Position: { x: 0, y: 0 },
+        player3Position: { x: 0, y: 0 },
+        player4Position: { x: 0, y: 0 },
+        curAreaPosition: { x: 0, y: 0 },
+      },
     },
     DrawerState: { selectedIdx: 0 },
     BagState: {

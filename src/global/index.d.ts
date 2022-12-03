@@ -289,7 +289,6 @@ export type GameProgress = {
     curComponents: DokaponTheWorldComponentTypes[];
     curClickVertex: Vertex;
     GraphUIState: {
-      SVGScale: number;
       SVGTranslate: { x: number; y: number };
     };
     CheckState: {
@@ -300,6 +299,13 @@ export type GameProgress = {
        */
       curHoverVertexDistance: number;
       curHoverVertexName: string;
+      miniMap: {
+        player1Position: { x: number; y: number };
+        player2Position: { x: number; y: number };
+        player3Position: { x: number; y: number };
+        player4Position: { x: number; y: number };
+        curAreaPosition: { x: number; y: number };
+      };
     };
     DrawerState: {
       /**

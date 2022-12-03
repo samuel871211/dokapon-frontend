@@ -3,8 +3,8 @@ import type { GraphJSON, Vertex } from "global";
 const asiaVertices: Vertex[] = [
   {
     position: {
-      x: 3700,
-      y: 2420,
+      x: 4280,
+      y: 4480,
     },
     name: "BattleField",
     id: "af8cc9f3-5031-49ff-92ee-6b2da5bd5dc0",
@@ -20,8 +20,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3700,
-      y: 2680,
+      x: 4280,
+      y: 4740,
     },
     name: "TreasureField",
     id: "46da86e3-e7b7-44b5-93d4-2abf4b99cbd9",
@@ -35,8 +35,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3700,
-      y: 2960,
+      x: 4280,
+      y: 5020,
     },
     name: "BattleField",
     id: "bdf4770f-6e87-40ae-8c68-271a9490b71f",
@@ -50,8 +50,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3900,
-      y: 2420,
+      x: 4480,
+      y: 4480,
     },
     name: "BattleField",
     id: "323ac0c1-03ac-4db2-828f-ac2afff386cd",
@@ -65,8 +65,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3900,
-      y: 2260,
+      x: 4480,
+      y: 4320,
     },
     name: "BattleField",
     id: "a5aa39c5-95eb-4130-8389-08b72b243190",
@@ -80,8 +80,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4140,
-      y: 2620,
+      x: 4720,
+      y: 4680,
     },
     name: "BattleField",
     id: "66267139-47f3-47d2-8840-7b389f19aaee",
@@ -97,8 +97,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4140,
-      y: 2260,
+      x: 4720,
+      y: 4320,
     },
     name: "TreasureField",
     id: "d016ba22-1124-49d8-b41d-32850b048589",
@@ -114,8 +114,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4300,
-      y: 2420,
+      x: 4880,
+      y: 4480,
     },
     name: "BattleField",
     id: "5a43a908-fe8b-4f09-bac0-4650767b92af",
@@ -129,8 +129,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4300,
-      y: 2620,
+      x: 4880,
+      y: 4680,
     },
     name: "BattleField",
     id: "63d77f19-376a-4994-9dbf-810eef7008ea",
@@ -146,8 +146,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3900,
-      y: 2600,
+      x: 4480,
+      y: 4660,
     },
     name: "VillageField",
     id: "2c7b565a-345b-4c49-9020-4016c2b1212b",
@@ -157,8 +157,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3900,
-      y: 2820,
+      x: 4480,
+      y: 4880,
     },
     name: "BattleField",
     id: "07a30e7d-f8b4-4982-9b03-29c2677b2a13",
@@ -174,8 +174,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4020,
-      y: 2820,
+      x: 4600,
+      y: 4880,
     },
     name: "BattleField",
     id: "1e24287d-43fe-4f5a-9f74-fd2dc1f5cc0c",
@@ -189,8 +189,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4140,
-      y: 2820,
+      x: 4720,
+      y: 4880,
     },
     name: "BattleField",
     id: "8d6ba350-64b0-430f-844a-959b5f769f76",
@@ -206,8 +206,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3900,
-      y: 2960,
+      x: 4480,
+      y: 5020,
     },
     name: "MagicBookField",
     id: "302a4d3b-aab8-4d87-b8ca-9a23c353b740",
@@ -223,8 +223,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4140,
-      y: 2960,
+      x: 4720,
+      y: 5020,
     },
     name: "BattleField",
     id: "6336deca-2bf1-4afe-90f4-6d371195be4c",
@@ -242,8 +242,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4300,
-      y: 2260,
+      x: 4880,
+      y: 4320,
     },
     name: "WeaponStoreField",
     id: "5abbabec-0e8d-4d11-835c-1095ded5f143",
@@ -259,8 +259,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4300,
-      y: 2780,
+      x: 4880,
+      y: 4840,
     },
     name: "BattleField",
     id: "ca81f639-f7b8-47f7-9470-9ae602d7157c",
@@ -274,8 +274,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4480,
-      y: 2780,
+      x: 5060,
+      y: 4840,
     },
     name: "TreasureField",
     id: "cf14f654-3d72-4917-8d61-f30cac68f24a",
@@ -291,8 +291,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4480,
-      y: 2620,
+      x: 5060,
+      y: 4680,
     },
     name: "BattleField",
     id: "7e02e76b-8750-4d8f-8a4b-7a154726be9a",
@@ -308,8 +308,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4660,
-      y: 2260,
+      x: 5240,
+      y: 4320,
     },
     name: "BattleField",
     id: "99264c2f-3462-420d-b85c-3cbe79ce6d51",
@@ -323,8 +323,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4800,
-      y: 2620,
+      x: 5380,
+      y: 4680,
     },
     name: "GroceryStoreField",
     id: "9bd4ebd7-09ba-40ad-9b96-82f955d817de",
@@ -340,8 +340,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4640,
-      y: 2780,
+      x: 5220,
+      y: 4840,
     },
     name: "BattleField",
     id: "11e7f68c-47e9-4fe8-ae9b-59ef53bdf831",
@@ -355,8 +355,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4800,
-      y: 2780,
+      x: 5380,
+      y: 4840,
     },
     name: "BattleField",
     id: "d543f24e-cd46-418e-8cb3-56b3b665d958",
@@ -372,8 +372,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4860,
-      y: 2260,
+      x: 5440,
+      y: 4320,
     },
     name: "TreasureField",
     id: "dee44942-a905-40aa-922c-5fbd2ce35504",
@@ -389,8 +389,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5040,
-      y: 2260,
+      x: 5620,
+      y: 4320,
     },
     name: "BattleField",
     id: "9df16f11-ecf8-4bc2-9b19-2393d31410cc",
@@ -404,8 +404,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5220,
-      y: 2260,
+      x: 5800,
+      y: 4320,
     },
     name: "VillageField",
     id: "f634153b-d320-4e0b-ab65-40383cf6fba8",
@@ -421,8 +421,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4860,
-      y: 2420,
+      x: 5440,
+      y: 4480,
     },
     name: "BattleField",
     id: "f4f16cd2-3467-426d-9642-75de10d56ba5",
@@ -436,8 +436,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5220,
-      y: 2420,
+      x: 5800,
+      y: 4480,
     },
     name: "BattleField",
     id: "29a17b86-6a0b-4f1e-b312-5db62ec89be8",
@@ -451,8 +451,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5400,
-      y: 2260,
+      x: 5980,
+      y: 4320,
     },
     name: "BattleField",
     id: "b9ac4dfc-6553-4d25-b191-c8fec120808d",
@@ -466,8 +466,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5400,
-      y: 2460,
+      x: 5980,
+      y: 4520,
     },
     name: "TreasureField",
     id: "752a103c-cf30-4b12-a992-c43e93fe2ea1",
@@ -481,8 +481,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5600,
-      y: 2460,
+      x: 6180,
+      y: 4520,
     },
     name: "BattleField",
     id: "5c5ea552-0994-4bbb-bece-98cedf0271e6",
@@ -498,8 +498,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5820,
-      y: 2460,
+      x: 6400,
+      y: 4520,
     },
     name: "JobStoreField",
     id: "6bc85851-0e17-4905-b4b9-546a99f92d59",
@@ -513,8 +513,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5600,
-      y: 2780,
+      x: 6180,
+      y: 4840,
     },
     name: "MagicBookField",
     id: "c8bdeffc-b9d2-41cd-a6f2-1481f12ecfc6",
@@ -528,8 +528,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5820,
-      y: 2620,
+      x: 6400,
+      y: 4680,
     },
     name: "BattleField",
     id: "4b4320ae-1583-42e3-b963-e9ca1395fb14",
@@ -545,8 +545,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5820,
-      y: 2780,
+      x: 6400,
+      y: 4840,
     },
     name: "BattleField",
     id: "7267c7da-fef0-4fd1-9f61-c1948e27717a",
@@ -562,8 +562,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4800,
-      y: 2940,
+      x: 5380,
+      y: 5000,
     },
     name: "MagicBookField",
     id: "ca9c14d0-8009-4bdd-b60b-907d7aca81a4",
@@ -579,8 +579,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4960,
-      y: 2940,
+      x: 5540,
+      y: 5000,
     },
     name: "CastleField",
     id: "571e15e0-7324-4e98-925e-2aac78952e6c",
@@ -594,8 +594,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5140,
-      y: 2940,
+      x: 5720,
+      y: 5000,
     },
     name: "TreasureField",
     id: "09eff9ac-05cf-418c-9f8b-04547ea045b2",
@@ -611,8 +611,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4800,
-      y: 3080,
+      x: 5380,
+      y: 5140,
     },
     name: "BattleField",
     id: "95462da4-a5c0-40fe-a763-c5340d355856",
@@ -626,8 +626,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5140,
-      y: 3080,
+      x: 5720,
+      y: 5140,
     },
     name: "BattleField",
     id: "32e8bf41-28a9-4c3f-8bfb-c23cb0f512df",
@@ -643,8 +643,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5140,
-      y: 2780,
+      x: 5720,
+      y: 4840,
     },
     name: "VillageField",
     id: "16f68f81-126f-429d-b4d6-1fce7b67bbc8",
@@ -658,8 +658,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5320,
-      y: 2780,
+      x: 5900,
+      y: 4840,
     },
     name: "BattleField",
     id: "243330ff-cefc-4f4a-9b34-5aa654d482a5",
@@ -673,8 +673,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5320,
-      y: 2940,
+      x: 5900,
+      y: 5000,
     },
     name: "BattleField",
     id: "9cf22ad9-8eb4-405f-90d5-fe15774d4e1e",
@@ -688,8 +688,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5500,
-      y: 2940,
+      x: 6080,
+      y: 5000,
     },
     name: "VillageField",
     id: "eb57ead9-4030-4994-9a2a-897064788cef",
@@ -703,8 +703,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5820,
-      y: 2940,
+      x: 6400,
+      y: 5000,
     },
     name: "BattleField",
     id: "c4c618f4-be95-461c-85a0-19cb4e6819c5",
@@ -718,8 +718,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5660,
-      y: 2940,
+      x: 6240,
+      y: 5000,
     },
     name: "BattleField",
     id: "28d4ee00-7574-4240-b7a0-5bad83d987c1",
@@ -735,8 +735,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5980,
-      y: 2620,
+      x: 6560,
+      y: 4680,
     },
     name: "TreasureField",
     id: "62676253-2ed2-480a-9af6-6f4fed4fbfbd",
@@ -750,8 +750,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6160,
-      y: 2620,
+      x: 6740,
+      y: 4680,
     },
     name: "VillageField",
     id: "16a6cd70-54d4-4580-827a-e1487aa52272",
@@ -765,8 +765,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6340,
-      y: 2620,
+      x: 6920,
+      y: 4680,
     },
     name: "BattleField",
     id: "3cfb7867-7384-4abd-9146-448374761bde",
@@ -782,8 +782,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6340,
-      y: 2820,
+      x: 6920,
+      y: 4880,
     },
     name: "MagicBookField",
     id: "66062c7d-de4b-4f3c-930e-0e4576198242",
@@ -797,8 +797,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6340,
-      y: 3000,
+      x: 6920,
+      y: 5060,
     },
     name: "BattleField",
     id: "cf403fd8-f50c-4a61-8e32-2e4a4ab9831b",
@@ -814,8 +814,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5980,
-      y: 3000,
+      x: 6560,
+      y: 5060,
     },
     name: "TreasureField",
     id: "686ac19e-5c15-45da-af6b-acb80eb1900b",
@@ -829,8 +829,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5660,
-      y: 3060,
+      x: 6240,
+      y: 5120,
     },
     name: "TreasureField",
     id: "0e52d178-9287-41d5-ad95-e7418511d083",
@@ -844,8 +844,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5660,
-      y: 3180,
+      x: 6240,
+      y: 5240,
     },
     name: "BattleField",
     id: "3caabc5c-dd7f-44dc-b0bb-286648b18491",
@@ -861,8 +861,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5820,
-      y: 3180,
+      x: 6400,
+      y: 5240,
     },
     name: "BattleField",
     id: "56121fad-4809-453b-8a1f-db1f6a2dd6d5",
@@ -876,8 +876,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5980,
-      y: 3180,
+      x: 6560,
+      y: 5240,
     },
     name: "BattleField",
     id: "2e5a88c5-a631-4bb9-8525-5845c9c6331a",
@@ -893,8 +893,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6160,
-      y: 3180,
+      x: 6740,
+      y: 5240,
     },
     name: "VillageField",
     id: "41ba12e4-440e-4fc6-b598-9f04880da76c",
@@ -908,8 +908,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6340,
-      y: 3180,
+      x: 6920,
+      y: 5240,
     },
     name: "BattleField",
     id: "5c5fcad1-cd43-4b5e-a9c0-f04dff61937e",
@@ -923,8 +923,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5980,
-      y: 3380,
+      x: 6560,
+      y: 5440,
     },
     name: "BattleField",
     id: "6bbcdeb5-f435-48a6-afb2-8ede76ca1a73",
@@ -940,8 +940,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5820,
-      y: 3380,
+      x: 6400,
+      y: 5440,
     },
     name: "BattleField",
     id: "9e967feb-0913-4d4c-9aad-d43dc3928206",
@@ -957,8 +957,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5140,
-      y: 3180,
+      x: 5720,
+      y: 5240,
     },
     name: "MagicBookField",
     id: "2fb01b13-efb5-4875-bd5c-bd98010e4249",
@@ -974,8 +974,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5140,
-      y: 3600,
+      x: 5720,
+      y: 5660,
     },
     name: "TreasureField",
     id: "c2a2c5d5-b877-4551-9f40-f7d9979df01b",
@@ -993,8 +993,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5360,
-      y: 3600,
+      x: 5940,
+      y: 5660,
     },
     name: "MagicStoreField",
     id: "ba52d388-e97e-4248-8c12-ce31812e103d",
@@ -1008,8 +1008,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5600,
-      y: 3600,
+      x: 6180,
+      y: 5660,
     },
     name: "MagicBookField",
     id: "1c31f0b3-b2f6-4b72-a95b-f77a0df3cd9d",
@@ -1023,8 +1023,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5820,
-      y: 3600,
+      x: 6400,
+      y: 5660,
     },
     name: "BattleField",
     id: "c6716bef-fcb1-46d5-8b4c-44d98afb5c0b",
@@ -1038,8 +1038,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4960,
-      y: 3600,
+      x: 5540,
+      y: 5660,
     },
     name: "BattleField",
     id: "aa39f3c5-b7c6-4c9d-b829-53f8672652b5",
@@ -1053,8 +1053,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4800,
-      y: 3600,
+      x: 5380,
+      y: 5660,
     },
     name: "VillageField",
     id: "93274de5-a482-4d98-9bad-ef60f152ab65",
@@ -1068,8 +1068,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4800,
-      y: 3740,
+      x: 5380,
+      y: 5800,
     },
     name: "BattleField",
     id: "5c309894-c6c1-4d34-9415-1d9940c69a35",
@@ -1085,8 +1085,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5140,
-      y: 3740,
+      x: 5720,
+      y: 5800,
     },
     name: "BattleField",
     id: "11207d52-9b6c-4c48-a445-9acab14a2bbc",
@@ -1102,8 +1102,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4280,
-      y: 2960,
+      x: 4860,
+      y: 5020,
     },
     name: "VillageField",
     id: "dbbdf9ab-fdd3-497f-b7d2-cdaddf390849",
@@ -1117,8 +1117,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4420,
-      y: 2960,
+      x: 5000,
+      y: 5020,
     },
     name: "TreasureField",
     id: "3419f4b7-3867-43ab-b404-3eac0de25e68",
@@ -1134,8 +1134,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4680,
-      y: 2980,
+      x: 5260,
+      y: 5040,
     },
     name: "CaveField",
     id: "8da802ac-6747-4d09-87bf-f16008798783",
@@ -1145,8 +1145,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4560,
-      y: 3060,
+      x: 5140,
+      y: 5120,
     },
     name: "BattleField",
     id: "a5269d2e-41ab-4802-b93c-5f2001ddd8ad",
@@ -1160,8 +1160,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4420,
-      y: 3140,
+      x: 5000,
+      y: 5200,
     },
     name: "BattleField",
     id: "bab46de8-04f5-4428-8813-52bbfc45a23b",
@@ -1177,8 +1177,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4140,
-      y: 3140,
+      x: 4720,
+      y: 5200,
     },
     name: "BattleField",
     id: "174ed2c6-a407-4429-ac3c-a2927d3ae8df",
@@ -1192,8 +1192,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4420,
-      y: 3740,
+      x: 5000,
+      y: 5800,
     },
     name: "BattleField",
     id: "9053c5fe-0a37-4ccf-abc7-22dff8c60d81",
@@ -1211,8 +1211,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4620,
-      y: 3740,
+      x: 5200,
+      y: 5800,
     },
     name: "TreasureField",
     id: "4f5f298a-7b8f-495a-9544-34dbe251a0bd",
@@ -1226,8 +1226,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5140,
-      y: 3940,
+      x: 5720,
+      y: 6000,
     },
     name: "BattleField",
     id: "4ac3e32f-d6f4-4f72-8945-c80aed3a737f",
@@ -1241,8 +1241,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4960,
-      y: 3940,
+      x: 5540,
+      y: 6000,
     },
     name: "MagicBookField",
     id: "527ee1e8-96cb-4411-94c4-9c47d0cca600",
@@ -1256,8 +1256,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4800,
-      y: 3940,
+      x: 5380,
+      y: 6000,
     },
     name: "BattleField",
     id: "f7a1b803-c52c-4a94-982b-e2cda905d12b",
@@ -1271,8 +1271,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4640,
-      y: 3940,
+      x: 5220,
+      y: 6000,
     },
     name: "BattleField",
     id: "992e307c-3cdd-4c57-ab80-5f66c589e099",
@@ -1288,8 +1288,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4400,
-      y: 3940,
+      x: 4980,
+      y: 6000,
     },
     name: "TreasureField",
     id: "992862b4-dd61-468e-b319-03790caede66",
@@ -1305,8 +1305,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4400,
-      y: 4100,
+      x: 4980,
+      y: 6160,
     },
     name: "BattleField",
     id: "285ff1dd-8a7e-40bb-b232-c302d751be9a",
@@ -1320,8 +1320,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4520,
-      y: 4100,
+      x: 5100,
+      y: 6160,
     },
     name: "VillageField",
     id: "dfdf7bb9-4051-4c64-b36f-023b24636585",
@@ -1335,8 +1335,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4640,
-      y: 4100,
+      x: 5220,
+      y: 6160,
     },
     name: "BattleField",
     id: "7fd06120-c815-4bd6-86e0-b45404178445",
@@ -1350,8 +1350,8 @@ const asiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4980,
-      y: 2620,
+      x: 5560,
+      y: 4680,
     },
     name: "WorldTransferField",
     id: "574dfcdf-25b8-4f1c-ad51-9217a1c888a7",
@@ -1363,8 +1363,8 @@ const asiaVertices: Vertex[] = [
     id: "aafeda89-3a98-4d54-929c-f295dbf47dee",
     name: "BattleField",
     position: {
-      x: 4480,
-      y: 2260,
+      x: 5060,
+      y: 4320,
     },
     edges: [
       "5c124733-9dba-4d98-b8c5-e17ac2df28b7",
@@ -1380,8 +1380,8 @@ const asiaVertices: Vertex[] = [
 const europeVertices: Vertex[] = [
   {
     position: {
-      x: 860,
-      y: 140,
+      x: 1440,
+      y: 2200,
     },
     name: "BattleField",
     id: "209c7458-6352-4402-813a-94c83c86f148",
@@ -1395,8 +1395,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 340,
+      x: 1460,
+      y: 2400,
     },
     name: "BattleField",
     id: "01f09c6a-5a2d-4a3f-9ab5-3afb21489ce5",
@@ -1414,8 +1414,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 440,
-      y: 340,
+      x: 1020,
+      y: 2400,
     },
     name: "CollectMoneyField",
     id: "aa84da87-c53e-4c92-8e16-2076f867ce90",
@@ -1429,8 +1429,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 520,
+      x: 1460,
+      y: 2580,
     },
     name: "TreasureField",
     id: "d3bff27b-bf42-48fb-b540-503010b5adb2",
@@ -1444,8 +1444,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 680,
+      x: 1460,
+      y: 2740,
     },
     name: "BattleField",
     id: "09b06f97-6f64-488e-8ace-f011f92116c8",
@@ -1459,8 +1459,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 640,
-      y: 680,
+      x: 1220,
+      y: 2740,
     },
     name: "BattleField",
     id: "ab2686f1-3e02-45c1-ab19-c6e00c1e9053",
@@ -1474,8 +1474,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 440,
-      y: 580,
+      x: 1020,
+      y: 2640,
     },
     name: "BattleField",
     id: "854a0203-0015-4265-ba94-c09271262856",
@@ -1489,8 +1489,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 440,
-      y: 800,
+      x: 1020,
+      y: 2860,
     },
     name: "MagicBookField",
     id: "4e8f733b-cdf7-4b67-b2e4-bcf24b6a7f34",
@@ -1506,8 +1506,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 600,
-      y: 800,
+      x: 1180,
+      y: 2860,
     },
     name: "BattleField",
     id: "28c5bb85-afed-4b3e-94b4-6e1d40220545",
@@ -1523,8 +1523,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 780,
-      y: 800,
+      x: 1360,
+      y: 2860,
     },
     name: "BattleField",
     id: "b851246e-78ea-47a3-b8ac-5aeba787cdeb",
@@ -1538,8 +1538,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1000,
-      y: 800,
+      x: 1580,
+      y: 2860,
     },
     name: "VillageField",
     id: "97ce3959-09de-4ffe-a298-37e4732e5269",
@@ -1549,8 +1549,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 440,
-      y: 1140,
+      x: 1020,
+      y: 3200,
     },
     name: "BattleField",
     id: "9b9cf06e-1ab1-4983-852f-6bcda421291f",
@@ -1564,8 +1564,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 620,
-      y: 1140,
+      x: 1200,
+      y: 3200,
     },
     name: "TreasureField",
     id: "28f37596-1abd-440b-a398-5784dff127f3",
@@ -1581,8 +1581,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 800,
-      y: 1140,
+      x: 1380,
+      y: 3200,
     },
     name: "BattleField",
     id: "196cdd4c-f5d3-4945-af4d-292d2f6045b2",
@@ -1598,8 +1598,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1060,
-      y: 1140,
+      x: 1640,
+      y: 3200,
     },
     name: "BattleField",
     id: "a728f48e-5334-45b1-96c9-26528956693e",
@@ -1613,8 +1613,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 620,
-      y: 1280,
+      x: 1200,
+      y: 3340,
     },
     name: "BattleField",
     id: "e0312520-47b3-4ce7-a13e-f6a6c4574adf",
@@ -1628,8 +1628,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 620,
-      y: 1420,
+      x: 1200,
+      y: 3480,
     },
     name: "BattleField",
     id: "bddcc986-fd56-4de9-8f1a-bc1185d45138",
@@ -1643,8 +1643,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 800,
-      y: 1420,
+      x: 1380,
+      y: 3480,
     },
     name: "BattleField",
     id: "b48e440d-aff0-436f-bb3e-669232a54165",
@@ -1662,8 +1662,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1000,
-      y: 1420,
+      x: 1580,
+      y: 3480,
     },
     name: "VillageField",
     id: "f3fd7be7-9fc5-4604-bbed-0e0dd3947acd",
@@ -1677,8 +1677,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1200,
-      y: 1420,
+      x: 1780,
+      y: 3480,
     },
     name: "TreasureField",
     id: "c504f16d-bc4c-4746-8ad9-d3f73085e508",
@@ -1692,8 +1692,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 800,
-      y: 1580,
+      x: 1380,
+      y: 3640,
     },
     name: "RedTreasureField",
     id: "912c8abc-c245-4401-b4b1-ddfa882a9891",
@@ -1707,8 +1707,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1200,
-      y: 1580,
+      x: 1780,
+      y: 3640,
     },
     name: "BattleField",
     id: "fea85e6d-98e6-4426-969c-7515e31bd416",
@@ -1724,8 +1724,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1260,
-      y: 1140,
+      x: 1840,
+      y: 3200,
     },
     name: "BattleField",
     id: "a02d45a0-23f1-467d-ae2e-d49983b03017",
@@ -1741,8 +1741,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1260,
-      y: 960,
+      x: 1840,
+      y: 3020,
     },
     name: "VillageField",
     id: "2f8744a9-4acc-40fe-88ee-a5536b881155",
@@ -1752,8 +1752,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1500,
-      y: 1140,
+      x: 2080,
+      y: 3200,
     },
     name: "MagicBookField",
     id: "b6cede47-5721-42d7-8e36-84124cf74471",
@@ -1771,8 +1771,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1500,
-      y: 1320,
+      x: 2080,
+      y: 3380,
     },
     name: "BattleField",
     id: "063e1eae-4be1-4c40-995b-7f1ba1680ae6",
@@ -1786,8 +1786,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1720,
-      y: 1140,
+      x: 2300,
+      y: 3200,
     },
     name: "BattleField",
     id: "9c4c6c3e-61b1-4d59-8eda-95069de694d1",
@@ -1801,8 +1801,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1960,
-      y: 1320,
+      x: 2540,
+      y: 3380,
     },
     name: "BattleField",
     id: "8f0cf0ff-55fa-4e1c-9b17-cf7e5080be99",
@@ -1818,8 +1818,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1960,
-      y: 1140,
+      x: 2540,
+      y: 3200,
     },
     name: "GroceryStoreField",
     id: "ba424a26-dceb-4989-bc59-ca60c07ac6f4",
@@ -1833,8 +1833,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1260,
-      y: 340,
+      x: 1840,
+      y: 2400,
     },
     name: "BattleField",
     id: "345b4115-59c1-4784-a26d-36612e941306",
@@ -1850,8 +1850,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1260,
-      y: 520,
+      x: 1840,
+      y: 2580,
     },
     name: "BattleField",
     id: "0280bdb4-713a-411d-94b3-904894c96d87",
@@ -1865,8 +1865,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1460,
-      y: 520,
+      x: 2040,
+      y: 2580,
     },
     name: "TreasureField",
     id: "86911025-2409-48a8-bd4b-02c832ec32fe",
@@ -1882,8 +1882,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1660,
-      y: 340,
+      x: 2240,
+      y: 2400,
     },
     name: "BattleField",
     id: "9f51bd32-401c-4443-9d2f-a9b6da124f6a",
@@ -1899,8 +1899,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1660,
-      y: 520,
+      x: 2240,
+      y: 2580,
     },
     name: "BattleField",
     id: "cbfbced3-e768-4452-ae48-8b3c1cb3e896",
@@ -1914,8 +1914,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1460,
-      y: 680,
+      x: 2040,
+      y: 2740,
     },
     name: "BattleField",
     id: "4a68df29-62d8-46ee-892f-e7a5633caba7",
@@ -1931,8 +1931,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1640,
-      y: 680,
+      x: 2220,
+      y: 2740,
     },
     name: "MagicBookField",
     id: "4493ff09-e3a6-4a96-8dc4-041e08e3f678",
@@ -1946,8 +1946,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1840,
-      y: 680,
+      x: 2420,
+      y: 2740,
     },
     name: "BattleField",
     id: "64f49973-dc31-4168-b69f-e3657788289f",
@@ -1961,8 +1961,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1480,
-      y: 840,
+      x: 2060,
+      y: 2900,
     },
     name: "TreasureField",
     id: "dd8e70d2-6115-476a-aa29-5bfa44c62683",
@@ -1978,8 +1978,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1800,
-      y: 840,
+      x: 2380,
+      y: 2900,
     },
     name: "BattleField",
     id: "7a91e691-32c1-442f-b7dc-9d180b454f15",
@@ -1997,8 +1997,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2000,
-      y: 840,
+      x: 2580,
+      y: 2900,
     },
     name: "VillageField",
     id: "26eee807-5a9d-41e9-b6eb-1d8e0d60b652",
@@ -2008,8 +2008,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1860,
-      y: 980,
+      x: 2440,
+      y: 3040,
     },
     name: "BattleField",
     id: "f6ce8ee5-05c9-4739-87d4-9e44a955ef3b",
@@ -2023,8 +2023,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1680,
-      y: 980,
+      x: 2260,
+      y: 3040,
     },
     name: "VillageField",
     id: "b6787adb-9696-4936-afeb-72f18494ae65",
@@ -2034,8 +2034,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1500,
-      y: 980,
+      x: 2080,
+      y: 3040,
     },
     name: "BattleField",
     id: "c2857bb7-35ee-4bef-87de-cb9292a21f0c",
@@ -2049,8 +2049,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2120,
-      y: 340,
+      x: 2700,
+      y: 2400,
     },
     name: "CollectMoneyField",
     id: "e67c9235-c555-4a71-81f7-f2582b1f1122",
@@ -2064,8 +2064,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2420,
-      y: 340,
+      x: 3000,
+      y: 2400,
     },
     name: "BattleField",
     id: "672d1e13-48e3-41ce-ab40-58591ff52ea0",
@@ -2079,8 +2079,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2260,
-      y: 1320,
+      x: 2840,
+      y: 3380,
     },
     name: "TreasureField",
     id: "3bfb01e9-a672-4552-91d2-598acd166999",
@@ -2098,8 +2098,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2340,
-      y: 1060,
+      x: 2920,
+      y: 3120,
     },
     name: "VillageField",
     id: "861e2073-a71d-4af6-a11a-68645e626775",
@@ -2113,8 +2113,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2100,
-      y: 1060,
+      x: 2680,
+      y: 3120,
     },
     name: "BattleField",
     id: "47d16a8e-2a10-420e-9e20-fe2ef37c8ca0",
@@ -2128,8 +2128,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2180,
-      y: 840,
+      x: 2760,
+      y: 2900,
     },
     name: "CaveField",
     id: "9a2b2852-378f-4e08-9b3c-54a9e9b00661",
@@ -2139,8 +2139,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2700,
-      y: 340,
+      x: 3280,
+      y: 2400,
     },
     name: "CollectMoneyField",
     id: "4d7c0e69-8d50-43bd-8e53-52523b8d7c78",
@@ -2154,8 +2154,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2740,
-      y: 520,
+      x: 3320,
+      y: 2580,
     },
     name: "BattleField",
     id: "00205110-18fd-4eaa-b79a-047f0254cfba",
@@ -2169,8 +2169,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2680,
-      y: 720,
+      x: 3260,
+      y: 2780,
     },
     name: "BattleField",
     id: "7bdd10b3-07f4-4253-8f97-cca5c550f720",
@@ -2184,8 +2184,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2700,
-      y: 900,
+      x: 3280,
+      y: 2960,
     },
     name: "BattleField",
     id: "3be1159a-ddd0-49f6-9700-b35c9ec25104",
@@ -2203,8 +2203,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1520,
-      y: 1580,
+      x: 2100,
+      y: 3640,
     },
     name: "CollectMoneyField",
     id: "d465b4cd-1158-4af3-9bfd-7c722a297b45",
@@ -2218,8 +2218,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1740,
-      y: 1580,
+      x: 2320,
+      y: 3640,
     },
     name: "BattleField",
     id: "f1fb5a08-5ce9-4561-8aec-4c0f15ffbe98",
@@ -2235,8 +2235,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1740,
-      y: 1740,
+      x: 2320,
+      y: 3800,
     },
     name: "BattleField",
     id: "88129fdb-c3a4-4ece-b790-032f23b52b77",
@@ -2250,8 +2250,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1920,
-      y: 1580,
+      x: 2500,
+      y: 3640,
     },
     name: "TreasureField",
     id: "622b4534-364f-44da-affe-b11cd92a4600",
@@ -2267,8 +2267,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2120,
-      y: 1580,
+      x: 2700,
+      y: 3640,
     },
     name: "BattleField",
     id: "f1d8f588-5ef5-4493-b831-c000495c4f54",
@@ -2284,8 +2284,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2120,
-      y: 1740,
+      x: 2700,
+      y: 3800,
     },
     name: "BattleField",
     id: "bf05b8e6-f290-4d24-829c-af8eb207851e",
@@ -2299,8 +2299,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2340,
-      y: 1580,
+      x: 2920,
+      y: 3640,
     },
     name: "VillageField",
     id: "4d1dce0c-1bb9-4fb9-8e92-50fc2cd2a4ba",
@@ -2314,8 +2314,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2340,
-      y: 1740,
+      x: 2920,
+      y: 3800,
     },
     name: "TreasureField",
     id: "43a2a3ea-c5eb-454f-9781-58018b0607ba",
@@ -2329,8 +2329,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2560,
-      y: 1740,
+      x: 3140,
+      y: 3800,
     },
     name: "BattleField",
     id: "dfe315a6-907e-4657-b919-0d6fbf9ef8f5",
@@ -2346,8 +2346,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2560,
-      y: 1580,
+      x: 3140,
+      y: 3640,
     },
     name: "BattleField",
     id: "dce887cc-a393-450d-b518-40b8ea3aea8b",
@@ -2361,8 +2361,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2560,
-      y: 1440,
+      x: 3140,
+      y: 3500,
     },
     name: "WeaponStoreField",
     id: "9de086ae-bc21-4162-9f82-eb8ace196d52",
@@ -2376,8 +2376,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2260,
-      y: 1440,
+      x: 2840,
+      y: 3500,
     },
     name: "BattleField",
     id: "15b7a6eb-5766-4587-93e3-feee2e270362",
@@ -2391,8 +2391,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2440,
-      y: 900,
+      x: 3020,
+      y: 2960,
     },
     name: "VillageField",
     id: "4794f3ec-c5bb-48e6-825d-f34cbd79db5b",
@@ -2402,8 +2402,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2900,
-      y: 900,
+      x: 3480,
+      y: 2960,
     },
     name: "MagicStoreField",
     id: "da3247b1-37ff-4ffd-862f-b55c72f5ffe6",
@@ -2417,8 +2417,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2900,
-      y: 1020,
+      x: 3480,
+      y: 3080,
     },
     name: "TreasureField",
     id: "97851eea-17de-41dc-9860-7d48c11d32cd",
@@ -2432,8 +2432,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2700,
-      y: 1140,
+      x: 3280,
+      y: 3200,
     },
     name: "BattleField",
     id: "10ba851c-6d3a-4750-8a51-4be2eb98c9b5",
@@ -2447,8 +2447,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2900,
-      y: 1140,
+      x: 3480,
+      y: 3200,
     },
     name: "BattleField",
     id: "fba9a176-5a8a-4239-85d9-dc8e979fd066",
@@ -2466,8 +2466,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2700,
-      y: 1320,
+      x: 3280,
+      y: 3380,
     },
     name: "BattleField",
     id: "41dcc5e4-7b29-493b-a840-11c7f23c6278",
@@ -2481,8 +2481,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2900,
-      y: 1320,
+      x: 3480,
+      y: 3380,
     },
     name: "MagicBookField",
     id: "1d874c6c-d287-4c9f-be8a-d6dbbc2f1a35",
@@ -2496,8 +2496,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2720,
-      y: 1740,
+      x: 3300,
+      y: 3800,
     },
     name: "TreasureField",
     id: "e280dff2-8d0b-471d-bd41-a0dadb5953b3",
@@ -2513,8 +2513,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2720,
-      y: 1900,
+      x: 3300,
+      y: 3960,
     },
     name: "BattleField",
     id: "5860de9d-4406-4918-b903-d7a674c468ea",
@@ -2528,8 +2528,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2720,
-      y: 2060,
+      x: 3300,
+      y: 4120,
     },
     name: "BattleField",
     id: "76e06435-bf9b-4c2c-9ad0-9f8fe6a16459",
@@ -2545,8 +2545,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2900,
-      y: 1740,
+      x: 3480,
+      y: 3800,
     },
     name: "JobStoreField",
     id: "8d9ee0ae-a302-4624-91d5-feea8b6c3484",
@@ -2560,8 +2560,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2900,
-      y: 2060,
+      x: 3480,
+      y: 4120,
     },
     name: "BattleField",
     id: "8c3ef819-dd67-433e-a49e-8173f7d2f7d5",
@@ -2577,8 +2577,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3200,
-      y: 2060,
+      x: 3780,
+      y: 4120,
     },
     name: "ChruchField",
     id: "ecfc585b-dd78-4b06-81f2-b3d061d51cbf",
@@ -2594,8 +2594,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3080,
-      y: 2360,
+      x: 3660,
+      y: 4420,
     },
     name: "TreasureField",
     id: "7a25c5b3-59df-423d-b33f-d0bfe00116ab",
@@ -2609,8 +2609,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3440,
-      y: 2060,
+      x: 4020,
+      y: 4120,
     },
     name: "BattleField",
     id: "3ff4445c-8f79-48d0-b520-cb5671f07e54",
@@ -2624,8 +2624,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3300,
-      y: 2440,
+      x: 3880,
+      y: 4500,
     },
     name: "BattleField",
     id: "90df07d5-d5b5-4524-95ff-4a076f510a6a",
@@ -2639,8 +2639,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3500,
-      y: 2380,
+      x: 4080,
+      y: 4440,
     },
     name: "BattleField",
     id: "a065eb39-be8a-4494-9f10-56a7781f8464",
@@ -2656,8 +2656,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1920,
-      y: 1440,
+      x: 2500,
+      y: 3500,
     },
     name: "VillageField",
     id: "ac14c242-968e-4e04-b2e8-7cd0322c0d86",
@@ -2667,8 +2667,8 @@ const europeVertices: Vertex[] = [
   },
   {
     position: {
-      x: 560,
-      y: 140,
+      x: 1140,
+      y: 2200,
     },
     name: "WorldTransferField",
     id: "34c8cd25-57f1-44ac-a407-f185f1cfe6c9",
@@ -2680,8 +2680,8 @@ const europeVertices: Vertex[] = [
 const russiaVertices: Vertex[] = [
   {
     position: {
-      x: 6340,
-      y: 2460,
+      x: 6920,
+      y: 4520,
     },
     name: "BattleField",
     id: "758f18c4-ba05-472e-9eda-5e4c54ab3fae",
@@ -2697,8 +2697,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6160,
-      y: 2460,
+      x: 6740,
+      y: 4520,
     },
     name: "BattleField",
     id: "259c8af4-fc8e-4278-bc6d-85cbb6a6ffd5",
@@ -2712,8 +2712,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6520,
-      y: 2460,
+      x: 7100,
+      y: 4520,
     },
     name: "BattleField",
     id: "0a2e0f08-4ea6-4b41-a2a5-4e69d1a35aff",
@@ -2727,8 +2727,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6160,
-      y: 2260,
+      x: 6740,
+      y: 4320,
     },
     name: "VillageField",
     id: "418029cb-867e-4b21-8bfc-1f12d0740f77",
@@ -2742,8 +2742,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6520,
-      y: 2260,
+      x: 7100,
+      y: 4320,
     },
     name: "BattleField",
     id: "1b0e45cf-8a8d-493f-9231-dc1948f5e1a9",
@@ -2759,8 +2759,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6520,
-      y: 2060,
+      x: 7100,
+      y: 4120,
     },
     name: "TreasureField",
     id: "fbff7041-073b-4049-b678-e5de6702546f",
@@ -2774,8 +2774,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6520,
-      y: 1880,
+      x: 7100,
+      y: 3940,
     },
     name: "BattleField",
     id: "a56ded0e-45f0-4f53-9bd0-fb28c763c07e",
@@ -2789,8 +2789,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6160,
-      y: 1880,
+      x: 6740,
+      y: 3940,
     },
     name: "BattleField",
     id: "27ad55b1-b9d6-4610-a579-5c7a4026e156",
@@ -2804,8 +2804,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5940,
-      y: 1880,
+      x: 6520,
+      y: 3940,
     },
     name: "TreasureField",
     id: "3153c21a-9b99-48f7-a9eb-d84c15adc734",
@@ -2821,8 +2821,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5940,
-      y: 2060,
+      x: 6520,
+      y: 4120,
     },
     name: "BattleField",
     id: "9bec4ce4-612b-4afa-9243-1cd62ecce0cb",
@@ -2836,8 +2836,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5940,
-      y: 1680,
+      x: 6520,
+      y: 3740,
     },
     name: "BattleField",
     id: "33cae4c0-5f4e-42b0-bc71-71e3a57c6cbf",
@@ -2851,8 +2851,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5700,
-      y: 1680,
+      x: 6280,
+      y: 3740,
     },
     name: "BattleField",
     id: "705188af-98dd-4cc4-bb00-a9ba37445cb2",
@@ -2868,8 +2868,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5700,
-      y: 2060,
+      x: 6280,
+      y: 4120,
     },
     name: "BattleField",
     id: "be370898-db0f-4e36-893b-48e6b216186c",
@@ -2883,8 +2883,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5420,
-      y: 1680,
+      x: 6000,
+      y: 3740,
     },
     name: "BattleField",
     id: "3c6d04ca-3c84-4291-ad77-6a5ea3c3ba5e",
@@ -2900,8 +2900,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5200,
-      y: 1680,
+      x: 5780,
+      y: 3740,
     },
     name: "BattleField",
     id: "f9bc4b6e-9ad9-4f94-a903-0f61194c9f04",
@@ -2915,8 +2915,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5440,
-      y: 1280,
+      x: 6020,
+      y: 3340,
     },
     name: "TreasureField",
     id: "cf7c8c32-3ad2-4481-a7b3-37a5f3c9bc07",
@@ -2934,8 +2934,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5000,
-      y: 1680,
+      x: 5580,
+      y: 3740,
     },
     name: "MagicBookField",
     id: "d0e7bf3f-c3e2-4bf5-bfeb-2e698a4d8cbc",
@@ -2953,8 +2953,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4720,
-      y: 1680,
+      x: 5300,
+      y: 3740,
     },
     name: "VillageField",
     id: "a099963b-adef-4e2b-8607-fffc3332cdcc",
@@ -2964,8 +2964,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5000,
-      y: 1980,
+      x: 5580,
+      y: 4040,
     },
     name: "BattleField",
     id: "2f66e572-585f-4adc-883e-2258473c7986",
@@ -2979,8 +2979,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4720,
-      y: 1980,
+      x: 5300,
+      y: 4040,
     },
     name: "BattleField",
     id: "e6f93d1d-b061-4b74-bbc1-19590dbc9ff1",
@@ -2994,8 +2994,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4720,
-      y: 1820,
+      x: 5300,
+      y: 3880,
     },
     name: "BattleField",
     id: "5cf00cea-67c3-4f41-9f44-7817faafb147",
@@ -3009,8 +3009,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4500,
-      y: 1820,
+      x: 5080,
+      y: 3880,
     },
     name: "VillageField",
     id: "5e6aa939-1e28-4867-b331-a21e4ccbc6a6",
@@ -3024,8 +3024,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4300,
-      y: 1820,
+      x: 4880,
+      y: 3880,
     },
     name: "BattleField",
     id: "73e35429-9a56-4a9f-8bb5-d3fda80b2e98",
@@ -3043,8 +3043,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4140,
-      y: 1820,
+      x: 4720,
+      y: 3880,
     },
     name: "TreasureField",
     id: "a4fa53ee-df3e-4961-93e6-693103ca952b",
@@ -3058,8 +3058,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3980,
-      y: 1820,
+      x: 4560,
+      y: 3880,
     },
     name: "JobStoreField",
     id: "9e33d151-1869-441e-b700-13bc56a6d8be",
@@ -3073,8 +3073,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3980,
-      y: 1980,
+      x: 4560,
+      y: 4040,
     },
     name: "BattleField",
     id: "7a782a62-c7f8-4c24-a1d0-9fcf8c0013c9",
@@ -3088,8 +3088,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4300,
-      y: 1980,
+      x: 4880,
+      y: 4040,
     },
     name: "MagicBookField",
     id: "61e8bd9e-415d-4ec7-9402-49bca140d07c",
@@ -3103,8 +3103,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3420,
-      y: 1140,
+      x: 4000,
+      y: 3200,
     },
     name: "BattleField",
     id: "d9950003-e4a0-411b-b31a-aefcb68e8f50",
@@ -3122,8 +3122,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3420,
-      y: 1020,
+      x: 4000,
+      y: 3080,
     },
     name: "BattleField",
     id: "dd46fc17-7d67-425a-9bc1-bb431168e30a",
@@ -3139,8 +3139,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3260,
-      y: 1020,
+      x: 3840,
+      y: 3080,
     },
     name: "BattleField",
     id: "5799d54d-fa84-490e-83ab-7a5cf80936e5",
@@ -3154,8 +3154,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3080,
-      y: 1020,
+      x: 3660,
+      y: 3080,
     },
     name: "VillageField",
     id: "8263da02-3ee6-470b-b563-8d07200a65d8",
@@ -3165,8 +3165,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3420,
-      y: 880,
+      x: 4000,
+      y: 2940,
     },
     name: "BattleField",
     id: "911b2d82-fb4e-45fc-8e7a-0c7fa10b86dc",
@@ -3180,8 +3180,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3600,
-      y: 880,
+      x: 4180,
+      y: 2940,
     },
     name: "TreasureField",
     id: "5ce9c87a-75eb-462c-9d99-9cc02800d0f3",
@@ -3197,8 +3197,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3600,
-      y: 1140,
+      x: 4180,
+      y: 3200,
     },
     name: "BattleField",
     id: "20bbac95-c132-42fa-9c65-9b065078cc61",
@@ -3212,8 +3212,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3920,
-      y: 880,
+      x: 4500,
+      y: 2940,
     },
     name: "RedTreasureField",
     id: "4de1e84c-52ff-4a1c-9ebb-f65b0b5407bf",
@@ -3229,8 +3229,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4060,
-      y: 880,
+      x: 4640,
+      y: 2940,
     },
     name: "TreasureField",
     id: "9f57289d-af63-462d-ace9-e9f2afe6f7fc",
@@ -3244,8 +3244,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4200,
-      y: 880,
+      x: 4780,
+      y: 2940,
     },
     name: "BattleField",
     id: "426f3524-4f7e-45a6-a35a-2f1a3a2f5e8e",
@@ -3261,8 +3261,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4200,
-      y: 1020,
+      x: 4780,
+      y: 3080,
     },
     name: "RedTreasureField",
     id: "05085a9a-dd9c-4bbd-b50a-8193a66ff43f",
@@ -3276,8 +3276,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3920,
-      y: 1020,
+      x: 4500,
+      y: 3080,
     },
     name: "BattleField",
     id: "fa27c588-eadd-415f-83cd-ffe16d01bfa8",
@@ -3291,8 +3291,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3420,
-      y: 1380,
+      x: 4000,
+      y: 3440,
     },
     name: "TreasureField",
     id: "52bd642a-52d4-4d26-9867-f1ad8fe5c497",
@@ -3308,8 +3308,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3420,
-      y: 1560,
+      x: 4000,
+      y: 3620,
     },
     name: "BattleField",
     id: "88b7ae1c-c237-434d-9a73-9b97dd884eb6",
@@ -3323,8 +3323,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3740,
-      y: 1380,
+      x: 4320,
+      y: 3440,
     },
     name: "BattleField",
     id: "80d9e887-3287-442e-bf52-cc061e6c2f18",
@@ -3340,8 +3340,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3580,
-      y: 1560,
+      x: 4160,
+      y: 3620,
     },
     name: "BattleField",
     id: "346c87b6-eea8-423d-8432-0dc1e4a206de",
@@ -3355,8 +3355,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3740,
-      y: 1560,
+      x: 4320,
+      y: 3620,
     },
     name: "BattleField",
     id: "b8e82c18-4aba-4a00-96e9-ab7f83744313",
@@ -3372,8 +3372,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3880,
-      y: 1380,
+      x: 4460,
+      y: 3440,
     },
     name: "BattleField",
     id: "ece3c926-944e-4ce0-89e4-da8165ccb26e",
@@ -3387,8 +3387,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3920,
-      y: 1220,
+      x: 4500,
+      y: 3280,
     },
     name: "VillageField",
     id: "e5c88916-3f77-4776-a647-97294072a6a8",
@@ -3402,8 +3402,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4180,
-      y: 1260,
+      x: 4760,
+      y: 3320,
     },
     name: "BattleField",
     id: "eb799bba-cec7-41f2-a956-49f35e5ce948",
@@ -3417,8 +3417,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4220,
-      y: 1120,
+      x: 4800,
+      y: 3180,
     },
     name: "TreasureField",
     id: "d88978a5-8235-4930-8006-cbaaa7246926",
@@ -3432,8 +3432,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4380,
-      y: 1100,
+      x: 4960,
+      y: 3160,
     },
     name: "BattleField",
     id: "154cff4a-48c8-4a6d-b2c4-ada33b7ac5ea",
@@ -3447,8 +3447,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4400,
-      y: 880,
+      x: 4980,
+      y: 2940,
     },
     name: "BattleField",
     id: "ed48060c-bbbe-40cd-8149-1b9ad26985a5",
@@ -3464,8 +3464,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4300,
-      y: 1580,
+      x: 4880,
+      y: 3640,
     },
     name: "BattleField",
     id: "0a158e23-9084-44d3-be75-d3d981a3b89e",
@@ -3481,8 +3481,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3920,
-      y: 1560,
+      x: 4500,
+      y: 3620,
     },
     name: "TreasureField",
     id: "f26dd27e-90a4-4991-8625-efbfa68bb95e",
@@ -3496,8 +3496,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4120,
-      y: 1580,
+      x: 4700,
+      y: 3640,
     },
     name: "BattleField",
     id: "c10a973e-397e-4da8-974c-450698946144",
@@ -3513,8 +3513,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4120,
-      y: 1420,
+      x: 4700,
+      y: 3480,
     },
     name: "VillageField",
     id: "fae906b5-cf1c-4945-af44-8e807c89ca1d",
@@ -3524,8 +3524,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4300,
-      y: 1420,
+      x: 4880,
+      y: 3480,
     },
     name: "ChruchField",
     id: "3095cb04-8cd1-40b9-b288-086b455cb244",
@@ -3539,8 +3539,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4620,
-      y: 1440,
+      x: 5200,
+      y: 3500,
     },
     name: "TreasureField",
     id: "a75696bc-e5d2-4734-9d90-fb6b158a9c14",
@@ -3556,8 +3556,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4660,
-      y: 1240,
+      x: 5240,
+      y: 3300,
     },
     name: "BattleField",
     id: "41ee7858-3646-42d2-9d9c-95b9e04ee573",
@@ -3573,8 +3573,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4640,
-      y: 1060,
+      x: 5220,
+      y: 3120,
     },
     name: "TreasureField",
     id: "f3ea78db-43cb-40a7-9cb5-b040fa32f7af",
@@ -3590,8 +3590,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4540,
-      y: 880,
+      x: 5120,
+      y: 2940,
     },
     name: "WeaponStoreField",
     id: "f0b76c36-2d32-43df-a7d8-4d5ab7aab14a",
@@ -3607,8 +3607,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4680,
-      y: 880,
+      x: 5260,
+      y: 2940,
     },
     name: "BattleField",
     id: "ae494116-38d4-44dc-af55-b764863fda18",
@@ -3624,8 +3624,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4480,
-      y: 1240,
+      x: 5060,
+      y: 3300,
     },
     name: "BattleField",
     id: "00ec693d-eb9c-4b6e-9009-b1940e9050e4",
@@ -3639,8 +3639,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4860,
-      y: 1060,
+      x: 5440,
+      y: 3120,
     },
     name: "BattleField",
     id: "f50d1f46-3fa4-4569-8983-7e08c7dc74df",
@@ -3656,8 +3656,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4820,
-      y: 1280,
+      x: 5400,
+      y: 3340,
     },
     name: "BattleField",
     id: "7eb250aa-3c1d-46b3-9d80-d0d9ee6addb6",
@@ -3673,8 +3673,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4860,
-      y: 1440,
+      x: 5440,
+      y: 3500,
     },
     name: "TreasureField",
     id: "6bac48a6-24f0-4bd6-979b-75878362c431",
@@ -3688,8 +3688,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5000,
-      y: 1480,
+      x: 5580,
+      y: 3540,
     },
     name: "BattleField",
     id: "83aaf1d8-8ca9-447e-964f-8fcd977577f8",
@@ -3703,8 +3703,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5040,
-      y: 1280,
+      x: 5620,
+      y: 3340,
     },
     name: "GroceryStoreField",
     id: "a7b7a9f4-721d-441e-8ba0-61f1578bde79",
@@ -3720,8 +3720,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5240,
-      y: 1280,
+      x: 5820,
+      y: 3340,
     },
     name: "BattleField",
     id: "26db1bd9-4fa9-48e1-baf5-72a5002d7999",
@@ -3737,8 +3737,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4860,
-      y: 920,
+      x: 5440,
+      y: 2980,
     },
     name: "MagicBookField",
     id: "4be53e84-b53d-4ccd-b561-423e8967e8e1",
@@ -3752,8 +3752,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5060,
-      y: 920,
+      x: 5640,
+      y: 2980,
     },
     name: "VillageField",
     id: "ce2111b6-ba86-467d-8bd1-227263a11185",
@@ -3767,8 +3767,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5240,
-      y: 920,
+      x: 5820,
+      y: 2980,
     },
     name: "BattleField",
     id: "4ad099f7-b44f-40cd-8b45-3366683f7e80",
@@ -3784,8 +3784,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5440,
-      y: 920,
+      x: 6020,
+      y: 2980,
     },
     name: "MagicStoreField",
     id: "18d56c6d-a830-4f18-a3a2-0b54523a4f71",
@@ -3799,8 +3799,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5440,
-      y: 1100,
+      x: 6020,
+      y: 3160,
     },
     name: "BattleField",
     id: "928c874c-8000-4dbe-94ff-e74e89e24ba7",
@@ -3816,8 +3816,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5780,
-      y: 1100,
+      x: 6360,
+      y: 3160,
     },
     name: "BattleField",
     id: "dcdb4871-3b5e-49c0-98c8-cf4f724da90c",
@@ -3835,8 +3835,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5600,
-      y: 1280,
+      x: 6180,
+      y: 3340,
     },
     name: "BattleField",
     id: "32881a6e-e91c-42b7-ad7b-80aa76a034f9",
@@ -3850,8 +3850,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5780,
-      y: 1280,
+      x: 6360,
+      y: 3340,
     },
     name: "RedTreasureField",
     id: "b31defe8-e0cf-4b3b-bf8b-d5357410230b",
@@ -3867,8 +3867,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5780,
-      y: 880,
+      x: 6360,
+      y: 2940,
     },
     name: "BattleField",
     id: "fbe34faa-f385-4dec-a65e-c2047207f357",
@@ -3882,8 +3882,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5780,
-      y: 660,
+      x: 6360,
+      y: 2720,
     },
     name: "MagicBookField",
     id: "d1eb8310-da9b-4686-ba53-4a350c879483",
@@ -3897,8 +3897,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5940,
-      y: 660,
+      x: 6520,
+      y: 2720,
     },
     name: "BattleField",
     id: "8142bc4e-6005-44c6-a932-8dbf504a9a6d",
@@ -3912,8 +3912,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5940,
-      y: 380,
+      x: 6520,
+      y: 2440,
     },
     name: "TreasureField",
     id: "f830ab25-4d38-41c6-94f0-c666a579898e",
@@ -3929,8 +3929,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6120,
-      y: 380,
+      x: 6700,
+      y: 2440,
     },
     name: "TreasureField",
     id: "0a83357a-3737-4f23-b262-222f10e6313f",
@@ -3944,8 +3944,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5700,
-      y: 380,
+      x: 6280,
+      y: 2440,
     },
     name: "BattleField",
     id: "9ad0ccea-3959-4374-8cd5-87eb25d049c8",
@@ -3959,8 +3959,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5440,
-      y: 380,
+      x: 6020,
+      y: 2440,
     },
     name: "BattleField",
     id: "4ab803fa-af4e-485f-b9f9-ed40c7b5168e",
@@ -3976,8 +3976,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5440,
-      y: 520,
+      x: 6020,
+      y: 2580,
     },
     name: "BattleField",
     id: "190d20c9-43d5-4f9f-9091-38458143c741",
@@ -3991,8 +3991,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5040,
-      y: 520,
+      x: 5620,
+      y: 2580,
     },
     name: "BattleField",
     id: "f8932ec5-3f1b-4544-967c-fdacceeedf76",
@@ -4006,8 +4006,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5040,
-      y: 380,
+      x: 5620,
+      y: 2440,
     },
     name: "TreasureField",
     id: "ead2be82-0949-4b6b-8f0a-395acf3d68d5",
@@ -4023,8 +4023,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5240,
-      y: 380,
+      x: 5820,
+      y: 2440,
     },
     name: "MagicBookField",
     id: "070f4748-dd4a-4833-aee7-e681d14f2208",
@@ -4038,8 +4038,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4880,
-      y: 380,
+      x: 5460,
+      y: 2440,
     },
     name: "CollectMoneyField",
     id: "95029cc6-df57-4a7c-bb9b-d35d992b5e0d",
@@ -4053,8 +4053,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4880,
-      y: 520,
+      x: 5460,
+      y: 2580,
     },
     name: "BattleField",
     id: "2ec3f1d2-ed0a-42ad-8493-ef8446e9dde2",
@@ -4068,8 +4068,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4880,
-      y: 660,
+      x: 5460,
+      y: 2720,
     },
     name: "TreasureField",
     id: "50dc5469-5f68-4fe8-9755-6b5b95577101",
@@ -4083,8 +4083,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4720,
-      y: 660,
+      x: 5300,
+      y: 2720,
     },
     name: "VillageField",
     id: "4c947556-8d0e-4d79-a24a-416386f2e40c",
@@ -4098,8 +4098,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5960,
-      y: 1100,
+      x: 6540,
+      y: 3160,
     },
     name: "BattleField",
     id: "fcea56f3-edd8-4d2f-8b7b-1d703cda68cb",
@@ -4113,8 +4113,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6120,
-      y: 1100,
+      x: 6700,
+      y: 3160,
     },
     name: "BattleField",
     id: "e4abf82c-a900-4dac-8776-36802dccbb3d",
@@ -4128,8 +4128,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6300,
-      y: 1100,
+      x: 6880,
+      y: 3160,
     },
     name: "BattleField",
     id: "26937dd4-6530-4cd5-bb3a-7b7f065c2ad5",
@@ -4143,8 +4143,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6300,
-      y: 1280,
+      x: 6880,
+      y: 3340,
     },
     name: "BattleField",
     id: "75ab1285-3a82-4361-b40c-3a41bbbd9d7b",
@@ -4158,8 +4158,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6500,
-      y: 1280,
+      x: 7080,
+      y: 3340,
     },
     name: "BattleField",
     id: "f8171b03-884a-4214-9d51-77c0e065f83f",
@@ -4173,8 +4173,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6700,
-      y: 1280,
+      x: 7280,
+      y: 3340,
     },
     name: "TreasureField",
     id: "85768a72-4f25-4fe5-8ab3-35ee315a586a",
@@ -4190,8 +4190,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6700,
-      y: 1480,
+      x: 7280,
+      y: 3540,
     },
     name: "BattleField",
     id: "342e3557-7a07-4dc1-8510-54ef022461ee",
@@ -4205,8 +4205,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6700,
-      y: 1680,
+      x: 7280,
+      y: 3740,
     },
     name: "BattleField",
     id: "4f8727a8-167b-4ef5-8130-6981c6b381cb",
@@ -4220,8 +4220,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6900,
-      y: 1680,
+      x: 7480,
+      y: 3740,
     },
     name: "VillageField",
     id: "ac631c99-139e-449d-9439-d5e991b9264f",
@@ -4231,8 +4231,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6700,
-      y: 1100,
+      x: 7280,
+      y: 3160,
     },
     name: "BattleField",
     id: "e063e854-de3b-4bb9-b2be-b381faa23eaa",
@@ -4246,8 +4246,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6920,
-      y: 1100,
+      x: 7500,
+      y: 3160,
     },
     name: "BattleField",
     id: "a5d495c7-c0f4-4598-841b-d57271d3a4bc",
@@ -4261,8 +4261,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7140,
-      y: 1100,
+      x: 7720,
+      y: 3160,
     },
     name: "MagicBookField",
     id: "e04306ed-97b6-46c5-98ec-4cbdb66ab497",
@@ -4276,8 +4276,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7140,
-      y: 1280,
+      x: 7720,
+      y: 3340,
     },
     name: "BattleField",
     id: "101e444e-6b17-48a4-b752-0e25a15ea17d",
@@ -4291,8 +4291,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7420,
-      y: 1300,
+      x: 8000,
+      y: 3360,
     },
     name: "TreasureField",
     id: "054360d8-c7a9-4aca-b293-74d8ff1dceda",
@@ -4306,8 +4306,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7700,
-      y: 1280,
+      x: 8280,
+      y: 3340,
     },
     name: "BattleField",
     id: "feaaa359-1643-4104-8fbf-ee877cbc3f34",
@@ -4321,8 +4321,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7720,
-      y: 960,
+      x: 8300,
+      y: 3020,
     },
     name: "TreasureField",
     id: "5275a5cc-3646-4504-8c98-10ad9d4335c1",
@@ -4338,8 +4338,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7460,
-      y: 960,
+      x: 8040,
+      y: 3020,
     },
     name: "BattleField",
     id: "efde90c9-5358-498f-ac87-8e192d9aab99",
@@ -4353,8 +4353,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6300,
-      y: 380,
+      x: 6880,
+      y: 2440,
     },
     name: "BattleField",
     id: "8778afea-3860-4b6f-b0e9-c6452cd45cd6",
@@ -4368,8 +4368,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6540,
-      y: 380,
+      x: 7120,
+      y: 2440,
     },
     name: "TreasureField",
     id: "c8029b99-b3ec-4a72-a8b9-b2b0b07033f2",
@@ -4383,8 +4383,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6500,
-      y: 500,
+      x: 7080,
+      y: 2560,
     },
     name: "BattleField",
     id: "ca7774a9-73cf-4514-b00e-047fd6629591",
@@ -4398,8 +4398,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6840,
-      y: 500,
+      x: 7420,
+      y: 2560,
     },
     name: "CollectMoneyField",
     id: "9443ca65-8362-4c9b-a4e9-83586b4174ad",
@@ -4413,8 +4413,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6780,
-      y: 640,
+      x: 7360,
+      y: 2700,
     },
     name: "BattleField",
     id: "fad32c7b-dafb-4f46-8b7f-3b0d5764abf8",
@@ -4428,8 +4428,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7160,
-      y: 640,
+      x: 7740,
+      y: 2700,
     },
     name: "CollectMoneyField",
     id: "eab05b24-e29e-4494-bdc7-dbfcb4fd7782",
@@ -4443,8 +4443,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7100,
-      y: 780,
+      x: 7680,
+      y: 2840,
     },
     name: "BattleField",
     id: "4f495641-ada3-4683-b1dd-ecdaddeab7b2",
@@ -4458,8 +4458,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7460,
-      y: 780,
+      x: 8040,
+      y: 2840,
     },
     name: "CollectMoneyField",
     id: "560942d6-6ae0-4a08-9484-66779ca0e442",
@@ -4473,8 +4473,8 @@ const russiaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5960,
-      y: 1280,
+      x: 6540,
+      y: 3340,
     },
     name: "WorldTransferField",
     id: "d8cc33e4-38ca-432b-abec-778a19553f21",
@@ -4486,8 +4486,8 @@ const russiaVertices: Vertex[] = [
 const northAmericaVertices: Vertex[] = [
   {
     position: {
-      x: 7720,
-      y: 760,
+      x: 8300,
+      y: 2820,
     },
     name: "BattleField",
     id: "4ba86761-2984-4c1c-bc69-c090e4a14920",
@@ -4501,8 +4501,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7960,
-      y: 760,
+      x: 8540,
+      y: 2820,
     },
     name: "BattleField",
     id: "c8be14cd-1366-41bb-b6f9-460890c301da",
@@ -4516,8 +4516,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8180,
-      y: 760,
+      x: 8760,
+      y: 2820,
     },
     name: "TreasureField",
     id: "149099a0-630d-4804-993d-70ae09b85e3e",
@@ -4531,8 +4531,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8180,
-      y: 960,
+      x: 8760,
+      y: 3020,
     },
     name: "BattleField",
     id: "f73c1190-388e-4368-b063-7902f3bf8060",
@@ -4548,8 +4548,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7960,
-      y: 960,
+      x: 8540,
+      y: 3020,
     },
     name: "BattleField",
     id: "1a7df359-78df-4b16-82cd-0f27fb981351",
@@ -4563,8 +4563,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7960,
-      y: 1280,
+      x: 8540,
+      y: 3340,
     },
     name: "BattleField",
     id: "9dbd73e9-1a6b-4b94-839b-19c29b66a061",
@@ -4578,8 +4578,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8180,
-      y: 1280,
+      x: 8760,
+      y: 3340,
     },
     name: "TreasureField",
     id: "fe9f222d-6241-4e47-b6cb-53ccb2347042",
@@ -4595,8 +4595,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8180,
-      y: 1120,
+      x: 8760,
+      y: 3180,
     },
     name: "BattleField",
     id: "aa70af3b-dffa-485d-826a-a0bda1ed2af3",
@@ -4610,8 +4610,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8400,
-      y: 1280,
+      x: 8980,
+      y: 3340,
     },
     name: "BattleField",
     id: "d4faf04a-0710-4745-8e25-31d1411d4eba",
@@ -4625,8 +4625,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8600,
-      y: 1280,
+      x: 9180,
+      y: 3340,
     },
     name: "BattleField",
     id: "f7b437ff-067b-4b40-b0fa-49bc34211cc8",
@@ -4640,8 +4640,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8820,
-      y: 1280,
+      x: 9400,
+      y: 3340,
     },
     name: "MagicBookField",
     id: "e895fb08-fcfb-4ab3-bf46-278343fbc028",
@@ -4657,8 +4657,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8840,
-      y: 1480,
+      x: 9420,
+      y: 3540,
     },
     name: "BattleField",
     id: "7231f26f-1906-4bf2-bdde-52b5abd1266b",
@@ -4672,8 +4672,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8860,
-      y: 1100,
+      x: 9440,
+      y: 3160,
     },
     name: "BattleField",
     id: "a9d3f4f8-c713-4506-b90e-5586792fc904",
@@ -4687,8 +4687,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9060,
-      y: 1100,
+      x: 9640,
+      y: 3160,
     },
     name: "BattleField",
     id: "d6ea39b0-e83b-48ee-bedd-3191ce747cf2",
@@ -4704,8 +4704,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9060,
-      y: 820,
+      x: 9640,
+      y: 2880,
     },
     name: "CollectMoneyField",
     id: "1492d2de-a2ae-4fa8-82b5-16b186163e0b",
@@ -4719,8 +4719,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9080,
-      y: 1480,
+      x: 9660,
+      y: 3540,
     },
     name: "BattleField",
     id: "b1755364-db98-4512-9074-662437d4d094",
@@ -4734,8 +4734,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9240,
-      y: 1100,
+      x: 9820,
+      y: 3160,
     },
     name: "ChruchField",
     id: "4ed96b84-16e5-42ce-86ea-c46661298638",
@@ -4751,8 +4751,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9440,
-      y: 1100,
+      x: 10020,
+      y: 3160,
     },
     name: "BattleField",
     id: "9c015b83-a691-4051-b003-2f0c565d943d",
@@ -4766,8 +4766,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9640,
-      y: 1100,
+      x: 10220,
+      y: 3160,
     },
     name: "BattleField",
     id: "380d11df-4522-4b63-bbf8-b57dfe562e44",
@@ -4783,8 +4783,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9640,
-      y: 1280,
+      x: 10220,
+      y: 3340,
     },
     name: "BattleField",
     id: "5a77623c-76e3-4503-83a7-81077ece764b",
@@ -4800,8 +4800,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9240,
-      y: 1280,
+      x: 9820,
+      y: 3340,
     },
     name: "TreasureField",
     id: "916c14e4-ea15-4339-9929-95a3cbbd1448",
@@ -4815,8 +4815,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9080,
-      y: 1640,
+      x: 9660,
+      y: 3700,
     },
     name: "BattleField",
     id: "e54d56c5-0b24-4799-923b-f5ef4cb16ddb",
@@ -4830,8 +4830,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9300,
-      y: 1640,
+      x: 9880,
+      y: 3700,
     },
     name: "BattleField",
     id: "b165e202-8b17-47ba-b806-fc56a2668135",
@@ -4845,8 +4845,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9820,
-      y: 1100,
+      x: 10400,
+      y: 3160,
     },
     name: "MagicStoreField",
     id: "e73c10f9-75ae-4309-aa1e-7c5a5bc2bb07",
@@ -4860,8 +4860,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9640,
-      y: 1440,
+      x: 10220,
+      y: 3500,
     },
     name: "TreasureField",
     id: "f43a0569-9c47-42ab-8c1f-2338d143de66",
@@ -4875,8 +4875,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9820,
-      y: 1440,
+      x: 10400,
+      y: 3500,
     },
     name: "BattleField",
     id: "45b9a967-380c-47db-8723-24fa81c8b9d5",
@@ -4892,8 +4892,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9300,
-      y: 1820,
+      x: 9880,
+      y: 3880,
     },
     name: "BattleField",
     id: "2734c943-2057-4493-8681-5a1a2002819c",
@@ -4911,8 +4911,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9540,
-      y: 1820,
+      x: 10120,
+      y: 3880,
     },
     name: "WorldTransferField",
     id: "82c6c443-887f-4942-9432-58b218aeaf09",
@@ -4926,8 +4926,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9800,
-      y: 1820,
+      x: 10380,
+      y: 3880,
     },
     name: "GroceryStoreField",
     id: "739a26fd-a986-4ee8-9730-ce58740c3b9e",
@@ -4943,8 +4943,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10020,
-      y: 1440,
+      x: 10600,
+      y: 3500,
     },
     name: "BattleField",
     id: "5e12c82e-f03c-4201-ab8d-5f851d3f9935",
@@ -4960,8 +4960,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10020,
-      y: 1820,
+      x: 10600,
+      y: 3880,
     },
     name: "BattleField",
     id: "0413aedb-0d34-4c9a-bf60-cd0fc4ee8923",
@@ -4977,8 +4977,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9080,
-      y: 1820,
+      x: 9660,
+      y: 3880,
     },
     name: "BattleField",
     id: "c3339d60-ef80-4f9a-80b8-277b8fe5f1b5",
@@ -4992,8 +4992,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8860,
-      y: 1820,
+      x: 9440,
+      y: 3880,
     },
     name: "VillageField",
     id: "54cc7e66-22d9-4750-b89a-121e74bfe608",
@@ -5003,8 +5003,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10220,
-      y: 1440,
+      x: 10800,
+      y: 3500,
     },
     name: "VillageField",
     id: "4dc50917-85de-4eef-8a02-aa89b315766c",
@@ -5018,8 +5018,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10420,
-      y: 1440,
+      x: 11000,
+      y: 3500,
     },
     name: "BattleField",
     id: "cdda4ec5-0d58-466d-b1f0-1b9c7a402198",
@@ -5035,8 +5035,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10420,
-      y: 1260,
+      x: 11000,
+      y: 3320,
     },
     name: "BattleField",
     id: "dac3b5c1-d873-4139-84ae-25e1d1d12ce1",
@@ -5050,8 +5050,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10420,
-      y: 1080,
+      x: 11000,
+      y: 3140,
     },
     name: "BattleField",
     id: "9652d737-c4c0-4fc6-ad84-396a9d0b7fc0",
@@ -5067,8 +5067,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10640,
-      y: 1080,
+      x: 11220,
+      y: 3140,
     },
     name: "BattleField",
     id: "1c17d900-bb17-4b74-b086-593040af65dd",
@@ -5082,8 +5082,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10640,
-      y: 1440,
+      x: 11220,
+      y: 3500,
     },
     name: "TreasureField",
     id: "01c614d7-5076-44de-880c-a8ad3b72851a",
@@ -5101,8 +5101,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10840,
-      y: 1440,
+      x: 11420,
+      y: 3500,
     },
     name: "WeaponStoreField",
     id: "2d864683-dd16-48bd-8071-dcb9975a467b",
@@ -5116,8 +5116,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10840,
-      y: 1580,
+      x: 11420,
+      y: 3640,
     },
     name: "BattleField",
     id: "8c466c93-09fa-427e-a8a4-0515292ffa55",
@@ -5133,8 +5133,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10840,
-      y: 1740,
+      x: 11420,
+      y: 3800,
     },
     name: "MagicBookField",
     id: "4c5b5f51-c948-45b0-b6bc-bca93669ec60",
@@ -5150,8 +5150,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10640,
-      y: 1740,
+      x: 11220,
+      y: 3800,
     },
     name: "BattleField",
     id: "c66616fd-f9bc-439a-ad82-3777b2db474f",
@@ -5167,8 +5167,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10380,
-      y: 1740,
+      x: 10960,
+      y: 3800,
     },
     name: "BattleField",
     id: "55f24b18-76d1-4b14-82b0-2a968a110f2d",
@@ -5182,8 +5182,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10380,
-      y: 2060,
+      x: 10960,
+      y: 4120,
     },
     name: "BattleField",
     id: "e4b87956-75e9-4e2e-9e55-b6cdb9737fd8",
@@ -5197,8 +5197,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10240,
-      y: 1820,
+      x: 10820,
+      y: 3880,
     },
     name: "BattleField",
     id: "050aaa74-fd68-4b69-bdbc-848d3e548406",
@@ -5212,8 +5212,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10240,
-      y: 2000,
+      x: 10820,
+      y: 4060,
     },
     name: "BattleField",
     id: "b7ee85d1-df0d-4b54-bba1-bdfb0a3435bb",
@@ -5229,8 +5229,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9800,
-      y: 2000,
+      x: 10380,
+      y: 4060,
     },
     name: "MagicBookField",
     id: "9a8608fa-437c-47eb-abb0-420820daed52",
@@ -5246,8 +5246,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10240,
-      y: 2240,
+      x: 10820,
+      y: 4300,
     },
     name: "BattleField",
     id: "25d523ae-d9b4-4ae9-8104-ace81dbbfa7b",
@@ -5261,8 +5261,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10400,
-      y: 2240,
+      x: 10980,
+      y: 4300,
     },
     name: "TreasureField",
     id: "18775afe-0621-4d83-83de-1c189103ffc1",
@@ -5276,8 +5276,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10580,
-      y: 2240,
+      x: 11160,
+      y: 4300,
     },
     name: "BattleField",
     id: "facbd51f-33fe-4e88-964a-2f6d60a0b14d",
@@ -5291,8 +5291,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10580,
-      y: 2060,
+      x: 11160,
+      y: 4120,
     },
     name: "VillageField",
     id: "175ce3e2-1a06-4a33-91ec-6343b4368bc7",
@@ -5306,8 +5306,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9140,
-      y: 220,
+      x: 9720,
+      y: 2280,
     },
     name: "TreasureField",
     id: "dcc3324c-0a24-4166-8318-5722e433f9eb",
@@ -5321,8 +5321,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9380,
-      y: 220,
+      x: 9960,
+      y: 2280,
     },
     name: "BattleField",
     id: "0d9218a0-14fc-439c-b421-23eb0a343b44",
@@ -5336,8 +5336,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9640,
-      y: 220,
+      x: 10220,
+      y: 2280,
     },
     name: "CollectMoneyField",
     id: "6a04a967-c537-4406-be50-78b5e9240746",
@@ -5351,8 +5351,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9880,
-      y: 220,
+      x: 10460,
+      y: 2280,
     },
     name: "TreasureField",
     id: "71f9956b-c781-417d-91ad-68ef441a2f9a",
@@ -5366,8 +5366,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10120,
-      y: 220,
+      x: 10700,
+      y: 2280,
     },
     name: "BattleField",
     id: "dadd5555-6679-4043-8aae-e99ad4cec2b1",
@@ -5381,8 +5381,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10120,
-      y: 460,
+      x: 10700,
+      y: 2520,
     },
     name: "MagicBookField",
     id: "5ee881de-fe3c-46b9-9895-c11a8875b06d",
@@ -5396,8 +5396,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10420,
-      y: 460,
+      x: 11000,
+      y: 2520,
     },
     name: "CollectMoneyField",
     id: "ffb49d2a-81b9-4474-b45b-fcbf5e89160f",
@@ -5411,8 +5411,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10420,
-      y: 680,
+      x: 11000,
+      y: 2740,
     },
     name: "BattleField",
     id: "05b45255-dfea-4bbe-8cf5-60a07e34cd6d",
@@ -5426,8 +5426,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10420,
-      y: 860,
+      x: 11000,
+      y: 2920,
     },
     name: "TreasureField",
     id: "17d01ec4-e212-443b-9f25-271798ad7eae",
@@ -5441,8 +5441,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9300,
-      y: 2000,
+      x: 9880,
+      y: 4060,
     },
     name: "TreasureField",
     id: "52d134cb-b091-46c2-bc31-764aaedb88b7",
@@ -5456,8 +5456,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9300,
-      y: 2180,
+      x: 9880,
+      y: 4240,
     },
     name: "BattleField",
     id: "07bff46b-09c7-4cb1-8699-ed10d7c77782",
@@ -5471,8 +5471,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9300,
-      y: 2360,
+      x: 9880,
+      y: 4420,
     },
     name: "BattleField",
     id: "d9d66308-6739-4aa2-8345-70e6d7223344",
@@ -5486,8 +5486,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9800,
-      y: 2320,
+      x: 10380,
+      y: 4380,
     },
     name: "TreasureField",
     id: "d3d8d335-cd41-4116-aaf3-b4906597bb1c",
@@ -5501,8 +5501,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9500,
-      y: 2400,
+      x: 10080,
+      y: 4460,
     },
     name: "CollectMoneyField",
     id: "f0ed9f40-dc62-45b8-98fa-6780972106a5",
@@ -5516,8 +5516,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10060,
-      y: 2340,
+      x: 10640,
+      y: 4400,
     },
     name: "BattleField",
     id: "28b5a75d-9afd-4129-adb1-e8701a1f8386",
@@ -5531,8 +5531,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10060,
-      y: 2580,
+      x: 10640,
+      y: 4640,
     },
     name: "BattleField",
     id: "71c36b08-c9fd-42d7-b63a-f4a06f5889b4",
@@ -5548,8 +5548,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9500,
-      y: 2580,
+      x: 10080,
+      y: 4640,
     },
     name: "BattleField",
     id: "f2db85a0-d2b7-4dd5-a9a2-4bbd90f18a4a",
@@ -5567,8 +5567,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9720,
-      y: 2400,
+      x: 10300,
+      y: 4460,
     },
     name: "CaveField",
     id: "0e4e8736-d81a-486e-8049-5e86318444ee",
@@ -5578,8 +5578,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9480,
-      y: 2760,
+      x: 10060,
+      y: 4820,
     },
     name: "BattleField",
     id: "5b347aab-64f1-4cfc-889b-aa0674ff52a9",
@@ -5593,8 +5593,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9760,
-      y: 2760,
+      x: 10340,
+      y: 4820,
     },
     name: "BattleField",
     id: "8f3d5580-028e-423f-9eb8-688b2412836c",
@@ -5608,8 +5608,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10080,
-      y: 2760,
+      x: 10660,
+      y: 4820,
     },
     name: "VillageField",
     id: "3b0ad8e7-4773-424b-be7d-9fa397971270",
@@ -5619,8 +5619,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10280,
-      y: 2580,
+      x: 10860,
+      y: 4640,
     },
     name: "JobStoreField",
     id: "99f5deab-30c7-429b-ba57-488688378869",
@@ -5636,8 +5636,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10280,
-      y: 2960,
+      x: 10860,
+      y: 5020,
     },
     name: "BattleField",
     id: "69e79c2d-4776-4818-b3a7-7e945be4acf7",
@@ -5651,8 +5651,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10480,
-      y: 2580,
+      x: 11060,
+      y: 4640,
     },
     name: "BattleField",
     id: "baa64140-9016-45cd-ac30-4e2a2f6212a8",
@@ -5668,8 +5668,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10480,
-      y: 2760,
+      x: 11060,
+      y: 4820,
     },
     name: "TreasureField",
     id: "211e5d41-ef9b-454e-ba56-584557764f33",
@@ -5683,8 +5683,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10480,
-      y: 2960,
+      x: 11060,
+      y: 5020,
     },
     name: "BattleField",
     id: "437c3a1a-48cd-4234-af49-aaa7332e8a5b",
@@ -5700,8 +5700,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10780,
-      y: 2600,
+      x: 11360,
+      y: 4660,
     },
     name: "BattleField",
     id: "5d3a955e-6b10-48f4-a75c-075029353ab2",
@@ -5715,8 +5715,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10760,
-      y: 2420,
+      x: 11340,
+      y: 4480,
     },
     name: "BattleField",
     id: "85874741-e052-4913-bd28-64203e6e1632",
@@ -5730,8 +5730,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10800,
-      y: 2240,
+      x: 11380,
+      y: 4300,
     },
     name: "VillageField",
     id: "4d0f3ceb-a3dd-468e-9baf-665bf46d15c6",
@@ -5741,8 +5741,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11200,
-      y: 1580,
+      x: 11780,
+      y: 3640,
     },
     name: "BattleField",
     id: "277beb3b-f1d1-4dd7-af5c-1548a3b71336",
@@ -5756,8 +5756,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11020,
-      y: 1740,
+      x: 11600,
+      y: 3800,
     },
     name: "BattleField",
     id: "086d2d3f-21bd-4457-bd05-cff57eff10db",
@@ -5771,8 +5771,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11000,
-      y: 1900,
+      x: 11580,
+      y: 3960,
     },
     name: "BattleField",
     id: "cd81978d-7407-43b2-985a-136e77cc856b",
@@ -5786,8 +5786,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11180,
-      y: 1880,
+      x: 11760,
+      y: 3940,
     },
     name: "VillageField",
     id: "ace59a88-128f-4dbc-ac51-87381ed9bb1d",
@@ -5797,8 +5797,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11200,
-      y: 1440,
+      x: 11780,
+      y: 3500,
     },
     name: "BattleField",
     id: "912d821b-92d2-41a8-8999-79208150d515",
@@ -5812,8 +5812,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11340,
-      y: 1440,
+      x: 11920,
+      y: 3500,
     },
     name: "BattleField",
     id: "ec4542a4-998c-4a96-95b2-f2519dd2386d",
@@ -5829,8 +5829,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11340,
-      y: 1260,
+      x: 11920,
+      y: 3320,
     },
     name: "TreasureField",
     id: "5056649a-a114-4ea8-a952-b789076a9f7b",
@@ -5844,8 +5844,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11340,
-      y: 1620,
+      x: 11920,
+      y: 3680,
     },
     name: "BattleField",
     id: "6c4a5257-57dc-48fd-82e6-d56afdf85ffc",
@@ -5859,8 +5859,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11540,
-      y: 1600,
+      x: 12120,
+      y: 3660,
     },
     name: "MagicBookField",
     id: "83a22c1f-195d-4d74-b325-e8a11f45490a",
@@ -5876,8 +5876,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11540,
-      y: 1260,
+      x: 12120,
+      y: 3320,
     },
     name: "BattleField",
     id: "171043fd-5f66-45d9-b510-c036c842102b",
@@ -5891,8 +5891,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11880,
-      y: 1620,
+      x: 12460,
+      y: 3680,
     },
     name: "RedTreasureField",
     id: "542a28f5-3066-4f7c-bb3b-85d540ce0e4d",
@@ -5906,8 +5906,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12200,
-      y: 1620,
+      x: 12780,
+      y: 3680,
     },
     name: "TreasureField",
     id: "8a5e6dfb-f29f-4790-bdad-e6d201d464b5",
@@ -5925,8 +5925,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12420,
-      y: 1620,
+      x: 13000,
+      y: 3680,
     },
     name: "RedTreasureField",
     id: "925fd683-9e27-4b69-bd12-8adf0cc12157",
@@ -5940,8 +5940,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12640,
-      y: 1620,
+      x: 13220,
+      y: 3680,
     },
     name: "BattleField",
     id: "0559834c-8f1c-4fb9-b4fb-fc10292b1983",
@@ -5955,8 +5955,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12640,
-      y: 1780,
+      x: 13220,
+      y: 3840,
     },
     name: "BattleField",
     id: "0fe28f0e-a27c-477f-b931-9888e6b060b5",
@@ -5970,8 +5970,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12200,
-      y: 1780,
+      x: 12780,
+      y: 3840,
     },
     name: "BattleField",
     id: "3829a24b-bea6-4153-bccc-9688cfd6db14",
@@ -5989,8 +5989,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11980,
-      y: 1780,
+      x: 12560,
+      y: 3840,
     },
     name: "BattleField",
     id: "100e96dc-3e04-4935-9403-8461c17b2c8e",
@@ -6004,8 +6004,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11980,
-      y: 2100,
+      x: 12560,
+      y: 4160,
     },
     name: "BattleField",
     id: "fb2f98f0-a085-4799-b2e9-ba8164f2059d",
@@ -6023,8 +6023,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12200,
-      y: 2100,
+      x: 12780,
+      y: 4160,
     },
     name: "BattleField",
     id: "6ae2fd50-7be3-4877-9287-c843f3860d73",
@@ -6038,8 +6038,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12200,
-      y: 1940,
+      x: 12780,
+      y: 4000,
     },
     name: "TreasureField",
     id: "b03d437b-64de-4a68-88ce-737c7e5eea09",
@@ -6053,8 +6053,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11580,
-      y: 2100,
+      x: 12160,
+      y: 4160,
     },
     name: "MagicBookField",
     id: "ce3afe3f-eca3-4fe8-95c3-0db872842be1",
@@ -6068,8 +6068,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11240,
-      y: 2080,
+      x: 11820,
+      y: 4140,
     },
     name: "BattleField",
     id: "ea77dc8c-b094-4b42-a3b2-c8e9b6eb1995",
@@ -6083,8 +6083,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11240,
-      y: 2280,
+      x: 11820,
+      y: 4340,
     },
     name: "BattleField",
     id: "ef160cbd-5f22-41a0-92c8-2060c200418d",
@@ -6100,8 +6100,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10980,
-      y: 2220,
+      x: 11560,
+      y: 4280,
     },
     name: "VillageField",
     id: "f59b2d71-d336-42db-8d73-479b36ee4fc3",
@@ -6111,8 +6111,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11240,
-      y: 2460,
+      x: 11820,
+      y: 4520,
     },
     name: "GoldTreasureField",
     id: "ead6ebfe-2576-48b6-a208-5eafbf7836e1",
@@ -6128,8 +6128,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11440,
-      y: 2460,
+      x: 12020,
+      y: 4520,
     },
     name: "GoldTreasureField",
     id: "b7b562bc-5d4e-40af-a66e-cf9edc1f1c05",
@@ -6143,8 +6143,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11240,
-      y: 2660,
+      x: 11820,
+      y: 4720,
     },
     name: "RedTreasureField",
     id: "c7397b07-8971-4e6e-9643-7f3d7c0abf34",
@@ -6158,8 +6158,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11440,
-      y: 2660,
+      x: 12020,
+      y: 4720,
     },
     name: "TreasureField",
     id: "860f7332-e1f1-48ed-bb5f-3d21ac32eeaa",
@@ -6173,8 +6173,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11640,
-      y: 2660,
+      x: 12220,
+      y: 4720,
     },
     name: "RedTreasureField",
     id: "9fe0f910-af6d-4898-98fb-f7fb88ede3f9",
@@ -6188,8 +6188,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12020,
-      y: 2340,
+      x: 12600,
+      y: 4400,
     },
     name: "RedTreasureField",
     id: "bd29ce94-cef7-48c0-b74c-5c8dd5bb5bb9",
@@ -6203,8 +6203,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12040,
-      y: 2560,
+      x: 12620,
+      y: 4620,
     },
     name: "BattleField",
     id: "31fcefcd-bf96-4eaf-92cd-755696ae64ae",
@@ -6218,8 +6218,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11640,
-      y: 2820,
+      x: 12220,
+      y: 4880,
     },
     name: "BattleField",
     id: "d6c95449-58b4-47a1-ba79-5e9e27eab6aa",
@@ -6233,8 +6233,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11880,
-      y: 2820,
+      x: 12460,
+      y: 4880,
     },
     name: "BattleField",
     id: "d5342bd2-8c75-4f66-8c56-ae4e42c5300e",
@@ -6248,8 +6248,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11880,
-      y: 3000,
+      x: 12460,
+      y: 5060,
     },
     name: "BattleField",
     id: "329ba382-7773-41e4-b48b-5d976fee9c21",
@@ -6267,8 +6267,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12100,
-      y: 3000,
+      x: 12680,
+      y: 5060,
     },
     name: "BattleField",
     id: "bb27247b-c1d8-4d31-b36c-00c13260aaab",
@@ -6282,8 +6282,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12080,
-      y: 2780,
+      x: 12660,
+      y: 4840,
     },
     name: "TreasureField",
     id: "27e999b9-e5e2-4589-8eaa-d84dd5b3e9c6",
@@ -6297,8 +6297,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11560,
-      y: 3000,
+      x: 12140,
+      y: 5060,
     },
     name: "GoldTreasureField",
     id: "6967bbf4-f36d-4f04-8064-b3f57079c503",
@@ -6312,8 +6312,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11240,
-      y: 3000,
+      x: 11820,
+      y: 5060,
     },
     name: "GoldTreasureField",
     id: "8d333040-8387-4522-a8f6-bc82643e1541",
@@ -6329,8 +6329,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11240,
-      y: 3240,
+      x: 11820,
+      y: 5300,
     },
     name: "RedTreasureField",
     id: "49c2caa3-f755-4514-9093-3eb722c63944",
@@ -6344,8 +6344,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11880,
-      y: 3220,
+      x: 12460,
+      y: 5280,
     },
     name: "BattleField",
     id: "883081f9-e7f7-487f-9fa3-79da0ac19e09",
@@ -6359,8 +6359,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11660,
-      y: 3220,
+      x: 12240,
+      y: 5280,
     },
     name: "BattleField",
     id: "9a32e217-40c8-47c0-95d6-cd30fd75194e",
@@ -6374,8 +6374,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11660,
-      y: 3380,
+      x: 12240,
+      y: 5440,
     },
     name: "TreasureField",
     id: "ce4833e2-9a40-4f33-a9d0-c09c7d3921af",
@@ -6389,8 +6389,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11460,
-      y: 3380,
+      x: 12040,
+      y: 5440,
     },
     name: "MagicBookField",
     id: "c945346e-3a53-4de6-bfbd-2ce8871fe55c",
@@ -6404,8 +6404,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11240,
-      y: 3560,
+      x: 11820,
+      y: 5620,
     },
     name: "BattleField",
     id: "c99766f0-2592-41d5-b8a5-690b77e8c57a",
@@ -6423,8 +6423,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11460,
-      y: 3560,
+      x: 12040,
+      y: 5620,
     },
     name: "BattleField",
     id: "4404c220-c12e-44f1-babd-f51fa5d8a4f4",
@@ -6438,8 +6438,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10940,
-      y: 3560,
+      x: 11520,
+      y: 5620,
     },
     name: "BattleField",
     id: "34587932-38aa-43a7-ace9-4aea1b8d50ca",
@@ -6453,8 +6453,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10480,
-      y: 3200,
+      x: 11060,
+      y: 5260,
     },
     name: "BattleField",
     id: "14071978-d7a2-4e72-8911-c75165c42c6c",
@@ -6468,8 +6468,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10700,
-      y: 3200,
+      x: 11280,
+      y: 5260,
     },
     name: "BattleField",
     id: "0363387e-5ecb-44cf-ba28-4bb5b9572393",
@@ -6483,8 +6483,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10700,
-      y: 3560,
+      x: 11280,
+      y: 5620,
     },
     name: "TreasureField",
     id: "610f3c29-1465-476f-a343-4f7620846744",
@@ -6498,8 +6498,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9220,
-      y: 2580,
+      x: 9800,
+      y: 4640,
     },
     name: "VillageField",
     id: "4d48c3f7-cc13-4175-a72d-66720590c048",
@@ -6513,8 +6513,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9240,
-      y: 2760,
+      x: 9820,
+      y: 4820,
     },
     name: "BattleField",
     id: "a4527f92-dc01-48ef-8da6-80380490cdee",
@@ -6528,8 +6528,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9200,
-      y: 2960,
+      x: 9780,
+      y: 5020,
     },
     name: "TreasureField",
     id: "52c257a7-e952-47a9-b6a1-b53a21755f6e",
@@ -6543,8 +6543,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9240,
-      y: 3160,
+      x: 9820,
+      y: 5220,
     },
     name: "BattleField",
     id: "0c459e0e-8d69-4356-b381-395c3909a745",
@@ -6560,8 +6560,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9020,
-      y: 3160,
+      x: 9600,
+      y: 5220,
     },
     name: "MagicBookField",
     id: "effcc5ce-0d98-49a0-9a50-e6056fd89ebf",
@@ -6575,8 +6575,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9020,
-      y: 3520,
+      x: 9600,
+      y: 5580,
     },
     name: "BattleField",
     id: "74bda590-a0ed-46ef-8d43-b95b34821e40",
@@ -6592,8 +6592,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9240,
-      y: 3520,
+      x: 9820,
+      y: 5580,
     },
     name: "TreasureField",
     id: "117b5ce0-3527-4a10-89ae-088ee4583f9e",
@@ -6607,8 +6607,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9240,
-      y: 3340,
+      x: 9820,
+      y: 5400,
     },
     name: "BattleField",
     id: "6f810394-d7d4-4f5d-b679-9a7076ace911",
@@ -6622,8 +6622,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8780,
-      y: 3520,
+      x: 9360,
+      y: 5580,
     },
     name: "RedTreasureField",
     id: "647d5a1f-19b3-4e5f-ab82-38b78161e8b6",
@@ -6639,8 +6639,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8560,
-      y: 3520,
+      x: 9140,
+      y: 5580,
     },
     name: "BattleField",
     id: "3fecbfbf-101f-420e-b073-ac346874bd8d",
@@ -6654,8 +6654,8 @@ const northAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8320,
-      y: 3520,
+      x: 8900,
+      y: 5580,
     },
     name: "VillageField",
     id: "5682655b-7518-4dfb-aaae-eae4abd4a083",
@@ -6667,8 +6667,8 @@ const northAmericaVertices: Vertex[] = [
     id: "658791c4-1096-4656-b767-a3df4caf7ede",
     name: "TreasureField",
     position: {
-      x: 9720,
-      y: 2580,
+      x: 10300,
+      y: 4640,
     },
     edges: [
       "4e4a10f8-3948-4d4b-8b74-101c2306d038",
@@ -6684,8 +6684,8 @@ const northAmericaVertices: Vertex[] = [
 const southAmericaVertices: Vertex[] = [
   {
     position: {
-      x: 11240,
-      y: 3980,
+      x: 11820,
+      y: 6040,
     },
     name: "BattleField",
     id: "e0327ca9-c75d-439d-9ef2-3988149fb9ca",
@@ -6699,8 +6699,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11520,
-      y: 3980,
+      x: 12100,
+      y: 6040,
     },
     name: "VillageField",
     id: "e8904d6c-a885-40f6-929b-271f88b54f44",
@@ -6716,8 +6716,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11720,
-      y: 3980,
+      x: 12300,
+      y: 6040,
     },
     name: "TreasureField",
     id: "51efae10-b6c7-4ddf-8be1-44ca26eb5805",
@@ -6731,8 +6731,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11520,
-      y: 4160,
+      x: 12100,
+      y: 6220,
     },
     name: "TreasureField",
     id: "f0e65da3-3352-406d-9db3-ed80c26925b8",
@@ -6746,8 +6746,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11520,
-      y: 4340,
+      x: 12100,
+      y: 6400,
     },
     name: "BattleField",
     id: "021aafd6-d7cb-4337-b95a-5e9f350b82c3",
@@ -6763,8 +6763,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11720,
-      y: 4340,
+      x: 12300,
+      y: 6400,
     },
     name: "BattleField",
     id: "3842b0d8-1c2e-4698-b86d-55256201c6b6",
@@ -6780,8 +6780,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11240,
-      y: 4340,
+      x: 11820,
+      y: 6400,
     },
     name: "ChruchField",
     id: "53effe12-91ca-4926-bf35-2e3ae1efe18b",
@@ -6797,8 +6797,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10840,
-      y: 4340,
+      x: 11420,
+      y: 6400,
     },
     name: "BattleField",
     id: "8224298a-e89f-4ae3-bff5-5d646d9494a0",
@@ -6814,8 +6814,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10840,
-      y: 4520,
+      x: 11420,
+      y: 6580,
     },
     name: "BattleField",
     id: "d35e57f3-1698-470d-9cf2-a6c32d06f9d1",
@@ -6831,8 +6831,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11040,
-      y: 4500,
+      x: 11620,
+      y: 6560,
     },
     name: "BattleField",
     id: "3332c824-483f-4e8b-b2ca-2ed58ac16694",
@@ -6848,8 +6848,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11240,
-      y: 4520,
+      x: 11820,
+      y: 6580,
     },
     name: "BattleField",
     id: "6103c3b2-2a66-4127-9de6-c4977de0180c",
@@ -6863,8 +6863,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11040,
-      y: 4660,
+      x: 11620,
+      y: 6720,
     },
     name: "BattleField",
     id: "f7920f23-a83a-4b60-8e0d-5fb06ed6971e",
@@ -6878,8 +6878,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11040,
-      y: 4820,
+      x: 11620,
+      y: 6880,
     },
     name: "TreasureField",
     id: "21300f3e-bf66-4007-8b97-19b2d27368ff",
@@ -6893,8 +6893,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11320,
-      y: 4820,
+      x: 11900,
+      y: 6880,
     },
     name: "BattleField",
     id: "8e5a4e93-9ada-4c47-b98f-75a4379e87c9",
@@ -6908,8 +6908,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11280,
-      y: 5000,
+      x: 11860,
+      y: 7060,
     },
     name: "BattleField",
     id: "ae4d726c-95e8-4ed0-a30b-84420b10fa32",
@@ -6925,8 +6925,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11600,
-      y: 5000,
+      x: 12180,
+      y: 7060,
     },
     name: "BattleField",
     id: "324eda46-0b89-44c1-8cbe-9f8a01ceb400",
@@ -6940,8 +6940,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11640,
-      y: 4820,
+      x: 12220,
+      y: 6880,
     },
     name: "MagicBookField",
     id: "7622c1ce-8faa-48f8-b36b-f3301e530589",
@@ -6955,8 +6955,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11920,
-      y: 4820,
+      x: 12500,
+      y: 6880,
     },
     name: "BattleField",
     id: "bcf60b15-f65a-413a-b3d1-0cbd4385ee7d",
@@ -6972,8 +6972,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11720,
-      y: 4500,
+      x: 12300,
+      y: 6560,
     },
     name: "TreasureField",
     id: "21cf69eb-fec9-4343-a497-3050d4c24015",
@@ -6987,8 +6987,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11920,
-      y: 4500,
+      x: 12500,
+      y: 6560,
     },
     name: "BattleField",
     id: "99078231-bffc-4bb9-a51e-bda2b175d1f4",
@@ -7002,8 +7002,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11960,
-      y: 4660,
+      x: 12540,
+      y: 6720,
     },
     name: "BattleField",
     id: "113a3624-e0cd-4932-a9e8-a4ec1eea3ed9",
@@ -7019,8 +7019,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12160,
-      y: 4660,
+      x: 12740,
+      y: 6720,
     },
     name: "BattleField",
     id: "b25fbc58-7021-4201-a927-178a8c8b30ed",
@@ -7034,8 +7034,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12220,
-      y: 4500,
+      x: 12800,
+      y: 6560,
     },
     name: "MagicBookField",
     id: "a36ad201-a212-466a-bcbe-3b3bf3e9a100",
@@ -7049,8 +7049,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11920,
-      y: 5000,
+      x: 12500,
+      y: 7060,
     },
     name: "TreasureField",
     id: "0ac1b13d-1e2b-4cd6-88dc-e1699935a6e3",
@@ -7064,8 +7064,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12180,
-      y: 5000,
+      x: 12760,
+      y: 7060,
     },
     name: "MagicStoreField",
     id: "6d0c280a-a843-4181-a3e9-941b09bdf350",
@@ -7079,8 +7079,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12480,
-      y: 5000,
+      x: 13060,
+      y: 7060,
     },
     name: "BattleField",
     id: "80412215-58dc-4eef-8d01-d4943de40d39",
@@ -7096,8 +7096,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12480,
-      y: 4500,
+      x: 13060,
+      y: 6560,
     },
     name: "BattleField",
     id: "d541c219-0737-4d83-adaf-d64966ea59a9",
@@ -7111,8 +7111,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12740,
-      y: 4500,
+      x: 13320,
+      y: 6560,
     },
     name: "TreasureField",
     id: "44892f89-183a-47a5-8db4-d6ead47d666b",
@@ -7126,8 +7126,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12800,
-      y: 4760,
+      x: 13380,
+      y: 6820,
     },
     name: "BattleField",
     id: "ccb3c757-dc35-4a89-ace1-3ab17ca1515a",
@@ -7141,8 +7141,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12760,
-      y: 5000,
+      x: 13340,
+      y: 7060,
     },
     name: "BattleField",
     id: "e5db8eac-d6b1-4113-91c4-c6b42de3427b",
@@ -7156,8 +7156,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11280,
-      y: 5220,
+      x: 11860,
+      y: 7280,
     },
     name: "BattleField",
     id: "42a0a5eb-cad9-4222-8b31-a207f1094e5c",
@@ -7171,8 +7171,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11640,
-      y: 5240,
+      x: 12220,
+      y: 7300,
     },
     name: "MagicBookField",
     id: "865ff1d3-4cdb-4a79-afd0-35f77a99e89a",
@@ -7186,8 +7186,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11880,
-      y: 5240,
+      x: 12460,
+      y: 7300,
     },
     name: "VillageField",
     id: "57162ab6-3163-4f03-9c4d-cc678e830154",
@@ -7201,8 +7201,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11880,
-      y: 5420,
+      x: 12460,
+      y: 7480,
     },
     name: "BattleField",
     id: "37143f8c-d0ea-41e7-a17a-9ea636f143d9",
@@ -7218,8 +7218,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12120,
-      y: 5420,
+      x: 12700,
+      y: 7480,
     },
     name: "GroceryStoreField",
     id: "cf4459c4-44a8-4f24-abe6-e906cbee8db7",
@@ -7235,8 +7235,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12480,
-      y: 5200,
+      x: 13060,
+      y: 7260,
     },
     name: "BattleField",
     id: "b889ec4d-b91e-4c3a-9827-878a3ab5d9af",
@@ -7250,8 +7250,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12300,
-      y: 5420,
+      x: 12880,
+      y: 7480,
     },
     name: "BattleField",
     id: "7f151f03-9c95-4cf4-9e3d-1454a59ea28a",
@@ -7265,8 +7265,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12480,
-      y: 5420,
+      x: 13060,
+      y: 7480,
     },
     name: "TreasureField",
     id: "5e6ffbe4-f16b-47d4-8c8e-e1120d52c783",
@@ -7282,8 +7282,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12480,
-      y: 5600,
+      x: 13060,
+      y: 7660,
     },
     name: "BattleField",
     id: "87827f0e-02d1-47e4-a158-cfc70b7c6770",
@@ -7297,8 +7297,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12120,
-      y: 5600,
+      x: 12700,
+      y: 7660,
     },
     name: "MagicBookField",
     id: "4e276e92-cc5a-46d3-889d-ae529207d833",
@@ -7314,8 +7314,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11880,
-      y: 5780,
+      x: 12460,
+      y: 7840,
     },
     name: "BattleField",
     id: "8c214dd0-9f01-4068-85ec-a5c982e21683",
@@ -7333,8 +7333,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 12120,
-      y: 5780,
+      x: 12700,
+      y: 7840,
     },
     name: "BattleField",
     id: "fd0bd91e-a81b-4c40-be7c-0d5513b5de3f",
@@ -7348,8 +7348,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11640,
-      y: 5780,
+      x: 12220,
+      y: 7840,
     },
     name: "WorldTransferField",
     id: "dced410a-d2c2-4b42-a78e-063a6913d7f1",
@@ -7359,8 +7359,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11880,
-      y: 5960,
+      x: 12460,
+      y: 8020,
     },
     name: "BattleField",
     id: "0365689d-554b-41f8-8e19-c489e7cd9391",
@@ -7376,8 +7376,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11640,
-      y: 5960,
+      x: 12220,
+      y: 8020,
     },
     name: "BattleField",
     id: "ebbe8686-e001-4891-903f-e961538fc635",
@@ -7391,8 +7391,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11880,
-      y: 6160,
+      x: 12460,
+      y: 8220,
     },
     name: "BattleField",
     id: "6102fc9c-3597-4c5b-9002-da6735804242",
@@ -7408,8 +7408,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11640,
-      y: 6160,
+      x: 12220,
+      y: 8220,
     },
     name: "VillageField",
     id: "fa60d089-19e5-4457-9236-15efa0c0a6a1",
@@ -7419,8 +7419,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11880,
-      y: 6340,
+      x: 12460,
+      y: 8400,
     },
     name: "BattleField",
     id: "77b641a5-8582-422e-b5ce-37a4bf8a824d",
@@ -7434,8 +7434,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11400,
-      y: 5960,
+      x: 11980,
+      y: 8020,
     },
     name: "TreasureField",
     id: "fba740dd-5a02-484e-8a72-2a7a0abbdc3c",
@@ -7453,8 +7453,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11400,
-      y: 6240,
+      x: 11980,
+      y: 8300,
     },
     name: "BattleField",
     id: "cdb588f3-7713-4385-93b9-7bd683011c25",
@@ -7468,8 +7468,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11400,
-      y: 6520,
+      x: 11980,
+      y: 8580,
     },
     name: "BattleField",
     id: "5988860f-565c-4f08-9889-b0bb93c18639",
@@ -7485,8 +7485,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11180,
-      y: 5960,
+      x: 11760,
+      y: 8020,
     },
     name: "WeaponStoreField",
     id: "48ec3a26-88d0-4fd3-bb67-918cde855510",
@@ -7500,8 +7500,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11180,
-      y: 6140,
+      x: 11760,
+      y: 8200,
     },
     name: "BattleField",
     id: "1db72cc7-71c5-433d-9b50-ab20be04f5e5",
@@ -7515,8 +7515,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11180,
-      y: 6340,
+      x: 11760,
+      y: 8400,
     },
     name: "MagicBookField",
     id: "437773df-8f38-4312-b28a-f5b94382f265",
@@ -7530,8 +7530,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11180,
-      y: 6520,
+      x: 11760,
+      y: 8580,
     },
     name: "BattleField",
     id: "22ebaa03-4244-49ad-8f19-617fbebe92d4",
@@ -7547,8 +7547,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11400,
-      y: 5780,
+      x: 11980,
+      y: 7840,
     },
     name: "BattleField",
     id: "87fb06be-5d03-4a20-983f-0da4e21a4471",
@@ -7562,8 +7562,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11400,
-      y: 5560,
+      x: 11980,
+      y: 7620,
     },
     name: "BattleField",
     id: "23e75a46-1f1f-4203-b216-32d033f6950f",
@@ -7577,8 +7577,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11180,
-      y: 5560,
+      x: 11760,
+      y: 7620,
     },
     name: "BattleField",
     id: "5dcfcd78-2ed2-4732-97c7-8c006cd01339",
@@ -7592,8 +7592,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11180,
-      y: 5340,
+      x: 11760,
+      y: 7400,
     },
     name: "VillageField",
     id: "6392f833-ee05-439e-864e-ecdcf1098c3a",
@@ -7603,8 +7603,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10540,
-      y: 4340,
+      x: 11120,
+      y: 6400,
     },
     name: "TreasureField",
     id: "8f8027d2-046a-4369-8329-0d2c43300aab",
@@ -7620,8 +7620,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10540,
-      y: 4160,
+      x: 11120,
+      y: 6220,
     },
     name: "BattleField",
     id: "67be83ed-2f2b-4bf9-8287-1ca00d6c4d8b",
@@ -7635,8 +7635,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10540,
-      y: 3980,
+      x: 11120,
+      y: 6040,
     },
     name: "VillageField",
     id: "d9e1f9df-7d5e-47e2-8206-6447e62f3278",
@@ -7646,8 +7646,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10340,
-      y: 4340,
+      x: 10920,
+      y: 6400,
     },
     name: "BattleField",
     id: "05d4bde7-9387-499c-9a2d-18a74003930d",
@@ -7661,8 +7661,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10140,
-      y: 4340,
+      x: 10720,
+      y: 6400,
     },
     name: "BattleField",
     id: "fa438c24-0219-4021-bcb7-05b65804acdc",
@@ -7676,8 +7676,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10140,
-      y: 4160,
+      x: 10720,
+      y: 6220,
     },
     name: "RedTreasureField",
     id: "2f3412d6-5927-4552-8e58-ab49350b1d78",
@@ -7693,8 +7693,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10140,
-      y: 3980,
+      x: 10720,
+      y: 6040,
     },
     name: "BattleField",
     id: "6b67b916-bbe1-4c25-8f58-b025aef5f643",
@@ -7708,8 +7708,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10140,
-      y: 3780,
+      x: 10720,
+      y: 5840,
     },
     name: "BattleField",
     id: "8df06c1f-3879-4a73-a282-fc4cce068ea9",
@@ -7723,8 +7723,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10340,
-      y: 3780,
+      x: 10920,
+      y: 5840,
     },
     name: "VillageField",
     id: "f59b7f29-a829-4fea-9471-a7420953a7e9",
@@ -7734,8 +7734,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10840,
-      y: 4700,
+      x: 11420,
+      y: 6760,
     },
     name: "BattleField",
     id: "46f55746-01f0-47f6-91e3-c6e1994a15dc",
@@ -7749,8 +7749,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10540,
-      y: 4640,
+      x: 11120,
+      y: 6700,
     },
     name: "MagicBookField",
     id: "b90c3006-b909-4faf-aea1-8f02438482d0",
@@ -7764,8 +7764,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10540,
-      y: 4820,
+      x: 11120,
+      y: 6880,
     },
     name: "BattleField",
     id: "d6574605-b9d1-4f26-8f08-1fbbdabc5a02",
@@ -7779,8 +7779,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10200,
-      y: 4840,
+      x: 10780,
+      y: 6900,
     },
     name: "BattleField",
     id: "8ea776cb-d993-4643-8a7c-b043b7c375c9",
@@ -7796,8 +7796,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10200,
-      y: 4660,
+      x: 10780,
+      y: 6720,
     },
     name: "BattleField",
     id: "f538dcf3-c139-4a00-9414-4be09d505bff",
@@ -7811,8 +7811,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10000,
-      y: 4660,
+      x: 10580,
+      y: 6720,
     },
     name: "TreasureField",
     id: "09116ed1-719d-4bc4-b1d2-d526be63b174",
@@ -7830,8 +7830,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10000,
-      y: 5000,
+      x: 10580,
+      y: 7060,
     },
     name: "BattleField",
     id: "7815962e-40bf-4486-9193-e7c0ac3824b3",
@@ -7847,8 +7847,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10200,
-      y: 5000,
+      x: 10780,
+      y: 7060,
     },
     name: "BattleField",
     id: "492ee90d-9e0a-492f-94c1-5a8a0fc6a25b",
@@ -7866,8 +7866,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10680,
-      y: 5000,
+      x: 11260,
+      y: 7060,
     },
     name: "TreasureField",
     id: "45922761-940e-4761-86df-b732f30aa031",
@@ -7881,8 +7881,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10700,
-      y: 4820,
+      x: 11280,
+      y: 6880,
     },
     name: "VillageField",
     id: "27fa5b41-e23f-4eb0-83ed-6d793e48bf4d",
@@ -7892,8 +7892,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10000,
-      y: 4340,
+      x: 10580,
+      y: 6400,
     },
     name: "BattleField",
     id: "f1ad04d3-a2d4-4d28-abaf-010c7473ea94",
@@ -7907,8 +7907,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9780,
-      y: 4660,
+      x: 10360,
+      y: 6720,
     },
     name: "BattleField",
     id: "9eb7954a-9aaa-4def-b093-164f2114fc5c",
@@ -7922,8 +7922,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9780,
-      y: 4500,
+      x: 10360,
+      y: 6560,
     },
     name: "BattleField",
     id: "78fb2022-3cfc-4fa6-a255-c98a167a4b08",
@@ -7937,8 +7937,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9780,
-      y: 4340,
+      x: 10360,
+      y: 6400,
     },
     name: "BattleField",
     id: "81e0d087-484c-4681-8c07-bca29caa4180",
@@ -7954,8 +7954,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9780,
-      y: 4160,
+      x: 10360,
+      y: 6220,
     },
     name: "BattleField",
     id: "891c3b56-8d54-4ed8-bcbd-17b7340166b6",
@@ -7971,8 +7971,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9840,
-      y: 3820,
+      x: 10420,
+      y: 5880,
     },
     name: "TreasureField",
     id: "5f879ba0-f012-4a70-b304-6713f64df54b",
@@ -7986,8 +7986,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9800,
-      y: 3520,
+      x: 10380,
+      y: 5580,
     },
     name: "VillageField",
     id: "7dd1aa1b-988b-4a85-aa8c-c26a6922a2d4",
@@ -7997,8 +7997,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10200,
-      y: 5220,
+      x: 10780,
+      y: 7280,
     },
     name: "BattleField",
     id: "5d476db5-d58b-4836-8818-3f0c48aee6ca",
@@ -8008,8 +8008,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10000,
-      y: 5220,
+      x: 10580,
+      y: 7280,
     },
     name: "TreasureField",
     id: "a28dcef8-291a-4c61-b85a-021793a0f929",
@@ -8023,8 +8023,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10000,
-      y: 5420,
+      x: 10580,
+      y: 7480,
     },
     name: "BattleField",
     id: "3c50a314-5c47-411c-90a7-4be5bc0ec91d",
@@ -8040,8 +8040,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10200,
-      y: 5420,
+      x: 10780,
+      y: 7480,
     },
     name: "BattleField",
     id: "0a99bbbf-8948-4f28-bd4d-782bdfe9d3bf",
@@ -8055,8 +8055,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10000,
-      y: 5840,
+      x: 10580,
+      y: 7900,
     },
     name: "BattleField",
     id: "d116d717-b679-40b7-9899-3a37d3ae0d00",
@@ -8070,8 +8070,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10220,
-      y: 5840,
+      x: 10800,
+      y: 7900,
     },
     name: "TreasureField",
     id: "1a5155a1-8dcb-478e-bf0f-ca7e91fa433d",
@@ -8085,8 +8085,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10260,
-      y: 5620,
+      x: 10840,
+      y: 7680,
     },
     name: "BattleField",
     id: "0c33406b-e0e0-47be-97aa-8307343d9f1b",
@@ -8102,8 +8102,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10560,
-      y: 5620,
+      x: 11140,
+      y: 7680,
     },
     name: "TreasureField",
     id: "a26d0b5e-7477-43f7-820a-419d3ed629df",
@@ -8117,8 +8117,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10560,
-      y: 5880,
+      x: 11140,
+      y: 7940,
     },
     name: "BattleField",
     id: "9ed7e992-1203-484c-b061-111db3160578",
@@ -8134,8 +8134,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10860,
-      y: 5880,
+      x: 11440,
+      y: 7940,
     },
     name: "VillageField",
     id: "8cf16e49-4f51-4180-acb7-518326133bb1",
@@ -8145,8 +8145,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10560,
-      y: 6160,
+      x: 11140,
+      y: 8220,
     },
     name: "BattleField",
     id: "8f00ae99-e3e1-4d21-a60d-22fd4e6ec5e9",
@@ -8162,8 +8162,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10340,
-      y: 6160,
+      x: 10920,
+      y: 8220,
     },
     name: "BattleField",
     id: "7148f97e-4f53-4e9b-96ef-b3ca7aaaa4e8",
@@ -8177,8 +8177,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10120,
-      y: 6160,
+      x: 10700,
+      y: 8220,
     },
     name: "MagicBookField",
     id: "67010eeb-a6f3-4e17-be9e-a614ca893cc3",
@@ -8194,8 +8194,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9840,
-      y: 6160,
+      x: 10420,
+      y: 8220,
     },
     name: "BattleField",
     id: "f873e57c-66a5-48fd-8974-9b6116c1178b",
@@ -8209,8 +8209,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9620,
-      y: 6160,
+      x: 10200,
+      y: 8220,
     },
     name: "RedTreasureField",
     id: "bdce1b2f-6687-421e-9f15-9ad96a82eb39",
@@ -8224,8 +8224,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9400,
-      y: 6160,
+      x: 9980,
+      y: 8220,
     },
     name: "CaveField",
     id: "2577337d-9910-4abf-8ca8-b74c214f98d9",
@@ -8239,8 +8239,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10120,
-      y: 6380,
+      x: 10700,
+      y: 8440,
     },
     name: "TreasureField",
     id: "fda566ee-ed3f-4b76-ab19-3a7ee7a68162",
@@ -8254,8 +8254,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10560,
-      y: 6380,
+      x: 11140,
+      y: 8440,
     },
     name: "BattleField",
     id: "cc1d81ad-c4ca-47aa-a90b-6dfa79fdf103",
@@ -8271,8 +8271,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11180,
-      y: 6700,
+      x: 11760,
+      y: 8760,
     },
     name: "BattleField",
     id: "59fcc765-08f5-4848-9fc4-ee465595ec26",
@@ -8286,8 +8286,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11180,
-      y: 6880,
+      x: 11760,
+      y: 8940,
     },
     name: "TreasureField",
     id: "68b8a2c6-9498-4b48-b3d0-875713139458",
@@ -8303,8 +8303,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11400,
-      y: 6880,
+      x: 11980,
+      y: 8940,
     },
     name: "JobStoreField",
     id: "cf0fbcaf-d062-4340-b047-05666c68430e",
@@ -8318,8 +8318,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11180,
-      y: 7040,
+      x: 11760,
+      y: 9100,
     },
     name: "BattleField",
     id: "f3098aed-ef25-4478-8875-3ebb95ecc4cf",
@@ -8333,8 +8333,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11180,
-      y: 7200,
+      x: 11760,
+      y: 9260,
     },
     name: "BattleField",
     id: "dcab5ebe-447e-4290-8895-e638899f126a",
@@ -8348,8 +8348,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11400,
-      y: 7200,
+      x: 11980,
+      y: 9260,
     },
     name: "BattleField",
     id: "fc6fde1f-c1af-45ec-b5ff-6fc75d663aba",
@@ -8365,8 +8365,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11600,
-      y: 7200,
+      x: 12180,
+      y: 9260,
     },
     name: "CollectMoneyField",
     id: "f61646a6-cbcf-417c-9982-d7f6a48dd63e",
@@ -8380,8 +8380,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11800,
-      y: 7200,
+      x: 12380,
+      y: 9260,
     },
     name: "TreasureField",
     id: "b7eab131-0e3d-451b-82e3-12bc099df0d4",
@@ -8395,8 +8395,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11800,
-      y: 7400,
+      x: 12380,
+      y: 9460,
     },
     name: "CollectMoneyField",
     id: "f6162eda-2cf9-4589-8415-b34c49fb6cce",
@@ -8410,8 +8410,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11800,
-      y: 7600,
+      x: 12380,
+      y: 9660,
     },
     name: "BattleField",
     id: "5d38eee5-f98b-45d8-a6dd-1a9d06d3a788",
@@ -8425,8 +8425,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11600,
-      y: 7600,
+      x: 12180,
+      y: 9660,
     },
     name: "CollectMoneyField",
     id: "9544ad37-9eba-47ae-8036-8af60ea6ba69",
@@ -8440,8 +8440,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11220,
-      y: 7600,
+      x: 11800,
+      y: 9660,
     },
     name: "BattleField",
     id: "aa9b56a3-820f-4c97-8086-9bcd8b046d12",
@@ -8455,8 +8455,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10560,
-      y: 6640,
+      x: 11140,
+      y: 8700,
     },
     name: "RedTreasureField",
     id: "2e2af268-3e7f-4ab6-9ca2-241980fb87f3",
@@ -8470,8 +8470,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10560,
-      y: 6860,
+      x: 11140,
+      y: 8920,
     },
     name: "BattleField",
     id: "6d97a000-007a-4e5d-ad9a-152682b7143a",
@@ -8485,8 +8485,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10560,
-      y: 7080,
+      x: 11140,
+      y: 9140,
     },
     name: "TreasureField",
     id: "fb3325fa-a1c9-40ba-b4bb-1813e4eaaa5e",
@@ -8502,8 +8502,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10780,
-      y: 7060,
+      x: 11360,
+      y: 9120,
     },
     name: "BattleField",
     id: "01698967-62c5-4129-b15d-57a7fc8274e9",
@@ -8517,8 +8517,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 11000,
-      y: 7080,
+      x: 11580,
+      y: 9140,
     },
     name: "TreasureField",
     id: "2970b6d0-5f6d-4272-b63f-2d3969ef4cae",
@@ -8532,8 +8532,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10980,
-      y: 7300,
+      x: 11560,
+      y: 9360,
     },
     name: "RedTreasureField",
     id: "e1011d70-ad7f-461e-92cf-104f5643642b",
@@ -8549,8 +8549,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10580,
-      y: 7300,
+      x: 11160,
+      y: 9360,
     },
     name: "BattleField",
     id: "55d3e715-85af-4dd3-846a-6c359d9abcfe",
@@ -8564,8 +8564,8 @@ const southAmericaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 10980,
-      y: 7600,
+      x: 11560,
+      y: 9660,
     },
     name: "BattleField",
     id: "ad3f00ff-4ece-4407-8baf-72876214da11",
@@ -8581,8 +8581,8 @@ const southAmericaVertices: Vertex[] = [
     id: "d383a5cf-e41d-4e27-85b8-dc1276c54e6f",
     name: "TreasureField",
     position: {
-      x: 11880,
-      y: 6520,
+      x: 12460,
+      y: 8580,
     },
     edges: [
       "b03ca105-658f-4ad2-8567-331971a12736",
@@ -8596,8 +8596,8 @@ const southAmericaVertices: Vertex[] = [
 const oceaniaVertices: Vertex[] = [
   {
     position: {
-      x: 8780,
-      y: 3900,
+      x: 9360,
+      y: 5960,
     },
     name: "BattleField",
     id: "1bdb1608-680b-4709-934a-af51f3437f0e",
@@ -8611,8 +8611,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8780,
-      y: 4260,
+      x: 9360,
+      y: 6320,
     },
     name: "BattleField",
     id: "bfbe5a2d-1385-4363-ab74-1c6d491c7694",
@@ -8626,8 +8626,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8780,
-      y: 4660,
+      x: 9360,
+      y: 6720,
     },
     name: "BattleField",
     id: "ea5dfe09-5375-4c2f-a5dc-5a2e5a87546c",
@@ -8641,8 +8641,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8560,
-      y: 4660,
+      x: 9140,
+      y: 6720,
     },
     name: "BattleField",
     id: "a8ce067e-8382-4974-ac47-9ede8ef805f2",
@@ -8656,8 +8656,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8560,
-      y: 4880,
+      x: 9140,
+      y: 6940,
     },
     name: "MagicBookField",
     id: "24660a06-fb01-4c58-8913-275f0f822eb1",
@@ -8671,8 +8671,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8560,
-      y: 5300,
+      x: 9140,
+      y: 7360,
     },
     name: "BattleField",
     id: "661356f3-f7d5-404c-ab04-d97c3cf2345d",
@@ -8690,8 +8690,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9020,
-      y: 5300,
+      x: 9600,
+      y: 7360,
     },
     name: "BattleField",
     id: "e6e5a7d1-4ed1-4eae-a801-77822619d85f",
@@ -8705,8 +8705,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 9020,
-      y: 5580,
+      x: 9600,
+      y: 7640,
     },
     name: "BattleField",
     id: "7c6442a1-7a79-4699-bcda-be3a77b2bf55",
@@ -8720,8 +8720,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8800,
-      y: 5580,
+      x: 9380,
+      y: 7640,
     },
     name: "MagicBookField",
     id: "abf0c57d-c6fa-4a8e-bb42-428f910721d6",
@@ -8737,8 +8737,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8560,
-      y: 5580,
+      x: 9140,
+      y: 7640,
     },
     name: "TreasureField",
     id: "ed7d8634-4d3f-4f2a-a062-4662f6310649",
@@ -8752,8 +8752,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8800,
-      y: 5900,
+      x: 9380,
+      y: 7960,
     },
     name: "BattleField",
     id: "620529a0-d56b-455d-892e-eb8b31499f09",
@@ -8767,8 +8767,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8800,
-      y: 6160,
+      x: 9380,
+      y: 8220,
     },
     name: "TreasureField",
     id: "5c922aa7-a1b4-46fd-b913-4ba3606153e8",
@@ -8784,8 +8784,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8800,
-      y: 6440,
+      x: 9380,
+      y: 8500,
     },
     name: "BattleField",
     id: "13748d8a-58cd-4c48-94d0-8242397d75cb",
@@ -8799,8 +8799,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8800,
-      y: 6700,
+      x: 9380,
+      y: 8760,
     },
     name: "BattleField",
     id: "9e795219-27eb-4cb1-8dd8-e4a9b638b980",
@@ -8814,8 +8814,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8540,
-      y: 6700,
+      x: 9120,
+      y: 8760,
     },
     name: "TreasureField",
     id: "285d9287-41c8-4f6e-b413-04381c6df3f7",
@@ -8829,8 +8829,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8320,
-      y: 6700,
+      x: 8900,
+      y: 8760,
     },
     name: "BattleField",
     id: "64f96ab0-456a-4fae-b022-0751db4499fd",
@@ -8844,8 +8844,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8060,
-      y: 6700,
+      x: 8640,
+      y: 8760,
     },
     name: "VillageField",
     id: "76bf1d3b-22b4-4a64-948f-1993c5f6bd07",
@@ -8859,8 +8859,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8060,
-      y: 6980,
+      x: 8640,
+      y: 9040,
     },
     name: "BattleField",
     id: "88af796b-5fa3-4d59-9b4c-07e2e8f98d65",
@@ -8876,8 +8876,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7820,
-      y: 6980,
+      x: 8400,
+      y: 9040,
     },
     name: "JobStoreField",
     id: "8793a9e4-077d-4b46-b8cd-4508e9149349",
@@ -8893,8 +8893,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7820,
-      y: 7340,
+      x: 8400,
+      y: 9400,
     },
     name: "BattleField",
     id: "84ee492c-d892-4380-9cfb-65db1e38ecb9",
@@ -8910,8 +8910,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8060,
-      y: 7160,
+      x: 8640,
+      y: 9220,
     },
     name: "BattleField",
     id: "80709a68-9715-4c5f-abf2-81fd2dcbabd6",
@@ -8925,8 +8925,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8060,
-      y: 7340,
+      x: 8640,
+      y: 9400,
     },
     name: "TreasureField",
     id: "d9f9d9a2-1b61-4ea1-8032-4072c6e894ea",
@@ -8940,8 +8940,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7480,
-      y: 6980,
+      x: 8060,
+      y: 9040,
     },
     name: "BattleField",
     id: "9c03d0b1-2ada-48f4-994a-7460e2d95ca6",
@@ -8955,8 +8955,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7180,
-      y: 6980,
+      x: 7760,
+      y: 9040,
     },
     name: "BattleField",
     id: "8ed3acf3-6eb1-4470-ac8b-496c98d5dacd",
@@ -8972,8 +8972,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7180,
-      y: 7340,
+      x: 7760,
+      y: 9400,
     },
     name: "TreasureField",
     id: "7ad4ffcb-c07a-4079-812c-893bdf152744",
@@ -8989,8 +8989,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7560,
-      y: 7340,
+      x: 8140,
+      y: 9400,
     },
     name: "BattleField",
     id: "9ce1b81a-463c-4651-8f2a-fd70e1b93c59",
@@ -9004,8 +9004,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 8200,
-      y: 5300,
+      x: 8780,
+      y: 7360,
     },
     name: "BattleField",
     id: "24a78f6f-cdb9-4d9d-a520-0e5accc0065c",
@@ -9019,8 +9019,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7940,
-      y: 5300,
+      x: 8520,
+      y: 7360,
     },
     name: "GoldTreasureField",
     id: "d4e376b8-4242-46c1-a233-fe767991debd",
@@ -9036,8 +9036,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7940,
-      y: 5560,
+      x: 8520,
+      y: 7620,
     },
     name: "BattleField",
     id: "0f616903-cbc5-43d5-b7a4-f86d90c24827",
@@ -9051,8 +9051,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7480,
-      y: 5560,
+      x: 8060,
+      y: 7620,
     },
     name: "TreasureField",
     id: "1c51fd51-66ec-4269-bbd3-7cdccfbf09a8",
@@ -9066,8 +9066,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7480,
-      y: 5300,
+      x: 8060,
+      y: 7360,
     },
     name: "GoldTreasureField",
     id: "4be7aa7c-e6d5-4fad-bcfb-9c73d56f8e14",
@@ -9083,8 +9083,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7220,
-      y: 5300,
+      x: 7800,
+      y: 7360,
     },
     name: "BattleField",
     id: "cec383cb-6b5d-4c98-972d-8871444d52c7",
@@ -9102,8 +9102,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7220,
-      y: 5500,
+      x: 7800,
+      y: 7560,
     },
     name: "BattleField",
     id: "6974eaca-a949-495e-80a1-c8ee8c76c8c0",
@@ -9117,8 +9117,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7220,
-      y: 5720,
+      x: 7800,
+      y: 7780,
     },
     name: "BattleField",
     id: "bfacafb9-524e-4687-8c39-618cc2ada3d9",
@@ -9132,8 +9132,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6940,
-      y: 5720,
+      x: 7520,
+      y: 7780,
     },
     name: "TreasureField",
     id: "61261f0d-5a62-4f03-b512-94d2964b4727",
@@ -9147,8 +9147,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6940,
-      y: 5300,
+      x: 7520,
+      y: 7360,
     },
     name: "BattleField",
     id: "4a0e1d47-8a48-4ef2-97ad-7a8ed6f736dd",
@@ -9162,8 +9162,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7220,
-      y: 5060,
+      x: 7800,
+      y: 7120,
     },
     name: "BattleField",
     id: "df8481b4-b8ff-4cab-9832-e145a7f06dee",
@@ -9177,8 +9177,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6940,
-      y: 5060,
+      x: 7520,
+      y: 7120,
     },
     name: "BattleField",
     id: "b6962d63-fc0f-46ed-9f39-b26ea219b161",
@@ -9192,8 +9192,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6940,
-      y: 4840,
+      x: 7520,
+      y: 6900,
     },
     name: "BattleField",
     id: "51ec81c7-b003-434f-a657-8ed6715dcb18",
@@ -9207,8 +9207,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6940,
-      y: 4600,
+      x: 7520,
+      y: 6660,
     },
     name: "BattleField",
     id: "83532ab7-ea59-47b7-b532-16ebce69e455",
@@ -9222,8 +9222,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7180,
-      y: 6780,
+      x: 7760,
+      y: 8840,
     },
     name: "TreasureField",
     id: "daaab021-b6bc-47c8-9f71-2c5ea6b60f17",
@@ -9239,8 +9239,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6840,
-      y: 6780,
+      x: 7420,
+      y: 8840,
     },
     name: "BattleField",
     id: "f0d4e5a4-5b54-49f3-9a5c-8eb11482c775",
@@ -9254,8 +9254,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6840,
-      y: 7340,
+      x: 7420,
+      y: 9400,
     },
     name: "BattleField",
     id: "e5e7ec5e-4735-4f7b-93e0-01829d942f58",
@@ -9269,8 +9269,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6560,
-      y: 6780,
+      x: 7140,
+      y: 8840,
     },
     name: "BattleField",
     id: "7b766969-ec3a-4369-98f0-b07824932ca6",
@@ -9284,8 +9284,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6320,
-      y: 6780,
+      x: 6900,
+      y: 8840,
     },
     name: "VillageField",
     id: "3e153161-fa74-4893-809c-6abe5111b3bb",
@@ -9295,8 +9295,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6540,
-      y: 7340,
+      x: 7120,
+      y: 9400,
     },
     name: "BattleField",
     id: "916f081a-5e73-4aff-9874-39f7a39e3716",
@@ -9310,8 +9310,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6140,
-      y: 7340,
+      x: 6720,
+      y: 9400,
     },
     name: "BattleField",
     id: "1c58f6ba-56f7-4a79-8453-e3eb43aecacd",
@@ -9327,8 +9327,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6140,
-      y: 7080,
+      x: 6720,
+      y: 9140,
     },
     name: "BattleField",
     id: "a2f835ff-c596-4322-b0cb-c71857189390",
@@ -9342,8 +9342,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6140,
-      y: 6780,
+      x: 6720,
+      y: 8840,
     },
     name: "VillageField",
     id: "8de305f9-d3e2-47de-9277-426c9d883a56",
@@ -9353,8 +9353,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5660,
-      y: 7340,
+      x: 6240,
+      y: 9400,
     },
     name: "TreasureField",
     id: "ff47b800-fdfa-4b55-ab68-748d2245e65e",
@@ -9368,8 +9368,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5660,
-      y: 7140,
+      x: 6240,
+      y: 9200,
     },
     name: "BattleField",
     id: "25dd6c96-fc59-4432-8f00-40ba8c9f0d2d",
@@ -9385,8 +9385,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5240,
-      y: 7140,
+      x: 5820,
+      y: 9200,
     },
     name: "BattleField",
     id: "0b02271d-05a8-4ca5-9c3e-59d946ff0dfc",
@@ -9400,8 +9400,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5240,
-      y: 6940,
+      x: 5820,
+      y: 9000,
     },
     name: "TreasureField",
     id: "c6873558-3547-46d5-acf0-e474b333e3a6",
@@ -9419,8 +9419,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5460,
-      y: 6940,
+      x: 6040,
+      y: 9000,
     },
     name: "MagicBookField",
     id: "0f6f5faf-1981-4542-9483-91361ff013d8",
@@ -9434,8 +9434,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5660,
-      y: 6940,
+      x: 6240,
+      y: 9000,
     },
     name: "BattleField",
     id: "b8c43d7d-f4cc-4ba9-ac75-75f2425a92da",
@@ -9451,8 +9451,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5660,
-      y: 6620,
+      x: 6240,
+      y: 8680,
     },
     name: "MagicStoreField",
     id: "901619df-8a61-4adf-9132-8d54e247128d",
@@ -9466,8 +9466,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5900,
-      y: 6620,
+      x: 6480,
+      y: 8680,
     },
     name: "BattleField",
     id: "511afd82-3b5f-423c-bf47-45303d3c3967",
@@ -9481,8 +9481,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6120,
-      y: 6620,
+      x: 6700,
+      y: 8680,
     },
     name: "BattleField",
     id: "2777df35-bc91-48e2-8d47-a2358becd6f7",
@@ -9496,8 +9496,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6120,
-      y: 6420,
+      x: 6700,
+      y: 8480,
     },
     name: "TreasureField",
     id: "e5a69b8c-6e13-45d4-8589-0938436e9ac1",
@@ -9513,8 +9513,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5900,
-      y: 6420,
+      x: 6480,
+      y: 8480,
     },
     name: "BattleField",
     id: "58e20d25-5ccf-4e06-832e-de356e59bac9",
@@ -9528,8 +9528,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5900,
-      y: 6220,
+      x: 6480,
+      y: 8280,
     },
     name: "GroceryStoreField",
     id: "f1265796-0f2e-43c4-be48-56414d040f00",
@@ -9545,8 +9545,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6340,
-      y: 6220,
+      x: 6920,
+      y: 8280,
     },
     name: "BattleField",
     id: "c2357c24-65d7-462a-85e5-bbb014449119",
@@ -9560,8 +9560,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6340,
-      y: 6420,
+      x: 6920,
+      y: 8480,
     },
     name: "BattleField",
     id: "303a8e17-3f3f-4d0c-a78a-b42c38464726",
@@ -9577,8 +9577,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6540,
-      y: 6420,
+      x: 7120,
+      y: 8480,
     },
     name: "TreasureField",
     id: "02c849aa-f126-46e5-a983-b41b0419191e",
@@ -9592,8 +9592,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6540,
-      y: 6080,
+      x: 7120,
+      y: 8140,
     },
     name: "BattleField",
     id: "9ab61931-2f59-47c9-91fc-7d3f986dfdf9",
@@ -9609,8 +9609,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6100,
-      y: 6080,
+      x: 6680,
+      y: 8140,
     },
     name: "BattleField",
     id: "5388c61e-62f4-432d-802d-40138036bf50",
@@ -9624,8 +9624,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6100,
-      y: 5880,
+      x: 6680,
+      y: 7940,
     },
     name: "BattleField",
     id: "68b219c8-3865-40d8-8b55-1985123557f2",
@@ -9641,8 +9641,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6320,
-      y: 5880,
+      x: 6900,
+      y: 7940,
     },
     name: "TreasureField",
     id: "ca1fa3dd-7d22-4f42-a99e-99fa69b82d8a",
@@ -9658,8 +9658,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6540,
-      y: 5880,
+      x: 7120,
+      y: 7940,
     },
     name: "BattleField",
     id: "6b213d5a-5201-4758-b440-fd82433845f7",
@@ -9673,8 +9673,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 7160,
-      y: 6380,
+      x: 7740,
+      y: 8440,
     },
     name: "BattleField",
     id: "d38da284-ae6b-4dad-abd7-56c209286c7a",
@@ -9688,8 +9688,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6960,
-      y: 6380,
+      x: 7540,
+      y: 8440,
     },
     name: "BattleField",
     id: "fb64289f-8101-4b82-8775-81fedc28966f",
@@ -9705,8 +9705,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6740,
-      y: 6380,
+      x: 7320,
+      y: 8440,
     },
     name: "BattleField",
     id: "b3d620e6-4270-47ad-ba83-28dd639b0ec9",
@@ -9720,8 +9720,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6740,
-      y: 5920,
+      x: 7320,
+      y: 7980,
     },
     name: "MagicBookField",
     id: "87a28c22-4c29-4574-b4f8-ecdeb9b49db9",
@@ -9737,8 +9737,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6960,
-      y: 5920,
+      x: 7540,
+      y: 7980,
     },
     name: "BattleField",
     id: "db397003-0d05-4cab-9a70-c810e73b560e",
@@ -9752,8 +9752,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6960,
-      y: 6140,
+      x: 7540,
+      y: 8200,
     },
     name: "TreasureField",
     id: "9a18db3a-0ed1-4b47-b8bd-975bea9edf87",
@@ -9767,8 +9767,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6740,
-      y: 5620,
+      x: 7320,
+      y: 7680,
     },
     name: "TreasureField",
     id: "025247b8-1345-4b42-95ee-e4aff5e49519",
@@ -9782,8 +9782,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6740,
-      y: 5340,
+      x: 7320,
+      y: 7400,
     },
     name: "BattleField",
     id: "f63ed4c9-eb4d-45d2-899a-6a2f3ae44428",
@@ -9799,8 +9799,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6500,
-      y: 5340,
+      x: 7080,
+      y: 7400,
     },
     name: "BattleField",
     id: "832cede2-4aba-4ed2-8630-88216bfd32e8",
@@ -9816,8 +9816,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6500,
-      y: 5020,
+      x: 7080,
+      y: 7080,
     },
     name: "MagicBookField",
     id: "ba5e6ce4-129b-4136-8da5-b94ab2f40ed0",
@@ -9833,8 +9833,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6740,
-      y: 5020,
+      x: 7320,
+      y: 7080,
     },
     name: "BattleField",
     id: "bf0ecf6b-9b5b-49ab-93b2-9ae6793083fd",
@@ -9848,8 +9848,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6740,
-      y: 5180,
+      x: 7320,
+      y: 7240,
     },
     name: "BattleField",
     id: "14b7920a-d8e1-4396-9b30-7dda0906ea8c",
@@ -9863,8 +9863,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6300,
-      y: 5700,
+      x: 6880,
+      y: 7760,
     },
     name: "BattleField",
     id: "55fb6a65-6890-4a3a-aa10-96108c1f67ea",
@@ -9878,8 +9878,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6300,
-      y: 5520,
+      x: 6880,
+      y: 7580,
     },
     name: "BattleField",
     id: "a603f125-23ef-4995-887f-4adc93e70e3b",
@@ -9895,8 +9895,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6300,
-      y: 5340,
+      x: 6880,
+      y: 7400,
     },
     name: "BattleField",
     id: "722ceff9-eefc-43e6-a402-342777919041",
@@ -9910,8 +9910,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6080,
-      y: 5700,
+      x: 6660,
+      y: 7760,
     },
     name: "BattleField",
     id: "63c4d6b2-ee30-4167-9779-472052f29824",
@@ -9925,8 +9925,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5520,
-      y: 6200,
+      x: 6100,
+      y: 8260,
     },
     name: "BattleField",
     id: "6d6249e9-cca4-4568-8635-a2b54dc630e1",
@@ -9942,8 +9942,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5440,
-      y: 6000,
+      x: 6020,
+      y: 8060,
     },
     name: "BattleField",
     id: "bb553085-8205-4a55-902b-3f6a3fa7bf69",
@@ -9957,8 +9957,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5460,
-      y: 6420,
+      x: 6040,
+      y: 8480,
     },
     name: "BattleField",
     id: "a51a1631-727f-41c7-a3b4-fad77fcc5725",
@@ -9972,8 +9972,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5240,
-      y: 6420,
+      x: 5820,
+      y: 8480,
     },
     name: "BattleField",
     id: "fa240b54-1345-4fc6-bc87-1286b0bf787e",
@@ -9989,8 +9989,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5240,
-      y: 6000,
+      x: 5820,
+      y: 8060,
     },
     name: "TreasureField",
     id: "897aa66e-ee2b-492c-8dd6-462d6d8e7a7c",
@@ -10006,8 +10006,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5500,
-      y: 5740,
+      x: 6080,
+      y: 7800,
     },
     name: "ChruchField",
     id: "54a8b9ec-d14c-4c74-89cd-3a04ffbf7718",
@@ -10021,8 +10021,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4800,
-      y: 6940,
+      x: 5380,
+      y: 9000,
     },
     name: "BattleField",
     id: "29242ec7-547a-4057-9611-c621674c18cd",
@@ -10038,8 +10038,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4800,
-      y: 6680,
+      x: 5380,
+      y: 8740,
     },
     name: "BattleField",
     id: "cc318b46-313f-4e6e-9756-f11f40bab280",
@@ -10053,8 +10053,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5020,
-      y: 6680,
+      x: 5600,
+      y: 8740,
     },
     name: "RedTreasureField",
     id: "9bf09993-ec16-4676-8861-5ad87f6be191",
@@ -10070,8 +10070,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5240,
-      y: 6680,
+      x: 5820,
+      y: 8740,
     },
     name: "BattleField",
     id: "0823864a-8a34-493f-ab82-474a930778ca",
@@ -10085,8 +10085,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5000,
-      y: 6440,
+      x: 5580,
+      y: 8500,
     },
     name: "WorldTransferField",
     id: "07f146b9-a672-4634-a234-ee7366255698",
@@ -10100,8 +10100,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4880,
-      y: 5980,
+      x: 5460,
+      y: 8040,
     },
     name: "RedTreasureField",
     id: "0315783b-1c1b-4c76-b577-d6f19cbebf46",
@@ -10115,8 +10115,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4840,
-      y: 5760,
+      x: 5420,
+      y: 7820,
     },
     name: "BattleField",
     id: "5efd7d93-eb13-49fb-90bd-03b6f1daff20",
@@ -10130,8 +10130,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4500,
-      y: 5760,
+      x: 5080,
+      y: 7820,
     },
     name: "BattleField",
     id: "54a7afcb-ad9e-4a86-a11b-62430d47aee8",
@@ -10145,8 +10145,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4500,
-      y: 6100,
+      x: 5080,
+      y: 8160,
     },
     name: "RedTreasureField",
     id: "4c89129c-47e5-4a13-98bd-944dc5daea9e",
@@ -10160,8 +10160,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4740,
-      y: 6100,
+      x: 5320,
+      y: 8160,
     },
     name: "BattleField",
     id: "98c44f2c-6f3b-4ab5-bd2a-59b4cce3e409",
@@ -10175,8 +10175,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4740,
-      y: 5920,
+      x: 5320,
+      y: 7980,
     },
     name: "CaveField",
     id: "cc833aee-3d20-4f34-98f1-aa6f64192a09",
@@ -10186,8 +10186,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4380,
-      y: 6080,
+      x: 4960,
+      y: 8140,
     },
     name: "BattleField",
     id: "870ba194-5e1e-4669-8fa4-a9635b22b6a8",
@@ -10203,8 +10203,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4260,
-      y: 6460,
+      x: 4840,
+      y: 8520,
     },
     name: "BattleField",
     id: "ed929ea4-2730-4c70-af6d-68cc482e2fcd",
@@ -10220,8 +10220,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4680,
-      y: 6940,
+      x: 5260,
+      y: 9000,
     },
     name: "TreasureField",
     id: "11dd88e3-4d09-41e8-878d-166404daeb24",
@@ -10235,8 +10235,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4560,
-      y: 6940,
+      x: 5140,
+      y: 9000,
     },
     name: "BattleField",
     id: "2c16ff2e-212d-4326-8417-b350a16ce3a7",
@@ -10250,8 +10250,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4400,
-      y: 6940,
+      x: 4980,
+      y: 9000,
     },
     name: "BattleField",
     id: "8ee0e31f-77e1-453b-8c4d-454d3e397e33",
@@ -10265,8 +10265,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4260,
-      y: 6680,
+      x: 4840,
+      y: 8740,
     },
     name: "RedTreasureField",
     id: "19f54ae7-a645-4af2-ab78-008480895080",
@@ -10280,8 +10280,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4400,
-      y: 6460,
+      x: 4980,
+      y: 8520,
     },
     name: "TreasureField",
     id: "819c4127-4cde-4907-81e9-914de25b11e0",
@@ -10295,8 +10295,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4400,
-      y: 6680,
+      x: 4980,
+      y: 8740,
     },
     name: "BattleField",
     id: "3bbceb25-16c4-4da3-8b35-33f85a917459",
@@ -10310,8 +10310,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4540,
-      y: 6680,
+      x: 5120,
+      y: 8740,
     },
     name: "BattleField",
     id: "cbbc4967-81ae-4bd2-98eb-402b46fe820a",
@@ -10325,8 +10325,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4680,
-      y: 6680,
+      x: 5260,
+      y: 8740,
     },
     name: "VillageField",
     id: "9ae4561e-8444-442c-9e33-6fca76876ea6",
@@ -10336,8 +10336,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4260,
-      y: 6940,
+      x: 4840,
+      y: 9000,
     },
     name: "BattleField",
     id: "b68e13fa-f9c7-4e75-802b-e9285bb643d7",
@@ -10351,8 +10351,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4380,
-      y: 5860,
+      x: 4960,
+      y: 7920,
     },
     name: "TreasureField",
     id: "351ec349-c18e-485b-bdd6-985d786cd831",
@@ -10366,8 +10366,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4380,
-      y: 5580,
+      x: 4960,
+      y: 7640,
     },
     name: "BattleField",
     id: "ffaa6de8-c898-4d2f-bbe6-e6274d633bf1",
@@ -10381,8 +10381,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4560,
-      y: 5580,
+      x: 5140,
+      y: 7640,
     },
     name: "CollectMoneyField",
     id: "d8eb0795-3674-4249-8900-3f8584694028",
@@ -10396,8 +10396,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4560,
-      y: 5380,
+      x: 5140,
+      y: 7440,
     },
     name: "MagicBookField",
     id: "291960d4-844b-4c81-9823-074a2725696c",
@@ -10411,8 +10411,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4700,
-      y: 5380,
+      x: 5280,
+      y: 7440,
     },
     name: "BattleField",
     id: "d99ba8f1-9f96-444a-8250-83ce4e29d8a1",
@@ -10426,8 +10426,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4700,
-      y: 5240,
+      x: 5280,
+      y: 7300,
     },
     name: "CollectMoneyField",
     id: "63e2ff80-12ba-4d0b-bee1-da62994eb509",
@@ -10441,8 +10441,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4840,
-      y: 5240,
+      x: 5420,
+      y: 7300,
     },
     name: "TreasureField",
     id: "09c5b023-463d-419d-92de-261d9c6add91",
@@ -10456,8 +10456,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5020,
-      y: 5240,
+      x: 5600,
+      y: 7300,
     },
     name: "CollectMoneyField",
     id: "dabef7e7-d168-47ec-add0-2aa9243a9583",
@@ -10473,8 +10473,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5240,
-      y: 5740,
+      x: 5820,
+      y: 7800,
     },
     name: "BattleField",
     id: "b6d9ab88-93f4-455f-9b52-9e253903a7be",
@@ -10488,8 +10488,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5240,
-      y: 5600,
+      x: 5820,
+      y: 7660,
     },
     name: "BattleField",
     id: "cfb1da0a-df2b-4a00-b64e-12a233e211e7",
@@ -10505,8 +10505,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5240,
-      y: 5460,
+      x: 5820,
+      y: 7520,
     },
     name: "WhiteTreasureField",
     id: "1cad5f2c-7f0b-42c4-ab99-e36789e14d2d",
@@ -10516,8 +10516,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5020,
-      y: 5600,
+      x: 5600,
+      y: 7660,
     },
     name: "BattleField",
     id: "0fd2a9c7-63ec-4acf-bc0f-8637fef7727b",
@@ -10533,8 +10533,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4760,
-      y: 5600,
+      x: 5340,
+      y: 7660,
     },
     name: "VillageField",
     id: "8d11c5e9-0dd8-4e8e-b966-aa8b4a63b982",
@@ -10544,8 +10544,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5020,
-      y: 5440,
+      x: 5600,
+      y: 7500,
     },
     name: "BattleField",
     id: "60709f3c-535e-490b-9115-cf2e465b215b",
@@ -10559,8 +10559,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6300,
-      y: 5020,
+      x: 6880,
+      y: 7080,
     },
     name: "WeaponStoreField",
     id: "90e3c78d-1424-4ff6-af98-db7ff0d3012d",
@@ -10574,8 +10574,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6060,
-      y: 5020,
+      x: 6640,
+      y: 7080,
     },
     name: "BattleField",
     id: "c1d39ac3-72e3-4a74-ba4b-556e1d794d08",
@@ -10589,8 +10589,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6740,
-      y: 4600,
+      x: 7320,
+      y: 6660,
     },
     name: "TreasureField",
     id: "2d26ef41-f38f-4fa8-a987-5410b6c3b527",
@@ -10604,8 +10604,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6520,
-      y: 4600,
+      x: 7100,
+      y: 6660,
     },
     name: "BattleField",
     id: "5248bed1-540b-4065-8746-949f0b481ada",
@@ -10619,8 +10619,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6280,
-      y: 4600,
+      x: 6860,
+      y: 6660,
     },
     name: "BattleField",
     id: "9e18d839-4abb-4e55-9839-4eaaa696df7d",
@@ -10634,8 +10634,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 6040,
-      y: 4600,
+      x: 6620,
+      y: 6660,
     },
     name: "BattleField",
     id: "d4339577-838e-4d60-b13d-fcc2f64fd779",
@@ -10649,8 +10649,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5980,
-      y: 4820,
+      x: 6560,
+      y: 6880,
     },
     name: "MagicBookField",
     id: "bb0342f3-3f0a-4d4d-aa65-4bb81e82e724",
@@ -10666,8 +10666,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5800,
-      y: 5520,
+      x: 6380,
+      y: 7580,
     },
     name: "BattleField",
     id: "703fe729-0bf9-4704-9a12-5df43f60f473",
@@ -10681,8 +10681,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5800,
-      y: 5380,
+      x: 6380,
+      y: 7440,
     },
     name: "TreasureField",
     id: "913b4d18-24d1-41d0-a03b-61042a5d1c7c",
@@ -10696,8 +10696,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5800,
-      y: 5240,
+      x: 6380,
+      y: 7300,
     },
     name: "BattleField",
     id: "1bcae934-b452-44b3-a3ec-4d78e9473f90",
@@ -10711,8 +10711,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5280,
-      y: 5240,
+      x: 5860,
+      y: 7300,
     },
     name: "BattleField",
     id: "fe9d3525-5e43-4d48-8b2c-06b3d4da8acc",
@@ -10726,8 +10726,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5520,
-      y: 5240,
+      x: 6100,
+      y: 7300,
     },
     name: "BattleField",
     id: "51918156-9021-4da6-9699-7aa2ec931da2",
@@ -10743,8 +10743,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5520,
-      y: 4820,
+      x: 6100,
+      y: 6880,
     },
     name: "TreasureField",
     id: "f27c8f02-1dc2-4c82-879e-c9474d60beaf",
@@ -10760,8 +10760,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5760,
-      y: 4820,
+      x: 6340,
+      y: 6880,
     },
     name: "BattleField",
     id: "9f479f60-e172-4c29-9d83-8709c65d75c1",
@@ -10777,8 +10777,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5260,
-      y: 4820,
+      x: 5840,
+      y: 6880,
     },
     name: "BattleField",
     id: "28ca4829-c92b-4571-b0ba-cbe745b60d1c",
@@ -10792,8 +10792,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5260,
-      y: 4600,
+      x: 5840,
+      y: 6660,
     },
     name: "BattleField",
     id: "ac9f40ea-da18-4a09-9470-ed6878981413",
@@ -10807,8 +10807,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5760,
-      y: 4600,
+      x: 6340,
+      y: 6660,
     },
     name: "BattleField",
     id: "caa5b6fd-392b-46b6-811a-225758052fb1",
@@ -10824,8 +10824,8 @@ const oceaniaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 5760,
-      y: 4360,
+      x: 6340,
+      y: 6420,
     },
     name: "BattleField",
     id: "9efe55a8-f455-4d8b-bc71-3ff2f02ab0e4",
@@ -10841,8 +10841,8 @@ const oceaniaVertices: Vertex[] = [
     id: "f2681860-c863-41f0-8180-0f77fafeed4f",
     name: "BattleField",
     position: {
-      x: 8560,
-      y: 5100,
+      x: 9140,
+      y: 7160,
     },
     edges: [
       "ef196c38-b912-4d77-a3b8-1aac449e8d81",
@@ -10856,8 +10856,8 @@ const oceaniaVertices: Vertex[] = [
 const africaVertices: Vertex[] = [
   {
     position: {
-      x: 1760,
-      y: 2060,
+      x: 2340,
+      y: 4120,
     },
     name: "TreasureField",
     id: "322eaf7d-b7d1-4a44-b489-c5a71c9f4614",
@@ -10871,8 +10871,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1760,
-      y: 2260,
+      x: 2340,
+      y: 4320,
     },
     name: "BattleField",
     id: "88143df3-c23e-4792-9a85-a57f2d0440a4",
@@ -10886,8 +10886,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3680,
-      y: 3820,
+      x: 4260,
+      y: 5880,
     },
     name: "BattleField",
     id: "8e1542c3-f4c6-4100-add8-b227c7d2de56",
@@ -10901,8 +10901,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3460,
-      y: 3820,
+      x: 4040,
+      y: 5880,
     },
     name: "TreasureField",
     id: "1d8d323b-1326-49f1-9bad-38adab906a94",
@@ -10916,8 +10916,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3480,
-      y: 3520,
+      x: 4060,
+      y: 5580,
     },
     name: "BattleField",
     id: "8936a8cf-886c-43ad-a0eb-312592992fd9",
@@ -10931,8 +10931,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3160,
-      y: 3520,
+      x: 3740,
+      y: 5580,
     },
     name: "BattleField",
     id: "f7b5ff65-c762-425c-9586-a245c385f110",
@@ -10948,8 +10948,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3160,
-      y: 3260,
+      x: 3740,
+      y: 5320,
     },
     name: "BattleField",
     id: "a5f498e6-b8ce-4a7d-9992-b94f4843e44c",
@@ -10963,8 +10963,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3380,
-      y: 3260,
+      x: 3960,
+      y: 5320,
     },
     name: "BattleField",
     id: "3f9ecf9d-4c05-4fcf-be46-ab33494df46f",
@@ -10978,8 +10978,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3380,
-      y: 3060,
+      x: 3960,
+      y: 5120,
     },
     name: "TreasureField",
     id: "abd2d2d1-f967-4b06-b1e2-05f135981a67",
@@ -10993,8 +10993,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3160,
-      y: 3060,
+      x: 3740,
+      y: 5120,
     },
     name: "BattleField",
     id: "174d85bb-217b-4a54-baa1-2c89c4b11ef1",
@@ -11008,8 +11008,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2960,
-      y: 3060,
+      x: 3540,
+      y: 5120,
     },
     name: "BattleField",
     id: "e8f299b9-0aeb-4799-a7c8-609a124bdcbd",
@@ -11025,8 +11025,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2760,
-      y: 3060,
+      x: 3340,
+      y: 5120,
     },
     name: "BattleField",
     id: "7bea5b67-ef03-452d-acf4-f611dbcd8aea",
@@ -11040,8 +11040,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2760,
-      y: 2760,
+      x: 3340,
+      y: 4820,
     },
     name: "BattleField",
     id: "987230a9-f0a9-441e-97f6-6711b1855ee9",
@@ -11055,8 +11055,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2960,
-      y: 2760,
+      x: 3540,
+      y: 4820,
     },
     name: "BattleField",
     id: "f5b58107-f585-4bd8-b2fc-e01d91e92aca",
@@ -11072,8 +11072,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3000,
-      y: 2920,
+      x: 3580,
+      y: 4980,
     },
     name: "TreasureField",
     id: "6cb81b8e-a640-490a-94d0-f1223b4c5421",
@@ -11087,8 +11087,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1760,
-      y: 2460,
+      x: 2340,
+      y: 4520,
     },
     name: "TreasureField",
     id: "d9bba158-17ec-4bda-9f21-f466cbb89fd4",
@@ -11104,8 +11104,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1760,
-      y: 2660,
+      x: 2340,
+      y: 4720,
     },
     name: "BattleField",
     id: "3a0a7f06-ca31-4ae9-8e5d-67f6d33479e1",
@@ -11119,8 +11119,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1960,
-      y: 2660,
+      x: 2540,
+      y: 4720,
     },
     name: "BattleField",
     id: "f7ee4c7c-cf1c-4218-a54b-fafaf2fe8968",
@@ -11136,8 +11136,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1960,
-      y: 2460,
+      x: 2540,
+      y: 4520,
     },
     name: "JobStoreField",
     id: "aaeb9d25-3961-4529-b9e3-fd6b92f455c2",
@@ -11151,8 +11151,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1960,
-      y: 2840,
+      x: 2540,
+      y: 4900,
     },
     name: "BattleField",
     id: "cd9e3b5d-7246-4557-848c-a8dac612fbdc",
@@ -11166,8 +11166,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2160,
-      y: 2840,
+      x: 2740,
+      y: 4900,
     },
     name: "MagicBookField",
     id: "2877e24b-a5aa-4610-a0cb-afca864de892",
@@ -11183,8 +11183,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2960,
-      y: 2460,
+      x: 3540,
+      y: 4520,
     },
     name: "BattleField",
     id: "68d7fcd7-e960-4514-9603-f271284086d1",
@@ -11198,8 +11198,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2720,
-      y: 2240,
+      x: 3300,
+      y: 4300,
     },
     name: "VillageField",
     id: "16dc9cb2-c319-48ab-89b2-5ff9a09e7594",
@@ -11209,8 +11209,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1540,
-      y: 2460,
+      x: 2120,
+      y: 4520,
     },
     name: "BattleField",
     id: "b07aaa89-3bf7-4cc4-9fbd-958eb1d9319c",
@@ -11226,8 +11226,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1140,
-      y: 2460,
+      x: 1720,
+      y: 4520,
     },
     name: "TreasureField",
     id: "1fa37190-aa3b-4ffb-aa24-bfd3b32a3829",
@@ -11241,8 +11241,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1140,
-      y: 2300,
+      x: 1720,
+      y: 4360,
     },
     name: "BattleField",
     id: "5405ed3a-479b-43ee-9f73-eb6c1f14c89f",
@@ -11258,8 +11258,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1340,
-      y: 2300,
+      x: 1920,
+      y: 4360,
     },
     name: "BattleField",
     id: "bbfc72ff-1393-46c4-96c3-e3a63ee14fcd",
@@ -11275,8 +11275,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1540,
-      y: 2300,
+      x: 2120,
+      y: 4360,
     },
     name: "MagicStoreField",
     id: "5ddb4be4-55e6-4ed5-9757-870c32c16026",
@@ -11290,8 +11290,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1380,
-      y: 2120,
+      x: 1960,
+      y: 4180,
     },
     name: "MagicBookField",
     id: "34d157a9-d9f6-4dc7-b2c6-528df4486844",
@@ -11305,8 +11305,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1160,
-      y: 2120,
+      x: 1740,
+      y: 4180,
     },
     name: "BattleField",
     id: "ae4fce93-6a09-467c-a7aa-bc5b60de3709",
@@ -11320,8 +11320,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1200,
-      y: 1960,
+      x: 1780,
+      y: 4020,
     },
     name: "BattleField",
     id: "080ec5a9-61b6-4c4b-8fc4-a6e692579093",
@@ -11335,8 +11335,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1240,
-      y: 1780,
+      x: 1820,
+      y: 3840,
     },
     name: "VillageField",
     id: "f28220fb-cebb-4bca-874c-ed7ff1772494",
@@ -11346,8 +11346,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 920,
-      y: 2300,
+      x: 1500,
+      y: 4360,
     },
     name: "BattleField",
     id: "fa36d5a2-ace8-4dee-bba1-42cb2cd63920",
@@ -11363,8 +11363,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 920,
-      y: 2460,
+      x: 1500,
+      y: 4520,
     },
     name: "CollectMoneyField",
     id: "619c1270-fba7-4bad-910e-04a9bbd5ed60",
@@ -11380,8 +11380,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 640,
-      y: 2300,
+      x: 1220,
+      y: 4360,
     },
     name: "TreasureField",
     id: "1ae37fd6-c783-484a-9f62-124406d09511",
@@ -11395,8 +11395,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 380,
-      y: 2300,
+      x: 960,
+      y: 4360,
     },
     name: "BattleField",
     id: "a124e103-4321-468c-81f9-405a49eda01c",
@@ -11410,8 +11410,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 720,
-      y: 2460,
+      x: 1300,
+      y: 4520,
     },
     name: "BattleField",
     id: "89ad7f5d-70d8-45bb-837f-ae21966708ff",
@@ -11425,8 +11425,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 520,
-      y: 2460,
+      x: 1100,
+      y: 4520,
     },
     name: "BattleField",
     id: "35041058-a31a-4fe3-a316-5fc922b81f65",
@@ -11440,8 +11440,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 340,
-      y: 2460,
+      x: 920,
+      y: 4520,
     },
     name: "TreasureField",
     id: "2b05583a-deef-4751-a687-7dd441e56a25",
@@ -11457,8 +11457,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 380,
-      y: 2640,
+      x: 960,
+      y: 4700,
     },
     name: "BattleField",
     id: "e9650755-5abf-42a3-9e54-95cf54d82ff2",
@@ -11472,8 +11472,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 480,
-      y: 2660,
+      x: 1060,
+      y: 4720,
     },
     name: "BattleField",
     id: "503df25c-7e22-48a8-a16a-b34355092f6f",
@@ -11487,8 +11487,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 80,
-      y: 2460,
+      x: 660,
+      y: 4520,
     },
     name: "BattleField",
     id: "508251b0-ed61-474a-ba76-c1baf6d84157",
@@ -11502,8 +11502,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 40,
-      y: 2640,
+      x: 620,
+      y: 4700,
     },
     name: "BattleField",
     id: "bc9968c9-5592-4513-9831-60716054ded9",
@@ -11517,8 +11517,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 200,
-      y: 2640,
+      x: 780,
+      y: 4700,
     },
     name: "GroceryStoreField",
     id: "9b163651-e5b6-4ba4-986f-589a4792f430",
@@ -11534,8 +11534,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 920,
-      y: 2680,
+      x: 1500,
+      y: 4740,
     },
     name: "BattleField",
     id: "6939e085-9678-4afd-89eb-99ed19440848",
@@ -11551,8 +11551,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 720,
-      y: 2680,
+      x: 1300,
+      y: 4740,
     },
     name: "TreasureField",
     id: "25d92ae6-fbf0-4a85-9164-6f59cb0d79b1",
@@ -11566,8 +11566,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 720,
-      y: 2860,
+      x: 1300,
+      y: 4920,
     },
     name: "BattleField",
     id: "9f5f4743-9ddc-48a8-b6d9-c1a79872673f",
@@ -11583,8 +11583,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1120,
-      y: 2680,
+      x: 1700,
+      y: 4740,
     },
     name: "BattleField",
     id: "bbfd6dd2-a6b8-4024-be59-4cbeb921bde3",
@@ -11598,8 +11598,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1120,
-      y: 2860,
+      x: 1700,
+      y: 4920,
     },
     name: "TreasureField",
     id: "bac5cc3d-654b-4e6a-a1ff-cd6ae1df9a31",
@@ -11615,8 +11615,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 480,
-      y: 2860,
+      x: 1060,
+      y: 4920,
     },
     name: "TreasureField",
     id: "95aa9d15-ee59-4683-b364-56488fc692c4",
@@ -11630,8 +11630,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 480,
-      y: 3200,
+      x: 1060,
+      y: 5260,
     },
     name: "BattleField",
     id: "4fe5cf19-9e47-4f21-948e-2dfa618eeabd",
@@ -11645,8 +11645,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 720,
-      y: 3020,
+      x: 1300,
+      y: 5080,
     },
     name: "BattleField",
     id: "44c8b016-f626-4579-93d2-a5a8da72899e",
@@ -11660,8 +11660,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 720,
-      y: 3200,
+      x: 1300,
+      y: 5260,
     },
     name: "BattleField",
     id: "97dc432c-1c1f-40a8-b2d8-10b4b23d34c5",
@@ -11679,8 +11679,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1120,
-      y: 3120,
+      x: 1700,
+      y: 5180,
     },
     name: "BattleField",
     id: "2109c97e-6c99-494d-b22d-066e5d546906",
@@ -11694,8 +11694,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1300,
-      y: 3120,
+      x: 1880,
+      y: 5180,
     },
     name: "BattleField",
     id: "3dde5f36-3c29-4ea8-994f-42e164c26bf4",
@@ -11711,8 +11711,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1300,
-      y: 3360,
+      x: 1880,
+      y: 5420,
     },
     name: "BattleField",
     id: "82b0d74a-6d10-40e1-ada7-030034d8b0dd",
@@ -11728,8 +11728,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 3200,
+      x: 1460,
+      y: 5260,
     },
     name: "BattleField",
     id: "3ed15ac5-7b4c-44f9-8fe3-e5aa12c76e9c",
@@ -11743,8 +11743,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 720,
-      y: 3520,
+      x: 1300,
+      y: 5580,
     },
     name: "BattleField",
     id: "b6f78526-4378-452e-a636-1c54a2f284b2",
@@ -11758,8 +11758,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 3520,
+      x: 1460,
+      y: 5580,
     },
     name: "MagicBookField",
     id: "950ad97b-5e35-487a-8aac-c67eb37eeb19",
@@ -11777,8 +11777,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 3360,
+      x: 1460,
+      y: 5420,
     },
     name: "BattleField",
     id: "9c2e8482-a87f-456b-b883-ad52956a8c1d",
@@ -11794,8 +11794,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1100,
-      y: 3360,
+      x: 1680,
+      y: 5420,
     },
     name: "VillageField",
     id: "4af81848-da32-4762-a3fd-f429b71ed19a",
@@ -11809,8 +11809,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1300,
-      y: 3520,
+      x: 1880,
+      y: 5580,
     },
     name: "TreasureField",
     id: "391ec145-152e-4677-bc24-63b469b9b6a1",
@@ -11826,8 +11826,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2160,
-      y: 2980,
+      x: 2740,
+      y: 5040,
     },
     name: "BattleField",
     id: "f7b3185e-5513-4527-ada6-507c975faf15",
@@ -11843,8 +11843,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1800,
-      y: 2980,
+      x: 2380,
+      y: 5040,
     },
     name: "TreasureField",
     id: "3bc2f290-fa82-4c09-bc3e-d474742de716",
@@ -11858,8 +11858,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1480,
-      y: 2980,
+      x: 2060,
+      y: 5040,
     },
     name: "BattleField",
     id: "2588b3f6-24d1-448c-8020-1f7a81c10ac4",
@@ -11873,8 +11873,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1480,
-      y: 3120,
+      x: 2060,
+      y: 5180,
     },
     name: "MagicBookField",
     id: "e1975b6a-5deb-4900-a851-dee9a177ff74",
@@ -11888,8 +11888,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2160,
-      y: 3200,
+      x: 2740,
+      y: 5260,
     },
     name: "RedTreasureField",
     id: "7e43d406-c437-4d8d-aa6c-9e01abcb2e32",
@@ -11903,8 +11903,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2160,
-      y: 3400,
+      x: 2740,
+      y: 5460,
     },
     name: "TreasureField",
     id: "8e0561cc-1352-4243-8129-91b43191fb12",
@@ -11920,8 +11920,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1300,
-      y: 3680,
+      x: 1880,
+      y: 5740,
     },
     name: "BattleField",
     id: "7842ed3c-4cac-45c8-9866-3f484aa5d356",
@@ -11935,8 +11935,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1520,
-      y: 3680,
+      x: 2100,
+      y: 5740,
     },
     name: "BattleField",
     id: "9216746c-a2ee-402e-b3c3-c9e0fcf723ab",
@@ -11952,8 +11952,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1720,
-      y: 3680,
+      x: 2300,
+      y: 5740,
     },
     name: "TreasureField",
     id: "262bf198-703a-4ca3-a7e5-67c1d40891bf",
@@ -11967,8 +11967,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1720,
-      y: 3540,
+      x: 2300,
+      y: 5600,
     },
     name: "BattleField",
     id: "bdccf9dc-f2e9-44c0-bc84-cbb13aaabfe8",
@@ -11982,8 +11982,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1720,
-      y: 3400,
+      x: 2300,
+      y: 5460,
     },
     name: "BattleField",
     id: "43eccedd-50d4-4958-9f09-c9c718102ae4",
@@ -11997,8 +11997,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1940,
-      y: 3400,
+      x: 2520,
+      y: 5460,
     },
     name: "VillageField",
     id: "60db115a-341e-4ec1-8740-91f99dd79375",
@@ -12012,8 +12012,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3160,
-      y: 3800,
+      x: 3740,
+      y: 5860,
     },
     name: "TreasureField",
     id: "7175aab2-fb9f-410c-b6de-1019871f4cf1",
@@ -12029,8 +12029,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2760,
-      y: 3800,
+      x: 3340,
+      y: 5860,
     },
     name: "BattleField",
     id: "f01e6bc2-9437-4100-bd35-25b988bf9dee",
@@ -12046,8 +12046,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2760,
-      y: 3400,
+      x: 3340,
+      y: 5460,
     },
     name: "BattleField",
     id: "58e6727a-ffdf-4cc9-9708-21e8b6a5c0dc",
@@ -12061,8 +12061,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2760,
-      y: 3980,
+      x: 3340,
+      y: 6040,
     },
     name: "BattleField",
     id: "bdf8f00d-54e3-42d1-8c0e-70bb71fa0f44",
@@ -12076,8 +12076,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2960,
-      y: 3980,
+      x: 3540,
+      y: 6040,
     },
     name: "BattleField",
     id: "4b7b0f65-729b-4957-a308-5d62f3d84597",
@@ -12093,8 +12093,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3160,
-      y: 3980,
+      x: 3740,
+      y: 6040,
     },
     name: "BattleField",
     id: "658fcdcf-7640-4e34-a5b8-ce12554d0d55",
@@ -12108,8 +12108,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2960,
-      y: 4180,
+      x: 3540,
+      y: 6240,
     },
     name: "BattleField",
     id: "f0b7fbea-2784-49d2-869b-a7d6ad6fa442",
@@ -12123,8 +12123,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2960,
-      y: 4360,
+      x: 3540,
+      y: 6420,
     },
     name: "TreasureField",
     id: "1f785877-daf9-42b3-a244-60db6af34448",
@@ -12140,8 +12140,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2760,
-      y: 4360,
+      x: 3340,
+      y: 6420,
     },
     name: "BattleField",
     id: "9ec962b1-09e5-4b10-866f-41df29f7d0cc",
@@ -12155,8 +12155,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2960,
-      y: 4680,
+      x: 3540,
+      y: 6740,
     },
     name: "MagicBookField",
     id: "383bb84b-30cd-4862-8653-29a2d120cc9e",
@@ -12174,8 +12174,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2760,
-      y: 4680,
+      x: 3340,
+      y: 6740,
     },
     name: "BattleField",
     id: "13d14170-774f-48da-a10e-841314a3185b",
@@ -12191,8 +12191,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2760,
-      y: 4520,
+      x: 3340,
+      y: 6580,
     },
     name: "TreasureField",
     id: "89a2590e-0a1b-4bf7-b961-5c16de591390",
@@ -12206,8 +12206,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2480,
-      y: 4680,
+      x: 3060,
+      y: 6740,
     },
     name: "BattleField",
     id: "67dd7739-b6fa-4508-8628-0e215173b95d",
@@ -12221,8 +12221,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2200,
-      y: 4680,
+      x: 2780,
+      y: 6740,
     },
     name: "BattleField",
     id: "c3a8d056-5781-47e4-88e2-02b805b4209f",
@@ -12236,8 +12236,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2180,
-      y: 4460,
+      x: 2760,
+      y: 6520,
     },
     name: "BattleField",
     id: "5bd23f50-67ac-467e-b6e5-91a30ee3493a",
@@ -12251,8 +12251,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2140,
-      y: 4180,
+      x: 2720,
+      y: 6240,
     },
     name: "MagicBookField",
     id: "0afc0ff8-dcab-43c3-9936-977ff129e5a5",
@@ -12268,8 +12268,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2140,
-      y: 3980,
+      x: 2720,
+      y: 6040,
     },
     name: "BattleField",
     id: "a9daa7aa-9e32-4281-b0f6-8f3b5a713b2a",
@@ -12283,8 +12283,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2140,
-      y: 3740,
+      x: 2720,
+      y: 5800,
     },
     name: "VillageField",
     id: "ce81e242-e552-4aa3-a2a7-d6f1f5983e3b",
@@ -12294,8 +12294,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1920,
-      y: 4180,
+      x: 2500,
+      y: 6240,
     },
     name: "ChruchField",
     id: "c8c22aa5-e5d5-43e1-ab26-0321cf780ac7",
@@ -12311,8 +12311,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1700,
-      y: 4180,
+      x: 2280,
+      y: 6240,
     },
     name: "BattleField",
     id: "9f020032-d80a-43c2-ae34-6ad401f810dd",
@@ -12328,8 +12328,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1720,
-      y: 4340,
+      x: 2300,
+      y: 6400,
     },
     name: "BattleField",
     id: "70f7a2a2-e426-4c39-9d66-7c79c46f8799",
@@ -12343,8 +12343,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1740,
-      y: 4500,
+      x: 2320,
+      y: 6560,
     },
     name: "TreasureField",
     id: "ea46a50b-29e2-417f-815c-a7e005142918",
@@ -12360,8 +12360,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1960,
-      y: 4500,
+      x: 2540,
+      y: 6560,
     },
     name: "BattleField",
     id: "7d0cd4a7-12f7-4db2-b8f7-3d5b1375724d",
@@ -12375,8 +12375,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1520,
-      y: 3920,
+      x: 2100,
+      y: 5980,
     },
     name: "BattleField",
     id: "f417bc5f-c88d-483f-ac7a-8ef7e4767152",
@@ -12390,8 +12390,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1520,
-      y: 4180,
+      x: 2100,
+      y: 6240,
     },
     name: "BattleField",
     id: "ca228127-0a1f-446a-92b2-fe511a4a214c",
@@ -12407,8 +12407,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1820,
-      y: 4680,
+      x: 2400,
+      y: 6740,
     },
     name: "BattleField",
     id: "c02c3534-12f8-451b-92b4-dfb877638c6d",
@@ -12424,8 +12424,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2040,
-      y: 4680,
+      x: 2620,
+      y: 6740,
     },
     name: "BattleField",
     id: "2411b4e9-5fdc-447b-ae36-330ed903c2cb",
@@ -12439,8 +12439,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2020,
-      y: 4860,
+      x: 2600,
+      y: 6920,
     },
     name: "BattleField",
     id: "64e0a917-ad88-4d33-8a47-d8dcdcc4c4b7",
@@ -12454,8 +12454,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2000,
-      y: 5020,
+      x: 2580,
+      y: 7080,
     },
     name: "BattleField",
     id: "28e75cd6-3298-475c-adbb-92ee38ceda07",
@@ -12469,8 +12469,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3200,
-      y: 4680,
+      x: 3780,
+      y: 6740,
     },
     name: "BattleField",
     id: "d43fd910-861d-4d04-b2f6-5a1fc66dcb39",
@@ -12484,8 +12484,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2960,
-      y: 5000,
+      x: 3540,
+      y: 7060,
     },
     name: "BattleField",
     id: "9026c69f-1b8e-4eda-9f14-04b77fe8c333",
@@ -12499,8 +12499,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3200,
-      y: 5000,
+      x: 3780,
+      y: 7060,
     },
     name: "BattleField",
     id: "34a55e15-51e7-43fa-ac03-cffd5874a971",
@@ -12516,8 +12516,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3200,
-      y: 4820,
+      x: 3780,
+      y: 6880,
     },
     name: "RedTreasureField",
     id: "eafd1650-9312-40b1-87ed-cb09df886e69",
@@ -12531,8 +12531,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2380,
-      y: 5020,
+      x: 2960,
+      y: 7080,
     },
     name: "TreasureField",
     id: "296474f1-be30-4fe8-9045-754e37e1554e",
@@ -12546,8 +12546,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2740,
-      y: 5020,
+      x: 3320,
+      y: 7080,
     },
     name: "VillageField",
     id: "f5e4d0f2-7dad-44a0-a02e-1edd74e40461",
@@ -12561,8 +12561,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2740,
-      y: 5240,
+      x: 3320,
+      y: 7300,
     },
     name: "GoldTreasureField",
     id: "dad5a2b6-8c70-4f6c-bd5e-2eb5f1a4829d",
@@ -12576,8 +12576,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3200,
-      y: 5240,
+      x: 3780,
+      y: 7300,
     },
     name: "BattleField",
     id: "f510b0c1-3f03-476c-903c-31df4b5e6d09",
@@ -12591,8 +12591,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1300,
-      y: 4180,
+      x: 1880,
+      y: 6240,
     },
     name: "BattleField",
     id: "19511ca3-748f-4060-891b-3c06401720e1",
@@ -12606,8 +12606,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1300,
-      y: 4320,
+      x: 1880,
+      y: 6380,
     },
     name: "BattleField",
     id: "0cadd882-c1bd-481f-9c01-2ed8db61f0a1",
@@ -12621,8 +12621,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1300,
-      y: 4480,
+      x: 1880,
+      y: 6540,
     },
     name: "TreasureField",
     id: "5f04e060-0b4b-4cf5-a651-9e3f76e4ac22",
@@ -12636,8 +12636,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1300,
-      y: 4760,
+      x: 1880,
+      y: 6820,
     },
     name: "BattleField",
     id: "ae05e30a-484a-41a6-b556-78fe582eb3fc",
@@ -12651,8 +12651,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1580,
-      y: 4680,
+      x: 2160,
+      y: 6740,
     },
     name: "VillageField",
     id: "2b7aa32a-e089-467f-a621-781acc448dff",
@@ -12666,8 +12666,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1580,
-      y: 4840,
+      x: 2160,
+      y: 6900,
     },
     name: "TreasureField",
     id: "19e3cf4d-801f-499f-89d6-0c002c16395c",
@@ -12681,8 +12681,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1580,
-      y: 4980,
+      x: 2160,
+      y: 7040,
     },
     name: "BattleField",
     id: "17989969-42f5-4aae-8140-d90ae4191ba0",
@@ -12696,8 +12696,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1580,
-      y: 5140,
+      x: 2160,
+      y: 7200,
     },
     name: "BattleField",
     id: "1fc8ef68-cafe-4456-8c8f-c22613136364",
@@ -12711,8 +12711,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1340,
-      y: 5140,
+      x: 1920,
+      y: 7200,
     },
     name: "MagicBookField",
     id: "4fe387f3-b20d-4502-8162-5cd333cbef07",
@@ -12726,8 +12726,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1080,
-      y: 5080,
+      x: 1660,
+      y: 7140,
     },
     name: "BattleField",
     id: "be192b61-59df-45d2-abb9-08eb818877cf",
@@ -12741,8 +12741,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1080,
-      y: 4760,
+      x: 1660,
+      y: 6820,
     },
     name: "BattleField",
     id: "24387d13-baa8-498e-ac6d-052b8066732d",
@@ -12756,8 +12756,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1080,
-      y: 4580,
+      x: 1660,
+      y: 6640,
     },
     name: "BattleField",
     id: "4546db9d-a444-4b41-aeee-660b0a1dfef9",
@@ -12771,8 +12771,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1080,
-      y: 4400,
+      x: 1660,
+      y: 6460,
     },
     name: "VillageField",
     id: "4ba7bd86-a33e-4883-a087-8a94ec03cf4a",
@@ -12782,8 +12782,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 860,
-      y: 5020,
+      x: 1440,
+      y: 7080,
     },
     name: "TreasureField",
     id: "48deb6fd-4088-4297-b6c6-907db8d87494",
@@ -12799,8 +12799,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 860,
-      y: 5220,
+      x: 1440,
+      y: 7280,
     },
     name: "BattleField",
     id: "f9c0cd50-23b0-483c-8cea-5a9dcd7c8778",
@@ -12816,8 +12816,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 4760,
+      x: 1460,
+      y: 6820,
     },
     name: "BattleField",
     id: "772ee759-3ea5-4360-8efc-683a546bca83",
@@ -12833,8 +12833,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 600,
-      y: 4760,
+      x: 1180,
+      y: 6820,
     },
     name: "RedTreasureField",
     id: "e4109724-4dc7-4282-a862-255227af69de",
@@ -12850,8 +12850,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 600,
-      y: 5220,
+      x: 1180,
+      y: 7280,
     },
     name: "BattleField",
     id: "2ca9ad8a-bf92-42d9-ac0d-181686f33759",
@@ -12865,8 +12865,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3200,
-      y: 5460,
+      x: 3780,
+      y: 7520,
     },
     name: "TreasureField",
     id: "6e43fdd4-1e62-4992-b670-b6b9bf6265d5",
@@ -12880,8 +12880,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2960,
-      y: 5460,
+      x: 3540,
+      y: 7520,
     },
     name: "BattleField",
     id: "e975f3f8-a047-436b-8308-603035a9de32",
@@ -12897,8 +12897,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2740,
-      y: 5460,
+      x: 3320,
+      y: 7520,
     },
     name: "BattleField",
     id: "27040330-5967-41c7-aa6e-2aa29983e2aa",
@@ -12912,8 +12912,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 2780,
-      y: 6320,
+      x: 3360,
+      y: 8380,
     },
     name: "MagicBookField",
     id: "1a6ab201-5f6a-44c7-aca3-e93ad1042f02",
@@ -12927,8 +12927,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3060,
-      y: 6280,
+      x: 3640,
+      y: 8340,
     },
     name: "BattleField",
     id: "6a3347ff-3caa-4323-b3ca-a297dfc5731a",
@@ -12942,8 +12942,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3300,
-      y: 6320,
+      x: 3880,
+      y: 8380,
     },
     name: "BattleField",
     id: "b2bf7c89-ee9f-4b41-a690-09e4697d2a2f",
@@ -12957,8 +12957,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3520,
-      y: 6280,
+      x: 4100,
+      y: 8340,
     },
     name: "TreasureField",
     id: "86e5b447-323e-4917-8caf-5dd110f37ea2",
@@ -12974,8 +12974,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 3740,
-      y: 6320,
+      x: 4320,
+      y: 8380,
     },
     name: "BattleField",
     id: "3ab457c1-64f7-47b7-8781-db379258876e",
@@ -12989,8 +12989,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4000,
-      y: 6280,
+      x: 4580,
+      y: 8340,
     },
     name: "BattleField",
     id: "e5d42ca3-419d-4022-9481-943cf3ee57ef",
@@ -13004,8 +13004,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4000,
-      y: 6080,
+      x: 4580,
+      y: 8140,
     },
     name: "BattleField",
     id: "e1e1f6b5-a506-4426-827c-0f7e1078b983",
@@ -13019,8 +13019,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 4200,
-      y: 6060,
+      x: 4780,
+      y: 8120,
     },
     name: "TreasureField",
     id: "b6bf2e1e-b20f-4dd7-a326-8f2169c0f62f",
@@ -13034,8 +13034,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 860,
-      y: 5420,
+      x: 1440,
+      y: 7480,
     },
     name: "BattleField",
     id: "7adbf945-97fb-496f-a5cd-4315d80b18c3",
@@ -13049,8 +13049,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 860,
-      y: 5620,
+      x: 1440,
+      y: 7680,
     },
     name: "TreasureField",
     id: "3399c82c-b335-400c-9487-9517f23cc970",
@@ -13064,8 +13064,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 520,
-      y: 5660,
+      x: 1100,
+      y: 7720,
     },
     name: "BattleField",
     id: "4579de61-8c38-4dd8-9575-61672e3bcdd0",
@@ -13079,8 +13079,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 180,
-      y: 5600,
+      x: 760,
+      y: 7660,
     },
     name: "TreasureField",
     id: "3de50d91-6a5f-4d03-a686-2795435bcf44",
@@ -13094,8 +13094,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 380,
-      y: 4760,
+      x: 960,
+      y: 6820,
     },
     name: "BattleField",
     id: "f095c49c-633d-4c79-9830-7bf5bc8738e2",
@@ -13109,8 +13109,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 240,
-      y: 5360,
+      x: 820,
+      y: 7420,
     },
     name: "BattleField",
     id: "c09ced90-39fd-42f4-9479-951f566ef281",
@@ -13124,8 +13124,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 200,
-      y: 5140,
+      x: 780,
+      y: 7200,
     },
     name: "RedTreasureField",
     id: "8597b263-ac74-45e2-aa87-ccd16bdc9f3a",
@@ -13139,8 +13139,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 220,
-      y: 4880,
+      x: 800,
+      y: 6940,
     },
     name: "TreasureField",
     id: "4af0b208-a571-4ea5-a219-75dafcf97efb",
@@ -13154,8 +13154,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 20,
-      y: 4880,
+      x: 600,
+      y: 6940,
     },
     name: "BattleField",
     id: "44c8cc02-116b-4ca1-bd8d-9649ea0a1384",
@@ -13169,8 +13169,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 20,
-      y: 4660,
+      x: 600,
+      y: 6720,
     },
     name: "CollectMoneyField",
     id: "8156f96c-e527-4ce0-b804-5feba44eeb77",
@@ -13184,8 +13184,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 20,
-      y: 4440,
+      x: 600,
+      y: 6500,
     },
     name: "MagicBookField",
     id: "fc6f91b3-86df-4d3c-8293-965db51608da",
@@ -13199,8 +13199,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 20,
-      y: 4140,
+      x: 600,
+      y: 6200,
     },
     name: "CollectMoneyField",
     id: "1450a94d-a56a-4675-8af6-ec8ca0fbb198",
@@ -13216,8 +13216,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 380,
-      y: 4580,
+      x: 960,
+      y: 6640,
     },
     name: "MagicBookField",
     id: "066a723a-04fa-46a1-a832-c6adca71d721",
@@ -13231,8 +13231,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 380,
-      y: 4420,
+      x: 960,
+      y: 6480,
     },
     name: "BattleField",
     id: "445dcc14-0d8c-47ed-a61c-ee1c06022494",
@@ -13246,8 +13246,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 380,
-      y: 4260,
+      x: 960,
+      y: 6320,
     },
     name: "BattleField",
     id: "0e280b81-dca6-448f-b1f6-56adb0fb3dc5",
@@ -13261,8 +13261,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 600,
-      y: 4260,
+      x: 1180,
+      y: 6320,
     },
     name: "BattleField",
     id: "3c44cafb-fc10-49da-9340-09d5b77debf8",
@@ -13276,8 +13276,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 220,
-      y: 4140,
+      x: 800,
+      y: 6200,
     },
     name: "BattleField",
     id: "0100c7eb-c4d0-4a3c-8228-880a208dca9e",
@@ -13291,8 +13291,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 400,
-      y: 4140,
+      x: 980,
+      y: 6200,
     },
     name: "TreasureField",
     id: "a70ce34f-cff1-4610-ab93-ce1fcc6b2c12",
@@ -13306,8 +13306,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 4580,
+      x: 1460,
+      y: 6640,
     },
     name: "BattleField",
     id: "d5764ade-8ef7-4503-9d70-5dfe9b5d5a7f",
@@ -13321,8 +13321,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 4440,
+      x: 1460,
+      y: 6500,
     },
     name: "TreasureField",
     id: "dcd6a13f-8160-4467-8b9c-70f8c18c0398",
@@ -13336,8 +13336,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 620,
-      y: 4080,
+      x: 1200,
+      y: 6140,
     },
     name: "MagicBookField",
     id: "5212c4fe-1123-428c-ad6e-1f89d78a6a64",
@@ -13351,8 +13351,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 4080,
+      x: 1460,
+      y: 6140,
     },
     name: "BattleField",
     id: "f828915f-efd7-4a0e-8ea3-73571d2a33fe",
@@ -13368,8 +13368,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 4260,
+      x: 1460,
+      y: 6320,
     },
     name: "BattleField",
     id: "6b58aa37-9f9c-4926-ba4b-33423184068d",
@@ -13385,8 +13385,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1080,
-      y: 4260,
+      x: 1660,
+      y: 6320,
     },
     name: "BattleField",
     id: "5596dd5b-0a4d-4071-b43a-8ad099238a30",
@@ -13400,8 +13400,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 3900,
+      x: 1460,
+      y: 5960,
     },
     name: "TreasureField",
     id: "310ba9dc-a0b2-4440-b76c-ae97e402d157",
@@ -13415,8 +13415,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1080,
-      y: 3900,
+      x: 1660,
+      y: 5960,
     },
     name: "BattleField",
     id: "dbd77b59-f9b2-424a-96df-b1b5d5a28ee4",
@@ -13432,8 +13432,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 1080,
-      y: 3680,
+      x: 1660,
+      y: 5740,
     },
     name: "WeaponStoreField",
     id: "0df27500-7cce-4cdf-92aa-63835279b175",
@@ -13443,8 +13443,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 400,
-      y: 3940,
+      x: 980,
+      y: 6000,
     },
     name: "BattleField",
     id: "b27f79b2-a156-4600-aa68-5f9f89c41778",
@@ -13458,8 +13458,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 400,
-      y: 3760,
+      x: 980,
+      y: 5820,
     },
     name: "VillageField",
     id: "5066cdcb-4082-4b2d-9085-0f61e54a7568",
@@ -13475,8 +13475,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 640,
-      y: 3720,
+      x: 1220,
+      y: 5780,
     },
     name: "BattleField",
     id: "3e1a75c6-42c8-4d17-a7a0-865fcde5fd03",
@@ -13490,8 +13490,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 880,
-      y: 3680,
+      x: 1460,
+      y: 5740,
     },
     name: "BattleField",
     id: "08857627-5a03-435c-9484-8367c9e71863",
@@ -13505,8 +13505,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 200,
-      y: 3760,
+      x: 780,
+      y: 5820,
     },
     name: "BattleField",
     id: "15ab35aa-85d1-45fd-b8ec-d84a627d27ee",
@@ -13520,8 +13520,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: -320,
-      y: 4080,
+      x: 260,
+      y: 6140,
     },
     name: "BattleField",
     id: "f541e6a5-6e08-4e4a-bd87-232c94390306",
@@ -13535,8 +13535,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: -540,
-      y: 4140,
+      x: 40,
+      y: 6200,
     },
     name: "TreasureField",
     id: "275ffa79-a769-42a6-8fe6-d501c3048c9f",
@@ -13550,8 +13550,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: -540,
-      y: 3880,
+      x: 40,
+      y: 5940,
     },
     name: "CollectMoneyField",
     id: "c3649d5b-ffb3-4458-9b83-b0ecbef883b3",
@@ -13565,8 +13565,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: -520,
-      y: 3620,
+      x: 60,
+      y: 5680,
     },
     name: "BattleField",
     id: "e8c3d7e0-9e55-41fb-8ca6-f08fb6c5966d",
@@ -13580,8 +13580,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: -540,
-      y: 3380,
+      x: 40,
+      y: 5440,
     },
     name: "MagicBookField",
     id: "917e0da2-335d-4904-ac3e-7106b9c35a5a",
@@ -13595,8 +13595,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: -520,
-      y: 3100,
+      x: 60,
+      y: 5160,
     },
     name: "TreasureField",
     id: "e2788169-0475-463a-85af-28b6a5819ac5",
@@ -13610,8 +13610,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: -360,
-      y: 3100,
+      x: 220,
+      y: 5160,
     },
     name: "BattleField",
     id: "1aeeaf02-4fd7-4f21-af71-fdec195ae08f",
@@ -13625,8 +13625,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: -200,
-      y: 3100,
+      x: 380,
+      y: 5160,
     },
     name: "BattleField",
     id: "ca4ffc14-919f-4336-a19a-152166fb15bb",
@@ -13640,8 +13640,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: -20,
-      y: 3100,
+      x: 560,
+      y: 5160,
     },
     name: "TreasureField",
     id: "452f376f-5c2a-4db9-92f6-71d0d2de98e4",
@@ -13657,8 +13657,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 200,
-      y: 2820,
+      x: 780,
+      y: 4880,
     },
     name: "BattleField",
     id: "39f7989f-7dcb-451e-88e7-5ad2804d188c",
@@ -13672,8 +13672,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 200,
-      y: 2960,
+      x: 780,
+      y: 5020,
     },
     name: "RedTreasureField",
     id: "0c120b5a-2661-4916-86e8-228c5e7dbc2a",
@@ -13687,8 +13687,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 200,
-      y: 3100,
+      x: 780,
+      y: 5160,
     },
     name: "BattleField",
     id: "bda6adb2-e28e-4687-a714-7ad20ab4f210",
@@ -13704,8 +13704,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 200,
-      y: 3240,
+      x: 780,
+      y: 5300,
     },
     name: "BattleField",
     id: "9ebf2834-1559-463a-b993-2dd5a37e2f82",
@@ -13719,8 +13719,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 200,
-      y: 3380,
+      x: 780,
+      y: 5440,
     },
     name: "TreasureField",
     id: "3709d97b-a4db-4849-8ade-82a482eac568",
@@ -13736,8 +13736,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: -20,
-      y: 3380,
+      x: 560,
+      y: 5440,
     },
     name: "BattleField",
     id: "df919318-6a00-4255-bfec-1091f311f4ca",
@@ -13753,8 +13753,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: 200,
-      y: 3580,
+      x: 780,
+      y: 5640,
     },
     name: "BattleField",
     id: "5657cdc5-c057-49c7-bc06-ca16304c5afe",
@@ -13768,8 +13768,8 @@ const africaVertices: Vertex[] = [
   },
   {
     position: {
-      x: -280,
-      y: 3380,
+      x: 300,
+      y: 5440,
     },
     name: "WorldTransferField",
     id: "8f2fd2a1-a336-4c46-bf4a-2e5d82254928",
@@ -13781,8 +13781,8 @@ const africaVertices: Vertex[] = [
     id: "cce4c524-0cee-4d29-b998-04377768c8da",
     name: "BattleField",
     position: {
-      x: 2160,
-      y: 2460,
+      x: 2740,
+      y: 4520,
     },
     edges: [
       "727ee2b1-ffa8-45f6-ab34-4257146c068e",
@@ -13797,8 +13797,8 @@ const africaVertices: Vertex[] = [
     id: "648aa064-fb51-4bbf-8b4c-f8f50e6e82f0",
     name: "BattleField",
     position: {
-      x: 2720,
-      y: 2460,
+      x: 3300,
+      y: 4520,
     },
     edges: [
       "c6dc6dfa-9e8d-4022-8292-00149771c388",
@@ -13814,8 +13814,8 @@ const africaVertices: Vertex[] = [
     id: "969e7397-85e5-48f6-a40d-456bca2bcbbb",
     name: "CaveField",
     position: {
-      x: 2440,
-      y: 2460,
+      x: 3020,
+      y: 4520,
     },
     edges: [
       "78c667de-1d76-4f1a-9a4c-6c056adb78c1",
@@ -13831,8 +13831,8 @@ const arcticVertices: Vertex[] = [
     id: "711f14ab-2391-476a-8b5a-55551c7cf1bc",
     name: "BattleField",
     position: {
-      x: 12260,
-      y: 1160,
+      x: 12840,
+      y: 3220,
     },
     edges: [
       "a32e344a-0c4f-4210-81aa-b30a2f93e37c",
@@ -13846,8 +13846,8 @@ const arcticVertices: Vertex[] = [
     id: "821ee1e0-ea44-40f8-be0d-b7d2a6881ef2",
     name: "BattleField",
     position: {
-      x: 12320,
-      y: 700,
+      x: 12900,
+      y: 2760,
     },
     edges: [
       "e550dc34-bee3-4fd6-8df3-baac7ee3ef2d",
@@ -13861,8 +13861,8 @@ const arcticVertices: Vertex[] = [
     id: "70742c92-ea8b-4669-95c0-5a33c393b072",
     name: "TreasureField",
     position: {
-      x: 12020,
-      y: 680,
+      x: 12600,
+      y: 2740,
     },
     edges: [
       "225ff668-2d81-426e-ba13-c7c46f02223e",
@@ -13876,8 +13876,8 @@ const arcticVertices: Vertex[] = [
     id: "46b65691-10e5-48ee-a3d8-7eadd022d5c4",
     name: "RedTreasureField",
     position: {
-      x: 11940,
-      y: 340,
+      x: 12520,
+      y: 2400,
     },
     edges: [
       "21e913ef-2131-4522-a2e2-65a5378b2c33",
@@ -13891,8 +13891,8 @@ const arcticVertices: Vertex[] = [
     id: "ecc6b82f-3a20-4d5f-bb3f-c88708838371",
     name: "BattleField",
     position: {
-      x: 12020,
-      y: 0,
+      x: 12600,
+      y: 2060,
     },
     edges: [
       "1b2667e3-d5aa-4e4e-a3ea-d1d3fc621e22",
@@ -13906,8 +13906,8 @@ const arcticVertices: Vertex[] = [
     id: "46c738be-5dd1-48f3-95c3-354f82712adf",
     name: "TreasureField",
     position: {
-      x: 11680,
-      y: -40,
+      x: 12260,
+      y: 2020,
     },
     edges: [
       "bea8dce4-995c-4743-9e3c-35606a5d1b4c",
@@ -13921,8 +13921,8 @@ const arcticVertices: Vertex[] = [
     id: "0d99633a-bbf7-486d-b9a5-c98cdb5ed91b",
     name: "RedTreasureField",
     position: {
-      x: 11760,
-      y: -360,
+      x: 12340,
+      y: 1700,
     },
     edges: [
       "19721082-9368-46ca-9c03-73f376fd4e20",
@@ -13936,8 +13936,8 @@ const arcticVertices: Vertex[] = [
     id: "c12b2b9d-1fee-4881-9bb5-6a840973cc51",
     name: "BattleField",
     position: {
-      x: 11420,
-      y: -380,
+      x: 12000,
+      y: 1680,
     },
     edges: [
       "e2bed64b-80d0-44ab-a192-3a7becfcbde3",
@@ -13953,8 +13953,8 @@ const arcticVertices: Vertex[] = [
     id: "e3a8a0bb-892f-4703-b8e4-77531ba4a5db",
     name: "WorldTransferField",
     position: {
-      x: 11420,
-      y: -660,
+      x: 12000,
+      y: 1400,
     },
     edges: ["f1f0eafa-0d7a-41e2-a659-c3384d87a5d4"],
     bottom: "c12b2b9d-1fee-4881-9bb5-6a840973cc51",
@@ -13964,8 +13964,8 @@ const arcticVertices: Vertex[] = [
     id: "60c21590-262f-47aa-bf46-f9bd36effc00",
     name: "BattleField",
     position: {
-      x: 11060,
-      y: -340,
+      x: 11640,
+      y: 1720,
     },
     edges: [
       "8ef2dc4a-3f06-4222-ba8f-74d3456fbdb3",
@@ -13979,8 +13979,8 @@ const arcticVertices: Vertex[] = [
     id: "6b13f21f-5a2c-4453-bad8-f7714138be95",
     name: "MagicBookField",
     position: {
-      x: 10720,
-      y: -400,
+      x: 11300,
+      y: 1660,
     },
     edges: [
       "1b30bb45-dc35-4ca8-87e3-d88df230414a",
@@ -13994,8 +13994,8 @@ const arcticVertices: Vertex[] = [
     id: "59f6d795-ba7c-4936-99fb-1a45084c9bd6",
     name: "TreasureField",
     position: {
-      x: 10400,
-      y: -360,
+      x: 10980,
+      y: 1700,
     },
     edges: [
       "a477f3b0-4ca3-47f1-808e-70a29013af50",
@@ -14009,8 +14009,8 @@ const arcticVertices: Vertex[] = [
     id: "7d7e3fae-a2f5-4d97-a8df-21767ce0f526",
     name: "BattleField",
     position: {
-      x: 10340,
-      y: -660,
+      x: 10920,
+      y: 1400,
     },
     edges: [
       "ff900657-9dec-4ffe-9c5e-549269df2576",
@@ -14024,8 +14024,8 @@ const arcticVertices: Vertex[] = [
     id: "3ba4e09d-b31f-4685-bdbf-6bf816afb10c",
     name: "BattleField",
     position: {
-      x: 10400,
-      y: -980,
+      x: 10980,
+      y: 1080,
     },
     edges: [
       "9498ca06-7c25-4362-85d8-d3fa6358a04e",
@@ -14039,8 +14039,8 @@ const arcticVertices: Vertex[] = [
     id: "4e87e85e-9221-464f-812f-c1ca01a33bfe",
     name: "BattleField",
     position: {
-      x: 10320,
-      y: -1280,
+      x: 10900,
+      y: 780,
     },
     edges: [
       "b0881151-6da7-463e-b673-5afca42f763f",
@@ -14054,8 +14054,8 @@ const arcticVertices: Vertex[] = [
     id: "ec84fab9-edd2-4aeb-b6d2-5fb398422cab",
     name: "TreasureField",
     position: {
-      x: 10640,
-      y: -1320,
+      x: 11220,
+      y: 740,
     },
     edges: [
       "6acf5c5c-5dd1-4dcc-a62b-69f18a8f2427",
@@ -14069,8 +14069,8 @@ const arcticVertices: Vertex[] = [
     id: "6b406338-75a7-415f-9765-31dea786f3fd",
     name: "BattleField",
     position: {
-      x: 10940,
-      y: -1280,
+      x: 11520,
+      y: 780,
     },
     edges: [
       "792d97b1-c1f8-4e0c-ac87-eeb076640aa9",
@@ -14084,8 +14084,8 @@ const arcticVertices: Vertex[] = [
     id: "864a59a8-037d-40c4-b48a-8997e644a406",
     name: "TreasureField",
     position: {
-      x: 11020,
-      y: -1940,
+      x: 11600,
+      y: 120,
     },
     edges: [
       "e9137bfa-3729-493a-97a5-cc3c3783ff76",
@@ -14099,8 +14099,8 @@ const arcticVertices: Vertex[] = [
     id: "bba70ccc-ec4e-4d07-8b95-6a5f20438952",
     name: "BattleField",
     position: {
-      x: 11340,
-      y: -2020,
+      x: 11920,
+      y: 40,
     },
     edges: [
       "a722eb0d-3925-4228-a6d5-2916d57880df",
@@ -14114,8 +14114,8 @@ const arcticVertices: Vertex[] = [
     id: "93186749-a439-4fd3-b4ab-4af5a94e126f",
     name: "BattleField",
     position: {
-      x: 11660,
-      y: -1940,
+      x: 12240,
+      y: 120,
     },
     edges: [
       "afcf8e5c-d033-42e0-9320-3a405ad76abf",
@@ -14129,8 +14129,8 @@ const arcticVertices: Vertex[] = [
     id: "474fb8f5-b151-487d-9869-f1d22ae3116d",
     name: "BattleField",
     position: {
-      x: 11700,
-      y: -1620,
+      x: 12280,
+      y: 440,
     },
     edges: [
       "5f1e81e3-a764-4dae-a7b4-0294f41a7f1b",
@@ -14144,8 +14144,8 @@ const arcticVertices: Vertex[] = [
     id: "46e36bde-d5f2-4969-847e-3d80031bc3a7",
     name: "RedTreasureField",
     position: {
-      x: 11660,
-      y: -1260,
+      x: 12240,
+      y: 800,
     },
     edges: [
       "c2be2948-f53c-4eef-86ed-e150cefbfd57",
@@ -14159,8 +14159,8 @@ const arcticVertices: Vertex[] = [
     id: "333d2f31-e7f8-4387-8d1a-475c32080912",
     name: "TreasureField",
     position: {
-      x: 12040,
-      y: -1240,
+      x: 12620,
+      y: 820,
     },
     edges: [
       "cad3edfd-18d6-4182-bce0-485c8ed7465b",
@@ -14174,8 +14174,8 @@ const arcticVertices: Vertex[] = [
     id: "da919845-178f-4307-8839-6388fdd5ab52",
     name: "BattleField",
     position: {
-      x: 12420,
-      y: -1300,
+      x: 13000,
+      y: 760,
     },
     edges: [
       "28f25be6-d7c6-44cc-a54d-282c79840f4d",
@@ -14189,8 +14189,8 @@ const arcticVertices: Vertex[] = [
     id: "160c42b2-bd8c-41a0-a3d0-c94c9e65b85d",
     name: "BattleField",
     position: {
-      x: 12780,
-      y: -1240,
+      x: 13360,
+      y: 820,
     },
     edges: [
       "5817acaa-24ee-485d-94d0-f5f6240bb11c",
@@ -14204,8 +14204,8 @@ const arcticVertices: Vertex[] = [
     id: "023800ab-4d52-4554-9d6f-68961e17f816",
     name: "BattleField",
     position: {
-      x: 12700,
-      y: -960,
+      x: 13280,
+      y: 1100,
     },
     edges: [
       "b7754b9a-4d24-4ce1-8753-94fe797977c4",
@@ -14221,8 +14221,8 @@ const arcticVertices: Vertex[] = [
     id: "a60737b3-4e4c-4e9b-b9f5-028f9d9389a2",
     name: "BattleField",
     position: {
-      x: 12740,
-      y: -700,
+      x: 13320,
+      y: 1360,
     },
     edges: [
       "dc5b7d1d-6b97-407d-b631-e701c8cc684d",
@@ -14236,8 +14236,8 @@ const arcticVertices: Vertex[] = [
     id: "8783855b-5505-46b5-bc31-ca0a367135cd",
     name: "RedTreasureField",
     position: {
-      x: 12660,
-      y: -440,
+      x: 13240,
+      y: 1620,
     },
     edges: [
       "ce4a3829-9a52-4a04-ab5f-372d81654d51",
@@ -14255,8 +14255,8 @@ const arcticVertices: Vertex[] = [
     id: "2eaf8fe2-3184-4404-a23e-01f3647ae265",
     name: "BattleField",
     position: {
-      x: 12960,
-      y: -480,
+      x: 13540,
+      y: 1580,
     },
     edges: [
       "528f71fc-d79b-42bc-95fd-4b330bc06c07",
@@ -14270,8 +14270,8 @@ const arcticVertices: Vertex[] = [
     id: "8d507b57-cc2c-4827-9547-752613754b89",
     name: "TreasureField",
     position: {
-      x: 13000,
-      y: -940,
+      x: 13580,
+      y: 1120,
     },
     edges: [
       "89824b53-2b4d-4ab3-8a12-6d1e6cd4ce85",
@@ -14285,8 +14285,8 @@ const arcticVertices: Vertex[] = [
     id: "c2c16ded-efc3-4036-a558-9a90282b2b81",
     name: "BattleField",
     position: {
-      x: 12400,
-      y: -480,
+      x: 12980,
+      y: 1580,
     },
     edges: [
       "ed9c4a8e-c725-4b31-890a-cc82ae50c511",
@@ -14300,8 +14300,8 @@ const arcticVertices: Vertex[] = [
     id: "06cd0030-ca41-4e70-8ee3-86fbd82d0487",
     name: "RedTreasureField",
     position: {
-      x: 12340,
-      y: -220,
+      x: 12920,
+      y: 1840,
     },
     edges: [
       "9ce057c1-54f7-4c5a-bbe5-70c1b1128de9",
@@ -14317,8 +14317,8 @@ const arcticVertices: Vertex[] = [
     id: "226e6a74-da4f-4e07-8104-a8a3b0dde402",
     name: "BattleField",
     position: {
-      x: 12700,
-      y: 20,
+      x: 13280,
+      y: 2080,
     },
     edges: [
       "3f2d859c-9947-4f93-8146-6948b2032f13",
@@ -14332,8 +14332,8 @@ const arcticVertices: Vertex[] = [
     id: "fef1bbaf-5068-4e1e-992b-312292c07cb3",
     name: "TreasureField",
     position: {
-      x: 12380,
-      y: 60,
+      x: 12960,
+      y: 2120,
     },
     edges: [
       "2c300eaa-aa80-45e5-b019-98e6edef6944",
@@ -14347,8 +14347,8 @@ const arcticVertices: Vertex[] = [
     id: "852045ec-f977-4b97-aa74-69304635d045",
     name: "BattleField",
     position: {
-      x: 12120,
-      y: -140,
+      x: 12700,
+      y: 1920,
     },
     edges: [
       "362e75f4-903b-40ef-950e-9ac1cc08c5f5",
@@ -14362,8 +14362,8 @@ const arcticVertices: Vertex[] = [
     id: "da5efa67-099a-4457-971d-90e2f8cb1f43",
     name: "BattleField",
     position: {
-      x: 11940,
-      y: -200,
+      x: 12520,
+      y: 1860,
     },
     edges: [
       "e882e9b6-3e0a-4aad-8321-e98a786b0284",
@@ -14377,8 +14377,8 @@ const arcticVertices: Vertex[] = [
     id: "b63382e6-e30e-4ed4-a67f-35e3e411dc94",
     name: "CaveField",
     position: {
-      x: 11920,
-      y: -400,
+      x: 12500,
+      y: 1660,
     },
     edges: ["594bef31-9c14-4b94-bda8-a14e5da1cddf"],
     bottom: "da5efa67-099a-4457-971d-90e2f8cb1f43",
@@ -14390,8 +14390,8 @@ const antarcticaVertices: Vertex[] = [
     id: "da5baf39-82c0-4678-a693-b2604ac9e426",
     name: "BattleField",
     position: {
-      x: 3420,
-      y: 7160,
+      x: 4000,
+      y: 9220,
     },
     edges: [
       "0208bdec-8eb1-4cd6-85db-09e5fa4ab17e",
@@ -14405,8 +14405,8 @@ const antarcticaVertices: Vertex[] = [
     id: "4258b374-8ede-4149-be46-d757bf2d76c9",
     name: "TreasureField",
     position: {
-      x: 3760,
-      y: 7240,
+      x: 4340,
+      y: 9300,
     },
     edges: [
       "f48ab8e1-659b-4525-ba21-54019426c30f",
@@ -14420,8 +14420,8 @@ const antarcticaVertices: Vertex[] = [
     id: "cf198975-65ba-4d4e-9df1-58b31c56f227",
     name: "BattleField",
     position: {
-      x: 4120,
-      y: 7160,
+      x: 4700,
+      y: 9220,
     },
     edges: [
       "50f9bff5-58da-4a2e-b72e-7f84b176ed48",
@@ -14435,8 +14435,8 @@ const antarcticaVertices: Vertex[] = [
     id: "a4c1e286-d75c-46ee-9c88-22f7aadc7a7d",
     name: "BattleField",
     position: {
-      x: 4460,
-      y: 7240,
+      x: 5040,
+      y: 9300,
     },
     edges: [
       "8b1b81b3-4913-4614-ad57-877d333a09aa",
@@ -14450,8 +14450,8 @@ const antarcticaVertices: Vertex[] = [
     id: "540ac755-254b-4690-bbe0-737826aa6bbf",
     name: "TreasureField",
     position: {
-      x: 4540,
-      y: 7560,
+      x: 5120,
+      y: 9620,
     },
     edges: [
       "dbc3c50c-a6da-43fd-ad5a-f5636885ac93",
@@ -14465,8 +14465,8 @@ const antarcticaVertices: Vertex[] = [
     id: "95341683-9ede-4590-a173-f04ab09976c0",
     name: "BattleField",
     position: {
-      x: 4440,
-      y: 7900,
+      x: 5020,
+      y: 9960,
     },
     edges: [
       "6eb2f86c-2643-4b9a-a041-554ca9278c6d",
@@ -14480,8 +14480,8 @@ const antarcticaVertices: Vertex[] = [
     id: "b50a4857-f125-4ce6-b7b9-91131727fb6b",
     name: "MagicBookField",
     position: {
-      x: 4820,
-      y: 7980,
+      x: 5400,
+      y: 10040,
     },
     edges: [
       "8ab9d0db-89e6-4862-b313-f647ef2f498f",
@@ -14495,8 +14495,8 @@ const antarcticaVertices: Vertex[] = [
     id: "5c95a1e7-1c38-48a4-ac8b-6fe58e5791ec",
     name: "BattleField",
     position: {
-      x: 5220,
-      y: 7920,
+      x: 5800,
+      y: 9980,
     },
     edges: [
       "e18d1bb2-13dc-486a-bf98-ac410df2f0ff",
@@ -14510,8 +14510,8 @@ const antarcticaVertices: Vertex[] = [
     id: "fd673ecf-06df-4a3c-adde-b3b494f53a8c",
     name: "TreasureField",
     position: {
-      x: 5600,
-      y: 7980,
+      x: 6180,
+      y: 10040,
     },
     edges: [
       "0e69edbb-2b3f-4aaf-9aba-3ea0ec0ddc18",
@@ -14525,8 +14525,8 @@ const antarcticaVertices: Vertex[] = [
     id: "23c44714-91a0-417c-af83-d1ad1b52a504",
     name: "BattleField",
     position: {
-      x: 6000,
-      y: 7920,
+      x: 6580,
+      y: 9980,
     },
     edges: [
       "32df51ce-24d7-4985-8301-979a7652bbfd",
@@ -14540,8 +14540,8 @@ const antarcticaVertices: Vertex[] = [
     id: "2b6cf571-17fd-4ac5-aa38-e74e3eeb841d",
     name: "TreasureField",
     position: {
-      x: 6060,
-      y: 8300,
+      x: 6640,
+      y: 10360,
     },
     edges: [
       "7bf285e7-42d5-4e90-b5fb-4e5a67883e4b",
@@ -14555,8 +14555,8 @@ const antarcticaVertices: Vertex[] = [
     id: "05b28ac6-01bc-4a19-9b83-7e0d1b832be9",
     name: "BattleField",
     position: {
-      x: 5980,
-      y: 8660,
+      x: 6560,
+      y: 10720,
     },
     edges: [
       "f1611e48-9435-4ea4-9344-483709b3ba7d",
@@ -14570,8 +14570,8 @@ const antarcticaVertices: Vertex[] = [
     id: "dc7b368a-17dd-48a5-863b-c36f34365c72",
     name: "BattleField",
     position: {
-      x: 6040,
-      y: 9000,
+      x: 6620,
+      y: 11060,
     },
     edges: [
       "9ab10894-8cd8-44bd-b366-2823064245f0",
@@ -14585,8 +14585,8 @@ const antarcticaVertices: Vertex[] = [
     id: "dfc84ca2-fcad-4cfb-9ddb-3c399527808e",
     name: "BattleField",
     position: {
-      x: 5920,
-      y: 9360,
+      x: 6500,
+      y: 11420,
     },
     edges: [
       "ba27d81d-3ab1-41d9-b5ce-43fb5716deb5",
@@ -14600,8 +14600,8 @@ const antarcticaVertices: Vertex[] = [
     id: "baa1f9a0-a3e4-4562-9e79-e0c63ce3f4f6",
     name: "BattleField",
     position: {
-      x: 6340,
-      y: 9420,
+      x: 6920,
+      y: 11480,
     },
     edges: [
       "aca00afb-38ed-4653-9442-e4a630e82d7a",
@@ -14615,8 +14615,8 @@ const antarcticaVertices: Vertex[] = [
     id: "f12b40cd-78e1-43c7-928d-04e13f4fa829",
     name: "TreasureField",
     position: {
-      x: 6700,
-      y: 9360,
+      x: 7280,
+      y: 11420,
     },
     edges: [
       "81afcf41-71e9-4d5c-b9e7-515b5c5b985b",
@@ -14632,8 +14632,8 @@ const antarcticaVertices: Vertex[] = [
     id: "915797f9-870e-42af-ae52-44dc6dfa8c8d",
     name: "BattleField",
     position: {
-      x: 7100,
-      y: 9400,
+      x: 7680,
+      y: 11460,
     },
     edges: [
       "820443d9-01f2-4f3d-b4dc-8d6add3c2294",
@@ -14647,8 +14647,8 @@ const antarcticaVertices: Vertex[] = [
     id: "5d9d68b9-661b-4375-98cd-34f3965e43c4",
     name: "MagicBookField",
     position: {
-      x: 7540,
-      y: 9340,
+      x: 8120,
+      y: 11400,
     },
     edges: [
       "5d57f334-5ddd-4a23-8d45-06487fedac60",
@@ -14662,8 +14662,8 @@ const antarcticaVertices: Vertex[] = [
     id: "40ada4c9-e43c-4b41-be4d-574736574489",
     name: "BattleField",
     position: {
-      x: 6620,
-      y: 9720,
+      x: 7200,
+      y: 11780,
     },
     edges: [
       "fa1116c8-a38d-4b4f-9b25-7e5aa8fac82b",
@@ -14677,8 +14677,8 @@ const antarcticaVertices: Vertex[] = [
     id: "a1996074-8ea4-4dbe-bf35-a10eb01b13fd",
     name: "BattleField",
     position: {
-      x: 6660,
-      y: 10100,
+      x: 7240,
+      y: 12160,
     },
     edges: [
       "386dba9e-a655-4a3e-b6ec-4ba3636056eb",
@@ -14692,8 +14692,8 @@ const antarcticaVertices: Vertex[] = [
     id: "d9bf4836-29ac-41d9-8de8-52274fe6141a",
     name: "TreasureField",
     position: {
-      x: 7060,
-      y: 10160,
+      x: 7640,
+      y: 12220,
     },
     edges: [
       "038c9f1e-9107-45db-b953-11f31f9beb4c",
@@ -14707,8 +14707,8 @@ const antarcticaVertices: Vertex[] = [
     id: "f4efe165-170e-4cac-bc65-031819e5134a",
     name: "BattleField",
     position: {
-      x: 7480,
-      y: 10080,
+      x: 8060,
+      y: 12140,
     },
     edges: [
       "44d16fcd-44b8-42f1-a16c-8030a66ee70f",
@@ -14724,8 +14724,8 @@ const antarcticaVertices: Vertex[] = [
     id: "bc898212-822a-488d-a88e-0c79194f2a67",
     name: "RedTreasureField",
     position: {
-      x: 7840,
-      y: 10140,
+      x: 8420,
+      y: 12200,
     },
     edges: [
       "fda069ec-3ba5-4bfd-8bd3-ab74a81c3f08",
@@ -14739,8 +14739,8 @@ const antarcticaVertices: Vertex[] = [
     id: "8a578148-89e4-4a9b-9737-3da63a81bd7a",
     name: "BattleField",
     position: {
-      x: 7880,
-      y: 10460,
+      x: 8460,
+      y: 12520,
     },
     edges: [
       "d8c48226-7da8-450d-913f-47f54af042e9",
@@ -14754,8 +14754,8 @@ const antarcticaVertices: Vertex[] = [
     id: "f541bcef-aeed-4da9-901e-6b028f52fb3b",
     name: "TreasureField",
     position: {
-      x: 8220,
-      y: 10500,
+      x: 8800,
+      y: 12560,
     },
     edges: [
       "f44226c2-880a-4ea0-9418-a964588bb0ee",
@@ -14771,8 +14771,8 @@ const antarcticaVertices: Vertex[] = [
     id: "6651285c-6730-4655-bd1e-1a4d03cbde94",
     name: "BattleField",
     position: {
-      x: 8560,
-      y: 10460,
+      x: 9140,
+      y: 12520,
     },
     edges: [
       "7f6bd778-b538-438d-acbd-a16298bb67f1",
@@ -14786,8 +14786,8 @@ const antarcticaVertices: Vertex[] = [
     id: "85f82b66-9393-4e83-820b-43f22e3a27bd",
     name: "WorldTransferField",
     position: {
-      x: 8640,
-      y: 10140,
+      x: 9220,
+      y: 12200,
     },
     edges: ["07abc4bc-f01b-4244-95d0-63265108b207"],
     bottom: "6651285c-6730-4655-bd1e-1a4d03cbde94",
@@ -14797,8 +14797,8 @@ const antarcticaVertices: Vertex[] = [
     id: "23e6ea8a-f581-4e9c-848c-8cefbdc4042f",
     name: "RedTreasureField",
     position: {
-      x: 8180,
-      y: 10840,
+      x: 8760,
+      y: 12900,
     },
     edges: [
       "adfcd249-e182-49de-8c04-e6250968c437",
@@ -14812,8 +14812,8 @@ const antarcticaVertices: Vertex[] = [
     id: "9d91fbe9-a403-4f6a-bff5-dd66d61f51aa",
     name: "TreasureField",
     position: {
-      x: 8220,
-      y: 11160,
+      x: 8800,
+      y: 13220,
     },
     edges: [
       "864f13d8-ed01-4102-849d-7aa307cb69ac",
@@ -14831,8 +14831,8 @@ const antarcticaVertices: Vertex[] = [
     id: "0b71163e-626a-47e9-bfa1-7239f0de5308",
     name: "BattleField",
     position: {
-      x: 8180,
-      y: 11520,
+      x: 8760,
+      y: 13580,
     },
     edges: [
       "3c852b33-f256-408a-9b8a-1d52c1436061",
@@ -14846,8 +14846,8 @@ const antarcticaVertices: Vertex[] = [
     id: "a57193f5-ef11-46d9-b02a-a88ed8d93348",
     name: "BattleField",
     position: {
-      x: 7880,
-      y: 11120,
+      x: 8460,
+      y: 13180,
     },
     edges: [
       "ebc9d1c9-a11b-4168-8082-b31933547e23",
@@ -14861,8 +14861,8 @@ const antarcticaVertices: Vertex[] = [
     id: "ce7d640b-b699-44aa-a794-cbec34e97427",
     name: "BattleField",
     position: {
-      x: 7560,
-      y: 11160,
+      x: 8140,
+      y: 13220,
     },
     edges: [
       "3eef089c-9909-4316-ad26-307677d238af",
@@ -14876,8 +14876,8 @@ const antarcticaVertices: Vertex[] = [
     id: "90f07f25-1a69-4218-a807-f525a094d69a",
     name: "GoldTreasureField",
     position: {
-      x: 7580,
-      y: 11480,
+      x: 8160,
+      y: 13540,
     },
     edges: [
       "89d29f4b-5ae8-4d4a-8592-35c670f6744e",
@@ -14891,8 +14891,8 @@ const antarcticaVertices: Vertex[] = [
     id: "61624b8f-90fb-4f1c-9162-8dc91f1fba7f",
     name: "TreasureField",
     position: {
-      x: 8560,
-      y: 11120,
+      x: 9140,
+      y: 13180,
     },
     edges: [
       "4acdbb10-5d26-4dbb-ab30-19c353a3c681",
@@ -14906,8 +14906,8 @@ const antarcticaVertices: Vertex[] = [
     id: "538eac0c-1ed4-41b0-a59b-3688c7169799",
     name: "BattleField",
     position: {
-      x: 8580,
-      y: 11560,
+      x: 9160,
+      y: 13620,
     },
     edges: [
       "777a8083-4799-41c6-8622-a73d032e1f96",
@@ -14921,8 +14921,8 @@ const antarcticaVertices: Vertex[] = [
     id: "9273365c-b48d-4b91-9c35-f980415da24f",
     name: "RedTreasureField",
     position: {
-      x: 8980,
-      y: 11500,
+      x: 9560,
+      y: 13560,
     },
     edges: [
       "6e915401-70c8-4764-8ae3-f311e6738fab",
@@ -14936,8 +14936,8 @@ const antarcticaVertices: Vertex[] = [
     id: "42637926-3ede-4d14-920b-257004108277",
     name: "RedTreasureField",
     position: {
-      x: 9360,
-      y: 11560,
+      x: 9940,
+      y: 13620,
     },
     edges: [
       "e82c5f60-d564-4502-8dc4-d0c0335e7c23",
@@ -14951,8 +14951,8 @@ const antarcticaVertices: Vertex[] = [
     id: "c2c8cc1d-2995-469d-a792-768c1c40a1c3",
     name: "RedTreasureField",
     position: {
-      x: 9740,
-      y: 11500,
+      x: 10320,
+      y: 13560,
     },
     edges: [
       "7a771397-36ba-4c56-8ce7-7aa49c64dfd6",
@@ -14966,8 +14966,8 @@ const antarcticaVertices: Vertex[] = [
     id: "762bcb17-2e8d-469c-88d3-d06cc92fe7b8",
     name: "WhiteTreasureField",
     position: {
-      x: 10100,
-      y: 11560,
+      x: 10680,
+      y: 13620,
     },
     edges: [
       "23bfe791-f369-4468-bd5f-1b63011aa290",
@@ -14981,8 +14981,8 @@ const antarcticaVertices: Vertex[] = [
     id: "8ccccdf5-139d-41ff-85c8-b523e007b011",
     name: "CaveField",
     position: {
-      x: 10460,
-      y: 11480,
+      x: 11040,
+      y: 13540,
     },
     edges: [
       "4590d21d-5a39-46a2-90cc-8543d1705b22",
@@ -14996,8 +14996,8 @@ const antarcticaVertices: Vertex[] = [
     id: "86ff9b7c-da53-4003-ae8e-992036396961",
     name: "BattleField",
     position: {
-      x: 10780,
-      y: 11540,
+      x: 11360,
+      y: 13600,
     },
     edges: [
       "8e55d4e8-baef-4a24-b766-def733a69232",
@@ -15011,8 +15011,8 @@ const antarcticaVertices: Vertex[] = [
     id: "8a05526f-fce6-437d-981e-f88e10bd665b",
     name: "RedTreasureField",
     position: {
-      x: 11120,
-      y: 11480,
+      x: 11700,
+      y: 13540,
     },
     edges: [
       "5aa82c3d-c84b-4741-86ff-d7b432852617",
@@ -15026,8 +15026,8 @@ const antarcticaVertices: Vertex[] = [
     id: "82f08002-a4ad-465e-b3bb-80f346b4606a",
     name: "BattleField",
     position: {
-      x: 11480,
-      y: 11540,
+      x: 12060,
+      y: 13600,
     },
     edges: [
       "d774d4ee-04d6-4d83-b4d0-1e35b86eaa52",
@@ -15043,8 +15043,8 @@ const antarcticaVertices: Vertex[] = [
     id: "28c361bb-a56f-4099-a8bf-40e4869f2b7c",
     name: "TreasureField",
     position: {
-      x: 12080,
-      y: 11480,
+      x: 12660,
+      y: 13540,
     },
     edges: [
       "461031dc-c072-4d8b-8b4f-f4e48c10f4b2",
@@ -15058,8 +15058,8 @@ const antarcticaVertices: Vertex[] = [
     id: "eebf013d-79f0-4565-9919-1917ffe72d8e",
     name: "TreasureField",
     position: {
-      x: 11440,
-      y: 11160,
+      x: 12020,
+      y: 13220,
     },
     edges: [
       "8e33b850-0696-473e-b018-dd96fdf52aba",
@@ -15073,8 +15073,8 @@ const antarcticaVertices: Vertex[] = [
     id: "4276ced9-ee69-4bb9-875d-967c5f17cbe1",
     name: "BattleField",
     position: {
-      x: 11780,
-      y: 11120,
+      x: 12360,
+      y: 13180,
     },
     edges: [
       "2c4802e1-c388-49e8-a80e-809b188e3f93",
@@ -15088,8 +15088,8 @@ const antarcticaVertices: Vertex[] = [
     id: "de445304-6eec-43eb-a0ce-db78ae7b9838",
     name: "TreasureField",
     position: {
-      x: 12120,
-      y: 11160,
+      x: 12700,
+      y: 13220,
     },
     edges: [
       "59517573-4754-4940-92e8-348a6dc6a53f",
@@ -15107,8 +15107,8 @@ const antarcticaVertices: Vertex[] = [
     id: "818d3bce-2a45-44a9-8470-c10824fd979b",
     name: "RedTreasureField",
     position: {
-      x: 12420,
-      y: 11120,
+      x: 13000,
+      y: 13180,
     },
     edges: [
       "95e26235-2776-4d16-858c-3d84ce5ee148",
@@ -15122,8 +15122,8 @@ const antarcticaVertices: Vertex[] = [
     id: "33870572-f3f8-4291-bb09-2d9dd6047d2b",
     name: "RedTreasureField",
     position: {
-      x: 12360,
-      y: 10820,
+      x: 12940,
+      y: 12880,
     },
     edges: [
       "5f0df2cf-b68e-449d-b429-01e9454a1606",
@@ -15139,8 +15139,8 @@ const antarcticaVertices: Vertex[] = [
     id: "a277109b-b6ea-4729-8cad-cf4c199a9d6d",
     name: "MagicBookField",
     position: {
-      x: 12060,
-      y: 10860,
+      x: 12640,
+      y: 12920,
     },
     edges: [
       "8fda4ddf-419e-4736-a75c-2d18201f4ffb",
@@ -15156,8 +15156,8 @@ const antarcticaVertices: Vertex[] = [
     id: "c7f99497-8d14-4d1a-b9a0-d12bac7ff4f3",
     name: "TreasureField",
     position: {
-      x: 12740,
-      y: 10860,
+      x: 13320,
+      y: 12920,
     },
     edges: [
       "03b4114d-a33e-4435-b641-d1ac8416c806",
@@ -15171,8 +15171,8 @@ const antarcticaVertices: Vertex[] = [
     id: "a4d45cff-04a5-4a04-9d10-183acb893291",
     name: "RedTreasureField",
     position: {
-      x: 12120,
-      y: 10520,
+      x: 12700,
+      y: 12580,
     },
     edges: [
       "3debbb6d-64da-4d22-ba3a-ae5004958ecc",
@@ -15186,8 +15186,8 @@ const antarcticaVertices: Vertex[] = [
     id: "a0977898-22c1-4771-aa95-f445696aa693",
     name: "RedTreasureField",
     position: {
-      x: 12640,
-      y: 10500,
+      x: 13220,
+      y: 12560,
     },
     edges: [
       "65433f77-4f8d-4daf-bf6d-99fd31aac498",
@@ -15203,8 +15203,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "9ab009e3-fb04-4791-8dba-c2b3ebe48e63",
     name: "BattleField",
     position: {
-      x: 7940,
-      y: 5100,
+      x: 8520,
+      y: 7160,
     },
     edges: [
       "20bc8e6d-46b7-4e36-96ba-8d4cb65e7f97",
@@ -15218,8 +15218,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "c9514ae3-0c66-4797-aac7-c4693765d28e",
     name: "BattleField",
     position: {
-      x: 7480,
-      y: 5100,
+      x: 8060,
+      y: 7160,
     },
     edges: [
       "4d8f1e78-0450-47a3-9133-bc53f8fa6896",
@@ -15233,8 +15233,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "25ccf3f7-0ed0-4d7a-8805-75fd99423527",
     name: "BattleField",
     position: {
-      x: 7940,
-      y: 4900,
+      x: 8520,
+      y: 6960,
     },
     edges: [
       "d54de841-71cd-4e7a-a7ec-9c3cf143c3b8",
@@ -15248,8 +15248,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "851d75dc-ae5b-4663-85fa-eba6050d83b3",
     name: "BattleField",
     position: {
-      x: 7480,
-      y: 4900,
+      x: 8060,
+      y: 6960,
     },
     edges: [
       "16e78420-0727-417a-88b3-bd2a449d5fc9",
@@ -15263,8 +15263,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "e962a6aa-155a-4d7a-92d7-5d5e0eb8cace",
     name: "BattleField",
     position: {
-      x: 7720,
-      y: 4880,
+      x: 8300,
+      y: 6940,
     },
     edges: [
       "8e662346-a984-4eaa-be01-300fb2508cc3",
@@ -15280,8 +15280,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "7b8e9c81-bf9d-44a1-a21a-1ef2f54905c5",
     name: "GoldTreasureField",
     position: {
-      x: 7720,
-      y: 4680,
+      x: 8300,
+      y: 6740,
     },
     edges: [
       "6b62c6b5-034a-450d-af19-0d80866639c5",
@@ -15295,8 +15295,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "cd37ec09-e29c-460d-a184-bc29197761b8",
     name: "BattleField",
     position: {
-      x: 7720,
-      y: 4420,
+      x: 8300,
+      y: 6480,
     },
     edges: [
       "64153137-a401-49f7-8ec3-6480b07084a6",
@@ -15312,8 +15312,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "0203890c-753a-41bc-bd85-5b3953e7b9d3",
     name: "MagicBookField",
     position: {
-      x: 7980,
-      y: 4160,
+      x: 8560,
+      y: 6220,
     },
     edges: [
       "87bb9bea-0ecf-47a8-ba16-e92956332c7a",
@@ -15327,8 +15327,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "f3cfd709-4639-4318-b451-f8240a056a76",
     name: "BattleField",
     position: {
-      x: 7980,
-      y: 3920,
+      x: 8560,
+      y: 5980,
     },
     edges: [
       "87bb9bea-0ecf-47a8-ba16-e92956332c7a",
@@ -15342,8 +15342,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "4ed1d0f7-7493-45a9-9866-46beb9d7eb46",
     name: "BattleField",
     position: {
-      x: 7720,
-      y: 3920,
+      x: 8300,
+      y: 5980,
     },
     edges: [
       "ea10848c-6c87-4c65-8ff8-8712e297d9f9",
@@ -15357,8 +15357,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "ea8acc84-c3aa-441b-b63c-e55c340b633c",
     name: "TreasureField",
     position: {
-      x: 7440,
-      y: 3920,
+      x: 8020,
+      y: 5980,
     },
     edges: [
       "041ed7eb-5710-422f-8504-d26802dd0bdb",
@@ -15372,8 +15372,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "c8f64d7d-37f2-4e47-b787-de774cd17eb5",
     name: "BattleField",
     position: {
-      x: 7440,
-      y: 3700,
+      x: 8020,
+      y: 5760,
     },
     edges: [
       "b4620033-d8b0-43fc-94b9-19b3c8628008",
@@ -15387,8 +15387,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "547b2b5a-438b-42cb-b983-f9db644328eb",
     name: "CaveField",
     position: {
-      x: 7440,
-      y: 3500,
+      x: 8020,
+      y: 5560,
     },
     edges: ["b2ef6716-9c14-4cca-996a-b88ebcf16248"],
     bottom: "c8f64d7d-37f2-4e47-b787-de774cd17eb5",
@@ -15398,8 +15398,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "e4d8e266-5c27-4b1d-9962-bf903598b537",
     name: "BattleField",
     position: {
-      x: 7440,
-      y: 4420,
+      x: 8020,
+      y: 6480,
     },
     edges: [
       "acfee369-4a0b-48f5-8735-279afa1546b1",
@@ -15413,8 +15413,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "1c2e8cb1-5615-490c-be6d-acd36ef19cf7",
     name: "RedTreasureField",
     position: {
-      x: 7180,
-      y: 4420,
+      x: 7760,
+      y: 6480,
     },
     edges: [
       "54d9fa73-c9b9-43b5-8581-ea8862a9ad02",
@@ -15428,8 +15428,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "d2934720-9648-4781-ba5e-b9b7378a1091",
     name: "BattleField",
     position: {
-      x: 6940,
-      y: 4420,
+      x: 7520,
+      y: 6480,
     },
     edges: [
       "c345778f-298c-4db0-accd-171f34c70fae",
@@ -15443,8 +15443,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "8614e318-60cf-4a15-be0e-ef9d4326a708",
     name: "BattleField",
     position: {
-      x: 6720,
-      y: 4420,
+      x: 7300,
+      y: 6480,
     },
     edges: [
       "208d6975-5821-44f9-a02e-e601407af090",
@@ -15458,8 +15458,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "a4ac2115-372f-4448-ac0f-7de24101196a",
     name: "BattleField",
     position: {
-      x: 6720,
-      y: 4120,
+      x: 7300,
+      y: 6180,
     },
     edges: [
       "a79a7555-0c2c-4aae-aa9e-118e7904439b",
@@ -15473,8 +15473,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "e1530b5b-3175-4fb6-a082-ddb70e1e9ca9",
     name: "BattleField",
     position: {
-      x: 7720,
-      y: 4160,
+      x: 8300,
+      y: 6220,
     },
     edges: [
       "adaa0f05-e209-45fe-9f38-6fc1238834b8",
@@ -15488,8 +15488,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "f3bcea10-8802-4252-9f7b-7cd3b2e02ed8",
     name: "BattleField",
     position: {
-      x: 6720,
-      y: 3820,
+      x: 7300,
+      y: 5880,
     },
     edges: [
       "f95c4cee-380e-48c6-88f4-7b053668604f",
@@ -15503,8 +15503,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "a27273dd-688d-4579-82ff-c9c1e1b5e7ff",
     name: "TreasureField",
     position: {
-      x: 6940,
-      y: 3820,
+      x: 7520,
+      y: 5880,
     },
     edges: [
       "66208d07-a2c3-4a68-bae1-b6fc22348d0c",
@@ -15518,8 +15518,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "d1d2b4d7-be08-4a95-ac9d-5e227189b6b8",
     name: "BattleField",
     position: {
-      x: 6880,
-      y: 3500,
+      x: 7460,
+      y: 5560,
     },
     edges: [
       "3072cbaa-2a7e-4fc0-84c5-658e453b17bd",
@@ -15533,8 +15533,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "d0a1d19a-b099-4e7d-b1f3-db04defe95b9",
     name: "BattleField",
     position: {
-      x: 6940,
-      y: 3220,
+      x: 7520,
+      y: 5280,
     },
     edges: [
       "85b8b2e8-b185-4199-ac92-da393b846313",
@@ -15548,8 +15548,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "a7c94a71-b69f-4a25-a26e-b1a458062d15",
     name: "MagicBookField",
     position: {
-      x: 6660,
-      y: 3220,
+      x: 7240,
+      y: 5280,
     },
     edges: [
       "4d18b375-6448-4f70-80a9-bb87a9b366b3",
@@ -15563,8 +15563,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "13244992-cde2-4cd4-af68-3eaad6291aef",
     name: "BattleField",
     position: {
-      x: 6640,
-      y: 2920,
+      x: 7220,
+      y: 4980,
     },
     edges: [
       "ed5cd8e1-9a1a-4046-99a7-3c2e6a9de5df",
@@ -15578,8 +15578,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "38fa95ba-9ce7-471a-9f05-b37437481829",
     name: "BattleField",
     position: {
-      x: 6740,
-      y: 2620,
+      x: 7320,
+      y: 4680,
     },
     edges: [
       "ce872b67-9af5-4d4e-84a9-cde880694942",
@@ -15593,8 +15593,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "fdfe3d97-8b67-4255-a247-a3b6626c0579",
     name: "RedTreasureField",
     position: {
-      x: 7060,
-      y: 2600,
+      x: 7640,
+      y: 4660,
     },
     edges: [
       "7fbadc15-58f0-4052-8bb6-7822c2c320d6",
@@ -15608,8 +15608,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "2d22097e-6403-4db0-a1e3-2afdc3f97804",
     name: "BattleField",
     position: {
-      x: 7360,
-      y: 2640,
+      x: 7940,
+      y: 4700,
     },
     edges: [
       "7a3e54a5-51a8-406f-972a-c69d5ab7acba",
@@ -15623,8 +15623,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "80f38e71-8800-4092-a662-298decdb1882",
     name: "BattleField",
     position: {
-      x: 7400,
-      y: 2380,
+      x: 7980,
+      y: 4440,
     },
     edges: [
       "097b76f1-f9a0-439b-a036-d6426b73fb87",
@@ -15638,8 +15638,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "09609bef-e331-4efa-8a47-e5409f9040a1",
     name: "MagicBookField",
     position: {
-      x: 7680,
-      y: 2380,
+      x: 8260,
+      y: 4440,
     },
     edges: [
       "c70bf46c-76e0-4d81-bcc9-54ed15ec5e6e",
@@ -15655,8 +15655,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "70e01e2b-1fe4-437e-92b2-42513c3e5524",
     name: "BattleField",
     position: {
-      x: 7920,
-      y: 2340,
+      x: 8500,
+      y: 4400,
     },
     edges: [
       "ff0d2e8a-080d-43f1-9ab6-d5470497ce96",
@@ -15670,8 +15670,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "ffd1b0ae-0872-41fc-899e-f40580c7fbca",
     name: "BattleField",
     position: {
-      x: 8160,
-      y: 2380,
+      x: 8740,
+      y: 4440,
     },
     edges: [
       "fe82ad4e-bdf6-4dcf-9b10-df3f6f849672",
@@ -15685,8 +15685,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "b64ac266-aeed-4e2b-b702-0fb8cc39f3fc",
     name: "BattleField",
     position: {
-      x: 8180,
-      y: 2720,
+      x: 8760,
+      y: 4780,
     },
     edges: [
       "bebf3d0c-957d-4c51-964f-da98827c0206",
@@ -15702,8 +15702,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "9a1c0109-dfe3-43b7-a8a1-b4c926343ffb",
     name: "BattleField",
     position: {
-      x: 7700,
-      y: 2700,
+      x: 8280,
+      y: 4760,
     },
     edges: [
       "c00ca638-aa9a-495c-9b50-1df8b09d419b",
@@ -15717,8 +15717,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "1bcf7c80-990f-4360-ac2a-9c5a9a1444fa",
     name: "RedTreasureField",
     position: {
-      x: 8140,
-      y: 2980,
+      x: 8720,
+      y: 5040,
     },
     edges: [
       "c1260fee-57da-4160-b791-886e561e1a8f",
@@ -15732,8 +15732,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "11a7477b-c9ca-447e-a9f6-663d242561e8",
     name: "BattleField",
     position: {
-      x: 7700,
-      y: 3040,
+      x: 8280,
+      y: 5100,
     },
     edges: [
       "6f0367af-f77a-463a-b406-da4ec57bd274",
@@ -15747,8 +15747,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "89807f00-8f8a-427e-a8b9-28e313cb62f5",
     name: "BattleField",
     position: {
-      x: 7640,
-      y: 3300,
+      x: 8220,
+      y: 5360,
     },
     edges: [
       "f7bf274f-d42c-4fb3-8cb0-41f5cf139c05",
@@ -15762,8 +15762,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "ba13a2f3-602c-4ab7-8918-cef38a9ebeb2",
     name: "BattleField",
     position: {
-      x: 7300,
-      y: 3320,
+      x: 7880,
+      y: 5380,
     },
     edges: [
       "83f464bd-b118-44f9-aeee-42830174c1d0",
@@ -15777,8 +15777,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "dea4f473-0db5-4010-abde-0b79535f543e",
     name: "BattleField",
     position: {
-      x: 7260,
-      y: 3560,
+      x: 7840,
+      y: 5620,
     },
     edges: [
       "08c89b10-cc1f-4781-8643-8a7389737262",
@@ -15792,8 +15792,8 @@ const hawaiianIslandsVertices: Vertex[] = [
     id: "0c7ca890-0948-425f-aaa8-d450a6f19798",
     name: "WorldTransferField",
     position: {
-      x: 7040,
-      y: 3600,
+      x: 7620,
+      y: 5660,
     },
     edges: ["0d51efb4-1022-46e1-becc-93fd26a22f89"],
     right: "dea4f473-0db5-4010-abde-0b79535f543e",
@@ -15805,8 +15805,8 @@ const atlantisVertices: Vertex[] = [
     id: "9317f67d-8210-4035-b06f-a72a5dd89acc",
     name: "RedTreasureField",
     position: {
-      x: 12920,
-      y: 3960,
+      x: 13500,
+      y: 6020,
     },
     edges: [
       "5ec5cbb2-fdb4-43ff-9e4f-f2f238004431",
@@ -15820,8 +15820,8 @@ const atlantisVertices: Vertex[] = [
     id: "aae2494b-ca25-4d4f-baa3-d362ecc7c8c7",
     name: "KeyTreasureField",
     position: {
-      x: 12980,
-      y: 3440,
+      x: 13560,
+      y: 5500,
     },
     edges: [
       "5ec5cbb2-fdb4-43ff-9e4f-f2f238004431",
@@ -15835,8 +15835,8 @@ const atlantisVertices: Vertex[] = [
     id: "8a1cbbe7-703c-4ec6-bff9-d84148dfc97c",
     name: "MagicBookField",
     position: {
-      x: 12480,
-      y: 3940,
+      x: 13060,
+      y: 6000,
     },
     edges: [
       "a2025091-2212-429d-8586-242103514491",
@@ -15850,8 +15850,8 @@ const atlantisVertices: Vertex[] = [
     id: "9eeaa88f-9b54-49b8-a831-6cbe73b0996a",
     name: "KeyTreasureField",
     position: {
-      x: 12080,
-      y: 3960,
+      x: 12660,
+      y: 6020,
     },
     edges: [
       "6d79bea7-a944-40df-9325-ddc1714503ab",
@@ -15865,8 +15865,8 @@ const atlantisVertices: Vertex[] = [
     id: "82cd2b2f-fbb3-490f-a528-31be3b29a97b",
     name: "WorldTransferField",
     position: {
-      x: 12000,
-      y: 3680,
+      x: 12580,
+      y: 5740,
     },
     edges: [
       "c9996b4f-88ec-49fd-abec-7b00aacfa45b",
@@ -15880,8 +15880,8 @@ const atlantisVertices: Vertex[] = [
     id: "7784cb7a-d461-4a46-bc7b-c17b20067e08",
     name: "WhiteTreasureField",
     position: {
-      x: 12080,
-      y: 3420,
+      x: 12660,
+      y: 5480,
     },
     edges: [
       "74387f3d-5797-435a-ab74-bb123ffa1088",
@@ -15895,8 +15895,8 @@ const atlantisVertices: Vertex[] = [
     id: "2703f796-cad8-4e10-8b8b-16d2867229ed",
     name: "TreasureField",
     position: {
-      x: 12500,
-      y: 3400,
+      x: 13080,
+      y: 5460,
     },
     edges: [
       "cebdb1fc-27df-4c7d-b71a-675cab6ba1e8",
@@ -15925,12 +15925,12 @@ const dokaponTheWorldMap: GraphJSON = {
   edges: [
     {
       start: {
-        x: 880,
-        y: 3520,
+        x: 1460,
+        y: 5580,
       },
       end: {
-        x: 880,
-        y: 3680,
+        x: 1460,
+        y: 5740,
       },
       id: "32054d0d-0fd6-4e11-b211-9bebcb48d68c",
       name: "TwoWayVEdge",
@@ -15939,12 +15939,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3700,
-        y: 2420,
+        x: 4280,
+        y: 4480,
       },
       end: {
-        x: 3700,
-        y: 2680,
+        x: 4280,
+        y: 4740,
       },
       id: "b37717cb-303b-4755-884b-ca8031828f6d",
       name: "TwoWayVEdge",
@@ -15953,12 +15953,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3700,
-        y: 2680,
+        x: 4280,
+        y: 4740,
       },
       end: {
-        x: 3700,
-        y: 2960,
+        x: 4280,
+        y: 5020,
       },
       id: "47230d0e-35d9-4aac-8874-0556133b5a6c",
       name: "TwoWayVEdge",
@@ -15967,12 +15967,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3700,
-        y: 2420,
+        x: 4280,
+        y: 4480,
       },
       end: {
-        x: 3900,
-        y: 2420,
+        x: 4480,
+        y: 4480,
       },
       id: "0e3a4ef2-275e-4686-98a2-ec9d4f0f9429",
       name: "TwoWayHEdge",
@@ -15981,12 +15981,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3900,
-        y: 2420,
+        x: 4480,
+        y: 4480,
       },
       end: {
-        x: 3900,
-        y: 2260,
+        x: 4480,
+        y: 4320,
       },
       id: "9d9fd583-e90a-4ccc-993b-8ffcbd1c805a",
       name: "TwoWayVEdge",
@@ -15995,12 +15995,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3900,
-        y: 2260,
+        x: 4480,
+        y: 4320,
       },
       end: {
-        x: 4140,
-        y: 2260,
+        x: 4720,
+        y: 4320,
       },
       id: "cc8b596f-825f-41dd-b8f7-c62d6e1ce6ef",
       name: "TwoWayHEdge",
@@ -16009,12 +16009,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 860,
-        y: 140,
+        x: 1440,
+        y: 2200,
       },
       end: {
-        x: 880,
-        y: 340,
+        x: 1460,
+        y: 2400,
       },
       id: "26522ab0-719c-4def-ad30-9efc6e2d3555",
       name: "TwoWayVEdge",
@@ -16023,12 +16023,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 340,
+        x: 1460,
+        y: 2400,
       },
       end: {
-        x: 880,
-        y: 520,
+        x: 1460,
+        y: 2580,
       },
       id: "1a1376c6-7ff7-468a-a83d-7aad4018ba83",
       name: "TwoWayVEdge",
@@ -16037,12 +16037,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 520,
+        x: 1460,
+        y: 2580,
       },
       end: {
-        x: 880,
-        y: 680,
+        x: 1460,
+        y: 2740,
       },
       id: "f51e4b52-ebb9-48fa-ac23-9647e4278528",
       name: "TwoWayVEdge",
@@ -16051,12 +16051,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 640,
-        y: 680,
+        x: 1220,
+        y: 2740,
       },
       end: {
-        x: 880,
-        y: 680,
+        x: 1460,
+        y: 2740,
       },
       id: "76540d8c-e85d-47ef-a47e-b8fca48c4d76",
       name: "TwoWayHEdge",
@@ -16065,12 +16065,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 440,
-        y: 340,
+        x: 1020,
+        y: 2400,
       },
       end: {
-        x: 880,
-        y: 340,
+        x: 1460,
+        y: 2400,
       },
       id: "e47da2b5-c818-4c1d-8e24-555e8a5a0c2b",
       name: "TwoWayHEdge",
@@ -16079,12 +16079,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 440,
-        y: 340,
+        x: 1020,
+        y: 2400,
       },
       end: {
-        x: 440,
-        y: 580,
+        x: 1020,
+        y: 2640,
       },
       id: "8cad8240-0089-437a-85d4-b279f700d3db",
       name: "TwoWayVEdge",
@@ -16093,12 +16093,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 440,
-        y: 580,
+        x: 1020,
+        y: 2640,
       },
       end: {
-        x: 440,
-        y: 800,
+        x: 1020,
+        y: 2860,
       },
       id: "f4f7580d-67e6-48ca-b761-3fd48efaf99a",
       name: "TwoWayVEdge",
@@ -16107,12 +16107,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 440,
-        y: 800,
+        x: 1020,
+        y: 2860,
       },
       end: {
-        x: 600,
-        y: 800,
+        x: 1180,
+        y: 2860,
       },
       id: "2a1ac21a-774d-4eb7-8052-f541adcb758c",
       name: "TwoWayHEdge",
@@ -16121,12 +16121,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 640,
-        y: 680,
+        x: 1220,
+        y: 2740,
       },
       end: {
-        x: 600,
-        y: 800,
+        x: 1180,
+        y: 2860,
       },
       id: "f73c1a1c-b130-4c90-99aa-a4d75b29a6aa",
       name: "TwoWayVEdge",
@@ -16135,12 +16135,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 600,
-        y: 800,
+        x: 1180,
+        y: 2860,
       },
       end: {
-        x: 780,
-        y: 800,
+        x: 1360,
+        y: 2860,
       },
       id: "907484d8-8600-4eca-be4a-e6ac2cd2885e",
       name: "TwoWayHEdge",
@@ -16149,12 +16149,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 780,
-        y: 800,
+        x: 1360,
+        y: 2860,
       },
       end: {
-        x: 1000,
-        y: 800,
+        x: 1580,
+        y: 2860,
       },
       id: "3a4b1770-2923-4aed-b2b5-ad5439113148",
       name: "TwoWayHEdge",
@@ -16163,12 +16163,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3700,
-        y: 2960,
+        x: 4280,
+        y: 5020,
       },
       end: {
-        x: 3900,
-        y: 2960,
+        x: 4480,
+        y: 5020,
       },
       id: "b25d9bd0-ac89-48cb-b635-d5dfc6b66320",
       name: "TwoWayHEdge",
@@ -16177,12 +16177,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3900,
-        y: 2960,
+        x: 4480,
+        y: 5020,
       },
       end: {
-        x: 4140,
-        y: 2960,
+        x: 4720,
+        y: 5020,
       },
       id: "fcbb2913-33f6-4f47-8b35-e2ea7d381f97",
       name: "TwoWayHEdge",
@@ -16191,12 +16191,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3900,
-        y: 2820,
+        x: 4480,
+        y: 4880,
       },
       end: {
-        x: 3900,
-        y: 2960,
+        x: 4480,
+        y: 5020,
       },
       id: "dcc4d879-65fc-4c5c-8a8c-494b4916ac91",
       name: "TwoWayVEdge",
@@ -16205,12 +16205,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4140,
-        y: 2820,
+        x: 4720,
+        y: 4880,
       },
       end: {
-        x: 4140,
-        y: 2960,
+        x: 4720,
+        y: 5020,
       },
       id: "d6f7e812-8e11-4e0f-bd9b-c9f9b4dc909a",
       name: "TwoWayVEdge",
@@ -16219,12 +16219,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 440,
-        y: 800,
+        x: 1020,
+        y: 2860,
       },
       end: {
-        x: 440,
-        y: 1140,
+        x: 1020,
+        y: 3200,
       },
       id: "6a88975b-3875-47a1-b598-202a497844ba",
       name: "TwoWayVEdge",
@@ -16233,12 +16233,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3900,
-        y: 2820,
+        x: 4480,
+        y: 4880,
       },
       end: {
-        x: 4020,
-        y: 2820,
+        x: 4600,
+        y: 4880,
       },
       id: "ee87f914-bc04-448c-84ed-feadc4a57cb1",
       name: "TwoWayHEdge",
@@ -16247,12 +16247,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 440,
-        y: 1140,
+        x: 1020,
+        y: 3200,
       },
       end: {
-        x: 620,
-        y: 1140,
+        x: 1200,
+        y: 3200,
       },
       id: "83c16615-50a8-4569-a1a6-54d69633dad1",
       name: "TwoWayHEdge",
@@ -16261,12 +16261,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4020,
-        y: 2820,
+        x: 4600,
+        y: 4880,
       },
       end: {
-        x: 4140,
-        y: 2820,
+        x: 4720,
+        y: 4880,
       },
       id: "cbb8c2a0-1cbf-43e2-ba2f-396626ea9041",
       name: "TwoWayHEdge",
@@ -16275,12 +16275,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 620,
-        y: 1140,
+        x: 1200,
+        y: 3200,
       },
       end: {
-        x: 800,
-        y: 1140,
+        x: 1380,
+        y: 3200,
       },
       id: "196da66b-4cfb-448f-b2ac-2a924ebcabaa",
       name: "TwoWayHEdge",
@@ -16289,12 +16289,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3900,
-        y: 2600,
+        x: 4480,
+        y: 4660,
       },
       end: {
-        x: 3900,
-        y: 2820,
+        x: 4480,
+        y: 4880,
       },
       id: "194623f7-8e84-4fb9-b985-858037837a90",
       name: "TwoWayVEdge",
@@ -16303,12 +16303,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 800,
-        y: 1140,
+        x: 1380,
+        y: 3200,
       },
       end: {
-        x: 800,
-        y: 1420,
+        x: 1380,
+        y: 3480,
       },
       id: "4826cdd1-ddaa-4324-adbc-e58e331966e1",
       name: "TwoWayVEdge",
@@ -16317,12 +16317,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4140,
-        y: 2620,
+        x: 4720,
+        y: 4680,
       },
       end: {
-        x: 4140,
-        y: 2820,
+        x: 4720,
+        y: 4880,
       },
       id: "53b4940c-ba4a-4fce-9dc5-223253014afb",
       name: "TwoWayVEdge",
@@ -16331,12 +16331,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 620,
-        y: 1140,
+        x: 1200,
+        y: 3200,
       },
       end: {
-        x: 620,
-        y: 1280,
+        x: 1200,
+        y: 3340,
       },
       id: "ab91ad1f-a7d4-4254-982e-c340a0927917",
       name: "TwoWayVEdge",
@@ -16345,12 +16345,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 620,
-        y: 1280,
+        x: 1200,
+        y: 3340,
       },
       end: {
-        x: 620,
-        y: 1420,
+        x: 1200,
+        y: 3480,
       },
       id: "a3b6aed3-a458-4ced-99af-5adca4d3f4b1",
       name: "TwoWayVEdge",
@@ -16359,12 +16359,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 620,
-        y: 1420,
+        x: 1200,
+        y: 3480,
       },
       end: {
-        x: 800,
-        y: 1420,
+        x: 1380,
+        y: 3480,
       },
       id: "a00c899f-7ff4-4bf4-8d37-12f422c5d5db",
       name: "TwoWayHEdge",
@@ -16373,12 +16373,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4300,
-        y: 2420,
+        x: 4880,
+        y: 4480,
       },
       end: {
-        x: 4300,
-        y: 2620,
+        x: 4880,
+        y: 4680,
       },
       id: "9ec01a37-e980-4270-91ce-f0cef5211b7d",
       name: "TwoWayVEdge",
@@ -16387,12 +16387,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 800,
-        y: 1140,
+        x: 1380,
+        y: 3200,
       },
       end: {
-        x: 1060,
-        y: 1140,
+        x: 1640,
+        y: 3200,
       },
       id: "3b62f753-9c54-4b82-9c07-f55ddeaffc64",
       name: "TwoWayHEdge",
@@ -16401,12 +16401,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4300,
-        y: 2620,
+        x: 4880,
+        y: 4680,
       },
       end: {
-        x: 4300,
-        y: 2780,
+        x: 4880,
+        y: 4840,
       },
       id: "d5173463-aede-494d-a054-2669618a23e4",
       name: "TwoWayVEdge",
@@ -16415,12 +16415,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 800,
-        y: 1420,
+        x: 1380,
+        y: 3480,
       },
       end: {
-        x: 1000,
-        y: 1420,
+        x: 1580,
+        y: 3480,
       },
       id: "93231771-2f9a-435a-af23-c2a8bdc7b9d2",
       name: "TwoWayHEdge",
@@ -16429,12 +16429,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4300,
-        y: 2780,
+        x: 4880,
+        y: 4840,
       },
       end: {
-        x: 4480,
-        y: 2780,
+        x: 5060,
+        y: 4840,
       },
       id: "5412d6a6-bec8-4210-9f63-5b9697d8aceb",
       name: "TwoWayHEdge",
@@ -16443,12 +16443,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1000,
-        y: 1420,
+        x: 1580,
+        y: 3480,
       },
       end: {
-        x: 1200,
-        y: 1420,
+        x: 1780,
+        y: 3480,
       },
       id: "22446bda-05a5-45e0-8b4c-b0e0121ca26d",
       name: "TwoWayHEdge",
@@ -16457,12 +16457,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4140,
-        y: 2260,
+        x: 4720,
+        y: 4320,
       },
       end: {
-        x: 4300,
-        y: 2260,
+        x: 4880,
+        y: 4320,
       },
       id: "a215feee-44f8-4723-bb3b-6e965696f5ca",
       name: "TwoWayHEdge",
@@ -16471,12 +16471,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 800,
-        y: 1580,
+        x: 1380,
+        y: 3640,
       },
       end: {
-        x: 1200,
-        y: 1580,
+        x: 1780,
+        y: 3640,
       },
       id: "1f659a7a-e00e-4d05-8b61-61cd15f0cecc",
       name: "TwoWayHEdge",
@@ -16485,12 +16485,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 800,
-        y: 1420,
+        x: 1380,
+        y: 3480,
       },
       end: {
-        x: 800,
-        y: 1580,
+        x: 1380,
+        y: 3640,
       },
       id: "112d6f45-b5fb-42cc-8005-306361c3086c",
       name: "TwoWayVEdge",
@@ -16499,12 +16499,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4480,
-        y: 2620,
+        x: 5060,
+        y: 4680,
       },
       end: {
-        x: 4480,
-        y: 2780,
+        x: 5060,
+        y: 4840,
       },
       id: "76837454-f587-41b0-95cc-f27f0126e582",
       name: "TwoWayVEdge",
@@ -16513,12 +16513,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1200,
-        y: 1420,
+        x: 1780,
+        y: 3480,
       },
       end: {
-        x: 1200,
-        y: 1580,
+        x: 1780,
+        y: 3640,
       },
       id: "d946961d-1493-424b-b0e7-77bb3dc63b0b",
       name: "TwoWayVEdge",
@@ -16527,12 +16527,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4480,
-        y: 2620,
+        x: 5060,
+        y: 4680,
       },
       end: {
-        x: 4800,
-        y: 2620,
+        x: 5380,
+        y: 4680,
       },
       id: "448bf614-ae94-4331-bd2f-9afc035705ea",
       name: "TwoWayHEdge",
@@ -16541,12 +16541,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 2620,
+        x: 5380,
+        y: 4680,
       },
       end: {
-        x: 4800,
-        y: 2780,
+        x: 5380,
+        y: 4840,
       },
       id: "42e9f286-fef9-4490-a9ab-36afd5219004",
       name: "TwoWayVEdge",
@@ -16555,12 +16555,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4480,
-        y: 2780,
+        x: 5060,
+        y: 4840,
       },
       end: {
-        x: 4640,
-        y: 2780,
+        x: 5220,
+        y: 4840,
       },
       id: "f85365e6-4557-47a0-87fe-ec3c6edf1e9c",
       name: "TwoWayHEdge",
@@ -16569,12 +16569,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4640,
-        y: 2780,
+        x: 5220,
+        y: 4840,
       },
       end: {
-        x: 4800,
-        y: 2780,
+        x: 5380,
+        y: 4840,
       },
       id: "86c439fc-20d5-48b7-aaa6-217744777074",
       name: "TwoWayHEdge",
@@ -16583,12 +16583,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4660,
-        y: 2260,
+        x: 5240,
+        y: 4320,
       },
       end: {
-        x: 4860,
-        y: 2260,
+        x: 5440,
+        y: 4320,
       },
       id: "929dde8e-a08f-4065-835f-3938b51047a1",
       name: "TwoWayHEdge",
@@ -16597,12 +16597,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1060,
-        y: 1140,
+        x: 1640,
+        y: 3200,
       },
       end: {
-        x: 1260,
-        y: 1140,
+        x: 1840,
+        y: 3200,
       },
       id: "22c11943-8c76-42d8-9012-5fc374f944b9",
       name: "TwoWayHEdge",
@@ -16611,12 +16611,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1260,
-        y: 1140,
+        x: 1840,
+        y: 3200,
       },
       end: {
-        x: 1500,
-        y: 1140,
+        x: 2080,
+        y: 3200,
       },
       id: "fa1c224d-f2ce-49b2-a9c3-4e7b7524b826",
       name: "TwoWayHEdge",
@@ -16625,12 +16625,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1500,
-        y: 1140,
+        x: 2080,
+        y: 3200,
       },
       end: {
-        x: 1720,
-        y: 1140,
+        x: 2300,
+        y: 3200,
       },
       id: "80faaa8b-d2ee-4c4d-bc3b-cb146fd81329",
       name: "TwoWayHEdge",
@@ -16639,12 +16639,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1720,
-        y: 1140,
+        x: 2300,
+        y: 3200,
       },
       end: {
-        x: 1960,
-        y: 1140,
+        x: 2540,
+        y: 3200,
       },
       id: "0def50c6-2eff-4838-a150-2dbe53af0878",
       name: "TwoWayHEdge",
@@ -16653,12 +16653,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4860,
-        y: 2260,
+        x: 5440,
+        y: 4320,
       },
       end: {
-        x: 4860,
-        y: 2420,
+        x: 5440,
+        y: 4480,
       },
       id: "cafd1178-4228-4dab-a6a6-51f4c756057c",
       name: "TwoWayVEdge",
@@ -16667,12 +16667,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1500,
-        y: 1140,
+        x: 2080,
+        y: 3200,
       },
       end: {
-        x: 1500,
-        y: 1320,
+        x: 2080,
+        y: 3380,
       },
       id: "7b916f66-788b-43cc-93be-d6f3d06a922f",
       name: "TwoWayVEdge",
@@ -16681,12 +16681,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4860,
-        y: 2260,
+        x: 5440,
+        y: 4320,
       },
       end: {
-        x: 5040,
-        y: 2260,
+        x: 5620,
+        y: 4320,
       },
       id: "ee51f43f-854c-41f1-8669-5957370e33fe",
       name: "TwoWayHEdge",
@@ -16695,12 +16695,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1960,
-        y: 1140,
+        x: 2540,
+        y: 3200,
       },
       end: {
-        x: 1960,
-        y: 1320,
+        x: 2540,
+        y: 3380,
       },
       id: "f4875da7-036c-4fa8-86bc-c13cc0e7f216",
       name: "TwoWayVEdge",
@@ -16709,12 +16709,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5040,
-        y: 2260,
+        x: 5620,
+        y: 4320,
       },
       end: {
-        x: 5220,
-        y: 2260,
+        x: 5800,
+        y: 4320,
       },
       id: "5b04172e-a4fd-4588-9312-a37644fc539c",
       name: "TwoWayHEdge",
@@ -16723,12 +16723,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1500,
-        y: 1320,
+        x: 2080,
+        y: 3380,
       },
       end: {
-        x: 1960,
-        y: 1320,
+        x: 2540,
+        y: 3380,
       },
       id: "2283f8f1-58a3-4286-9369-61c2e3376202",
       name: "TwoWayHEdge",
@@ -16737,12 +16737,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5220,
-        y: 2260,
+        x: 5800,
+        y: 4320,
       },
       end: {
-        x: 5220,
-        y: 2420,
+        x: 5800,
+        y: 4480,
       },
       id: "3667ee88-8b1e-49cc-a0f9-92da2f3b209f",
       name: "TwoWayVEdge",
@@ -16751,12 +16751,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1260,
-        y: 960,
+        x: 1840,
+        y: 3020,
       },
       end: {
-        x: 1260,
-        y: 1140,
+        x: 1840,
+        y: 3200,
       },
       id: "ca605d0a-d125-461f-9858-e1e0b881b290",
       name: "TwoWayVEdge",
@@ -16765,12 +16765,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4860,
-        y: 2420,
+        x: 5440,
+        y: 4480,
       },
       end: {
-        x: 5220,
-        y: 2420,
+        x: 5800,
+        y: 4480,
       },
       id: "691bffaa-6474-462a-874e-5fe59560307b",
       name: "TwoWayHEdge",
@@ -16779,12 +16779,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5220,
-        y: 2260,
+        x: 5800,
+        y: 4320,
       },
       end: {
-        x: 5400,
-        y: 2260,
+        x: 5980,
+        y: 4320,
       },
       id: "b18fa591-1805-41e7-b748-e6c31d2da7f8",
       name: "TwoWayHEdge",
@@ -16793,12 +16793,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5400,
-        y: 2260,
+        x: 5980,
+        y: 4320,
       },
       end: {
-        x: 5400,
-        y: 2460,
+        x: 5980,
+        y: 4520,
       },
       id: "c6aa47ae-a8b7-4ade-8ebf-97222167c442",
       name: "TwoWayVEdge",
@@ -16807,12 +16807,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5400,
-        y: 2460,
+        x: 5980,
+        y: 4520,
       },
       end: {
-        x: 5600,
-        y: 2460,
+        x: 6180,
+        y: 4520,
       },
       id: "e896aa3d-f139-4210-a878-fe5bdd1cda5d",
       name: "TwoWayHEdge",
@@ -16821,12 +16821,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5600,
-        y: 2460,
+        x: 6180,
+        y: 4520,
       },
       end: {
-        x: 5820,
-        y: 2460,
+        x: 6400,
+        y: 4520,
       },
       id: "14a5bded-e3a9-4a86-80bc-5e04ca5b7343",
       name: "TwoWayHEdge",
@@ -16835,12 +16835,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5600,
-        y: 2460,
+        x: 6180,
+        y: 4520,
       },
       end: {
-        x: 5600,
-        y: 2780,
+        x: 6180,
+        y: 4840,
       },
       id: "2c206d33-d992-4025-a2e9-2d74d8a0a926",
       name: "TwoWayVEdge",
@@ -16849,12 +16849,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5820,
-        y: 2460,
+        x: 6400,
+        y: 4520,
       },
       end: {
-        x: 5820,
-        y: 2620,
+        x: 6400,
+        y: 4680,
       },
       id: "e0bb5615-0c8f-4bc7-ba10-e4a917a3aa92",
       name: "TwoWayVEdge",
@@ -16863,12 +16863,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5820,
-        y: 2620,
+        x: 6400,
+        y: 4680,
       },
       end: {
-        x: 5820,
-        y: 2780,
+        x: 6400,
+        y: 4840,
       },
       id: "e6ef2faf-833c-4138-b44c-6c3b75c9cf29",
       name: "TwoWayVEdge",
@@ -16877,12 +16877,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 340,
+        x: 1460,
+        y: 2400,
       },
       end: {
-        x: 1260,
-        y: 340,
+        x: 1840,
+        y: 2400,
       },
       id: "ef88d084-5f08-4c5f-9123-13424fabfa53",
       name: "TwoWayHEdge",
@@ -16891,12 +16891,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5600,
-        y: 2780,
+        x: 6180,
+        y: 4840,
       },
       end: {
-        x: 5820,
-        y: 2780,
+        x: 6400,
+        y: 4840,
       },
       id: "a052e298-6ba9-484a-8a33-547bdec7c1f3",
       name: "TwoWayHEdge",
@@ -16905,12 +16905,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1260,
-        y: 340,
+        x: 1840,
+        y: 2400,
       },
       end: {
-        x: 1660,
-        y: 340,
+        x: 2240,
+        y: 2400,
       },
       id: "d6ff32a3-2e4f-4086-966e-2d2496ce83e1",
       name: "TwoWayHEdge",
@@ -16919,12 +16919,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1260,
-        y: 340,
+        x: 1840,
+        y: 2400,
       },
       end: {
-        x: 1260,
-        y: 520,
+        x: 1840,
+        y: 2580,
       },
       id: "c3a14126-2ec9-43b4-9827-0399c342d5d4",
       name: "TwoWayVEdge",
@@ -16933,12 +16933,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1660,
-        y: 340,
+        x: 2240,
+        y: 2400,
       },
       end: {
-        x: 1660,
-        y: 520,
+        x: 2240,
+        y: 2580,
       },
       id: "6d988e3a-e0fc-41bc-8789-33df27d11c01",
       name: "TwoWayVEdge",
@@ -16947,12 +16947,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1260,
-        y: 520,
+        x: 1840,
+        y: 2580,
       },
       end: {
-        x: 1460,
-        y: 520,
+        x: 2040,
+        y: 2580,
       },
       id: "20f32e1a-6946-43fd-af9e-a11b817f89cd",
       name: "TwoWayHEdge",
@@ -16961,12 +16961,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1460,
-        y: 520,
+        x: 2040,
+        y: 2580,
       },
       end: {
-        x: 1660,
-        y: 520,
+        x: 2240,
+        y: 2580,
       },
       id: "c8daeaf7-c65b-410e-873a-e370241cebf6",
       name: "TwoWayHEdge",
@@ -16975,12 +16975,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1460,
-        y: 520,
+        x: 2040,
+        y: 2580,
       },
       end: {
-        x: 1460,
-        y: 680,
+        x: 2040,
+        y: 2740,
       },
       id: "7da2daee-c1cf-434b-8507-7bce171cf4db",
       name: "TwoWayVEdge",
@@ -16989,12 +16989,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 2780,
+        x: 5380,
+        y: 4840,
       },
       end: {
-        x: 4800,
-        y: 2940,
+        x: 5380,
+        y: 5000,
       },
       id: "1fdb381d-bc81-4903-890c-b0b0fd5c20a5",
       name: "TwoWayVEdge",
@@ -17003,12 +17003,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1460,
-        y: 680,
+        x: 2040,
+        y: 2740,
       },
       end: {
-        x: 1640,
-        y: 680,
+        x: 2220,
+        y: 2740,
       },
       id: "8d9504ee-3e36-41b6-aa39-4975cd918dc0",
       name: "TwoWayHEdge",
@@ -17017,12 +17017,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 2940,
+        x: 5380,
+        y: 5000,
       },
       end: {
-        x: 4960,
-        y: 2940,
+        x: 5540,
+        y: 5000,
       },
       id: "deb81b1e-097c-442a-bb12-af84909d8999",
       name: "TwoWayHEdge",
@@ -17031,12 +17031,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1640,
-        y: 680,
+        x: 2220,
+        y: 2740,
       },
       end: {
-        x: 1840,
-        y: 680,
+        x: 2420,
+        y: 2740,
       },
       id: "17ca131e-29cd-4d74-bbf6-e69e86719efd",
       name: "TwoWayHEdge",
@@ -17045,12 +17045,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4960,
-        y: 2940,
+        x: 5540,
+        y: 5000,
       },
       end: {
-        x: 5140,
-        y: 2940,
+        x: 5720,
+        y: 5000,
       },
       id: "36e56502-933e-4105-b0c7-c8db8e4f8cde",
       name: "TwoWayHEdge",
@@ -17059,12 +17059,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1480,
-        y: 840,
+        x: 2060,
+        y: 2900,
       },
       end: {
-        x: 1800,
-        y: 840,
+        x: 2380,
+        y: 2900,
       },
       id: "1e15bb6f-cb17-4352-a021-f98c467ef7d4",
       name: "TwoWayHEdge",
@@ -17073,12 +17073,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1680,
-        y: 980,
+        x: 2260,
+        y: 3040,
       },
       end: {
-        x: 1860,
-        y: 980,
+        x: 2440,
+        y: 3040,
       },
       id: "4e555de9-49ab-45af-9530-2dda62b66857",
       name: "TwoWayHEdge",
@@ -17087,12 +17087,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1460,
-        y: 680,
+        x: 2040,
+        y: 2740,
       },
       end: {
-        x: 1480,
-        y: 840,
+        x: 2060,
+        y: 2900,
       },
       id: "fac484ca-d5f1-4952-8163-5a62fdc3d438",
       name: "TwoWayVEdge",
@@ -17101,12 +17101,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1840,
-        y: 680,
+        x: 2420,
+        y: 2740,
       },
       end: {
-        x: 1800,
-        y: 840,
+        x: 2380,
+        y: 2900,
       },
       id: "74123fc9-2d63-486a-a3e1-2272f38ab0d7",
       name: "TwoWayVEdge",
@@ -17115,12 +17115,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1800,
-        y: 840,
+        x: 2380,
+        y: 2900,
       },
       end: {
-        x: 2000,
-        y: 840,
+        x: 2580,
+        y: 2900,
       },
       id: "a35b0137-0693-4ca3-8b45-d5a2f456b3df",
       name: "TwoWayHEdge",
@@ -17129,12 +17129,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1800,
-        y: 840,
+        x: 2380,
+        y: 2900,
       },
       end: {
-        x: 1860,
-        y: 980,
+        x: 2440,
+        y: 3040,
       },
       id: "38f19d69-491e-4793-8b4c-ba1581c09eca",
       name: "TwoWayVEdge",
@@ -17143,12 +17143,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 2940,
+        x: 5380,
+        y: 5000,
       },
       end: {
-        x: 4800,
-        y: 3080,
+        x: 5380,
+        y: 5140,
       },
       id: "6583e024-dd2e-431b-9653-054f990e0cb4",
       name: "TwoWayVEdge",
@@ -17157,12 +17157,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1480,
-        y: 840,
+        x: 2060,
+        y: 2900,
       },
       end: {
-        x: 1500,
-        y: 980,
+        x: 2080,
+        y: 3040,
       },
       id: "8f40ea1e-5d81-422e-b9dc-cc3e4f6d65e6",
       name: "TwoWayVEdge",
@@ -17171,12 +17171,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5140,
-        y: 2940,
+        x: 5720,
+        y: 5000,
       },
       end: {
-        x: 5140,
-        y: 3080,
+        x: 5720,
+        y: 5140,
       },
       id: "c3b0de0f-0e48-4153-9a2b-22a5e86108be",
       name: "TwoWayVEdge",
@@ -17185,12 +17185,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1500,
-        y: 980,
+        x: 2080,
+        y: 3040,
       },
       end: {
-        x: 1500,
-        y: 1140,
+        x: 2080,
+        y: 3200,
       },
       id: "04bbb3f3-bc26-43a2-81ac-f6fab5ba954d",
       name: "TwoWayVEdge",
@@ -17199,12 +17199,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 3080,
+        x: 5380,
+        y: 5140,
       },
       end: {
-        x: 5140,
-        y: 3080,
+        x: 5720,
+        y: 5140,
       },
       id: "175dd7f5-d170-4bfd-9ced-04e80c08b3e0",
       name: "TwoWayHEdge",
@@ -17213,12 +17213,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5140,
-        y: 2780,
+        x: 5720,
+        y: 4840,
       },
       end: {
-        x: 5140,
-        y: 2940,
+        x: 5720,
+        y: 5000,
       },
       id: "9dc8b9a3-c4ef-48bb-91b6-affd5143ae8f",
       name: "TwoWayVEdge",
@@ -17227,12 +17227,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5140,
-        y: 2780,
+        x: 5720,
+        y: 4840,
       },
       end: {
-        x: 5320,
-        y: 2780,
+        x: 5900,
+        y: 4840,
       },
       id: "7fd86ae7-e041-49d6-8d71-5db31d9ce8cb",
       name: "TwoWayHEdge",
@@ -17241,12 +17241,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5320,
-        y: 2780,
+        x: 5900,
+        y: 4840,
       },
       end: {
-        x: 5320,
-        y: 2940,
+        x: 5900,
+        y: 5000,
       },
       id: "725293cb-022f-4e02-ac7d-fad6910a3202",
       name: "TwoWayVEdge",
@@ -17255,12 +17255,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5320,
-        y: 2940,
+        x: 5900,
+        y: 5000,
       },
       end: {
-        x: 5500,
-        y: 2940,
+        x: 6080,
+        y: 5000,
       },
       id: "e4f7d06a-b25f-4f13-8266-811c86cac4ef",
       name: "TwoWayHEdge",
@@ -17269,12 +17269,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5500,
-        y: 2940,
+        x: 6080,
+        y: 5000,
       },
       end: {
-        x: 5660,
-        y: 2940,
+        x: 6240,
+        y: 5000,
       },
       id: "0e96df10-6db3-4a1c-92bb-082362858eee",
       name: "TwoWayHEdge",
@@ -17283,12 +17283,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5660,
-        y: 2940,
+        x: 6240,
+        y: 5000,
       },
       end: {
-        x: 5820,
-        y: 2940,
+        x: 6400,
+        y: 5000,
       },
       id: "a09f6aa3-1bc6-49b9-b951-05738d874ac4",
       name: "TwoWayHEdge",
@@ -17297,12 +17297,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5820,
-        y: 2780,
+        x: 6400,
+        y: 4840,
       },
       end: {
-        x: 5820,
-        y: 2940,
+        x: 6400,
+        y: 5000,
       },
       id: "a4a7a2d7-204d-416a-b20a-a968b61f1ec5",
       name: "TwoWayVEdge",
@@ -17311,12 +17311,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1960,
-        y: 1320,
+        x: 2540,
+        y: 3380,
       },
       end: {
-        x: 2260,
-        y: 1320,
+        x: 2840,
+        y: 3380,
       },
       id: "0ff92e12-2ca6-4251-99ed-c534c8b0219d",
       name: "TwoWayHEdge",
@@ -17325,12 +17325,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2340,
-        y: 1060,
+        x: 2920,
+        y: 3120,
       },
       end: {
-        x: 2260,
-        y: 1320,
+        x: 2840,
+        y: 3380,
       },
       id: "ca6224fa-1ace-4caa-995e-eb9ce250a93f",
       name: "TwoWayVEdge",
@@ -17339,12 +17339,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2100,
-        y: 1060,
+        x: 2680,
+        y: 3120,
       },
       end: {
-        x: 2340,
-        y: 1060,
+        x: 2920,
+        y: 3120,
       },
       id: "7d2994be-3509-46b1-b64a-2a642a30e0e6",
       name: "TwoWayHEdge",
@@ -17353,12 +17353,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2180,
-        y: 840,
+        x: 2760,
+        y: 2900,
       },
       end: {
-        x: 2100,
-        y: 1060,
+        x: 2680,
+        y: 3120,
       },
       id: "b79576f1-e186-45cd-955c-27bcd1298fa8",
       name: "TwoWayVEdge",
@@ -17367,12 +17367,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1660,
-        y: 340,
+        x: 2240,
+        y: 2400,
       },
       end: {
-        x: 2120,
-        y: 340,
+        x: 2700,
+        y: 2400,
       },
       id: "c0f611ef-8901-41e6-8bb9-f8b0f1581651",
       name: "TwoWayHEdge",
@@ -17381,12 +17381,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2120,
-        y: 340,
+        x: 2700,
+        y: 2400,
       },
       end: {
-        x: 2420,
-        y: 340,
+        x: 3000,
+        y: 2400,
       },
       id: "15884d5b-fb54-44bb-80de-3c1d38619b19",
       name: "TwoWayHEdge",
@@ -17395,12 +17395,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5820,
-        y: 2620,
+        x: 6400,
+        y: 4680,
       },
       end: {
-        x: 5980,
-        y: 2620,
+        x: 6560,
+        y: 4680,
       },
       id: "ed110e9d-5445-4fc3-a419-97111dff9ba7",
       name: "TwoWayHEdge",
@@ -17409,12 +17409,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5980,
-        y: 2620,
+        x: 6560,
+        y: 4680,
       },
       end: {
-        x: 6160,
-        y: 2620,
+        x: 6740,
+        y: 4680,
       },
       id: "81f84b40-77a4-4fdb-a149-ae627deb938f",
       name: "TwoWayHEdge",
@@ -17423,12 +17423,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1200,
-        y: 1580,
+        x: 1780,
+        y: 3640,
       },
       end: {
-        x: 1520,
-        y: 1580,
+        x: 2100,
+        y: 3640,
       },
       id: "4f727d18-7c1e-4024-a1ea-daf710d10dc0",
       name: "TwoWayHEdge",
@@ -17437,12 +17437,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6160,
-        y: 2620,
+        x: 6740,
+        y: 4680,
       },
       end: {
-        x: 6340,
-        y: 2620,
+        x: 6920,
+        y: 4680,
       },
       id: "1c0e8d5e-634c-423f-b457-6a8ab1d8c223",
       name: "TwoWayHEdge",
@@ -17451,12 +17451,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1520,
-        y: 1580,
+        x: 2100,
+        y: 3640,
       },
       end: {
-        x: 1740,
-        y: 1580,
+        x: 2320,
+        y: 3640,
       },
       id: "dac4dd7c-9f1b-4976-9b66-3c833a760fc1",
       name: "TwoWayHEdge",
@@ -17465,12 +17465,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6340,
-        y: 2620,
+        x: 6920,
+        y: 4680,
       },
       end: {
-        x: 6340,
-        y: 2820,
+        x: 6920,
+        y: 4880,
       },
       id: "e517117d-b30a-4664-a005-aab4315fa490",
       name: "TwoWayVEdge",
@@ -17479,12 +17479,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1740,
-        y: 1580,
+        x: 2320,
+        y: 3640,
       },
       end: {
-        x: 1920,
-        y: 1580,
+        x: 2500,
+        y: 3640,
       },
       id: "294a9b50-131c-40c6-a8f2-9872046bd8b8",
       name: "TwoWayHEdge",
@@ -17493,12 +17493,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6340,
-        y: 2820,
+        x: 6920,
+        y: 4880,
       },
       end: {
-        x: 6340,
-        y: 3000,
+        x: 6920,
+        y: 5060,
       },
       id: "6fa80370-6da1-450e-b7c9-7e590edb2069",
       name: "TwoWayVEdge",
@@ -17507,12 +17507,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1920,
-        y: 1580,
+        x: 2500,
+        y: 3640,
       },
       end: {
-        x: 2120,
-        y: 1580,
+        x: 2700,
+        y: 3640,
       },
       id: "0ca94e34-2f94-4a02-ad1b-be57abf406e5",
       name: "TwoWayHEdge",
@@ -17521,12 +17521,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5980,
-        y: 3000,
+        x: 6560,
+        y: 5060,
       },
       end: {
-        x: 6340,
-        y: 3000,
+        x: 6920,
+        y: 5060,
       },
       id: "3e57b0c0-02a7-4fda-8a29-87ea71411812",
       name: "TwoWayHEdge",
@@ -17535,12 +17535,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1740,
-        y: 1580,
+        x: 2320,
+        y: 3640,
       },
       end: {
-        x: 1740,
-        y: 1740,
+        x: 2320,
+        y: 3800,
       },
       id: "8b2414ba-b4e8-429c-a0a8-678e52da6b61",
       name: "TwoWayVEdge",
@@ -17549,12 +17549,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5980,
-        y: 3000,
+        x: 6560,
+        y: 5060,
       },
       end: {
-        x: 5980,
-        y: 3180,
+        x: 6560,
+        y: 5240,
       },
       id: "b986224e-dac9-4a86-ae25-9797b71ad67b",
       name: "TwoWayVEdge",
@@ -17563,12 +17563,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2120,
-        y: 1580,
+        x: 2700,
+        y: 3640,
       },
       end: {
-        x: 2120,
-        y: 1740,
+        x: 2700,
+        y: 3800,
       },
       id: "a8d7fa6a-389f-4162-b496-b6c2c5d0eb2a",
       name: "TwoWayVEdge",
@@ -17577,12 +17577,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6340,
-        y: 3000,
+        x: 6920,
+        y: 5060,
       },
       end: {
-        x: 6340,
-        y: 3180,
+        x: 6920,
+        y: 5240,
       },
       id: "2aa751f3-265d-4b7e-92e3-934e9397a147",
       name: "TwoWayVEdge",
@@ -17591,12 +17591,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1740,
-        y: 1740,
+        x: 2320,
+        y: 3800,
       },
       end: {
-        x: 2120,
-        y: 1740,
+        x: 2700,
+        y: 3800,
       },
       id: "71b54b4c-9dd3-4a4a-80fe-9307a9481b1d",
       name: "TwoWayHEdge",
@@ -17605,12 +17605,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5980,
-        y: 3180,
+        x: 6560,
+        y: 5240,
       },
       end: {
-        x: 6160,
-        y: 3180,
+        x: 6740,
+        y: 5240,
       },
       id: "09960be2-32e0-4937-9b76-ce67716cb80c",
       name: "TwoWayHEdge",
@@ -17619,12 +17619,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6160,
-        y: 3180,
+        x: 6740,
+        y: 5240,
       },
       end: {
-        x: 6340,
-        y: 3180,
+        x: 6920,
+        y: 5240,
       },
       id: "a4ab1777-5292-4425-93c9-c7fc41a4605f",
       name: "TwoWayHEdge",
@@ -17633,12 +17633,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5980,
-        y: 3180,
+        x: 6560,
+        y: 5240,
       },
       end: {
-        x: 5980,
-        y: 3380,
+        x: 6560,
+        y: 5440,
       },
       id: "b6d79be6-dcbf-4527-b50f-e85b98ff8fb5",
       name: "TwoWayVEdge",
@@ -17647,12 +17647,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5820,
-        y: 3380,
+        x: 6400,
+        y: 5440,
       },
       end: {
-        x: 5980,
-        y: 3380,
+        x: 6560,
+        y: 5440,
       },
       id: "19afbf46-0960-4716-863c-ad4fe887942f",
       name: "TwoWayHEdge",
@@ -17661,12 +17661,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5820,
-        y: 3180,
+        x: 6400,
+        y: 5240,
       },
       end: {
-        x: 5820,
-        y: 3380,
+        x: 6400,
+        y: 5440,
       },
       id: "9008ca82-1026-4292-9895-2d2cd0dbb56e",
       name: "TwoWayVEdge",
@@ -17675,12 +17675,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5660,
-        y: 3180,
+        x: 6240,
+        y: 5240,
       },
       end: {
-        x: 5820,
-        y: 3180,
+        x: 6400,
+        y: 5240,
       },
       id: "3109bcf2-2979-48cd-9b62-d9599f83649d",
       name: "TwoWayHEdge",
@@ -17689,12 +17689,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5660,
-        y: 2940,
+        x: 6240,
+        y: 5000,
       },
       end: {
-        x: 5660,
-        y: 3060,
+        x: 6240,
+        y: 5120,
       },
       id: "cdae4c0c-0661-4196-ba94-467441ca5eb5",
       name: "TwoWayVEdge",
@@ -17703,12 +17703,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2120,
-        y: 1580,
+        x: 2700,
+        y: 3640,
       },
       end: {
-        x: 2340,
-        y: 1580,
+        x: 2920,
+        y: 3640,
       },
       id: "4fa9e463-c1de-4557-8df5-3cf2419a403f",
       name: "TwoWayHEdge",
@@ -17717,12 +17717,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5660,
-        y: 3060,
+        x: 6240,
+        y: 5120,
       },
       end: {
-        x: 5660,
-        y: 3180,
+        x: 6240,
+        y: 5240,
       },
       id: "3c277305-e6ca-4062-8a47-0f2e95c4859f",
       name: "TwoWayVEdge",
@@ -17731,12 +17731,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2340,
-        y: 1580,
+        x: 2920,
+        y: 3640,
       },
       end: {
-        x: 2340,
-        y: 1740,
+        x: 2920,
+        y: 3800,
       },
       id: "0f136564-f100-449f-93d1-2bd5da2cd658",
       name: "TwoWayVEdge",
@@ -17745,12 +17745,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2340,
-        y: 1740,
+        x: 2920,
+        y: 3800,
       },
       end: {
-        x: 2560,
-        y: 1740,
+        x: 3140,
+        y: 3800,
       },
       id: "ef388d63-3806-48b7-9adf-a0b00c173604",
       name: "TwoWayHEdge",
@@ -17759,12 +17759,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5140,
-        y: 3180,
+        x: 5720,
+        y: 5240,
       },
       end: {
-        x: 5660,
-        y: 3180,
+        x: 6240,
+        y: 5240,
       },
       id: "bede3c45-43e8-4a7e-8685-aabe5d430c4a",
       name: "TwoWayHEdge",
@@ -17773,12 +17773,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2560,
-        y: 1580,
+        x: 3140,
+        y: 3640,
       },
       end: {
-        x: 2560,
-        y: 1740,
+        x: 3140,
+        y: 3800,
       },
       id: "61d34814-cdd6-4ce5-849a-f846413c28c6",
       name: "TwoWayVEdge",
@@ -17787,12 +17787,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5140,
-        y: 3080,
+        x: 5720,
+        y: 5140,
       },
       end: {
-        x: 5140,
-        y: 3180,
+        x: 5720,
+        y: 5240,
       },
       id: "b129f573-2c02-4067-a75a-6b2c94901db9",
       name: "TwoWayVEdge",
@@ -17801,12 +17801,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2560,
-        y: 1440,
+        x: 3140,
+        y: 3500,
       },
       end: {
-        x: 2560,
-        y: 1580,
+        x: 3140,
+        y: 3640,
       },
       id: "84071604-ba99-4648-8bca-0db31d09368e",
       name: "TwoWayVEdge",
@@ -17815,12 +17815,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2260,
-        y: 1440,
+        x: 2840,
+        y: 3500,
       },
       end: {
-        x: 2560,
-        y: 1440,
+        x: 3140,
+        y: 3500,
       },
       id: "5686b59c-d23b-49b7-a67c-4d774be55e9c",
       name: "TwoWayHEdge",
@@ -17829,12 +17829,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2260,
-        y: 1320,
+        x: 2840,
+        y: 3380,
       },
       end: {
-        x: 2260,
-        y: 1440,
+        x: 2840,
+        y: 3500,
       },
       id: "91d88950-fc4c-40ed-a56f-947f69411eb6",
       name: "TwoWayVEdge",
@@ -17843,12 +17843,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2420,
-        y: 340,
+        x: 3000,
+        y: 2400,
       },
       end: {
-        x: 2700,
-        y: 340,
+        x: 3280,
+        y: 2400,
       },
       id: "0dd996b7-1974-4cb9-82ec-dde0f2966c32",
       name: "TwoWayHEdge",
@@ -17857,12 +17857,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2700,
-        y: 340,
+        x: 3280,
+        y: 2400,
       },
       end: {
-        x: 2740,
-        y: 520,
+        x: 3320,
+        y: 2580,
       },
       id: "28adf3f8-6099-465c-9c61-bc3d3b0edb77",
       name: "TwoWayVEdge",
@@ -17871,12 +17871,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5820,
-        y: 3380,
+        x: 6400,
+        y: 5440,
       },
       end: {
-        x: 5820,
-        y: 3600,
+        x: 6400,
+        y: 5660,
       },
       id: "8e080097-0cbf-4bb1-ab7c-3fedaf9654d2",
       name: "TwoWayVEdge",
@@ -17885,12 +17885,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2740,
-        y: 520,
+        x: 3320,
+        y: 2580,
       },
       end: {
-        x: 2680,
-        y: 720,
+        x: 3260,
+        y: 2780,
       },
       id: "38c6799c-d965-4ab5-8fa3-21210290eb70",
       name: "TwoWayVEdge",
@@ -17899,12 +17899,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5600,
-        y: 3600,
+        x: 6180,
+        y: 5660,
       },
       end: {
-        x: 5820,
-        y: 3600,
+        x: 6400,
+        y: 5660,
       },
       id: "2fcf2f3f-56af-4b67-9bd6-12a59f74f1ba",
       name: "TwoWayHEdge",
@@ -17913,12 +17913,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2680,
-        y: 720,
+        x: 3260,
+        y: 2780,
       },
       end: {
-        x: 2700,
-        y: 900,
+        x: 3280,
+        y: 2960,
       },
       id: "2729757b-45c6-4086-8f41-a48f9e95f515",
       name: "TwoWayVEdge",
@@ -17927,12 +17927,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5360,
-        y: 3600,
+        x: 5940,
+        y: 5660,
       },
       end: {
-        x: 5600,
-        y: 3600,
+        x: 6180,
+        y: 5660,
       },
       id: "92515827-b699-428c-894f-ae759a27791a",
       name: "TwoWayHEdge",
@@ -17941,12 +17941,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5140,
-        y: 3600,
+        x: 5720,
+        y: 5660,
       },
       end: {
-        x: 5360,
-        y: 3600,
+        x: 5940,
+        y: 5660,
       },
       id: "31b101b1-e779-4bf4-a20f-cd6dcc376593",
       name: "TwoWayHEdge",
@@ -17955,12 +17955,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2440,
-        y: 900,
+        x: 3020,
+        y: 2960,
       },
       end: {
-        x: 2700,
-        y: 900,
+        x: 3280,
+        y: 2960,
       },
       id: "78c992ba-f631-4c58-99e6-851d5b23278c",
       name: "TwoWayHEdge",
@@ -17969,12 +17969,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5140,
-        y: 3180,
+        x: 5720,
+        y: 5240,
       },
       end: {
-        x: 5140,
-        y: 3600,
+        x: 5720,
+        y: 5660,
       },
       id: "b0a4c2a5-aede-4cc1-b45f-a15993902ad5",
       name: "TwoWayVEdge",
@@ -17983,12 +17983,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2700,
-        y: 900,
+        x: 3280,
+        y: 2960,
       },
       end: {
-        x: 2900,
-        y: 900,
+        x: 3480,
+        y: 2960,
       },
       id: "22f26105-e2e4-4652-8497-a53c7a6e4d6a",
       name: "TwoWayHEdge",
@@ -17997,12 +17997,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2900,
-        y: 900,
+        x: 3480,
+        y: 2960,
       },
       end: {
-        x: 2900,
-        y: 1020,
+        x: 3480,
+        y: 3080,
       },
       id: "e01a180c-87d0-45cb-bbf6-f53c94f6ee30",
       name: "TwoWayVEdge",
@@ -18011,12 +18011,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2900,
-        y: 1020,
+        x: 3480,
+        y: 3080,
       },
       end: {
-        x: 2900,
-        y: 1140,
+        x: 3480,
+        y: 3200,
       },
       id: "373ef062-9f34-4c89-98c0-12acb252ee63",
       name: "TwoWayVEdge",
@@ -18025,12 +18025,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2700,
-        y: 1140,
+        x: 3280,
+        y: 3200,
       },
       end: {
-        x: 2900,
-        y: 1140,
+        x: 3480,
+        y: 3200,
       },
       id: "376d9dd4-4dc9-49c7-a350-53ce5620360c",
       name: "TwoWayHEdge",
@@ -18039,12 +18039,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2700,
-        y: 900,
+        x: 3280,
+        y: 2960,
       },
       end: {
-        x: 2700,
-        y: 1140,
+        x: 3280,
+        y: 3200,
       },
       id: "60a687fe-7356-4d0f-89dc-fe8b8c7db279",
       name: "TwoWayVEdge",
@@ -18053,12 +18053,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4140,
-        y: 2960,
+        x: 4720,
+        y: 5020,
       },
       end: {
-        x: 4280,
-        y: 2960,
+        x: 4860,
+        y: 5020,
       },
       id: "602d5a33-402f-4643-9980-7d43c70e2744",
       name: "TwoWayHEdge",
@@ -18067,12 +18067,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2260,
-        y: 1320,
+        x: 2840,
+        y: 3380,
       },
       end: {
-        x: 2700,
-        y: 1320,
+        x: 3280,
+        y: 3380,
       },
       id: "67c9246c-2e0a-401a-9f39-2359b52df47c",
       name: "TwoWayHEdge",
@@ -18081,12 +18081,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4280,
-        y: 2960,
+        x: 4860,
+        y: 5020,
       },
       end: {
-        x: 4420,
-        y: 2960,
+        x: 5000,
+        y: 5020,
       },
       id: "000ca383-3f1e-4f85-bb85-6d5809d0619b",
       name: "TwoWayHEdge",
@@ -18095,12 +18095,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2700,
-        y: 1320,
+        x: 3280,
+        y: 3380,
       },
       end: {
-        x: 2900,
-        y: 1320,
+        x: 3480,
+        y: 3380,
       },
       id: "77b8d371-b032-4052-abba-5a940b8f40fe",
       name: "TwoWayHEdge",
@@ -18109,12 +18109,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4140,
-        y: 2960,
+        x: 4720,
+        y: 5020,
       },
       end: {
-        x: 4140,
-        y: 3140,
+        x: 4720,
+        y: 5200,
       },
       id: "d8914b10-b45a-4170-8d83-ec139387f0e9",
       name: "TwoWayVEdge",
@@ -18123,12 +18123,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2900,
-        y: 1140,
+        x: 3480,
+        y: 3200,
       },
       end: {
-        x: 2900,
-        y: 1320,
+        x: 3480,
+        y: 3380,
       },
       id: "22fd983e-c0d7-4b67-8059-36cfa210259c",
       name: "TwoWayVEdge",
@@ -18137,12 +18137,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4140,
-        y: 3140,
+        x: 4720,
+        y: 5200,
       },
       end: {
-        x: 4420,
-        y: 3140,
+        x: 5000,
+        y: 5200,
       },
       id: "82e2edb1-b9b9-4210-a478-f171d622cb1f",
       name: "TwoWayHEdge",
@@ -18151,12 +18151,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4420,
-        y: 2960,
+        x: 5000,
+        y: 5020,
       },
       end: {
-        x: 4420,
-        y: 3140,
+        x: 5000,
+        y: 5200,
       },
       id: "778e8e3b-0690-450a-814f-f23aa9b34b15",
       name: "TwoWayVEdge",
@@ -18165,12 +18165,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4420,
-        y: 2960,
+        x: 5000,
+        y: 5020,
       },
       end: {
-        x: 4560,
-        y: 3060,
+        x: 5140,
+        y: 5120,
       },
       id: "8c83d3c7-0f37-4e6c-bb3b-380961b15c03",
       name: "TwoWayHEdge",
@@ -18179,12 +18179,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4560,
-        y: 3060,
+        x: 5140,
+        y: 5120,
       },
       end: {
-        x: 4680,
-        y: 2980,
+        x: 5260,
+        y: 5040,
       },
       id: "3504382b-4676-43ff-a057-d31f4769cac1",
       name: "TwoWayHEdge",
@@ -18193,12 +18193,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4420,
-        y: 3140,
+        x: 5000,
+        y: 5200,
       },
       end: {
-        x: 4420,
-        y: 3740,
+        x: 5000,
+        y: 5800,
       },
       id: "51b06dee-bad7-4e65-b4b1-d2482673cdeb",
       name: "TwoWayVEdge",
@@ -18207,12 +18207,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4420,
-        y: 3740,
+        x: 5000,
+        y: 5800,
       },
       end: {
-        x: 4620,
-        y: 3740,
+        x: 5200,
+        y: 5800,
       },
       id: "e4afb149-93b9-4f93-852b-5539c81ad33f",
       name: "TwoWayHEdge",
@@ -18221,12 +18221,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4620,
-        y: 3740,
+        x: 5200,
+        y: 5800,
       },
       end: {
-        x: 4800,
-        y: 3740,
+        x: 5380,
+        y: 5800,
       },
       id: "86865bda-47d4-422b-959d-f3078934118f",
       name: "TwoWayHEdge",
@@ -18235,12 +18235,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 3740,
+        x: 5380,
+        y: 5800,
       },
       end: {
-        x: 5140,
-        y: 3740,
+        x: 5720,
+        y: 5800,
       },
       id: "ba02e43f-0414-4511-a35c-f45485a9bfd8",
       name: "TwoWayHEdge",
@@ -18249,12 +18249,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 3600,
+        x: 5380,
+        y: 5660,
       },
       end: {
-        x: 4800,
-        y: 3740,
+        x: 5380,
+        y: 5800,
       },
       id: "81b0789f-c7c5-4b76-98a8-2a31d0c57e59",
       name: "TwoWayVEdge",
@@ -18263,12 +18263,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2560,
-        y: 1740,
+        x: 3140,
+        y: 3800,
       },
       end: {
-        x: 2720,
-        y: 1740,
+        x: 3300,
+        y: 3800,
       },
       id: "231d978e-42b1-4a1c-8fe4-adff1118ae32",
       name: "TwoWayHEdge",
@@ -18277,12 +18277,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 3600,
+        x: 5380,
+        y: 5660,
       },
       end: {
-        x: 4960,
-        y: 3600,
+        x: 5540,
+        y: 5660,
       },
       id: "ac8519f6-8fa2-4ab2-bce1-8ee4817a3375",
       name: "TwoWayHEdge",
@@ -18291,12 +18291,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2720,
-        y: 1740,
+        x: 3300,
+        y: 3800,
       },
       end: {
-        x: 2900,
-        y: 1740,
+        x: 3480,
+        y: 3800,
       },
       id: "a668415e-e2aa-4e44-b83e-cf95ac7b89fd",
       name: "TwoWayHEdge",
@@ -18305,12 +18305,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4960,
-        y: 3600,
+        x: 5540,
+        y: 5660,
       },
       end: {
-        x: 5140,
-        y: 3600,
+        x: 5720,
+        y: 5660,
       },
       id: "2a5e3cee-005d-4bec-b3c0-49aea9d679f8",
       name: "TwoWayHEdge",
@@ -18319,12 +18319,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2720,
-        y: 1740,
+        x: 3300,
+        y: 3800,
       },
       end: {
-        x: 2720,
-        y: 1900,
+        x: 3300,
+        y: 3960,
       },
       id: "c57243eb-6c61-42ad-ad77-142aa5e4be1d",
       name: "TwoWayVEdge",
@@ -18333,12 +18333,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5140,
-        y: 3600,
+        x: 5720,
+        y: 5660,
       },
       end: {
-        x: 5140,
-        y: 3740,
+        x: 5720,
+        y: 5800,
       },
       id: "b2d35573-ceb3-44ca-ad3d-43fa3f2f88af",
       name: "TwoWayVEdge",
@@ -18347,12 +18347,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2720,
-        y: 1900,
+        x: 3300,
+        y: 3960,
       },
       end: {
-        x: 2720,
-        y: 2060,
+        x: 3300,
+        y: 4120,
       },
       id: "e3f102e3-da4f-4626-894a-6b752357a3cd",
       name: "TwoWayVEdge",
@@ -18361,12 +18361,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2720,
-        y: 2060,
+        x: 3300,
+        y: 4120,
       },
       end: {
-        x: 2900,
-        y: 2060,
+        x: 3480,
+        y: 4120,
       },
       id: "01c79478-13bc-42a5-ae9e-83f5893e90c5",
       name: "TwoWayHEdge",
@@ -18375,12 +18375,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2900,
-        y: 1740,
+        x: 3480,
+        y: 3800,
       },
       end: {
-        x: 2900,
-        y: 2060,
+        x: 3480,
+        y: 4120,
       },
       id: "fd878a85-a97a-422c-ae42-3aba4d389bea",
       name: "TwoWayVEdge",
@@ -18389,12 +18389,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2900,
-        y: 2060,
+        x: 3480,
+        y: 4120,
       },
       end: {
-        x: 3200,
-        y: 2060,
+        x: 3780,
+        y: 4120,
       },
       id: "f4bb2f4f-ae49-4d5a-bd78-fd1bd1ec15ed",
       name: "TwoWayHEdge",
@@ -18403,12 +18403,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3200,
-        y: 2060,
+        x: 3780,
+        y: 4120,
       },
       end: {
-        x: 3440,
-        y: 2060,
+        x: 4020,
+        y: 4120,
       },
       id: "8c3b095b-e523-4e60-bd5f-94c919d1d311",
       name: "TwoWayHEdge",
@@ -18417,12 +18417,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3080,
-        y: 2360,
+        x: 3660,
+        y: 4420,
       },
       end: {
-        x: 3300,
-        y: 2440,
+        x: 3880,
+        y: 4500,
       },
       id: "0c5fb970-baaf-4a6e-8946-0dd0e7ab1911",
       name: "TwoWayHEdge",
@@ -18431,12 +18431,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3300,
-        y: 2440,
+        x: 3880,
+        y: 4500,
       },
       end: {
-        x: 3500,
-        y: 2380,
+        x: 4080,
+        y: 4440,
       },
       id: "2ed2b818-3352-4678-9dcf-45d3d7b20526",
       name: "TwoWayHEdge",
@@ -18445,12 +18445,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3440,
-        y: 2060,
+        x: 4020,
+        y: 4120,
       },
       end: {
-        x: 3500,
-        y: 2380,
+        x: 4080,
+        y: 4440,
       },
       id: "4c62e8af-63d5-4fae-912a-7fd008c5d977",
       name: "TwoWayVEdge",
@@ -18459,12 +18459,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3200,
-        y: 2060,
+        x: 3780,
+        y: 4120,
       },
       end: {
-        x: 3080,
-        y: 2360,
+        x: 3660,
+        y: 4420,
       },
       id: "93b07633-411a-4c73-a1d2-b24b6e42a634",
       name: "TwoWayVEdge",
@@ -18473,12 +18473,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4420,
-        y: 3740,
+        x: 5000,
+        y: 5800,
       },
       end: {
-        x: 4400,
-        y: 3940,
+        x: 4980,
+        y: 6000,
       },
       id: "9f111ebb-d55a-4435-8f29-fa12eb5a3cb7",
       name: "TwoWayVEdge",
@@ -18487,12 +18487,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4400,
-        y: 3940,
+        x: 4980,
+        y: 6000,
       },
       end: {
-        x: 4400,
-        y: 4100,
+        x: 4980,
+        y: 6160,
       },
       id: "3c368652-f290-4536-8e0c-8038d407be60",
       name: "TwoWayVEdge",
@@ -18501,12 +18501,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4400,
-        y: 3940,
+        x: 4980,
+        y: 6000,
       },
       end: {
-        x: 4640,
-        y: 3940,
+        x: 5220,
+        y: 6000,
       },
       id: "b784118d-b3c5-4f31-84df-dad4a7965aba",
       name: "TwoWayHEdge",
@@ -18515,12 +18515,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4400,
-        y: 4100,
+        x: 4980,
+        y: 6160,
       },
       end: {
-        x: 4520,
-        y: 4100,
+        x: 5100,
+        y: 6160,
       },
       id: "28b2b8d5-8834-4136-a7c0-80f40afdaf21",
       name: "TwoWayHEdge",
@@ -18529,12 +18529,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4520,
-        y: 4100,
+        x: 5100,
+        y: 6160,
       },
       end: {
-        x: 4640,
-        y: 4100,
+        x: 5220,
+        y: 6160,
       },
       id: "d9b12513-23e0-4830-8a16-7411294f6a1c",
       name: "TwoWayHEdge",
@@ -18543,12 +18543,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4640,
-        y: 3940,
+        x: 5220,
+        y: 6000,
       },
       end: {
-        x: 4640,
-        y: 4100,
+        x: 5220,
+        y: 6160,
       },
       id: "f2c3cdeb-d6cd-461e-ba00-5d4a979721d8",
       name: "TwoWayVEdge",
@@ -18557,12 +18557,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4640,
-        y: 3940,
+        x: 5220,
+        y: 6000,
       },
       end: {
-        x: 4800,
-        y: 3940,
+        x: 5380,
+        y: 6000,
       },
       id: "75b9d7c0-fe92-4271-8dd6-a0e2791c66e7",
       name: "TwoWayHEdge",
@@ -18571,12 +18571,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 3940,
+        x: 5380,
+        y: 6000,
       },
       end: {
-        x: 4960,
-        y: 3940,
+        x: 5540,
+        y: 6000,
       },
       id: "6d7a6022-f87b-4e3e-8c2d-88936717d760",
       name: "TwoWayHEdge",
@@ -18585,12 +18585,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4960,
-        y: 3940,
+        x: 5540,
+        y: 6000,
       },
       end: {
-        x: 5140,
-        y: 3940,
+        x: 5720,
+        y: 6000,
       },
       id: "a99a130b-4e2c-4449-b44e-a4fcd6f78d6f",
       name: "TwoWayHEdge",
@@ -18599,12 +18599,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5140,
-        y: 3740,
+        x: 5720,
+        y: 5800,
       },
       end: {
-        x: 5140,
-        y: 3940,
+        x: 5720,
+        y: 6000,
       },
       id: "005f6cae-9196-4195-895a-a8e744b2f9f5",
       name: "TwoWayVEdge",
@@ -18613,12 +18613,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6340,
-        y: 2460,
+        x: 6920,
+        y: 4520,
       },
       end: {
-        x: 6340,
-        y: 2620,
+        x: 6920,
+        y: 4680,
       },
       id: "a36d24b5-254c-455e-af53-be884d970df3",
       name: "TwoWayVEdge",
@@ -18627,12 +18627,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6160,
-        y: 2460,
+        x: 6740,
+        y: 4520,
       },
       end: {
-        x: 6340,
-        y: 2460,
+        x: 6920,
+        y: 4520,
       },
       id: "8e6e4352-7860-4cba-9f71-02fefc3557c6",
       name: "TwoWayHEdge",
@@ -18641,12 +18641,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6340,
-        y: 2460,
+        x: 6920,
+        y: 4520,
       },
       end: {
-        x: 6520,
-        y: 2460,
+        x: 7100,
+        y: 4520,
       },
       id: "5bc7634a-3957-453b-ac0d-45b1c2d1bfd6",
       name: "TwoWayHEdge",
@@ -18655,12 +18655,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6160,
-        y: 2260,
+        x: 6740,
+        y: 4320,
       },
       end: {
-        x: 6160,
-        y: 2460,
+        x: 6740,
+        y: 4520,
       },
       id: "ab735d1d-2ecd-4af6-bde4-5d959b26be35",
       name: "TwoWayVEdge",
@@ -18669,12 +18669,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6520,
-        y: 2260,
+        x: 7100,
+        y: 4320,
       },
       end: {
-        x: 6520,
-        y: 2460,
+        x: 7100,
+        y: 4520,
       },
       id: "9d67d6a6-a55b-454d-b658-789ccbba3a3b",
       name: "TwoWayVEdge",
@@ -18683,12 +18683,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6160,
-        y: 2260,
+        x: 6740,
+        y: 4320,
       },
       end: {
-        x: 6520,
-        y: 2260,
+        x: 7100,
+        y: 4320,
       },
       id: "c0a4253d-0629-424d-9ae8-7c9e76e46bd6",
       name: "TwoWayHEdge",
@@ -18697,12 +18697,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6520,
-        y: 2060,
+        x: 7100,
+        y: 4120,
       },
       end: {
-        x: 6520,
-        y: 2260,
+        x: 7100,
+        y: 4320,
       },
       id: "f1350a6b-04e8-4a81-a88c-0b783f6286e0",
       name: "TwoWayVEdge",
@@ -18711,12 +18711,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6520,
-        y: 1880,
+        x: 7100,
+        y: 3940,
       },
       end: {
-        x: 6520,
-        y: 2060,
+        x: 7100,
+        y: 4120,
       },
       id: "81568af6-3ba6-4a13-9232-095c7ab130f1",
       name: "TwoWayVEdge",
@@ -18725,12 +18725,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6160,
-        y: 1880,
+        x: 6740,
+        y: 3940,
       },
       end: {
-        x: 6520,
-        y: 1880,
+        x: 7100,
+        y: 3940,
       },
       id: "87f93231-701d-47e3-a369-8d5dad4ce5f2",
       name: "TwoWayHEdge",
@@ -18739,12 +18739,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5940,
-        y: 1880,
+        x: 6520,
+        y: 3940,
       },
       end: {
-        x: 6160,
-        y: 1880,
+        x: 6740,
+        y: 3940,
       },
       id: "f9dc0308-d0c3-4ff5-a69e-6e5073b232c0",
       name: "TwoWayHEdge",
@@ -18753,12 +18753,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5940,
-        y: 1680,
+        x: 6520,
+        y: 3740,
       },
       end: {
-        x: 5940,
-        y: 1880,
+        x: 6520,
+        y: 3940,
       },
       id: "65ff7d46-4ee9-4f8c-828a-831e7f6f0d2a",
       name: "TwoWayVEdge",
@@ -18767,12 +18767,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5940,
-        y: 1880,
+        x: 6520,
+        y: 3940,
       },
       end: {
-        x: 5940,
-        y: 2060,
+        x: 6520,
+        y: 4120,
       },
       id: "3284df82-db62-4ff9-87fa-2ac3c8fab948",
       name: "TwoWayVEdge",
@@ -18781,12 +18781,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5700,
-        y: 1680,
+        x: 6280,
+        y: 3740,
       },
       end: {
-        x: 5940,
-        y: 1680,
+        x: 6520,
+        y: 3740,
       },
       id: "1f72beff-a2d0-4324-96fa-6642c42d67f6",
       name: "TwoWayHEdge",
@@ -18795,12 +18795,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5700,
-        y: 1680,
+        x: 6280,
+        y: 3740,
       },
       end: {
-        x: 5700,
-        y: 2060,
+        x: 6280,
+        y: 4120,
       },
       id: "c649bf6f-9a55-483a-a856-3c3534a59e2d",
       name: "TwoWayVEdge",
@@ -18809,12 +18809,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5700,
-        y: 2060,
+        x: 6280,
+        y: 4120,
       },
       end: {
-        x: 5940,
-        y: 2060,
+        x: 6520,
+        y: 4120,
       },
       id: "221a03c6-9d4b-4db7-b7f1-5bfb4475ffd0",
       name: "TwoWayHEdge",
@@ -18823,12 +18823,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5420,
-        y: 1680,
+        x: 6000,
+        y: 3740,
       },
       end: {
-        x: 5700,
-        y: 1680,
+        x: 6280,
+        y: 3740,
       },
       id: "f2e1976e-5b8e-4938-b7ca-464058e0a31a",
       name: "TwoWayHEdge",
@@ -18837,12 +18837,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5200,
-        y: 1680,
+        x: 5780,
+        y: 3740,
       },
       end: {
-        x: 5420,
-        y: 1680,
+        x: 6000,
+        y: 3740,
       },
       id: "824e96ec-896e-47cf-9893-ea700d2ed06c",
       name: "TwoWayHEdge",
@@ -18851,12 +18851,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5440,
-        y: 1280,
+        x: 6020,
+        y: 3340,
       },
       end: {
-        x: 5420,
-        y: 1680,
+        x: 6000,
+        y: 3740,
       },
       id: "bf9733a9-5db0-4544-8085-4fb08d56ad53",
       name: "TwoWayVEdge",
@@ -18865,12 +18865,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5000,
-        y: 1680,
+        x: 5580,
+        y: 3740,
       },
       end: {
-        x: 5200,
-        y: 1680,
+        x: 5780,
+        y: 3740,
       },
       id: "3efb1f36-8f51-4ead-ae5b-9319e62e32a4",
       name: "TwoWayHEdge",
@@ -18879,12 +18879,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4720,
-        y: 1680,
+        x: 5300,
+        y: 3740,
       },
       end: {
-        x: 5000,
-        y: 1680,
+        x: 5580,
+        y: 3740,
       },
       id: "910938a5-a436-4652-b522-32718b20eaf4",
       name: "TwoWayHEdge",
@@ -18893,12 +18893,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5000,
-        y: 1680,
+        x: 5580,
+        y: 3740,
       },
       end: {
-        x: 5000,
-        y: 1980,
+        x: 5580,
+        y: 4040,
       },
       id: "9cabe1e5-d32d-4498-868e-31748360755d",
       name: "TwoWayVEdge",
@@ -18907,12 +18907,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4720,
-        y: 1980,
+        x: 5300,
+        y: 4040,
       },
       end: {
-        x: 5000,
-        y: 1980,
+        x: 5580,
+        y: 4040,
       },
       id: "5d28f26e-8baf-4cfb-b042-5b93cf5cf818",
       name: "TwoWayHEdge",
@@ -18921,12 +18921,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4720,
-        y: 1820,
+        x: 5300,
+        y: 3880,
       },
       end: {
-        x: 4720,
-        y: 1980,
+        x: 5300,
+        y: 4040,
       },
       id: "87af8bd9-95db-4655-b29b-fe736afa6ad6",
       name: "TwoWayVEdge",
@@ -18935,12 +18935,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4500,
-        y: 1820,
+        x: 5080,
+        y: 3880,
       },
       end: {
-        x: 4720,
-        y: 1820,
+        x: 5300,
+        y: 3880,
       },
       id: "679b6e9f-d9a6-4699-9e8c-3e5fc1d0231c",
       name: "TwoWayHEdge",
@@ -18949,12 +18949,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4300,
-        y: 1820,
+        x: 4880,
+        y: 3880,
       },
       end: {
-        x: 4500,
-        y: 1820,
+        x: 5080,
+        y: 3880,
       },
       id: "6f4af83a-50ec-4cbc-9aa1-f5031d9d555c",
       name: "TwoWayHEdge",
@@ -18963,12 +18963,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4140,
-        y: 1820,
+        x: 4720,
+        y: 3880,
       },
       end: {
-        x: 4300,
-        y: 1820,
+        x: 4880,
+        y: 3880,
       },
       id: "93ce43fd-38e3-4643-b84a-7551f16709a1",
       name: "TwoWayHEdge",
@@ -18977,12 +18977,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3980,
-        y: 1820,
+        x: 4560,
+        y: 3880,
       },
       end: {
-        x: 4140,
-        y: 1820,
+        x: 4720,
+        y: 3880,
       },
       id: "b5e6b333-7956-4251-92d6-2deebbac3021",
       name: "TwoWayHEdge",
@@ -18991,12 +18991,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3980,
-        y: 1820,
+        x: 4560,
+        y: 3880,
       },
       end: {
-        x: 3980,
-        y: 1980,
+        x: 4560,
+        y: 4040,
       },
       id: "fd2177d6-2eca-450e-b9aa-873a803cb6b0",
       name: "TwoWayVEdge",
@@ -19005,12 +19005,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3980,
-        y: 1980,
+        x: 4560,
+        y: 4040,
       },
       end: {
-        x: 4300,
-        y: 1980,
+        x: 4880,
+        y: 4040,
       },
       id: "936eba7e-6854-419b-87c4-5735e3398641",
       name: "TwoWayHEdge",
@@ -19019,12 +19019,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4300,
-        y: 1820,
+        x: 4880,
+        y: 3880,
       },
       end: {
-        x: 4300,
-        y: 1980,
+        x: 4880,
+        y: 4040,
       },
       id: "beef6b94-e6c1-46dc-a0a0-c17f233a86d3",
       name: "TwoWayVEdge",
@@ -19033,12 +19033,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2900,
-        y: 1140,
+        x: 3480,
+        y: 3200,
       },
       end: {
-        x: 3420,
-        y: 1140,
+        x: 4000,
+        y: 3200,
       },
       id: "1fb9f130-41d0-4342-b40a-c6769e956b22",
       name: "TwoWayHEdge",
@@ -19047,12 +19047,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3420,
-        y: 1020,
+        x: 4000,
+        y: 3080,
       },
       end: {
-        x: 3420,
-        y: 1140,
+        x: 4000,
+        y: 3200,
       },
       id: "46e561f9-0ee1-4701-8ea6-38d24ed10d83",
       name: "TwoWayVEdge",
@@ -19061,12 +19061,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3260,
-        y: 1020,
+        x: 3840,
+        y: 3080,
       },
       end: {
-        x: 3420,
-        y: 1020,
+        x: 4000,
+        y: 3080,
       },
       id: "e4a30029-be80-45fa-9de8-6d240d9b031f",
       name: "TwoWayHEdge",
@@ -19075,12 +19075,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3080,
-        y: 1020,
+        x: 3660,
+        y: 3080,
       },
       end: {
-        x: 3260,
-        y: 1020,
+        x: 3840,
+        y: 3080,
       },
       id: "d1f91f1d-44e1-4fa3-9650-9b6876fdd886",
       name: "TwoWayHEdge",
@@ -19089,12 +19089,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3420,
-        y: 880,
+        x: 4000,
+        y: 2940,
       },
       end: {
-        x: 3420,
-        y: 1020,
+        x: 4000,
+        y: 3080,
       },
       id: "2c30c918-c391-4f49-a5e2-03cb8e77fe66",
       name: "TwoWayVEdge",
@@ -19103,12 +19103,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3420,
-        y: 880,
+        x: 4000,
+        y: 2940,
       },
       end: {
-        x: 3600,
-        y: 880,
+        x: 4180,
+        y: 2940,
       },
       id: "f9064fc7-2b68-4ab2-84a0-ea5f5e5d98a3",
       name: "TwoWayHEdge",
@@ -19117,12 +19117,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3600,
-        y: 880,
+        x: 4180,
+        y: 2940,
       },
       end: {
-        x: 3600,
-        y: 1140,
+        x: 4180,
+        y: 3200,
       },
       id: "dce5f10f-6f1a-47e7-9bfd-7ba6f9f48fb8",
       name: "TwoWayVEdge",
@@ -19131,12 +19131,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3420,
-        y: 1140,
+        x: 4000,
+        y: 3200,
       },
       end: {
-        x: 3600,
-        y: 1140,
+        x: 4180,
+        y: 3200,
       },
       id: "d06f55ea-d074-4ba0-950a-344bfd28b70f",
       name: "TwoWayHEdge",
@@ -19145,12 +19145,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3600,
-        y: 880,
+        x: 4180,
+        y: 2940,
       },
       end: {
-        x: 3920,
-        y: 880,
+        x: 4500,
+        y: 2940,
       },
       id: "82bd57e7-6c63-4218-9f6b-909f3727c8e0",
       name: "TwoWayHEdge",
@@ -19159,12 +19159,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3920,
-        y: 880,
+        x: 4500,
+        y: 2940,
       },
       end: {
-        x: 4060,
-        y: 880,
+        x: 4640,
+        y: 2940,
       },
       id: "1c6b6cc3-957e-48da-bc25-4e945684ebe1",
       name: "TwoWayHEdge",
@@ -19173,12 +19173,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4060,
-        y: 880,
+        x: 4640,
+        y: 2940,
       },
       end: {
-        x: 4200,
-        y: 880,
+        x: 4780,
+        y: 2940,
       },
       id: "b3baa037-b579-45df-9549-9b0d6a49f75c",
       name: "TwoWayHEdge",
@@ -19187,12 +19187,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4200,
-        y: 880,
+        x: 4780,
+        y: 2940,
       },
       end: {
-        x: 4200,
-        y: 1020,
+        x: 4780,
+        y: 3080,
       },
       id: "ad5e8576-b843-4ff6-8b12-d3f8e9f9ec46",
       name: "TwoWayVEdge",
@@ -19201,12 +19201,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3920,
-        y: 1020,
+        x: 4500,
+        y: 3080,
       },
       end: {
-        x: 4200,
-        y: 1020,
+        x: 4780,
+        y: 3080,
       },
       id: "584af308-b40f-48c4-a832-0b0121b08d51",
       name: "TwoWayHEdge",
@@ -19215,12 +19215,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3920,
-        y: 880,
+        x: 4500,
+        y: 2940,
       },
       end: {
-        x: 3920,
-        y: 1020,
+        x: 4500,
+        y: 3080,
       },
       id: "a0eb823c-9e26-4c10-856b-6a5df2ec90d2",
       name: "TwoWayVEdge",
@@ -19229,12 +19229,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3420,
-        y: 1140,
+        x: 4000,
+        y: 3200,
       },
       end: {
-        x: 3420,
-        y: 1380,
+        x: 4000,
+        y: 3440,
       },
       id: "0981c422-8ed9-4390-927d-09e72d38de68",
       name: "TwoWayVEdge",
@@ -19243,12 +19243,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3420,
-        y: 1380,
+        x: 4000,
+        y: 3440,
       },
       end: {
-        x: 3740,
-        y: 1380,
+        x: 4320,
+        y: 3440,
       },
       id: "1165f0ae-3d56-4725-bfce-a986d7656424",
       name: "TwoWayHEdge",
@@ -19257,12 +19257,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3420,
-        y: 1380,
+        x: 4000,
+        y: 3440,
       },
       end: {
-        x: 3420,
-        y: 1560,
+        x: 4000,
+        y: 3620,
       },
       id: "f84458cb-9d5d-411d-b97d-726dea534afd",
       name: "TwoWayVEdge",
@@ -19271,12 +19271,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3420,
-        y: 1560,
+        x: 4000,
+        y: 3620,
       },
       end: {
-        x: 3580,
-        y: 1560,
+        x: 4160,
+        y: 3620,
       },
       id: "760df448-347f-447d-8167-e42e76bc07e5",
       name: "TwoWayHEdge",
@@ -19285,12 +19285,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3580,
-        y: 1560,
+        x: 4160,
+        y: 3620,
       },
       end: {
-        x: 3740,
-        y: 1560,
+        x: 4320,
+        y: 3620,
       },
       id: "c3544741-5241-45fe-8a00-b93505ac95aa",
       name: "TwoWayHEdge",
@@ -19299,12 +19299,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3740,
-        y: 1380,
+        x: 4320,
+        y: 3440,
       },
       end: {
-        x: 3740,
-        y: 1560,
+        x: 4320,
+        y: 3620,
       },
       id: "92f0ac11-8bd3-41b6-a5e6-62db5eae7404",
       name: "TwoWayVEdge",
@@ -19313,12 +19313,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3740,
-        y: 1380,
+        x: 4320,
+        y: 3440,
       },
       end: {
-        x: 3880,
-        y: 1380,
+        x: 4460,
+        y: 3440,
       },
       id: "2c761697-beb7-43eb-b5b0-a4fa1dc3582c",
       name: "TwoWayHEdge",
@@ -19327,12 +19327,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3920,
-        y: 1220,
+        x: 4500,
+        y: 3280,
       },
       end: {
-        x: 3880,
-        y: 1380,
+        x: 4460,
+        y: 3440,
       },
       id: "654d87e3-38b3-4879-9962-56d4032b30f2",
       name: "TwoWayVEdge",
@@ -19341,12 +19341,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3920,
-        y: 1220,
+        x: 4500,
+        y: 3280,
       },
       end: {
-        x: 4180,
-        y: 1260,
+        x: 4760,
+        y: 3320,
       },
       id: "6404535c-0694-4a1d-bd05-6c2fa059c861",
       name: "TwoWayHEdge",
@@ -19355,12 +19355,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4220,
-        y: 1120,
+        x: 4800,
+        y: 3180,
       },
       end: {
-        x: 4180,
-        y: 1260,
+        x: 4760,
+        y: 3320,
       },
       id: "952ac4ea-0150-4ee3-8baf-31b1267c2eec",
       name: "TwoWayVEdge",
@@ -19369,12 +19369,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4220,
-        y: 1120,
+        x: 4800,
+        y: 3180,
       },
       end: {
-        x: 4380,
-        y: 1100,
+        x: 4960,
+        y: 3160,
       },
       id: "630e67b4-243a-4a7d-956e-2113b3d7eca1",
       name: "TwoWayHEdge",
@@ -19383,12 +19383,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4200,
-        y: 880,
+        x: 4780,
+        y: 2940,
       },
       end: {
-        x: 4400,
-        y: 880,
+        x: 4980,
+        y: 2940,
       },
       id: "20562ac9-6db0-4a22-add5-fa98934275a8",
       name: "TwoWayHEdge",
@@ -19397,12 +19397,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4400,
-        y: 880,
+        x: 4980,
+        y: 2940,
       },
       end: {
-        x: 4380,
-        y: 1100,
+        x: 4960,
+        y: 3160,
       },
       id: "1866480b-7e66-4836-8691-b59663dcd51e",
       name: "TwoWayVEdge",
@@ -19411,12 +19411,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4300,
-        y: 1580,
+        x: 4880,
+        y: 3640,
       },
       end: {
-        x: 4300,
-        y: 1820,
+        x: 4880,
+        y: 3880,
       },
       id: "575989c6-343b-4fc7-8c78-119c425ece56",
       name: "TwoWayVEdge",
@@ -19425,12 +19425,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3740,
-        y: 1560,
+        x: 4320,
+        y: 3620,
       },
       end: {
-        x: 3920,
-        y: 1560,
+        x: 4500,
+        y: 3620,
       },
       id: "32ea8012-d976-48f0-a49a-1205ba1a9fbe",
       name: "TwoWayHEdge",
@@ -19439,12 +19439,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3920,
-        y: 1560,
+        x: 4500,
+        y: 3620,
       },
       end: {
-        x: 4120,
-        y: 1580,
+        x: 4700,
+        y: 3640,
       },
       id: "14a76115-a4b1-4056-b41f-d109d837b3ed",
       name: "TwoWayHEdge",
@@ -19453,12 +19453,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4120,
-        y: 1580,
+        x: 4700,
+        y: 3640,
       },
       end: {
-        x: 4300,
-        y: 1580,
+        x: 4880,
+        y: 3640,
       },
       id: "bd818e77-81ea-461d-ba3a-95deeaa9ede8",
       name: "TwoWayHEdge",
@@ -19467,12 +19467,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4120,
-        y: 1420,
+        x: 4700,
+        y: 3480,
       },
       end: {
-        x: 4120,
-        y: 1580,
+        x: 4700,
+        y: 3640,
       },
       id: "71fba9ca-04f5-45e9-8ffe-842f640fbb8e",
       name: "TwoWayVEdge",
@@ -19481,12 +19481,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4300,
-        y: 1420,
+        x: 4880,
+        y: 3480,
       },
       end: {
-        x: 4300,
-        y: 1580,
+        x: 4880,
+        y: 3640,
       },
       id: "63ae7f2e-914c-4c3d-997a-7753521001f2",
       name: "TwoWayVEdge",
@@ -19495,12 +19495,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4300,
-        y: 1420,
+        x: 4880,
+        y: 3480,
       },
       end: {
-        x: 4620,
-        y: 1440,
+        x: 5200,
+        y: 3500,
       },
       id: "613b015f-0cc2-4de6-b361-b4866e80b4a1",
       name: "TwoWayHEdge",
@@ -19509,12 +19509,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4660,
-        y: 1240,
+        x: 5240,
+        y: 3300,
       },
       end: {
-        x: 4620,
-        y: 1440,
+        x: 5200,
+        y: 3500,
       },
       id: "7b549f32-4986-4a5b-8f3c-931f3488addc",
       name: "TwoWayVEdge",
@@ -19523,12 +19523,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4640,
-        y: 1060,
+        x: 5220,
+        y: 3120,
       },
       end: {
-        x: 4660,
-        y: 1240,
+        x: 5240,
+        y: 3300,
       },
       id: "a0652b9f-30fd-4daf-8cdb-db2d51346224",
       name: "TwoWayVEdge",
@@ -19537,12 +19537,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4400,
-        y: 880,
+        x: 4980,
+        y: 2940,
       },
       end: {
-        x: 4540,
-        y: 880,
+        x: 5120,
+        y: 2940,
       },
       id: "2ae66b4e-9ce0-40b8-bc66-d524ab39f4c4",
       name: "TwoWayHEdge",
@@ -19551,12 +19551,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4540,
-        y: 880,
+        x: 5120,
+        y: 2940,
       },
       end: {
-        x: 4680,
-        y: 880,
+        x: 5260,
+        y: 2940,
       },
       id: "6fa75bec-6f0e-40a6-a8de-16ca9d4108e2",
       name: "TwoWayHEdge",
@@ -19565,12 +19565,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4680,
-        y: 880,
+        x: 5260,
+        y: 2940,
       },
       end: {
-        x: 4640,
-        y: 1060,
+        x: 5220,
+        y: 3120,
       },
       id: "327334b5-ebeb-451c-9489-a8d8ae6a521b",
       name: "TwoWayVEdge",
@@ -19579,12 +19579,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4540,
-        y: 880,
+        x: 5120,
+        y: 2940,
       },
       end: {
-        x: 4480,
-        y: 1240,
+        x: 5060,
+        y: 3300,
       },
       id: "e4059f6b-f7a0-4662-af33-b2f7e88e6055",
       name: "TwoWayVEdge",
@@ -19593,12 +19593,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4480,
-        y: 1240,
+        x: 5060,
+        y: 3300,
       },
       end: {
-        x: 4660,
-        y: 1240,
+        x: 5240,
+        y: 3300,
       },
       id: "603544ef-fc73-4582-8dcb-f1021638835a",
       name: "TwoWayHEdge",
@@ -19607,12 +19607,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4640,
-        y: 1060,
+        x: 5220,
+        y: 3120,
       },
       end: {
-        x: 4860,
-        y: 1060,
+        x: 5440,
+        y: 3120,
       },
       id: "d70427aa-bf7d-43b5-90b5-ac0136baa553",
       name: "TwoWayHEdge",
@@ -19621,12 +19621,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4860,
-        y: 1060,
+        x: 5440,
+        y: 3120,
       },
       end: {
-        x: 4820,
-        y: 1280,
+        x: 5400,
+        y: 3340,
       },
       id: "7689e618-d96d-4067-b227-654babf4fc7b",
       name: "TwoWayVEdge",
@@ -19635,12 +19635,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4820,
-        y: 1280,
+        x: 5400,
+        y: 3340,
       },
       end: {
-        x: 4860,
-        y: 1440,
+        x: 5440,
+        y: 3500,
       },
       id: "74beab06-bd6e-440b-8a5a-8f82b06002f5",
       name: "TwoWayVEdge",
@@ -19649,12 +19649,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4620,
-        y: 1440,
+        x: 5200,
+        y: 3500,
       },
       end: {
-        x: 4860,
-        y: 1440,
+        x: 5440,
+        y: 3500,
       },
       id: "4a944fcb-e41d-4e8b-ab51-193028dbf97d",
       name: "TwoWayHEdge",
@@ -19663,12 +19663,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5000,
-        y: 1480,
+        x: 5580,
+        y: 3540,
       },
       end: {
-        x: 5000,
-        y: 1680,
+        x: 5580,
+        y: 3740,
       },
       id: "db39d052-faa4-40e1-bad9-17ef3b2cc27e",
       name: "TwoWayVEdge",
@@ -19677,12 +19677,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4820,
-        y: 1280,
+        x: 5400,
+        y: 3340,
       },
       end: {
-        x: 5040,
-        y: 1280,
+        x: 5620,
+        y: 3340,
       },
       id: "0fb9eaf0-53c5-4b1d-9886-02332ba7d473",
       name: "TwoWayHEdge",
@@ -19691,12 +19691,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5040,
-        y: 1280,
+        x: 5620,
+        y: 3340,
       },
       end: {
-        x: 5000,
-        y: 1480,
+        x: 5580,
+        y: 3540,
       },
       id: "65128552-add5-48e3-9a67-9712de5efa80",
       name: "TwoWayVEdge",
@@ -19705,12 +19705,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5040,
-        y: 1280,
+        x: 5620,
+        y: 3340,
       },
       end: {
-        x: 5240,
-        y: 1280,
+        x: 5820,
+        y: 3340,
       },
       id: "549a8808-a753-4387-a442-241c7ac1372c",
       name: "TwoWayHEdge",
@@ -19719,12 +19719,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 1280,
+        x: 5820,
+        y: 3340,
       },
       end: {
-        x: 5440,
-        y: 1280,
+        x: 6020,
+        y: 3340,
       },
       id: "d415a58c-481c-4103-ac0e-5862bcd67e14",
       name: "TwoWayHEdge",
@@ -19733,12 +19733,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4860,
-        y: 920,
+        x: 5440,
+        y: 2980,
       },
       end: {
-        x: 4860,
-        y: 1060,
+        x: 5440,
+        y: 3120,
       },
       id: "4939c294-d4b5-44fe-b408-b99f8d927634",
       name: "TwoWayVEdge",
@@ -19747,12 +19747,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4860,
-        y: 920,
+        x: 5440,
+        y: 2980,
       },
       end: {
-        x: 5060,
-        y: 920,
+        x: 5640,
+        y: 2980,
       },
       id: "72367f80-5457-49a9-8927-839c05eb44a1",
       name: "TwoWayHEdge",
@@ -19761,12 +19761,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5060,
-        y: 920,
+        x: 5640,
+        y: 2980,
       },
       end: {
-        x: 5240,
-        y: 920,
+        x: 5820,
+        y: 2980,
       },
       id: "49cc05df-7f74-4fc5-9fb4-30e084d8a383",
       name: "TwoWayHEdge",
@@ -19775,12 +19775,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 920,
+        x: 5820,
+        y: 2980,
       },
       end: {
-        x: 5240,
-        y: 1280,
+        x: 5820,
+        y: 3340,
       },
       id: "6348f183-0d2d-4f2a-8cd8-5dbcd93458e0",
       name: "TwoWayVEdge",
@@ -19789,12 +19789,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 920,
+        x: 5820,
+        y: 2980,
       },
       end: {
-        x: 5440,
-        y: 920,
+        x: 6020,
+        y: 2980,
       },
       id: "e626b942-1ba6-4d73-82f2-6b4231718052",
       name: "TwoWayHEdge",
@@ -19803,12 +19803,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5440,
-        y: 920,
+        x: 6020,
+        y: 2980,
       },
       end: {
-        x: 5440,
-        y: 1100,
+        x: 6020,
+        y: 3160,
       },
       id: "65b8e974-d038-4999-bcf4-96217efd3461",
       name: "TwoWayVEdge",
@@ -19817,12 +19817,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5440,
-        y: 1100,
+        x: 6020,
+        y: 3160,
       },
       end: {
-        x: 5440,
-        y: 1280,
+        x: 6020,
+        y: 3340,
       },
       id: "725f285e-2575-4f17-902d-3f4efe37ed39",
       name: "TwoWayVEdge",
@@ -19831,12 +19831,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5440,
-        y: 1100,
+        x: 6020,
+        y: 3160,
       },
       end: {
-        x: 5780,
-        y: 1100,
+        x: 6360,
+        y: 3160,
       },
       id: "82149c13-9474-465e-8232-7ee9463a5c16",
       name: "TwoWayHEdge",
@@ -19845,12 +19845,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5440,
-        y: 1280,
+        x: 6020,
+        y: 3340,
       },
       end: {
-        x: 5600,
-        y: 1280,
+        x: 6180,
+        y: 3340,
       },
       id: "553e0693-cdae-49ae-8771-f09a71ce436b",
       name: "TwoWayHEdge",
@@ -19859,12 +19859,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5600,
-        y: 1280,
+        x: 6180,
+        y: 3340,
       },
       end: {
-        x: 5780,
-        y: 1280,
+        x: 6360,
+        y: 3340,
       },
       id: "476e712b-d2d9-40af-a357-b9e95c2abbfc",
       name: "TwoWayHEdge",
@@ -19873,12 +19873,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5780,
-        y: 1100,
+        x: 6360,
+        y: 3160,
       },
       end: {
-        x: 5780,
-        y: 1280,
+        x: 6360,
+        y: 3340,
       },
       id: "77e8b64d-1e48-4303-9569-bd6104b4ef77",
       name: "TwoWayVEdge",
@@ -19887,12 +19887,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5780,
-        y: 1280,
+        x: 6360,
+        y: 3340,
       },
       end: {
-        x: 5960,
-        y: 1280,
+        x: 6540,
+        y: 3340,
       },
       id: "85347367-fb6c-4010-8503-83e0fa6315b7",
       name: "TwoWayHEdge",
@@ -19901,12 +19901,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5780,
-        y: 880,
+        x: 6360,
+        y: 2940,
       },
       end: {
-        x: 5780,
-        y: 1100,
+        x: 6360,
+        y: 3160,
       },
       id: "86e8a342-5b1a-4e19-b8b9-2965c04293e0",
       name: "TwoWayVEdge",
@@ -19915,12 +19915,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5780,
-        y: 660,
+        x: 6360,
+        y: 2720,
       },
       end: {
-        x: 5780,
-        y: 880,
+        x: 6360,
+        y: 2940,
       },
       id: "0f988822-5151-407b-8545-a7cf2901b690",
       name: "TwoWayVEdge",
@@ -19929,12 +19929,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5780,
-        y: 660,
+        x: 6360,
+        y: 2720,
       },
       end: {
-        x: 5940,
-        y: 660,
+        x: 6520,
+        y: 2720,
       },
       id: "4bc063c5-9f39-4e87-8d7f-31865dac7dda",
       name: "TwoWayHEdge",
@@ -19943,12 +19943,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5940,
-        y: 380,
+        x: 6520,
+        y: 2440,
       },
       end: {
-        x: 5940,
-        y: 660,
+        x: 6520,
+        y: 2720,
       },
       id: "fe791b2c-c31b-4c88-bc93-60eaf70f38fa",
       name: "TwoWayVEdge",
@@ -19957,12 +19957,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5940,
-        y: 380,
+        x: 6520,
+        y: 2440,
       },
       end: {
-        x: 6120,
-        y: 380,
+        x: 6700,
+        y: 2440,
       },
       id: "58755b9e-fc1f-4773-bac6-2774cbda2f9c",
       name: "TwoWayHEdge",
@@ -19971,12 +19971,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5700,
-        y: 380,
+        x: 6280,
+        y: 2440,
       },
       end: {
-        x: 5940,
-        y: 380,
+        x: 6520,
+        y: 2440,
       },
       id: "54999d6e-cb2b-46b6-b6b5-2d0569b80ad0",
       name: "TwoWayHEdge",
@@ -19985,12 +19985,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5440,
-        y: 380,
+        x: 6020,
+        y: 2440,
       },
       end: {
-        x: 5700,
-        y: 380,
+        x: 6280,
+        y: 2440,
       },
       id: "0dccfc6d-70f2-446a-b0da-c8ad63c40ebc",
       name: "TwoWayHEdge",
@@ -19999,12 +19999,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5440,
-        y: 380,
+        x: 6020,
+        y: 2440,
       },
       end: {
-        x: 5440,
-        y: 520,
+        x: 6020,
+        y: 2580,
       },
       id: "cb744103-c9f8-494a-92cf-360b9543fa8d",
       name: "TwoWayVEdge",
@@ -20013,12 +20013,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5040,
-        y: 520,
+        x: 5620,
+        y: 2580,
       },
       end: {
-        x: 5440,
-        y: 520,
+        x: 6020,
+        y: 2580,
       },
       id: "6469500e-3985-48ce-a86e-2977284fdc0f",
       name: "TwoWayHEdge",
@@ -20027,12 +20027,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5040,
-        y: 380,
+        x: 5620,
+        y: 2440,
       },
       end: {
-        x: 5040,
-        y: 520,
+        x: 5620,
+        y: 2580,
       },
       id: "108f14cd-5730-4e40-a892-e2020f14f0d8",
       name: "TwoWayVEdge",
@@ -20041,12 +20041,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5040,
-        y: 380,
+        x: 5620,
+        y: 2440,
       },
       end: {
-        x: 5240,
-        y: 380,
+        x: 5820,
+        y: 2440,
       },
       id: "9a245823-9600-4dea-8fb0-9ab5d07a8f18",
       name: "TwoWayHEdge",
@@ -20055,12 +20055,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 380,
+        x: 5820,
+        y: 2440,
       },
       end: {
-        x: 5440,
-        y: 380,
+        x: 6020,
+        y: 2440,
       },
       id: "3dee240e-aadb-455b-a859-f50568a00571",
       name: "TwoWayHEdge",
@@ -20069,12 +20069,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4880,
-        y: 380,
+        x: 5460,
+        y: 2440,
       },
       end: {
-        x: 5040,
-        y: 380,
+        x: 5620,
+        y: 2440,
       },
       id: "75da8bdb-3e9e-4db2-a974-28741ae11069",
       name: "TwoWayHEdge",
@@ -20083,12 +20083,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4880,
-        y: 380,
+        x: 5460,
+        y: 2440,
       },
       end: {
-        x: 4880,
-        y: 520,
+        x: 5460,
+        y: 2580,
       },
       id: "0b5dbaee-4237-4b3e-8eb2-814462412a9f",
       name: "TwoWayVEdge",
@@ -20097,12 +20097,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4880,
-        y: 520,
+        x: 5460,
+        y: 2580,
       },
       end: {
-        x: 4880,
-        y: 660,
+        x: 5460,
+        y: 2720,
       },
       id: "7cfba16a-8173-4723-8b33-34bdddf60eb8",
       name: "TwoWayVEdge",
@@ -20111,12 +20111,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4720,
-        y: 660,
+        x: 5300,
+        y: 2720,
       },
       end: {
-        x: 4880,
-        y: 660,
+        x: 5460,
+        y: 2720,
       },
       id: "aa65d8e5-f247-4f06-bf7f-0a3082aa7f47",
       name: "TwoWayHEdge",
@@ -20125,12 +20125,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4720,
-        y: 660,
+        x: 5300,
+        y: 2720,
       },
       end: {
-        x: 4680,
-        y: 880,
+        x: 5260,
+        y: 2940,
       },
       id: "074f1e8f-ccf4-4633-82f6-3d9cdf022f29",
       name: "OneWayVEdge",
@@ -20139,12 +20139,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5780,
-        y: 1100,
+        x: 6360,
+        y: 3160,
       },
       end: {
-        x: 5960,
-        y: 1100,
+        x: 6540,
+        y: 3160,
       },
       id: "dc677681-2c1d-4126-9be6-1e51269060bd",
       name: "TwoWayHEdge",
@@ -20153,12 +20153,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5960,
-        y: 1100,
+        x: 6540,
+        y: 3160,
       },
       end: {
-        x: 6120,
-        y: 1100,
+        x: 6700,
+        y: 3160,
       },
       id: "7c9fa105-1d18-4fc4-a121-84682b515a8a",
       name: "TwoWayHEdge",
@@ -20167,12 +20167,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6120,
-        y: 1100,
+        x: 6700,
+        y: 3160,
       },
       end: {
-        x: 6300,
-        y: 1100,
+        x: 6880,
+        y: 3160,
       },
       id: "582041f7-3883-4eac-836f-32ee53bd6431",
       name: "TwoWayHEdge",
@@ -20181,12 +20181,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6300,
-        y: 1100,
+        x: 6880,
+        y: 3160,
       },
       end: {
-        x: 6300,
-        y: 1280,
+        x: 6880,
+        y: 3340,
       },
       id: "6ec865a1-1c74-484b-bbb5-6bb02b8f6210",
       name: "TwoWayVEdge",
@@ -20195,12 +20195,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6300,
-        y: 1280,
+        x: 6880,
+        y: 3340,
       },
       end: {
-        x: 6500,
-        y: 1280,
+        x: 7080,
+        y: 3340,
       },
       id: "011100c1-85b5-4163-a7fd-b65568e0d6f3",
       name: "TwoWayHEdge",
@@ -20209,12 +20209,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6500,
-        y: 1280,
+        x: 7080,
+        y: 3340,
       },
       end: {
-        x: 6700,
-        y: 1280,
+        x: 7280,
+        y: 3340,
       },
       id: "c44c3f42-dc11-4310-9a1c-1fa96a516912",
       name: "TwoWayHEdge",
@@ -20223,12 +20223,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6700,
-        y: 1280,
+        x: 7280,
+        y: 3340,
       },
       end: {
-        x: 6700,
-        y: 1480,
+        x: 7280,
+        y: 3540,
       },
       id: "83dbf908-b7c0-4a06-b898-149a8c374296",
       name: "TwoWayVEdge",
@@ -20237,12 +20237,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6700,
-        y: 1480,
+        x: 7280,
+        y: 3540,
       },
       end: {
-        x: 6700,
-        y: 1680,
+        x: 7280,
+        y: 3740,
       },
       id: "c7a60d3d-159b-4564-beea-0343dfd0dafa",
       name: "TwoWayVEdge",
@@ -20251,12 +20251,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6700,
-        y: 1680,
+        x: 7280,
+        y: 3740,
       },
       end: {
-        x: 6900,
-        y: 1680,
+        x: 7480,
+        y: 3740,
       },
       id: "4a1c4477-3e08-4768-94c0-e0c982c5cbf4",
       name: "TwoWayHEdge",
@@ -20265,12 +20265,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6700,
-        y: 1100,
+        x: 7280,
+        y: 3160,
       },
       end: {
-        x: 6700,
-        y: 1280,
+        x: 7280,
+        y: 3340,
       },
       id: "2e529be6-1bfe-40b3-95bb-ff23f7963b16",
       name: "TwoWayVEdge",
@@ -20279,12 +20279,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6700,
-        y: 1100,
+        x: 7280,
+        y: 3160,
       },
       end: {
-        x: 6920,
-        y: 1100,
+        x: 7500,
+        y: 3160,
       },
       id: "7669fc8e-b492-4d45-8a8a-f42c39ffce5f",
       name: "TwoWayHEdge",
@@ -20293,12 +20293,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6920,
-        y: 1100,
+        x: 7500,
+        y: 3160,
       },
       end: {
-        x: 7140,
-        y: 1100,
+        x: 7720,
+        y: 3160,
       },
       id: "2a454058-a957-467d-8aae-4290ade07a64",
       name: "TwoWayHEdge",
@@ -20307,12 +20307,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7140,
-        y: 1100,
+        x: 7720,
+        y: 3160,
       },
       end: {
-        x: 7140,
-        y: 1280,
+        x: 7720,
+        y: 3340,
       },
       id: "d72562a5-e40a-4925-a1f3-9993388a8478",
       name: "TwoWayVEdge",
@@ -20321,12 +20321,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7140,
-        y: 1280,
+        x: 7720,
+        y: 3340,
       },
       end: {
-        x: 7420,
-        y: 1300,
+        x: 8000,
+        y: 3360,
       },
       id: "870d19bf-f48b-4f3b-9233-27bd14cd44f2",
       name: "TwoWayHEdge",
@@ -20335,12 +20335,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7420,
-        y: 1300,
+        x: 8000,
+        y: 3360,
       },
       end: {
-        x: 7700,
-        y: 1280,
+        x: 8280,
+        y: 3340,
       },
       id: "78a4f852-c28b-406d-a6bc-a667065c1e7e",
       name: "TwoWayHEdge",
@@ -20349,12 +20349,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7720,
-        y: 960,
+        x: 8300,
+        y: 3020,
       },
       end: {
-        x: 7700,
-        y: 1280,
+        x: 8280,
+        y: 3340,
       },
       id: "4b458349-5489-40d3-b1c8-730baa9a2a0e",
       name: "TwoWayVEdge",
@@ -20363,12 +20363,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7460,
-        y: 960,
+        x: 8040,
+        y: 3020,
       },
       end: {
-        x: 7720,
-        y: 960,
+        x: 8300,
+        y: 3020,
       },
       id: "efabe1da-a0a8-4b6b-a81d-0d1d856359ad",
       name: "TwoWayHEdge",
@@ -20377,12 +20377,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6120,
-        y: 380,
+        x: 6700,
+        y: 2440,
       },
       end: {
-        x: 6300,
-        y: 380,
+        x: 6880,
+        y: 2440,
       },
       id: "a2dcf98b-217d-4e1a-b707-9bb0a2a46a19",
       name: "TwoWayHEdge",
@@ -20391,12 +20391,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6300,
-        y: 380,
+        x: 6880,
+        y: 2440,
       },
       end: {
-        x: 6540,
-        y: 380,
+        x: 7120,
+        y: 2440,
       },
       id: "2d71c955-6136-4882-a532-f71e76ef28bc",
       name: "TwoWayHEdge",
@@ -20405,12 +20405,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6540,
-        y: 380,
+        x: 7120,
+        y: 2440,
       },
       end: {
-        x: 6500,
-        y: 500,
+        x: 7080,
+        y: 2560,
       },
       id: "070ddb01-574e-4f02-84a2-084619d345e1",
       name: "TwoWayVEdge",
@@ -20419,12 +20419,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6500,
-        y: 500,
+        x: 7080,
+        y: 2560,
       },
       end: {
-        x: 6840,
-        y: 500,
+        x: 7420,
+        y: 2560,
       },
       id: "787452af-178f-4cd8-8014-741658721d57",
       name: "TwoWayHEdge",
@@ -20433,12 +20433,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6840,
-        y: 500,
+        x: 7420,
+        y: 2560,
       },
       end: {
-        x: 6780,
-        y: 640,
+        x: 7360,
+        y: 2700,
       },
       id: "bdd3d98f-5038-42ac-8c3a-cd40b02077f9",
       name: "TwoWayVEdge",
@@ -20447,12 +20447,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6780,
-        y: 640,
+        x: 7360,
+        y: 2700,
       },
       end: {
-        x: 7160,
-        y: 640,
+        x: 7740,
+        y: 2700,
       },
       id: "555cc25b-b61a-4ad4-ab7c-e82e1f50dd94",
       name: "TwoWayHEdge",
@@ -20461,12 +20461,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7160,
-        y: 640,
+        x: 7740,
+        y: 2700,
       },
       end: {
-        x: 7100,
-        y: 780,
+        x: 7680,
+        y: 2840,
       },
       id: "4c82503c-e756-447b-8669-3827f556b460",
       name: "TwoWayVEdge",
@@ -20475,12 +20475,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7100,
-        y: 780,
+        x: 7680,
+        y: 2840,
       },
       end: {
-        x: 7460,
-        y: 780,
+        x: 8040,
+        y: 2840,
       },
       id: "09416d59-7f4b-4c5d-b8aa-add7f6eb4778",
       name: "TwoWayHEdge",
@@ -20489,12 +20489,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7460,
-        y: 780,
+        x: 8040,
+        y: 2840,
       },
       end: {
-        x: 7460,
-        y: 960,
+        x: 8040,
+        y: 3020,
       },
       id: "f0ec3099-1fe4-40f2-9fa7-9b06e877fade",
       name: "TwoWayVEdge",
@@ -20503,12 +20503,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1760,
-        y: 2060,
+        x: 2340,
+        y: 4120,
       },
       end: {
-        x: 2720,
-        y: 2060,
+        x: 3300,
+        y: 4120,
       },
       id: "d5eb48a2-4f51-4058-924a-ad37305f1379",
       name: "TwoWayHEdge",
@@ -20517,12 +20517,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1920,
-        y: 1440,
+        x: 2500,
+        y: 3500,
       },
       end: {
-        x: 1920,
-        y: 1580,
+        x: 2500,
+        y: 3640,
       },
       id: "e8b82351-3405-4889-b143-036eb916c26c",
       name: "TwoWayVEdge",
@@ -20531,12 +20531,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1760,
-        y: 2060,
+        x: 2340,
+        y: 4120,
       },
       end: {
-        x: 1760,
-        y: 2260,
+        x: 2340,
+        y: 4320,
       },
       id: "d452abfc-ca8c-47be-ae57-81af987dcc86",
       name: "TwoWayVEdge",
@@ -20545,12 +20545,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3680,
-        y: 3820,
+        x: 4260,
+        y: 5880,
       },
       end: {
-        x: 4420,
-        y: 3740,
+        x: 5000,
+        y: 5800,
       },
       id: "55b34a4a-a9ad-4149-bb85-945c228bbd80",
       name: "TwoWayHEdge",
@@ -20559,12 +20559,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3460,
-        y: 3820,
+        x: 4040,
+        y: 5880,
       },
       end: {
-        x: 3680,
-        y: 3820,
+        x: 4260,
+        y: 5880,
       },
       id: "cb54df87-eba7-48eb-8e9a-efcf1261e1dc",
       name: "TwoWayHEdge",
@@ -20573,12 +20573,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3480,
-        y: 3520,
+        x: 4060,
+        y: 5580,
       },
       end: {
-        x: 3460,
-        y: 3820,
+        x: 4040,
+        y: 5880,
       },
       id: "0a3390c8-6861-49cc-a63c-6191138a3ee2",
       name: "TwoWayVEdge",
@@ -20587,12 +20587,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3160,
-        y: 3520,
+        x: 3740,
+        y: 5580,
       },
       end: {
-        x: 3480,
-        y: 3520,
+        x: 4060,
+        y: 5580,
       },
       id: "781c60e8-d822-44e5-97d3-6f59fe7d5c51",
       name: "TwoWayHEdge",
@@ -20601,12 +20601,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3160,
-        y: 3260,
+        x: 3740,
+        y: 5320,
       },
       end: {
-        x: 3160,
-        y: 3520,
+        x: 3740,
+        y: 5580,
       },
       id: "2595692e-5dc6-4144-aa2f-b097422c772a",
       name: "TwoWayVEdge",
@@ -20615,12 +20615,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3160,
-        y: 3260,
+        x: 3740,
+        y: 5320,
       },
       end: {
-        x: 3380,
-        y: 3260,
+        x: 3960,
+        y: 5320,
       },
       id: "ca54eb95-7f71-4805-9c86-0a3f9ecd6874",
       name: "TwoWayHEdge",
@@ -20629,12 +20629,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3380,
-        y: 3060,
+        x: 3960,
+        y: 5120,
       },
       end: {
-        x: 3380,
-        y: 3260,
+        x: 3960,
+        y: 5320,
       },
       id: "9e6b35c2-24a5-4fd2-817c-821c6cd5d188",
       name: "TwoWayVEdge",
@@ -20643,12 +20643,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3160,
-        y: 3060,
+        x: 3740,
+        y: 5120,
       },
       end: {
-        x: 3380,
-        y: 3060,
+        x: 3960,
+        y: 5120,
       },
       id: "484eb876-3572-40cf-b548-b817d9b12799",
       name: "TwoWayHEdge",
@@ -20657,12 +20657,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 3060,
+        x: 3540,
+        y: 5120,
       },
       end: {
-        x: 3160,
-        y: 3060,
+        x: 3740,
+        y: 5120,
       },
       id: "7f815fd4-3819-4c4e-92f1-fb0af8508d21",
       name: "TwoWayHEdge",
@@ -20671,12 +20671,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2760,
-        y: 3060,
+        x: 3340,
+        y: 5120,
       },
       end: {
-        x: 2960,
-        y: 3060,
+        x: 3540,
+        y: 5120,
       },
       id: "5f696359-cbc8-40f4-bf04-02db5c3b93ec",
       name: "TwoWayHEdge",
@@ -20685,12 +20685,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2760,
-        y: 2760,
+        x: 3340,
+        y: 4820,
       },
       end: {
-        x: 2760,
-        y: 3060,
+        x: 3340,
+        y: 5120,
       },
       id: "93f974a2-4eb1-45c7-9255-98c21d512c43",
       name: "TwoWayVEdge",
@@ -20699,12 +20699,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2760,
-        y: 2760,
+        x: 3340,
+        y: 4820,
       },
       end: {
-        x: 2960,
-        y: 2760,
+        x: 3540,
+        y: 4820,
       },
       id: "b347d073-c067-42d3-8963-c2e898d656d2",
       name: "TwoWayHEdge",
@@ -20713,12 +20713,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 2760,
+        x: 3540,
+        y: 4820,
       },
       end: {
-        x: 3000,
-        y: 2920,
+        x: 3580,
+        y: 4980,
       },
       id: "c46a202a-4280-4652-b0eb-21b4c9523387",
       name: "TwoWayVEdge",
@@ -20727,12 +20727,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3000,
-        y: 2920,
+        x: 3580,
+        y: 4980,
       },
       end: {
-        x: 2960,
-        y: 3060,
+        x: 3540,
+        y: 5120,
       },
       id: "09069232-7303-4d97-9524-65d22c40ddf5",
       name: "TwoWayVEdge",
@@ -20741,12 +20741,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1760,
-        y: 2260,
+        x: 2340,
+        y: 4320,
       },
       end: {
-        x: 1760,
-        y: 2460,
+        x: 2340,
+        y: 4520,
       },
       id: "66931558-4ee8-46b1-a0e2-b7d2832a1cb3",
       name: "TwoWayVEdge",
@@ -20755,12 +20755,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1760,
-        y: 2460,
+        x: 2340,
+        y: 4520,
       },
       end: {
-        x: 1760,
-        y: 2660,
+        x: 2340,
+        y: 4720,
       },
       id: "1bcce949-f732-4164-9633-a9abb06ad930",
       name: "TwoWayVEdge",
@@ -20769,12 +20769,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1760,
-        y: 2660,
+        x: 2340,
+        y: 4720,
       },
       end: {
-        x: 1960,
-        y: 2660,
+        x: 2540,
+        y: 4720,
       },
       id: "4a5258ad-bc80-46e4-a4bc-fe90fd7bfa42",
       name: "TwoWayHEdge",
@@ -20783,12 +20783,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1960,
-        y: 2460,
+        x: 2540,
+        y: 4520,
       },
       end: {
-        x: 1960,
-        y: 2660,
+        x: 2540,
+        y: 4720,
       },
       id: "3f546543-825c-4540-904d-9a23ec29f036",
       name: "TwoWayVEdge",
@@ -20797,12 +20797,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1960,
-        y: 2660,
+        x: 2540,
+        y: 4720,
       },
       end: {
-        x: 1960,
-        y: 2840,
+        x: 2540,
+        y: 4900,
       },
       id: "da420198-2bb4-429e-9495-5e3a877f96bb",
       name: "TwoWayVEdge",
@@ -20811,12 +20811,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1960,
-        y: 2840,
+        x: 2540,
+        y: 4900,
       },
       end: {
-        x: 2160,
-        y: 2840,
+        x: 2740,
+        y: 4900,
       },
       id: "7033405f-4727-4379-8267-a3e2a670bea8",
       name: "TwoWayHEdge",
@@ -20825,12 +20825,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 2460,
+        x: 3540,
+        y: 4520,
       },
       end: {
-        x: 2960,
-        y: 2760,
+        x: 3540,
+        y: 4820,
       },
       id: "574baae4-b95d-4cec-b729-35c75c73e90c",
       name: "TwoWayVEdge",
@@ -20839,12 +20839,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1760,
-        y: 2460,
+        x: 2340,
+        y: 4520,
       },
       end: {
-        x: 1540,
-        y: 2460,
+        x: 2120,
+        y: 4520,
       },
       id: "34584329-d5f6-4b43-b22d-a8a6635a0699",
       name: "TwoWayHEdge",
@@ -20853,12 +20853,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1540,
-        y: 2460,
+        x: 2120,
+        y: 4520,
       },
       end: {
-        x: 1140,
-        y: 2460,
+        x: 1720,
+        y: 4520,
       },
       id: "a695acf4-c195-4046-b8ef-807e906092f3",
       name: "TwoWayHEdge",
@@ -20867,12 +20867,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1140,
-        y: 2460,
+        x: 1720,
+        y: 4520,
       },
       end: {
-        x: 1140,
-        y: 2300,
+        x: 1720,
+        y: 4360,
       },
       id: "fef1861b-8691-4ac7-aecb-9f47b96028f4",
       name: "TwoWayVEdge",
@@ -20881,12 +20881,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1140,
-        y: 2300,
+        x: 1720,
+        y: 4360,
       },
       end: {
-        x: 1340,
-        y: 2300,
+        x: 1920,
+        y: 4360,
       },
       id: "0ed3eaf7-acbd-4e9d-9f72-c2c7c525be10",
       name: "TwoWayHEdge",
@@ -20895,12 +20895,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1340,
-        y: 2300,
+        x: 1920,
+        y: 4360,
       },
       end: {
-        x: 1540,
-        y: 2300,
+        x: 2120,
+        y: 4360,
       },
       id: "f76691fe-84ed-4073-9b62-e9a3c437653f",
       name: "TwoWayHEdge",
@@ -20909,12 +20909,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1540,
-        y: 2300,
+        x: 2120,
+        y: 4360,
       },
       end: {
-        x: 1540,
-        y: 2460,
+        x: 2120,
+        y: 4520,
       },
       id: "c4e8445c-067c-4e0e-8206-f4f1c7e2953d",
       name: "TwoWayVEdge",
@@ -20923,12 +20923,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1340,
-        y: 2300,
+        x: 1920,
+        y: 4360,
       },
       end: {
-        x: 1380,
-        y: 2120,
+        x: 1960,
+        y: 4180,
       },
       id: "7a8e5bf1-6aa8-4150-872d-232e94e424b3",
       name: "TwoWayVEdge",
@@ -20937,12 +20937,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1380,
-        y: 2120,
+        x: 1960,
+        y: 4180,
       },
       end: {
-        x: 1160,
-        y: 2120,
+        x: 1740,
+        y: 4180,
       },
       id: "40b2063d-2e80-47b6-8369-5d67f710f886",
       name: "TwoWayHEdge",
@@ -20951,12 +20951,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1160,
-        y: 2120,
+        x: 1740,
+        y: 4180,
       },
       end: {
-        x: 1200,
-        y: 1960,
+        x: 1780,
+        y: 4020,
       },
       id: "b14cffc8-3c71-4f31-9fa5-fb7d78e3de83",
       name: "TwoWayVEdge",
@@ -20965,12 +20965,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1200,
-        y: 1960,
+        x: 1780,
+        y: 4020,
       },
       end: {
-        x: 1240,
-        y: 1780,
+        x: 1820,
+        y: 3840,
       },
       id: "908fd5b4-62d0-4ca6-8ad9-2365729f0901",
       name: "TwoWayVEdge",
@@ -20979,12 +20979,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1140,
-        y: 2300,
+        x: 1720,
+        y: 4360,
       },
       end: {
-        x: 920,
-        y: 2300,
+        x: 1500,
+        y: 4360,
       },
       id: "2eca67d1-b9bc-43f0-9bbe-b26f508e4055",
       name: "TwoWayHEdge",
@@ -20993,12 +20993,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 920,
-        y: 2300,
+        x: 1500,
+        y: 4360,
       },
       end: {
-        x: 920,
-        y: 2460,
+        x: 1500,
+        y: 4520,
       },
       id: "ab921518-119e-4bbf-b241-c662deee1e41",
       name: "TwoWayVEdge",
@@ -21007,12 +21007,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 920,
-        y: 2300,
+        x: 1500,
+        y: 4360,
       },
       end: {
-        x: 640,
-        y: 2300,
+        x: 1220,
+        y: 4360,
       },
       id: "0c7c7a12-f886-4acf-8d81-63b5cc55898b",
       name: "TwoWayHEdge",
@@ -21021,12 +21021,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 640,
-        y: 2300,
+        x: 1220,
+        y: 4360,
       },
       end: {
-        x: 380,
-        y: 2300,
+        x: 960,
+        y: 4360,
       },
       id: "a625c992-5064-4860-9c8e-07e6c3538c1a",
       name: "TwoWayHEdge",
@@ -21035,12 +21035,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 920,
-        y: 2460,
+        x: 1500,
+        y: 4520,
       },
       end: {
-        x: 720,
-        y: 2460,
+        x: 1300,
+        y: 4520,
       },
       id: "c75e87cf-9a18-411d-97eb-7624a97529d0",
       name: "TwoWayHEdge",
@@ -21049,12 +21049,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 720,
-        y: 2460,
+        x: 1300,
+        y: 4520,
       },
       end: {
-        x: 520,
-        y: 2460,
+        x: 1100,
+        y: 4520,
       },
       id: "817e5062-e465-4a5e-a542-6f319bb4765b",
       name: "TwoWayHEdge",
@@ -21063,12 +21063,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 380,
-        y: 2300,
+        x: 960,
+        y: 4360,
       },
       end: {
-        x: 340,
-        y: 2460,
+        x: 920,
+        y: 4520,
       },
       id: "fd750e3f-4950-44ba-a24a-d7ebe2ac1965",
       name: "TwoWayVEdge",
@@ -21077,12 +21077,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 340,
-        y: 2460,
+        x: 920,
+        y: 4520,
       },
       end: {
-        x: 380,
-        y: 2640,
+        x: 960,
+        y: 4700,
       },
       id: "a8f0c7d0-3e30-4730-ac74-b767c770187e",
       name: "TwoWayVEdge",
@@ -21091,12 +21091,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 520,
-        y: 2460,
+        x: 1100,
+        y: 4520,
       },
       end: {
-        x: 480,
-        y: 2660,
+        x: 1060,
+        y: 4720,
       },
       id: "33d5b3c6-32d7-480b-81df-46b8dd7b55a6",
       name: "TwoWayVEdge",
@@ -21105,12 +21105,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 340,
-        y: 2460,
+        x: 920,
+        y: 4520,
       },
       end: {
-        x: 80,
-        y: 2460,
+        x: 660,
+        y: 4520,
       },
       id: "c51d9ff1-764b-48b6-b448-1d818ba8187e",
       name: "TwoWayHEdge",
@@ -21119,12 +21119,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 80,
-        y: 2460,
+        x: 660,
+        y: 4520,
       },
       end: {
-        x: 40,
-        y: 2640,
+        x: 620,
+        y: 4700,
       },
       id: "d7f9b1f8-883d-4277-ba71-247585ea0d8c",
       name: "TwoWayVEdge",
@@ -21133,12 +21133,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 40,
-        y: 2640,
+        x: 620,
+        y: 4700,
       },
       end: {
-        x: 200,
-        y: 2640,
+        x: 780,
+        y: 4700,
       },
       id: "9a64ce5d-b827-4ce7-8f24-9ec747945073",
       name: "TwoWayHEdge",
@@ -21147,12 +21147,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 200,
-        y: 2640,
+        x: 780,
+        y: 4700,
       },
       end: {
-        x: 380,
-        y: 2640,
+        x: 960,
+        y: 4700,
       },
       id: "9aa52658-2511-4d6a-a139-ec82570d4fd1",
       name: "TwoWayHEdge",
@@ -21161,12 +21161,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 920,
-        y: 2460,
+        x: 1500,
+        y: 4520,
       },
       end: {
-        x: 920,
-        y: 2680,
+        x: 1500,
+        y: 4740,
       },
       id: "0a3d6f08-f471-4c11-b055-645207cad63b",
       name: "TwoWayVEdge",
@@ -21175,12 +21175,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 920,
-        y: 2680,
+        x: 1500,
+        y: 4740,
       },
       end: {
-        x: 1120,
-        y: 2680,
+        x: 1700,
+        y: 4740,
       },
       id: "8f391eb6-65c6-4af3-8bfd-b45f74c17567",
       name: "TwoWayHEdge",
@@ -21189,12 +21189,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 920,
-        y: 2680,
+        x: 1500,
+        y: 4740,
       },
       end: {
-        x: 720,
-        y: 2680,
+        x: 1300,
+        y: 4740,
       },
       id: "f1ca306d-75b4-4a62-ba50-84b29d04a2f8",
       name: "TwoWayHEdge",
@@ -21203,12 +21203,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 720,
-        y: 2680,
+        x: 1300,
+        y: 4740,
       },
       end: {
-        x: 720,
-        y: 2860,
+        x: 1300,
+        y: 4920,
       },
       id: "5edec508-2d7d-440c-b921-a9ab84c22bff",
       name: "TwoWayVEdge",
@@ -21217,12 +21217,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1120,
-        y: 2680,
+        x: 1700,
+        y: 4740,
       },
       end: {
-        x: 1120,
-        y: 2860,
+        x: 1700,
+        y: 4920,
       },
       id: "1320a934-d3ab-458d-9086-565475a2cc18",
       name: "TwoWayVEdge",
@@ -21231,12 +21231,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 720,
-        y: 2860,
+        x: 1300,
+        y: 4920,
       },
       end: {
-        x: 1120,
-        y: 2860,
+        x: 1700,
+        y: 4920,
       },
       id: "381e7cda-0c31-4f6b-a5cc-e946005eed9b",
       name: "TwoWayHEdge",
@@ -21245,12 +21245,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 480,
-        y: 2660,
+        x: 1060,
+        y: 4720,
       },
       end: {
-        x: 480,
-        y: 2860,
+        x: 1060,
+        y: 4920,
       },
       id: "1631a321-5ced-463c-bc07-6387910de5f3",
       name: "TwoWayVEdge",
@@ -21259,12 +21259,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 480,
-        y: 2860,
+        x: 1060,
+        y: 4920,
       },
       end: {
-        x: 480,
-        y: 3200,
+        x: 1060,
+        y: 5260,
       },
       id: "12cbbfa0-8845-4872-9786-ecff9fb368b3",
       name: "TwoWayVEdge",
@@ -21273,12 +21273,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 720,
-        y: 2860,
+        x: 1300,
+        y: 4920,
       },
       end: {
-        x: 720,
-        y: 3020,
+        x: 1300,
+        y: 5080,
       },
       id: "a19b5188-da26-4016-8310-5cb927165f64",
       name: "TwoWayVEdge",
@@ -21287,12 +21287,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 720,
-        y: 3020,
+        x: 1300,
+        y: 5080,
       },
       end: {
-        x: 720,
-        y: 3200,
+        x: 1300,
+        y: 5260,
       },
       id: "89ffbbdc-4d09-47ca-bf00-804905b59485",
       name: "TwoWayVEdge",
@@ -21301,12 +21301,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 480,
-        y: 3200,
+        x: 1060,
+        y: 5260,
       },
       end: {
-        x: 720,
-        y: 3200,
+        x: 1300,
+        y: 5260,
       },
       id: "e0de1bf7-4de5-4150-9ef5-1bde1a415cae",
       name: "TwoWayHEdge",
@@ -21315,12 +21315,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1120,
-        y: 2860,
+        x: 1700,
+        y: 4920,
       },
       end: {
-        x: 1120,
-        y: 3120,
+        x: 1700,
+        y: 5180,
       },
       id: "8f23c555-51cf-43b0-98c3-333a80ab7196",
       name: "TwoWayVEdge",
@@ -21329,12 +21329,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1120,
-        y: 3120,
+        x: 1700,
+        y: 5180,
       },
       end: {
-        x: 1300,
-        y: 3120,
+        x: 1880,
+        y: 5180,
       },
       id: "556c7a53-6ea7-49c3-a9cd-d57831d5247b",
       name: "TwoWayHEdge",
@@ -21343,12 +21343,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1300,
-        y: 3120,
+        x: 1880,
+        y: 5180,
       },
       end: {
-        x: 1300,
-        y: 3360,
+        x: 1880,
+        y: 5420,
       },
       id: "1e29c8cd-a5d6-46b8-a08c-53f9cae8b2a2",
       name: "TwoWayVEdge",
@@ -21357,12 +21357,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 720,
-        y: 3200,
+        x: 1300,
+        y: 5260,
       },
       end: {
-        x: 880,
-        y: 3200,
+        x: 1460,
+        y: 5260,
       },
       id: "4c0803d5-8584-4d6f-b2c6-10eede1fe62f",
       name: "TwoWayHEdge",
@@ -21371,12 +21371,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 720,
-        y: 3200,
+        x: 1300,
+        y: 5260,
       },
       end: {
-        x: 720,
-        y: 3520,
+        x: 1300,
+        y: 5580,
       },
       id: "63f36549-bd5b-4dc7-8aa9-a619acc40ba9",
       name: "TwoWayVEdge",
@@ -21385,12 +21385,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 720,
-        y: 3520,
+        x: 1300,
+        y: 5580,
       },
       end: {
-        x: 880,
-        y: 3520,
+        x: 1460,
+        y: 5580,
       },
       id: "b9f28f26-d620-4f7c-83bf-8f306649505b",
       name: "TwoWayHEdge",
@@ -21399,12 +21399,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 3200,
+        x: 1460,
+        y: 5260,
       },
       end: {
-        x: 880,
-        y: 3360,
+        x: 1460,
+        y: 5420,
       },
       id: "fd2e8656-8d09-4f1e-b061-662b0f44e72d",
       name: "TwoWayVEdge",
@@ -21413,12 +21413,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 3360,
+        x: 1460,
+        y: 5420,
       },
       end: {
-        x: 880,
-        y: 3520,
+        x: 1460,
+        y: 5580,
       },
       id: "e287d9c5-1a86-492f-ba0c-3e3a8ad04018",
       name: "TwoWayVEdge",
@@ -21427,12 +21427,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 3360,
+        x: 1460,
+        y: 5420,
       },
       end: {
-        x: 1100,
-        y: 3360,
+        x: 1680,
+        y: 5420,
       },
       id: "1938037f-3903-4895-9b0a-687b53aaf8b6",
       name: "TwoWayHEdge",
@@ -21441,12 +21441,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1100,
-        y: 3360,
+        x: 1680,
+        y: 5420,
       },
       end: {
-        x: 1300,
-        y: 3360,
+        x: 1880,
+        y: 5420,
       },
       id: "dd552f1d-1d88-40b2-af0a-b7ab99f157d3",
       name: "TwoWayHEdge",
@@ -21455,12 +21455,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 3520,
+        x: 1460,
+        y: 5580,
       },
       end: {
-        x: 1300,
-        y: 3520,
+        x: 1880,
+        y: 5580,
       },
       id: "afbc3d2d-a494-46d8-b2ce-3d8096976c87",
       name: "TwoWayHEdge",
@@ -21469,12 +21469,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1300,
-        y: 3360,
+        x: 1880,
+        y: 5420,
       },
       end: {
-        x: 1300,
-        y: 3520,
+        x: 1880,
+        y: 5580,
       },
       id: "004a3677-3b08-4b4a-bf98-22fb57748a08",
       name: "TwoWayVEdge",
@@ -21483,12 +21483,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2160,
-        y: 2840,
+        x: 2740,
+        y: 4900,
       },
       end: {
-        x: 2160,
-        y: 2980,
+        x: 2740,
+        y: 5040,
       },
       id: "98fd9f17-1330-4eb2-95b7-e331e0e4709a",
       name: "TwoWayVEdge",
@@ -21497,12 +21497,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2160,
-        y: 2980,
+        x: 2740,
+        y: 5040,
       },
       end: {
-        x: 1800,
-        y: 2980,
+        x: 2380,
+        y: 5040,
       },
       id: "0bbbfb8d-2c34-4b95-864f-0a44a4c0a60f",
       name: "TwoWayHEdge",
@@ -21511,12 +21511,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1800,
-        y: 2980,
+        x: 2380,
+        y: 5040,
       },
       end: {
-        x: 1480,
-        y: 2980,
+        x: 2060,
+        y: 5040,
       },
       id: "e2248b10-3c6b-47b3-9274-86ef4a7e69a5",
       name: "TwoWayHEdge",
@@ -21525,12 +21525,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1300,
-        y: 3120,
+        x: 1880,
+        y: 5180,
       },
       end: {
-        x: 1480,
-        y: 3120,
+        x: 2060,
+        y: 5180,
       },
       id: "83ebb287-8f8e-44ce-93c2-59fe8588e8c3",
       name: "TwoWayHEdge",
@@ -21539,12 +21539,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1480,
-        y: 2980,
+        x: 2060,
+        y: 5040,
       },
       end: {
-        x: 1480,
-        y: 3120,
+        x: 2060,
+        y: 5180,
       },
       id: "4a84c381-9e1f-4d34-ab83-d2591c5349ae",
       name: "TwoWayVEdge",
@@ -21553,12 +21553,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2160,
-        y: 2980,
+        x: 2740,
+        y: 5040,
       },
       end: {
-        x: 2160,
-        y: 3200,
+        x: 2740,
+        y: 5260,
       },
       id: "7bcaa979-fc59-4f2e-a99f-60996a924288",
       name: "TwoWayVEdge",
@@ -21567,12 +21567,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2160,
-        y: 3200,
+        x: 2740,
+        y: 5260,
       },
       end: {
-        x: 2160,
-        y: 3400,
+        x: 2740,
+        y: 5460,
       },
       id: "763a5169-3690-4c73-b11f-99c4ceb64a9c",
       name: "TwoWayVEdge",
@@ -21581,12 +21581,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1300,
-        y: 3520,
+        x: 1880,
+        y: 5580,
       },
       end: {
-        x: 1300,
-        y: 3680,
+        x: 1880,
+        y: 5740,
       },
       id: "27f073d5-6706-4600-8d94-8642eba7b8f3",
       name: "TwoWayVEdge",
@@ -21595,12 +21595,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1300,
-        y: 3680,
+        x: 1880,
+        y: 5740,
       },
       end: {
-        x: 1520,
-        y: 3680,
+        x: 2100,
+        y: 5740,
       },
       id: "02293332-dac8-447d-8abe-2f66dfeaca36",
       name: "TwoWayHEdge",
@@ -21609,12 +21609,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1520,
-        y: 3680,
+        x: 2100,
+        y: 5740,
       },
       end: {
-        x: 1720,
-        y: 3680,
+        x: 2300,
+        y: 5740,
       },
       id: "3ada4b85-3f5a-414c-9123-c36716d481f9",
       name: "TwoWayHEdge",
@@ -21623,12 +21623,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1720,
-        y: 3680,
+        x: 2300,
+        y: 5740,
       },
       end: {
-        x: 1720,
-        y: 3540,
+        x: 2300,
+        y: 5600,
       },
       id: "807ea18f-07d5-4372-9f9c-9022fa486bd5",
       name: "TwoWayVEdge",
@@ -21637,12 +21637,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1720,
-        y: 3540,
+        x: 2300,
+        y: 5600,
       },
       end: {
-        x: 1720,
-        y: 3400,
+        x: 2300,
+        y: 5460,
       },
       id: "9eebf140-c741-4021-8422-b5aa2f5d2263",
       name: "TwoWayVEdge",
@@ -21651,12 +21651,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1720,
-        y: 3400,
+        x: 2300,
+        y: 5460,
       },
       end: {
-        x: 1940,
-        y: 3400,
+        x: 2520,
+        y: 5460,
       },
       id: "cd28ecc8-3b96-4259-b43a-0f38936fa798",
       name: "TwoWayHEdge",
@@ -21665,12 +21665,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1940,
-        y: 3400,
+        x: 2520,
+        y: 5460,
       },
       end: {
-        x: 2160,
-        y: 3400,
+        x: 2740,
+        y: 5460,
       },
       id: "40823ddd-9fc4-4b59-b6e7-e0c1f9393f10",
       name: "TwoWayHEdge",
@@ -21679,12 +21679,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3160,
-        y: 3520,
+        x: 3740,
+        y: 5580,
       },
       end: {
-        x: 3160,
-        y: 3800,
+        x: 3740,
+        y: 5860,
       },
       id: "2e55a1f5-c37e-4d14-ba11-24a67a1ce052",
       name: "TwoWayVEdge",
@@ -21693,12 +21693,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3160,
-        y: 3800,
+        x: 3740,
+        y: 5860,
       },
       end: {
-        x: 2760,
-        y: 3800,
+        x: 3340,
+        y: 5860,
       },
       id: "1c97d5c6-738a-4de9-a61b-4d11983815e6",
       name: "TwoWayHEdge",
@@ -21707,12 +21707,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2160,
-        y: 3400,
+        x: 2740,
+        y: 5460,
       },
       end: {
-        x: 2760,
-        y: 3400,
+        x: 3340,
+        y: 5460,
       },
       id: "05a39c9b-c78a-42b0-ad41-73bbf4335055",
       name: "TwoWayHEdge",
@@ -21721,12 +21721,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2760,
-        y: 3400,
+        x: 3340,
+        y: 5460,
       },
       end: {
-        x: 2760,
-        y: 3800,
+        x: 3340,
+        y: 5860,
       },
       id: "3a1d3ac1-e388-4372-b498-90ddbec45e8b",
       name: "TwoWayVEdge",
@@ -21735,12 +21735,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2760,
-        y: 3800,
+        x: 3340,
+        y: 5860,
       },
       end: {
-        x: 2760,
-        y: 3980,
+        x: 3340,
+        y: 6040,
       },
       id: "b3316237-3393-47f7-b34a-8294eebd89d8",
       name: "TwoWayVEdge",
@@ -21749,12 +21749,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2760,
-        y: 3980,
+        x: 3340,
+        y: 6040,
       },
       end: {
-        x: 2960,
-        y: 3980,
+        x: 3540,
+        y: 6040,
       },
       id: "a8746cc8-95db-421d-9ed8-303db02963e0",
       name: "TwoWayHEdge",
@@ -21763,12 +21763,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 3980,
+        x: 3540,
+        y: 6040,
       },
       end: {
-        x: 3160,
-        y: 3980,
+        x: 3740,
+        y: 6040,
       },
       id: "11124cd7-ac8d-4211-b7ca-02946546aea2",
       name: "TwoWayHEdge",
@@ -21777,12 +21777,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3160,
-        y: 3800,
+        x: 3740,
+        y: 5860,
       },
       end: {
-        x: 3160,
-        y: 3980,
+        x: 3740,
+        y: 6040,
       },
       id: "97e47f92-258b-4db4-be29-ccac113d34b1",
       name: "TwoWayVEdge",
@@ -21791,12 +21791,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 3980,
+        x: 3540,
+        y: 6040,
       },
       end: {
-        x: 2960,
-        y: 4180,
+        x: 3540,
+        y: 6240,
       },
       id: "f93202ec-b86d-4294-aa18-33a27c6fb345",
       name: "TwoWayVEdge",
@@ -21805,12 +21805,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 4180,
+        x: 3540,
+        y: 6240,
       },
       end: {
-        x: 2960,
-        y: 4360,
+        x: 3540,
+        y: 6420,
       },
       id: "5d95719d-b7ca-4e73-bb97-afcd522a6c6c",
       name: "TwoWayVEdge",
@@ -21819,12 +21819,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 4360,
+        x: 3540,
+        y: 6420,
       },
       end: {
-        x: 2760,
-        y: 4360,
+        x: 3340,
+        y: 6420,
       },
       id: "b2a5efab-262b-438b-81c5-f595b38af0d9",
       name: "TwoWayHEdge",
@@ -21833,12 +21833,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 4360,
+        x: 3540,
+        y: 6420,
       },
       end: {
-        x: 2960,
-        y: 4680,
+        x: 3540,
+        y: 6740,
       },
       id: "ab991deb-fa77-4a9e-8257-0ec6cfac3be1",
       name: "TwoWayVEdge",
@@ -21847,12 +21847,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 4680,
+        x: 3540,
+        y: 6740,
       },
       end: {
-        x: 2760,
-        y: 4680,
+        x: 3340,
+        y: 6740,
       },
       id: "c61c3991-e5bd-40bf-aa8f-6d6994e749c9",
       name: "TwoWayHEdge",
@@ -21861,12 +21861,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2760,
-        y: 4680,
+        x: 3340,
+        y: 6740,
       },
       end: {
-        x: 2760,
-        y: 4520,
+        x: 3340,
+        y: 6580,
       },
       id: "bc1c212f-f747-43cb-8f38-01d8add2d987",
       name: "TwoWayVEdge",
@@ -21875,12 +21875,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2760,
-        y: 4520,
+        x: 3340,
+        y: 6580,
       },
       end: {
-        x: 2760,
-        y: 4360,
+        x: 3340,
+        y: 6420,
       },
       id: "d55c0805-ef5a-440d-bf55-e02922aef2d5",
       name: "TwoWayVEdge",
@@ -21889,12 +21889,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2760,
-        y: 4680,
+        x: 3340,
+        y: 6740,
       },
       end: {
-        x: 2480,
-        y: 4680,
+        x: 3060,
+        y: 6740,
       },
       id: "9d2837e6-f05d-49eb-aef2-8e5b527c8624",
       name: "TwoWayHEdge",
@@ -21903,12 +21903,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2480,
-        y: 4680,
+        x: 3060,
+        y: 6740,
       },
       end: {
-        x: 2200,
-        y: 4680,
+        x: 2780,
+        y: 6740,
       },
       id: "9dfd27bc-3bc0-4229-87d5-71b9e9345fab",
       name: "TwoWayHEdge",
@@ -21917,12 +21917,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2200,
-        y: 4680,
+        x: 2780,
+        y: 6740,
       },
       end: {
-        x: 2180,
-        y: 4460,
+        x: 2760,
+        y: 6520,
       },
       id: "6cb5252e-a18e-4e7c-a8c4-e7645960d30b",
       name: "TwoWayVEdge",
@@ -21931,12 +21931,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2180,
-        y: 4460,
+        x: 2760,
+        y: 6520,
       },
       end: {
-        x: 2140,
-        y: 4180,
+        x: 2720,
+        y: 6240,
       },
       id: "5d4fe047-ce11-41b9-9a57-0a7aedd6fff8",
       name: "TwoWayVEdge",
@@ -21945,12 +21945,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2140,
-        y: 4180,
+        x: 2720,
+        y: 6240,
       },
       end: {
-        x: 2140,
-        y: 3980,
+        x: 2720,
+        y: 6040,
       },
       id: "5f1b21f1-f524-4f82-aad6-19753f235c39",
       name: "TwoWayVEdge",
@@ -21959,12 +21959,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2140,
-        y: 3980,
+        x: 2720,
+        y: 6040,
       },
       end: {
-        x: 2140,
-        y: 3740,
+        x: 2720,
+        y: 5800,
       },
       id: "573b0ae7-4c4e-4161-9f10-fab1a872291e",
       name: "TwoWayVEdge",
@@ -21973,12 +21973,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2140,
-        y: 4180,
+        x: 2720,
+        y: 6240,
       },
       end: {
-        x: 1920,
-        y: 4180,
+        x: 2500,
+        y: 6240,
       },
       id: "06758002-cca1-4a28-a9c5-86d0d591d556",
       name: "TwoWayHEdge",
@@ -21987,12 +21987,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1920,
-        y: 4180,
+        x: 2500,
+        y: 6240,
       },
       end: {
-        x: 1700,
-        y: 4180,
+        x: 2280,
+        y: 6240,
       },
       id: "10706ce2-fbfa-431d-adc4-341f140871c7",
       name: "TwoWayHEdge",
@@ -22001,12 +22001,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1700,
-        y: 4180,
+        x: 2280,
+        y: 6240,
       },
       end: {
-        x: 1720,
-        y: 4340,
+        x: 2300,
+        y: 6400,
       },
       id: "ec9631de-e667-4c96-8cce-29737f048cf6",
       name: "TwoWayVEdge",
@@ -22015,12 +22015,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1720,
-        y: 4340,
+        x: 2300,
+        y: 6400,
       },
       end: {
-        x: 1740,
-        y: 4500,
+        x: 2320,
+        y: 6560,
       },
       id: "814881fa-cda3-42cc-86fc-df300c2c26a0",
       name: "TwoWayVEdge",
@@ -22029,12 +22029,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1740,
-        y: 4500,
+        x: 2320,
+        y: 6560,
       },
       end: {
-        x: 1960,
-        y: 4500,
+        x: 2540,
+        y: 6560,
       },
       id: "263a0cc6-14be-4a18-9f7e-62d0fc520364",
       name: "TwoWayHEdge",
@@ -22043,12 +22043,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1960,
-        y: 4500,
+        x: 2540,
+        y: 6560,
       },
       end: {
-        x: 1920,
-        y: 4180,
+        x: 2500,
+        y: 6240,
       },
       id: "ca48c34b-6cfc-4b48-a178-0b3a73369b1e",
       name: "TwoWayVEdge",
@@ -22057,12 +22057,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1520,
-        y: 3680,
+        x: 2100,
+        y: 5740,
       },
       end: {
-        x: 1520,
-        y: 3920,
+        x: 2100,
+        y: 5980,
       },
       id: "816c0883-5569-4661-b4f7-e94a90518479",
       name: "TwoWayVEdge",
@@ -22071,12 +22071,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1520,
-        y: 3920,
+        x: 2100,
+        y: 5980,
       },
       end: {
-        x: 1520,
-        y: 4180,
+        x: 2100,
+        y: 6240,
       },
       id: "3e0f6bb6-c20a-4772-9020-5f87af127dfe",
       name: "TwoWayVEdge",
@@ -22085,12 +22085,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1520,
-        y: 4180,
+        x: 2100,
+        y: 6240,
       },
       end: {
-        x: 1700,
-        y: 4180,
+        x: 2280,
+        y: 6240,
       },
       id: "001cbe58-a3dd-4e14-985f-a7ec5c08bc0d",
       name: "TwoWayHEdge",
@@ -22099,12 +22099,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1740,
-        y: 4500,
+        x: 2320,
+        y: 6560,
       },
       end: {
-        x: 1820,
-        y: 4680,
+        x: 2400,
+        y: 6740,
       },
       id: "7d627215-a586-4173-a81a-bf799f6a58fd",
       name: "TwoWayVEdge",
@@ -22113,12 +22113,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1820,
-        y: 4680,
+        x: 2400,
+        y: 6740,
       },
       end: {
-        x: 2040,
-        y: 4680,
+        x: 2620,
+        y: 6740,
       },
       id: "e69157e0-de9d-4c30-8d7e-48a60860d87b",
       name: "TwoWayHEdge",
@@ -22127,12 +22127,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2040,
-        y: 4680,
+        x: 2620,
+        y: 6740,
       },
       end: {
-        x: 2020,
-        y: 4860,
+        x: 2600,
+        y: 6920,
       },
       id: "4721cbd1-bab6-40ac-b4c9-d2997e9a7ea2",
       name: "TwoWayVEdge",
@@ -22141,12 +22141,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2020,
-        y: 4860,
+        x: 2600,
+        y: 6920,
       },
       end: {
-        x: 2000,
-        y: 5020,
+        x: 2580,
+        y: 7080,
       },
       id: "0cea8f74-7cba-4ce1-88eb-954f6758444e",
       name: "TwoWayVEdge",
@@ -22155,12 +22155,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 4680,
+        x: 3540,
+        y: 6740,
       },
       end: {
-        x: 3200,
-        y: 4680,
+        x: 3780,
+        y: 6740,
       },
       id: "1382a531-41fc-4207-ac24-5a6f72594cb4",
       name: "TwoWayHEdge",
@@ -22169,12 +22169,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 4680,
+        x: 3540,
+        y: 6740,
       },
       end: {
-        x: 2960,
-        y: 5000,
+        x: 3540,
+        y: 7060,
       },
       id: "e520124c-4e61-4f6a-9b21-db2ef64d6998",
       name: "TwoWayVEdge",
@@ -22183,12 +22183,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 5000,
+        x: 3540,
+        y: 7060,
       },
       end: {
-        x: 3200,
-        y: 5000,
+        x: 3780,
+        y: 7060,
       },
       id: "8e6762f9-0a16-4744-89f2-29b5b3dbf3b5",
       name: "TwoWayHEdge",
@@ -22197,12 +22197,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3200,
-        y: 4680,
+        x: 3780,
+        y: 6740,
       },
       end: {
-        x: 3200,
-        y: 4820,
+        x: 3780,
+        y: 6880,
       },
       id: "300d0ed9-b9d5-4d3c-a7ff-378f4e86fc0e",
       name: "TwoWayVEdge",
@@ -22211,12 +22211,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3200,
-        y: 4820,
+        x: 3780,
+        y: 6880,
       },
       end: {
-        x: 3200,
-        y: 5000,
+        x: 3780,
+        y: 7060,
       },
       id: "70a00b7b-18e3-477d-b21b-b39a0c3d593d",
       name: "TwoWayVEdge",
@@ -22225,12 +22225,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2000,
-        y: 5020,
+        x: 2580,
+        y: 7080,
       },
       end: {
-        x: 2380,
-        y: 5020,
+        x: 2960,
+        y: 7080,
       },
       id: "731aa77c-7642-4573-a8c3-e8da1307c400",
       name: "TwoWayHEdge",
@@ -22239,12 +22239,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2380,
-        y: 5020,
+        x: 2960,
+        y: 7080,
       },
       end: {
-        x: 2740,
-        y: 5020,
+        x: 3320,
+        y: 7080,
       },
       id: "f4facfeb-a345-4dfe-af74-21aa5c52032e",
       name: "TwoWayHEdge",
@@ -22253,12 +22253,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2740,
-        y: 5020,
+        x: 3320,
+        y: 7080,
       },
       end: {
-        x: 2740,
-        y: 5240,
+        x: 3320,
+        y: 7300,
       },
       id: "9f81979f-c3cf-4c01-b307-784c7de01d4d",
       name: "TwoWayVEdge",
@@ -22267,12 +22267,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3200,
-        y: 5000,
+        x: 3780,
+        y: 7060,
       },
       end: {
-        x: 3200,
-        y: 5240,
+        x: 3780,
+        y: 7300,
       },
       id: "60278524-1b52-4bb9-863f-d48027cb45e1",
       name: "TwoWayVEdge",
@@ -22281,12 +22281,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1520,
-        y: 4180,
+        x: 2100,
+        y: 6240,
       },
       end: {
-        x: 1300,
-        y: 4180,
+        x: 1880,
+        y: 6240,
       },
       id: "cb59b29a-fa7f-4cdf-8ad1-897b8be79cff",
       name: "TwoWayHEdge",
@@ -22295,12 +22295,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1300,
-        y: 4180,
+        x: 1880,
+        y: 6240,
       },
       end: {
-        x: 1300,
-        y: 4320,
+        x: 1880,
+        y: 6380,
       },
       id: "0f8709e8-b3ba-4f29-b081-1d27a09745fd",
       name: "TwoWayVEdge",
@@ -22309,12 +22309,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1300,
-        y: 4320,
+        x: 1880,
+        y: 6380,
       },
       end: {
-        x: 1300,
-        y: 4480,
+        x: 1880,
+        y: 6540,
       },
       id: "d397293b-2b88-49c2-8637-f669bebd0fca",
       name: "TwoWayVEdge",
@@ -22323,12 +22323,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1300,
-        y: 4480,
+        x: 1880,
+        y: 6540,
       },
       end: {
-        x: 1300,
-        y: 4760,
+        x: 1880,
+        y: 6820,
       },
       id: "fcccfe1f-c7cd-4810-9428-5deb9942406e",
       name: "TwoWayVEdge",
@@ -22337,12 +22337,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1820,
-        y: 4680,
+        x: 2400,
+        y: 6740,
       },
       end: {
-        x: 1580,
-        y: 4680,
+        x: 2160,
+        y: 6740,
       },
       id: "aa881a6d-4cdf-4025-829a-82d5df876b57",
       name: "TwoWayHEdge",
@@ -22351,12 +22351,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1580,
-        y: 4680,
+        x: 2160,
+        y: 6740,
       },
       end: {
-        x: 1580,
-        y: 4840,
+        x: 2160,
+        y: 6900,
       },
       id: "0c72dd26-3790-43b9-ada9-7c4391a375fb",
       name: "TwoWayVEdge",
@@ -22365,12 +22365,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1580,
-        y: 4840,
+        x: 2160,
+        y: 6900,
       },
       end: {
-        x: 1580,
-        y: 4980,
+        x: 2160,
+        y: 7040,
       },
       id: "1aa9d324-12b2-4614-a843-96e3391d5314",
       name: "TwoWayVEdge",
@@ -22379,12 +22379,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1580,
-        y: 4980,
+        x: 2160,
+        y: 7040,
       },
       end: {
-        x: 1580,
-        y: 5140,
+        x: 2160,
+        y: 7200,
       },
       id: "7f8bdc88-fa51-488e-acac-e873ccfa6844",
       name: "TwoWayVEdge",
@@ -22393,12 +22393,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1580,
-        y: 5140,
+        x: 2160,
+        y: 7200,
       },
       end: {
-        x: 1340,
-        y: 5140,
+        x: 1920,
+        y: 7200,
       },
       id: "a24129e5-caa5-41be-bb46-ff6eb38b4e1f",
       name: "TwoWayHEdge",
@@ -22407,12 +22407,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1340,
-        y: 5140,
+        x: 1920,
+        y: 7200,
       },
       end: {
-        x: 1080,
-        y: 5080,
+        x: 1660,
+        y: 7140,
       },
       id: "67c6e653-f9bf-40fa-b300-7decb6c3acff",
       name: "TwoWayHEdge",
@@ -22421,12 +22421,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1300,
-        y: 4760,
+        x: 1880,
+        y: 6820,
       },
       end: {
-        x: 1080,
-        y: 4760,
+        x: 1660,
+        y: 6820,
       },
       id: "e25b1335-23e6-4197-87c0-2176a55b915f",
       name: "TwoWayHEdge",
@@ -22435,12 +22435,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1080,
-        y: 4760,
+        x: 1660,
+        y: 6820,
       },
       end: {
-        x: 1080,
-        y: 4580,
+        x: 1660,
+        y: 6640,
       },
       id: "8223f200-09bf-4542-8622-2b8a92435a2f",
       name: "TwoWayVEdge",
@@ -22449,12 +22449,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1080,
-        y: 4580,
+        x: 1660,
+        y: 6640,
       },
       end: {
-        x: 1080,
-        y: 4400,
+        x: 1660,
+        y: 6460,
       },
       id: "4ee46000-9670-4c2d-9a3c-974909c57563",
       name: "TwoWayVEdge",
@@ -22463,12 +22463,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1080,
-        y: 5080,
+        x: 1660,
+        y: 7140,
       },
       end: {
-        x: 860,
-        y: 5020,
+        x: 1440,
+        y: 7080,
       },
       id: "950b9279-bea3-4ceb-8681-05c44b6f308d",
       name: "TwoWayHEdge",
@@ -22477,12 +22477,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 860,
-        y: 5020,
+        x: 1440,
+        y: 7080,
       },
       end: {
-        x: 860,
-        y: 5220,
+        x: 1440,
+        y: 7280,
       },
       id: "1d5c9d18-5126-421f-bc1f-1048fa2623a6",
       name: "TwoWayVEdge",
@@ -22491,12 +22491,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 860,
-        y: 5020,
+        x: 1440,
+        y: 7080,
       },
       end: {
-        x: 880,
-        y: 4760,
+        x: 1460,
+        y: 6820,
       },
       id: "ae3ee9dd-8e31-4ad8-a3dd-ea2f442747d4",
       name: "TwoWayVEdge",
@@ -22505,12 +22505,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 4760,
+        x: 1460,
+        y: 6820,
       },
       end: {
-        x: 600,
-        y: 4760,
+        x: 1180,
+        y: 6820,
       },
       id: "3cbabb80-650b-43f2-9349-ec1aed83ec70",
       name: "TwoWayHEdge",
@@ -22519,12 +22519,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 600,
-        y: 4760,
+        x: 1180,
+        y: 6820,
       },
       end: {
-        x: 600,
-        y: 5220,
+        x: 1180,
+        y: 7280,
       },
       id: "6420ae0a-60ca-455e-ab21-ba5599367f25",
       name: "TwoWayVEdge",
@@ -22533,12 +22533,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 600,
-        y: 5220,
+        x: 1180,
+        y: 7280,
       },
       end: {
-        x: 860,
-        y: 5220,
+        x: 1440,
+        y: 7280,
       },
       id: "f0076751-71fc-4221-9548-05c1e5943e94",
       name: "TwoWayHEdge",
@@ -22547,12 +22547,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2740,
-        y: 5240,
+        x: 3320,
+        y: 7300,
       },
       end: {
-        x: 2740,
-        y: 5460,
+        x: 3320,
+        y: 7520,
       },
       id: "b0448cc3-0a11-4d3a-bd21-9c3eaf51060a",
       name: "TwoWayVEdge",
@@ -22561,12 +22561,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3200,
-        y: 5240,
+        x: 3780,
+        y: 7300,
       },
       end: {
-        x: 3200,
-        y: 5460,
+        x: 3780,
+        y: 7520,
       },
       id: "7964cbd2-833a-463f-984c-eac791a479bb",
       name: "TwoWayVEdge",
@@ -22575,12 +22575,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3200,
-        y: 5460,
+        x: 3780,
+        y: 7520,
       },
       end: {
-        x: 2960,
-        y: 5460,
+        x: 3540,
+        y: 7520,
       },
       id: "a833c84e-7ddc-4ae5-aa98-63000d4337b9",
       name: "TwoWayHEdge",
@@ -22589,12 +22589,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2740,
-        y: 5460,
+        x: 3320,
+        y: 7520,
       },
       end: {
-        x: 2960,
-        y: 5460,
+        x: 3540,
+        y: 7520,
       },
       id: "ab6f447f-2b4e-47f9-80ef-48ea1181d47e",
       name: "TwoWayHEdge",
@@ -22603,12 +22603,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 5460,
+        x: 3540,
+        y: 7520,
       },
       end: {
-        x: 2780,
-        y: 6320,
+        x: 3360,
+        y: 8380,
       },
       id: "764709f3-5175-4c2e-910a-4a70a37d7a52",
       name: "TwoWayVEdge",
@@ -22617,12 +22617,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2780,
-        y: 6320,
+        x: 3360,
+        y: 8380,
       },
       end: {
-        x: 3060,
-        y: 6280,
+        x: 3640,
+        y: 8340,
       },
       id: "d6c8c3a2-38f8-424b-a34d-ebc37d7746e3",
       name: "TwoWayHEdge",
@@ -22631,12 +22631,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3060,
-        y: 6280,
+        x: 3640,
+        y: 8340,
       },
       end: {
-        x: 3300,
-        y: 6320,
+        x: 3880,
+        y: 8380,
       },
       id: "81588604-5675-4864-8df4-d84237f8ce28",
       name: "TwoWayHEdge",
@@ -22645,12 +22645,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3300,
-        y: 6320,
+        x: 3880,
+        y: 8380,
       },
       end: {
-        x: 3520,
-        y: 6280,
+        x: 4100,
+        y: 8340,
       },
       id: "05fb98eb-6e48-455b-8ff5-bf4f3112a57d",
       name: "TwoWayHEdge",
@@ -22659,12 +22659,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3520,
-        y: 6280,
+        x: 4100,
+        y: 8340,
       },
       end: {
-        x: 3740,
-        y: 6320,
+        x: 4320,
+        y: 8380,
       },
       id: "ad828d19-d34c-418c-969e-ba671caf0461",
       name: "TwoWayHEdge",
@@ -22673,12 +22673,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3740,
-        y: 6320,
+        x: 4320,
+        y: 8380,
       },
       end: {
-        x: 4000,
-        y: 6280,
+        x: 4580,
+        y: 8340,
       },
       id: "fb347204-b98c-400f-a3fd-a97b27d4c1a5",
       name: "TwoWayHEdge",
@@ -22687,12 +22687,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4000,
-        y: 6280,
+        x: 4580,
+        y: 8340,
       },
       end: {
-        x: 4000,
-        y: 6080,
+        x: 4580,
+        y: 8140,
       },
       id: "5769c637-4f56-4571-96db-f86c476b3fb8",
       name: "TwoWayVEdge",
@@ -22701,12 +22701,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4000,
-        y: 6080,
+        x: 4580,
+        y: 8140,
       },
       end: {
-        x: 4200,
-        y: 6060,
+        x: 4780,
+        y: 8120,
       },
       id: "03e2721b-a48f-4970-90dd-a95c48e9eea6",
       name: "TwoWayHEdge",
@@ -22715,12 +22715,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 860,
-        y: 5220,
+        x: 1440,
+        y: 7280,
       },
       end: {
-        x: 860,
-        y: 5420,
+        x: 1440,
+        y: 7480,
       },
       id: "d2d83a07-4858-4a77-a281-4985832fb815",
       name: "TwoWayVEdge",
@@ -22729,12 +22729,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 860,
-        y: 5420,
+        x: 1440,
+        y: 7480,
       },
       end: {
-        x: 860,
-        y: 5620,
+        x: 1440,
+        y: 7680,
       },
       id: "6ec0fd6f-f28e-4d92-83d9-916957895d4b",
       name: "TwoWayVEdge",
@@ -22743,12 +22743,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 860,
-        y: 5620,
+        x: 1440,
+        y: 7680,
       },
       end: {
-        x: 520,
-        y: 5660,
+        x: 1100,
+        y: 7720,
       },
       id: "a23fc237-dc0a-4b5d-9b91-2b45016cdc30",
       name: "TwoWayHEdge",
@@ -22757,12 +22757,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 520,
-        y: 5660,
+        x: 1100,
+        y: 7720,
       },
       end: {
-        x: 180,
-        y: 5600,
+        x: 760,
+        y: 7660,
       },
       id: "8eafe502-99b9-4994-a8c7-80c641dd6f34",
       name: "TwoWayHEdge",
@@ -22771,12 +22771,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 600,
-        y: 4760,
+        x: 1180,
+        y: 6820,
       },
       end: {
-        x: 380,
-        y: 4760,
+        x: 960,
+        y: 6820,
       },
       id: "970b70c5-1da4-47cb-ac4c-8c2dc87b463b",
       name: "TwoWayHEdge",
@@ -22785,12 +22785,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 180,
-        y: 5600,
+        x: 760,
+        y: 7660,
       },
       end: {
-        x: 240,
-        y: 5360,
+        x: 820,
+        y: 7420,
       },
       id: "e88b9d62-272e-4f72-a950-f42096df13b7",
       name: "TwoWayVEdge",
@@ -22799,12 +22799,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 240,
-        y: 5360,
+        x: 820,
+        y: 7420,
       },
       end: {
-        x: 200,
-        y: 5140,
+        x: 780,
+        y: 7200,
       },
       id: "3cbf0e0e-5cd8-4fdd-b9ec-e582db986739",
       name: "TwoWayVEdge",
@@ -22813,12 +22813,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 200,
-        y: 5140,
+        x: 780,
+        y: 7200,
       },
       end: {
-        x: 220,
-        y: 4880,
+        x: 800,
+        y: 6940,
       },
       id: "7cf02baa-23bc-4d7d-b4c6-8448a5a2a55a",
       name: "TwoWayVEdge",
@@ -22827,12 +22827,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 220,
-        y: 4880,
+        x: 800,
+        y: 6940,
       },
       end: {
-        x: 20,
-        y: 4880,
+        x: 600,
+        y: 6940,
       },
       id: "7d68ba52-5884-4803-b9ee-f630bfcf07b0",
       name: "TwoWayHEdge",
@@ -22841,12 +22841,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 20,
-        y: 4880,
+        x: 600,
+        y: 6940,
       },
       end: {
-        x: 20,
-        y: 4660,
+        x: 600,
+        y: 6720,
       },
       id: "9919e7b0-bb8e-4c12-9207-15b73e3fffb9",
       name: "TwoWayVEdge",
@@ -22855,12 +22855,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 20,
-        y: 4660,
+        x: 600,
+        y: 6720,
       },
       end: {
-        x: 20,
-        y: 4440,
+        x: 600,
+        y: 6500,
       },
       id: "d2a5e2ff-694f-446a-ac6f-47e10216c5e4",
       name: "TwoWayVEdge",
@@ -22869,12 +22869,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 20,
-        y: 4440,
+        x: 600,
+        y: 6500,
       },
       end: {
-        x: 20,
-        y: 4140,
+        x: 600,
+        y: 6200,
       },
       id: "dc211991-901d-482c-85d6-0975c3459246",
       name: "TwoWayVEdge",
@@ -22883,12 +22883,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 380,
-        y: 4760,
+        x: 960,
+        y: 6820,
       },
       end: {
-        x: 380,
-        y: 4580,
+        x: 960,
+        y: 6640,
       },
       id: "9c3eae14-bdad-4cc8-af94-717b498723c5",
       name: "TwoWayVEdge",
@@ -22897,12 +22897,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 380,
-        y: 4580,
+        x: 960,
+        y: 6640,
       },
       end: {
-        x: 380,
-        y: 4420,
+        x: 960,
+        y: 6480,
       },
       id: "ec48b9d9-90f8-452b-b976-f095d682fe9e",
       name: "TwoWayVEdge",
@@ -22911,12 +22911,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 380,
-        y: 4420,
+        x: 960,
+        y: 6480,
       },
       end: {
-        x: 380,
-        y: 4260,
+        x: 960,
+        y: 6320,
       },
       id: "3e2cd172-d7fc-42c3-bb27-d8f5bb03a7b7",
       name: "TwoWayVEdge",
@@ -22925,12 +22925,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 380,
-        y: 4260,
+        x: 960,
+        y: 6320,
       },
       end: {
-        x: 600,
-        y: 4260,
+        x: 1180,
+        y: 6320,
       },
       id: "0311fe5d-9aa7-49e6-88d5-30ae182272f2",
       name: "TwoWayHEdge",
@@ -22939,12 +22939,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 20,
-        y: 4140,
+        x: 600,
+        y: 6200,
       },
       end: {
-        x: 220,
-        y: 4140,
+        x: 800,
+        y: 6200,
       },
       id: "8ea5677e-36f8-413e-bf1e-a151d3144c0c",
       name: "TwoWayHEdge",
@@ -22953,12 +22953,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 220,
-        y: 4140,
+        x: 800,
+        y: 6200,
       },
       end: {
-        x: 400,
-        y: 4140,
+        x: 980,
+        y: 6200,
       },
       id: "668c95d7-8236-48be-a74a-b993223feb38",
       name: "TwoWayHEdge",
@@ -22967,12 +22967,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 4760,
+        x: 1460,
+        y: 6820,
       },
       end: {
-        x: 880,
-        y: 4580,
+        x: 1460,
+        y: 6640,
       },
       id: "7b39eb40-4a3d-4453-93e9-aaca5779c8e8",
       name: "TwoWayVEdge",
@@ -22981,12 +22981,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 4580,
+        x: 1460,
+        y: 6640,
       },
       end: {
-        x: 880,
-        y: 4440,
+        x: 1460,
+        y: 6500,
       },
       id: "963b7939-d833-4120-a21d-a2fcfa1e2676",
       name: "TwoWayVEdge",
@@ -22995,12 +22995,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 600,
-        y: 4260,
+        x: 1180,
+        y: 6320,
       },
       end: {
-        x: 620,
-        y: 4080,
+        x: 1200,
+        y: 6140,
       },
       id: "1d54e036-d3fb-4c7b-96c5-42ede078532c",
       name: "TwoWayVEdge",
@@ -23009,12 +23009,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 620,
-        y: 4080,
+        x: 1200,
+        y: 6140,
       },
       end: {
-        x: 880,
-        y: 4080,
+        x: 1460,
+        y: 6140,
       },
       id: "c6980817-bb0b-42dc-b4f6-dd0235f89177",
       name: "TwoWayHEdge",
@@ -23023,12 +23023,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 4440,
+        x: 1460,
+        y: 6500,
       },
       end: {
-        x: 880,
-        y: 4260,
+        x: 1460,
+        y: 6320,
       },
       id: "9a9073e0-c717-42f6-a364-6ee0703315c5",
       name: "TwoWayVEdge",
@@ -23037,12 +23037,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 4260,
+        x: 1460,
+        y: 6320,
       },
       end: {
-        x: 880,
-        y: 4080,
+        x: 1460,
+        y: 6140,
       },
       id: "0e3493e7-5dab-4fab-9178-f8b07dc96251",
       name: "TwoWayVEdge",
@@ -23051,12 +23051,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 4260,
+        x: 1460,
+        y: 6320,
       },
       end: {
-        x: 1080,
-        y: 4260,
+        x: 1660,
+        y: 6320,
       },
       id: "e20ee87f-722d-4c7f-b43d-47f8f430ee29",
       name: "TwoWayHEdge",
@@ -23065,12 +23065,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 4080,
+        x: 1460,
+        y: 6140,
       },
       end: {
-        x: 880,
-        y: 3900,
+        x: 1460,
+        y: 5960,
       },
       id: "eb129be2-60bc-427f-8c77-95d468571c33",
       name: "TwoWayVEdge",
@@ -23079,12 +23079,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: 3900,
+        x: 1460,
+        y: 5960,
       },
       end: {
-        x: 1080,
-        y: 3900,
+        x: 1660,
+        y: 5960,
       },
       id: "8eb77137-c869-4b8d-a42e-e682a0ef6696",
       name: "TwoWayHEdge",
@@ -23093,12 +23093,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1080,
-        y: 3900,
+        x: 1660,
+        y: 5960,
       },
       end: {
-        x: 1080,
-        y: 4260,
+        x: 1660,
+        y: 6320,
       },
       id: "111d8bc9-8479-4acd-9f03-19ca16f8eed5",
       name: "TwoWayVEdge",
@@ -23107,12 +23107,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1080,
-        y: 3900,
+        x: 1660,
+        y: 5960,
       },
       end: {
-        x: 1080,
-        y: 3680,
+        x: 1660,
+        y: 5740,
       },
       id: "fa065945-09b3-4603-be64-52463c6150d8",
       name: "TwoWayVEdge",
@@ -23121,12 +23121,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 400,
-        y: 4140,
+        x: 980,
+        y: 6200,
       },
       end: {
-        x: 400,
-        y: 3940,
+        x: 980,
+        y: 6000,
       },
       id: "a673acef-b9c9-4f9c-bdfe-bcbfe3a1f1a2",
       name: "TwoWayVEdge",
@@ -23135,12 +23135,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 400,
-        y: 3940,
+        x: 980,
+        y: 6000,
       },
       end: {
-        x: 400,
-        y: 3760,
+        x: 980,
+        y: 5820,
       },
       id: "cb8c88bc-ff15-4c08-abb6-9fd076ee042e",
       name: "TwoWayVEdge",
@@ -23149,12 +23149,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 400,
-        y: 3760,
+        x: 980,
+        y: 5820,
       },
       end: {
-        x: 640,
-        y: 3720,
+        x: 1220,
+        y: 5780,
       },
       id: "af7eb313-b9d1-4291-a80c-bfc4a8ef31e4",
       name: "TwoWayHEdge",
@@ -23163,12 +23163,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 640,
-        y: 3720,
+        x: 1220,
+        y: 5780,
       },
       end: {
-        x: 880,
-        y: 3680,
+        x: 1460,
+        y: 5740,
       },
       id: "d83b1dcf-7e08-4b84-9e3e-edf87f732805",
       name: "TwoWayHEdge",
@@ -23177,12 +23177,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 400,
-        y: 3760,
+        x: 980,
+        y: 5820,
       },
       end: {
-        x: 200,
-        y: 3760,
+        x: 780,
+        y: 5820,
       },
       id: "80f5684f-5872-4218-a1c6-075a31b4729f",
       name: "TwoWayHEdge",
@@ -23191,12 +23191,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 20,
-        y: 4140,
+        x: 600,
+        y: 6200,
       },
       end: {
-        x: -320,
-        y: 4080,
+        x: 260,
+        y: 6140,
       },
       id: "3b0ceb49-59ca-4d5c-b3f8-1cfabb5ece12",
       name: "TwoWayHEdge",
@@ -23205,12 +23205,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -320,
-        y: 4080,
+        x: 260,
+        y: 6140,
       },
       end: {
-        x: -540,
-        y: 4140,
+        x: 40,
+        y: 6200,
       },
       id: "f234119e-2325-4513-8f2a-9c5bc370a080",
       name: "TwoWayHEdge",
@@ -23219,12 +23219,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -540,
-        y: 4140,
+        x: 40,
+        y: 6200,
       },
       end: {
-        x: -540,
-        y: 3880,
+        x: 40,
+        y: 5940,
       },
       id: "58c2c300-42d9-4649-83ed-b45e5861bf14",
       name: "TwoWayVEdge",
@@ -23233,12 +23233,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -540,
-        y: 3880,
+        x: 40,
+        y: 5940,
       },
       end: {
-        x: -520,
-        y: 3620,
+        x: 60,
+        y: 5680,
       },
       id: "6d7597cd-db43-4588-8db4-7b51c95af17d",
       name: "TwoWayVEdge",
@@ -23247,12 +23247,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -520,
-        y: 3620,
+        x: 60,
+        y: 5680,
       },
       end: {
-        x: -540,
-        y: 3380,
+        x: 40,
+        y: 5440,
       },
       id: "1947ab3b-003a-49c2-8551-abd0117f5a78",
       name: "TwoWayVEdge",
@@ -23261,12 +23261,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -540,
-        y: 3380,
+        x: 40,
+        y: 5440,
       },
       end: {
-        x: -520,
-        y: 3100,
+        x: 60,
+        y: 5160,
       },
       id: "a6b3fa9c-0921-4741-bd22-85b60fe8d6d7",
       name: "TwoWayVEdge",
@@ -23275,12 +23275,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -520,
-        y: 3100,
+        x: 60,
+        y: 5160,
       },
       end: {
-        x: -360,
-        y: 3100,
+        x: 220,
+        y: 5160,
       },
       id: "1fc74699-2389-460d-be39-1e23df174a8e",
       name: "TwoWayHEdge",
@@ -23289,12 +23289,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -360,
-        y: 3100,
+        x: 220,
+        y: 5160,
       },
       end: {
-        x: -200,
-        y: 3100,
+        x: 380,
+        y: 5160,
       },
       id: "31e024dd-7dd9-4faa-9ce4-cdc216c0828c",
       name: "TwoWayHEdge",
@@ -23303,12 +23303,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -200,
-        y: 3100,
+        x: 380,
+        y: 5160,
       },
       end: {
-        x: -20,
-        y: 3100,
+        x: 560,
+        y: 5160,
       },
       id: "1415c00d-c570-49f3-bdf0-8409410588ee",
       name: "TwoWayHEdge",
@@ -23317,12 +23317,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 200,
-        y: 2640,
+        x: 780,
+        y: 4700,
       },
       end: {
-        x: 200,
-        y: 2820,
+        x: 780,
+        y: 4880,
       },
       id: "2cdd2473-de40-4844-a087-d538e326d15d",
       name: "TwoWayVEdge",
@@ -23331,12 +23331,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 200,
-        y: 2820,
+        x: 780,
+        y: 4880,
       },
       end: {
-        x: 200,
-        y: 2960,
+        x: 780,
+        y: 5020,
       },
       id: "389a3860-bc55-4671-a001-63f34b7d9d2c",
       name: "TwoWayVEdge",
@@ -23345,12 +23345,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 200,
-        y: 2960,
+        x: 780,
+        y: 5020,
       },
       end: {
-        x: 200,
-        y: 3100,
+        x: 780,
+        y: 5160,
       },
       id: "1c8ab9f4-dbf6-43a9-9651-a49829b4d686",
       name: "TwoWayVEdge",
@@ -23359,12 +23359,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -20,
-        y: 3100,
+        x: 560,
+        y: 5160,
       },
       end: {
-        x: 200,
-        y: 3100,
+        x: 780,
+        y: 5160,
       },
       id: "e5c3c917-5733-40ec-ac2c-2f5c3a07f65a",
       name: "TwoWayHEdge",
@@ -23373,12 +23373,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -20,
-        y: 3100,
+        x: 560,
+        y: 5160,
       },
       end: {
-        x: -20,
-        y: 3380,
+        x: 560,
+        y: 5440,
       },
       id: "27430f9a-dae0-41b7-a311-be935d0d9d9d",
       name: "TwoWayVEdge",
@@ -23387,12 +23387,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 200,
-        y: 3100,
+        x: 780,
+        y: 5160,
       },
       end: {
-        x: 200,
-        y: 3240,
+        x: 780,
+        y: 5300,
       },
       id: "7439b241-3cb7-4aa0-b774-75d0d93bc569",
       name: "TwoWayVEdge",
@@ -23401,12 +23401,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 200,
-        y: 3240,
+        x: 780,
+        y: 5300,
       },
       end: {
-        x: 200,
-        y: 3380,
+        x: 780,
+        y: 5440,
       },
       id: "f641992e-dd11-4fb5-acd4-5f68670478f3",
       name: "TwoWayVEdge",
@@ -23415,12 +23415,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -20,
-        y: 3380,
+        x: 560,
+        y: 5440,
       },
       end: {
-        x: 200,
-        y: 3380,
+        x: 780,
+        y: 5440,
       },
       id: "2865ded3-2cbd-46d9-bce4-0df822ac6381",
       name: "TwoWayHEdge",
@@ -23429,12 +23429,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 200,
-        y: 3380,
+        x: 780,
+        y: 5440,
       },
       end: {
-        x: 200,
-        y: 3580,
+        x: 780,
+        y: 5640,
       },
       id: "b0b693b6-3dbd-4762-bca3-1790a5d87edd",
       name: "TwoWayVEdge",
@@ -23443,12 +23443,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 200,
-        y: 3580,
+        x: 780,
+        y: 5640,
       },
       end: {
-        x: 200,
-        y: 3760,
+        x: 780,
+        y: 5820,
       },
       id: "5b62a484-0878-43d4-b947-e16d33253461",
       name: "TwoWayVEdge",
@@ -23457,12 +23457,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 2620,
+        x: 5380,
+        y: 4680,
       },
       end: {
-        x: 4980,
-        y: 2620,
+        x: 5560,
+        y: 4680,
       },
       id: "18210fd9-61fc-47cc-8cb6-6610c7c6ca4c",
       name: "TwoWayHEdge",
@@ -23471,12 +23471,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 860,
-        y: 140,
+        x: 1440,
+        y: 2200,
       },
       end: {
-        x: 560,
-        y: 140,
+        x: 1140,
+        y: 2200,
       },
       id: "8a60cf6d-d236-4676-85d9-97362548b2fb",
       name: "TwoWayHEdge",
@@ -23485,12 +23485,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: -20,
-        y: 3380,
+        x: 560,
+        y: 5440,
       },
       end: {
-        x: -280,
-        y: 3380,
+        x: 300,
+        y: 5440,
       },
       id: "5f0ccd89-848b-4793-8941-9fa3314d9c09",
       name: "TwoWayHEdge",
@@ -23499,12 +23499,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7720,
-        y: 960,
+        x: 8300,
+        y: 3020,
       },
       end: {
-        x: 7720,
-        y: 760,
+        x: 8300,
+        y: 2820,
       },
       id: "a1183be7-e61f-44c4-b143-45d8484e7f79",
       name: "TwoWayVEdge",
@@ -23513,12 +23513,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7720,
-        y: 760,
+        x: 8300,
+        y: 2820,
       },
       end: {
-        x: 7960,
-        y: 760,
+        x: 8540,
+        y: 2820,
       },
       id: "a46a9c0c-c52f-4e74-951d-27fa778c7326",
       name: "TwoWayHEdge",
@@ -23527,12 +23527,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7960,
-        y: 760,
+        x: 8540,
+        y: 2820,
       },
       end: {
-        x: 8180,
-        y: 760,
+        x: 8760,
+        y: 2820,
       },
       id: "7c6156fe-05ff-46fe-a9f9-e9450c19ebbd",
       name: "TwoWayHEdge",
@@ -23541,12 +23541,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8180,
-        y: 760,
+        x: 8760,
+        y: 2820,
       },
       end: {
-        x: 8180,
-        y: 960,
+        x: 8760,
+        y: 3020,
       },
       id: "72f0645b-8798-4001-8ddd-32fe249a10ad",
       name: "TwoWayVEdge",
@@ -23555,12 +23555,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8180,
-        y: 960,
+        x: 8760,
+        y: 3020,
       },
       end: {
-        x: 7960,
-        y: 960,
+        x: 8540,
+        y: 3020,
       },
       id: "8e7d631d-0a5b-4286-8c9e-5ceb4b037df6",
       name: "TwoWayHEdge",
@@ -23569,12 +23569,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7960,
-        y: 960,
+        x: 8540,
+        y: 3020,
       },
       end: {
-        x: 7960,
-        y: 1280,
+        x: 8540,
+        y: 3340,
       },
       id: "2e6c5689-39b6-48c3-8121-63b52c7de74e",
       name: "TwoWayVEdge",
@@ -23583,12 +23583,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7960,
-        y: 1280,
+        x: 8540,
+        y: 3340,
       },
       end: {
-        x: 8180,
-        y: 1280,
+        x: 8760,
+        y: 3340,
       },
       id: "a42ad9f1-575c-4968-97f0-575aff9ae29b",
       name: "TwoWayHEdge",
@@ -23597,12 +23597,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8180,
-        y: 960,
+        x: 8760,
+        y: 3020,
       },
       end: {
-        x: 8180,
-        y: 1120,
+        x: 8760,
+        y: 3180,
       },
       id: "d5e8117b-f1d9-466e-bd9d-47226ce3b65e",
       name: "TwoWayVEdge",
@@ -23611,12 +23611,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8180,
-        y: 1120,
+        x: 8760,
+        y: 3180,
       },
       end: {
-        x: 8180,
-        y: 1280,
+        x: 8760,
+        y: 3340,
       },
       id: "1ceeffde-ef7a-4e1f-b9c3-b116dc89036b",
       name: "TwoWayVEdge",
@@ -23625,12 +23625,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8180,
-        y: 1280,
+        x: 8760,
+        y: 3340,
       },
       end: {
-        x: 8400,
-        y: 1280,
+        x: 8980,
+        y: 3340,
       },
       id: "da58876a-ebc7-4e31-ae0e-2b6b9cca0178",
       name: "TwoWayHEdge",
@@ -23639,12 +23639,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8400,
-        y: 1280,
+        x: 8980,
+        y: 3340,
       },
       end: {
-        x: 8600,
-        y: 1280,
+        x: 9180,
+        y: 3340,
       },
       id: "1d12dac1-538f-4c18-84ec-72adb22de4a4",
       name: "TwoWayHEdge",
@@ -23653,12 +23653,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8600,
-        y: 1280,
+        x: 9180,
+        y: 3340,
       },
       end: {
-        x: 8820,
-        y: 1280,
+        x: 9400,
+        y: 3340,
       },
       id: "0d0c34e3-8e9a-4479-9060-252e1e9d9306",
       name: "TwoWayHEdge",
@@ -23667,12 +23667,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8820,
-        y: 1280,
+        x: 9400,
+        y: 3340,
       },
       end: {
-        x: 8860,
-        y: 1100,
+        x: 9440,
+        y: 3160,
       },
       id: "3520ee99-fd37-4dd3-aa1e-061b6767a1b8",
       name: "TwoWayVEdge",
@@ -23681,12 +23681,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8820,
-        y: 1280,
+        x: 9400,
+        y: 3340,
       },
       end: {
-        x: 8840,
-        y: 1480,
+        x: 9420,
+        y: 3540,
       },
       id: "7dcf8f21-c6b2-46a0-bf72-c3cae1c74f52",
       name: "TwoWayVEdge",
@@ -23695,12 +23695,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8860,
-        y: 1100,
+        x: 9440,
+        y: 3160,
       },
       end: {
-        x: 9060,
-        y: 1100,
+        x: 9640,
+        y: 3160,
       },
       id: "5980dd13-450e-4e65-ba74-eaea5969609c",
       name: "TwoWayHEdge",
@@ -23709,12 +23709,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9060,
-        y: 1100,
+        x: 9640,
+        y: 3160,
       },
       end: {
-        x: 9060,
-        y: 820,
+        x: 9640,
+        y: 2880,
       },
       id: "136e9eb7-1007-4c88-a366-29d73f2dc944",
       name: "OneWayVEdge",
@@ -23723,12 +23723,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8840,
-        y: 1480,
+        x: 9420,
+        y: 3540,
       },
       end: {
-        x: 9080,
-        y: 1480,
+        x: 9660,
+        y: 3540,
       },
       id: "be549ca9-9b97-4b78-945a-9f26dd2248a8",
       name: "TwoWayHEdge",
@@ -23737,12 +23737,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9060,
-        y: 1100,
+        x: 9640,
+        y: 3160,
       },
       end: {
-        x: 9240,
-        y: 1100,
+        x: 9820,
+        y: 3160,
       },
       id: "24506256-e39c-4225-8949-e70053370a77",
       name: "TwoWayHEdge",
@@ -23751,12 +23751,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9240,
-        y: 1100,
+        x: 9820,
+        y: 3160,
       },
       end: {
-        x: 9440,
-        y: 1100,
+        x: 10020,
+        y: 3160,
       },
       id: "817583e0-1d55-475f-9f6b-6e37e352928f",
       name: "TwoWayHEdge",
@@ -23765,12 +23765,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9440,
-        y: 1100,
+        x: 10020,
+        y: 3160,
       },
       end: {
-        x: 9640,
-        y: 1100,
+        x: 10220,
+        y: 3160,
       },
       id: "e63953f7-e788-45c3-bda6-400129e72384",
       name: "TwoWayHEdge",
@@ -23779,12 +23779,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9640,
-        y: 1100,
+        x: 10220,
+        y: 3160,
       },
       end: {
-        x: 9640,
-        y: 1280,
+        x: 10220,
+        y: 3340,
       },
       id: "b6548525-8645-4d01-b99f-f6beb7d7b233",
       name: "TwoWayVEdge",
@@ -23793,12 +23793,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9640,
-        y: 1280,
+        x: 10220,
+        y: 3340,
       },
       end: {
-        x: 9240,
-        y: 1280,
+        x: 9820,
+        y: 3340,
       },
       id: "71e75b15-b9f6-49b8-80a3-8ec18e441277",
       name: "TwoWayHEdge",
@@ -23807,12 +23807,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9240,
-        y: 1280,
+        x: 9820,
+        y: 3340,
       },
       end: {
-        x: 9240,
-        y: 1100,
+        x: 9820,
+        y: 3160,
       },
       id: "191659a1-87a5-4260-8aa7-5e527bae6f90",
       name: "TwoWayVEdge",
@@ -23821,12 +23821,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9080,
-        y: 1480,
+        x: 9660,
+        y: 3540,
       },
       end: {
-        x: 9080,
-        y: 1640,
+        x: 9660,
+        y: 3700,
       },
       id: "f1122707-ede6-4144-9de0-132a93d878c7",
       name: "TwoWayVEdge",
@@ -23835,12 +23835,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9080,
-        y: 1640,
+        x: 9660,
+        y: 3700,
       },
       end: {
-        x: 9300,
-        y: 1640,
+        x: 9880,
+        y: 3700,
       },
       id: "8f6f69c1-5920-4e28-93e2-06fc53aa7718",
       name: "TwoWayHEdge",
@@ -23849,12 +23849,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9640,
-        y: 1100,
+        x: 10220,
+        y: 3160,
       },
       end: {
-        x: 9820,
-        y: 1100,
+        x: 10400,
+        y: 3160,
       },
       id: "6e983c8a-ab98-4f6c-8121-50c7f929cefa",
       name: "TwoWayHEdge",
@@ -23863,12 +23863,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9640,
-        y: 1280,
+        x: 10220,
+        y: 3340,
       },
       end: {
-        x: 9640,
-        y: 1440,
+        x: 10220,
+        y: 3500,
       },
       id: "f0204263-9751-44b7-9de5-3adbf592efe8",
       name: "TwoWayVEdge",
@@ -23877,12 +23877,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9640,
-        y: 1440,
+        x: 10220,
+        y: 3500,
       },
       end: {
-        x: 9820,
-        y: 1440,
+        x: 10400,
+        y: 3500,
       },
       id: "a0cbce1a-9e7f-49b7-8445-8759f4f28a16",
       name: "TwoWayHEdge",
@@ -23891,12 +23891,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9820,
-        y: 1440,
+        x: 10400,
+        y: 3500,
       },
       end: {
-        x: 9820,
-        y: 1100,
+        x: 10400,
+        y: 3160,
       },
       id: "003784f7-4a15-47cf-a5a8-a8e7e78516eb",
       name: "TwoWayVEdge",
@@ -23905,12 +23905,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9300,
-        y: 1640,
+        x: 9880,
+        y: 3700,
       },
       end: {
-        x: 9300,
-        y: 1820,
+        x: 9880,
+        y: 3880,
       },
       id: "8f0003c0-cd0a-4f11-a26e-cb87baaa21d7",
       name: "TwoWayVEdge",
@@ -23919,12 +23919,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9300,
-        y: 1820,
+        x: 9880,
+        y: 3880,
       },
       end: {
-        x: 9540,
-        y: 1820,
+        x: 10120,
+        y: 3880,
       },
       id: "9b27254f-58f6-4bec-9b2b-f7832beb206b",
       name: "TwoWayHEdge",
@@ -23933,12 +23933,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9540,
-        y: 1820,
+        x: 10120,
+        y: 3880,
       },
       end: {
-        x: 9800,
-        y: 1820,
+        x: 10380,
+        y: 3880,
       },
       id: "87756014-b2ca-4c02-9229-7e4a290bffe2",
       name: "TwoWayHEdge",
@@ -23947,12 +23947,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9820,
-        y: 1440,
+        x: 10400,
+        y: 3500,
       },
       end: {
-        x: 10020,
-        y: 1440,
+        x: 10600,
+        y: 3500,
       },
       id: "c7f9dba7-5b65-42fa-af09-d9fa66f081e7",
       name: "TwoWayHEdge",
@@ -23961,12 +23961,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10020,
-        y: 1440,
+        x: 10600,
+        y: 3500,
       },
       end: {
-        x: 10020,
-        y: 1820,
+        x: 10600,
+        y: 3880,
       },
       id: "666dcee8-4710-420b-b4a9-9c2902800268",
       name: "TwoWayVEdge",
@@ -23975,12 +23975,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10020,
-        y: 1820,
+        x: 10600,
+        y: 3880,
       },
       end: {
-        x: 9800,
-        y: 1820,
+        x: 10380,
+        y: 3880,
       },
       id: "a6174a41-3e72-432a-aa43-e65450a97169",
       name: "TwoWayHEdge",
@@ -23989,12 +23989,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9300,
-        y: 1820,
+        x: 9880,
+        y: 3880,
       },
       end: {
-        x: 9080,
-        y: 1820,
+        x: 9660,
+        y: 3880,
       },
       id: "23ff1a1b-786c-4dcc-a023-97abd073b78d",
       name: "TwoWayHEdge",
@@ -24003,12 +24003,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9080,
-        y: 1820,
+        x: 9660,
+        y: 3880,
       },
       end: {
-        x: 8860,
-        y: 1820,
+        x: 9440,
+        y: 3880,
       },
       id: "2031f8d1-edc8-4545-a43f-1bda6aebea5a",
       name: "TwoWayHEdge",
@@ -24017,12 +24017,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10020,
-        y: 1440,
+        x: 10600,
+        y: 3500,
       },
       end: {
-        x: 10220,
-        y: 1440,
+        x: 10800,
+        y: 3500,
       },
       id: "c8c552d3-ff00-4ce9-ba27-a53cdb4a8479",
       name: "TwoWayHEdge",
@@ -24031,12 +24031,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10220,
-        y: 1440,
+        x: 10800,
+        y: 3500,
       },
       end: {
-        x: 10420,
-        y: 1440,
+        x: 11000,
+        y: 3500,
       },
       id: "45e70d52-af99-4cdc-9328-4583282109cd",
       name: "TwoWayHEdge",
@@ -24045,12 +24045,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10420,
-        y: 1440,
+        x: 11000,
+        y: 3500,
       },
       end: {
-        x: 10420,
-        y: 1260,
+        x: 11000,
+        y: 3320,
       },
       id: "5e24dbb9-bb68-41c7-9239-f833ccbce0f5",
       name: "TwoWayVEdge",
@@ -24059,12 +24059,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10420,
-        y: 1260,
+        x: 11000,
+        y: 3320,
       },
       end: {
-        x: 10420,
-        y: 1080,
+        x: 11000,
+        y: 3140,
       },
       id: "e340aea6-3753-4ca7-926a-dbd6f86f53ef",
       name: "TwoWayVEdge",
@@ -24073,12 +24073,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10420,
-        y: 1080,
+        x: 11000,
+        y: 3140,
       },
       end: {
-        x: 10640,
-        y: 1080,
+        x: 11220,
+        y: 3140,
       },
       id: "e6d996d4-f001-49f5-956b-a84568ff4f81",
       name: "TwoWayHEdge",
@@ -24087,12 +24087,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10640,
-        y: 1080,
+        x: 11220,
+        y: 3140,
       },
       end: {
-        x: 10640,
-        y: 1440,
+        x: 11220,
+        y: 3500,
       },
       id: "7d679666-3406-402d-8462-f793102f937b",
       name: "TwoWayVEdge",
@@ -24101,12 +24101,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10640,
-        y: 1440,
+        x: 11220,
+        y: 3500,
       },
       end: {
-        x: 10420,
-        y: 1440,
+        x: 11000,
+        y: 3500,
       },
       id: "06e499bb-944a-410b-9b72-c94470857f0b",
       name: "TwoWayHEdge",
@@ -24115,12 +24115,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10640,
-        y: 1440,
+        x: 11220,
+        y: 3500,
       },
       end: {
-        x: 10640,
-        y: 1740,
+        x: 11220,
+        y: 3800,
       },
       id: "904891db-c07d-438f-bd3e-37852d57027c",
       name: "TwoWayVEdge",
@@ -24129,12 +24129,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10640,
-        y: 1440,
+        x: 11220,
+        y: 3500,
       },
       end: {
-        x: 10840,
-        y: 1440,
+        x: 11420,
+        y: 3500,
       },
       id: "70034040-bed3-47e7-99b7-1cd0a1143d68",
       name: "TwoWayHEdge",
@@ -24143,12 +24143,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10840,
-        y: 1440,
+        x: 11420,
+        y: 3500,
       },
       end: {
-        x: 10840,
-        y: 1580,
+        x: 11420,
+        y: 3640,
       },
       id: "3a9e3185-6e0f-4814-b82d-66d2e985e249",
       name: "TwoWayVEdge",
@@ -24157,12 +24157,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10840,
-        y: 1580,
+        x: 11420,
+        y: 3640,
       },
       end: {
-        x: 10840,
-        y: 1740,
+        x: 11420,
+        y: 3800,
       },
       id: "12e2c26f-fa20-4a61-95b5-b539d5998d1d",
       name: "TwoWayVEdge",
@@ -24171,12 +24171,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10640,
-        y: 1740,
+        x: 11220,
+        y: 3800,
       },
       end: {
-        x: 10840,
-        y: 1740,
+        x: 11420,
+        y: 3800,
       },
       id: "1d29a7d4-6a5f-4d82-87e2-22657030e01e",
       name: "TwoWayHEdge",
@@ -24185,12 +24185,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10640,
-        y: 1740,
+        x: 11220,
+        y: 3800,
       },
       end: {
-        x: 10380,
-        y: 1740,
+        x: 10960,
+        y: 3800,
       },
       id: "9f61731f-99d2-4d8e-8e1f-9f0066d5651f",
       name: "TwoWayHEdge",
@@ -24199,12 +24199,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10380,
-        y: 1740,
+        x: 10960,
+        y: 3800,
       },
       end: {
-        x: 10380,
-        y: 2060,
+        x: 10960,
+        y: 4120,
       },
       id: "1e391606-cce9-4968-a683-fea3530a0937",
       name: "TwoWayVEdge",
@@ -24213,12 +24213,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10020,
-        y: 1820,
+        x: 10600,
+        y: 3880,
       },
       end: {
-        x: 10240,
-        y: 1820,
+        x: 10820,
+        y: 3880,
       },
       id: "ddcc2c8d-75a8-4e72-917d-412888424d9e",
       name: "TwoWayHEdge",
@@ -24227,12 +24227,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10240,
-        y: 1820,
+        x: 10820,
+        y: 3880,
       },
       end: {
-        x: 10240,
-        y: 2000,
+        x: 10820,
+        y: 4060,
       },
       id: "1b48f842-071e-4872-bc5e-159aba8bdff8",
       name: "TwoWayVEdge",
@@ -24241,12 +24241,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9800,
-        y: 1820,
+        x: 10380,
+        y: 3880,
       },
       end: {
-        x: 9800,
-        y: 2000,
+        x: 10380,
+        y: 4060,
       },
       id: "53b9f606-2e60-40d5-9473-65eafbdbce41",
       name: "TwoWayVEdge",
@@ -24255,12 +24255,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9800,
-        y: 2000,
+        x: 10380,
+        y: 4060,
       },
       end: {
-        x: 10240,
-        y: 2000,
+        x: 10820,
+        y: 4060,
       },
       id: "7785d008-0029-48af-ad21-ed7c6cf72e2d",
       name: "TwoWayHEdge",
@@ -24269,12 +24269,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10240,
-        y: 2000,
+        x: 10820,
+        y: 4060,
       },
       end: {
-        x: 10240,
-        y: 2240,
+        x: 10820,
+        y: 4300,
       },
       id: "be830994-31a9-4dd3-b34a-180cb7830d6b",
       name: "TwoWayVEdge",
@@ -24283,12 +24283,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10240,
-        y: 2240,
+        x: 10820,
+        y: 4300,
       },
       end: {
-        x: 10400,
-        y: 2240,
+        x: 10980,
+        y: 4300,
       },
       id: "2b0ee85a-4ecf-4825-8492-dcb8db9d3569",
       name: "TwoWayHEdge",
@@ -24297,12 +24297,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10400,
-        y: 2240,
+        x: 10980,
+        y: 4300,
       },
       end: {
-        x: 10580,
-        y: 2240,
+        x: 11160,
+        y: 4300,
       },
       id: "54e4d670-38eb-483f-b99e-b034a29e2939",
       name: "TwoWayHEdge",
@@ -24311,12 +24311,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10380,
-        y: 2060,
+        x: 10960,
+        y: 4120,
       },
       end: {
-        x: 10580,
-        y: 2060,
+        x: 11160,
+        y: 4120,
       },
       id: "733f88d3-0450-4ece-a838-d0b0a3285068",
       name: "TwoWayHEdge",
@@ -24325,12 +24325,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10580,
-        y: 2060,
+        x: 11160,
+        y: 4120,
       },
       end: {
-        x: 10580,
-        y: 2240,
+        x: 11160,
+        y: 4300,
       },
       id: "2b305037-823b-4024-b247-9dc724a32b71",
       name: "TwoWayVEdge",
@@ -24339,12 +24339,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9060,
-        y: 820,
+        x: 9640,
+        y: 2880,
       },
       end: {
-        x: 9140,
-        y: 220,
+        x: 9720,
+        y: 2280,
       },
       id: "c74ac970-1ae7-42fb-a4c9-139b14be8041",
       name: "TwoWayVEdge",
@@ -24353,12 +24353,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9140,
-        y: 220,
+        x: 9720,
+        y: 2280,
       },
       end: {
-        x: 9380,
-        y: 220,
+        x: 9960,
+        y: 2280,
       },
       id: "836c63c6-57dc-440c-9d6b-7d224bcfc839",
       name: "TwoWayHEdge",
@@ -24367,12 +24367,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9380,
-        y: 220,
+        x: 9960,
+        y: 2280,
       },
       end: {
-        x: 9640,
-        y: 220,
+        x: 10220,
+        y: 2280,
       },
       id: "e31d387c-0bb6-445e-a2bc-5e0308b3ddf6",
       name: "TwoWayHEdge",
@@ -24381,12 +24381,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9640,
-        y: 220,
+        x: 10220,
+        y: 2280,
       },
       end: {
-        x: 9880,
-        y: 220,
+        x: 10460,
+        y: 2280,
       },
       id: "9ae4704f-6740-4221-8266-73311911bfad",
       name: "TwoWayHEdge",
@@ -24395,12 +24395,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9880,
-        y: 220,
+        x: 10460,
+        y: 2280,
       },
       end: {
-        x: 10120,
-        y: 220,
+        x: 10700,
+        y: 2280,
       },
       id: "37c2b385-4c25-42d3-9e78-6478b9735839",
       name: "TwoWayHEdge",
@@ -24409,12 +24409,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10120,
-        y: 220,
+        x: 10700,
+        y: 2280,
       },
       end: {
-        x: 10120,
-        y: 460,
+        x: 10700,
+        y: 2520,
       },
       id: "ce7329b1-6843-40a3-af0a-1503118f6c5c",
       name: "TwoWayVEdge",
@@ -24423,12 +24423,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10120,
-        y: 460,
+        x: 10700,
+        y: 2520,
       },
       end: {
-        x: 10420,
-        y: 460,
+        x: 11000,
+        y: 2520,
       },
       id: "f1c93acd-8de6-4f0c-a09c-574235a6d9bf",
       name: "TwoWayHEdge",
@@ -24437,12 +24437,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10420,
-        y: 460,
+        x: 11000,
+        y: 2520,
       },
       end: {
-        x: 10420,
-        y: 680,
+        x: 11000,
+        y: 2740,
       },
       id: "85d811de-90e9-4dff-84b1-af7389fd1b91",
       name: "TwoWayVEdge",
@@ -24451,12 +24451,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10420,
-        y: 680,
+        x: 11000,
+        y: 2740,
       },
       end: {
-        x: 10420,
-        y: 860,
+        x: 11000,
+        y: 2920,
       },
       id: "8b3defdd-708e-438a-9392-803d3fcafdaa",
       name: "TwoWayVEdge",
@@ -24465,12 +24465,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10420,
-        y: 860,
+        x: 11000,
+        y: 2920,
       },
       end: {
-        x: 10420,
-        y: 1080,
+        x: 11000,
+        y: 3140,
       },
       id: "97b91a6c-3c4b-47f1-80f9-06cf3877f3ca",
       name: "OneWayVEdge",
@@ -24479,12 +24479,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9300,
-        y: 1820,
+        x: 9880,
+        y: 3880,
       },
       end: {
-        x: 9300,
-        y: 2000,
+        x: 9880,
+        y: 4060,
       },
       id: "78105b3a-4e87-41ee-8e96-6cd40435f3f6",
       name: "TwoWayVEdge",
@@ -24493,12 +24493,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9300,
-        y: 2000,
+        x: 9880,
+        y: 4060,
       },
       end: {
-        x: 9300,
-        y: 2180,
+        x: 9880,
+        y: 4240,
       },
       id: "10456d81-16c7-48bd-bd4a-a00fd95707ea",
       name: "TwoWayVEdge",
@@ -24507,12 +24507,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9300,
-        y: 2180,
+        x: 9880,
+        y: 4240,
       },
       end: {
-        x: 9300,
-        y: 2360,
+        x: 9880,
+        y: 4420,
       },
       id: "c2c152a6-de8b-497c-89ae-80b3e57ca3ff",
       name: "TwoWayVEdge",
@@ -24521,12 +24521,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9800,
-        y: 2000,
+        x: 10380,
+        y: 4060,
       },
       end: {
-        x: 9800,
-        y: 2320,
+        x: 10380,
+        y: 4380,
       },
       id: "e149f9b9-e065-4695-9311-28135ec5197f",
       name: "TwoWayVEdge",
@@ -24535,12 +24535,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9300,
-        y: 2360,
+        x: 9880,
+        y: 4420,
       },
       end: {
-        x: 9500,
-        y: 2400,
+        x: 10080,
+        y: 4460,
       },
       id: "7f965706-22a0-491b-8347-fc0c4257c082",
       name: "TwoWayHEdge",
@@ -24549,12 +24549,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9800,
-        y: 2320,
+        x: 10380,
+        y: 4380,
       },
       end: {
-        x: 10060,
-        y: 2340,
+        x: 10640,
+        y: 4400,
       },
       id: "68ab9ae2-0f24-43d7-8f21-d791103d9f18",
       name: "TwoWayHEdge",
@@ -24563,12 +24563,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10060,
-        y: 2340,
+        x: 10640,
+        y: 4400,
       },
       end: {
-        x: 10060,
-        y: 2580,
+        x: 10640,
+        y: 4640,
       },
       id: "989e28f3-91b0-49ee-84dd-5b364b51a64c",
       name: "TwoWayVEdge",
@@ -24577,12 +24577,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9500,
-        y: 2400,
+        x: 10080,
+        y: 4460,
       },
       end: {
-        x: 9500,
-        y: 2580,
+        x: 10080,
+        y: 4640,
       },
       id: "fc661176-e010-4a62-a829-e7a18f03bb03",
       name: "TwoWayVEdge",
@@ -24591,12 +24591,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9500,
-        y: 2580,
+        x: 10080,
+        y: 4640,
       },
       end: {
-        x: 9480,
-        y: 2760,
+        x: 10060,
+        y: 4820,
       },
       id: "e9476f89-4939-4b2c-b202-a1740fe9fb8e",
       name: "TwoWayVEdge",
@@ -24605,12 +24605,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9480,
-        y: 2760,
+        x: 10060,
+        y: 4820,
       },
       end: {
-        x: 9760,
-        y: 2760,
+        x: 10340,
+        y: 4820,
       },
       id: "94f2e822-cf08-4408-bc8d-70de5ec523a0",
       name: "TwoWayHEdge",
@@ -24619,12 +24619,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9760,
-        y: 2760,
+        x: 10340,
+        y: 4820,
       },
       end: {
-        x: 10080,
-        y: 2760,
+        x: 10660,
+        y: 4820,
       },
       id: "5327c0ef-c4f3-4508-84ee-ea3c24aafa5d",
       name: "TwoWayHEdge",
@@ -24633,12 +24633,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10060,
-        y: 2580,
+        x: 10640,
+        y: 4640,
       },
       end: {
-        x: 10280,
-        y: 2580,
+        x: 10860,
+        y: 4640,
       },
       id: "2c35a80f-3e24-41e3-8632-65435c8629a9",
       name: "TwoWayHEdge",
@@ -24647,12 +24647,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10280,
-        y: 2580,
+        x: 10860,
+        y: 4640,
       },
       end: {
-        x: 10280,
-        y: 2960,
+        x: 10860,
+        y: 5020,
       },
       id: "ca01d1c5-a859-48c8-961b-c7e34cea7e10",
       name: "TwoWayVEdge",
@@ -24661,12 +24661,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10280,
-        y: 2580,
+        x: 10860,
+        y: 4640,
       },
       end: {
-        x: 10480,
-        y: 2580,
+        x: 11060,
+        y: 4640,
       },
       id: "c22732fd-a811-48df-b270-29ef8cbb4870",
       name: "TwoWayHEdge",
@@ -24675,12 +24675,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10480,
-        y: 2580,
+        x: 11060,
+        y: 4640,
       },
       end: {
-        x: 10480,
-        y: 2760,
+        x: 11060,
+        y: 4820,
       },
       id: "2a41f89f-9d67-4d99-b821-0c6f7d86737d",
       name: "TwoWayVEdge",
@@ -24689,12 +24689,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10480,
-        y: 2760,
+        x: 11060,
+        y: 4820,
       },
       end: {
-        x: 10480,
-        y: 2960,
+        x: 11060,
+        y: 5020,
       },
       id: "f3e069c9-5f24-4d8c-a6d2-89adc841dbbd",
       name: "TwoWayVEdge",
@@ -24703,12 +24703,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10280,
-        y: 2960,
+        x: 10860,
+        y: 5020,
       },
       end: {
-        x: 10480,
-        y: 2960,
+        x: 11060,
+        y: 5020,
       },
       id: "ecf8bb9b-3409-4ad9-a20f-f8b15201f5c8",
       name: "TwoWayHEdge",
@@ -24717,12 +24717,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10480,
-        y: 2580,
+        x: 11060,
+        y: 4640,
       },
       end: {
-        x: 10780,
-        y: 2600,
+        x: 11360,
+        y: 4660,
       },
       id: "887f2d12-82aa-417a-8c80-9284292cdd4e",
       name: "TwoWayHEdge",
@@ -24731,12 +24731,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10780,
-        y: 2600,
+        x: 11360,
+        y: 4660,
       },
       end: {
-        x: 10760,
-        y: 2420,
+        x: 11340,
+        y: 4480,
       },
       id: "77be5133-e1e9-49b1-ad7c-44027dd86748",
       name: "TwoWayVEdge",
@@ -24745,12 +24745,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10760,
-        y: 2420,
+        x: 11340,
+        y: 4480,
       },
       end: {
-        x: 10800,
-        y: 2240,
+        x: 11380,
+        y: 4300,
       },
       id: "f0f17e11-a3f1-4f43-b1df-d0a234aa8dbf",
       name: "TwoWayVEdge",
@@ -24759,12 +24759,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10840,
-        y: 1580,
+        x: 11420,
+        y: 3640,
       },
       end: {
-        x: 11200,
-        y: 1580,
+        x: 11780,
+        y: 3640,
       },
       id: "f5681914-1128-4553-90d6-32181d4f885d",
       name: "TwoWayHEdge",
@@ -24773,12 +24773,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10840,
-        y: 1740,
+        x: 11420,
+        y: 3800,
       },
       end: {
-        x: 11020,
-        y: 1740,
+        x: 11600,
+        y: 3800,
       },
       id: "c074be00-a500-43b1-bcba-320969a35f96",
       name: "TwoWayHEdge",
@@ -24787,12 +24787,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11020,
-        y: 1740,
+        x: 11600,
+        y: 3800,
       },
       end: {
-        x: 11000,
-        y: 1900,
+        x: 11580,
+        y: 3960,
       },
       id: "995b55db-fdd7-4ac7-b7bf-f39b62f218ab",
       name: "TwoWayVEdge",
@@ -24801,12 +24801,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11000,
-        y: 1900,
+        x: 11580,
+        y: 3960,
       },
       end: {
-        x: 11180,
-        y: 1880,
+        x: 11760,
+        y: 3940,
       },
       id: "cefe9add-9d4f-4aec-871b-499ac589c30f",
       name: "TwoWayHEdge",
@@ -24815,12 +24815,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11200,
-        y: 1580,
+        x: 11780,
+        y: 3640,
       },
       end: {
-        x: 11200,
-        y: 1440,
+        x: 11780,
+        y: 3500,
       },
       id: "4029b057-9a89-4e52-ad0d-e0f7cd14bb18",
       name: "TwoWayVEdge",
@@ -24829,12 +24829,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11200,
-        y: 1440,
+        x: 11780,
+        y: 3500,
       },
       end: {
-        x: 11340,
-        y: 1440,
+        x: 11920,
+        y: 3500,
       },
       id: "9a4a6b8e-9bf4-451b-8b9a-301e67b7092b",
       name: "TwoWayHEdge",
@@ -24843,12 +24843,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11340,
-        y: 1440,
+        x: 11920,
+        y: 3500,
       },
       end: {
-        x: 11340,
-        y: 1620,
+        x: 11920,
+        y: 3680,
       },
       id: "5a88debb-bd6a-430c-b864-fd7c4500da29",
       name: "TwoWayVEdge",
@@ -24857,12 +24857,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11340,
-        y: 1440,
+        x: 11920,
+        y: 3500,
       },
       end: {
-        x: 11340,
-        y: 1260,
+        x: 11920,
+        y: 3320,
       },
       id: "a41ef1b4-846f-49b8-a12e-d3823db0e575",
       name: "TwoWayVEdge",
@@ -24871,12 +24871,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11340,
-        y: 1620,
+        x: 11920,
+        y: 3680,
       },
       end: {
-        x: 11540,
-        y: 1600,
+        x: 12120,
+        y: 3660,
       },
       id: "eb4a3d58-1fcd-496c-8aac-e3c3baf56464",
       name: "TwoWayHEdge",
@@ -24885,12 +24885,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11540,
-        y: 1600,
+        x: 12120,
+        y: 3660,
       },
       end: {
-        x: 11540,
-        y: 1260,
+        x: 12120,
+        y: 3320,
       },
       id: "f061dce2-189a-4693-86b1-b334c0d0c71a",
       name: "TwoWayVEdge",
@@ -24899,12 +24899,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11340,
-        y: 1260,
+        x: 11920,
+        y: 3320,
       },
       end: {
-        x: 11540,
-        y: 1260,
+        x: 12120,
+        y: 3320,
       },
       id: "f5ab208e-a4cc-4e11-a9b4-fc9456338adf",
       name: "TwoWayHEdge",
@@ -24913,12 +24913,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11540,
-        y: 1600,
+        x: 12120,
+        y: 3660,
       },
       end: {
-        x: 11880,
-        y: 1620,
+        x: 12460,
+        y: 3680,
       },
       id: "1fe17f1f-63a1-484d-abc1-e6b117818b4b",
       name: "TwoWayHEdge",
@@ -24927,12 +24927,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 1620,
+        x: 12460,
+        y: 3680,
       },
       end: {
-        x: 12200,
-        y: 1620,
+        x: 12780,
+        y: 3680,
       },
       id: "d57e273e-54e9-4447-af29-d298eb3e4a7c",
       name: "TwoWayHEdge",
@@ -24941,12 +24941,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12200,
-        y: 1620,
+        x: 12780,
+        y: 3680,
       },
       end: {
-        x: 12420,
-        y: 1620,
+        x: 13000,
+        y: 3680,
       },
       id: "9e09f6dc-843d-4733-a655-cc326459fc80",
       name: "TwoWayHEdge",
@@ -24955,12 +24955,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12420,
-        y: 1620,
+        x: 13000,
+        y: 3680,
       },
       end: {
-        x: 12640,
-        y: 1620,
+        x: 13220,
+        y: 3680,
       },
       id: "71b51314-5650-490a-9c59-d6d05e57d814",
       name: "TwoWayHEdge",
@@ -24969,12 +24969,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12640,
-        y: 1620,
+        x: 13220,
+        y: 3680,
       },
       end: {
-        x: 12640,
-        y: 1780,
+        x: 13220,
+        y: 3840,
       },
       id: "6443085a-f818-40a4-a545-42e1e9202420",
       name: "TwoWayVEdge",
@@ -24983,12 +24983,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12640,
-        y: 1780,
+        x: 13220,
+        y: 3840,
       },
       end: {
-        x: 12200,
-        y: 1780,
+        x: 12780,
+        y: 3840,
       },
       id: "71fc14ab-a734-4cdd-882c-fd57a3b9ea0f",
       name: "TwoWayHEdge",
@@ -24997,12 +24997,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12200,
-        y: 1620,
+        x: 12780,
+        y: 3680,
       },
       end: {
-        x: 12200,
-        y: 1780,
+        x: 12780,
+        y: 3840,
       },
       id: "48367dbd-34fa-4594-99be-24c3d4d09a26",
       name: "TwoWayVEdge",
@@ -25011,12 +25011,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12200,
-        y: 1780,
+        x: 12780,
+        y: 3840,
       },
       end: {
-        x: 11980,
-        y: 1780,
+        x: 12560,
+        y: 3840,
       },
       id: "e70bf260-78ce-455a-9a1a-eaa1f66e5a8e",
       name: "TwoWayHEdge",
@@ -25025,12 +25025,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11980,
-        y: 1780,
+        x: 12560,
+        y: 3840,
       },
       end: {
-        x: 11980,
-        y: 2100,
+        x: 12560,
+        y: 4160,
       },
       id: "141368f2-9bb6-46b3-82ca-c90023152059",
       name: "TwoWayVEdge",
@@ -25039,12 +25039,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11980,
-        y: 2100,
+        x: 12560,
+        y: 4160,
       },
       end: {
-        x: 12200,
-        y: 2100,
+        x: 12780,
+        y: 4160,
       },
       id: "2bd74b8b-f116-4af7-8543-6bb64a8f88df",
       name: "TwoWayHEdge",
@@ -25053,12 +25053,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12200,
-        y: 1780,
+        x: 12780,
+        y: 3840,
       },
       end: {
-        x: 12200,
-        y: 1940,
+        x: 12780,
+        y: 4000,
       },
       id: "0f9125fe-7286-4159-b86a-390e99b4b968",
       name: "TwoWayVEdge",
@@ -25067,12 +25067,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12200,
-        y: 1940,
+        x: 12780,
+        y: 4000,
       },
       end: {
-        x: 12200,
-        y: 2100,
+        x: 12780,
+        y: 4160,
       },
       id: "415795a3-670a-4c40-bf9a-fb597cbf41b0",
       name: "TwoWayVEdge",
@@ -25081,12 +25081,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11980,
-        y: 2100,
+        x: 12560,
+        y: 4160,
       },
       end: {
-        x: 11580,
-        y: 2100,
+        x: 12160,
+        y: 4160,
       },
       id: "02541e22-8fd5-4d36-8a20-c20d14c5e57b",
       name: "TwoWayHEdge",
@@ -25095,12 +25095,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11580,
-        y: 2100,
+        x: 12160,
+        y: 4160,
       },
       end: {
-        x: 11240,
-        y: 2080,
+        x: 11820,
+        y: 4140,
       },
       id: "77fdf49c-0633-4b97-88d5-8cf8494acc0f",
       name: "TwoWayHEdge",
@@ -25109,12 +25109,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 2080,
+        x: 11820,
+        y: 4140,
       },
       end: {
-        x: 11240,
-        y: 2280,
+        x: 11820,
+        y: 4340,
       },
       id: "17fa937f-24e5-448b-ba7d-f66d7e4d7868",
       name: "TwoWayVEdge",
@@ -25123,12 +25123,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 2280,
+        x: 11820,
+        y: 4340,
       },
       end: {
-        x: 10980,
-        y: 2220,
+        x: 11560,
+        y: 4280,
       },
       id: "583e553b-18dd-4672-b687-e3df231310a8",
       name: "TwoWayHEdge",
@@ -25137,12 +25137,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 2280,
+        x: 11820,
+        y: 4340,
       },
       end: {
-        x: 11240,
-        y: 2460,
+        x: 11820,
+        y: 4520,
       },
       id: "90951e86-f166-4d50-bb6e-17f4dcccad2b",
       name: "TwoWayVEdge",
@@ -25151,12 +25151,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 2460,
+        x: 11820,
+        y: 4520,
       },
       end: {
-        x: 11440,
-        y: 2460,
+        x: 12020,
+        y: 4520,
       },
       id: "d7142db6-ee36-4ba7-8b18-4129654041f1",
       name: "TwoWayHEdge",
@@ -25165,12 +25165,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 2460,
+        x: 11820,
+        y: 4520,
       },
       end: {
-        x: 11240,
-        y: 2660,
+        x: 11820,
+        y: 4720,
       },
       id: "7ff6ae5c-c080-4b1c-a5d4-71937295876f",
       name: "TwoWayVEdge",
@@ -25179,12 +25179,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11440,
-        y: 2460,
+        x: 12020,
+        y: 4520,
       },
       end: {
-        x: 11440,
-        y: 2660,
+        x: 12020,
+        y: 4720,
       },
       id: "b6c0f51f-d53c-4660-95a6-769fdc17c263",
       name: "TwoWayVEdge",
@@ -25193,12 +25193,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11440,
-        y: 2660,
+        x: 12020,
+        y: 4720,
       },
       end: {
-        x: 11640,
-        y: 2660,
+        x: 12220,
+        y: 4720,
       },
       id: "814580d0-7c57-4156-8ff8-4ff3b18c5078",
       name: "TwoWayHEdge",
@@ -25207,12 +25207,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11980,
-        y: 2100,
+        x: 12560,
+        y: 4160,
       },
       end: {
-        x: 12020,
-        y: 2340,
+        x: 12600,
+        y: 4400,
       },
       id: "93cd97b6-11a3-4aba-8fc3-ce65d750c062",
       name: "TwoWayVEdge",
@@ -25221,12 +25221,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12020,
-        y: 2340,
+        x: 12600,
+        y: 4400,
       },
       end: {
-        x: 12040,
-        y: 2560,
+        x: 12620,
+        y: 4620,
       },
       id: "6f5e3a80-96df-45be-990c-527eb98a7b96",
       name: "TwoWayVEdge",
@@ -25235,12 +25235,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11640,
-        y: 2660,
+        x: 12220,
+        y: 4720,
       },
       end: {
-        x: 11640,
-        y: 2820,
+        x: 12220,
+        y: 4880,
       },
       id: "9c5738d1-ac8c-42c3-af82-603461350869",
       name: "TwoWayVEdge",
@@ -25249,12 +25249,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11640,
-        y: 2820,
+        x: 12220,
+        y: 4880,
       },
       end: {
-        x: 11880,
-        y: 2820,
+        x: 12460,
+        y: 4880,
       },
       id: "7c6b73af-53d6-4b46-a025-279db2569075",
       name: "TwoWayHEdge",
@@ -25263,12 +25263,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 2820,
+        x: 12460,
+        y: 4880,
       },
       end: {
-        x: 11880,
-        y: 3000,
+        x: 12460,
+        y: 5060,
       },
       id: "51d0a53b-75ee-4e5d-9a3b-8de1cce36c45",
       name: "TwoWayVEdge",
@@ -25277,12 +25277,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 3000,
+        x: 12460,
+        y: 5060,
       },
       end: {
-        x: 12100,
-        y: 3000,
+        x: 12680,
+        y: 5060,
       },
       id: "53b03e8d-c9b6-4df6-91ad-6bf7c552a577",
       name: "TwoWayHEdge",
@@ -25291,12 +25291,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12040,
-        y: 2560,
+        x: 12620,
+        y: 4620,
       },
       end: {
-        x: 12080,
-        y: 2780,
+        x: 12660,
+        y: 4840,
       },
       id: "72925a48-67b6-4b0d-bdf9-dc8feefac249",
       name: "TwoWayVEdge",
@@ -25305,12 +25305,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12080,
-        y: 2780,
+        x: 12660,
+        y: 4840,
       },
       end: {
-        x: 12100,
-        y: 3000,
+        x: 12680,
+        y: 5060,
       },
       id: "a93010d9-7686-450f-a1d2-490be221d912",
       name: "TwoWayVEdge",
@@ -25319,12 +25319,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 3000,
+        x: 12460,
+        y: 5060,
       },
       end: {
-        x: 11560,
-        y: 3000,
+        x: 12140,
+        y: 5060,
       },
       id: "baf617f9-a476-47e2-b754-f8ebada6fb13",
       name: "OneWayHEdge",
@@ -25333,12 +25333,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11560,
-        y: 3000,
+        x: 12140,
+        y: 5060,
       },
       end: {
-        x: 11240,
-        y: 3000,
+        x: 11820,
+        y: 5060,
       },
       id: "c650f796-7a65-4377-b99f-91fc4e5e20ff",
       name: "OneWayHEdge",
@@ -25347,12 +25347,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 3000,
+        x: 11820,
+        y: 5060,
       },
       end: {
-        x: 11240,
-        y: 2660,
+        x: 11820,
+        y: 4720,
       },
       id: "92da1e46-9c04-42b2-84dc-1454e56f8426",
       name: "OneWayVEdge",
@@ -25361,12 +25361,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 3000,
+        x: 11820,
+        y: 5060,
       },
       end: {
-        x: 11240,
-        y: 3240,
+        x: 11820,
+        y: 5300,
       },
       id: "8c2084ef-444e-4ac2-831f-aaafa18c5864",
       name: "OneWayVEdge",
@@ -25375,12 +25375,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 3000,
+        x: 12460,
+        y: 5060,
       },
       end: {
-        x: 11880,
-        y: 3220,
+        x: 12460,
+        y: 5280,
       },
       id: "6d8f68ea-9d5c-491b-b0a0-06eaccb969b5",
       name: "TwoWayVEdge",
@@ -25389,12 +25389,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 3220,
+        x: 12460,
+        y: 5280,
       },
       end: {
-        x: 11660,
-        y: 3220,
+        x: 12240,
+        y: 5280,
       },
       id: "a9787ff8-705a-4d1a-aa82-808696cdcf0b",
       name: "TwoWayHEdge",
@@ -25403,12 +25403,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11660,
-        y: 3220,
+        x: 12240,
+        y: 5280,
       },
       end: {
-        x: 11660,
-        y: 3380,
+        x: 12240,
+        y: 5440,
       },
       id: "f36c4fc5-f483-486f-9a87-07a13649ad95",
       name: "TwoWayVEdge",
@@ -25417,12 +25417,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11660,
-        y: 3380,
+        x: 12240,
+        y: 5440,
       },
       end: {
-        x: 11460,
-        y: 3380,
+        x: 12040,
+        y: 5440,
       },
       id: "d640f0e1-fc8b-449d-ad96-ab76086208bc",
       name: "TwoWayHEdge",
@@ -25431,12 +25431,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 3240,
+        x: 11820,
+        y: 5300,
       },
       end: {
-        x: 11240,
-        y: 3560,
+        x: 11820,
+        y: 5620,
       },
       id: "3026e039-62b5-4a07-995e-e1ae633e9ca3",
       name: "TwoWayVEdge",
@@ -25445,12 +25445,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11460,
-        y: 3380,
+        x: 12040,
+        y: 5440,
       },
       end: {
-        x: 11460,
-        y: 3560,
+        x: 12040,
+        y: 5620,
       },
       id: "3fe6f8ea-53d8-4935-9c97-c14a7dcf2588",
       name: "TwoWayVEdge",
@@ -25459,12 +25459,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11460,
-        y: 3560,
+        x: 12040,
+        y: 5620,
       },
       end: {
-        x: 11240,
-        y: 3560,
+        x: 11820,
+        y: 5620,
       },
       id: "88c570f2-7d39-4ec7-b4ae-da01bd69d637",
       name: "TwoWayHEdge",
@@ -25473,12 +25473,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 3560,
+        x: 11820,
+        y: 5620,
       },
       end: {
-        x: 10940,
-        y: 3560,
+        x: 11520,
+        y: 5620,
       },
       id: "a229f54c-75bc-4470-a687-1c818ce2e028",
       name: "TwoWayHEdge",
@@ -25487,12 +25487,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10480,
-        y: 2960,
+        x: 11060,
+        y: 5020,
       },
       end: {
-        x: 10480,
-        y: 3200,
+        x: 11060,
+        y: 5260,
       },
       id: "4a3fe16f-4efc-4e35-8e6c-b3a57f1b95a5",
       name: "TwoWayVEdge",
@@ -25501,12 +25501,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10480,
-        y: 3200,
+        x: 11060,
+        y: 5260,
       },
       end: {
-        x: 10700,
-        y: 3200,
+        x: 11280,
+        y: 5260,
       },
       id: "7382b234-a7ed-4b91-a7a2-a2903d026ebf",
       name: "TwoWayHEdge",
@@ -25515,12 +25515,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10700,
-        y: 3200,
+        x: 11280,
+        y: 5260,
       },
       end: {
-        x: 10700,
-        y: 3560,
+        x: 11280,
+        y: 5620,
       },
       id: "ed66a21e-0a20-46b4-8b73-1b030e636c49",
       name: "TwoWayVEdge",
@@ -25529,12 +25529,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10700,
-        y: 3560,
+        x: 11280,
+        y: 5620,
       },
       end: {
-        x: 10940,
-        y: 3560,
+        x: 11520,
+        y: 5620,
       },
       id: "8fe7f623-748d-4a2a-899f-a413f7657c27",
       name: "TwoWayHEdge",
@@ -25543,12 +25543,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9500,
-        y: 2580,
+        x: 10080,
+        y: 4640,
       },
       end: {
-        x: 9220,
-        y: 2580,
+        x: 9800,
+        y: 4640,
       },
       id: "2307e7e2-cd49-455a-a693-b4b608646d7f",
       name: "TwoWayHEdge",
@@ -25557,12 +25557,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9220,
-        y: 2580,
+        x: 9800,
+        y: 4640,
       },
       end: {
-        x: 9240,
-        y: 2760,
+        x: 9820,
+        y: 4820,
       },
       id: "9750ac20-d1e7-490f-9069-c64f47cb2a6a",
       name: "TwoWayVEdge",
@@ -25571,12 +25571,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9240,
-        y: 2760,
+        x: 9820,
+        y: 4820,
       },
       end: {
-        x: 9200,
-        y: 2960,
+        x: 9780,
+        y: 5020,
       },
       id: "5a31b214-c4a0-4b58-a300-bf931fca09f9",
       name: "TwoWayVEdge",
@@ -25585,12 +25585,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9200,
-        y: 2960,
+        x: 9780,
+        y: 5020,
       },
       end: {
-        x: 9240,
-        y: 3160,
+        x: 9820,
+        y: 5220,
       },
       id: "681d1529-1b7f-4b39-906d-dc033fd7714c",
       name: "TwoWayVEdge",
@@ -25599,12 +25599,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9240,
-        y: 3160,
+        x: 9820,
+        y: 5220,
       },
       end: {
-        x: 9020,
-        y: 3160,
+        x: 9600,
+        y: 5220,
       },
       id: "385b2b9e-27b5-4c82-bc40-13864fae0b43",
       name: "TwoWayHEdge",
@@ -25613,12 +25613,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9020,
-        y: 3160,
+        x: 9600,
+        y: 5220,
       },
       end: {
-        x: 9020,
-        y: 3520,
+        x: 9600,
+        y: 5580,
       },
       id: "437dfb0c-866a-4933-96d3-09ce144fecc6",
       name: "TwoWayVEdge",
@@ -25627,12 +25627,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9020,
-        y: 3520,
+        x: 9600,
+        y: 5580,
       },
       end: {
-        x: 9240,
-        y: 3520,
+        x: 9820,
+        y: 5580,
       },
       id: "f011c0e2-8411-4f57-87a1-c1e771fb45ce",
       name: "TwoWayHEdge",
@@ -25641,12 +25641,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9240,
-        y: 3520,
+        x: 9820,
+        y: 5580,
       },
       end: {
-        x: 9240,
-        y: 3340,
+        x: 9820,
+        y: 5400,
       },
       id: "2aca69e8-0d34-4d95-8433-3582654a0d14",
       name: "TwoWayVEdge",
@@ -25655,12 +25655,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9240,
-        y: 3340,
+        x: 9820,
+        y: 5400,
       },
       end: {
-        x: 9240,
-        y: 3160,
+        x: 9820,
+        y: 5220,
       },
       id: "0cb2581e-2ea0-4ae5-b299-5011f0c1e41e",
       name: "TwoWayVEdge",
@@ -25669,12 +25669,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9020,
-        y: 3520,
+        x: 9600,
+        y: 5580,
       },
       end: {
-        x: 8780,
-        y: 3520,
+        x: 9360,
+        y: 5580,
       },
       id: "55d42a0d-1ffa-4e43-9920-fd41f6811d59",
       name: "TwoWayHEdge",
@@ -25683,12 +25683,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8780,
-        y: 3520,
+        x: 9360,
+        y: 5580,
       },
       end: {
-        x: 8560,
-        y: 3520,
+        x: 9140,
+        y: 5580,
       },
       id: "b8335a40-92d6-4389-9415-a596fb8ecf97",
       name: "TwoWayHEdge",
@@ -25697,12 +25697,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8560,
-        y: 3520,
+        x: 9140,
+        y: 5580,
       },
       end: {
-        x: 8320,
-        y: 3520,
+        x: 8900,
+        y: 5580,
       },
       id: "ef3cdbc5-dd69-4f1e-bd39-703badd09f5b",
       name: "TwoWayHEdge",
@@ -25711,12 +25711,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 3560,
+        x: 11820,
+        y: 5620,
       },
       end: {
-        x: 11240,
-        y: 3980,
+        x: 11820,
+        y: 6040,
       },
       id: "8b27d224-1e59-4481-b1e1-129b0f42c3f7",
       name: "TwoWayVEdge",
@@ -25725,12 +25725,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 3980,
+        x: 11820,
+        y: 6040,
       },
       end: {
-        x: 11520,
-        y: 3980,
+        x: 12100,
+        y: 6040,
       },
       id: "2bad3aca-1465-44e1-969c-dd52a8899297",
       name: "TwoWayHEdge",
@@ -25739,12 +25739,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11520,
-        y: 3980,
+        x: 12100,
+        y: 6040,
       },
       end: {
-        x: 11720,
-        y: 3980,
+        x: 12300,
+        y: 6040,
       },
       id: "53ea955d-3a3d-4c1e-95b5-4b10b82bf0a5",
       name: "TwoWayHEdge",
@@ -25753,12 +25753,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11520,
-        y: 3980,
+        x: 12100,
+        y: 6040,
       },
       end: {
-        x: 11520,
-        y: 4160,
+        x: 12100,
+        y: 6220,
       },
       id: "45d9418b-0711-4e9a-a30c-b344db3c0d66",
       name: "TwoWayVEdge",
@@ -25767,12 +25767,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11520,
-        y: 4160,
+        x: 12100,
+        y: 6220,
       },
       end: {
-        x: 11520,
-        y: 4340,
+        x: 12100,
+        y: 6400,
       },
       id: "5a875e94-539d-41a3-a335-37bbac851cc4",
       name: "TwoWayVEdge",
@@ -25781,12 +25781,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11520,
-        y: 4340,
+        x: 12100,
+        y: 6400,
       },
       end: {
-        x: 11720,
-        y: 4340,
+        x: 12300,
+        y: 6400,
       },
       id: "caeca09b-b47d-493c-9648-01ef34d0f190",
       name: "TwoWayHEdge",
@@ -25795,12 +25795,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11720,
-        y: 3980,
+        x: 12300,
+        y: 6040,
       },
       end: {
-        x: 11720,
-        y: 4340,
+        x: 12300,
+        y: 6400,
       },
       id: "1670dbcf-4935-4e6f-ad4a-53714bbc61a4",
       name: "TwoWayVEdge",
@@ -25809,12 +25809,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11520,
-        y: 4340,
+        x: 12100,
+        y: 6400,
       },
       end: {
-        x: 11240,
-        y: 4340,
+        x: 11820,
+        y: 6400,
       },
       id: "180900be-27d8-41b8-b4cd-4cbc4b64f340",
       name: "TwoWayHEdge",
@@ -25823,12 +25823,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 4340,
+        x: 11820,
+        y: 6400,
       },
       end: {
-        x: 10840,
-        y: 4340,
+        x: 11420,
+        y: 6400,
       },
       id: "3ad6b553-ef16-4d44-bb40-4166ae54d261",
       name: "TwoWayHEdge",
@@ -25837,12 +25837,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10840,
-        y: 4340,
+        x: 11420,
+        y: 6400,
       },
       end: {
-        x: 10840,
-        y: 4520,
+        x: 11420,
+        y: 6580,
       },
       id: "f82b6f3f-c8bc-418a-8faa-a9b6a8bd14eb",
       name: "TwoWayVEdge",
@@ -25851,12 +25851,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10840,
-        y: 4520,
+        x: 11420,
+        y: 6580,
       },
       end: {
-        x: 11040,
-        y: 4500,
+        x: 11620,
+        y: 6560,
       },
       id: "8b5788fa-6db2-4c2a-aacf-46b919b313b8",
       name: "TwoWayHEdge",
@@ -25865,12 +25865,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11040,
-        y: 4500,
+        x: 11620,
+        y: 6560,
       },
       end: {
-        x: 11240,
-        y: 4520,
+        x: 11820,
+        y: 6580,
       },
       id: "a7a01cdd-4345-4c36-9f11-1c685d861e14",
       name: "TwoWayHEdge",
@@ -25879,12 +25879,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11240,
-        y: 4520,
+        x: 11820,
+        y: 6580,
       },
       end: {
-        x: 11240,
-        y: 4340,
+        x: 11820,
+        y: 6400,
       },
       id: "dbf43287-c5a0-4ccf-a062-0bf9b13dd295",
       name: "TwoWayVEdge",
@@ -25893,12 +25893,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11040,
-        y: 4500,
+        x: 11620,
+        y: 6560,
       },
       end: {
-        x: 11040,
-        y: 4660,
+        x: 11620,
+        y: 6720,
       },
       id: "18ccc355-645a-4b6f-b42d-94b75ccb3626",
       name: "TwoWayVEdge",
@@ -25907,12 +25907,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11040,
-        y: 4660,
+        x: 11620,
+        y: 6720,
       },
       end: {
-        x: 11040,
-        y: 4820,
+        x: 11620,
+        y: 6880,
       },
       id: "48f40798-57f3-40c1-a222-1ed036a448a6",
       name: "TwoWayVEdge",
@@ -25921,12 +25921,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11040,
-        y: 4820,
+        x: 11620,
+        y: 6880,
       },
       end: {
-        x: 11320,
-        y: 4820,
+        x: 11900,
+        y: 6880,
       },
       id: "e44e65f5-1c80-4870-87f8-e9a1d71ee1f1",
       name: "TwoWayHEdge",
@@ -25935,12 +25935,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11320,
-        y: 4820,
+        x: 11900,
+        y: 6880,
       },
       end: {
-        x: 11280,
-        y: 5000,
+        x: 11860,
+        y: 7060,
       },
       id: "90402844-d474-4cd0-8ee5-a881eef78dd7",
       name: "TwoWayVEdge",
@@ -25949,12 +25949,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11280,
-        y: 5000,
+        x: 11860,
+        y: 7060,
       },
       end: {
-        x: 11600,
-        y: 5000,
+        x: 12180,
+        y: 7060,
       },
       id: "de1a3f8c-214a-45c9-ae8b-7ec58ad414d8",
       name: "TwoWayHEdge",
@@ -25963,12 +25963,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11600,
-        y: 5000,
+        x: 12180,
+        y: 7060,
       },
       end: {
-        x: 11640,
-        y: 4820,
+        x: 12220,
+        y: 6880,
       },
       id: "d381a709-d143-48b8-b28c-915fc3d336ea",
       name: "TwoWayVEdge",
@@ -25977,12 +25977,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11640,
-        y: 4820,
+        x: 12220,
+        y: 6880,
       },
       end: {
-        x: 11920,
-        y: 4820,
+        x: 12500,
+        y: 6880,
       },
       id: "c45f6089-b95a-46d0-8309-318f612e7be2",
       name: "TwoWayHEdge",
@@ -25991,12 +25991,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11720,
-        y: 4340,
+        x: 12300,
+        y: 6400,
       },
       end: {
-        x: 11720,
-        y: 4500,
+        x: 12300,
+        y: 6560,
       },
       id: "767bc2ec-b62f-4225-addf-9dd46e355246",
       name: "TwoWayVEdge",
@@ -26005,12 +26005,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11720,
-        y: 4500,
+        x: 12300,
+        y: 6560,
       },
       end: {
-        x: 11920,
-        y: 4500,
+        x: 12500,
+        y: 6560,
       },
       id: "dcc233cf-659f-4d86-be61-70acb94fdd58",
       name: "TwoWayHEdge",
@@ -26019,12 +26019,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11920,
-        y: 4500,
+        x: 12500,
+        y: 6560,
       },
       end: {
-        x: 11960,
-        y: 4660,
+        x: 12540,
+        y: 6720,
       },
       id: "e99f7100-ce3a-4bff-8b75-ae16180ce000",
       name: "TwoWayVEdge",
@@ -26033,12 +26033,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11960,
-        y: 4660,
+        x: 12540,
+        y: 6720,
       },
       end: {
-        x: 11920,
-        y: 4820,
+        x: 12500,
+        y: 6880,
       },
       id: "cd63b4c2-ef78-428f-94a5-7a957ee07527",
       name: "TwoWayVEdge",
@@ -26047,12 +26047,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11960,
-        y: 4660,
+        x: 12540,
+        y: 6720,
       },
       end: {
-        x: 12160,
-        y: 4660,
+        x: 12740,
+        y: 6720,
       },
       id: "896a7f15-8851-4781-8988-a55211999741",
       name: "TwoWayHEdge",
@@ -26061,12 +26061,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12160,
-        y: 4660,
+        x: 12740,
+        y: 6720,
       },
       end: {
-        x: 12220,
-        y: 4500,
+        x: 12800,
+        y: 6560,
       },
       id: "a37c0b5f-49e3-4c65-88b2-04e358248fd3",
       name: "TwoWayVEdge",
@@ -26075,12 +26075,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11920,
-        y: 4820,
+        x: 12500,
+        y: 6880,
       },
       end: {
-        x: 11920,
-        y: 5000,
+        x: 12500,
+        y: 7060,
       },
       id: "f281b11b-b26a-4dbc-a189-50b0434bd99f",
       name: "TwoWayVEdge",
@@ -26089,12 +26089,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11920,
-        y: 5000,
+        x: 12500,
+        y: 7060,
       },
       end: {
-        x: 12180,
-        y: 5000,
+        x: 12760,
+        y: 7060,
       },
       id: "90b5e0e0-5fe9-4b4a-93c4-b59c43bc3f35",
       name: "TwoWayHEdge",
@@ -26103,12 +26103,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12180,
-        y: 5000,
+        x: 12760,
+        y: 7060,
       },
       end: {
-        x: 12480,
-        y: 5000,
+        x: 13060,
+        y: 7060,
       },
       id: "3978fcd7-6657-4dec-957f-679a4e8770d0",
       name: "TwoWayHEdge",
@@ -26117,12 +26117,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12220,
-        y: 4500,
+        x: 12800,
+        y: 6560,
       },
       end: {
-        x: 12480,
-        y: 4500,
+        x: 13060,
+        y: 6560,
       },
       id: "7b2a9293-ac5e-4ea2-b409-54724b21c264",
       name: "TwoWayHEdge",
@@ -26131,12 +26131,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12480,
-        y: 4500,
+        x: 13060,
+        y: 6560,
       },
       end: {
-        x: 12740,
-        y: 4500,
+        x: 13320,
+        y: 6560,
       },
       id: "4dbed6c3-5c19-4e03-818f-94917aa9d8e6",
       name: "TwoWayHEdge",
@@ -26145,12 +26145,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12740,
-        y: 4500,
+        x: 13320,
+        y: 6560,
       },
       end: {
-        x: 12800,
-        y: 4760,
+        x: 13380,
+        y: 6820,
       },
       id: "22c0ac4a-7520-4d3c-9586-c64978892766",
       name: "TwoWayVEdge",
@@ -26159,12 +26159,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12800,
-        y: 4760,
+        x: 13380,
+        y: 6820,
       },
       end: {
-        x: 12760,
-        y: 5000,
+        x: 13340,
+        y: 7060,
       },
       id: "6899d13d-86f6-439d-bb5c-435c08b1f71d",
       name: "TwoWayVEdge",
@@ -26173,12 +26173,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12480,
-        y: 5000,
+        x: 13060,
+        y: 7060,
       },
       end: {
-        x: 12760,
-        y: 5000,
+        x: 13340,
+        y: 7060,
       },
       id: "e3e775e9-5a7d-418a-80b9-53376218f601",
       name: "TwoWayHEdge",
@@ -26187,12 +26187,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11280,
-        y: 5000,
+        x: 11860,
+        y: 7060,
       },
       end: {
-        x: 11280,
-        y: 5220,
+        x: 11860,
+        y: 7280,
       },
       id: "ffd4355e-429f-411f-867b-3bf17c209682",
       name: "TwoWayVEdge",
@@ -26201,12 +26201,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11280,
-        y: 5220,
+        x: 11860,
+        y: 7280,
       },
       end: {
-        x: 11640,
-        y: 5240,
+        x: 12220,
+        y: 7300,
       },
       id: "a15ec907-9991-41d4-a50f-2cdb478bd0f2",
       name: "TwoWayHEdge",
@@ -26215,12 +26215,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11640,
-        y: 5240,
+        x: 12220,
+        y: 7300,
       },
       end: {
-        x: 11880,
-        y: 5240,
+        x: 12460,
+        y: 7300,
       },
       id: "47232de0-54f9-430f-a4fa-2eec5fb1c5d0",
       name: "TwoWayHEdge",
@@ -26229,12 +26229,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 5240,
+        x: 12460,
+        y: 7300,
       },
       end: {
-        x: 11880,
-        y: 5420,
+        x: 12460,
+        y: 7480,
       },
       id: "75cc2454-5db5-4f96-91a9-65557be07f79",
       name: "TwoWayVEdge",
@@ -26243,12 +26243,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 5420,
+        x: 12460,
+        y: 7480,
       },
       end: {
-        x: 12120,
-        y: 5420,
+        x: 12700,
+        y: 7480,
       },
       id: "7893474a-f2be-4487-b3ff-6ec78ddafab6",
       name: "TwoWayHEdge",
@@ -26257,12 +26257,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12480,
-        y: 5000,
+        x: 13060,
+        y: 7060,
       },
       end: {
-        x: 12480,
-        y: 5200,
+        x: 13060,
+        y: 7260,
       },
       id: "30ec7563-21db-42d9-bfe9-ca02fdea9858",
       name: "TwoWayVEdge",
@@ -26271,12 +26271,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12120,
-        y: 5420,
+        x: 12700,
+        y: 7480,
       },
       end: {
-        x: 12300,
-        y: 5420,
+        x: 12880,
+        y: 7480,
       },
       id: "dd1a9023-bcdc-4667-b659-f4adbcb7a6b6",
       name: "TwoWayHEdge",
@@ -26285,12 +26285,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12300,
-        y: 5420,
+        x: 12880,
+        y: 7480,
       },
       end: {
-        x: 12480,
-        y: 5420,
+        x: 13060,
+        y: 7480,
       },
       id: "f3a3d526-5b19-47b6-ada0-73848cf2a64a",
       name: "TwoWayHEdge",
@@ -26299,12 +26299,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12480,
-        y: 5420,
+        x: 13060,
+        y: 7480,
       },
       end: {
-        x: 12480,
-        y: 5200,
+        x: 13060,
+        y: 7260,
       },
       id: "695b7cb4-5688-4812-a3c4-0fc571886d5a",
       name: "TwoWayVEdge",
@@ -26313,12 +26313,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12480,
-        y: 5420,
+        x: 13060,
+        y: 7480,
       },
       end: {
-        x: 12480,
-        y: 5600,
+        x: 13060,
+        y: 7660,
       },
       id: "7efb7b49-3816-4139-85dd-bee44e9809d5",
       name: "TwoWayVEdge",
@@ -26327,12 +26327,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12480,
-        y: 5600,
+        x: 13060,
+        y: 7660,
       },
       end: {
-        x: 12120,
-        y: 5600,
+        x: 12700,
+        y: 7660,
       },
       id: "5439e63e-f633-49bb-a6b0-b88eeca3d07c",
       name: "TwoWayHEdge",
@@ -26341,12 +26341,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12120,
-        y: 5420,
+        x: 12700,
+        y: 7480,
       },
       end: {
-        x: 12120,
-        y: 5600,
+        x: 12700,
+        y: 7660,
       },
       id: "31e21edd-2282-4733-8d65-c80076cf9629",
       name: "TwoWayVEdge",
@@ -26355,12 +26355,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 5420,
+        x: 12460,
+        y: 7480,
       },
       end: {
-        x: 11880,
-        y: 5780,
+        x: 12460,
+        y: 7840,
       },
       id: "f74a1312-567a-4558-8e4b-e66bde72a9e4",
       name: "TwoWayVEdge",
@@ -26369,12 +26369,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12120,
-        y: 5600,
+        x: 12700,
+        y: 7660,
       },
       end: {
-        x: 12120,
-        y: 5780,
+        x: 12700,
+        y: 7840,
       },
       id: "a2ffba73-6ef9-4bee-a45a-55ce0efc5df2",
       name: "TwoWayVEdge",
@@ -26383,12 +26383,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 5780,
+        x: 12460,
+        y: 7840,
       },
       end: {
-        x: 12120,
-        y: 5780,
+        x: 12700,
+        y: 7840,
       },
       id: "011fceb1-4e23-4f78-a4dc-fce710f41c27",
       name: "TwoWayHEdge",
@@ -26397,12 +26397,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 5780,
+        x: 12460,
+        y: 7840,
       },
       end: {
-        x: 11640,
-        y: 5780,
+        x: 12220,
+        y: 7840,
       },
       id: "4db1ac2e-7117-403f-8e71-bc4fb5ba800d",
       name: "TwoWayHEdge",
@@ -26411,12 +26411,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 5780,
+        x: 12460,
+        y: 7840,
       },
       end: {
-        x: 11880,
-        y: 5960,
+        x: 12460,
+        y: 8020,
       },
       id: "b56a6576-e346-4ad5-b270-5fa76e10b903",
       name: "TwoWayVEdge",
@@ -26425,12 +26425,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 5960,
+        x: 12460,
+        y: 8020,
       },
       end: {
-        x: 11640,
-        y: 5960,
+        x: 12220,
+        y: 8020,
       },
       id: "c6c7561a-85e6-4bc8-82d6-0b794f50d1a1",
       name: "TwoWayHEdge",
@@ -26439,12 +26439,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 5960,
+        x: 12460,
+        y: 8020,
       },
       end: {
-        x: 11880,
-        y: 6160,
+        x: 12460,
+        y: 8220,
       },
       id: "ca223ae3-253b-40f3-8d9c-15c0891600ef",
       name: "TwoWayVEdge",
@@ -26453,12 +26453,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 6160,
+        x: 12460,
+        y: 8220,
       },
       end: {
-        x: 11640,
-        y: 6160,
+        x: 12220,
+        y: 8220,
       },
       id: "7683051d-1483-482d-bf02-e76ae02c50c2",
       name: "TwoWayHEdge",
@@ -26467,12 +26467,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 6160,
+        x: 12460,
+        y: 8220,
       },
       end: {
-        x: 11880,
-        y: 6340,
+        x: 12460,
+        y: 8400,
       },
       id: "f2143ee0-385f-4434-816a-00e7b4d9735b",
       name: "TwoWayVEdge",
@@ -26481,12 +26481,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11880,
-        y: 6340,
+        x: 12460,
+        y: 8400,
       },
       end: {
-        x: 11880,
-        y: 6520,
+        x: 12460,
+        y: 8580,
       },
       id: "b03ca105-658f-4ad2-8567-331971a12736",
       name: "TwoWayVEdge",
@@ -26495,12 +26495,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11640,
-        y: 5960,
+        x: 12220,
+        y: 8020,
       },
       end: {
-        x: 11400,
-        y: 5960,
+        x: 11980,
+        y: 8020,
       },
       id: "7bd13200-57b9-48f1-88ae-8a534cdc7e18",
       name: "TwoWayHEdge",
@@ -26509,12 +26509,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11400,
-        y: 5960,
+        x: 11980,
+        y: 8020,
       },
       end: {
-        x: 11400,
-        y: 6240,
+        x: 11980,
+        y: 8300,
       },
       id: "8aa07261-ec99-44d5-b070-30829ed0dd4b",
       name: "TwoWayVEdge",
@@ -26523,12 +26523,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11400,
-        y: 6240,
+        x: 11980,
+        y: 8300,
       },
       end: {
-        x: 11400,
-        y: 6520,
+        x: 11980,
+        y: 8580,
       },
       id: "83c40971-bd11-4967-9209-30f5ebb2ae51",
       name: "TwoWayVEdge",
@@ -26537,12 +26537,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11400,
-        y: 6520,
+        x: 11980,
+        y: 8580,
       },
       end: {
-        x: 11880,
-        y: 6520,
+        x: 12460,
+        y: 8580,
       },
       id: "6bc200b9-31bb-4c30-906e-082fe71899df",
       name: "TwoWayHEdge",
@@ -26551,12 +26551,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11400,
-        y: 5960,
+        x: 11980,
+        y: 8020,
       },
       end: {
-        x: 11180,
-        y: 5960,
+        x: 11760,
+        y: 8020,
       },
       id: "a1c8683a-b8a3-4e70-a81c-13c7b62a7077",
       name: "TwoWayHEdge",
@@ -26565,12 +26565,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11180,
-        y: 5960,
+        x: 11760,
+        y: 8020,
       },
       end: {
-        x: 11180,
-        y: 6140,
+        x: 11760,
+        y: 8200,
       },
       id: "3df74d26-f512-48dc-8eaf-f6f54a535a14",
       name: "TwoWayVEdge",
@@ -26579,12 +26579,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11180,
-        y: 6140,
+        x: 11760,
+        y: 8200,
       },
       end: {
-        x: 11180,
-        y: 6340,
+        x: 11760,
+        y: 8400,
       },
       id: "503c9baa-b185-4d32-b109-c0eafd697773",
       name: "TwoWayVEdge",
@@ -26593,12 +26593,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11180,
-        y: 6340,
+        x: 11760,
+        y: 8400,
       },
       end: {
-        x: 11180,
-        y: 6520,
+        x: 11760,
+        y: 8580,
       },
       id: "09890f2d-df42-480b-b8da-419f0a2af599",
       name: "TwoWayVEdge",
@@ -26607,12 +26607,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11180,
-        y: 6520,
+        x: 11760,
+        y: 8580,
       },
       end: {
-        x: 11400,
-        y: 6520,
+        x: 11980,
+        y: 8580,
       },
       id: "f203326b-2351-4664-8edb-bf03fc5411d6",
       name: "TwoWayHEdge",
@@ -26621,12 +26621,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11400,
-        y: 5960,
+        x: 11980,
+        y: 8020,
       },
       end: {
-        x: 11400,
-        y: 5780,
+        x: 11980,
+        y: 7840,
       },
       id: "beb232e3-7621-4e5c-b1b2-c233f6824a53",
       name: "TwoWayVEdge",
@@ -26635,12 +26635,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11400,
-        y: 5780,
+        x: 11980,
+        y: 7840,
       },
       end: {
-        x: 11400,
-        y: 5560,
+        x: 11980,
+        y: 7620,
       },
       id: "83e4df11-f343-49ea-98b4-5c2e10c7607c",
       name: "TwoWayVEdge",
@@ -26649,12 +26649,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11400,
-        y: 5560,
+        x: 11980,
+        y: 7620,
       },
       end: {
-        x: 11180,
-        y: 5560,
+        x: 11760,
+        y: 7620,
       },
       id: "40858da6-ab78-4548-93b5-19773b084278",
       name: "TwoWayHEdge",
@@ -26663,12 +26663,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11180,
-        y: 5560,
+        x: 11760,
+        y: 7620,
       },
       end: {
-        x: 11180,
-        y: 5340,
+        x: 11760,
+        y: 7400,
       },
       id: "a9af3d12-795f-491e-a1f9-c1239cc66626",
       name: "TwoWayVEdge",
@@ -26677,12 +26677,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10840,
-        y: 4340,
+        x: 11420,
+        y: 6400,
       },
       end: {
-        x: 10540,
-        y: 4340,
+        x: 11120,
+        y: 6400,
       },
       id: "badaef94-af53-4a9c-9608-37db4334671e",
       name: "TwoWayHEdge",
@@ -26691,12 +26691,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10540,
-        y: 4340,
+        x: 11120,
+        y: 6400,
       },
       end: {
-        x: 10540,
-        y: 4160,
+        x: 11120,
+        y: 6220,
       },
       id: "d3e10e2d-da5c-432c-8efe-de8ae55061aa",
       name: "TwoWayVEdge",
@@ -26705,12 +26705,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10540,
-        y: 4160,
+        x: 11120,
+        y: 6220,
       },
       end: {
-        x: 10540,
-        y: 3980,
+        x: 11120,
+        y: 6040,
       },
       id: "47daea56-84d2-474a-bf69-9b0d7cc8190f",
       name: "TwoWayVEdge",
@@ -26719,12 +26719,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10540,
-        y: 4340,
+        x: 11120,
+        y: 6400,
       },
       end: {
-        x: 10340,
-        y: 4340,
+        x: 10920,
+        y: 6400,
       },
       id: "f5c0cecf-cc6a-4fb9-bda9-f0616f11e893",
       name: "TwoWayHEdge",
@@ -26733,12 +26733,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10340,
-        y: 4340,
+        x: 10920,
+        y: 6400,
       },
       end: {
-        x: 10140,
-        y: 4340,
+        x: 10720,
+        y: 6400,
       },
       id: "4567dd77-a901-4193-9481-ff260898f1ba",
       name: "TwoWayHEdge",
@@ -26747,12 +26747,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10140,
-        y: 4340,
+        x: 10720,
+        y: 6400,
       },
       end: {
-        x: 10140,
-        y: 4160,
+        x: 10720,
+        y: 6220,
       },
       id: "d97f4989-4bfb-4a48-a91e-8aef89185a5a",
       name: "TwoWayVEdge",
@@ -26761,12 +26761,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10140,
-        y: 4160,
+        x: 10720,
+        y: 6220,
       },
       end: {
-        x: 10140,
-        y: 3980,
+        x: 10720,
+        y: 6040,
       },
       id: "e63128e5-abf6-4a52-80b5-66b9f4b893e8",
       name: "TwoWayVEdge",
@@ -26775,12 +26775,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10140,
-        y: 3980,
+        x: 10720,
+        y: 6040,
       },
       end: {
-        x: 10140,
-        y: 3780,
+        x: 10720,
+        y: 5840,
       },
       id: "418b6741-d721-4b4f-81e2-8db0a44f09b1",
       name: "TwoWayVEdge",
@@ -26789,12 +26789,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10140,
-        y: 3780,
+        x: 10720,
+        y: 5840,
       },
       end: {
-        x: 10340,
-        y: 3780,
+        x: 10920,
+        y: 5840,
       },
       id: "3c74207f-4165-4ec6-aef2-ecb117501696",
       name: "TwoWayHEdge",
@@ -26803,12 +26803,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10840,
-        y: 4520,
+        x: 11420,
+        y: 6580,
       },
       end: {
-        x: 10840,
-        y: 4700,
+        x: 11420,
+        y: 6760,
       },
       id: "98e36b62-0686-4250-a7b6-c2bfeda0db5d",
       name: "TwoWayVEdge",
@@ -26817,12 +26817,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10840,
-        y: 4700,
+        x: 11420,
+        y: 6760,
       },
       end: {
-        x: 10540,
-        y: 4640,
+        x: 11120,
+        y: 6700,
       },
       id: "69ec8bde-10d4-4d69-a558-c7606c391cf0",
       name: "TwoWayHEdge",
@@ -26831,12 +26831,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10540,
-        y: 4640,
+        x: 11120,
+        y: 6700,
       },
       end: {
-        x: 10540,
-        y: 4820,
+        x: 11120,
+        y: 6880,
       },
       id: "2cc5f168-56b9-46b7-891b-023095495fef",
       name: "TwoWayVEdge",
@@ -26845,12 +26845,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10540,
-        y: 4820,
+        x: 11120,
+        y: 6880,
       },
       end: {
-        x: 10200,
-        y: 4840,
+        x: 10780,
+        y: 6900,
       },
       id: "d024b232-6d51-4a54-a3ba-2f46350e5f4d",
       name: "TwoWayHEdge",
@@ -26859,12 +26859,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10200,
-        y: 4840,
+        x: 10780,
+        y: 6900,
       },
       end: {
-        x: 10200,
-        y: 4660,
+        x: 10780,
+        y: 6720,
       },
       id: "ccd45b58-be25-495e-8e27-6d443acffe47",
       name: "TwoWayVEdge",
@@ -26873,12 +26873,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10200,
-        y: 4660,
+        x: 10780,
+        y: 6720,
       },
       end: {
-        x: 10000,
-        y: 4660,
+        x: 10580,
+        y: 6720,
       },
       id: "a0004244-7a21-4174-9529-4ec1e8bbd18b",
       name: "TwoWayHEdge",
@@ -26887,12 +26887,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10000,
-        y: 4660,
+        x: 10580,
+        y: 6720,
       },
       end: {
-        x: 10000,
-        y: 5000,
+        x: 10580,
+        y: 7060,
       },
       id: "f95a401c-946d-4d74-90b4-70633b78db98",
       name: "TwoWayVEdge",
@@ -26901,12 +26901,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10000,
-        y: 5000,
+        x: 10580,
+        y: 7060,
       },
       end: {
-        x: 10200,
-        y: 5000,
+        x: 10780,
+        y: 7060,
       },
       id: "d7a24eed-1d39-43ca-a739-1b89d7cd8767",
       name: "TwoWayHEdge",
@@ -26915,12 +26915,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10200,
-        y: 5000,
+        x: 10780,
+        y: 7060,
       },
       end: {
-        x: 10200,
-        y: 4840,
+        x: 10780,
+        y: 6900,
       },
       id: "6cf0715d-ca02-449d-86d8-59d84724d1c4",
       name: "TwoWayVEdge",
@@ -26929,12 +26929,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10200,
-        y: 5000,
+        x: 10780,
+        y: 7060,
       },
       end: {
-        x: 10680,
-        y: 5000,
+        x: 11260,
+        y: 7060,
       },
       id: "4b462495-9d53-44e7-a85c-6bd5d8cf0de7",
       name: "TwoWayHEdge",
@@ -26943,12 +26943,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10680,
-        y: 5000,
+        x: 11260,
+        y: 7060,
       },
       end: {
-        x: 10700,
-        y: 4820,
+        x: 11280,
+        y: 6880,
       },
       id: "c8bdaabd-d27d-48f2-9a47-e23a4a35d770",
       name: "TwoWayVEdge",
@@ -26957,12 +26957,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10000,
-        y: 4660,
+        x: 10580,
+        y: 6720,
       },
       end: {
-        x: 10000,
-        y: 4340,
+        x: 10580,
+        y: 6400,
       },
       id: "38dc0cfb-bfbb-4aac-80d0-fcfdbba95775",
       name: "TwoWayVEdge",
@@ -26971,12 +26971,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10000,
-        y: 4660,
+        x: 10580,
+        y: 6720,
       },
       end: {
-        x: 9780,
-        y: 4660,
+        x: 10360,
+        y: 6720,
       },
       id: "8e66b48d-7d2d-4d6c-afb4-362ba204ea2c",
       name: "TwoWayHEdge",
@@ -26985,12 +26985,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9780,
-        y: 4660,
+        x: 10360,
+        y: 6720,
       },
       end: {
-        x: 9780,
-        y: 4500,
+        x: 10360,
+        y: 6560,
       },
       id: "6737f94c-4f85-4215-9346-6bc0f0e3b3b0",
       name: "TwoWayVEdge",
@@ -26999,12 +26999,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9780,
-        y: 4500,
+        x: 10360,
+        y: 6560,
       },
       end: {
-        x: 9780,
-        y: 4340,
+        x: 10360,
+        y: 6400,
       },
       id: "c8b47408-a114-4d14-9f31-d35dc616937d",
       name: "TwoWayVEdge",
@@ -27013,12 +27013,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9780,
-        y: 4340,
+        x: 10360,
+        y: 6400,
       },
       end: {
-        x: 10000,
-        y: 4340,
+        x: 10580,
+        y: 6400,
       },
       id: "4adf654e-2952-42af-8f22-d8d93d42346e",
       name: "TwoWayHEdge",
@@ -27027,12 +27027,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9780,
-        y: 4340,
+        x: 10360,
+        y: 6400,
       },
       end: {
-        x: 9780,
-        y: 4160,
+        x: 10360,
+        y: 6220,
       },
       id: "20eda4ff-4d2f-4749-b7b0-723a263a6fad",
       name: "TwoWayVEdge",
@@ -27041,12 +27041,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9780,
-        y: 4160,
+        x: 10360,
+        y: 6220,
       },
       end: {
-        x: 10140,
-        y: 4160,
+        x: 10720,
+        y: 6220,
       },
       id: "0d607893-ebbc-4b86-a89d-53f68859fee7",
       name: "OneWayHEdge",
@@ -27055,12 +27055,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9780,
-        y: 4160,
+        x: 10360,
+        y: 6220,
       },
       end: {
-        x: 9840,
-        y: 3820,
+        x: 10420,
+        y: 5880,
       },
       id: "c26d3ebb-e9e5-4498-b792-8fef83def95d",
       name: "TwoWayVEdge",
@@ -27069,12 +27069,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9840,
-        y: 3820,
+        x: 10420,
+        y: 5880,
       },
       end: {
-        x: 9800,
-        y: 3520,
+        x: 10380,
+        y: 5580,
       },
       id: "8b2e3b5c-279a-465f-a975-c64609b73e18",
       name: "TwoWayVEdge",
@@ -27083,12 +27083,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10200,
-        y: 5000,
+        x: 10780,
+        y: 7060,
       },
       end: {
-        x: 10200,
-        y: 5220,
+        x: 10780,
+        y: 7280,
       },
       id: "2298cdff-461c-4c25-bcc6-239cfb50fc87",
       name: "TwoWayVEdge",
@@ -27097,12 +27097,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10000,
-        y: 5000,
+        x: 10580,
+        y: 7060,
       },
       end: {
-        x: 10000,
-        y: 5220,
+        x: 10580,
+        y: 7280,
       },
       id: "39625694-2a4d-488f-9ee0-d2b757ab56aa",
       name: "TwoWayVEdge",
@@ -27111,12 +27111,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10000,
-        y: 5220,
+        x: 10580,
+        y: 7280,
       },
       end: {
-        x: 10000,
-        y: 5420,
+        x: 10580,
+        y: 7480,
       },
       id: "1b9765b0-29ce-4fd6-a51a-a7c092043ffc",
       name: "TwoWayVEdge",
@@ -27125,12 +27125,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10000,
-        y: 5420,
+        x: 10580,
+        y: 7480,
       },
       end: {
-        x: 10200,
-        y: 5420,
+        x: 10780,
+        y: 7480,
       },
       id: "becbf9b3-3ef1-4207-a9fe-0fa9a3668eef",
       name: "TwoWayHEdge",
@@ -27139,12 +27139,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10000,
-        y: 5420,
+        x: 10580,
+        y: 7480,
       },
       end: {
-        x: 10000,
-        y: 5840,
+        x: 10580,
+        y: 7900,
       },
       id: "302c3b5e-34bb-4d68-bfe1-a45ecaff89b2",
       name: "TwoWayVEdge",
@@ -27153,12 +27153,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10000,
-        y: 5840,
+        x: 10580,
+        y: 7900,
       },
       end: {
-        x: 10220,
-        y: 5840,
+        x: 10800,
+        y: 7900,
       },
       id: "5a1d02da-66b0-461c-85c1-360ad204ceb7",
       name: "TwoWayHEdge",
@@ -27167,12 +27167,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10200,
-        y: 5420,
+        x: 10780,
+        y: 7480,
       },
       end: {
-        x: 10260,
-        y: 5620,
+        x: 10840,
+        y: 7680,
       },
       id: "f08354bd-111a-4030-8dea-b6c180373be5",
       name: "TwoWayVEdge",
@@ -27181,12 +27181,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10260,
-        y: 5620,
+        x: 10840,
+        y: 7680,
       },
       end: {
-        x: 10220,
-        y: 5840,
+        x: 10800,
+        y: 7900,
       },
       id: "07dd1f54-d2a5-4a05-b1dc-e998fccd982d",
       name: "TwoWayVEdge",
@@ -27195,12 +27195,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10260,
-        y: 5620,
+        x: 10840,
+        y: 7680,
       },
       end: {
-        x: 10560,
-        y: 5620,
+        x: 11140,
+        y: 7680,
       },
       id: "c03daf06-ff3d-4297-b5cf-6cf224269e83",
       name: "TwoWayHEdge",
@@ -27209,12 +27209,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10560,
-        y: 5620,
+        x: 11140,
+        y: 7680,
       },
       end: {
-        x: 10560,
-        y: 5880,
+        x: 11140,
+        y: 7940,
       },
       id: "f262d7b3-7567-4ca6-8f8c-59bf2926530b",
       name: "TwoWayVEdge",
@@ -27223,12 +27223,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10560,
-        y: 5880,
+        x: 11140,
+        y: 7940,
       },
       end: {
-        x: 10860,
-        y: 5880,
+        x: 11440,
+        y: 7940,
       },
       id: "883b6287-0a70-424b-8420-19b794fbee18",
       name: "TwoWayHEdge",
@@ -27237,12 +27237,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10560,
-        y: 5880,
+        x: 11140,
+        y: 7940,
       },
       end: {
-        x: 10560,
-        y: 6160,
+        x: 11140,
+        y: 8220,
       },
       id: "a5df31b8-bc73-42d9-9bbb-a56cd004f931",
       name: "TwoWayVEdge",
@@ -27251,12 +27251,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10560,
-        y: 6160,
+        x: 11140,
+        y: 8220,
       },
       end: {
-        x: 10340,
-        y: 6160,
+        x: 10920,
+        y: 8220,
       },
       id: "b5d352da-8edd-4162-85c2-32ab5dddce89",
       name: "TwoWayHEdge",
@@ -27265,12 +27265,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10340,
-        y: 6160,
+        x: 10920,
+        y: 8220,
       },
       end: {
-        x: 10120,
-        y: 6160,
+        x: 10700,
+        y: 8220,
       },
       id: "21e91a1e-11f1-4ca9-83e8-b3e403be41b6",
       name: "TwoWayHEdge",
@@ -27279,12 +27279,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10120,
-        y: 6160,
+        x: 10700,
+        y: 8220,
       },
       end: {
-        x: 9840,
-        y: 6160,
+        x: 10420,
+        y: 8220,
       },
       id: "204afc43-4184-425a-a95f-5192a63ac53e",
       name: "TwoWayHEdge",
@@ -27293,12 +27293,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9840,
-        y: 6160,
+        x: 10420,
+        y: 8220,
       },
       end: {
-        x: 9620,
-        y: 6160,
+        x: 10200,
+        y: 8220,
       },
       id: "c224a74f-c400-4109-9fd2-13e6d9722b72",
       name: "TwoWayHEdge",
@@ -27307,12 +27307,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9620,
-        y: 6160,
+        x: 10200,
+        y: 8220,
       },
       end: {
-        x: 9400,
-        y: 6160,
+        x: 9980,
+        y: 8220,
       },
       id: "fa6fb4d9-d5d1-4584-ab8b-5b0c2bc2a2c7",
       name: "TwoWayHEdge",
@@ -27321,12 +27321,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10120,
-        y: 6160,
+        x: 10700,
+        y: 8220,
       },
       end: {
-        x: 10120,
-        y: 6380,
+        x: 10700,
+        y: 8440,
       },
       id: "97e4eb16-63b3-4f5f-b479-01461050cde2",
       name: "TwoWayVEdge",
@@ -27335,12 +27335,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10120,
-        y: 6380,
+        x: 10700,
+        y: 8440,
       },
       end: {
-        x: 10560,
-        y: 6380,
+        x: 11140,
+        y: 8440,
       },
       id: "e5ad92cf-15c6-48c5-aaa6-61590b4ccf3a",
       name: "TwoWayHEdge",
@@ -27349,12 +27349,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10560,
-        y: 6380,
+        x: 11140,
+        y: 8440,
       },
       end: {
-        x: 10560,
-        y: 6160,
+        x: 11140,
+        y: 8220,
       },
       id: "8e147ae5-a800-4f7b-92ce-8b7281ee781b",
       name: "TwoWayVEdge",
@@ -27363,12 +27363,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11180,
-        y: 6520,
+        x: 11760,
+        y: 8580,
       },
       end: {
-        x: 11180,
-        y: 6700,
+        x: 11760,
+        y: 8760,
       },
       id: "933bcda3-2ce7-4a48-b191-ec7bb879bcd8",
       name: "TwoWayVEdge",
@@ -27377,12 +27377,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11180,
-        y: 6700,
+        x: 11760,
+        y: 8760,
       },
       end: {
-        x: 11180,
-        y: 6880,
+        x: 11760,
+        y: 8940,
       },
       id: "c5b002bc-2028-425b-b50d-ebae630a1bb4",
       name: "TwoWayVEdge",
@@ -27391,12 +27391,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11180,
-        y: 6880,
+        x: 11760,
+        y: 8940,
       },
       end: {
-        x: 11400,
-        y: 6880,
+        x: 11980,
+        y: 8940,
       },
       id: "24dd1352-6cf1-4343-a0a9-5d10d8292910",
       name: "TwoWayHEdge",
@@ -27405,12 +27405,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11180,
-        y: 6880,
+        x: 11760,
+        y: 8940,
       },
       end: {
-        x: 11180,
-        y: 7040,
+        x: 11760,
+        y: 9100,
       },
       id: "445b20d4-0ffd-4860-ad9a-2ae132953052",
       name: "TwoWayVEdge",
@@ -27419,12 +27419,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11180,
-        y: 7040,
+        x: 11760,
+        y: 9100,
       },
       end: {
-        x: 11180,
-        y: 7200,
+        x: 11760,
+        y: 9260,
       },
       id: "71676431-82b9-4209-9944-5b5f798cfd78",
       name: "TwoWayVEdge",
@@ -27433,12 +27433,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11180,
-        y: 7200,
+        x: 11760,
+        y: 9260,
       },
       end: {
-        x: 11400,
-        y: 7200,
+        x: 11980,
+        y: 9260,
       },
       id: "3cdf7a26-a3f7-44b0-ae5f-dd33a444ec23",
       name: "TwoWayHEdge",
@@ -27447,12 +27447,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11400,
-        y: 6880,
+        x: 11980,
+        y: 8940,
       },
       end: {
-        x: 11400,
-        y: 7200,
+        x: 11980,
+        y: 9260,
       },
       id: "fda4ea28-229a-44f0-8ca5-ce7a52dd950d",
       name: "TwoWayVEdge",
@@ -27461,12 +27461,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11400,
-        y: 7200,
+        x: 11980,
+        y: 9260,
       },
       end: {
-        x: 11600,
-        y: 7200,
+        x: 12180,
+        y: 9260,
       },
       id: "44481dd2-d850-4679-a44d-3a51d1208225",
       name: "TwoWayHEdge",
@@ -27475,12 +27475,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11600,
-        y: 7200,
+        x: 12180,
+        y: 9260,
       },
       end: {
-        x: 11800,
-        y: 7200,
+        x: 12380,
+        y: 9260,
       },
       id: "62c69269-583d-49e8-916f-b2f9b44a3a28",
       name: "TwoWayHEdge",
@@ -27489,12 +27489,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11800,
-        y: 7200,
+        x: 12380,
+        y: 9260,
       },
       end: {
-        x: 11800,
-        y: 7400,
+        x: 12380,
+        y: 9460,
       },
       id: "51275b36-e609-4e00-8163-5219d5ea7859",
       name: "TwoWayVEdge",
@@ -27503,12 +27503,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11800,
-        y: 7400,
+        x: 12380,
+        y: 9460,
       },
       end: {
-        x: 11800,
-        y: 7600,
+        x: 12380,
+        y: 9660,
       },
       id: "dbff9aa4-7d25-4923-9e88-9cdf5add09cf",
       name: "TwoWayVEdge",
@@ -27517,12 +27517,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11800,
-        y: 7600,
+        x: 12380,
+        y: 9660,
       },
       end: {
-        x: 11600,
-        y: 7600,
+        x: 12180,
+        y: 9660,
       },
       id: "e9d635b3-322a-47bc-9d29-327ff04f241b",
       name: "TwoWayHEdge",
@@ -27531,12 +27531,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11600,
-        y: 7600,
+        x: 12180,
+        y: 9660,
       },
       end: {
-        x: 11220,
-        y: 7600,
+        x: 11800,
+        y: 9660,
       },
       id: "ae01fd24-0fcb-4460-bbc0-ec84c5441c8a",
       name: "TwoWayHEdge",
@@ -27545,12 +27545,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10560,
-        y: 6380,
+        x: 11140,
+        y: 8440,
       },
       end: {
-        x: 10560,
-        y: 6640,
+        x: 11140,
+        y: 8700,
       },
       id: "f9a693ab-4f94-472f-b181-1312e3a334a0",
       name: "TwoWayVEdge",
@@ -27559,12 +27559,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10560,
-        y: 6640,
+        x: 11140,
+        y: 8700,
       },
       end: {
-        x: 10560,
-        y: 6860,
+        x: 11140,
+        y: 8920,
       },
       id: "ea4dd0c0-671e-4e88-9958-04875d8710a0",
       name: "TwoWayVEdge",
@@ -27573,12 +27573,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10560,
-        y: 6860,
+        x: 11140,
+        y: 8920,
       },
       end: {
-        x: 10560,
-        y: 7080,
+        x: 11140,
+        y: 9140,
       },
       id: "e95d31c1-de0a-4ef5-9020-2e24ae0d5d2a",
       name: "TwoWayVEdge",
@@ -27587,12 +27587,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10560,
-        y: 7080,
+        x: 11140,
+        y: 9140,
       },
       end: {
-        x: 10780,
-        y: 7060,
+        x: 11360,
+        y: 9120,
       },
       id: "c4f0479d-7185-42a0-a4c3-162819604d55",
       name: "TwoWayHEdge",
@@ -27601,12 +27601,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10780,
-        y: 7060,
+        x: 11360,
+        y: 9120,
       },
       end: {
-        x: 11000,
-        y: 7080,
+        x: 11580,
+        y: 9140,
       },
       id: "b230b8da-5fbe-4dbe-b4a6-243453f0297a",
       name: "TwoWayHEdge",
@@ -27615,12 +27615,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11000,
-        y: 7080,
+        x: 11580,
+        y: 9140,
       },
       end: {
-        x: 10980,
-        y: 7300,
+        x: 11560,
+        y: 9360,
       },
       id: "afaf81fe-10a1-4c67-b48c-bfa5d3e4f718",
       name: "TwoWayVEdge",
@@ -27629,12 +27629,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10560,
-        y: 7080,
+        x: 11140,
+        y: 9140,
       },
       end: {
-        x: 10580,
-        y: 7300,
+        x: 11160,
+        y: 9360,
       },
       id: "8a1c140a-1563-4ee9-a115-ef773e57858b",
       name: "TwoWayVEdge",
@@ -27643,12 +27643,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10580,
-        y: 7300,
+        x: 11160,
+        y: 9360,
       },
       end: {
-        x: 10980,
-        y: 7300,
+        x: 11560,
+        y: 9360,
       },
       id: "c62201e1-094e-4356-8b0a-4d3ebbb6ae4e",
       name: "TwoWayHEdge",
@@ -27657,12 +27657,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10980,
-        y: 7300,
+        x: 11560,
+        y: 9360,
       },
       end: {
-        x: 10980,
-        y: 7600,
+        x: 11560,
+        y: 9660,
       },
       id: "51680e9d-34b9-424d-a5d2-a54bea035d8e",
       name: "TwoWayVEdge",
@@ -27671,12 +27671,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10980,
-        y: 7600,
+        x: 11560,
+        y: 9660,
       },
       end: {
-        x: 11220,
-        y: 7600,
+        x: 11800,
+        y: 9660,
       },
       id: "c2613c2e-a5db-4b5b-97d4-79298f6b5dc1",
       name: "TwoWayHEdge",
@@ -27685,12 +27685,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8780,
-        y: 3520,
+        x: 9360,
+        y: 5580,
       },
       end: {
-        x: 8780,
-        y: 3900,
+        x: 9360,
+        y: 5960,
       },
       id: "6c305ab2-6496-483f-a5b5-2eefc698801e",
       name: "TwoWayVEdge",
@@ -27699,12 +27699,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8780,
-        y: 3900,
+        x: 9360,
+        y: 5960,
       },
       end: {
-        x: 8780,
-        y: 4260,
+        x: 9360,
+        y: 6320,
       },
       id: "3cb96eaa-dd72-46d0-a045-ec89d01b9c46",
       name: "TwoWayVEdge",
@@ -27713,12 +27713,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8780,
-        y: 4260,
+        x: 9360,
+        y: 6320,
       },
       end: {
-        x: 8780,
-        y: 4660,
+        x: 9360,
+        y: 6720,
       },
       id: "39d31263-4d5b-448a-855a-36338eb73568",
       name: "TwoWayVEdge",
@@ -27727,12 +27727,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8780,
-        y: 4660,
+        x: 9360,
+        y: 6720,
       },
       end: {
-        x: 8560,
-        y: 4660,
+        x: 9140,
+        y: 6720,
       },
       id: "25523f9b-e394-496c-80ea-e1c545fa4236",
       name: "TwoWayHEdge",
@@ -27741,12 +27741,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8560,
-        y: 4660,
+        x: 9140,
+        y: 6720,
       },
       end: {
-        x: 8560,
-        y: 4880,
+        x: 9140,
+        y: 6940,
       },
       id: "440c0721-904b-49f5-8d12-79c495fb921f",
       name: "TwoWayVEdge",
@@ -27755,12 +27755,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8560,
-        y: 5300,
+        x: 9140,
+        y: 7360,
       },
       end: {
-        x: 9020,
-        y: 5300,
+        x: 9600,
+        y: 7360,
       },
       id: "cc439bdd-1fff-41bd-a3cc-cac8a0dff4da",
       name: "TwoWayHEdge",
@@ -27769,12 +27769,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9020,
-        y: 5300,
+        x: 9600,
+        y: 7360,
       },
       end: {
-        x: 9020,
-        y: 5580,
+        x: 9600,
+        y: 7640,
       },
       id: "bfe4ccc4-940e-4670-8f8a-9345ff0ec779",
       name: "TwoWayVEdge",
@@ -27783,12 +27783,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9020,
-        y: 5580,
+        x: 9600,
+        y: 7640,
       },
       end: {
-        x: 8800,
-        y: 5580,
+        x: 9380,
+        y: 7640,
       },
       id: "70696caf-9e28-4eaa-b6cb-e99f086308a2",
       name: "TwoWayHEdge",
@@ -27797,12 +27797,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8560,
-        y: 5300,
+        x: 9140,
+        y: 7360,
       },
       end: {
-        x: 8560,
-        y: 5580,
+        x: 9140,
+        y: 7640,
       },
       id: "4b4fd351-0c22-434d-ba81-b06c69168a70",
       name: "TwoWayVEdge",
@@ -27811,12 +27811,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8560,
-        y: 5580,
+        x: 9140,
+        y: 7640,
       },
       end: {
-        x: 8800,
-        y: 5580,
+        x: 9380,
+        y: 7640,
       },
       id: "92d204cd-8961-4c07-b8c5-82647786fae9",
       name: "TwoWayHEdge",
@@ -27825,12 +27825,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8800,
-        y: 5580,
+        x: 9380,
+        y: 7640,
       },
       end: {
-        x: 8800,
-        y: 5900,
+        x: 9380,
+        y: 7960,
       },
       id: "b8a167b6-3e92-40f3-95ed-cb44baa4701c",
       name: "TwoWayVEdge",
@@ -27839,12 +27839,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8800,
-        y: 5900,
+        x: 9380,
+        y: 7960,
       },
       end: {
-        x: 8800,
-        y: 6160,
+        x: 9380,
+        y: 8220,
       },
       id: "5806d81c-f78c-4ad9-b266-1f58112e4fb8",
       name: "TwoWayVEdge",
@@ -27853,12 +27853,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8800,
-        y: 6160,
+        x: 9380,
+        y: 8220,
       },
       end: {
-        x: 9400,
-        y: 6160,
+        x: 9980,
+        y: 8220,
       },
       id: "8e6a2765-b82c-466d-ac25-1bf6f14a195f",
       name: "TwoWayHEdge",
@@ -27867,12 +27867,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8800,
-        y: 6160,
+        x: 9380,
+        y: 8220,
       },
       end: {
-        x: 8800,
-        y: 6440,
+        x: 9380,
+        y: 8500,
       },
       id: "b047c741-db5e-47ef-bbb0-4e93eebab616",
       name: "TwoWayVEdge",
@@ -27881,12 +27881,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8800,
-        y: 6440,
+        x: 9380,
+        y: 8500,
       },
       end: {
-        x: 8800,
-        y: 6700,
+        x: 9380,
+        y: 8760,
       },
       id: "5ac9e8f4-b71f-429c-a7f0-ce69fcfedfaa",
       name: "TwoWayVEdge",
@@ -27895,12 +27895,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8800,
-        y: 6700,
+        x: 9380,
+        y: 8760,
       },
       end: {
-        x: 8540,
-        y: 6700,
+        x: 9120,
+        y: 8760,
       },
       id: "b635616a-0e11-4195-b8d6-a1626024a406",
       name: "TwoWayHEdge",
@@ -27909,12 +27909,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8540,
-        y: 6700,
+        x: 9120,
+        y: 8760,
       },
       end: {
-        x: 8320,
-        y: 6700,
+        x: 8900,
+        y: 8760,
       },
       id: "aab69e37-b163-41fd-93c4-01aa9dd1d3e2",
       name: "TwoWayHEdge",
@@ -27923,12 +27923,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8320,
-        y: 6700,
+        x: 8900,
+        y: 8760,
       },
       end: {
-        x: 8060,
-        y: 6700,
+        x: 8640,
+        y: 8760,
       },
       id: "cb32a401-45bb-4c0d-9fa2-d240d3fdfd38",
       name: "TwoWayHEdge",
@@ -27937,12 +27937,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8060,
-        y: 6700,
+        x: 8640,
+        y: 8760,
       },
       end: {
-        x: 8060,
-        y: 6980,
+        x: 8640,
+        y: 9040,
       },
       id: "49d94b79-5f08-4fda-8257-b493e6a0f477",
       name: "TwoWayVEdge",
@@ -27951,12 +27951,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8060,
-        y: 6980,
+        x: 8640,
+        y: 9040,
       },
       end: {
-        x: 7820,
-        y: 6980,
+        x: 8400,
+        y: 9040,
       },
       id: "3b52643f-12fb-4171-870d-95ddfb15651c",
       name: "TwoWayHEdge",
@@ -27965,12 +27965,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7820,
-        y: 6980,
+        x: 8400,
+        y: 9040,
       },
       end: {
-        x: 7820,
-        y: 7340,
+        x: 8400,
+        y: 9400,
       },
       id: "27d8ccd6-27d1-4a03-8141-f53e2417eec8",
       name: "TwoWayVEdge",
@@ -27979,12 +27979,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8060,
-        y: 6980,
+        x: 8640,
+        y: 9040,
       },
       end: {
-        x: 8060,
-        y: 7160,
+        x: 8640,
+        y: 9220,
       },
       id: "29bff261-84a0-40d8-ac77-2eaf0ff9acc5",
       name: "TwoWayVEdge",
@@ -27993,12 +27993,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8060,
-        y: 7160,
+        x: 8640,
+        y: 9220,
       },
       end: {
-        x: 8060,
-        y: 7340,
+        x: 8640,
+        y: 9400,
       },
       id: "93f66f75-b452-4b74-aeb6-bd50864ad3d6",
       name: "TwoWayVEdge",
@@ -28007,12 +28007,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7820,
-        y: 7340,
+        x: 8400,
+        y: 9400,
       },
       end: {
-        x: 8060,
-        y: 7340,
+        x: 8640,
+        y: 9400,
       },
       id: "1ed7b294-bfb2-471f-aefa-3bc472fd2317",
       name: "TwoWayHEdge",
@@ -28021,12 +28021,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7820,
-        y: 6980,
+        x: 8400,
+        y: 9040,
       },
       end: {
-        x: 7480,
-        y: 6980,
+        x: 8060,
+        y: 9040,
       },
       id: "2062df6b-6cc8-4674-9574-7a41596df47c",
       name: "TwoWayHEdge",
@@ -28035,12 +28035,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7480,
-        y: 6980,
+        x: 8060,
+        y: 9040,
       },
       end: {
-        x: 7180,
-        y: 6980,
+        x: 7760,
+        y: 9040,
       },
       id: "3f1e662c-6172-49c7-bc6a-70c35608ce63",
       name: "TwoWayHEdge",
@@ -28049,12 +28049,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7180,
-        y: 6980,
+        x: 7760,
+        y: 9040,
       },
       end: {
-        x: 7180,
-        y: 7340,
+        x: 7760,
+        y: 9400,
       },
       id: "c5558d13-0a3c-491c-93a7-ebcbd966c896",
       name: "TwoWayVEdge",
@@ -28063,12 +28063,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7180,
-        y: 7340,
+        x: 7760,
+        y: 9400,
       },
       end: {
-        x: 7560,
-        y: 7340,
+        x: 8140,
+        y: 9400,
       },
       id: "0db836d2-2eac-4d2a-9765-6295e0469c68",
       name: "TwoWayHEdge",
@@ -28077,12 +28077,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7560,
-        y: 7340,
+        x: 8140,
+        y: 9400,
       },
       end: {
-        x: 7820,
-        y: 7340,
+        x: 8400,
+        y: 9400,
       },
       id: "9f2cef0f-6a6f-47f9-8e61-831c8d3c09a2",
       name: "TwoWayHEdge",
@@ -28091,12 +28091,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8560,
-        y: 5300,
+        x: 9140,
+        y: 7360,
       },
       end: {
-        x: 8200,
-        y: 5300,
+        x: 8780,
+        y: 7360,
       },
       id: "066c78f2-0db0-4fd7-b888-a7ab6502e26b",
       name: "TwoWayHEdge",
@@ -28105,12 +28105,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8200,
-        y: 5300,
+        x: 8780,
+        y: 7360,
       },
       end: {
-        x: 7940,
-        y: 5300,
+        x: 8520,
+        y: 7360,
       },
       id: "b57f47e5-d565-4517-86fd-7d5c24c0a0d1",
       name: "TwoWayHEdge",
@@ -28119,12 +28119,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7940,
-        y: 5300,
+        x: 8520,
+        y: 7360,
       },
       end: {
-        x: 7940,
-        y: 5560,
+        x: 8520,
+        y: 7620,
       },
       id: "8225817e-03ee-409e-a8e5-91ed59627684",
       name: "TwoWayVEdge",
@@ -28133,12 +28133,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7940,
-        y: 5560,
+        x: 8520,
+        y: 7620,
       },
       end: {
-        x: 7480,
-        y: 5560,
+        x: 8060,
+        y: 7620,
       },
       id: "b53807ed-fb4d-4007-828c-5b3373e071f4",
       name: "TwoWayHEdge",
@@ -28147,12 +28147,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7480,
-        y: 5560,
+        x: 8060,
+        y: 7620,
       },
       end: {
-        x: 7480,
-        y: 5300,
+        x: 8060,
+        y: 7360,
       },
       id: "5dbe1217-8752-4cd5-98cf-27f5fe89bea1",
       name: "TwoWayVEdge",
@@ -28161,12 +28161,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7480,
-        y: 5300,
+        x: 8060,
+        y: 7360,
       },
       end: {
-        x: 7220,
-        y: 5300,
+        x: 7800,
+        y: 7360,
       },
       id: "ae356590-b75b-4767-9ec4-fd5a8de6fcb1",
       name: "TwoWayHEdge",
@@ -28175,12 +28175,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7220,
-        y: 5300,
+        x: 7800,
+        y: 7360,
       },
       end: {
-        x: 7220,
-        y: 5500,
+        x: 7800,
+        y: 7560,
       },
       id: "8aa29224-7dff-4041-88a5-4b31265cc8fa",
       name: "TwoWayVEdge",
@@ -28189,12 +28189,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7220,
-        y: 5500,
+        x: 7800,
+        y: 7560,
       },
       end: {
-        x: 7220,
-        y: 5720,
+        x: 7800,
+        y: 7780,
       },
       id: "23699959-43ff-42df-bbb1-d280d8c80ad5",
       name: "TwoWayVEdge",
@@ -28203,12 +28203,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7220,
-        y: 5720,
+        x: 7800,
+        y: 7780,
       },
       end: {
-        x: 6940,
-        y: 5720,
+        x: 7520,
+        y: 7780,
       },
       id: "ff9e19e4-69fd-4bfb-8d13-ef256a77203c",
       name: "TwoWayHEdge",
@@ -28217,12 +28217,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6940,
-        y: 5720,
+        x: 7520,
+        y: 7780,
       },
       end: {
-        x: 6940,
-        y: 5300,
+        x: 7520,
+        y: 7360,
       },
       id: "f7059298-bb4c-41fc-a3b9-ee549ad1d776",
       name: "TwoWayVEdge",
@@ -28231,12 +28231,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6940,
-        y: 5300,
+        x: 7520,
+        y: 7360,
       },
       end: {
-        x: 7220,
-        y: 5300,
+        x: 7800,
+        y: 7360,
       },
       id: "902c7a76-e3f0-42de-b0d2-bd3e14305a92",
       name: "TwoWayHEdge",
@@ -28245,12 +28245,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7220,
-        y: 5300,
+        x: 7800,
+        y: 7360,
       },
       end: {
-        x: 7220,
-        y: 5060,
+        x: 7800,
+        y: 7120,
       },
       id: "df46387c-7c90-48c1-b390-88043a579b40",
       name: "TwoWayVEdge",
@@ -28259,12 +28259,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7220,
-        y: 5060,
+        x: 7800,
+        y: 7120,
       },
       end: {
-        x: 6940,
-        y: 5060,
+        x: 7520,
+        y: 7120,
       },
       id: "441095ef-56ad-4778-be78-3922311bbf9f",
       name: "TwoWayHEdge",
@@ -28273,12 +28273,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6940,
-        y: 5060,
+        x: 7520,
+        y: 7120,
       },
       end: {
-        x: 6940,
-        y: 4840,
+        x: 7520,
+        y: 6900,
       },
       id: "435fa9ee-9d86-4da5-b789-3ced92ce1475",
       name: "TwoWayVEdge",
@@ -28287,12 +28287,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6940,
-        y: 4840,
+        x: 7520,
+        y: 6900,
       },
       end: {
-        x: 6940,
-        y: 4600,
+        x: 7520,
+        y: 6660,
       },
       id: "ea872b35-843e-4c6d-a558-bd3ae1a5db6a",
       name: "TwoWayVEdge",
@@ -28301,12 +28301,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7180,
-        y: 6980,
+        x: 7760,
+        y: 9040,
       },
       end: {
-        x: 7180,
-        y: 6780,
+        x: 7760,
+        y: 8840,
       },
       id: "9fd97165-9939-4a7b-8bf7-af0c9016d713",
       name: "TwoWayVEdge",
@@ -28315,12 +28315,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7180,
-        y: 6780,
+        x: 7760,
+        y: 8840,
       },
       end: {
-        x: 6840,
-        y: 6780,
+        x: 7420,
+        y: 8840,
       },
       id: "81caf242-15a0-4955-9a5d-567632cd907b",
       name: "TwoWayHEdge",
@@ -28329,12 +28329,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7180,
-        y: 7340,
+        x: 7760,
+        y: 9400,
       },
       end: {
-        x: 6840,
-        y: 7340,
+        x: 7420,
+        y: 9400,
       },
       id: "a7a2de30-5c4a-4202-b9bf-12bdae4231bd",
       name: "TwoWayHEdge",
@@ -28343,12 +28343,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6840,
-        y: 6780,
+        x: 7420,
+        y: 8840,
       },
       end: {
-        x: 6560,
-        y: 6780,
+        x: 7140,
+        y: 8840,
       },
       id: "a01f46e1-726a-435a-8743-a9150906db9b",
       name: "TwoWayHEdge",
@@ -28357,12 +28357,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6560,
-        y: 6780,
+        x: 7140,
+        y: 8840,
       },
       end: {
-        x: 6320,
-        y: 6780,
+        x: 6900,
+        y: 8840,
       },
       id: "d8fa48fc-5349-4605-b796-51b496d27e5e",
       name: "TwoWayHEdge",
@@ -28371,12 +28371,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6840,
-        y: 7340,
+        x: 7420,
+        y: 9400,
       },
       end: {
-        x: 6540,
-        y: 7340,
+        x: 7120,
+        y: 9400,
       },
       id: "0e1709e7-3450-4938-a983-626d294ab892",
       name: "TwoWayHEdge",
@@ -28385,12 +28385,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6540,
-        y: 7340,
+        x: 7120,
+        y: 9400,
       },
       end: {
-        x: 6140,
-        y: 7340,
+        x: 6720,
+        y: 9400,
       },
       id: "f9dd416e-c187-49b5-8e12-65eec82e2887",
       name: "TwoWayHEdge",
@@ -28399,12 +28399,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6140,
-        y: 7340,
+        x: 6720,
+        y: 9400,
       },
       end: {
-        x: 6140,
-        y: 7080,
+        x: 6720,
+        y: 9140,
       },
       id: "f9005be5-a482-4aaf-99f1-5bb0c9eb91c7",
       name: "TwoWayVEdge",
@@ -28413,12 +28413,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6140,
-        y: 7080,
+        x: 6720,
+        y: 9140,
       },
       end: {
-        x: 6140,
-        y: 6780,
+        x: 6720,
+        y: 8840,
       },
       id: "cbb9523c-86a6-4b92-a0af-66a5dd49b4f1",
       name: "TwoWayVEdge",
@@ -28427,12 +28427,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6140,
-        y: 7340,
+        x: 6720,
+        y: 9400,
       },
       end: {
-        x: 5660,
-        y: 7340,
+        x: 6240,
+        y: 9400,
       },
       id: "ad5e0def-7a82-48a3-9a87-5173e966134a",
       name: "TwoWayHEdge",
@@ -28441,12 +28441,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5660,
-        y: 7340,
+        x: 6240,
+        y: 9400,
       },
       end: {
-        x: 5660,
-        y: 7140,
+        x: 6240,
+        y: 9200,
       },
       id: "e944b584-2d38-4fc5-952c-77949eb5a4eb",
       name: "TwoWayVEdge",
@@ -28455,12 +28455,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5660,
-        y: 7140,
+        x: 6240,
+        y: 9200,
       },
       end: {
-        x: 5240,
-        y: 7140,
+        x: 5820,
+        y: 9200,
       },
       id: "f25d8dc7-b591-4e6b-b0ba-cc7a41a03362",
       name: "TwoWayHEdge",
@@ -28469,12 +28469,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 7140,
+        x: 5820,
+        y: 9200,
       },
       end: {
-        x: 5240,
-        y: 6940,
+        x: 5820,
+        y: 9000,
       },
       id: "0ba6927e-f93d-43be-aad3-fafdf0773cc7",
       name: "TwoWayVEdge",
@@ -28483,12 +28483,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 6940,
+        x: 5820,
+        y: 9000,
       },
       end: {
-        x: 5460,
-        y: 6940,
+        x: 6040,
+        y: 9000,
       },
       id: "f56f005a-c6ff-4243-aa61-1eab67800821",
       name: "TwoWayHEdge",
@@ -28497,12 +28497,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5460,
-        y: 6940,
+        x: 6040,
+        y: 9000,
       },
       end: {
-        x: 5660,
-        y: 6940,
+        x: 6240,
+        y: 9000,
       },
       id: "0a21105a-8ce3-4ee2-b1e1-1b66acc0ffb0",
       name: "TwoWayHEdge",
@@ -28511,12 +28511,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5660,
-        y: 6940,
+        x: 6240,
+        y: 9000,
       },
       end: {
-        x: 5660,
-        y: 7140,
+        x: 6240,
+        y: 9200,
       },
       id: "c28f32af-e382-4187-b90f-21ec78f42c3a",
       name: "TwoWayVEdge",
@@ -28525,12 +28525,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5660,
-        y: 6940,
+        x: 6240,
+        y: 9000,
       },
       end: {
-        x: 5660,
-        y: 6620,
+        x: 6240,
+        y: 8680,
       },
       id: "1eadc740-3cfc-4383-8e13-f809084a6621",
       name: "TwoWayVEdge",
@@ -28539,12 +28539,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5660,
-        y: 6620,
+        x: 6240,
+        y: 8680,
       },
       end: {
-        x: 5900,
-        y: 6620,
+        x: 6480,
+        y: 8680,
       },
       id: "bda44373-5118-4350-8484-fa3aac41e98c",
       name: "TwoWayHEdge",
@@ -28553,12 +28553,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5900,
-        y: 6620,
+        x: 6480,
+        y: 8680,
       },
       end: {
-        x: 6120,
-        y: 6620,
+        x: 6700,
+        y: 8680,
       },
       id: "e4c6ae58-ab4d-4d7a-a99f-7bae632f0192",
       name: "TwoWayHEdge",
@@ -28567,12 +28567,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6120,
-        y: 6620,
+        x: 6700,
+        y: 8680,
       },
       end: {
-        x: 6120,
-        y: 6420,
+        x: 6700,
+        y: 8480,
       },
       id: "00d4e604-2286-4334-ae0a-65abed474ab3",
       name: "TwoWayVEdge",
@@ -28581,12 +28581,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6120,
-        y: 6420,
+        x: 6700,
+        y: 8480,
       },
       end: {
-        x: 5900,
-        y: 6420,
+        x: 6480,
+        y: 8480,
       },
       id: "6dfe0155-30ac-4d3c-a1d2-22ba573835c6",
       name: "TwoWayHEdge",
@@ -28595,12 +28595,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5900,
-        y: 6420,
+        x: 6480,
+        y: 8480,
       },
       end: {
-        x: 5900,
-        y: 6220,
+        x: 6480,
+        y: 8280,
       },
       id: "55862d52-2ca5-41a8-8adb-58eb2f209ec7",
       name: "TwoWayVEdge",
@@ -28609,12 +28609,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5900,
-        y: 6220,
+        x: 6480,
+        y: 8280,
       },
       end: {
-        x: 6340,
-        y: 6220,
+        x: 6920,
+        y: 8280,
       },
       id: "3bc23a10-8d8e-4352-b1e1-a88b713e0553",
       name: "TwoWayHEdge",
@@ -28623,12 +28623,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6340,
-        y: 6220,
+        x: 6920,
+        y: 8280,
       },
       end: {
-        x: 6340,
-        y: 6420,
+        x: 6920,
+        y: 8480,
       },
       id: "96470474-3d3a-4c22-93b9-091586d11a12",
       name: "TwoWayVEdge",
@@ -28637,12 +28637,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6120,
-        y: 6420,
+        x: 6700,
+        y: 8480,
       },
       end: {
-        x: 6340,
-        y: 6420,
+        x: 6920,
+        y: 8480,
       },
       id: "bc1e1647-6fb9-4e26-a1e7-574ada719ff1",
       name: "TwoWayHEdge",
@@ -28651,12 +28651,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6340,
-        y: 6420,
+        x: 6920,
+        y: 8480,
       },
       end: {
-        x: 6540,
-        y: 6420,
+        x: 7120,
+        y: 8480,
       },
       id: "e78af61b-8665-48f9-ba2e-66d74b12ca8c",
       name: "TwoWayHEdge",
@@ -28665,12 +28665,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6540,
-        y: 6420,
+        x: 7120,
+        y: 8480,
       },
       end: {
-        x: 6540,
-        y: 6080,
+        x: 7120,
+        y: 8140,
       },
       id: "7ae00207-1ec4-4b88-850a-3c1a3dab7068",
       name: "TwoWayVEdge",
@@ -28679,12 +28679,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6540,
-        y: 6080,
+        x: 7120,
+        y: 8140,
       },
       end: {
-        x: 6100,
-        y: 6080,
+        x: 6680,
+        y: 8140,
       },
       id: "a8569941-8444-42cc-9041-cd91e88edd06",
       name: "TwoWayHEdge",
@@ -28693,12 +28693,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6100,
-        y: 6080,
+        x: 6680,
+        y: 8140,
       },
       end: {
-        x: 6100,
-        y: 5880,
+        x: 6680,
+        y: 7940,
       },
       id: "ecaa1c78-59d5-4a7f-bb59-33e37801061e",
       name: "TwoWayVEdge",
@@ -28707,12 +28707,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6100,
-        y: 5880,
+        x: 6680,
+        y: 7940,
       },
       end: {
-        x: 6320,
-        y: 5880,
+        x: 6900,
+        y: 7940,
       },
       id: "2c71d4bf-1d41-49da-be46-0fdca5593f09",
       name: "TwoWayHEdge",
@@ -28721,12 +28721,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6320,
-        y: 5880,
+        x: 6900,
+        y: 7940,
       },
       end: {
-        x: 6540,
-        y: 5880,
+        x: 7120,
+        y: 7940,
       },
       id: "572bb1a8-7205-450b-ab86-fb74951b304e",
       name: "TwoWayHEdge",
@@ -28735,12 +28735,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6540,
-        y: 5880,
+        x: 7120,
+        y: 7940,
       },
       end: {
-        x: 6540,
-        y: 6080,
+        x: 7120,
+        y: 8140,
       },
       id: "73c35609-9f88-4cfa-afd1-14405a9f8dd6",
       name: "TwoWayVEdge",
@@ -28749,12 +28749,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7180,
-        y: 6780,
+        x: 7760,
+        y: 8840,
       },
       end: {
-        x: 7160,
-        y: 6380,
+        x: 7740,
+        y: 8440,
       },
       id: "f88f1482-087e-46c0-b9f3-dda9907f1979",
       name: "TwoWayVEdge",
@@ -28763,12 +28763,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7160,
-        y: 6380,
+        x: 7740,
+        y: 8440,
       },
       end: {
-        x: 6960,
-        y: 6380,
+        x: 7540,
+        y: 8440,
       },
       id: "29768aac-66fd-4f13-ac1a-0ffb84df63a0",
       name: "TwoWayHEdge",
@@ -28777,12 +28777,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6960,
-        y: 6380,
+        x: 7540,
+        y: 8440,
       },
       end: {
-        x: 6740,
-        y: 6380,
+        x: 7320,
+        y: 8440,
       },
       id: "a4e6e487-14e7-4a4e-9304-8928fb94d025",
       name: "TwoWayHEdge",
@@ -28791,12 +28791,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6740,
-        y: 6380,
+        x: 7320,
+        y: 8440,
       },
       end: {
-        x: 6740,
-        y: 5920,
+        x: 7320,
+        y: 7980,
       },
       id: "89f6c28f-8a32-4894-a593-07beea86e749",
       name: "TwoWayVEdge",
@@ -28805,12 +28805,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6740,
-        y: 5920,
+        x: 7320,
+        y: 7980,
       },
       end: {
-        x: 6960,
-        y: 5920,
+        x: 7540,
+        y: 7980,
       },
       id: "1f4e5954-88ad-47d3-9b88-518287adacf2",
       name: "TwoWayHEdge",
@@ -28819,12 +28819,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6960,
-        y: 5920,
+        x: 7540,
+        y: 7980,
       },
       end: {
-        x: 6960,
-        y: 6140,
+        x: 7540,
+        y: 8200,
       },
       id: "624ea6f2-2e80-42fe-9dd7-5342844df94e",
       name: "TwoWayVEdge",
@@ -28833,12 +28833,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6960,
-        y: 6140,
+        x: 7540,
+        y: 8200,
       },
       end: {
-        x: 6960,
-        y: 6380,
+        x: 7540,
+        y: 8440,
       },
       id: "35f7d429-7693-4419-a1fd-6ae6e98b2e22",
       name: "TwoWayVEdge",
@@ -28847,12 +28847,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6740,
-        y: 5920,
+        x: 7320,
+        y: 7980,
       },
       end: {
-        x: 6740,
-        y: 5620,
+        x: 7320,
+        y: 7680,
       },
       id: "3afac629-cabf-489c-89d2-ee8fee8a73a0",
       name: "TwoWayVEdge",
@@ -28861,12 +28861,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6740,
-        y: 5620,
+        x: 7320,
+        y: 7680,
       },
       end: {
-        x: 6740,
-        y: 5340,
+        x: 7320,
+        y: 7400,
       },
       id: "ead06d87-2f7e-4c08-bcdd-1b69bfe07ea7",
       name: "TwoWayVEdge",
@@ -28875,12 +28875,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6740,
-        y: 5340,
+        x: 7320,
+        y: 7400,
       },
       end: {
-        x: 6500,
-        y: 5340,
+        x: 7080,
+        y: 7400,
       },
       id: "daf3d91d-b294-4551-9f8b-23125ced73fc",
       name: "TwoWayHEdge",
@@ -28889,12 +28889,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6500,
-        y: 5340,
+        x: 7080,
+        y: 7400,
       },
       end: {
-        x: 6500,
-        y: 5020,
+        x: 7080,
+        y: 7080,
       },
       id: "2cc11332-c895-47fe-b386-295dff24eb43",
       name: "TwoWayVEdge",
@@ -28903,12 +28903,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6500,
-        y: 5020,
+        x: 7080,
+        y: 7080,
       },
       end: {
-        x: 6740,
-        y: 5020,
+        x: 7320,
+        y: 7080,
       },
       id: "cf4e4d05-595a-4b6e-b16f-c89b77c3ef73",
       name: "TwoWayHEdge",
@@ -28917,12 +28917,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6740,
-        y: 5020,
+        x: 7320,
+        y: 7080,
       },
       end: {
-        x: 6740,
-        y: 5180,
+        x: 7320,
+        y: 7240,
       },
       id: "21288059-5f9e-4559-b9d7-112351fd36a0",
       name: "TwoWayVEdge",
@@ -28931,12 +28931,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6740,
-        y: 5180,
+        x: 7320,
+        y: 7240,
       },
       end: {
-        x: 6740,
-        y: 5340,
+        x: 7320,
+        y: 7400,
       },
       id: "f9e5f805-a8fd-4915-b1f1-660ea0c40f93",
       name: "TwoWayVEdge",
@@ -28945,12 +28945,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6320,
-        y: 5880,
+        x: 6900,
+        y: 7940,
       },
       end: {
-        x: 6300,
-        y: 5700,
+        x: 6880,
+        y: 7760,
       },
       id: "2e2ba4db-bfae-4259-a83d-e00a011a0e88",
       name: "TwoWayVEdge",
@@ -28959,12 +28959,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6300,
-        y: 5700,
+        x: 6880,
+        y: 7760,
       },
       end: {
-        x: 6300,
-        y: 5520,
+        x: 6880,
+        y: 7580,
       },
       id: "a5e7c9ac-67a1-4b49-9e27-7bcf42dd4fa2",
       name: "TwoWayVEdge",
@@ -28973,12 +28973,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6300,
-        y: 5520,
+        x: 6880,
+        y: 7580,
       },
       end: {
-        x: 6300,
-        y: 5340,
+        x: 6880,
+        y: 7400,
       },
       id: "f292fb78-e9dc-4494-b95a-26ef57b52b1a",
       name: "TwoWayVEdge",
@@ -28987,12 +28987,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6300,
-        y: 5340,
+        x: 6880,
+        y: 7400,
       },
       end: {
-        x: 6500,
-        y: 5340,
+        x: 7080,
+        y: 7400,
       },
       id: "34936117-b10a-467f-9c33-f541e36eb05f",
       name: "TwoWayHEdge",
@@ -29001,12 +29001,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6100,
-        y: 5880,
+        x: 6680,
+        y: 7940,
       },
       end: {
-        x: 6080,
-        y: 5700,
+        x: 6660,
+        y: 7760,
       },
       id: "b3f1ef27-46b4-4c74-a267-69992107b50c",
       name: "TwoWayVEdge",
@@ -29015,12 +29015,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5900,
-        y: 6220,
+        x: 6480,
+        y: 8280,
       },
       end: {
-        x: 5520,
-        y: 6200,
+        x: 6100,
+        y: 8260,
       },
       id: "af29f912-df2c-4d43-befe-4f1696d23636",
       name: "TwoWayHEdge",
@@ -29029,12 +29029,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5520,
-        y: 6200,
+        x: 6100,
+        y: 8260,
       },
       end: {
-        x: 5440,
-        y: 6000,
+        x: 6020,
+        y: 8060,
       },
       id: "a38e00a0-a43e-4ef4-8e03-cbcc54fc250a",
       name: "TwoWayVEdge",
@@ -29043,12 +29043,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5520,
-        y: 6200,
+        x: 6100,
+        y: 8260,
       },
       end: {
-        x: 5460,
-        y: 6420,
+        x: 6040,
+        y: 8480,
       },
       id: "616b0b84-3e97-4538-9bf9-e4bc6e7be981",
       name: "TwoWayVEdge",
@@ -29057,12 +29057,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5460,
-        y: 6420,
+        x: 6040,
+        y: 8480,
       },
       end: {
-        x: 5240,
-        y: 6420,
+        x: 5820,
+        y: 8480,
       },
       id: "e2bf92ae-2b35-4737-897d-4fdc53f2c310",
       name: "TwoWayHEdge",
@@ -29071,12 +29071,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 6420,
+        x: 5820,
+        y: 8480,
       },
       end: {
-        x: 5240,
-        y: 6000,
+        x: 5820,
+        y: 8060,
       },
       id: "82f39d8f-b080-4b99-9a1a-2382ca6b1498",
       name: "TwoWayVEdge",
@@ -29085,12 +29085,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 6000,
+        x: 5820,
+        y: 8060,
       },
       end: {
-        x: 5440,
-        y: 6000,
+        x: 6020,
+        y: 8060,
       },
       id: "5acb2142-9b9e-4c2a-90d2-41b97eeaf3af",
       name: "TwoWayHEdge",
@@ -29099,12 +29099,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6080,
-        y: 5700,
+        x: 6660,
+        y: 7760,
       },
       end: {
-        x: 5500,
-        y: 5740,
+        x: 6080,
+        y: 7800,
       },
       id: "2f502c8d-b6e7-4682-b201-c175ed535a3f",
       name: "TwoWayHEdge",
@@ -29113,12 +29113,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 6940,
+        x: 5820,
+        y: 9000,
       },
       end: {
-        x: 4800,
-        y: 6940,
+        x: 5380,
+        y: 9000,
       },
       id: "93e5316c-5537-4ad9-892b-bb6063f50201",
       name: "TwoWayHEdge",
@@ -29127,12 +29127,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 6940,
+        x: 5380,
+        y: 9000,
       },
       end: {
-        x: 4800,
-        y: 6680,
+        x: 5380,
+        y: 8740,
       },
       id: "6e02351c-c5ed-4ee8-baf7-12a209fa4142",
       name: "TwoWayVEdge",
@@ -29141,12 +29141,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 6680,
+        x: 5380,
+        y: 8740,
       },
       end: {
-        x: 5020,
-        y: 6680,
+        x: 5600,
+        y: 8740,
       },
       id: "dafb004b-d3eb-4ad9-bf2f-d4c5819e03ab",
       name: "TwoWayHEdge",
@@ -29155,12 +29155,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5020,
-        y: 6680,
+        x: 5600,
+        y: 8740,
       },
       end: {
-        x: 5240,
-        y: 6680,
+        x: 5820,
+        y: 8740,
       },
       id: "fe38e941-946c-44bb-afe4-44167cd539d1",
       name: "TwoWayHEdge",
@@ -29169,12 +29169,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 6680,
+        x: 5820,
+        y: 8740,
       },
       end: {
-        x: 5240,
-        y: 6940,
+        x: 5820,
+        y: 9000,
       },
       id: "2ce31c0f-3812-444b-8f1c-adc7769b8233",
       name: "TwoWayVEdge",
@@ -29183,12 +29183,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 6420,
+        x: 5820,
+        y: 8480,
       },
       end: {
-        x: 5000,
-        y: 6440,
+        x: 5580,
+        y: 8500,
       },
       id: "c52f94e2-4f2e-4861-a0cb-165c060e5067",
       name: "TwoWayHEdge",
@@ -29197,12 +29197,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5000,
-        y: 6440,
+        x: 5580,
+        y: 8500,
       },
       end: {
-        x: 5020,
-        y: 6680,
+        x: 5600,
+        y: 8740,
       },
       id: "4c02c091-c382-4722-8bdd-f81579d2a40d",
       name: "OneWayVEdge",
@@ -29211,12 +29211,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 6000,
+        x: 5820,
+        y: 8060,
       },
       end: {
-        x: 4880,
-        y: 5980,
+        x: 5460,
+        y: 8040,
       },
       id: "0bfed79d-36a1-4fd7-89f0-22dadb0e58d9",
       name: "TwoWayHEdge",
@@ -29225,12 +29225,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4880,
-        y: 5980,
+        x: 5460,
+        y: 8040,
       },
       end: {
-        x: 4840,
-        y: 5760,
+        x: 5420,
+        y: 7820,
       },
       id: "cf0db81a-ff7d-4ee6-a340-c363e59bdffd",
       name: "TwoWayVEdge",
@@ -29239,12 +29239,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4840,
-        y: 5760,
+        x: 5420,
+        y: 7820,
       },
       end: {
-        x: 4500,
-        y: 5760,
+        x: 5080,
+        y: 7820,
       },
       id: "0bc4e228-e361-4e51-8f77-4a040f896415",
       name: "TwoWayHEdge",
@@ -29253,12 +29253,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4500,
-        y: 5760,
+        x: 5080,
+        y: 7820,
       },
       end: {
-        x: 4500,
-        y: 6100,
+        x: 5080,
+        y: 8160,
       },
       id: "2895cd43-429c-4142-aae8-47ebe5c93b31",
       name: "TwoWayVEdge",
@@ -29267,12 +29267,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4500,
-        y: 6100,
+        x: 5080,
+        y: 8160,
       },
       end: {
-        x: 4740,
-        y: 6100,
+        x: 5320,
+        y: 8160,
       },
       id: "99581254-238b-4508-a892-664adec2d9d9",
       name: "TwoWayHEdge",
@@ -29281,12 +29281,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4740,
-        y: 6100,
+        x: 5320,
+        y: 8160,
       },
       end: {
-        x: 4740,
-        y: 5920,
+        x: 5320,
+        y: 7980,
       },
       id: "c31aee16-bd89-4383-84a8-2953ddcdbb68",
       name: "TwoWayVEdge",
@@ -29295,12 +29295,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4200,
-        y: 6060,
+        x: 4780,
+        y: 8120,
       },
       end: {
-        x: 4380,
-        y: 6080,
+        x: 4960,
+        y: 8140,
       },
       id: "180c9ae7-404c-4631-a76c-a2b13fd1ea5b",
       name: "TwoWayHEdge",
@@ -29309,12 +29309,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4380,
-        y: 6080,
+        x: 4960,
+        y: 8140,
       },
       end: {
-        x: 4260,
-        y: 6460,
+        x: 4840,
+        y: 8520,
       },
       id: "728893c6-fd23-4d9e-9eb6-44e57fca6cd6",
       name: "TwoWayVEdge",
@@ -29323,12 +29323,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4800,
-        y: 6940,
+        x: 5380,
+        y: 9000,
       },
       end: {
-        x: 4680,
-        y: 6940,
+        x: 5260,
+        y: 9000,
       },
       id: "2b178f60-a42c-42f0-b8b5-46a3d142e3fd",
       name: "TwoWayHEdge",
@@ -29337,12 +29337,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4680,
-        y: 6940,
+        x: 5260,
+        y: 9000,
       },
       end: {
-        x: 4560,
-        y: 6940,
+        x: 5140,
+        y: 9000,
       },
       id: "b1506972-a876-47f0-9c9e-914d128028bd",
       name: "TwoWayHEdge",
@@ -29351,12 +29351,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4560,
-        y: 6940,
+        x: 5140,
+        y: 9000,
       },
       end: {
-        x: 4400,
-        y: 6940,
+        x: 4980,
+        y: 9000,
       },
       id: "50dbc664-5ef3-4c47-8f90-3092c08540d1",
       name: "TwoWayHEdge",
@@ -29365,12 +29365,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4260,
-        y: 6460,
+        x: 4840,
+        y: 8520,
       },
       end: {
-        x: 4260,
-        y: 6680,
+        x: 4840,
+        y: 8740,
       },
       id: "31617441-aefc-4c06-a423-4a91941557a4",
       name: "TwoWayVEdge",
@@ -29379,12 +29379,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4260,
-        y: 6460,
+        x: 4840,
+        y: 8520,
       },
       end: {
-        x: 4400,
-        y: 6460,
+        x: 4980,
+        y: 8520,
       },
       id: "b8ed90fa-e033-4ceb-9421-c37ceef47690",
       name: "TwoWayHEdge",
@@ -29393,12 +29393,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4400,
-        y: 6460,
+        x: 4980,
+        y: 8520,
       },
       end: {
-        x: 4400,
-        y: 6680,
+        x: 4980,
+        y: 8740,
       },
       id: "158b3686-9bba-4c42-bdb5-cfaa424c763a",
       name: "TwoWayVEdge",
@@ -29407,12 +29407,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4400,
-        y: 6680,
+        x: 4980,
+        y: 8740,
       },
       end: {
-        x: 4540,
-        y: 6680,
+        x: 5120,
+        y: 8740,
       },
       id: "68ec08ad-e2fc-48d6-97ae-261bfa3134a2",
       name: "TwoWayHEdge",
@@ -29421,12 +29421,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4540,
-        y: 6680,
+        x: 5120,
+        y: 8740,
       },
       end: {
-        x: 4680,
-        y: 6680,
+        x: 5260,
+        y: 8740,
       },
       id: "da098e36-0a8a-4d8a-a253-058c1cbf6c37",
       name: "TwoWayHEdge",
@@ -29435,12 +29435,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4260,
-        y: 6680,
+        x: 4840,
+        y: 8740,
       },
       end: {
-        x: 4260,
-        y: 6940,
+        x: 4840,
+        y: 9000,
       },
       id: "926e43a7-bac4-4f23-8635-4b686de018fb",
       name: "TwoWayVEdge",
@@ -29449,12 +29449,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4260,
-        y: 6940,
+        x: 4840,
+        y: 9000,
       },
       end: {
-        x: 4400,
-        y: 6940,
+        x: 4980,
+        y: 9000,
       },
       id: "156db9b8-b8ca-4359-ad20-3a27cf2e4c5f",
       name: "TwoWayHEdge",
@@ -29463,12 +29463,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4380,
-        y: 6080,
+        x: 4960,
+        y: 8140,
       },
       end: {
-        x: 4380,
-        y: 5860,
+        x: 4960,
+        y: 7920,
       },
       id: "912c5445-5cc3-4083-99fc-cca2ca599ed0",
       name: "TwoWayVEdge",
@@ -29477,12 +29477,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4380,
-        y: 5860,
+        x: 4960,
+        y: 7920,
       },
       end: {
-        x: 4380,
-        y: 5580,
+        x: 4960,
+        y: 7640,
       },
       id: "7f7a1c40-6b9d-45c4-8388-a1421637662c",
       name: "TwoWayVEdge",
@@ -29491,12 +29491,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4380,
-        y: 5580,
+        x: 4960,
+        y: 7640,
       },
       end: {
-        x: 4560,
-        y: 5580,
+        x: 5140,
+        y: 7640,
       },
       id: "f0e45ba7-3e31-4779-b8d6-4cda10dcd98e",
       name: "TwoWayHEdge",
@@ -29505,12 +29505,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4560,
-        y: 5580,
+        x: 5140,
+        y: 7640,
       },
       end: {
-        x: 4560,
-        y: 5380,
+        x: 5140,
+        y: 7440,
       },
       id: "cf887596-49e3-484e-ab27-12ebae2806c8",
       name: "TwoWayVEdge",
@@ -29519,12 +29519,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4560,
-        y: 5380,
+        x: 5140,
+        y: 7440,
       },
       end: {
-        x: 4700,
-        y: 5380,
+        x: 5280,
+        y: 7440,
       },
       id: "3e92fc18-2f1b-4c97-acd4-d1a83da5c744",
       name: "TwoWayHEdge",
@@ -29533,12 +29533,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4700,
-        y: 5380,
+        x: 5280,
+        y: 7440,
       },
       end: {
-        x: 4700,
-        y: 5240,
+        x: 5280,
+        y: 7300,
       },
       id: "8b96bf5c-9b2f-4953-a175-a1e36b03b3bf",
       name: "TwoWayVEdge",
@@ -29547,12 +29547,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4700,
-        y: 5240,
+        x: 5280,
+        y: 7300,
       },
       end: {
-        x: 4840,
-        y: 5240,
+        x: 5420,
+        y: 7300,
       },
       id: "0e595ccc-74d1-4ad0-aa04-b8e2d5448f2d",
       name: "TwoWayHEdge",
@@ -29561,12 +29561,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4840,
-        y: 5240,
+        x: 5420,
+        y: 7300,
       },
       end: {
-        x: 5020,
-        y: 5240,
+        x: 5600,
+        y: 7300,
       },
       id: "79bf617b-abc8-4fba-8545-74b073f4523c",
       name: "TwoWayHEdge",
@@ -29575,12 +29575,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5500,
-        y: 5740,
+        x: 6080,
+        y: 7800,
       },
       end: {
-        x: 5240,
-        y: 5740,
+        x: 5820,
+        y: 7800,
       },
       id: "e3ed8c68-14ac-47b5-8a5b-d2d93a335433",
       name: "TwoWayHEdge",
@@ -29589,12 +29589,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 5740,
+        x: 5820,
+        y: 7800,
       },
       end: {
-        x: 5240,
-        y: 5600,
+        x: 5820,
+        y: 7660,
       },
       id: "8f154ad0-bd81-4311-abec-8224bfa236da",
       name: "TwoWayVEdge",
@@ -29603,12 +29603,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 5600,
+        x: 5820,
+        y: 7660,
       },
       end: {
-        x: 5240,
-        y: 5460,
+        x: 5820,
+        y: 7520,
       },
       id: "9932897b-1417-41ef-8d3d-361f8216e82f",
       name: "TwoWayVEdge",
@@ -29617,12 +29617,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5240,
-        y: 5600,
+        x: 5820,
+        y: 7660,
       },
       end: {
-        x: 5020,
-        y: 5600,
+        x: 5600,
+        y: 7660,
       },
       id: "e60969d2-99bc-4c6f-8e2a-d9a1c20ae44d",
       name: "TwoWayHEdge",
@@ -29631,12 +29631,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5020,
-        y: 5600,
+        x: 5600,
+        y: 7660,
       },
       end: {
-        x: 4760,
-        y: 5600,
+        x: 5340,
+        y: 7660,
       },
       id: "32b8feed-0afc-4a76-9b50-197fddd956a9",
       name: "TwoWayHEdge",
@@ -29645,12 +29645,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5020,
-        y: 5600,
+        x: 5600,
+        y: 7660,
       },
       end: {
-        x: 5020,
-        y: 5440,
+        x: 5600,
+        y: 7500,
       },
       id: "f7792c31-c911-4e48-af40-5cb4b408fa63",
       name: "TwoWayVEdge",
@@ -29659,12 +29659,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5020,
-        y: 5440,
+        x: 5600,
+        y: 7500,
       },
       end: {
-        x: 5020,
-        y: 5240,
+        x: 5600,
+        y: 7300,
       },
       id: "1a20c2df-7497-4ea3-8aa0-5e9c7dfe21db",
       name: "TwoWayVEdge",
@@ -29673,12 +29673,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6500,
-        y: 5020,
+        x: 7080,
+        y: 7080,
       },
       end: {
-        x: 6300,
-        y: 5020,
+        x: 6880,
+        y: 7080,
       },
       id: "c47b8c3f-b19c-49c7-9635-16b382e97eda",
       name: "TwoWayHEdge",
@@ -29687,12 +29687,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6300,
-        y: 5020,
+        x: 6880,
+        y: 7080,
       },
       end: {
-        x: 6060,
-        y: 5020,
+        x: 6640,
+        y: 7080,
       },
       id: "0ab4e7be-4d63-40e8-9c77-b6699843878b",
       name: "TwoWayHEdge",
@@ -29701,12 +29701,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6940,
-        y: 4600,
+        x: 7520,
+        y: 6660,
       },
       end: {
-        x: 6740,
-        y: 4600,
+        x: 7320,
+        y: 6660,
       },
       id: "cfa8305b-0957-47df-bf09-2f6ea35ee2a2",
       name: "TwoWayHEdge",
@@ -29715,12 +29715,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6740,
-        y: 4600,
+        x: 7320,
+        y: 6660,
       },
       end: {
-        x: 6520,
-        y: 4600,
+        x: 7100,
+        y: 6660,
       },
       id: "78f36938-0511-4dc3-acb0-591bec192900",
       name: "TwoWayHEdge",
@@ -29729,12 +29729,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6520,
-        y: 4600,
+        x: 7100,
+        y: 6660,
       },
       end: {
-        x: 6280,
-        y: 4600,
+        x: 6860,
+        y: 6660,
       },
       id: "ba3d6281-3c01-476f-9848-00d80490d098",
       name: "TwoWayHEdge",
@@ -29743,12 +29743,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6280,
-        y: 4600,
+        x: 6860,
+        y: 6660,
       },
       end: {
-        x: 6040,
-        y: 4600,
+        x: 6620,
+        y: 6660,
       },
       id: "107706e4-c0c9-4e74-84f8-a821e479e208",
       name: "TwoWayHEdge",
@@ -29757,12 +29757,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6040,
-        y: 4600,
+        x: 6620,
+        y: 6660,
       },
       end: {
-        x: 5980,
-        y: 4820,
+        x: 6560,
+        y: 6880,
       },
       id: "2f7a49ea-53f0-419f-8d2e-11592916348d",
       name: "TwoWayVEdge",
@@ -29771,12 +29771,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5980,
-        y: 4820,
+        x: 6560,
+        y: 6880,
       },
       end: {
-        x: 6060,
-        y: 5020,
+        x: 6640,
+        y: 7080,
       },
       id: "99552b3b-5556-40d7-a904-35e12ec8146f",
       name: "TwoWayVEdge",
@@ -29785,12 +29785,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6300,
-        y: 5520,
+        x: 6880,
+        y: 7580,
       },
       end: {
-        x: 5800,
-        y: 5520,
+        x: 6380,
+        y: 7580,
       },
       id: "275ea87e-05d3-497e-9c5c-df1de22b6556",
       name: "TwoWayHEdge",
@@ -29799,12 +29799,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5800,
-        y: 5520,
+        x: 6380,
+        y: 7580,
       },
       end: {
-        x: 5800,
-        y: 5380,
+        x: 6380,
+        y: 7440,
       },
       id: "7bfe3a88-f06d-476e-bb0e-c8bd8414f42b",
       name: "TwoWayVEdge",
@@ -29813,12 +29813,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5800,
-        y: 5380,
+        x: 6380,
+        y: 7440,
       },
       end: {
-        x: 5800,
-        y: 5240,
+        x: 6380,
+        y: 7300,
       },
       id: "6b590acf-c1d7-4496-8f01-c2aec8c052be",
       name: "TwoWayVEdge",
@@ -29827,12 +29827,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5020,
-        y: 5240,
+        x: 5600,
+        y: 7300,
       },
       end: {
-        x: 5280,
-        y: 5240,
+        x: 5860,
+        y: 7300,
       },
       id: "02a2d684-25b1-4c7a-939e-73c2a570b35e",
       name: "TwoWayHEdge",
@@ -29841,12 +29841,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5280,
-        y: 5240,
+        x: 5860,
+        y: 7300,
       },
       end: {
-        x: 5520,
-        y: 5240,
+        x: 6100,
+        y: 7300,
       },
       id: "a3d1484c-0a0e-4d1e-8d4c-97fcc9120126",
       name: "TwoWayHEdge",
@@ -29855,12 +29855,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5520,
-        y: 5240,
+        x: 6100,
+        y: 7300,
       },
       end: {
-        x: 5800,
-        y: 5240,
+        x: 6380,
+        y: 7300,
       },
       id: "9364c35d-32cb-4a1d-a8cd-398e384574d4",
       name: "TwoWayHEdge",
@@ -29869,12 +29869,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5520,
-        y: 5240,
+        x: 6100,
+        y: 7300,
       },
       end: {
-        x: 5520,
-        y: 4820,
+        x: 6100,
+        y: 6880,
       },
       id: "ea8fda78-39e0-459f-871a-dd2b33440652",
       name: "TwoWayVEdge",
@@ -29883,12 +29883,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5520,
-        y: 4820,
+        x: 6100,
+        y: 6880,
       },
       end: {
-        x: 5760,
-        y: 4820,
+        x: 6340,
+        y: 6880,
       },
       id: "1794e612-6761-4789-b68a-c2e2e6562c8b",
       name: "TwoWayHEdge",
@@ -29897,12 +29897,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5760,
-        y: 4820,
+        x: 6340,
+        y: 6880,
       },
       end: {
-        x: 5980,
-        y: 4820,
+        x: 6560,
+        y: 6880,
       },
       id: "70c31911-165b-43cd-aa49-5401f081c867",
       name: "TwoWayHEdge",
@@ -29911,12 +29911,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5520,
-        y: 4820,
+        x: 6100,
+        y: 6880,
       },
       end: {
-        x: 5260,
-        y: 4820,
+        x: 5840,
+        y: 6880,
       },
       id: "394fd223-bba3-44ca-97a9-f9c8e34759ce",
       name: "TwoWayHEdge",
@@ -29925,12 +29925,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5260,
-        y: 4820,
+        x: 5840,
+        y: 6880,
       },
       end: {
-        x: 5260,
-        y: 4600,
+        x: 5840,
+        y: 6660,
       },
       id: "887b8a97-1b8c-4335-a597-1e110c93e211",
       name: "TwoWayVEdge",
@@ -29939,12 +29939,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5260,
-        y: 4600,
+        x: 5840,
+        y: 6660,
       },
       end: {
-        x: 5760,
-        y: 4600,
+        x: 6340,
+        y: 6660,
       },
       id: "abb518f1-f477-4fea-adf1-4c026ff72856",
       name: "TwoWayHEdge",
@@ -29953,12 +29953,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5760,
-        y: 4600,
+        x: 6340,
+        y: 6660,
       },
       end: {
-        x: 5760,
-        y: 4820,
+        x: 6340,
+        y: 6880,
       },
       id: "f385549e-75af-48c3-b397-ba5a59aab942",
       name: "TwoWayVEdge",
@@ -29967,12 +29967,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5760,
-        y: 4600,
+        x: 6340,
+        y: 6660,
       },
       end: {
-        x: 5760,
-        y: 4360,
+        x: 6340,
+        y: 6420,
       },
       id: "67e430fd-0fa4-49f6-8e0f-e65273be1442",
       name: "TwoWayVEdge",
@@ -29981,12 +29981,12 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5760,
-        y: 4360,
+        x: 6340,
+        y: 6420,
       },
       end: {
-        x: 5980,
-        y: 3380,
+        x: 6560,
+        y: 5440,
       },
       id: "6f6656a1-122e-4ca4-a25d-30370453be66",
       name: "TwoWayVEdge",
@@ -29995,13 +29995,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 1960,
-        y: 2460,
+        x: 2540,
+        y: 4520,
       },
       startId: "aaeb9d25-3961-4529-b9e3-fd6b92f455c2",
       end: {
-        x: 2160,
-        y: 2460,
+        x: 2740,
+        y: 4520,
       },
       endId: "cce4c524-0cee-4d29-b998-04377768c8da",
       name: "TwoWayHEdge",
@@ -30009,13 +30009,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2160,
-        y: 2460,
+        x: 2740,
+        y: 4520,
       },
       startId: "cce4c524-0cee-4d29-b998-04377768c8da",
       end: {
-        x: 2160,
-        y: 2840,
+        x: 2740,
+        y: 4900,
       },
       endId: "2877e24b-a5aa-4610-a0cb-afca864de892",
       name: "TwoWayVEdge",
@@ -30023,13 +30023,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2960,
-        y: 2460,
+        x: 3540,
+        y: 4520,
       },
       startId: "68d7fcd7-e960-4514-9603-f271284086d1",
       end: {
-        x: 2720,
-        y: 2460,
+        x: 3300,
+        y: 4520,
       },
       endId: "648aa064-fb51-4bbf-8b4c-f8f50e6e82f0",
       name: "TwoWayHEdge",
@@ -30037,13 +30037,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2720,
-        y: 2460,
+        x: 3300,
+        y: 4520,
       },
       startId: "648aa064-fb51-4bbf-8b4c-f8f50e6e82f0",
       end: {
-        x: 2720,
-        y: 2240,
+        x: 3300,
+        y: 4300,
       },
       endId: "16dc9cb2-c319-48ab-89b2-5ff9a09e7594",
       name: "TwoWayVEdge",
@@ -30051,13 +30051,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2720,
-        y: 2460,
+        x: 3300,
+        y: 4520,
       },
       startId: "648aa064-fb51-4bbf-8b4c-f8f50e6e82f0",
       end: {
-        x: 2440,
-        y: 2460,
+        x: 3020,
+        y: 4520,
       },
       endId: "969e7397-85e5-48f6-a40d-456bca2bcbbb",
       name: "TwoWayHEdge",
@@ -30065,13 +30065,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 2440,
-        y: 2460,
+        x: 3020,
+        y: 4520,
       },
       startId: "969e7397-85e5-48f6-a40d-456bca2bcbbb",
       end: {
-        x: 2160,
-        y: 2460,
+        x: 2740,
+        y: 4520,
       },
       endId: "cce4c524-0cee-4d29-b998-04377768c8da",
       name: "OneWayHEdge",
@@ -30079,13 +30079,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9500,
-        y: 2580,
+        x: 10080,
+        y: 4640,
       },
       startId: "f2db85a0-d2b7-4dd5-a9a2-4bbd90f18a4a",
       end: {
-        x: 9720,
-        y: 2580,
+        x: 10300,
+        y: 4640,
       },
       endId: "658791c4-1096-4656-b767-a3df4caf7ede",
       name: "TwoWayHEdge",
@@ -30093,13 +30093,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9720,
-        y: 2580,
+        x: 10300,
+        y: 4640,
       },
       startId: "658791c4-1096-4656-b767-a3df4caf7ede",
       end: {
-        x: 9720,
-        y: 2400,
+        x: 10300,
+        y: 4460,
       },
       endId: "0e4e8736-d81a-486e-8049-5e86318444ee",
       name: "TwoWayVEdge",
@@ -30107,13 +30107,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9720,
-        y: 2580,
+        x: 10300,
+        y: 4640,
       },
       startId: "658791c4-1096-4656-b767-a3df4caf7ede",
       end: {
-        x: 10060,
-        y: 2580,
+        x: 10640,
+        y: 4640,
       },
       endId: "71c36b08-c9fd-42d7-b63a-f4a06f5889b4",
       name: "TwoWayHEdge",
@@ -30121,13 +30121,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4660,
-        y: 2260,
+        x: 5240,
+        y: 4320,
       },
       startId: "99264c2f-3462-420d-b85c-3cbe79ce6d51",
       end: {
-        x: 4480,
-        y: 2260,
+        x: 5060,
+        y: 4320,
       },
       endId: "aafeda89-3a98-4d54-929c-f295dbf47dee",
       name: "TwoWayHEdge",
@@ -30135,13 +30135,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4480,
-        y: 2260,
+        x: 5060,
+        y: 4320,
       },
       startId: "aafeda89-3a98-4d54-929c-f295dbf47dee",
       end: {
-        x: 4300,
-        y: 2260,
+        x: 4880,
+        y: 4320,
       },
       endId: "5abbabec-0e8d-4d11-835c-1095ded5f143",
       name: "TwoWayHEdge",
@@ -30149,13 +30149,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4480,
-        y: 2260,
+        x: 5060,
+        y: 4320,
       },
       startId: "aafeda89-3a98-4d54-929c-f295dbf47dee",
       end: {
-        x: 4480,
-        y: 2620,
+        x: 5060,
+        y: 4680,
       },
       endId: "7e02e76b-8750-4d8f-8a4b-7a154726be9a",
       name: "TwoWayVEdge",
@@ -30163,13 +30163,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4300,
-        y: 2260,
+        x: 4880,
+        y: 4320,
       },
       startId: "5abbabec-0e8d-4d11-835c-1095ded5f143",
       end: {
-        x: 4300,
-        y: 2420,
+        x: 4880,
+        y: 4480,
       },
       endId: "5a43a908-fe8b-4f09-bac0-4650767b92af",
       name: "TwoWayVEdge",
@@ -30177,13 +30177,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4300,
-        y: 2620,
+        x: 4880,
+        y: 4680,
       },
       startId: "63d77f19-376a-4994-9dbf-810eef7008ea",
       end: {
-        x: 4140,
-        y: 2620,
+        x: 4720,
+        y: 4680,
       },
       endId: "66267139-47f3-47d2-8840-7b389f19aaee",
       name: "TwoWayHEdge",
@@ -30191,13 +30191,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4140,
-        y: 2620,
+        x: 4720,
+        y: 4680,
       },
       startId: "66267139-47f3-47d2-8840-7b389f19aaee",
       end: {
-        x: 4140,
-        y: 2260,
+        x: 4720,
+        y: 4320,
       },
       endId: "d016ba22-1124-49d8-b41d-32850b048589",
       name: "TwoWayVEdge",
@@ -30205,13 +30205,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3700,
-        y: 2420,
+        x: 4280,
+        y: 4480,
       },
       startId: "af8cc9f3-5031-49ff-92ee-6b2da5bd5dc0",
       end: {
-        x: 3500,
-        y: 2380,
+        x: 4080,
+        y: 4440,
       },
       endId: "a065eb39-be8a-4494-9f10-56a7781f8464",
       name: "TwoWayHEdge",
@@ -30219,13 +30219,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8560,
-        y: 4880,
+        x: 9140,
+        y: 6940,
       },
       startId: "24660a06-fb01-4c58-8913-275f0f822eb1",
       end: {
-        x: 8560,
-        y: 5100,
+        x: 9140,
+        y: 7160,
       },
       endId: "f2681860-c863-41f0-8180-0f77fafeed4f",
       name: "TwoWayVEdge",
@@ -30233,13 +30233,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8560,
-        y: 5100,
+        x: 9140,
+        y: 7160,
       },
       startId: "f2681860-c863-41f0-8180-0f77fafeed4f",
       end: {
-        x: 8560,
-        y: 5300,
+        x: 9140,
+        y: 7360,
       },
       endId: "661356f3-f7d5-404c-ab04-d97c3cf2345d",
       name: "TwoWayVEdge",
@@ -30247,13 +30247,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7480,
-        y: 5300,
+        x: 8060,
+        y: 7360,
       },
       startId: "4be7aa7c-e6d5-4fad-bcfb-9c73d56f8e14",
       end: {
-        x: 7480,
-        y: 5100,
+        x: 8060,
+        y: 7160,
       },
       endId: "c9514ae3-0c66-4797-aac7-c4693765d28e",
       name: "TwoWayVEdge",
@@ -30261,13 +30261,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7940,
-        y: 5300,
+        x: 8520,
+        y: 7360,
       },
       startId: "d4e376b8-4242-46c1-a233-fe767991debd",
       end: {
-        x: 7940,
-        y: 5100,
+        x: 8520,
+        y: 7160,
       },
       endId: "9ab009e3-fb04-4791-8dba-c2b3ebe48e63",
       name: "TwoWayVEdge",
@@ -30275,13 +30275,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7480,
-        y: 5100,
+        x: 8060,
+        y: 7160,
       },
       startId: "c9514ae3-0c66-4797-aac7-c4693765d28e",
       end: {
-        x: 7480,
-        y: 4900,
+        x: 8060,
+        y: 6960,
       },
       endId: "851d75dc-ae5b-4663-85fa-eba6050d83b3",
       name: "TwoWayVEdge",
@@ -30289,13 +30289,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7940,
-        y: 5100,
+        x: 8520,
+        y: 7160,
       },
       startId: "9ab009e3-fb04-4791-8dba-c2b3ebe48e63",
       end: {
-        x: 7940,
-        y: 4900,
+        x: 8520,
+        y: 6960,
       },
       endId: "25ccf3f7-0ed0-4d7a-8805-75fd99423527",
       name: "TwoWayVEdge",
@@ -30303,13 +30303,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7480,
-        y: 4900,
+        x: 8060,
+        y: 6960,
       },
       startId: "851d75dc-ae5b-4663-85fa-eba6050d83b3",
       end: {
-        x: 7720,
-        y: 4880,
+        x: 8300,
+        y: 6940,
       },
       endId: "e962a6aa-155a-4d7a-92d7-5d5e0eb8cace",
       name: "TwoWayHEdge",
@@ -30317,13 +30317,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7720,
-        y: 4880,
+        x: 8300,
+        y: 6940,
       },
       startId: "e962a6aa-155a-4d7a-92d7-5d5e0eb8cace",
       end: {
-        x: 7940,
-        y: 4900,
+        x: 8520,
+        y: 6960,
       },
       endId: "25ccf3f7-0ed0-4d7a-8805-75fd99423527",
       name: "TwoWayHEdge",
@@ -30331,13 +30331,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7720,
-        y: 4880,
+        x: 8300,
+        y: 6940,
       },
       startId: "e962a6aa-155a-4d7a-92d7-5d5e0eb8cace",
       end: {
-        x: 7720,
-        y: 4680,
+        x: 8300,
+        y: 6740,
       },
       endId: "7b8e9c81-bf9d-44a1-a21a-1ef2f54905c5",
       name: "TwoWayVEdge",
@@ -30345,13 +30345,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7720,
-        y: 4680,
+        x: 8300,
+        y: 6740,
       },
       startId: "7b8e9c81-bf9d-44a1-a21a-1ef2f54905c5",
       end: {
-        x: 7720,
-        y: 4420,
+        x: 8300,
+        y: 6480,
       },
       endId: "cd37ec09-e29c-460d-a184-bc29197761b8",
       name: "TwoWayVEdge",
@@ -30359,13 +30359,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7980,
-        y: 4160,
+        x: 8560,
+        y: 6220,
       },
       startId: "0203890c-753a-41bc-bd85-5b3953e7b9d3",
       end: {
-        x: 7980,
-        y: 3920,
+        x: 8560,
+        y: 5980,
       },
       endId: "f3cfd709-4639-4318-b451-f8240a056a76",
       name: "TwoWayVEdge",
@@ -30373,13 +30373,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7980,
-        y: 3920,
+        x: 8560,
+        y: 5980,
       },
       startId: "f3cfd709-4639-4318-b451-f8240a056a76",
       end: {
-        x: 7720,
-        y: 3920,
+        x: 8300,
+        y: 5980,
       },
       endId: "4ed1d0f7-7493-45a9-9866-46beb9d7eb46",
       name: "TwoWayHEdge",
@@ -30387,13 +30387,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7720,
-        y: 3920,
+        x: 8300,
+        y: 5980,
       },
       startId: "4ed1d0f7-7493-45a9-9866-46beb9d7eb46",
       end: {
-        x: 7440,
-        y: 3920,
+        x: 8020,
+        y: 5980,
       },
       endId: "ea8acc84-c3aa-441b-b63c-e55c340b633c",
       name: "TwoWayHEdge",
@@ -30401,13 +30401,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7440,
-        y: 3920,
+        x: 8020,
+        y: 5980,
       },
       startId: "ea8acc84-c3aa-441b-b63c-e55c340b633c",
       end: {
-        x: 7440,
-        y: 3700,
+        x: 8020,
+        y: 5760,
       },
       endId: "c8f64d7d-37f2-4e47-b787-de774cd17eb5",
       name: "TwoWayVEdge",
@@ -30415,13 +30415,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7440,
-        y: 3700,
+        x: 8020,
+        y: 5760,
       },
       startId: "c8f64d7d-37f2-4e47-b787-de774cd17eb5",
       end: {
-        x: 7440,
-        y: 3500,
+        x: 8020,
+        y: 5560,
       },
       endId: "547b2b5a-438b-42cb-b983-f9db644328eb",
       name: "TwoWayVEdge",
@@ -30429,13 +30429,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7720,
-        y: 4420,
+        x: 8300,
+        y: 6480,
       },
       startId: "cd37ec09-e29c-460d-a184-bc29197761b8",
       end: {
-        x: 7440,
-        y: 4420,
+        x: 8020,
+        y: 6480,
       },
       endId: "e4d8e266-5c27-4b1d-9962-bf903598b537",
       name: "TwoWayHEdge",
@@ -30443,13 +30443,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7440,
-        y: 4420,
+        x: 8020,
+        y: 6480,
       },
       startId: "e4d8e266-5c27-4b1d-9962-bf903598b537",
       end: {
-        x: 7180,
-        y: 4420,
+        x: 7760,
+        y: 6480,
       },
       endId: "1c2e8cb1-5615-490c-be6d-acd36ef19cf7",
       name: "TwoWayHEdge",
@@ -30457,13 +30457,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7180,
-        y: 4420,
+        x: 7760,
+        y: 6480,
       },
       startId: "1c2e8cb1-5615-490c-be6d-acd36ef19cf7",
       end: {
-        x: 6940,
-        y: 4420,
+        x: 7520,
+        y: 6480,
       },
       endId: "d2934720-9648-4781-ba5e-b9b7378a1091",
       name: "TwoWayHEdge",
@@ -30471,13 +30471,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6940,
-        y: 4420,
+        x: 7520,
+        y: 6480,
       },
       startId: "d2934720-9648-4781-ba5e-b9b7378a1091",
       end: {
-        x: 6720,
-        y: 4420,
+        x: 7300,
+        y: 6480,
       },
       endId: "8614e318-60cf-4a15-be0e-ef9d4326a708",
       name: "TwoWayHEdge",
@@ -30485,13 +30485,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6720,
-        y: 4420,
+        x: 7300,
+        y: 6480,
       },
       startId: "8614e318-60cf-4a15-be0e-ef9d4326a708",
       end: {
-        x: 6720,
-        y: 4120,
+        x: 7300,
+        y: 6180,
       },
       endId: "a4ac2115-372f-4448-ac0f-7de24101196a",
       name: "TwoWayVEdge",
@@ -30499,13 +30499,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7720,
-        y: 4420,
+        x: 8300,
+        y: 6480,
       },
       startId: "cd37ec09-e29c-460d-a184-bc29197761b8",
       end: {
-        x: 7720,
-        y: 4160,
+        x: 8300,
+        y: 6220,
       },
       endId: "e1530b5b-3175-4fb6-a082-ddb70e1e9ca9",
       name: "TwoWayVEdge",
@@ -30513,13 +30513,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7720,
-        y: 4160,
+        x: 8300,
+        y: 6220,
       },
       startId: "e1530b5b-3175-4fb6-a082-ddb70e1e9ca9",
       end: {
-        x: 7980,
-        y: 4160,
+        x: 8560,
+        y: 6220,
       },
       endId: "0203890c-753a-41bc-bd85-5b3953e7b9d3",
       name: "TwoWayHEdge",
@@ -30527,13 +30527,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6720,
-        y: 4120,
+        x: 7300,
+        y: 6180,
       },
       startId: "a4ac2115-372f-4448-ac0f-7de24101196a",
       end: {
-        x: 6720,
-        y: 3820,
+        x: 7300,
+        y: 5880,
       },
       endId: "f3bcea10-8802-4252-9f7b-7cd3b2e02ed8",
       name: "TwoWayVEdge",
@@ -30541,13 +30541,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6720,
-        y: 3820,
+        x: 7300,
+        y: 5880,
       },
       startId: "f3bcea10-8802-4252-9f7b-7cd3b2e02ed8",
       end: {
-        x: 6940,
-        y: 3820,
+        x: 7520,
+        y: 5880,
       },
       endId: "a27273dd-688d-4579-82ff-c9c1e1b5e7ff",
       name: "TwoWayHEdge",
@@ -30555,13 +30555,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6940,
-        y: 3820,
+        x: 7520,
+        y: 5880,
       },
       startId: "a27273dd-688d-4579-82ff-c9c1e1b5e7ff",
       end: {
-        x: 6880,
-        y: 3500,
+        x: 7460,
+        y: 5560,
       },
       endId: "d1d2b4d7-be08-4a95-ac9d-5e227189b6b8",
       name: "TwoWayVEdge",
@@ -30569,13 +30569,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6880,
-        y: 3500,
+        x: 7460,
+        y: 5560,
       },
       startId: "d1d2b4d7-be08-4a95-ac9d-5e227189b6b8",
       end: {
-        x: 6940,
-        y: 3220,
+        x: 7520,
+        y: 5280,
       },
       endId: "d0a1d19a-b099-4e7d-b1f3-db04defe95b9",
       name: "TwoWayVEdge",
@@ -30583,13 +30583,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6940,
-        y: 3220,
+        x: 7520,
+        y: 5280,
       },
       startId: "d0a1d19a-b099-4e7d-b1f3-db04defe95b9",
       end: {
-        x: 6660,
-        y: 3220,
+        x: 7240,
+        y: 5280,
       },
       endId: "a7c94a71-b69f-4a25-a26e-b1a458062d15",
       name: "TwoWayHEdge",
@@ -30597,13 +30597,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6660,
-        y: 3220,
+        x: 7240,
+        y: 5280,
       },
       startId: "a7c94a71-b69f-4a25-a26e-b1a458062d15",
       end: {
-        x: 6640,
-        y: 2920,
+        x: 7220,
+        y: 4980,
       },
       endId: "13244992-cde2-4cd4-af68-3eaad6291aef",
       name: "TwoWayVEdge",
@@ -30611,13 +30611,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6640,
-        y: 2920,
+        x: 7220,
+        y: 4980,
       },
       startId: "13244992-cde2-4cd4-af68-3eaad6291aef",
       end: {
-        x: 6740,
-        y: 2620,
+        x: 7320,
+        y: 4680,
       },
       endId: "38fa95ba-9ce7-471a-9f05-b37437481829",
       name: "TwoWayVEdge",
@@ -30625,13 +30625,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6740,
-        y: 2620,
+        x: 7320,
+        y: 4680,
       },
       startId: "38fa95ba-9ce7-471a-9f05-b37437481829",
       end: {
-        x: 7060,
-        y: 2600,
+        x: 7640,
+        y: 4660,
       },
       endId: "fdfe3d97-8b67-4255-a247-a3b6626c0579",
       name: "TwoWayHEdge",
@@ -30639,13 +30639,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7060,
-        y: 2600,
+        x: 7640,
+        y: 4660,
       },
       startId: "fdfe3d97-8b67-4255-a247-a3b6626c0579",
       end: {
-        x: 7360,
-        y: 2640,
+        x: 7940,
+        y: 4700,
       },
       endId: "2d22097e-6403-4db0-a1e3-2afdc3f97804",
       name: "TwoWayHEdge",
@@ -30653,13 +30653,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7360,
-        y: 2640,
+        x: 7940,
+        y: 4700,
       },
       startId: "2d22097e-6403-4db0-a1e3-2afdc3f97804",
       end: {
-        x: 7400,
-        y: 2380,
+        x: 7980,
+        y: 4440,
       },
       endId: "80f38e71-8800-4092-a662-298decdb1882",
       name: "TwoWayVEdge",
@@ -30667,13 +30667,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7400,
-        y: 2380,
+        x: 7980,
+        y: 4440,
       },
       startId: "80f38e71-8800-4092-a662-298decdb1882",
       end: {
-        x: 7680,
-        y: 2380,
+        x: 8260,
+        y: 4440,
       },
       endId: "09609bef-e331-4efa-8a47-e5409f9040a1",
       name: "TwoWayHEdge",
@@ -30681,13 +30681,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7680,
-        y: 2380,
+        x: 8260,
+        y: 4440,
       },
       startId: "09609bef-e331-4efa-8a47-e5409f9040a1",
       end: {
-        x: 7920,
-        y: 2340,
+        x: 8500,
+        y: 4400,
       },
       endId: "70e01e2b-1fe4-437e-92b2-42513c3e5524",
       name: "TwoWayHEdge",
@@ -30695,13 +30695,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7920,
-        y: 2340,
+        x: 8500,
+        y: 4400,
       },
       startId: "70e01e2b-1fe4-437e-92b2-42513c3e5524",
       end: {
-        x: 8160,
-        y: 2380,
+        x: 8740,
+        y: 4440,
       },
       endId: "ffd1b0ae-0872-41fc-899e-f40580c7fbca",
       name: "TwoWayHEdge",
@@ -30709,13 +30709,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8160,
-        y: 2380,
+        x: 8740,
+        y: 4440,
       },
       startId: "ffd1b0ae-0872-41fc-899e-f40580c7fbca",
       end: {
-        x: 8180,
-        y: 2720,
+        x: 8760,
+        y: 4780,
       },
       endId: "b64ac266-aeed-4e2b-b702-0fb8cc39f3fc",
       name: "TwoWayVEdge",
@@ -30723,13 +30723,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7680,
-        y: 2380,
+        x: 8260,
+        y: 4440,
       },
       startId: "09609bef-e331-4efa-8a47-e5409f9040a1",
       end: {
-        x: 7700,
-        y: 2700,
+        x: 8280,
+        y: 4760,
       },
       endId: "9a1c0109-dfe3-43b7-a8a1-b4c926343ffb",
       name: "TwoWayVEdge",
@@ -30737,13 +30737,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7700,
-        y: 2700,
+        x: 8280,
+        y: 4760,
       },
       startId: "9a1c0109-dfe3-43b7-a8a1-b4c926343ffb",
       end: {
-        x: 8180,
-        y: 2720,
+        x: 8760,
+        y: 4780,
       },
       endId: "b64ac266-aeed-4e2b-b702-0fb8cc39f3fc",
       name: "TwoWayHEdge",
@@ -30751,13 +30751,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8180,
-        y: 2720,
+        x: 8760,
+        y: 4780,
       },
       startId: "b64ac266-aeed-4e2b-b702-0fb8cc39f3fc",
       end: {
-        x: 8140,
-        y: 2980,
+        x: 8720,
+        y: 5040,
       },
       endId: "1bcf7c80-990f-4360-ac2a-9c5a9a1444fa",
       name: "TwoWayVEdge",
@@ -30765,13 +30765,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8140,
-        y: 2980,
+        x: 8720,
+        y: 5040,
       },
       startId: "1bcf7c80-990f-4360-ac2a-9c5a9a1444fa",
       end: {
-        x: 7700,
-        y: 3040,
+        x: 8280,
+        y: 5100,
       },
       endId: "11a7477b-c9ca-447e-a9f6-663d242561e8",
       name: "TwoWayHEdge",
@@ -30779,13 +30779,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7700,
-        y: 3040,
+        x: 8280,
+        y: 5100,
       },
       startId: "11a7477b-c9ca-447e-a9f6-663d242561e8",
       end: {
-        x: 7640,
-        y: 3300,
+        x: 8220,
+        y: 5360,
       },
       endId: "89807f00-8f8a-427e-a8b9-28e313cb62f5",
       name: "TwoWayVEdge",
@@ -30793,13 +30793,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7640,
-        y: 3300,
+        x: 8220,
+        y: 5360,
       },
       startId: "89807f00-8f8a-427e-a8b9-28e313cb62f5",
       end: {
-        x: 7300,
-        y: 3320,
+        x: 7880,
+        y: 5380,
       },
       endId: "ba13a2f3-602c-4ab7-8918-cef38a9ebeb2",
       name: "TwoWayHEdge",
@@ -30807,13 +30807,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7300,
-        y: 3320,
+        x: 7880,
+        y: 5380,
       },
       startId: "ba13a2f3-602c-4ab7-8918-cef38a9ebeb2",
       end: {
-        x: 7260,
-        y: 3560,
+        x: 7840,
+        y: 5620,
       },
       endId: "dea4f473-0db5-4010-abde-0b79535f543e",
       name: "TwoWayVEdge",
@@ -30821,13 +30821,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7260,
-        y: 3560,
+        x: 7840,
+        y: 5620,
       },
       startId: "dea4f473-0db5-4010-abde-0b79535f543e",
       end: {
-        x: 7040,
-        y: 3600,
+        x: 7620,
+        y: 5660,
       },
       endId: "0c7ca890-0948-425f-aaa8-d450a6f19798",
       name: "TwoWayHEdge",
@@ -30835,13 +30835,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12200,
-        y: 1620,
+        x: 12780,
+        y: 3680,
       },
       startId: "8a5e6dfb-f29f-4790-bdad-e6d201d464b5",
       end: {
-        x: 12260,
-        y: 1160,
+        x: 12840,
+        y: 3220,
       },
       endId: "711f14ab-2391-476a-8b5a-55551c7cf1bc",
       name: "TwoWayVEdge",
@@ -30849,13 +30849,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12260,
-        y: 1160,
+        x: 12840,
+        y: 3220,
       },
       startId: "711f14ab-2391-476a-8b5a-55551c7cf1bc",
       end: {
-        x: 12320,
-        y: 700,
+        x: 12900,
+        y: 2760,
       },
       endId: "821ee1e0-ea44-40f8-be0d-b7d2a6881ef2",
       name: "TwoWayVEdge",
@@ -30863,13 +30863,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12320,
-        y: 700,
+        x: 12900,
+        y: 2760,
       },
       startId: "821ee1e0-ea44-40f8-be0d-b7d2a6881ef2",
       end: {
-        x: 12020,
-        y: 680,
+        x: 12600,
+        y: 2740,
       },
       endId: "70742c92-ea8b-4669-95c0-5a33c393b072",
       name: "TwoWayHEdge",
@@ -30877,13 +30877,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12020,
-        y: 680,
+        x: 12600,
+        y: 2740,
       },
       startId: "70742c92-ea8b-4669-95c0-5a33c393b072",
       end: {
-        x: 11940,
-        y: 340,
+        x: 12520,
+        y: 2400,
       },
       endId: "46b65691-10e5-48ee-a3d8-7eadd022d5c4",
       name: "TwoWayVEdge",
@@ -30891,13 +30891,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11940,
-        y: 340,
+        x: 12520,
+        y: 2400,
       },
       startId: "46b65691-10e5-48ee-a3d8-7eadd022d5c4",
       end: {
-        x: 12020,
-        y: 0,
+        x: 12600,
+        y: 2060,
       },
       endId: "ecc6b82f-3a20-4d5f-bb3f-c88708838371",
       name: "TwoWayVEdge",
@@ -30905,13 +30905,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12020,
-        y: 0,
+        x: 12600,
+        y: 2060,
       },
       startId: "ecc6b82f-3a20-4d5f-bb3f-c88708838371",
       end: {
-        x: 11680,
-        y: -40,
+        x: 12260,
+        y: 2020,
       },
       endId: "46c738be-5dd1-48f3-95c3-354f82712adf",
       name: "TwoWayHEdge",
@@ -30919,13 +30919,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11680,
-        y: -40,
+        x: 12260,
+        y: 2020,
       },
       startId: "46c738be-5dd1-48f3-95c3-354f82712adf",
       end: {
-        x: 11760,
-        y: -360,
+        x: 12340,
+        y: 1700,
       },
       endId: "0d99633a-bbf7-486d-b9a5-c98cdb5ed91b",
       name: "TwoWayVEdge",
@@ -30933,13 +30933,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11760,
-        y: -360,
+        x: 12340,
+        y: 1700,
       },
       startId: "0d99633a-bbf7-486d-b9a5-c98cdb5ed91b",
       end: {
-        x: 11420,
-        y: -380,
+        x: 12000,
+        y: 1680,
       },
       endId: "c12b2b9d-1fee-4881-9bb5-6a840973cc51",
       name: "TwoWayHEdge",
@@ -30947,13 +30947,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11420,
-        y: -380,
+        x: 12000,
+        y: 1680,
       },
       startId: "c12b2b9d-1fee-4881-9bb5-6a840973cc51",
       end: {
-        x: 11420,
-        y: -660,
+        x: 12000,
+        y: 1400,
       },
       endId: "e3a8a0bb-892f-4703-b8e4-77531ba4a5db",
       name: "TwoWayVEdge",
@@ -30961,13 +30961,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11420,
-        y: -380,
+        x: 12000,
+        y: 1680,
       },
       startId: "c12b2b9d-1fee-4881-9bb5-6a840973cc51",
       end: {
-        x: 11060,
-        y: -340,
+        x: 11640,
+        y: 1720,
       },
       endId: "60c21590-262f-47aa-bf46-f9bd36effc00",
       name: "TwoWayHEdge",
@@ -30975,13 +30975,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11060,
-        y: -340,
+        x: 11640,
+        y: 1720,
       },
       startId: "60c21590-262f-47aa-bf46-f9bd36effc00",
       end: {
-        x: 10720,
-        y: -400,
+        x: 11300,
+        y: 1660,
       },
       endId: "6b13f21f-5a2c-4453-bad8-f7714138be95",
       name: "TwoWayHEdge",
@@ -30989,13 +30989,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10720,
-        y: -400,
+        x: 11300,
+        y: 1660,
       },
       startId: "6b13f21f-5a2c-4453-bad8-f7714138be95",
       end: {
-        x: 10400,
-        y: -360,
+        x: 10980,
+        y: 1700,
       },
       endId: "59f6d795-ba7c-4936-99fb-1a45084c9bd6",
       name: "TwoWayHEdge",
@@ -31003,13 +31003,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10400,
-        y: -360,
+        x: 10980,
+        y: 1700,
       },
       startId: "59f6d795-ba7c-4936-99fb-1a45084c9bd6",
       end: {
-        x: 10340,
-        y: -660,
+        x: 10920,
+        y: 1400,
       },
       endId: "7d7e3fae-a2f5-4d97-a8df-21767ce0f526",
       name: "TwoWayVEdge",
@@ -31017,13 +31017,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10340,
-        y: -660,
+        x: 10920,
+        y: 1400,
       },
       startId: "7d7e3fae-a2f5-4d97-a8df-21767ce0f526",
       end: {
-        x: 10400,
-        y: -980,
+        x: 10980,
+        y: 1080,
       },
       endId: "3ba4e09d-b31f-4685-bdbf-6bf816afb10c",
       name: "TwoWayVEdge",
@@ -31031,13 +31031,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10400,
-        y: -980,
+        x: 10980,
+        y: 1080,
       },
       startId: "3ba4e09d-b31f-4685-bdbf-6bf816afb10c",
       end: {
-        x: 10320,
-        y: -1280,
+        x: 10900,
+        y: 780,
       },
       endId: "4e87e85e-9221-464f-812f-c1ca01a33bfe",
       name: "TwoWayVEdge",
@@ -31045,13 +31045,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10320,
-        y: -1280,
+        x: 10900,
+        y: 780,
       },
       startId: "4e87e85e-9221-464f-812f-c1ca01a33bfe",
       end: {
-        x: 10640,
-        y: -1320,
+        x: 11220,
+        y: 740,
       },
       endId: "ec84fab9-edd2-4aeb-b6d2-5fb398422cab",
       name: "TwoWayHEdge",
@@ -31059,13 +31059,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10640,
-        y: -1320,
+        x: 11220,
+        y: 740,
       },
       startId: "ec84fab9-edd2-4aeb-b6d2-5fb398422cab",
       end: {
-        x: 10940,
-        y: -1280,
+        x: 11520,
+        y: 780,
       },
       endId: "6b406338-75a7-415f-9765-31dea786f3fd",
       name: "TwoWayHEdge",
@@ -31073,13 +31073,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10940,
-        y: -1280,
+        x: 11520,
+        y: 780,
       },
       startId: "6b406338-75a7-415f-9765-31dea786f3fd",
       end: {
-        x: 11020,
-        y: -1940,
+        x: 11600,
+        y: 120,
       },
       endId: "864a59a8-037d-40c4-b48a-8997e644a406",
       name: "TwoWayVEdge",
@@ -31087,13 +31087,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11020,
-        y: -1940,
+        x: 11600,
+        y: 120,
       },
       startId: "864a59a8-037d-40c4-b48a-8997e644a406",
       end: {
-        x: 11340,
-        y: -2020,
+        x: 11920,
+        y: 40,
       },
       endId: "bba70ccc-ec4e-4d07-8b95-6a5f20438952",
       name: "TwoWayHEdge",
@@ -31101,13 +31101,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11340,
-        y: -2020,
+        x: 11920,
+        y: 40,
       },
       startId: "bba70ccc-ec4e-4d07-8b95-6a5f20438952",
       end: {
-        x: 11660,
-        y: -1940,
+        x: 12240,
+        y: 120,
       },
       endId: "93186749-a439-4fd3-b4ab-4af5a94e126f",
       name: "TwoWayHEdge",
@@ -31115,13 +31115,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11660,
-        y: -1940,
+        x: 12240,
+        y: 120,
       },
       startId: "93186749-a439-4fd3-b4ab-4af5a94e126f",
       end: {
-        x: 11700,
-        y: -1620,
+        x: 12280,
+        y: 440,
       },
       endId: "474fb8f5-b151-487d-9869-f1d22ae3116d",
       name: "TwoWayVEdge",
@@ -31129,13 +31129,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11700,
-        y: -1620,
+        x: 12280,
+        y: 440,
       },
       startId: "474fb8f5-b151-487d-9869-f1d22ae3116d",
       end: {
-        x: 11660,
-        y: -1260,
+        x: 12240,
+        y: 800,
       },
       endId: "46e36bde-d5f2-4969-847e-3d80031bc3a7",
       name: "TwoWayVEdge",
@@ -31143,13 +31143,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11660,
-        y: -1260,
+        x: 12240,
+        y: 800,
       },
       startId: "46e36bde-d5f2-4969-847e-3d80031bc3a7",
       end: {
-        x: 12040,
-        y: -1240,
+        x: 12620,
+        y: 820,
       },
       endId: "333d2f31-e7f8-4387-8d1a-475c32080912",
       name: "TwoWayHEdge",
@@ -31157,13 +31157,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12040,
-        y: -1240,
+        x: 12620,
+        y: 820,
       },
       startId: "333d2f31-e7f8-4387-8d1a-475c32080912",
       end: {
-        x: 12420,
-        y: -1300,
+        x: 13000,
+        y: 760,
       },
       endId: "da919845-178f-4307-8839-6388fdd5ab52",
       name: "TwoWayHEdge",
@@ -31171,13 +31171,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12420,
-        y: -1300,
+        x: 13000,
+        y: 760,
       },
       startId: "da919845-178f-4307-8839-6388fdd5ab52",
       end: {
-        x: 12780,
-        y: -1240,
+        x: 13360,
+        y: 820,
       },
       endId: "160c42b2-bd8c-41a0-a3d0-c94c9e65b85d",
       name: "TwoWayHEdge",
@@ -31185,13 +31185,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12780,
-        y: -1240,
+        x: 13360,
+        y: 820,
       },
       startId: "160c42b2-bd8c-41a0-a3d0-c94c9e65b85d",
       end: {
-        x: 12700,
-        y: -960,
+        x: 13280,
+        y: 1100,
       },
       endId: "023800ab-4d52-4554-9d6f-68961e17f816",
       name: "TwoWayVEdge",
@@ -31199,13 +31199,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12700,
-        y: -960,
+        x: 13280,
+        y: 1100,
       },
       startId: "023800ab-4d52-4554-9d6f-68961e17f816",
       end: {
-        x: 12740,
-        y: -700,
+        x: 13320,
+        y: 1360,
       },
       endId: "a60737b3-4e4c-4e9b-b9f5-028f9d9389a2",
       name: "TwoWayVEdge",
@@ -31213,13 +31213,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12740,
-        y: -700,
+        x: 13320,
+        y: 1360,
       },
       startId: "a60737b3-4e4c-4e9b-b9f5-028f9d9389a2",
       end: {
-        x: 12660,
-        y: -440,
+        x: 13240,
+        y: 1620,
       },
       endId: "8783855b-5505-46b5-bc31-ca0a367135cd",
       name: "TwoWayVEdge",
@@ -31227,13 +31227,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12660,
-        y: -440,
+        x: 13240,
+        y: 1620,
       },
       startId: "8783855b-5505-46b5-bc31-ca0a367135cd",
       end: {
-        x: 12960,
-        y: -480,
+        x: 13540,
+        y: 1580,
       },
       endId: "2eaf8fe2-3184-4404-a23e-01f3647ae265",
       name: "TwoWayHEdge",
@@ -31241,13 +31241,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12700,
-        y: -960,
+        x: 13280,
+        y: 1100,
       },
       startId: "023800ab-4d52-4554-9d6f-68961e17f816",
       end: {
-        x: 13000,
-        y: -940,
+        x: 13580,
+        y: 1120,
       },
       endId: "8d507b57-cc2c-4827-9547-752613754b89",
       name: "TwoWayHEdge",
@@ -31255,13 +31255,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 13000,
-        y: -940,
+        x: 13580,
+        y: 1120,
       },
       startId: "8d507b57-cc2c-4827-9547-752613754b89",
       end: {
-        x: 12960,
-        y: -480,
+        x: 13540,
+        y: 1580,
       },
       endId: "2eaf8fe2-3184-4404-a23e-01f3647ae265",
       name: "TwoWayVEdge",
@@ -31269,13 +31269,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12660,
-        y: -440,
+        x: 13240,
+        y: 1620,
       },
       startId: "8783855b-5505-46b5-bc31-ca0a367135cd",
       end: {
-        x: 12400,
-        y: -480,
+        x: 12980,
+        y: 1580,
       },
       endId: "c2c16ded-efc3-4036-a558-9a90282b2b81",
       name: "TwoWayHEdge",
@@ -31283,13 +31283,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12400,
-        y: -480,
+        x: 12980,
+        y: 1580,
       },
       startId: "c2c16ded-efc3-4036-a558-9a90282b2b81",
       end: {
-        x: 12340,
-        y: -220,
+        x: 12920,
+        y: 1840,
       },
       endId: "06cd0030-ca41-4e70-8ee3-86fbd82d0487",
       name: "TwoWayVEdge",
@@ -31297,13 +31297,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12660,
-        y: -440,
+        x: 13240,
+        y: 1620,
       },
       startId: "8783855b-5505-46b5-bc31-ca0a367135cd",
       end: {
-        x: 12700,
-        y: 20,
+        x: 13280,
+        y: 2080,
       },
       endId: "226e6a74-da4f-4e07-8104-a8a3b0dde402",
       name: "TwoWayVEdge",
@@ -31311,13 +31311,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12700,
-        y: 20,
+        x: 13280,
+        y: 2080,
       },
       startId: "226e6a74-da4f-4e07-8104-a8a3b0dde402",
       end: {
-        x: 12380,
-        y: 60,
+        x: 12960,
+        y: 2120,
       },
       endId: "fef1bbaf-5068-4e1e-992b-312292c07cb3",
       name: "TwoWayHEdge",
@@ -31325,13 +31325,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12340,
-        y: -220,
+        x: 12920,
+        y: 1840,
       },
       startId: "06cd0030-ca41-4e70-8ee3-86fbd82d0487",
       end: {
-        x: 12380,
-        y: 60,
+        x: 12960,
+        y: 2120,
       },
       endId: "fef1bbaf-5068-4e1e-992b-312292c07cb3",
       name: "TwoWayVEdge",
@@ -31339,13 +31339,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12340,
-        y: -220,
+        x: 12920,
+        y: 1840,
       },
       startId: "06cd0030-ca41-4e70-8ee3-86fbd82d0487",
       end: {
-        x: 12120,
-        y: -140,
+        x: 12700,
+        y: 1920,
       },
       endId: "852045ec-f977-4b97-aa74-69304635d045",
       name: "TwoWayHEdge",
@@ -31353,13 +31353,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12120,
-        y: -140,
+        x: 12700,
+        y: 1920,
       },
       startId: "852045ec-f977-4b97-aa74-69304635d045",
       end: {
-        x: 11940,
-        y: -200,
+        x: 12520,
+        y: 1860,
       },
       endId: "da5efa67-099a-4457-971d-90e2f8cb1f43",
       name: "TwoWayHEdge",
@@ -31367,13 +31367,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11940,
-        y: -200,
+        x: 12520,
+        y: 1860,
       },
       startId: "da5efa67-099a-4457-971d-90e2f8cb1f43",
       end: {
-        x: 11920,
-        y: -400,
+        x: 12500,
+        y: 1660,
       },
       endId: "b63382e6-e30e-4ed4-a67f-35e3e411dc94",
       name: "TwoWayVEdge",
@@ -31381,13 +31381,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3520,
-        y: 6280,
+        x: 4100,
+        y: 8340,
       },
       startId: "86e5b447-323e-4917-8caf-5dd110f37ea2",
       end: {
-        x: 3420,
-        y: 7160,
+        x: 4000,
+        y: 9220,
       },
       endId: "da5baf39-82c0-4678-a693-b2604ac9e426",
       name: "TwoWayVEdge",
@@ -31395,13 +31395,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3420,
-        y: 7160,
+        x: 4000,
+        y: 9220,
       },
       startId: "da5baf39-82c0-4678-a693-b2604ac9e426",
       end: {
-        x: 3760,
-        y: 7240,
+        x: 4340,
+        y: 9300,
       },
       endId: "4258b374-8ede-4149-be46-d757bf2d76c9",
       name: "TwoWayHEdge",
@@ -31409,13 +31409,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 3760,
-        y: 7240,
+        x: 4340,
+        y: 9300,
       },
       startId: "4258b374-8ede-4149-be46-d757bf2d76c9",
       end: {
-        x: 4120,
-        y: 7160,
+        x: 4700,
+        y: 9220,
       },
       endId: "cf198975-65ba-4d4e-9df1-58b31c56f227",
       name: "TwoWayHEdge",
@@ -31423,13 +31423,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4120,
-        y: 7160,
+        x: 4700,
+        y: 9220,
       },
       startId: "cf198975-65ba-4d4e-9df1-58b31c56f227",
       end: {
-        x: 4460,
-        y: 7240,
+        x: 5040,
+        y: 9300,
       },
       endId: "a4c1e286-d75c-46ee-9c88-22f7aadc7a7d",
       name: "TwoWayHEdge",
@@ -31437,13 +31437,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4460,
-        y: 7240,
+        x: 5040,
+        y: 9300,
       },
       startId: "a4c1e286-d75c-46ee-9c88-22f7aadc7a7d",
       end: {
-        x: 4540,
-        y: 7560,
+        x: 5120,
+        y: 9620,
       },
       endId: "540ac755-254b-4690-bbe0-737826aa6bbf",
       name: "TwoWayVEdge",
@@ -31451,13 +31451,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4540,
-        y: 7560,
+        x: 5120,
+        y: 9620,
       },
       startId: "540ac755-254b-4690-bbe0-737826aa6bbf",
       end: {
-        x: 4440,
-        y: 7900,
+        x: 5020,
+        y: 9960,
       },
       endId: "95341683-9ede-4590-a173-f04ab09976c0",
       name: "TwoWayVEdge",
@@ -31465,13 +31465,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4440,
-        y: 7900,
+        x: 5020,
+        y: 9960,
       },
       startId: "95341683-9ede-4590-a173-f04ab09976c0",
       end: {
-        x: 4820,
-        y: 7980,
+        x: 5400,
+        y: 10040,
       },
       endId: "b50a4857-f125-4ce6-b7b9-91131727fb6b",
       name: "TwoWayHEdge",
@@ -31479,13 +31479,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 4820,
-        y: 7980,
+        x: 5400,
+        y: 10040,
       },
       startId: "b50a4857-f125-4ce6-b7b9-91131727fb6b",
       end: {
-        x: 5220,
-        y: 7920,
+        x: 5800,
+        y: 9980,
       },
       endId: "5c95a1e7-1c38-48a4-ac8b-6fe58e5791ec",
       name: "TwoWayHEdge",
@@ -31493,13 +31493,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5220,
-        y: 7920,
+        x: 5800,
+        y: 9980,
       },
       startId: "5c95a1e7-1c38-48a4-ac8b-6fe58e5791ec",
       end: {
-        x: 5600,
-        y: 7980,
+        x: 6180,
+        y: 10040,
       },
       endId: "fd673ecf-06df-4a3c-adde-b3b494f53a8c",
       name: "TwoWayHEdge",
@@ -31507,13 +31507,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5600,
-        y: 7980,
+        x: 6180,
+        y: 10040,
       },
       startId: "fd673ecf-06df-4a3c-adde-b3b494f53a8c",
       end: {
-        x: 6000,
-        y: 7920,
+        x: 6580,
+        y: 9980,
       },
       endId: "23c44714-91a0-417c-af83-d1ad1b52a504",
       name: "TwoWayHEdge",
@@ -31521,13 +31521,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6000,
-        y: 7920,
+        x: 6580,
+        y: 9980,
       },
       startId: "23c44714-91a0-417c-af83-d1ad1b52a504",
       end: {
-        x: 6060,
-        y: 8300,
+        x: 6640,
+        y: 10360,
       },
       endId: "2b6cf571-17fd-4ac5-aa38-e74e3eeb841d",
       name: "TwoWayVEdge",
@@ -31535,13 +31535,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6060,
-        y: 8300,
+        x: 6640,
+        y: 10360,
       },
       startId: "2b6cf571-17fd-4ac5-aa38-e74e3eeb841d",
       end: {
-        x: 5980,
-        y: 8660,
+        x: 6560,
+        y: 10720,
       },
       endId: "05b28ac6-01bc-4a19-9b83-7e0d1b832be9",
       name: "TwoWayVEdge",
@@ -31549,13 +31549,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5980,
-        y: 8660,
+        x: 6560,
+        y: 10720,
       },
       startId: "05b28ac6-01bc-4a19-9b83-7e0d1b832be9",
       end: {
-        x: 6040,
-        y: 9000,
+        x: 6620,
+        y: 11060,
       },
       endId: "dc7b368a-17dd-48a5-863b-c36f34365c72",
       name: "TwoWayVEdge",
@@ -31563,13 +31563,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6040,
-        y: 9000,
+        x: 6620,
+        y: 11060,
       },
       startId: "dc7b368a-17dd-48a5-863b-c36f34365c72",
       end: {
-        x: 5920,
-        y: 9360,
+        x: 6500,
+        y: 11420,
       },
       endId: "dfc84ca2-fcad-4cfb-9ddb-3c399527808e",
       name: "TwoWayVEdge",
@@ -31577,13 +31577,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 5920,
-        y: 9360,
+        x: 6500,
+        y: 11420,
       },
       startId: "dfc84ca2-fcad-4cfb-9ddb-3c399527808e",
       end: {
-        x: 6340,
-        y: 9420,
+        x: 6920,
+        y: 11480,
       },
       endId: "baa1f9a0-a3e4-4562-9e79-e0c63ce3f4f6",
       name: "TwoWayHEdge",
@@ -31591,13 +31591,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6340,
-        y: 9420,
+        x: 6920,
+        y: 11480,
       },
       startId: "baa1f9a0-a3e4-4562-9e79-e0c63ce3f4f6",
       end: {
-        x: 6700,
-        y: 9360,
+        x: 7280,
+        y: 11420,
       },
       endId: "f12b40cd-78e1-43c7-928d-04e13f4fa829",
       name: "TwoWayHEdge",
@@ -31605,13 +31605,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6700,
-        y: 9360,
+        x: 7280,
+        y: 11420,
       },
       startId: "f12b40cd-78e1-43c7-928d-04e13f4fa829",
       end: {
-        x: 7100,
-        y: 9400,
+        x: 7680,
+        y: 11460,
       },
       endId: "915797f9-870e-42af-ae52-44dc6dfa8c8d",
       name: "TwoWayHEdge",
@@ -31619,13 +31619,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7100,
-        y: 9400,
+        x: 7680,
+        y: 11460,
       },
       startId: "915797f9-870e-42af-ae52-44dc6dfa8c8d",
       end: {
-        x: 7540,
-        y: 9340,
+        x: 8120,
+        y: 11400,
       },
       endId: "5d9d68b9-661b-4375-98cd-34f3965e43c4",
       name: "TwoWayHEdge",
@@ -31633,13 +31633,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6700,
-        y: 9360,
+        x: 7280,
+        y: 11420,
       },
       startId: "f12b40cd-78e1-43c7-928d-04e13f4fa829",
       end: {
-        x: 6620,
-        y: 9720,
+        x: 7200,
+        y: 11780,
       },
       endId: "40ada4c9-e43c-4b41-be4d-574736574489",
       name: "TwoWayVEdge",
@@ -31647,13 +31647,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6620,
-        y: 9720,
+        x: 7200,
+        y: 11780,
       },
       startId: "40ada4c9-e43c-4b41-be4d-574736574489",
       end: {
-        x: 6660,
-        y: 10100,
+        x: 7240,
+        y: 12160,
       },
       endId: "a1996074-8ea4-4dbe-bf35-a10eb01b13fd",
       name: "TwoWayVEdge",
@@ -31661,13 +31661,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 6660,
-        y: 10100,
+        x: 7240,
+        y: 12160,
       },
       startId: "a1996074-8ea4-4dbe-bf35-a10eb01b13fd",
       end: {
-        x: 7060,
-        y: 10160,
+        x: 7640,
+        y: 12220,
       },
       endId: "d9bf4836-29ac-41d9-8de8-52274fe6141a",
       name: "TwoWayHEdge",
@@ -31675,13 +31675,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7060,
-        y: 10160,
+        x: 7640,
+        y: 12220,
       },
       startId: "d9bf4836-29ac-41d9-8de8-52274fe6141a",
       end: {
-        x: 7480,
-        y: 10080,
+        x: 8060,
+        y: 12140,
       },
       endId: "f4efe165-170e-4cac-bc65-031819e5134a",
       name: "TwoWayHEdge",
@@ -31689,13 +31689,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7540,
-        y: 9340,
+        x: 8120,
+        y: 11400,
       },
       startId: "5d9d68b9-661b-4375-98cd-34f3965e43c4",
       end: {
-        x: 7480,
-        y: 10080,
+        x: 8060,
+        y: 12140,
       },
       endId: "f4efe165-170e-4cac-bc65-031819e5134a",
       name: "TwoWayVEdge",
@@ -31703,13 +31703,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7480,
-        y: 10080,
+        x: 8060,
+        y: 12140,
       },
       startId: "f4efe165-170e-4cac-bc65-031819e5134a",
       end: {
-        x: 7840,
-        y: 10140,
+        x: 8420,
+        y: 12200,
       },
       endId: "bc898212-822a-488d-a88e-0c79194f2a67",
       name: "TwoWayHEdge",
@@ -31717,13 +31717,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7840,
-        y: 10140,
+        x: 8420,
+        y: 12200,
       },
       startId: "bc898212-822a-488d-a88e-0c79194f2a67",
       end: {
-        x: 7880,
-        y: 10460,
+        x: 8460,
+        y: 12520,
       },
       endId: "8a578148-89e4-4a9b-9737-3da63a81bd7a",
       name: "TwoWayVEdge",
@@ -31731,13 +31731,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7880,
-        y: 10460,
+        x: 8460,
+        y: 12520,
       },
       startId: "8a578148-89e4-4a9b-9737-3da63a81bd7a",
       end: {
-        x: 8220,
-        y: 10500,
+        x: 8800,
+        y: 12560,
       },
       endId: "f541bcef-aeed-4da9-901e-6b028f52fb3b",
       name: "TwoWayHEdge",
@@ -31745,13 +31745,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8220,
-        y: 10500,
+        x: 8800,
+        y: 12560,
       },
       startId: "f541bcef-aeed-4da9-901e-6b028f52fb3b",
       end: {
-        x: 8560,
-        y: 10460,
+        x: 9140,
+        y: 12520,
       },
       endId: "6651285c-6730-4655-bd1e-1a4d03cbde94",
       name: "TwoWayHEdge",
@@ -31759,13 +31759,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8560,
-        y: 10460,
+        x: 9140,
+        y: 12520,
       },
       startId: "6651285c-6730-4655-bd1e-1a4d03cbde94",
       end: {
-        x: 8640,
-        y: 10140,
+        x: 9220,
+        y: 12200,
       },
       endId: "85f82b66-9393-4e83-820b-43f22e3a27bd",
       name: "TwoWayVEdge",
@@ -31773,13 +31773,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8220,
-        y: 10500,
+        x: 8800,
+        y: 12560,
       },
       startId: "f541bcef-aeed-4da9-901e-6b028f52fb3b",
       end: {
-        x: 8180,
-        y: 10840,
+        x: 8760,
+        y: 12900,
       },
       endId: "23e6ea8a-f581-4e9c-848c-8cefbdc4042f",
       name: "TwoWayVEdge",
@@ -31787,13 +31787,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8180,
-        y: 10840,
+        x: 8760,
+        y: 12900,
       },
       startId: "23e6ea8a-f581-4e9c-848c-8cefbdc4042f",
       end: {
-        x: 8220,
-        y: 11160,
+        x: 8800,
+        y: 13220,
       },
       endId: "9d91fbe9-a403-4f6a-bff5-dd66d61f51aa",
       name: "TwoWayVEdge",
@@ -31801,13 +31801,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8220,
-        y: 11160,
+        x: 8800,
+        y: 13220,
       },
       startId: "9d91fbe9-a403-4f6a-bff5-dd66d61f51aa",
       end: {
-        x: 8180,
-        y: 11520,
+        x: 8760,
+        y: 13580,
       },
       endId: "0b71163e-626a-47e9-bfa1-7239f0de5308",
       name: "TwoWayVEdge",
@@ -31815,13 +31815,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8220,
-        y: 11160,
+        x: 8800,
+        y: 13220,
       },
       startId: "9d91fbe9-a403-4f6a-bff5-dd66d61f51aa",
       end: {
-        x: 7880,
-        y: 11120,
+        x: 8460,
+        y: 13180,
       },
       endId: "a57193f5-ef11-46d9-b02a-a88ed8d93348",
       name: "TwoWayHEdge",
@@ -31829,13 +31829,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7880,
-        y: 11120,
+        x: 8460,
+        y: 13180,
       },
       startId: "a57193f5-ef11-46d9-b02a-a88ed8d93348",
       end: {
-        x: 7560,
-        y: 11160,
+        x: 8140,
+        y: 13220,
       },
       endId: "ce7d640b-b699-44aa-a794-cbec34e97427",
       name: "TwoWayHEdge",
@@ -31843,13 +31843,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7560,
-        y: 11160,
+        x: 8140,
+        y: 13220,
       },
       startId: "ce7d640b-b699-44aa-a794-cbec34e97427",
       end: {
-        x: 7580,
-        y: 11480,
+        x: 8160,
+        y: 13540,
       },
       endId: "90f07f25-1a69-4218-a807-f525a094d69a",
       name: "TwoWayVEdge",
@@ -31857,13 +31857,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 7580,
-        y: 11480,
+        x: 8160,
+        y: 13540,
       },
       startId: "90f07f25-1a69-4218-a807-f525a094d69a",
       end: {
-        x: 8180,
-        y: 11520,
+        x: 8760,
+        y: 13580,
       },
       endId: "0b71163e-626a-47e9-bfa1-7239f0de5308",
       name: "TwoWayHEdge",
@@ -31871,13 +31871,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8220,
-        y: 11160,
+        x: 8800,
+        y: 13220,
       },
       startId: "9d91fbe9-a403-4f6a-bff5-dd66d61f51aa",
       end: {
-        x: 8560,
-        y: 11120,
+        x: 9140,
+        y: 13180,
       },
       endId: "61624b8f-90fb-4f1c-9162-8dc91f1fba7f",
       name: "TwoWayHEdge",
@@ -31885,13 +31885,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8560,
-        y: 11120,
+        x: 9140,
+        y: 13180,
       },
       startId: "61624b8f-90fb-4f1c-9162-8dc91f1fba7f",
       end: {
-        x: 8580,
-        y: 11560,
+        x: 9160,
+        y: 13620,
       },
       endId: "538eac0c-1ed4-41b0-a59b-3688c7169799",
       name: "TwoWayVEdge",
@@ -31899,13 +31899,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8580,
-        y: 11560,
+        x: 9160,
+        y: 13620,
       },
       startId: "538eac0c-1ed4-41b0-a59b-3688c7169799",
       end: {
-        x: 8980,
-        y: 11500,
+        x: 9560,
+        y: 13560,
       },
       endId: "9273365c-b48d-4b91-9c35-f980415da24f",
       name: "TwoWayHEdge",
@@ -31913,13 +31913,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 8980,
-        y: 11500,
+        x: 9560,
+        y: 13560,
       },
       startId: "9273365c-b48d-4b91-9c35-f980415da24f",
       end: {
-        x: 9360,
-        y: 11560,
+        x: 9940,
+        y: 13620,
       },
       endId: "42637926-3ede-4d14-920b-257004108277",
       name: "TwoWayHEdge",
@@ -31927,13 +31927,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9360,
-        y: 11560,
+        x: 9940,
+        y: 13620,
       },
       startId: "42637926-3ede-4d14-920b-257004108277",
       end: {
-        x: 9740,
-        y: 11500,
+        x: 10320,
+        y: 13560,
       },
       endId: "c2c8cc1d-2995-469d-a792-768c1c40a1c3",
       name: "TwoWayHEdge",
@@ -31941,13 +31941,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 9740,
-        y: 11500,
+        x: 10320,
+        y: 13560,
       },
       startId: "c2c8cc1d-2995-469d-a792-768c1c40a1c3",
       end: {
-        x: 10100,
-        y: 11560,
+        x: 10680,
+        y: 13620,
       },
       endId: "762bcb17-2e8d-469c-88d3-d06cc92fe7b8",
       name: "TwoWayHEdge",
@@ -31955,13 +31955,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10100,
-        y: 11560,
+        x: 10680,
+        y: 13620,
       },
       startId: "762bcb17-2e8d-469c-88d3-d06cc92fe7b8",
       end: {
-        x: 10460,
-        y: 11480,
+        x: 11040,
+        y: 13540,
       },
       endId: "8ccccdf5-139d-41ff-85c8-b523e007b011",
       name: "TwoWayHEdge",
@@ -31969,13 +31969,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10460,
-        y: 11480,
+        x: 11040,
+        y: 13540,
       },
       startId: "8ccccdf5-139d-41ff-85c8-b523e007b011",
       end: {
-        x: 10780,
-        y: 11540,
+        x: 11360,
+        y: 13600,
       },
       endId: "86ff9b7c-da53-4003-ae8e-992036396961",
       name: "TwoWayHEdge",
@@ -31983,13 +31983,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 10780,
-        y: 11540,
+        x: 11360,
+        y: 13600,
       },
       startId: "86ff9b7c-da53-4003-ae8e-992036396961",
       end: {
-        x: 11120,
-        y: 11480,
+        x: 11700,
+        y: 13540,
       },
       endId: "8a05526f-fce6-437d-981e-f88e10bd665b",
       name: "TwoWayHEdge",
@@ -31997,13 +31997,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11120,
-        y: 11480,
+        x: 11700,
+        y: 13540,
       },
       startId: "8a05526f-fce6-437d-981e-f88e10bd665b",
       end: {
-        x: 11480,
-        y: 11540,
+        x: 12060,
+        y: 13600,
       },
       endId: "82f08002-a4ad-465e-b3bb-80f346b4606a",
       name: "TwoWayHEdge",
@@ -32011,13 +32011,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11480,
-        y: 11540,
+        x: 12060,
+        y: 13600,
       },
       startId: "82f08002-a4ad-465e-b3bb-80f346b4606a",
       end: {
-        x: 12080,
-        y: 11480,
+        x: 12660,
+        y: 13540,
       },
       endId: "28c361bb-a56f-4099-a8bf-40e4869f2b7c",
       name: "TwoWayHEdge",
@@ -32025,13 +32025,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11480,
-        y: 11540,
+        x: 12060,
+        y: 13600,
       },
       startId: "82f08002-a4ad-465e-b3bb-80f346b4606a",
       end: {
-        x: 11440,
-        y: 11160,
+        x: 12020,
+        y: 13220,
       },
       endId: "eebf013d-79f0-4565-9919-1917ffe72d8e",
       name: "TwoWayVEdge",
@@ -32039,13 +32039,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11440,
-        y: 11160,
+        x: 12020,
+        y: 13220,
       },
       startId: "eebf013d-79f0-4565-9919-1917ffe72d8e",
       end: {
-        x: 11780,
-        y: 11120,
+        x: 12360,
+        y: 13180,
       },
       endId: "4276ced9-ee69-4bb9-875d-967c5f17cbe1",
       name: "TwoWayHEdge",
@@ -32053,13 +32053,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 11780,
-        y: 11120,
+        x: 12360,
+        y: 13180,
       },
       startId: "4276ced9-ee69-4bb9-875d-967c5f17cbe1",
       end: {
-        x: 12120,
-        y: 11160,
+        x: 12700,
+        y: 13220,
       },
       endId: "de445304-6eec-43eb-a0ce-db78ae7b9838",
       name: "TwoWayHEdge",
@@ -32067,13 +32067,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12120,
-        y: 11160,
+        x: 12700,
+        y: 13220,
       },
       startId: "de445304-6eec-43eb-a0ce-db78ae7b9838",
       end: {
-        x: 12080,
-        y: 11480,
+        x: 12660,
+        y: 13540,
       },
       endId: "28c361bb-a56f-4099-a8bf-40e4869f2b7c",
       name: "TwoWayVEdge",
@@ -32081,13 +32081,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12120,
-        y: 11160,
+        x: 12700,
+        y: 13220,
       },
       startId: "de445304-6eec-43eb-a0ce-db78ae7b9838",
       end: {
-        x: 12420,
-        y: 11120,
+        x: 13000,
+        y: 13180,
       },
       endId: "818d3bce-2a45-44a9-8470-c10824fd979b",
       name: "TwoWayHEdge",
@@ -32095,13 +32095,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12420,
-        y: 11120,
+        x: 13000,
+        y: 13180,
       },
       startId: "818d3bce-2a45-44a9-8470-c10824fd979b",
       end: {
-        x: 12360,
-        y: 10820,
+        x: 12940,
+        y: 12880,
       },
       endId: "33870572-f3f8-4291-bb09-2d9dd6047d2b",
       name: "TwoWayVEdge",
@@ -32109,13 +32109,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12360,
-        y: 10820,
+        x: 12940,
+        y: 12880,
       },
       startId: "33870572-f3f8-4291-bb09-2d9dd6047d2b",
       end: {
-        x: 12060,
-        y: 10860,
+        x: 12640,
+        y: 12920,
       },
       endId: "a277109b-b6ea-4729-8cad-cf4c199a9d6d",
       name: "TwoWayHEdge",
@@ -32123,13 +32123,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12060,
-        y: 10860,
+        x: 12640,
+        y: 12920,
       },
       startId: "a277109b-b6ea-4729-8cad-cf4c199a9d6d",
       end: {
-        x: 12120,
-        y: 11160,
+        x: 12700,
+        y: 13220,
       },
       endId: "de445304-6eec-43eb-a0ce-db78ae7b9838",
       name: "TwoWayVEdge",
@@ -32137,13 +32137,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12360,
-        y: 10820,
+        x: 12940,
+        y: 12880,
       },
       startId: "33870572-f3f8-4291-bb09-2d9dd6047d2b",
       end: {
-        x: 12740,
-        y: 10860,
+        x: 13320,
+        y: 12920,
       },
       endId: "c7f99497-8d14-4d1a-b9a0-d12bac7ff4f3",
       name: "TwoWayHEdge",
@@ -32151,13 +32151,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12060,
-        y: 10860,
+        x: 12640,
+        y: 12920,
       },
       startId: "a277109b-b6ea-4729-8cad-cf4c199a9d6d",
       end: {
-        x: 12120,
-        y: 10520,
+        x: 12700,
+        y: 12580,
       },
       endId: "a4d45cff-04a5-4a04-9d10-183acb893291",
       name: "TwoWayVEdge",
@@ -32165,13 +32165,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12120,
-        y: 10520,
+        x: 12700,
+        y: 12580,
       },
       startId: "a4d45cff-04a5-4a04-9d10-183acb893291",
       end: {
-        x: 12640,
-        y: 10500,
+        x: 13220,
+        y: 12560,
       },
       endId: "a0977898-22c1-4771-aa95-f445696aa693",
       name: "TwoWayHEdge",
@@ -32179,13 +32179,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12640,
-        y: 10500,
+        x: 13220,
+        y: 12560,
       },
       startId: "a0977898-22c1-4771-aa95-f445696aa693",
       end: {
-        x: 12740,
-        y: 10860,
+        x: 13320,
+        y: 12920,
       },
       endId: "c7f99497-8d14-4d1a-b9a0-d12bac7ff4f3",
       name: "TwoWayVEdge",
@@ -32193,13 +32193,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12920,
-        y: 3960,
+        x: 13500,
+        y: 6020,
       },
       startId: "9317f67d-8210-4035-b06f-a72a5dd89acc",
       end: {
-        x: 12980,
-        y: 3440,
+        x: 13560,
+        y: 5500,
       },
       endId: "aae2494b-ca25-4d4f-baa3-d362ecc7c8c7",
       name: "TwoWayVEdge",
@@ -32207,13 +32207,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12920,
-        y: 3960,
+        x: 13500,
+        y: 6020,
       },
       startId: "9317f67d-8210-4035-b06f-a72a5dd89acc",
       end: {
-        x: 12480,
-        y: 3940,
+        x: 13060,
+        y: 6000,
       },
       endId: "8a1cbbe7-703c-4ec6-bff9-d84148dfc97c",
       name: "TwoWayHEdge",
@@ -32221,13 +32221,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12480,
-        y: 3940,
+        x: 13060,
+        y: 6000,
       },
       startId: "8a1cbbe7-703c-4ec6-bff9-d84148dfc97c",
       end: {
-        x: 12080,
-        y: 3960,
+        x: 12660,
+        y: 6020,
       },
       endId: "9eeaa88f-9b54-49b8-a831-6cbe73b0996a",
       name: "TwoWayHEdge",
@@ -32235,13 +32235,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12080,
-        y: 3960,
+        x: 12660,
+        y: 6020,
       },
       startId: "9eeaa88f-9b54-49b8-a831-6cbe73b0996a",
       end: {
-        x: 12000,
-        y: 3680,
+        x: 12580,
+        y: 5740,
       },
       endId: "82cd2b2f-fbb3-490f-a528-31be3b29a97b",
       name: "TwoWayVEdge",
@@ -32249,13 +32249,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12000,
-        y: 3680,
+        x: 12580,
+        y: 5740,
       },
       startId: "82cd2b2f-fbb3-490f-a528-31be3b29a97b",
       end: {
-        x: 12080,
-        y: 3420,
+        x: 12660,
+        y: 5480,
       },
       endId: "7784cb7a-d461-4a46-bc7b-c17b20067e08",
       name: "TwoWayVEdge",
@@ -32263,13 +32263,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12080,
-        y: 3420,
+        x: 12660,
+        y: 5480,
       },
       startId: "7784cb7a-d461-4a46-bc7b-c17b20067e08",
       end: {
-        x: 12500,
-        y: 3400,
+        x: 13080,
+        y: 5460,
       },
       endId: "2703f796-cad8-4e10-8b8b-16d2867229ed",
       name: "TwoWayHEdge",
@@ -32277,13 +32277,13 @@ const dokaponTheWorldMap: GraphJSON = {
     },
     {
       start: {
-        x: 12500,
-        y: 3400,
+        x: 13080,
+        y: 5460,
       },
       startId: "2703f796-cad8-4e10-8b8b-16d2867229ed",
       end: {
-        x: 12980,
-        y: 3440,
+        x: 13560,
+        y: 5500,
       },
       endId: "aae2494b-ca25-4d4f-baa3-d362ecc7c8c7",
       name: "TwoWayHEdge",

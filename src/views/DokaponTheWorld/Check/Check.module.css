@@ -69,6 +69,14 @@ check底下的`CheckTip` `VertexAttrsAndDistance` `Minimap`
   border-radius: 1.5rem;
   background-color: rgba(34, 34, 34, 0.5);
 }
+.currentArea {
+  position: absolute;
+  border-radius: 0.2rem;
+  width: 6.5%;
+  height: 8%;
+  background-color: rgb(194, 200, 131);
+  transform: translate(-50%, -50%);
+}
 /* .overviewMap {
     position: absolute;
     top: 0;

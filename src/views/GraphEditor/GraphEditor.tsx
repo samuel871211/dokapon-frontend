@@ -1146,7 +1146,7 @@ function useMetaData() {
   };
 }
 /**
- * 要先生成Edge，再生成Vertex，這樣Vertex才可以把LINK蓋住
+ * 要先生成Edge，再生成Vertex，這樣Vertex才可以把Edge蓋住
  */
 function renderCells(graph: GraphJSON) {
   const vertices = graph.vertices.map((vertex) =>

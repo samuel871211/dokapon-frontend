@@ -1,12 +1,5 @@
 // Related third party imports.
-import {
-  PointerEvent,
-  WheelEvent,
-  createElement,
-  useMemo,
-  MouseEvent,
-  useContext,
-} from "react";
+import { createElement, useMemo, useContext } from "react";
 
 // Local application/library specific imports.
 import type { GraphJSON, AreaTypes } from "global";
@@ -40,6 +33,7 @@ import { gameProgressCtx } from "reducers/gameProgress";
 import styles from "./GraphUI.module.css";
 import areaTypesToMap from "data/areaTypesToMap";
 import HighLightVertex from "components/HighLightVertex";
+import ids from "../ids";
 
 // Stateless vars declare
 /**
@@ -95,15 +89,15 @@ const Components = {
 /**
  * 要先有pointerDown，pointerMove的動作才會成立
  */
-const isPointerDown = false;
+// const isPointerDown = false;
 /**
  * 背景點點的間隔
  */
-const gridSize = 20;
+// const gridSize = 20;
 /**
  * 用來計算滑鼠移動距離的基準點
  */
-const pointerDownPage = { x: -1, y: -1 };
+// const pointerDownPage = { x: -1, y: -1 };
 /**
  * 紀錄SVG偏移的基準點，之後再加上滑鼠移動距離，就會是最新的偏移量
  */
@@ -176,8 +170,8 @@ function GraphUI() {
     // handlePointerOver,
     // handleDoubleClick,
     // handlePointerDown,
-    handleWheel,
-    SVGScale,
+    // handleWheel,
+    // SVGScale,
     SVGTranslate,
     Cells,
     PlayersChess,
@@ -186,15 +180,10 @@ function GraphUI() {
   return (
     <div className={styles.graphUIcontainer}>
       <svg
-        // style={{
-        //   backgroundSize: `${gridSize * SVGScale}px ${gridSize * SVGScale}px`,
-        //   backgroundPosition: `${
-        //     gridSize * SVGScale * -0.5 + SVGTranslate.x
-        //   }px ${gridSize * SVGScale * -0.5 + SVGTranslate.y}px`,
-        // }}
-        className={styles.svg}
+        id={ids.graphSVG}
+        className={styles.graphSVG}
+        // onWheel={handleWheel}
         // onPointerDown={handlePointerDown}
-        onWheel={handleWheel}
         // onDoubleClick={handleDoubleClick}
         // onPointerOver={handlePointerOver}
       >
@@ -210,9 +199,8 @@ function GraphUI() {
           </marker>
         </defs>
         <g
-          id="cellsGroup"
-          // transform={`translate(${SVGTranslate.x}, ${SVGTranslate.y})`}
-          transform={`matrix(${SVGScale}, 0, 0, ${SVGScale}, ${SVGTranslate.x}, ${SVGTranslate.y})`}
+          id={ids.cellsGroup}
+          transform={`translate(${SVGTranslate.x}, ${SVGTranslate.y})`}
         >
           {Cells}
           {PlayersChess}
@@ -227,10 +215,10 @@ function GraphUI() {
  * @todo 當玩家座標or變動，重新計算30個點的所有路徑
  */
 function useMetaData() {
-  const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
+  const { gameProgress } = useContext(gameProgressCtx);
   const { DokaponTheWorldState, playersAttrs, currentPlayerIdx } = gameProgress;
-  const { curComponents, CheckState, GraphUIState } = DokaponTheWorldState;
-  const { SVGScale, SVGTranslate } = GraphUIState;
+  const { GraphUIState } = DokaponTheWorldState;
+  const { SVGTranslate } = GraphUIState;
   const showHighLight = true;
   const curPlayer = playersAttrs[currentPlayerIdx];
   const curArea = curPlayer.area;
@@ -453,28 +441,28 @@ function useMetaData() {
    * deltaY = -150 | 150，分別代表上滾(放大)跟下滾(縮小)
    * 因為這個頁面沒有scrollBar，所以不需要ctrl + wheel來區別一般滾動跟放大縮小
    */
-  function handleWheel(e: WheelEvent<SVGSVGElement>) {
-    const delta = e.deltaY < 0 ? 0.1 : -0.1;
-    const oldScale = SVGScale;
-    const { x, y } = SVGTranslate;
-    const { offsetX, offsetY } = e.nativeEvent;
-    const newScale = parseFloat((oldScale + delta).toFixed(1));
-    const originOffsetXBasedOnSVG = (offsetX - x) / oldScale;
-    const originOffsetYBasedOnSVG = (offsetY - y) / oldScale;
-    const newX = parseInt((x - originOffsetXBasedOnSVG * delta).toFixed(0));
-    const newY = parseInt((y - originOffsetYBasedOnSVG * delta).toFixed(0));
-    if (newScale > 9.9 || newScale < 0.1) return;
-    if (newX === SVGTranslate.x && newY === SVGTranslate.y) return;
-    GraphUIState.SVGScale = newScale;
-    GraphUIState.SVGTranslate = { x: newX, y: newY };
-    setGameProgress({ ...gameProgress });
-  }
+  // function handleWheel(e: WheelEvent<SVGSVGElement>) {
+  //   const delta = e.deltaY < 0 ? 0.1 : -0.1;
+  //   const oldScale = SVGScale;
+  //   const { x, y } = SVGTranslate;
+  //   const { offsetX, offsetY } = e.nativeEvent;
+  //   const newScale = parseFloat((oldScale + delta).toFixed(1));
+  //   const originOffsetXBasedOnSVG = (offsetX - x) / oldScale;
+  //   const originOffsetYBasedOnSVG = (offsetY - y) / oldScale;
+  //   const newX = parseInt((x - originOffsetXBasedOnSVG * delta).toFixed(0));
+  //   const newY = parseInt((y - originOffsetYBasedOnSVG * delta).toFixed(0));
+  //   if (newScale > 9.9 || newScale < 0.1) return;
+  //   if (newX === SVGTranslate.x && newY === SVGTranslate.y) return;
+  //   GraphUIState.SVGScale = newScale;
+  //   GraphUIState.SVGTranslate = { x: newX, y: newY };
+  //   setGameProgress({ ...gameProgress });
+  // }
   return {
     // handlePointerOver,
     // handleDoubleClick,
     // handlePointerDown,
-    handleWheel,
-    SVGScale,
+    // handleWheel,
+    // SVGScale,
     SVGTranslate,
     Cells,
     PlayersChess,

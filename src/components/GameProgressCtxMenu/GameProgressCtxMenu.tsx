@@ -4,7 +4,7 @@ import { ChangeEvent, useContext, useEffect, useRef, useState } from "react";
 
 // Local application/library specific imports.
 import styles from "./GameProgressCtxMenu.module.css";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 

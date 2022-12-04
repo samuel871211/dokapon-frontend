@@ -4,7 +4,7 @@ import { useContext } from "react";
 // Local application/library specific imports.
 import styles from "./Check.module.css";
 import useTranslation from "hooks/useTranslation";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import ids from "../ids";
 
 // Stateless vars declare.

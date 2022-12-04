@@ -8,7 +8,7 @@ import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
 import styles from "./VillageFieldCheck.module.css";
 import BottomDialog from "components/BottomDialog";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 

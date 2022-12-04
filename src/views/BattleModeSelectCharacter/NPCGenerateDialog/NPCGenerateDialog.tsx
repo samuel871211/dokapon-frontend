@@ -10,7 +10,7 @@ import styles from "./NPCGenerateDialog.module.css";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;

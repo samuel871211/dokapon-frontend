@@ -1,6 +1,6 @@
 import texts from "data/texts";
 import { useContext } from "react";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 const defaultLang = "jp";
 

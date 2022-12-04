@@ -4,7 +4,7 @@ import { useContext } from "react";
 // Local application/library specific imports.
 import CustomBorderBottom from "components/CustomBorderBottom";
 import YellowBlock from "layouts/YellowBlock";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import styles from "./SelectController.module.css";
 import useTranslation from "hooks/useTranslation";
 import npcLevelsToJP from "data/npcLevelsToJP";

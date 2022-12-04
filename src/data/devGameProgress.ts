@@ -933,3 +933,5 @@ const devGameProgress: GameProgress = {
     "START": "v"
   }
 };
+
+export default devGameProgress;

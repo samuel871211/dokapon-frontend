@@ -4,7 +4,7 @@ import { useContext, useMemo } from "react";
 // Local application/library specific imports.
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import topAreaStyles from "../TopArea/TopArea.module.css";
 import colors from "data/colors";
 import colorsToRGB from "data/colorsToRGB";

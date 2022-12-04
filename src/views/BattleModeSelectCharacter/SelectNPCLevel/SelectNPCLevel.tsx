@@ -5,7 +5,7 @@ import { useContext } from "react";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
 import styles from "./SelectNPCLevel.module.css";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import topAreaStyles from "../TopArea/TopArea.module.css";
 
 export default SelectNPCLevel;

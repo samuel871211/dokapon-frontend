@@ -7,7 +7,7 @@ import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
 import styles from "./ChurchFieldCheck.module.css";
 import BottomDialog from "components/BottomDialog";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 const tempMoneyList = [-999999999, 999999999, 0, 123456789];

@@ -9,7 +9,7 @@ import CustomBorderBottom from "components/CustomBorderBottom";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
 import styles from "./WeaponStoreFieldCheck.module.css";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import BottomDialog from "components/BottomDialog";
 import weapons from "data/weapons";
 import shields from "data/shields";

@@ -6,7 +6,7 @@ import { useContext } from "react";
 import styles from "./Bag.module.css";
 import useTranslation from "hooks/useTranslation";
 import SomeKindOfIcon from "components/icons";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import jobs from "data/jobs";
 import BottomDialog from "components/BottomDialog";
 

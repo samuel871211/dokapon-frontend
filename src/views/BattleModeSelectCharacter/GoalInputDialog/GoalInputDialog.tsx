@@ -7,7 +7,7 @@ import styles from "./GoalInputDialog.module.css";
 import YellowBlock from "layouts/YellowBlock";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import useTranslation from "hooks/useTranslation";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 

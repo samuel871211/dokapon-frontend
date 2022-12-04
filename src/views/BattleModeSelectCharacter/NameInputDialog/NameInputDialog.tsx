@@ -6,7 +6,7 @@ import nameInputChars from "data/nameInputChars";
 import styles from "./NameInputDialog.module.css";
 import globalStyles from "assets/styles/globalStyles.module.css";
 import YellowBlock from "layouts/YellowBlock";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 const viewToViewStateMapping = {

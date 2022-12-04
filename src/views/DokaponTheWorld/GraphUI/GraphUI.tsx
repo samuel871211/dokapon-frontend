@@ -29,7 +29,7 @@ import BattleField from "components/vertices/BattleField";
 import DamageField from "components/vertices/DamageField";
 import PlayerChess from "components/PlayerChess";
 import GraphDSA from "utils/GraphDSA";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import styles from "./GraphUI.module.css";
 import areaTypesToMap from "data/areaTypesToMap";
 import HighLightVertex from "components/HighLightVertex";

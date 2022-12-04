@@ -4,8 +4,8 @@ const oceaniaCaveB2Map: GraphJSON = {
   vertices: [
     {
       position: {
-        x: -380,
-        y: -40,
+        x: 3840,
+        y: 460,
       },
       name: "BattleField",
       id: "62a614b8-e6c2-4923-8e97-fdb372502bc3",
@@ -21,8 +21,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "479df5cd-ad31-4f22-9edb-521311739dcb",
       name: "GoldTreasureField",
       position: {
-        x: 460,
-        y: 40,
+        x: 4680,
+        y: 540,
       },
       edges: [
         "f7ea5957-a7cf-41b9-b551-5605b4c80009",
@@ -38,8 +38,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "7691891a-1b53-45ab-87c5-90f1368edada",
       name: "DamageField",
       position: {
-        x: 1060,
-        y: 80,
+        x: 5280,
+        y: 580,
       },
       edges: [
         "60e5b855-63df-4161-8f93-b9d38622bcbe",
@@ -55,8 +55,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "674655e7-ab49-4a14-8474-11eda42b41f1",
       name: "CaveField",
       position: {
-        x: 940,
-        y: -460,
+        x: 5160,
+        y: 40,
       },
       edges: ["54ff5a7f-d945-48e8-959f-831f86b28f53"],
       area: "OceaniaCaveB2",
@@ -66,8 +66,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "3eb8e3fe-e66f-4f0b-960d-9b13ae0e2bbe",
       name: "BattleField",
       position: {
-        x: 400,
-        y: 440,
+        x: 4620,
+        y: 940,
       },
       edges: [
         "afa1f230-8dc9-42e4-9be8-4ea2f476d3e9",
@@ -81,8 +81,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "d5cf46b1-9aae-4e41-8da8-ab88e809e16e",
       name: "TreasureField",
       position: {
-        x: 460,
-        y: 880,
+        x: 4680,
+        y: 1380,
       },
       edges: [
         "528c795c-5014-433c-a097-cef48a616362",
@@ -96,8 +96,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "35f607b1-3ea7-418d-b8fc-3932346fd220",
       name: "DamageField",
       position: {
-        x: 1020,
-        y: 880,
+        x: 5240,
+        y: 1380,
       },
       edges: [
         "e7ee9005-fdb6-4a4c-ab08-599b6d4b7abf",
@@ -113,8 +113,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "eb140a33-8593-4950-9cbb-39a52c46ad53",
       name: "DamageField",
       position: {
-        x: 1800,
-        y: 880,
+        x: 6020,
+        y: 1380,
       },
       edges: [
         "d6f4103e-a8f3-44d8-b5e6-f4ebfd585585",
@@ -132,8 +132,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "f1d5ed1c-b70a-47c9-9d7a-3b4c2f32d97d",
       name: "TreasureField",
       position: {
-        x: 1700,
-        y: 280,
+        x: 5920,
+        y: 780,
       },
       edges: [
         "1b2690fd-94c3-46e8-8b05-1fca1ee748e5",
@@ -147,8 +147,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "f0603449-a812-4090-a516-650dcf54e45a",
       name: "BattleField",
       position: {
-        x: 2300,
-        y: 300,
+        x: 6520,
+        y: 800,
       },
       edges: [
         "012eb970-9a00-4fcb-953b-274117c66aea",
@@ -162,8 +162,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "75a9e672-a62f-471b-829a-a7d0625e66b9",
       name: "BattleField",
       position: {
-        x: 2900,
-        y: 280,
+        x: 7120,
+        y: 780,
       },
       edges: ["6376c1c4-73e3-4b4a-9dda-3a3138a577ad"],
       area: "OceaniaCaveB2",
@@ -173,8 +173,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "8d2075ad-5875-4fb5-a86c-f02131c02c24",
       name: "KeyTreasureField",
       position: {
-        x: 2400,
-        y: 900,
+        x: 6620,
+        y: 1400,
       },
       edges: ["6dbc1763-4ac9-4b1a-ad7e-da2f3114f798"],
       area: "OceaniaCaveB2",
@@ -184,8 +184,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "acf4dfbe-10a2-497b-b865-7af7b2a9ffce",
       name: "BattleField",
       position: {
-        x: 1760,
-        y: 1400,
+        x: 5980,
+        y: 1900,
       },
       edges: [
         "51b8f0be-cf4d-4206-a704-d41a407d8b06",
@@ -199,8 +199,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "9fdf3052-fce7-4217-869c-d828ca3d3676",
       name: "TreasureField",
       position: {
-        x: 1880,
-        y: 1920,
+        x: 6100,
+        y: 2420,
       },
       edges: [
         "751f3d1a-0022-46fa-bcad-0bb221ebd996",
@@ -216,8 +216,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "f27c771c-cc02-4473-a746-5e80ff81c82e",
       name: "GoldTreasureField",
       position: {
-        x: 1140,
-        y: 1880,
+        x: 5360,
+        y: 2380,
       },
       edges: [
         "c7c210ef-8c75-498c-b4d5-10e1cce4526c",
@@ -233,8 +233,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "b3ad697a-cbdb-45e8-a097-af73c00c2773",
       name: "RedTreasureField",
       position: {
-        x: 440,
-        y: 1900,
+        x: 4660,
+        y: 2400,
       },
       edges: [
         "c59b08fe-e6c4-43d3-bdaf-5609ba141c62",
@@ -248,8 +248,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "46e076f1-c458-4373-b134-6d12764ffb42",
       name: "BattleField",
       position: {
-        x: 540,
-        y: 1400,
+        x: 4760,
+        y: 1900,
       },
       edges: [
         "561503f2-f3b5-4e34-a0b0-b403278476fd",
@@ -263,8 +263,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "e7342162-ea27-4f96-ab44-2be013c02f88",
       name: "CaveField",
       position: {
-        x: -40,
-        y: 1420,
+        x: 4180,
+        y: 1920,
       },
       edges: ["5b9c29c0-f191-4bfd-9daa-13b5dedff0ee"],
       area: "OceaniaCaveB2",
@@ -274,8 +274,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "eec0a4d1-7260-4e4c-828f-6fc822f9446d",
       name: "BattleField",
       position: {
-        x: 1820,
-        y: 2360,
+        x: 6040,
+        y: 2860,
       },
       edges: [
         "7605f2ca-9463-4d39-8e03-033850f08564",
@@ -291,8 +291,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "a9b95f13-184a-44b9-81f7-34c9d8fc226e",
       name: "RedTreasureField",
       position: {
-        x: 1900,
-        y: 2760,
+        x: 6120,
+        y: 3260,
       },
       edges: [
         "a7d51688-7ed0-4a9e-b93d-570a862a1a44",
@@ -306,8 +306,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "659d1c26-65d3-4187-90a8-3283abf11f14",
       name: "GoldTreasureField",
       position: {
-        x: 1820,
-        y: 3180,
+        x: 6040,
+        y: 3680,
       },
       edges: [
         "37c10d9e-1271-4ad4-a240-7bb45601585a",
@@ -321,8 +321,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "e4002a30-6d57-43bd-a5f6-39d59d8dbf91",
       name: "BattleField",
       position: {
-        x: 2440,
-        y: 2380,
+        x: 6660,
+        y: 2880,
       },
       edges: [
         "0a18c5f0-df16-4c8e-be08-7b73a7d5a868",
@@ -338,8 +338,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "95e19d6a-d3da-4796-9bec-350cb1dc6579",
       name: "TreasureField",
       position: {
-        x: 2500,
-        y: 3140,
+        x: 6720,
+        y: 3640,
       },
       edges: [
         "f17c313a-72f9-41da-9d60-0a4154c5c63a",
@@ -353,8 +353,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "fd4c95cb-31ec-4c05-9e6b-c78f6d81d227",
       name: "WhiteTreasureField",
       position: {
-        x: 3080,
-        y: 2400,
+        x: 7300,
+        y: 2900,
       },
       edges: ["e1108b7e-162a-49de-a261-0b79427f2938"],
       area: "OceaniaCaveB2",
@@ -364,8 +364,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "85c154dd-356c-4f49-9181-3e76b66e69d7",
       name: "TreasureField",
       position: {
-        x: 1100,
-        y: 2260,
+        x: 5320,
+        y: 2760,
       },
       edges: [
         "95937a1b-bc00-4a13-9457-c3adde3c8f34",
@@ -381,8 +381,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "8429c1ec-9262-43cb-ba21-4166c6e27b21",
       name: "DamageField",
       position: {
-        x: 1160,
-        y: 2680,
+        x: 5380,
+        y: 3180,
       },
       edges: [
         "a93a9e6d-6a82-4561-85da-d8895d7031e1",
@@ -396,8 +396,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "17f15f7a-cd19-4701-98b3-b84f5f3ca33e",
       name: "BattleField",
       position: {
-        x: 1120,
-        y: 3100,
+        x: 5340,
+        y: 3600,
       },
       edges: [
         "432b7037-94a4-4666-ab4b-28f5ec62926a",
@@ -411,8 +411,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "86f33145-1b92-4e15-8e88-bdbd55024b00",
       name: "TreasureField",
       position: {
-        x: 540,
-        y: 3080,
+        x: 4760,
+        y: 3580,
       },
       edges: [
         "eb9d5e9b-c4da-4f51-881b-23f2e1aac010",
@@ -428,8 +428,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "04b676af-0f62-46c3-b332-b6d60ce5a9be",
       name: "BattleField",
       position: {
-        x: 460,
-        y: 2300,
+        x: 4680,
+        y: 2800,
       },
       edges: [
         "a2dcb9be-d9d0-422e-b75d-7a6fb6b47669",
@@ -443,8 +443,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "696aee00-8ece-4ee2-a0df-1ca2efe24d85",
       name: "BattleField",
       position: {
-        x: -80,
-        y: 3080,
+        x: 4140,
+        y: 3580,
       },
       edges: [
         "aa3489ac-8e95-4342-92be-a8c2b2b90b01",
@@ -458,8 +458,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "df209413-8de5-40e2-a79e-4aaecd010826",
       name: "DamageField",
       position: {
-        x: -660,
-        y: 3080,
+        x: 3560,
+        y: 3580,
       },
       edges: [
         "c10a8caa-3f25-47a5-8706-a5c5d359739b",
@@ -473,8 +473,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "3be2e502-3b44-4794-ae59-836f092b8838",
       name: "TreasureField",
       position: {
-        x: -1280,
-        y: 3080,
+        x: 2940,
+        y: 3580,
       },
       edges: [
         "d0132d54-b373-4f18-9ea0-98d00e3b3262",
@@ -488,8 +488,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "b93370f6-449e-4df9-b9ea-5153e857fdc8",
       name: "BattleField",
       position: {
-        x: -1340,
-        y: 3560,
+        x: 2880,
+        y: 4060,
       },
       edges: [
         "95e01ba9-2e66-44fb-81ed-17ac4f611b54",
@@ -503,8 +503,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "b0d278b9-c81d-4f8a-84c3-333f8d59a100",
       name: "RedTreasureField",
       position: {
-        x: -1280,
-        y: 4060,
+        x: 2940,
+        y: 4560,
       },
       edges: [
         "6ee11abe-19bd-4bf2-b0f2-4c16b6664916",
@@ -518,8 +518,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "070467a8-e7a7-4096-a78b-84f6822a5409",
       name: "BattleField",
       position: {
-        x: -1360,
-        y: 4560,
+        x: 2860,
+        y: 5060,
       },
       edges: ["c9674e2e-45ca-4a42-acde-5923e78faa0d"],
       area: "OceaniaCaveB2",
@@ -529,8 +529,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "805af805-7b15-43ab-9037-1b14f7d7cdb9",
       name: "TreasureField",
       position: {
-        x: -1140,
-        y: -20,
+        x: 3080,
+        y: 480,
       },
       edges: [
         "b06d6518-62a3-45fc-bfb9-7a274554d37e",
@@ -544,8 +544,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "6d8e70e6-bbc7-4824-8627-070e9d2768f8",
       name: "DamageField",
       position: {
-        x: -1860,
-        y: -60,
+        x: 2360,
+        y: 440,
       },
       edges: [
         "9afdd4da-06ec-4351-a3da-e4988f609524",
@@ -561,8 +561,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "904cec95-e29b-4417-89c1-c3bcff1025ed",
       name: "BattleField",
       position: {
-        x: -2920,
-        y: -60,
+        x: 1300,
+        y: 440,
       },
       edges: [
         "564b96ae-7f58-4678-a5e0-54fe4a7a2246",
@@ -576,8 +576,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "af9be5f2-b8dc-4010-87d2-d616a953d2b7",
       name: "BattleField",
       position: {
-        x: -2960,
-        y: 460,
+        x: 1260,
+        y: 960,
       },
       edges: [
         "367801ee-3620-444c-a085-bd7946c6d315",
@@ -591,8 +591,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "9800c317-89d4-4273-8303-6b0e849fe31d",
       name: "BattleField",
       position: {
-        x: -2420,
-        y: 440,
+        x: 1800,
+        y: 940,
       },
       edges: [
         "982fa28b-15fc-4d81-9c7d-643b9aa41cfa",
@@ -608,8 +608,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "eb6889ef-ded1-4036-8352-0ea68a54ecd8",
       name: "TreasureField",
       position: {
-        x: -1880,
-        y: 460,
+        x: 2340,
+        y: 960,
       },
       edges: [
         "776c6b6d-266a-48f9-bcf6-f6b68b7a19a5",
@@ -623,8 +623,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "5f1265b7-9c53-4d0d-98b5-4c664d2dffb2",
       name: "MagicBookField",
       position: {
-        x: -2360,
-        y: 880,
+        x: 1860,
+        y: 1380,
       },
       edges: [
         "e3b22a36-5af4-49e1-a750-372b5ead614c",
@@ -638,8 +638,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "5e3e260a-11b5-49cb-9218-a3c125d7a1f9",
       name: "BattleField",
       position: {
-        x: -2420,
-        y: 1340,
+        x: 1800,
+        y: 1840,
       },
       edges: [
         "a77cfde8-2fe0-4f90-851f-a62698357eea",
@@ -653,8 +653,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "953403f9-e1cc-4607-8d13-cb657cd250bd",
       name: "RedTreasureField",
       position: {
-        x: -2960,
-        y: 1300,
+        x: 1260,
+        y: 1800,
       },
       edges: [
         "4ce68f22-b0bb-46c6-aca4-604d27d0a6ff",
@@ -668,8 +668,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "10c01992-c69d-4c11-881f-84aceb0ec13a",
       name: "BattleField",
       position: {
-        x: -3540,
-        y: 1320,
+        x: 680,
+        y: 1820,
       },
       edges: [
         "a8ad05dd-aec5-4070-b983-130b6a3a00d2",
@@ -683,8 +683,8 @@ const oceaniaCaveB2Map: GraphJSON = {
       id: "bd9fe1cf-edb8-473a-899d-7309f986c560",
       name: "BattleField",
       position: {
-        x: -4180,
-        y: 1280,
+        x: 40,
+        y: 1780,
       },
       edges: ["2539ff64-faae-4a44-9cff-a1a6057b3984"],
       area: "OceaniaCaveB2",
@@ -694,13 +694,13 @@ const oceaniaCaveB2Map: GraphJSON = {
   edges: [
     {
       start: {
-        x: -380,
-        y: -40,
+        x: 3840,
+        y: 460,
       },
       startId: "62a614b8-e6c2-4923-8e97-fdb372502bc3",
       end: {
-        x: 460,
-        y: 40,
+        x: 4680,
+        y: 540,
       },
       endId: "479df5cd-ad31-4f22-9edb-521311739dcb",
       name: "TwoWayHEdge",
@@ -708,13 +708,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 460,
-        y: 40,
+        x: 4680,
+        y: 540,
       },
       startId: "479df5cd-ad31-4f22-9edb-521311739dcb",
       end: {
-        x: 1060,
-        y: 80,
+        x: 5280,
+        y: 580,
       },
       endId: "7691891a-1b53-45ab-87c5-90f1368edada",
       name: "TwoWayHEdge",
@@ -722,13 +722,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1060,
-        y: 80,
+        x: 5280,
+        y: 580,
       },
       startId: "7691891a-1b53-45ab-87c5-90f1368edada",
       end: {
-        x: 940,
-        y: -460,
+        x: 5160,
+        y: 40,
       },
       endId: "674655e7-ab49-4a14-8474-11eda42b41f1",
       name: "TwoWayVEdge",
@@ -736,13 +736,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 460,
-        y: 40,
+        x: 4680,
+        y: 540,
       },
       startId: "479df5cd-ad31-4f22-9edb-521311739dcb",
       end: {
-        x: 400,
-        y: 440,
+        x: 4620,
+        y: 940,
       },
       endId: "3eb8e3fe-e66f-4f0b-960d-9b13ae0e2bbe",
       name: "TwoWayVEdge",
@@ -750,13 +750,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 400,
-        y: 440,
+        x: 4620,
+        y: 940,
       },
       startId: "3eb8e3fe-e66f-4f0b-960d-9b13ae0e2bbe",
       end: {
-        x: 460,
-        y: 880,
+        x: 4680,
+        y: 1380,
       },
       endId: "d5cf46b1-9aae-4e41-8da8-ab88e809e16e",
       name: "TwoWayVEdge",
@@ -764,13 +764,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 460,
-        y: 880,
+        x: 4680,
+        y: 1380,
       },
       startId: "d5cf46b1-9aae-4e41-8da8-ab88e809e16e",
       end: {
-        x: 1020,
-        y: 880,
+        x: 5240,
+        y: 1380,
       },
       endId: "35f607b1-3ea7-418d-b8fc-3932346fd220",
       name: "TwoWayHEdge",
@@ -778,13 +778,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1060,
-        y: 80,
+        x: 5280,
+        y: 580,
       },
       startId: "7691891a-1b53-45ab-87c5-90f1368edada",
       end: {
-        x: 1020,
-        y: 880,
+        x: 5240,
+        y: 1380,
       },
       endId: "35f607b1-3ea7-418d-b8fc-3932346fd220",
       name: "TwoWayVEdge",
@@ -792,13 +792,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1020,
-        y: 880,
+        x: 5240,
+        y: 1380,
       },
       startId: "35f607b1-3ea7-418d-b8fc-3932346fd220",
       end: {
-        x: 1800,
-        y: 880,
+        x: 6020,
+        y: 1380,
       },
       endId: "eb140a33-8593-4950-9cbb-39a52c46ad53",
       name: "TwoWayHEdge",
@@ -806,13 +806,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1800,
-        y: 880,
+        x: 6020,
+        y: 1380,
       },
       startId: "eb140a33-8593-4950-9cbb-39a52c46ad53",
       end: {
-        x: 1700,
-        y: 280,
+        x: 5920,
+        y: 780,
       },
       endId: "f1d5ed1c-b70a-47c9-9d7a-3b4c2f32d97d",
       name: "TwoWayVEdge",
@@ -820,13 +820,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1700,
-        y: 280,
+        x: 5920,
+        y: 780,
       },
       startId: "f1d5ed1c-b70a-47c9-9d7a-3b4c2f32d97d",
       end: {
-        x: 2300,
-        y: 300,
+        x: 6520,
+        y: 800,
       },
       endId: "f0603449-a812-4090-a516-650dcf54e45a",
       name: "TwoWayHEdge",
@@ -834,13 +834,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 2300,
-        y: 300,
+        x: 6520,
+        y: 800,
       },
       startId: "f0603449-a812-4090-a516-650dcf54e45a",
       end: {
-        x: 2900,
-        y: 280,
+        x: 7120,
+        y: 780,
       },
       endId: "75a9e672-a62f-471b-829a-a7d0625e66b9",
       name: "TwoWayHEdge",
@@ -848,13 +848,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1800,
-        y: 880,
+        x: 6020,
+        y: 1380,
       },
       startId: "eb140a33-8593-4950-9cbb-39a52c46ad53",
       end: {
-        x: 2400,
-        y: 900,
+        x: 6620,
+        y: 1400,
       },
       endId: "8d2075ad-5875-4fb5-a86c-f02131c02c24",
       name: "TwoWayHEdge",
@@ -862,13 +862,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1800,
-        y: 880,
+        x: 6020,
+        y: 1380,
       },
       startId: "eb140a33-8593-4950-9cbb-39a52c46ad53",
       end: {
-        x: 1760,
-        y: 1400,
+        x: 5980,
+        y: 1900,
       },
       endId: "acf4dfbe-10a2-497b-b865-7af7b2a9ffce",
       name: "TwoWayVEdge",
@@ -876,13 +876,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1760,
-        y: 1400,
+        x: 5980,
+        y: 1900,
       },
       startId: "acf4dfbe-10a2-497b-b865-7af7b2a9ffce",
       end: {
-        x: 1880,
-        y: 1920,
+        x: 6100,
+        y: 2420,
       },
       endId: "9fdf3052-fce7-4217-869c-d828ca3d3676",
       name: "TwoWayVEdge",
@@ -890,13 +890,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1880,
-        y: 1920,
+        x: 6100,
+        y: 2420,
       },
       startId: "9fdf3052-fce7-4217-869c-d828ca3d3676",
       end: {
-        x: 1140,
-        y: 1880,
+        x: 5360,
+        y: 2380,
       },
       endId: "f27c771c-cc02-4473-a746-5e80ff81c82e",
       name: "TwoWayHEdge",
@@ -904,13 +904,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1140,
-        y: 1880,
+        x: 5360,
+        y: 2380,
       },
       startId: "f27c771c-cc02-4473-a746-5e80ff81c82e",
       end: {
-        x: 440,
-        y: 1900,
+        x: 4660,
+        y: 2400,
       },
       endId: "b3ad697a-cbdb-45e8-a097-af73c00c2773",
       name: "TwoWayHEdge",
@@ -918,13 +918,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 440,
-        y: 1900,
+        x: 4660,
+        y: 2400,
       },
       startId: "b3ad697a-cbdb-45e8-a097-af73c00c2773",
       end: {
-        x: 540,
-        y: 1400,
+        x: 4760,
+        y: 1900,
       },
       endId: "46e076f1-c458-4373-b134-6d12764ffb42",
       name: "TwoWayVEdge",
@@ -932,13 +932,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 540,
-        y: 1400,
+        x: 4760,
+        y: 1900,
       },
       startId: "46e076f1-c458-4373-b134-6d12764ffb42",
       end: {
-        x: -40,
-        y: 1420,
+        x: 4180,
+        y: 1920,
       },
       endId: "e7342162-ea27-4f96-ab44-2be013c02f88",
       name: "TwoWayHEdge",
@@ -946,13 +946,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1880,
-        y: 1920,
+        x: 6100,
+        y: 2420,
       },
       startId: "9fdf3052-fce7-4217-869c-d828ca3d3676",
       end: {
-        x: 1820,
-        y: 2360,
+        x: 6040,
+        y: 2860,
       },
       endId: "eec0a4d1-7260-4e4c-828f-6fc822f9446d",
       name: "TwoWayVEdge",
@@ -960,13 +960,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1820,
-        y: 2360,
+        x: 6040,
+        y: 2860,
       },
       startId: "eec0a4d1-7260-4e4c-828f-6fc822f9446d",
       end: {
-        x: 1900,
-        y: 2760,
+        x: 6120,
+        y: 3260,
       },
       endId: "a9b95f13-184a-44b9-81f7-34c9d8fc226e",
       name: "TwoWayVEdge",
@@ -974,13 +974,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1900,
-        y: 2760,
+        x: 6120,
+        y: 3260,
       },
       startId: "a9b95f13-184a-44b9-81f7-34c9d8fc226e",
       end: {
-        x: 1820,
-        y: 3180,
+        x: 6040,
+        y: 3680,
       },
       endId: "659d1c26-65d3-4187-90a8-3283abf11f14",
       name: "TwoWayVEdge",
@@ -988,13 +988,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1820,
-        y: 2360,
+        x: 6040,
+        y: 2860,
       },
       startId: "eec0a4d1-7260-4e4c-828f-6fc822f9446d",
       end: {
-        x: 2440,
-        y: 2380,
+        x: 6660,
+        y: 2880,
       },
       endId: "e4002a30-6d57-43bd-a5f6-39d59d8dbf91",
       name: "TwoWayHEdge",
@@ -1002,13 +1002,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 2440,
-        y: 2380,
+        x: 6660,
+        y: 2880,
       },
       startId: "e4002a30-6d57-43bd-a5f6-39d59d8dbf91",
       end: {
-        x: 2500,
-        y: 3140,
+        x: 6720,
+        y: 3640,
       },
       endId: "95e19d6a-d3da-4796-9bec-350cb1dc6579",
       name: "TwoWayVEdge",
@@ -1016,13 +1016,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1820,
-        y: 3180,
+        x: 6040,
+        y: 3680,
       },
       startId: "659d1c26-65d3-4187-90a8-3283abf11f14",
       end: {
-        x: 2500,
-        y: 3140,
+        x: 6720,
+        y: 3640,
       },
       endId: "95e19d6a-d3da-4796-9bec-350cb1dc6579",
       name: "TwoWayHEdge",
@@ -1030,13 +1030,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 2440,
-        y: 2380,
+        x: 6660,
+        y: 2880,
       },
       startId: "e4002a30-6d57-43bd-a5f6-39d59d8dbf91",
       end: {
-        x: 3080,
-        y: 2400,
+        x: 7300,
+        y: 2900,
       },
       endId: "fd4c95cb-31ec-4c05-9e6b-c78f6d81d227",
       name: "TwoWayHEdge",
@@ -1044,13 +1044,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1140,
-        y: 1880,
+        x: 5360,
+        y: 2380,
       },
       startId: "f27c771c-cc02-4473-a746-5e80ff81c82e",
       end: {
-        x: 1100,
-        y: 2260,
+        x: 5320,
+        y: 2760,
       },
       endId: "85c154dd-356c-4f49-9181-3e76b66e69d7",
       name: "TwoWayVEdge",
@@ -1058,13 +1058,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1100,
-        y: 2260,
+        x: 5320,
+        y: 2760,
       },
       startId: "85c154dd-356c-4f49-9181-3e76b66e69d7",
       end: {
-        x: 1160,
-        y: 2680,
+        x: 5380,
+        y: 3180,
       },
       endId: "8429c1ec-9262-43cb-ba21-4166c6e27b21",
       name: "TwoWayVEdge",
@@ -1072,13 +1072,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1160,
-        y: 2680,
+        x: 5380,
+        y: 3180,
       },
       startId: "8429c1ec-9262-43cb-ba21-4166c6e27b21",
       end: {
-        x: 1120,
-        y: 3100,
+        x: 5340,
+        y: 3600,
       },
       endId: "17f15f7a-cd19-4701-98b3-b84f5f3ca33e",
       name: "TwoWayVEdge",
@@ -1086,13 +1086,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1120,
-        y: 3100,
+        x: 5340,
+        y: 3600,
       },
       startId: "17f15f7a-cd19-4701-98b3-b84f5f3ca33e",
       end: {
-        x: 540,
-        y: 3080,
+        x: 4760,
+        y: 3580,
       },
       endId: "86f33145-1b92-4e15-8e88-bdbd55024b00",
       name: "TwoWayHEdge",
@@ -1100,13 +1100,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 1100,
-        y: 2260,
+        x: 5320,
+        y: 2760,
       },
       startId: "85c154dd-356c-4f49-9181-3e76b66e69d7",
       end: {
-        x: 460,
-        y: 2300,
+        x: 4680,
+        y: 2800,
       },
       endId: "04b676af-0f62-46c3-b332-b6d60ce5a9be",
       name: "TwoWayHEdge",
@@ -1114,13 +1114,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 460,
-        y: 2300,
+        x: 4680,
+        y: 2800,
       },
       startId: "04b676af-0f62-46c3-b332-b6d60ce5a9be",
       end: {
-        x: 540,
-        y: 3080,
+        x: 4760,
+        y: 3580,
       },
       endId: "86f33145-1b92-4e15-8e88-bdbd55024b00",
       name: "TwoWayVEdge",
@@ -1128,13 +1128,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: 540,
-        y: 3080,
+        x: 4760,
+        y: 3580,
       },
       startId: "86f33145-1b92-4e15-8e88-bdbd55024b00",
       end: {
-        x: -80,
-        y: 3080,
+        x: 4140,
+        y: 3580,
       },
       endId: "696aee00-8ece-4ee2-a0df-1ca2efe24d85",
       name: "TwoWayHEdge",
@@ -1142,13 +1142,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -80,
-        y: 3080,
+        x: 4140,
+        y: 3580,
       },
       startId: "696aee00-8ece-4ee2-a0df-1ca2efe24d85",
       end: {
-        x: -660,
-        y: 3080,
+        x: 3560,
+        y: 3580,
       },
       endId: "df209413-8de5-40e2-a79e-4aaecd010826",
       name: "TwoWayHEdge",
@@ -1156,13 +1156,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -660,
-        y: 3080,
+        x: 3560,
+        y: 3580,
       },
       startId: "df209413-8de5-40e2-a79e-4aaecd010826",
       end: {
-        x: -1280,
-        y: 3080,
+        x: 2940,
+        y: 3580,
       },
       endId: "3be2e502-3b44-4794-ae59-836f092b8838",
       name: "TwoWayHEdge",
@@ -1170,13 +1170,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -1280,
-        y: 3080,
+        x: 2940,
+        y: 3580,
       },
       startId: "3be2e502-3b44-4794-ae59-836f092b8838",
       end: {
-        x: -1340,
-        y: 3560,
+        x: 2880,
+        y: 4060,
       },
       endId: "b93370f6-449e-4df9-b9ea-5153e857fdc8",
       name: "TwoWayVEdge",
@@ -1184,13 +1184,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -1340,
-        y: 3560,
+        x: 2880,
+        y: 4060,
       },
       startId: "b93370f6-449e-4df9-b9ea-5153e857fdc8",
       end: {
-        x: -1280,
-        y: 4060,
+        x: 2940,
+        y: 4560,
       },
       endId: "b0d278b9-c81d-4f8a-84c3-333f8d59a100",
       name: "TwoWayVEdge",
@@ -1198,13 +1198,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -1280,
-        y: 4060,
+        x: 2940,
+        y: 4560,
       },
       startId: "b0d278b9-c81d-4f8a-84c3-333f8d59a100",
       end: {
-        x: -1360,
-        y: 4560,
+        x: 2860,
+        y: 5060,
       },
       endId: "070467a8-e7a7-4096-a78b-84f6822a5409",
       name: "TwoWayVEdge",
@@ -1212,13 +1212,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -380,
-        y: -40,
+        x: 3840,
+        y: 460,
       },
       startId: "62a614b8-e6c2-4923-8e97-fdb372502bc3",
       end: {
-        x: -1140,
-        y: -20,
+        x: 3080,
+        y: 480,
       },
       endId: "805af805-7b15-43ab-9037-1b14f7d7cdb9",
       name: "TwoWayHEdge",
@@ -1226,13 +1226,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -1140,
-        y: -20,
+        x: 3080,
+        y: 480,
       },
       startId: "805af805-7b15-43ab-9037-1b14f7d7cdb9",
       end: {
-        x: -1860,
-        y: -60,
+        x: 2360,
+        y: 440,
       },
       endId: "6d8e70e6-bbc7-4824-8627-070e9d2768f8",
       name: "TwoWayHEdge",
@@ -1240,13 +1240,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -1860,
-        y: -60,
+        x: 2360,
+        y: 440,
       },
       startId: "6d8e70e6-bbc7-4824-8627-070e9d2768f8",
       end: {
-        x: -2920,
-        y: -60,
+        x: 1300,
+        y: 440,
       },
       endId: "904cec95-e29b-4417-89c1-c3bcff1025ed",
       name: "TwoWayHEdge",
@@ -1254,13 +1254,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -2920,
-        y: -60,
+        x: 1300,
+        y: 440,
       },
       startId: "904cec95-e29b-4417-89c1-c3bcff1025ed",
       end: {
-        x: -2960,
-        y: 460,
+        x: 1260,
+        y: 960,
       },
       endId: "af9be5f2-b8dc-4010-87d2-d616a953d2b7",
       name: "TwoWayVEdge",
@@ -1268,13 +1268,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -2960,
-        y: 460,
+        x: 1260,
+        y: 960,
       },
       startId: "af9be5f2-b8dc-4010-87d2-d616a953d2b7",
       end: {
-        x: -2420,
-        y: 440,
+        x: 1800,
+        y: 940,
       },
       endId: "9800c317-89d4-4273-8303-6b0e849fe31d",
       name: "TwoWayHEdge",
@@ -1282,13 +1282,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -2420,
-        y: 440,
+        x: 1800,
+        y: 940,
       },
       startId: "9800c317-89d4-4273-8303-6b0e849fe31d",
       end: {
-        x: -1880,
-        y: 460,
+        x: 2340,
+        y: 960,
       },
       endId: "eb6889ef-ded1-4036-8352-0ea68a54ecd8",
       name: "TwoWayHEdge",
@@ -1296,13 +1296,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -1860,
-        y: -60,
+        x: 2360,
+        y: 440,
       },
       startId: "6d8e70e6-bbc7-4824-8627-070e9d2768f8",
       end: {
-        x: -1880,
-        y: 460,
+        x: 2340,
+        y: 960,
       },
       endId: "eb6889ef-ded1-4036-8352-0ea68a54ecd8",
       name: "TwoWayVEdge",
@@ -1310,13 +1310,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -2420,
-        y: 440,
+        x: 1800,
+        y: 940,
       },
       startId: "9800c317-89d4-4273-8303-6b0e849fe31d",
       end: {
-        x: -2360,
-        y: 880,
+        x: 1860,
+        y: 1380,
       },
       endId: "5f1265b7-9c53-4d0d-98b5-4c664d2dffb2",
       name: "TwoWayVEdge",
@@ -1324,13 +1324,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -2360,
-        y: 880,
+        x: 1860,
+        y: 1380,
       },
       startId: "5f1265b7-9c53-4d0d-98b5-4c664d2dffb2",
       end: {
-        x: -2420,
-        y: 1340,
+        x: 1800,
+        y: 1840,
       },
       endId: "5e3e260a-11b5-49cb-9218-a3c125d7a1f9",
       name: "TwoWayVEdge",
@@ -1338,13 +1338,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -2420,
-        y: 1340,
+        x: 1800,
+        y: 1840,
       },
       startId: "5e3e260a-11b5-49cb-9218-a3c125d7a1f9",
       end: {
-        x: -2960,
-        y: 1300,
+        x: 1260,
+        y: 1800,
       },
       endId: "953403f9-e1cc-4607-8d13-cb657cd250bd",
       name: "TwoWayHEdge",
@@ -1352,13 +1352,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -2960,
-        y: 1300,
+        x: 1260,
+        y: 1800,
       },
       startId: "953403f9-e1cc-4607-8d13-cb657cd250bd",
       end: {
-        x: -3540,
-        y: 1320,
+        x: 680,
+        y: 1820,
       },
       endId: "10c01992-c69d-4c11-881f-84aceb0ec13a",
       name: "TwoWayHEdge",
@@ -1366,13 +1366,13 @@ const oceaniaCaveB2Map: GraphJSON = {
     },
     {
       start: {
-        x: -3540,
-        y: 1320,
+        x: 680,
+        y: 1820,
       },
       startId: "10c01992-c69d-4c11-881f-84aceb0ec13a",
       end: {
-        x: -4180,
-        y: 1280,
+        x: 40,
+        y: 1780,
       },
       endId: "bd9fe1cf-edb8-473a-899d-7309f986c560",
       name: "TwoWayHEdge",

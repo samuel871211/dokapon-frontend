@@ -23,16 +23,34 @@ import type {
   GraphJSON,
 } from "global";
 // import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
+// import africaCaveB2Map from 'data/maps/africaCaveB2Map';
+// import africaCaveB3CenterMap from 'data/maps/africaCaveB3CenterMap';
+// import africaCaveB3LeftMap from 'data/maps/africaCaveB3LeftMap';
+// import africaCaveB3RightMap from 'data/maps/africaCaveB3RightMap';
+// import africaCaveMap from 'data/maps/africaCaveMap';
+// import antarcticaCaveB2Map from 'data/maps/antarcticaCaveB2Map';
+// import antarcticaCaveB3Map from 'data/maps/antarcticaCaveB3Map';
+// import antarcticaCaveMap from 'data/maps/antarcticaCaveMap';
 // import arcticCaveMap from 'data/maps/arcticCaveMap';
 // import arcticCaveB2Map from 'data/maps/arcticCaveB2Map';
 // import arcticCaveB3Map from 'data/maps/arcticCaveB3Map';
+// import asiaCaveMap from 'data/maps/asiaCaveMap';
+// import betweenDimensionsMap from 'data/maps/betweenDimensionsMap';
+// import europeCaveMap from 'data/maps/europeCaveMap';
+// import europeCaveCanteenMap from 'data/maps/europeCaveCanteenMap';
+// import europeCaveHallMap from 'data/maps/europeCaveHallMap';
+// import europeCaveLibraryMap from 'data/maps/europeCaveLibraryMap';
+// import hawaiianIslandsCaveMap from 'data/maps/hawaiianIslandsCaveMap';
+// import hawaiianIslandsCaveB2Map from 'data/maps/hawaiianIslandsCaveB2';
+// import hawaiianIslandsCaveB3Map from 'data/maps/hawaiianIslandsCaveB3Map';
+// import northAmericaCaveMap from 'data/maps/northAmericaCaveMap';
+// import northAmericaCaveB2Map from 'data/maps/northAmericaCaveB2Map';
 // import oceaniaCaveMap from 'data/maps/oceaniaCaveMap';
 // import oceaniaCaveB1Map from 'data/maps/oceaniaCaveB1Map';
 // import oceaniaCaveB2Map from 'data/maps/oceaniaCaveB2Map';
-// import antarcticaCaveMap from 'data/maps/antarcticaCaveMap';
-// import antarcticaCaveB2Map from 'data/maps/antarcticaCaveB2Map';
-// import antarcticaCaveB3Map from "data/maps/antarcticaCaveB3Map";
-import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
+// import southAmericaCaveMap from 'data/maps/southAmericaCaveMap';
+// import southAmericaCaveB2Map from 'data/maps/southAmericaCaveB2Map';
+import southAmericaCaveB3Map from "data/maps/southAmericaCaveB3Map";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
 import TwoWayHEdge from "components/edges/TwoWayHEdge";
@@ -142,7 +160,6 @@ function GraphEditor(): JSX.Element {
     SVGScale,
     SVGTranslate,
     Cells,
-    // HighLights,
     handleContextMenu,
     vertexCtxMenuPos,
     edgeCtxMenuPos,
@@ -212,9 +229,6 @@ function GraphEditor(): JSX.Element {
               }}
             />
           </g>
-          {/* <g transform={`matrix(${SVGScale}, 0, 0, ${SVGScale}, ${SVGTranslate.x}, ${SVGTranslate.y})`}>  
-                        {HighLights}
-                    </g> */}
         </svg>
         <div
           className={styles.layer2}
@@ -353,7 +367,7 @@ function useMetaData() {
     x: -1,
     y: -1,
   });
-  const [curGraph, setCurGraph] = useState(dokaponTheWorldMap);
+  const [curGraph, setCurGraph] = useState(southAmericaCaveB3Map);
   const [mouseMode, toggleMouseMode] = useState<MouseMode>("edit");
   const [SVGScale, setSVGScale] = useState(1);
   const [selectedArea, setSelectedArea] = useState({

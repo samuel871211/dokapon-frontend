@@ -11,7 +11,9 @@ import GraphEditor from "views/GraphEditor";
 import DokaponTheWorld from "views/DokaponTheWorld";
 import StoryModeSelectCharacter from "views/StoryModeSelectCharacter";
 import BattleModeSelectCharacter from "views/BattleModeSelectCharacter";
-import { initGameProgress, gameProgressCtx } from "reducers/gameProgress";
+import initGameProgress from "data/initGameProgress";
+import devGameProgress from "data/devGameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import type { ViewTypes } from "global";
 import GameProgressCtxMenu from "components/GameProgressCtxMenu";
 
@@ -49,17 +51,17 @@ function App() {
 
   return (
     <gameProgressCtx.Provider value={{ gameProgress, setGameProgress }}>
-      <div className={rootStyles[aspectRatio]}>
+      {/* <div className={rootStyles[aspectRatio]}>
         <View />
       </div>
-      <GameProgressCtxMenu />
-      {/* <GraphEditor/> */}
+      <GameProgressCtxMenu /> */}
+      <GraphEditor />
     </gameProgressCtx.Provider>
   );
 }
 
 function useMetaData() {
-  const [gameProgress, setGameProgress] = useState(initGameProgress);
+  const [gameProgress, setGameProgress] = useState(devGameProgress);
   const {
     currentView,
     userPreference: { aspectRatio },

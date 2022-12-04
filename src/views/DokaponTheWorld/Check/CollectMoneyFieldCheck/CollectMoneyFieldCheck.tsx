@@ -11,7 +11,7 @@ import styles from "./CollectMoneyFieldCheck.module.css";
 import useTranslation from "hooks/useTranslation";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import YellowBlock from "layouts/YellowBlock";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 const ArrOf7 = [0, 0, 0, 0, 0, 0, 0];

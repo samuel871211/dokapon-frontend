@@ -8,7 +8,7 @@ import YellowBlock from "layouts/YellowBlock";
 import styles from "./JobStoreFieldCheck.module.css";
 import jobs from "data/jobs";
 import BottomDialog from "components/BottomDialog";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 

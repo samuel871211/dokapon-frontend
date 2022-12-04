@@ -5,8 +5,8 @@ const africaCaveMap: GraphJSON = {
     {
       area: "AfricaCave",
       position: {
-        x: 40,
-        y: 120,
+        x: 3900,
+        y: 1020,
       },
       name: "BattleField",
       id: "bdd72f70-ed34-45b0-b47d-af27cfe4897f",
@@ -19,24 +19,22 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "bc5420c5-d894-4759-935d-644f11dcccfb",
-
       area: "AfricaCave",
       name: "CaveField",
       position: {
-        x: 0,
-        y: -440,
+        x: 3860,
+        y: 460,
       },
       edges: ["770cc908-bc7c-4755-b7c9-6a30013cc101"],
       bottom: "bdd72f70-ed34-45b0-b47d-af27cfe4897f",
     },
     {
       id: "90d6c52b-bb28-47f2-b82e-eddc707b72ed",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 0,
-        y: 660,
+        x: 3860,
+        y: 1560,
       },
       edges: [
         "2ad430a5-76aa-4617-87fd-a908708c1202",
@@ -49,12 +47,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "cb95e296-2a0c-4544-94fb-bec7357c87f8",
-
       area: "AfricaCave",
       name: "MagicBookField",
       position: {
-        x: -560,
-        y: 660,
+        x: 3300,
+        y: 1560,
       },
       edges: [
         "1a1626bb-8173-4eb2-a01c-4ef96823806c",
@@ -65,12 +62,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "f243fab7-6b7c-4c82-9548-d4bb1ca9ee46",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -540,
-        y: 1500,
+        x: 3320,
+        y: 2400,
       },
       edges: [
         "85363dd6-9150-4eaa-be98-4635c892b755",
@@ -83,12 +79,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "12272a5c-f61d-493e-872e-3c5066c3e377",
-
       area: "AfricaCave",
       name: "TreasureField",
       position: {
-        x: 100,
-        y: 1060,
+        x: 3960,
+        y: 1960,
       },
       edges: [
         "210e3459-7dfa-4906-abc0-5f4c938e7a9c",
@@ -101,12 +96,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "022cbd5c-e345-4be4-abd3-99ea4b0303e5",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 40,
-        y: 1500,
+        x: 3900,
+        y: 2400,
       },
       edges: [
         "f7cb2f8f-87a4-49b8-96a9-0e1d5b6624ad",
@@ -119,12 +113,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "b9a251d2-2864-41b7-8b18-e0042fe6eda8",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 760,
-        y: 1000,
+        x: 4620,
+        y: 1900,
       },
       edges: [
         "af88a4c5-6b4c-4da4-b3a4-8dd6c00982c4",
@@ -135,12 +128,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "b4f45ea9-8328-4dc9-9285-5240ccc18d02",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 1380,
-        y: 1080,
+        x: 5240,
+        y: 1980,
       },
       edges: [
         "eb044bb7-0ed7-401b-b6af-3e15a9baeee9",
@@ -153,12 +145,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "27bec77d-e13a-4c21-9f69-e556ee2354b9",
-
       area: "AfricaCave",
       name: "RedTreasureField",
       position: {
-        x: 1340,
-        y: 1540,
+        x: 5200,
+        y: 2440,
       },
       edges: [
         "9b67d34e-511f-4fa1-a5c2-ac6d0b087a2f",
@@ -169,12 +160,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "c1176eb2-a5b2-4060-99de-7912298bd513",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 2220,
-        y: 1080,
+        x: 6080,
+        y: 1980,
       },
       edges: [
         "85bf65ec-371e-4bb3-93e1-15676b83d431",
@@ -187,12 +177,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "de97a6dd-c777-45c9-9386-52619e96cd53",
-
       area: "AfricaCave",
       name: "TreasureField",
       position: {
-        x: 2200,
-        y: 1560,
+        x: 6060,
+        y: 2460,
       },
       edges: [
         "cc1da81b-012f-444d-95a2-107716c71b9a",
@@ -203,12 +192,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "67fb3994-622f-4bb9-97cc-241718114d57",
-
       area: "AfricaCave",
       name: "GoldTreasureField",
       position: {
-        x: 3060,
-        y: 1080,
+        x: 6920,
+        y: 1980,
       },
       edges: [
         "76c76a7d-851a-4397-810f-666830f28a63",
@@ -219,12 +207,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "dfdb736c-7714-4988-b352-d66097bf0302",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 2900,
-        y: 1560,
+        x: 6760,
+        y: 2460,
       },
       edges: [
         "3d52926a-3e11-4129-a80a-00df1489d126",
@@ -235,12 +222,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "40f60bf2-4bc2-40bd-a9a7-f3b7c41434fa",
-
       area: "AfricaCave",
       name: "DamageField",
       position: {
-        x: 3100,
-        y: 560,
+        x: 6960,
+        y: 1460,
       },
       edges: [
         "0051df78-f4f2-4918-a6f0-b294dc33d412",
@@ -251,12 +237,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "ab8bb9ef-e794-4cc3-adf5-755839d2484a",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 3020,
-        y: 80,
+        x: 6880,
+        y: 980,
       },
       edges: [
         "07dd9208-bb4f-4192-bcf7-4d15524b21b8",
@@ -267,24 +252,22 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "1ac32011-de79-4f41-9db2-729f288b041f",
-
       area: "AfricaCave",
       name: "CollectAllMoneyField",
       position: {
-        x: 3080,
-        y: -460,
+        x: 6940,
+        y: 440,
       },
       edges: ["42a82df1-9598-4c8c-afad-f0a10b9612b5"],
       bottom: "ab8bb9ef-e794-4cc3-adf5-755839d2484a",
     },
     {
       id: "768626eb-22b7-43ac-8028-fc6d65511b63",
-
       area: "AfricaCave",
       name: "RedTreasureField",
       position: {
-        x: 3620,
-        y: 1520,
+        x: 7480,
+        y: 2420,
       },
       edges: [
         "92cafebf-d46f-45ce-817b-47799c255480",
@@ -295,12 +278,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "619c3c28-f327-4187-beec-c1fabee4e6ac",
-
       area: "AfricaCave",
       name: "TreasureField",
       position: {
-        x: 4360,
-        y: 1560,
+        x: 8220,
+        y: 2460,
       },
       edges: [
         "6209c03c-b304-4f0d-8f2e-0e99aab183ee",
@@ -311,12 +293,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "7d32bd97-d3e7-4b68-be1a-173c15a84dd8",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 4400,
-        y: 2120,
+        x: 8260,
+        y: 3020,
       },
       edges: [
         "54aa3e35-86f1-42be-90d3-1d899916ce7e",
@@ -327,12 +308,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "17c61d4d-6630-41dc-8054-cd253313ea3c",
-
       area: "AfricaCave",
       name: "MagicBookField",
       position: {
-        x: 4380,
-        y: 2640,
+        x: 8240,
+        y: 3540,
       },
       edges: [
         "113747c5-b421-4b58-852b-7fe3aa858d8d",
@@ -343,12 +323,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "6fd0858c-b34f-4ef5-8c81-08d440ac9e06",
-
       area: "AfricaCave",
       name: "TreasureField",
       position: {
-        x: 4440,
-        y: 3160,
+        x: 8300,
+        y: 4060,
       },
       edges: [
         "9db0e340-62e6-43f3-9db2-3b907f030b5d",
@@ -359,12 +338,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "919cccc1-cc34-4e95-90be-93426c81dc6a",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 4380,
-        y: 3680,
+        x: 8240,
+        y: 4580,
       },
       edges: [
         "c8ebecf4-e10f-4e07-a886-2a2525c309a6",
@@ -375,12 +353,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "46efec56-9dea-46c3-b459-9f6c6b318d56",
-
       area: "AfricaCave",
       name: "DamageField",
       position: {
-        x: 4440,
-        y: 4220,
+        x: 8300,
+        y: 5120,
       },
       edges: [
         "ce62312e-8752-4650-8274-8832b95c3477",
@@ -391,12 +368,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "d78e3da5-591c-44b0-b022-f3568ea4e3da",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 4400,
-        y: 4760,
+        x: 8260,
+        y: 5660,
       },
       edges: [
         "2a95165a-1be9-4ddc-bb4a-b2f0b4853fac",
@@ -407,12 +383,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "b6eb3e64-2221-4ebc-8c9e-150148308572",
-
       area: "AfricaCave",
       name: "TreasureField",
       position: {
-        x: 3540,
-        y: 4720,
+        x: 7400,
+        y: 5620,
       },
       edges: [
         "ee1ad5c5-c0f2-4e13-834a-73cd0fa0dd83",
@@ -423,12 +398,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "3d5df7fd-4eb8-4011-ae3a-d269eb892394",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 2780,
-        y: 4760,
+        x: 6640,
+        y: 5660,
       },
       edges: [
         "dc24aed4-8e36-41af-a6b8-d615e0140829",
@@ -441,12 +415,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "f7cb3d63-2ead-4caa-9ea9-99c9c71a1daa",
-
       area: "AfricaCave",
       name: "DamageField",
       position: {
-        x: 2160,
-        y: 4720,
+        x: 6020,
+        y: 5620,
       },
       edges: [
         "82fcccdb-5c2d-4796-9dcd-d392578de277",
@@ -457,12 +430,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "8fdd13c7-7fd5-43df-8b20-18c4bdba8800",
-
       area: "AfricaCave",
       name: "DamageField",
       position: {
-        x: 2700,
-        y: 4240,
+        x: 6560,
+        y: 5140,
       },
       edges: [
         "785a1dc7-3fd6-479c-ba72-8c599de1c2d9",
@@ -473,12 +445,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "56e0e175-6a4f-464d-9991-c3f5f9a4ba6d",
-
       area: "AfricaCave",
       name: "MagicBookField",
       position: {
-        x: 1620,
-        y: 4240,
+        x: 5480,
+        y: 5140,
       },
       edges: [
         "94b7ea48-7e98-4799-ab9c-b5941f800eec",
@@ -489,12 +460,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "a724c0b2-69f8-4eb6-bf46-d23868e520d9",
-
       area: "AfricaCave",
       name: "RedTreasureField",
       position: {
-        x: 1560,
-        y: 4760,
+        x: 5420,
+        y: 5660,
       },
       edges: [
         "59d76516-24dd-4d2a-9576-9158a6205840",
@@ -507,12 +477,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "9572121b-fd7c-4eb0-a61d-518195536ed6",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 620,
-        y: 4720,
+        x: 4480,
+        y: 5620,
       },
       edges: [
         "3ec78b83-50aa-4f6f-b3dd-e7fee8ad3843",
@@ -525,24 +494,22 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "0e2fe179-1988-4e0d-b898-64ad41b9a477",
-
       area: "AfricaCave",
       name: "CaveField",
       position: {
-        x: 660,
-        y: 4220,
+        x: 4520,
+        y: 5120,
       },
       edges: ["43764037-3abd-4990-84fc-6d4ce91b309e"],
       bottom: "9572121b-fd7c-4eb0-a61d-518195536ed6",
     },
     {
       id: "ab442928-5cca-44b3-a94d-44f2f56307fa",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: 20,
-        y: 4680,
+        x: 3880,
+        y: 5580,
       },
       edges: [
         "2ca24f36-fdf0-4a1d-ae9e-71e1514d172f",
@@ -555,24 +522,22 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "5a3d2949-245e-4a38-89b3-336a32277d3e",
-
       area: "AfricaCave",
       name: "CaveField",
       position: {
-        x: -100,
-        y: 4220,
+        x: 3760,
+        y: 5120,
       },
       edges: ["6735adc1-39e3-4a53-927f-963cab78e275"],
       bottom: "ab442928-5cca-44b3-a94d-44f2f56307fa",
     },
     {
       id: "25f2aba0-ba51-42b1-8bdc-9f21a4c8cb2c",
-
       area: "AfricaCave",
       name: "TreasureField",
       position: {
-        x: -580,
-        y: 4720,
+        x: 3280,
+        y: 5620,
       },
       edges: [
         "83135b0c-193b-4f1b-b56a-16be83587081",
@@ -583,12 +548,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "1b841f01-7c27-43f9-9979-908f579c33d0",
-
       area: "AfricaCave",
       name: "DamageField",
       position: {
-        x: -1180,
-        y: 4700,
+        x: 2680,
+        y: 5600,
       },
       edges: [
         "e934ab2a-ec1e-4cbb-975b-62c1624d6d58",
@@ -601,12 +565,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "6d2beb22-8451-4932-a91c-90805f7748d3",
-
       area: "AfricaCave",
       name: "RedTreasureField",
       position: {
-        x: -1140,
-        y: 3940,
+        x: 2720,
+        y: 4840,
       },
       edges: [
         "81834504-0300-45c6-a800-805b3686d017",
@@ -617,12 +580,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "2361a4d1-fe56-4ce0-8a50-8cc4df740216",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -1920,
-        y: 3920,
+        x: 1940,
+        y: 4820,
       },
       edges: [
         "976aba74-49bc-4e72-bf09-7e02cd6bd13f",
@@ -633,12 +595,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "28f33129-884a-4c31-a4dc-3c8a6f21fcfe",
-
       area: "AfricaCave",
       name: "TreasureField",
       position: {
-        x: -1860,
-        y: 4340,
+        x: 2000,
+        y: 5240,
       },
       edges: [
         "8e9543e4-02e4-46f5-b098-3838b0006d3d",
@@ -649,12 +610,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "4bb9e022-c43c-4eef-ae7f-e8c6d50e66fe",
-
       area: "AfricaCave",
       name: "DamageField",
       position: {
-        x: -1940,
-        y: 4720,
+        x: 1920,
+        y: 5620,
       },
       edges: [
         "835f712d-0add-4b07-aeb4-3c5ec9af7358",
@@ -667,12 +627,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "ca438061-4d50-4f8f-b66a-25c75c61b612",
-
       area: "AfricaCave",
       name: "MagicBookField",
       position: {
-        x: -2860,
-        y: 4720,
+        x: 1000,
+        y: 5620,
       },
       edges: [
         "52d49e35-7edc-47eb-9f19-8e0388a946d5",
@@ -683,12 +642,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "6917ecb0-6c32-4fea-82c3-888aa0ec418f",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -3740,
-        y: 4720,
+        x: 120,
+        y: 5620,
       },
       edges: [
         "7662c7e8-0735-4ff2-adab-7ee77f5f0b59",
@@ -699,12 +657,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "597054ca-751b-4d5c-b903-a83968f606bd",
-
       area: "AfricaCave",
       name: "TreasureField",
       position: {
-        x: -3700,
-        y: 4060,
+        x: 160,
+        y: 4960,
       },
       edges: [
         "70be7107-41c3-4b54-b679-d1c2f03e0681",
@@ -715,12 +672,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "3fef4e47-4457-4f4c-95d0-e898b80a1049",
-
       area: "AfricaCave",
       name: "DamageField",
       position: {
-        x: -3800,
-        y: 3360,
+        x: 60,
+        y: 4260,
       },
       edges: [
         "6dca0df2-4e45-4b0c-b8f2-d06be4a20fa0",
@@ -731,12 +687,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "42319cf2-b471-4ad1-a6af-b60c9dd95ba0",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -3720,
-        y: 2660,
+        x: 140,
+        y: 3560,
       },
       edges: [
         "8fdadd93-11a2-49bc-a944-0e358cef4b29",
@@ -747,12 +702,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "d82f2b6f-def0-4f68-99d0-22456cd681e5",
-
       area: "AfricaCave",
       name: "DamageField",
       position: {
-        x: -3820,
-        y: 2100,
+        x: 40,
+        y: 3000,
       },
       edges: [
         "d61cbb1c-7695-49f4-8e41-02cef2271740",
@@ -763,12 +717,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "fd457200-094e-4474-ab9a-fa0e8778e110",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -3780,
-        y: 1540,
+        x: 80,
+        y: 2440,
       },
       edges: [
         "94c2dae8-5387-4cf5-bd4c-b3e016ca6eb8",
@@ -779,12 +732,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "7dfb8114-9fff-416f-ac37-a483cd5d976d",
-
       area: "AfricaCave",
       name: "TreasureField",
       position: {
-        x: -3140,
-        y: 1480,
+        x: 720,
+        y: 2380,
       },
       edges: [
         "4382e2a4-a2be-45f6-9c33-43e780cca8d5",
@@ -795,12 +747,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "45f66a6b-9768-4af9-b69f-9bef27929ab0",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -2500,
-        y: 1540,
+        x: 1360,
+        y: 2440,
       },
       edges: [
         "f697012e-c793-4dbf-9b67-c093b5785a2d",
@@ -813,12 +764,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "7a925e26-741c-4a5d-9990-262388cd7ab8",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -1940,
-        y: 1500,
+        x: 1920,
+        y: 2400,
       },
       edges: [
         "975c8007-6c70-4da0-840f-4d90ed2ae3eb",
@@ -829,12 +779,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "4902edfc-ee6d-4ea7-9fd6-86192e8036b7",
-
       area: "AfricaCave",
       name: "MagicBookField",
       position: {
-        x: -1240,
-        y: 1520,
+        x: 2620,
+        y: 2420,
       },
       edges: [
         "2e35d792-96a8-4a5d-bd0f-2bbb7f31807e",
@@ -845,12 +794,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "de1e589b-690b-4073-a43c-1a200bfdec1b",
-
       area: "AfricaCave",
       name: "DamageField",
       position: {
-        x: -2540,
-        y: 840,
+        x: 1320,
+        y: 1740,
       },
       edges: [
         "14b19c53-e84f-43ea-a2ba-c27dd6c9edb7",
@@ -861,12 +809,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "39d1d0bd-ea81-4dd7-a878-ed6e2ce6a41f",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -2480,
-        y: 240,
+        x: 1380,
+        y: 1140,
       },
       edges: [
         "2e8f3738-e126-4e76-b4a3-b3de7fea3b04",
@@ -877,12 +824,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "603228d5-3794-4dcc-a794-81b3cb760c16",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -2540,
-        y: -320,
+        x: 1320,
+        y: 580,
       },
       edges: [
         "c36370e2-609d-4e69-bf4a-527d756b4c6c",
@@ -895,12 +841,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "eec3f3b1-36ad-4cf7-8c88-408719206382",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -1780,
-        y: -360,
+        x: 2080,
+        y: 540,
       },
       edges: [
         "cd2d0047-8a57-4a41-8046-81db948dfc05",
@@ -911,12 +856,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "6814bf38-2eef-4672-8f77-ffdabf539a44",
-
       area: "AfricaCave",
       name: "TreasureField",
       position: {
-        x: -1740,
-        y: -860,
+        x: 2120,
+        y: 40,
       },
       edges: [
         "76793fd0-7952-4f2a-a6c1-00a16e398263",
@@ -927,12 +871,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "054328ed-2635-457b-949b-ac0493290a85",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -2280,
-        y: -800,
+        x: 1580,
+        y: 100,
       },
       edges: [
         "b17ceaee-43a2-4b9d-885c-633a2e92d548",
@@ -943,12 +886,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "e615c605-840f-45fc-aabd-901c553b21c0",
-
       area: "AfricaCave",
       name: "KeyTreasureField",
       position: {
-        x: -2860,
-        y: -840,
+        x: 1000,
+        y: 60,
       },
       edges: [
         "16d721c2-774c-4c0a-90f6-df650167bc35",
@@ -959,12 +901,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "d3b5b591-4c13-4f5e-8143-1d09abb3130b",
-
       area: "AfricaCave",
       name: "BattleField",
       position: {
-        x: -3440,
-        y: -800,
+        x: 420,
+        y: 100,
       },
       edges: [
         "2001047d-6faa-42bf-a825-be003e4707d2",
@@ -975,12 +916,11 @@ const africaCaveMap: GraphJSON = {
     },
     {
       id: "30bf652e-ce48-48ae-a4fd-77a4dfb4ca1e",
-
       area: "AfricaCave",
       name: "TreasureField",
       position: {
-        x: -3400,
-        y: -340,
+        x: 460,
+        y: 560,
       },
       edges: [
         "9854f2ec-8a5e-49c4-8ee2-3378cb08e05e",
@@ -993,13 +933,13 @@ const africaCaveMap: GraphJSON = {
   edges: [
     {
       start: {
-        x: 40,
-        y: 120,
+        x: 3900,
+        y: 1020,
       },
       startId: "bdd72f70-ed34-45b0-b47d-af27cfe4897f",
       end: {
-        x: 0,
-        y: -440,
+        x: 3860,
+        y: 460,
       },
       endId: "bc5420c5-d894-4759-935d-644f11dcccfb",
       name: "TwoWayVEdge",
@@ -1007,13 +947,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 40,
-        y: 120,
+        x: 3900,
+        y: 1020,
       },
       startId: "bdd72f70-ed34-45b0-b47d-af27cfe4897f",
       end: {
-        x: 0,
-        y: 660,
+        x: 3860,
+        y: 1560,
       },
       endId: "90d6c52b-bb28-47f2-b82e-eddc707b72ed",
       name: "TwoWayVEdge",
@@ -1021,13 +961,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 0,
-        y: 660,
+        x: 3860,
+        y: 1560,
       },
       startId: "90d6c52b-bb28-47f2-b82e-eddc707b72ed",
       end: {
-        x: -560,
-        y: 660,
+        x: 3300,
+        y: 1560,
       },
       endId: "cb95e296-2a0c-4544-94fb-bec7357c87f8",
       name: "TwoWayHEdge",
@@ -1035,13 +975,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -560,
-        y: 660,
+        x: 3300,
+        y: 1560,
       },
       startId: "cb95e296-2a0c-4544-94fb-bec7357c87f8",
       end: {
-        x: -540,
-        y: 1500,
+        x: 3320,
+        y: 2400,
       },
       endId: "f243fab7-6b7c-4c82-9548-d4bb1ca9ee46",
       name: "TwoWayVEdge",
@@ -1049,13 +989,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 0,
-        y: 660,
+        x: 3860,
+        y: 1560,
       },
       startId: "90d6c52b-bb28-47f2-b82e-eddc707b72ed",
       end: {
-        x: 100,
-        y: 1060,
+        x: 3960,
+        y: 1960,
       },
       endId: "12272a5c-f61d-493e-872e-3c5066c3e377",
       name: "TwoWayVEdge",
@@ -1063,13 +1003,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 100,
-        y: 1060,
+        x: 3960,
+        y: 1960,
       },
       startId: "12272a5c-f61d-493e-872e-3c5066c3e377",
       end: {
-        x: 40,
-        y: 1500,
+        x: 3900,
+        y: 2400,
       },
       endId: "022cbd5c-e345-4be4-abd3-99ea4b0303e5",
       name: "TwoWayVEdge",
@@ -1077,13 +1017,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -540,
-        y: 1500,
+        x: 3320,
+        y: 2400,
       },
       startId: "f243fab7-6b7c-4c82-9548-d4bb1ca9ee46",
       end: {
-        x: 40,
-        y: 1500,
+        x: 3900,
+        y: 2400,
       },
       endId: "022cbd5c-e345-4be4-abd3-99ea4b0303e5",
       name: "TwoWayHEdge",
@@ -1091,13 +1031,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 100,
-        y: 1060,
+        x: 3960,
+        y: 1960,
       },
       startId: "12272a5c-f61d-493e-872e-3c5066c3e377",
       end: {
-        x: 760,
-        y: 1000,
+        x: 4620,
+        y: 1900,
       },
       endId: "b9a251d2-2864-41b7-8b18-e0042fe6eda8",
       name: "TwoWayHEdge",
@@ -1105,13 +1045,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 760,
-        y: 1000,
+        x: 4620,
+        y: 1900,
       },
       startId: "b9a251d2-2864-41b7-8b18-e0042fe6eda8",
       end: {
-        x: 1380,
-        y: 1080,
+        x: 5240,
+        y: 1980,
       },
       endId: "b4f45ea9-8328-4dc9-9285-5240ccc18d02",
       name: "TwoWayHEdge",
@@ -1119,13 +1059,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 1380,
-        y: 1080,
+        x: 5240,
+        y: 1980,
       },
       startId: "b4f45ea9-8328-4dc9-9285-5240ccc18d02",
       end: {
-        x: 1340,
-        y: 1540,
+        x: 5200,
+        y: 2440,
       },
       endId: "27bec77d-e13a-4c21-9f69-e556ee2354b9",
       name: "TwoWayVEdge",
@@ -1133,13 +1073,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 40,
-        y: 1500,
+        x: 3900,
+        y: 2400,
       },
       startId: "022cbd5c-e345-4be4-abd3-99ea4b0303e5",
       end: {
-        x: 1340,
-        y: 1540,
+        x: 5200,
+        y: 2440,
       },
       endId: "27bec77d-e13a-4c21-9f69-e556ee2354b9",
       name: "TwoWayHEdge",
@@ -1147,13 +1087,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 1380,
-        y: 1080,
+        x: 5240,
+        y: 1980,
       },
       startId: "b4f45ea9-8328-4dc9-9285-5240ccc18d02",
       end: {
-        x: 2220,
-        y: 1080,
+        x: 6080,
+        y: 1980,
       },
       endId: "c1176eb2-a5b2-4060-99de-7912298bd513",
       name: "TwoWayHEdge",
@@ -1161,13 +1101,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 2220,
-        y: 1080,
+        x: 6080,
+        y: 1980,
       },
       startId: "c1176eb2-a5b2-4060-99de-7912298bd513",
       end: {
-        x: 2200,
-        y: 1560,
+        x: 6060,
+        y: 2460,
       },
       endId: "de97a6dd-c777-45c9-9386-52619e96cd53",
       name: "TwoWayVEdge",
@@ -1175,13 +1115,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 2220,
-        y: 1080,
+        x: 6080,
+        y: 1980,
       },
       startId: "c1176eb2-a5b2-4060-99de-7912298bd513",
       end: {
-        x: 3060,
-        y: 1080,
+        x: 6920,
+        y: 1980,
       },
       endId: "67fb3994-622f-4bb9-97cc-241718114d57",
       name: "TwoWayHEdge",
@@ -1189,13 +1129,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 2200,
-        y: 1560,
+        x: 6060,
+        y: 2460,
       },
       startId: "de97a6dd-c777-45c9-9386-52619e96cd53",
       end: {
-        x: 2900,
-        y: 1560,
+        x: 6760,
+        y: 2460,
       },
       endId: "dfdb736c-7714-4988-b352-d66097bf0302",
       name: "TwoWayHEdge",
@@ -1203,13 +1143,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 3060,
-        y: 1080,
+        x: 6920,
+        y: 1980,
       },
       startId: "67fb3994-622f-4bb9-97cc-241718114d57",
       end: {
-        x: 3100,
-        y: 560,
+        x: 6960,
+        y: 1460,
       },
       endId: "40f60bf2-4bc2-40bd-a9a7-f3b7c41434fa",
       name: "TwoWayVEdge",
@@ -1217,13 +1157,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 3100,
-        y: 560,
+        x: 6960,
+        y: 1460,
       },
       startId: "40f60bf2-4bc2-40bd-a9a7-f3b7c41434fa",
       end: {
-        x: 3020,
-        y: 80,
+        x: 6880,
+        y: 980,
       },
       endId: "ab8bb9ef-e794-4cc3-adf5-755839d2484a",
       name: "TwoWayVEdge",
@@ -1231,13 +1171,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 3020,
-        y: 80,
+        x: 6880,
+        y: 980,
       },
       startId: "ab8bb9ef-e794-4cc3-adf5-755839d2484a",
       end: {
-        x: 3080,
-        y: -460,
+        x: 6940,
+        y: 440,
       },
       endId: "1ac32011-de79-4f41-9db2-729f288b041f",
       name: "TwoWayVEdge",
@@ -1245,13 +1185,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 2900,
-        y: 1560,
+        x: 6760,
+        y: 2460,
       },
       startId: "dfdb736c-7714-4988-b352-d66097bf0302",
       end: {
-        x: 3620,
-        y: 1520,
+        x: 7480,
+        y: 2420,
       },
       endId: "768626eb-22b7-43ac-8028-fc6d65511b63",
       name: "TwoWayHEdge",
@@ -1259,13 +1199,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 3620,
-        y: 1520,
+        x: 7480,
+        y: 2420,
       },
       startId: "768626eb-22b7-43ac-8028-fc6d65511b63",
       end: {
-        x: 4360,
-        y: 1560,
+        x: 8220,
+        y: 2460,
       },
       endId: "619c3c28-f327-4187-beec-c1fabee4e6ac",
       name: "TwoWayHEdge",
@@ -1273,13 +1213,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 4360,
-        y: 1560,
+        x: 8220,
+        y: 2460,
       },
       startId: "619c3c28-f327-4187-beec-c1fabee4e6ac",
       end: {
-        x: 4400,
-        y: 2120,
+        x: 8260,
+        y: 3020,
       },
       endId: "7d32bd97-d3e7-4b68-be1a-173c15a84dd8",
       name: "TwoWayVEdge",
@@ -1287,13 +1227,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 4400,
-        y: 2120,
+        x: 8260,
+        y: 3020,
       },
       startId: "7d32bd97-d3e7-4b68-be1a-173c15a84dd8",
       end: {
-        x: 4380,
-        y: 2640,
+        x: 8240,
+        y: 3540,
       },
       endId: "17c61d4d-6630-41dc-8054-cd253313ea3c",
       name: "TwoWayVEdge",
@@ -1301,13 +1241,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 4380,
-        y: 2640,
+        x: 8240,
+        y: 3540,
       },
       startId: "17c61d4d-6630-41dc-8054-cd253313ea3c",
       end: {
-        x: 4440,
-        y: 3160,
+        x: 8300,
+        y: 4060,
       },
       endId: "6fd0858c-b34f-4ef5-8c81-08d440ac9e06",
       name: "TwoWayVEdge",
@@ -1315,13 +1255,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 4440,
-        y: 3160,
+        x: 8300,
+        y: 4060,
       },
       startId: "6fd0858c-b34f-4ef5-8c81-08d440ac9e06",
       end: {
-        x: 4380,
-        y: 3680,
+        x: 8240,
+        y: 4580,
       },
       endId: "919cccc1-cc34-4e95-90be-93426c81dc6a",
       name: "TwoWayVEdge",
@@ -1329,13 +1269,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 4380,
-        y: 3680,
+        x: 8240,
+        y: 4580,
       },
       startId: "919cccc1-cc34-4e95-90be-93426c81dc6a",
       end: {
-        x: 4440,
-        y: 4220,
+        x: 8300,
+        y: 5120,
       },
       endId: "46efec56-9dea-46c3-b459-9f6c6b318d56",
       name: "TwoWayVEdge",
@@ -1343,13 +1283,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 4440,
-        y: 4220,
+        x: 8300,
+        y: 5120,
       },
       startId: "46efec56-9dea-46c3-b459-9f6c6b318d56",
       end: {
-        x: 4400,
-        y: 4760,
+        x: 8260,
+        y: 5660,
       },
       endId: "d78e3da5-591c-44b0-b022-f3568ea4e3da",
       name: "TwoWayVEdge",
@@ -1357,13 +1297,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 4400,
-        y: 4760,
+        x: 8260,
+        y: 5660,
       },
       startId: "d78e3da5-591c-44b0-b022-f3568ea4e3da",
       end: {
-        x: 3540,
-        y: 4720,
+        x: 7400,
+        y: 5620,
       },
       endId: "b6eb3e64-2221-4ebc-8c9e-150148308572",
       name: "TwoWayHEdge",
@@ -1371,13 +1311,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 3540,
-        y: 4720,
+        x: 7400,
+        y: 5620,
       },
       startId: "b6eb3e64-2221-4ebc-8c9e-150148308572",
       end: {
-        x: 2780,
-        y: 4760,
+        x: 6640,
+        y: 5660,
       },
       endId: "3d5df7fd-4eb8-4011-ae3a-d269eb892394",
       name: "TwoWayHEdge",
@@ -1385,13 +1325,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 2780,
-        y: 4760,
+        x: 6640,
+        y: 5660,
       },
       startId: "3d5df7fd-4eb8-4011-ae3a-d269eb892394",
       end: {
-        x: 2160,
-        y: 4720,
+        x: 6020,
+        y: 5620,
       },
       endId: "f7cb3d63-2ead-4caa-9ea9-99c9c71a1daa",
       name: "TwoWayHEdge",
@@ -1399,13 +1339,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 2780,
-        y: 4760,
+        x: 6640,
+        y: 5660,
       },
       startId: "3d5df7fd-4eb8-4011-ae3a-d269eb892394",
       end: {
-        x: 2700,
-        y: 4240,
+        x: 6560,
+        y: 5140,
       },
       endId: "8fdd13c7-7fd5-43df-8b20-18c4bdba8800",
       name: "TwoWayVEdge",
@@ -1413,13 +1353,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 2700,
-        y: 4240,
+        x: 6560,
+        y: 5140,
       },
       startId: "8fdd13c7-7fd5-43df-8b20-18c4bdba8800",
       end: {
-        x: 1620,
-        y: 4240,
+        x: 5480,
+        y: 5140,
       },
       endId: "56e0e175-6a4f-464d-9991-c3f5f9a4ba6d",
       name: "TwoWayHEdge",
@@ -1427,13 +1367,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 2160,
-        y: 4720,
+        x: 6020,
+        y: 5620,
       },
       startId: "f7cb3d63-2ead-4caa-9ea9-99c9c71a1daa",
       end: {
-        x: 1560,
-        y: 4760,
+        x: 5420,
+        y: 5660,
       },
       endId: "a724c0b2-69f8-4eb6-bf46-d23868e520d9",
       name: "TwoWayHEdge",
@@ -1441,13 +1381,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 1620,
-        y: 4240,
+        x: 5480,
+        y: 5140,
       },
       startId: "56e0e175-6a4f-464d-9991-c3f5f9a4ba6d",
       end: {
-        x: 1560,
-        y: 4760,
+        x: 5420,
+        y: 5660,
       },
       endId: "a724c0b2-69f8-4eb6-bf46-d23868e520d9",
       name: "TwoWayVEdge",
@@ -1455,13 +1395,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 1560,
-        y: 4760,
+        x: 5420,
+        y: 5660,
       },
       startId: "a724c0b2-69f8-4eb6-bf46-d23868e520d9",
       end: {
-        x: 620,
-        y: 4720,
+        x: 4480,
+        y: 5620,
       },
       endId: "9572121b-fd7c-4eb0-a61d-518195536ed6",
       name: "TwoWayHEdge",
@@ -1469,13 +1409,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 620,
-        y: 4720,
+        x: 4480,
+        y: 5620,
       },
       startId: "9572121b-fd7c-4eb0-a61d-518195536ed6",
       end: {
-        x: 660,
-        y: 4220,
+        x: 4520,
+        y: 5120,
       },
       endId: "0e2fe179-1988-4e0d-b898-64ad41b9a477",
       name: "TwoWayVEdge",
@@ -1483,13 +1423,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 620,
-        y: 4720,
+        x: 4480,
+        y: 5620,
       },
       startId: "9572121b-fd7c-4eb0-a61d-518195536ed6",
       end: {
-        x: 20,
-        y: 4680,
+        x: 3880,
+        y: 5580,
       },
       endId: "ab442928-5cca-44b3-a94d-44f2f56307fa",
       name: "TwoWayHEdge",
@@ -1497,13 +1437,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 20,
-        y: 4680,
+        x: 3880,
+        y: 5580,
       },
       startId: "ab442928-5cca-44b3-a94d-44f2f56307fa",
       end: {
-        x: -100,
-        y: 4220,
+        x: 3760,
+        y: 5120,
       },
       endId: "5a3d2949-245e-4a38-89b3-336a32277d3e",
       name: "TwoWayVEdge",
@@ -1511,13 +1451,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 20,
-        y: 4680,
+        x: 3880,
+        y: 5580,
       },
       startId: "ab442928-5cca-44b3-a94d-44f2f56307fa",
       end: {
-        x: -580,
-        y: 4720,
+        x: 3280,
+        y: 5620,
       },
       endId: "25f2aba0-ba51-42b1-8bdc-9f21a4c8cb2c",
       name: "TwoWayHEdge",
@@ -1525,13 +1465,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -580,
-        y: 4720,
+        x: 3280,
+        y: 5620,
       },
       startId: "25f2aba0-ba51-42b1-8bdc-9f21a4c8cb2c",
       end: {
-        x: -1180,
-        y: 4700,
+        x: 2680,
+        y: 5600,
       },
       endId: "1b841f01-7c27-43f9-9979-908f579c33d0",
       name: "TwoWayHEdge",
@@ -1539,13 +1479,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1180,
-        y: 4700,
+        x: 2680,
+        y: 5600,
       },
       startId: "1b841f01-7c27-43f9-9979-908f579c33d0",
       end: {
-        x: -1140,
-        y: 3940,
+        x: 2720,
+        y: 4840,
       },
       endId: "6d2beb22-8451-4932-a91c-90805f7748d3",
       name: "TwoWayVEdge",
@@ -1553,13 +1493,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1140,
-        y: 3940,
+        x: 2720,
+        y: 4840,
       },
       startId: "6d2beb22-8451-4932-a91c-90805f7748d3",
       end: {
-        x: -1920,
-        y: 3920,
+        x: 1940,
+        y: 4820,
       },
       endId: "2361a4d1-fe56-4ce0-8a50-8cc4df740216",
       name: "TwoWayHEdge",
@@ -1567,13 +1507,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1920,
-        y: 3920,
+        x: 1940,
+        y: 4820,
       },
       startId: "2361a4d1-fe56-4ce0-8a50-8cc4df740216",
       end: {
-        x: -1860,
-        y: 4340,
+        x: 2000,
+        y: 5240,
       },
       endId: "28f33129-884a-4c31-a4dc-3c8a6f21fcfe",
       name: "TwoWayVEdge",
@@ -1581,13 +1521,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1860,
-        y: 4340,
+        x: 2000,
+        y: 5240,
       },
       startId: "28f33129-884a-4c31-a4dc-3c8a6f21fcfe",
       end: {
-        x: -1940,
-        y: 4720,
+        x: 1920,
+        y: 5620,
       },
       endId: "4bb9e022-c43c-4eef-ae7f-e8c6d50e66fe",
       name: "TwoWayVEdge",
@@ -1595,13 +1535,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1940,
-        y: 4720,
+        x: 1920,
+        y: 5620,
       },
       startId: "4bb9e022-c43c-4eef-ae7f-e8c6d50e66fe",
       end: {
-        x: -1180,
-        y: 4700,
+        x: 2680,
+        y: 5600,
       },
       endId: "1b841f01-7c27-43f9-9979-908f579c33d0",
       name: "TwoWayHEdge",
@@ -1609,13 +1549,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1940,
-        y: 4720,
+        x: 1920,
+        y: 5620,
       },
       startId: "4bb9e022-c43c-4eef-ae7f-e8c6d50e66fe",
       end: {
-        x: -2860,
-        y: 4720,
+        x: 1000,
+        y: 5620,
       },
       endId: "ca438061-4d50-4f8f-b66a-25c75c61b612",
       name: "TwoWayHEdge",
@@ -1623,13 +1563,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2860,
-        y: 4720,
+        x: 1000,
+        y: 5620,
       },
       startId: "ca438061-4d50-4f8f-b66a-25c75c61b612",
       end: {
-        x: -3740,
-        y: 4720,
+        x: 120,
+        y: 5620,
       },
       endId: "6917ecb0-6c32-4fea-82c3-888aa0ec418f",
       name: "TwoWayHEdge",
@@ -1637,13 +1577,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3740,
-        y: 4720,
+        x: 120,
+        y: 5620,
       },
       startId: "6917ecb0-6c32-4fea-82c3-888aa0ec418f",
       end: {
-        x: -3700,
-        y: 4060,
+        x: 160,
+        y: 4960,
       },
       endId: "597054ca-751b-4d5c-b903-a83968f606bd",
       name: "TwoWayVEdge",
@@ -1651,13 +1591,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3700,
-        y: 4060,
+        x: 160,
+        y: 4960,
       },
       startId: "597054ca-751b-4d5c-b903-a83968f606bd",
       end: {
-        x: -3800,
-        y: 3360,
+        x: 60,
+        y: 4260,
       },
       endId: "3fef4e47-4457-4f4c-95d0-e898b80a1049",
       name: "TwoWayVEdge",
@@ -1665,13 +1605,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3800,
-        y: 3360,
+        x: 60,
+        y: 4260,
       },
       startId: "3fef4e47-4457-4f4c-95d0-e898b80a1049",
       end: {
-        x: -3720,
-        y: 2660,
+        x: 140,
+        y: 3560,
       },
       endId: "42319cf2-b471-4ad1-a6af-b60c9dd95ba0",
       name: "TwoWayVEdge",
@@ -1679,13 +1619,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3720,
-        y: 2660,
+        x: 140,
+        y: 3560,
       },
       startId: "42319cf2-b471-4ad1-a6af-b60c9dd95ba0",
       end: {
-        x: -3820,
-        y: 2100,
+        x: 40,
+        y: 3000,
       },
       endId: "d82f2b6f-def0-4f68-99d0-22456cd681e5",
       name: "TwoWayVEdge",
@@ -1693,13 +1633,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3820,
-        y: 2100,
+        x: 40,
+        y: 3000,
       },
       startId: "d82f2b6f-def0-4f68-99d0-22456cd681e5",
       end: {
-        x: -3780,
-        y: 1540,
+        x: 80,
+        y: 2440,
       },
       endId: "fd457200-094e-4474-ab9a-fa0e8778e110",
       name: "TwoWayVEdge",
@@ -1707,13 +1647,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3780,
-        y: 1540,
+        x: 80,
+        y: 2440,
       },
       startId: "fd457200-094e-4474-ab9a-fa0e8778e110",
       end: {
-        x: -3140,
-        y: 1480,
+        x: 720,
+        y: 2380,
       },
       endId: "7dfb8114-9fff-416f-ac37-a483cd5d976d",
       name: "TwoWayHEdge",
@@ -1721,13 +1661,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3140,
-        y: 1480,
+        x: 720,
+        y: 2380,
       },
       startId: "7dfb8114-9fff-416f-ac37-a483cd5d976d",
       end: {
-        x: -2500,
-        y: 1540,
+        x: 1360,
+        y: 2440,
       },
       endId: "45f66a6b-9768-4af9-b69f-9bef27929ab0",
       name: "TwoWayHEdge",
@@ -1735,13 +1675,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2500,
-        y: 1540,
+        x: 1360,
+        y: 2440,
       },
       startId: "45f66a6b-9768-4af9-b69f-9bef27929ab0",
       end: {
-        x: -1940,
-        y: 1500,
+        x: 1920,
+        y: 2400,
       },
       endId: "7a925e26-741c-4a5d-9990-262388cd7ab8",
       name: "TwoWayHEdge",
@@ -1749,13 +1689,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1940,
-        y: 1500,
+        x: 1920,
+        y: 2400,
       },
       startId: "7a925e26-741c-4a5d-9990-262388cd7ab8",
       end: {
-        x: -1240,
-        y: 1520,
+        x: 2620,
+        y: 2420,
       },
       endId: "4902edfc-ee6d-4ea7-9fd6-86192e8036b7",
       name: "TwoWayHEdge",
@@ -1763,13 +1703,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1240,
-        y: 1520,
+        x: 2620,
+        y: 2420,
       },
       startId: "4902edfc-ee6d-4ea7-9fd6-86192e8036b7",
       end: {
-        x: -540,
-        y: 1500,
+        x: 3320,
+        y: 2400,
       },
       endId: "f243fab7-6b7c-4c82-9548-d4bb1ca9ee46",
       name: "TwoWayHEdge",
@@ -1777,13 +1717,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2500,
-        y: 1540,
+        x: 1360,
+        y: 2440,
       },
       startId: "45f66a6b-9768-4af9-b69f-9bef27929ab0",
       end: {
-        x: -2540,
-        y: 840,
+        x: 1320,
+        y: 1740,
       },
       endId: "de1e589b-690b-4073-a43c-1a200bfdec1b",
       name: "TwoWayVEdge",
@@ -1791,13 +1731,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2540,
-        y: 840,
+        x: 1320,
+        y: 1740,
       },
       startId: "de1e589b-690b-4073-a43c-1a200bfdec1b",
       end: {
-        x: -2480,
-        y: 240,
+        x: 1380,
+        y: 1140,
       },
       endId: "39d1d0bd-ea81-4dd7-a878-ed6e2ce6a41f",
       name: "TwoWayVEdge",
@@ -1805,13 +1745,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2480,
-        y: 240,
+        x: 1380,
+        y: 1140,
       },
       startId: "39d1d0bd-ea81-4dd7-a878-ed6e2ce6a41f",
       end: {
-        x: -2540,
-        y: -320,
+        x: 1320,
+        y: 580,
       },
       endId: "603228d5-3794-4dcc-a794-81b3cb760c16",
       name: "TwoWayVEdge",
@@ -1819,13 +1759,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2540,
-        y: -320,
+        x: 1320,
+        y: 580,
       },
       startId: "603228d5-3794-4dcc-a794-81b3cb760c16",
       end: {
-        x: -1780,
-        y: -360,
+        x: 2080,
+        y: 540,
       },
       endId: "eec3f3b1-36ad-4cf7-8c88-408719206382",
       name: "TwoWayHEdge",
@@ -1833,13 +1773,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1780,
-        y: -360,
+        x: 2080,
+        y: 540,
       },
       startId: "eec3f3b1-36ad-4cf7-8c88-408719206382",
       end: {
-        x: -1740,
-        y: -860,
+        x: 2120,
+        y: 40,
       },
       endId: "6814bf38-2eef-4672-8f77-ffdabf539a44",
       name: "TwoWayVEdge",
@@ -1847,13 +1787,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1740,
-        y: -860,
+        x: 2120,
+        y: 40,
       },
       startId: "6814bf38-2eef-4672-8f77-ffdabf539a44",
       end: {
-        x: -2280,
-        y: -800,
+        x: 1580,
+        y: 100,
       },
       endId: "054328ed-2635-457b-949b-ac0493290a85",
       name: "TwoWayHEdge",
@@ -1861,13 +1801,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2280,
-        y: -800,
+        x: 1580,
+        y: 100,
       },
       startId: "054328ed-2635-457b-949b-ac0493290a85",
       end: {
-        x: -2860,
-        y: -840,
+        x: 1000,
+        y: 60,
       },
       endId: "e615c605-840f-45fc-aabd-901c553b21c0",
       name: "TwoWayHEdge",
@@ -1875,13 +1815,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2860,
-        y: -840,
+        x: 1000,
+        y: 60,
       },
       startId: "e615c605-840f-45fc-aabd-901c553b21c0",
       end: {
-        x: -3440,
-        y: -800,
+        x: 420,
+        y: 100,
       },
       endId: "d3b5b591-4c13-4f5e-8143-1d09abb3130b",
       name: "TwoWayHEdge",
@@ -1889,13 +1829,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3440,
-        y: -800,
+        x: 420,
+        y: 100,
       },
       startId: "d3b5b591-4c13-4f5e-8143-1d09abb3130b",
       end: {
-        x: -3400,
-        y: -340,
+        x: 460,
+        y: 560,
       },
       endId: "30bf652e-ce48-48ae-a4fd-77a4dfb4ca1e",
       name: "TwoWayVEdge",
@@ -1903,13 +1843,13 @@ const africaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3400,
-        y: -340,
+        x: 460,
+        y: 560,
       },
       startId: "30bf652e-ce48-48ae-a4fd-77a4dfb4ca1e",
       end: {
-        x: -2540,
-        y: -320,
+        x: 1320,
+        y: 580,
       },
       endId: "603228d5-3794-4dcc-a794-81b3cb760c16",
       name: "TwoWayHEdge",

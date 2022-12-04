@@ -5,8 +5,8 @@ const northAmericaCaveMap: GraphJSON = {
     {
       area: "NorthAmericaCave",
       position: {
-        x: 40,
-        y: 0,
+        x: 5080,
+        y: 1940,
       },
       name: "BattleField",
       id: "198ed2de-4ec6-43d8-8a26-62cb81366583",
@@ -21,12 +21,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "773e3fb0-e470-42e0-93da-c214246bd3c3",
-
       area: "NorthAmericaCave",
       name: "TreasureField",
       position: {
-        x: 80,
-        y: -440,
+        x: 5120,
+        y: 1500,
       },
       edges: [
         "c9c78de0-82a7-4ce4-bc8f-4ce8bb420539",
@@ -37,24 +36,22 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "89f81f54-47c9-4220-9bf3-a17511abedb3",
-
       area: "NorthAmericaCave",
       name: "CaveField",
       position: {
-        x: 940,
-        y: -460,
+        x: 5980,
+        y: 1480,
       },
       edges: ["b6d37c22-923c-4bb0-8769-7a08816dd4d2"],
       left: "773e3fb0-e470-42e0-93da-c214246bd3c3",
     },
     {
       id: "bab1a948-3cdb-454d-91d4-830cfc0973e7",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -840,
-        y: 20,
+        x: 4200,
+        y: 1960,
       },
       edges: [
         "c0dbb465-26b8-44ea-83f2-b276692c4b7e",
@@ -65,12 +62,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "ff0c10a0-1089-4307-a2d1-c1f2e09cd1ea",
-
       area: "NorthAmericaCave",
       name: "TreasureField",
       position: {
-        x: -940,
-        y: 500,
+        x: 4100,
+        y: 2440,
       },
       edges: [
         "fcb77e67-ce06-414e-819f-ae7997ba9525",
@@ -81,12 +77,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "d7acc9c3-7f0a-4392-924c-a31284292f2a",
-
       area: "NorthAmericaCave",
       name: "MagicBookField",
       position: {
-        x: -420,
-        y: 460,
+        x: 4620,
+        y: 2400,
       },
       edges: [
         "97296afa-0e9f-434c-be10-41086edf8d1e",
@@ -97,12 +92,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "7b613abf-b3fc-4adf-bdfe-1d4b52a9568d",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: 120,
-        y: 500,
+        x: 5160,
+        y: 2440,
       },
       edges: [
         "83ab0d32-95fb-4c9f-af1f-33a26bb6292f",
@@ -115,12 +109,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "a0464df8-7ac1-4723-92fa-8fad47ed9214",
-
       area: "NorthAmericaCave",
       name: "MagicBookField",
       position: {
-        x: 100,
-        y: 1020,
+        x: 5140,
+        y: 2960,
       },
       edges: [
         "4b09c228-d213-48e5-abf4-c354d670342a",
@@ -131,12 +124,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "66fcb9d2-d411-4b2c-bad8-eb52fffff44e",
-
       area: "NorthAmericaCave",
       name: "DamageField",
       position: {
-        x: -520,
-        y: 1000,
+        x: 4520,
+        y: 2940,
       },
       edges: [
         "797db4d3-f52c-4cd5-9aff-2341375d283e",
@@ -147,12 +139,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "d0727e13-5541-41ba-96ac-0b6a7b619064",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -1200,
-        y: 1020,
+        x: 3840,
+        y: 2960,
       },
       edges: [
         "43878990-307f-4aad-9304-654a32209639",
@@ -163,12 +154,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "00f3432a-34a0-4542-a073-aa40c2328d88",
-
       area: "NorthAmericaCave",
       name: "TreasureField",
       position: {
-        x: -1200,
-        y: 1420,
+        x: 3840,
+        y: 3360,
       },
       edges: [
         "560df729-c59c-4a52-9b09-dcdcd0be0333",
@@ -181,12 +171,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "8ec96330-b237-48cb-9646-4ee77984bd63",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -640,
-        y: 1400,
+        x: 4400,
+        y: 3340,
       },
       edges: [
         "f34535a6-d63f-48df-886a-8e57c8021daf",
@@ -197,12 +186,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "bd935092-ecf7-4ab9-882d-a608b4ed6ab9",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -680,
-        y: 1800,
+        x: 4360,
+        y: 3740,
       },
       edges: [
         "5b40e85e-e18e-4aaa-b5ee-8b76dfe75a13",
@@ -213,12 +201,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "c7aa53f0-7fb9-40dd-85d6-0eb339035574",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -1740,
-        y: 1400,
+        x: 3300,
+        y: 3340,
       },
       edges: [
         "a320e478-489c-4a81-8b8e-86495fe66185",
@@ -229,12 +216,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "ec84d02b-8ee8-4401-b4ab-f70e1321b88f",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -1780,
-        y: 1800,
+        x: 3260,
+        y: 3740,
       },
       edges: [
         "7c55f12e-3a36-4d6a-962c-ff29a48c2fa5",
@@ -245,12 +231,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "0c9f60cc-1586-420b-9d63-fdda06143c6e",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: 120,
-        y: 1840,
+        x: 5160,
+        y: 3780,
       },
       edges: [
         "a67aa36c-f7a2-4ad2-8685-3705e51b1d0b",
@@ -263,12 +248,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "4aad9e53-b86d-4610-b7dc-d03d71a535cd",
-
       area: "NorthAmericaCave",
       name: "TreasureField",
       position: {
-        x: 720,
-        y: 1840,
+        x: 5760,
+        y: 3780,
       },
       edges: [
         "451898b0-f95c-4718-af4e-5a74909a7d4f",
@@ -279,12 +263,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "492d0bc3-44a9-490a-9752-2e251e143fc5",
-
       area: "NorthAmericaCave",
       name: "RedTreasureField",
       position: {
-        x: 100,
-        y: 2700,
+        x: 5140,
+        y: 4640,
       },
       edges: [
         "c067fda6-a345-48ed-817c-d45b62c204eb",
@@ -295,12 +278,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "b1c2b54c-9e3d-441a-af0c-8a69cbcc7459",
-
       area: "NorthAmericaCave",
       name: "RedTreasureField",
       position: {
-        x: 740,
-        y: 2680,
+        x: 5780,
+        y: 4620,
       },
       edges: [
         "61be463b-603e-48fa-b843-6821a0166c87",
@@ -311,12 +293,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "954fe1e3-79c9-4ba2-b851-2b69248bb3bc",
-
       area: "NorthAmericaCave",
       name: "RedTreasureField",
       position: {
-        x: 780,
-        y: 2260,
+        x: 5820,
+        y: 4200,
       },
       edges: [
         "b7ffd2f7-0b2b-40e1-9878-1ef767d71118",
@@ -327,12 +308,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "d62787b5-24da-49d3-9bdc-fdeeab14744b",
-
       area: "NorthAmericaCave",
       name: "MagicBookField",
       position: {
-        x: -2340,
-        y: 1780,
+        x: 2700,
+        y: 3720,
       },
       edges: [
         "d38e24db-3125-4e16-97e9-ff019a43ee4b",
@@ -343,12 +323,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "9499e72b-efea-4936-8084-8c04746f3ac4",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -2400,
-        y: 2380,
+        x: 2640,
+        y: 4320,
       },
       edges: [
         "57bc5b36-8edd-429a-bb7e-40bf70440d5b",
@@ -359,12 +338,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "8bfe80c3-80f9-4bc0-a9fd-4366be4d3149",
-
       area: "NorthAmericaCave",
       name: "GoldTreasureField",
       position: {
-        x: -3660,
-        y: 2380,
+        x: 1380,
+        y: 4320,
       },
       edges: [
         "53718a27-242e-4206-b30b-8daf6cc45cde",
@@ -375,12 +353,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "805a80bf-e0f9-4fd3-977d-b8c16fb78cdb",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -3680,
-        y: 1900,
+        x: 1360,
+        y: 3840,
       },
       edges: [
         "b8b8ea3b-acba-4f22-9bcc-af18ab30f4c4",
@@ -393,12 +370,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "084f9749-63f1-4d92-8d15-e3d86a73e346",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -3020,
-        y: 1860,
+        x: 2020,
+        y: 3800,
       },
       edges: [
         "d5ee206a-20bb-4f5e-a1a0-24a1b8fd7081",
@@ -409,12 +385,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "4129fa7e-57de-4d77-9d86-fef76a3950fd",
-
       area: "NorthAmericaCave",
       name: "TreasureField",
       position: {
-        x: -3080,
-        y: 1340,
+        x: 1960,
+        y: 3280,
       },
       edges: [
         "a5c08bba-04c5-4e08-98e7-31dbdb08152a",
@@ -425,12 +400,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "fedd2aaf-b218-40d9-9b16-01471ab4bee1",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -4200,
-        y: 1340,
+        x: 840,
+        y: 3280,
       },
       edges: [
         "dc523980-3ccc-401e-a7e0-53f4708a5082",
@@ -441,12 +415,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "05b2fff5-f5a1-47bf-a682-db75ba748f81",
-
       area: "NorthAmericaCave",
       name: "RedTreasureField",
       position: {
-        x: -4280,
-        y: 1860,
+        x: 760,
+        y: 3800,
       },
       edges: [
         "58e5c6c2-4433-4a25-a8f6-70db26e0d668",
@@ -459,12 +432,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "fc5bc28f-1e7b-4e6d-b65f-eaf2bd5a6f79",
-
       area: "NorthAmericaCave",
       name: "TreasureField",
       position: {
-        x: -5000,
-        y: 1880,
+        x: 40,
+        y: 3820,
       },
       edges: [
         "aa9331eb-aa3e-45fd-8d8c-702fcde6f14f",
@@ -475,12 +447,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "aaded592-fc71-4e99-9b65-395b29b7e25c",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -4960,
-        y: 1300,
+        x: 80,
+        y: 3240,
       },
       edges: [
         "5acacb1e-24cb-4571-b501-de4c36b50d09",
@@ -491,12 +462,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "86debcd8-b59e-477b-9ec0-b330f9846644",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -5000,
-        y: 760,
+        x: 40,
+        y: 2700,
       },
       edges: [
         "8ccbc733-fce1-49cc-8e49-3ec610b6388d",
@@ -507,12 +477,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "9e5e9ded-6e63-4fd2-8a8d-6e510b3aae71",
-
       area: "NorthAmericaCave",
       name: "MagicBookField",
       position: {
-        x: -4860,
-        y: 200,
+        x: 180,
+        y: 2140,
       },
       edges: [
         "9e48fc8c-a813-431b-af1a-4a1d4ef870ea",
@@ -523,12 +492,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "329498ba-4ce7-4dc0-ac24-917ebd8898c2",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -4440,
-        y: -300,
+        x: 600,
+        y: 1640,
       },
       edges: [
         "d5734239-ef42-4bc1-ac46-f78f379731bd",
@@ -539,12 +507,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "dfdd77f7-ef6b-46d8-9ce8-e68dcfa5ad44",
-
       area: "NorthAmericaCave",
       name: "TreasureField",
       position: {
-        x: -3260,
-        y: -300,
+        x: 1780,
+        y: 1640,
       },
       edges: [
         "f6ce1b08-66e9-40b2-ae3a-52688f43b97e",
@@ -557,12 +524,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "dd293679-46e4-425e-b1c0-c052469fecf3",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -3300,
-        y: -720,
+        x: 1740,
+        y: 1220,
       },
       edges: [
         "ffe076af-c230-4a59-a839-d2394b3aed9d",
@@ -575,12 +541,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "049c91cd-c92f-411c-8ee3-a1e6f541e89a",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -2580,
-        y: -300,
+        x: 2460,
+        y: 1640,
       },
       edges: [
         "8f97fb21-0fb0-4dd8-a1f5-de8bb158c86d",
@@ -593,12 +558,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "03033d7e-e97b-4cc1-9778-2edccc324155",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -2620,
-        y: 40,
+        x: 2420,
+        y: 1980,
       },
       edges: [
         "9add6213-5c16-43bd-a87a-c42f975aedec",
@@ -609,12 +573,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "9cff4590-fb10-4e7f-a1d2-8e79e63b53c3",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -2600,
-        y: -1180,
+        x: 2440,
+        y: 760,
       },
       edges: [
         "af8360c0-1759-41dc-8750-a1b1ec522d40",
@@ -625,12 +588,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "03722474-d675-4c16-8bb5-b4ace339dfd8",
-
       area: "NorthAmericaCave",
       name: "TreasureField",
       position: {
-        x: -2000,
-        y: 20,
+        x: 3040,
+        y: 1960,
       },
       edges: [
         "e2ed397f-2768-4a0f-8288-a9fb9ef118f2",
@@ -641,12 +603,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "4a990ade-9e0e-4d80-bf98-8ff0a9151c22",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -1900,
-        y: -580,
+        x: 3140,
+        y: 1360,
       },
       edges: [
         "c3c024a6-1689-4f83-a76a-6a9a7e8a9859",
@@ -657,12 +618,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "48772076-2562-4d65-a049-db9f64d715cb",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -3220,
-        y: -1200,
+        x: 1820,
+        y: 740,
       },
       edges: [
         "51c6de67-32cc-485f-bcef-3202181d07e1",
@@ -673,12 +633,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "be331816-0826-4f63-a193-5047d1cbdd2a",
-
       area: "NorthAmericaCave",
       name: "GoldTreasureField",
       position: {
-        x: -2040,
-        y: -1160,
+        x: 3000,
+        y: 780,
       },
       edges: [
         "c2bdbec3-2313-4799-881b-6406a92393f0",
@@ -689,12 +648,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "beef17f8-efb7-4890-be94-6d3b4f1a9156",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -1980,
-        y: -1740,
+        x: 3060,
+        y: 200,
       },
       edges: [
         "5f3f20d0-cffc-4c34-a37d-f58bd5aa6ae1",
@@ -705,12 +663,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "faa0285c-b497-4e1c-a23c-18eaf2f75237",
-
       area: "NorthAmericaCave",
       name: "DamageField",
       position: {
-        x: -2600,
-        y: -1760,
+        x: 2440,
+        y: 180,
       },
       edges: [
         "6a6b4ed4-fc91-4d3f-b7e1-18ceb1ca4c8c",
@@ -721,24 +678,22 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "d5565a57-5654-4e89-bacd-81c19c0dd792",
-
       area: "NorthAmericaCave",
       name: "KeyTreasureField",
       position: {
-        x: -3220,
-        y: -1720,
+        x: 1820,
+        y: 220,
       },
       edges: ["b28afd1a-de6d-4dad-b8e7-59ee4372affd"],
       right: "faa0285c-b497-4e1c-a23c-18eaf2f75237",
     },
     {
       id: "c629381d-8bf0-4148-ae12-bcaf2456beef",
-
       area: "NorthAmericaCave",
       name: "MagicBookField",
       position: {
-        x: -4060,
-        y: -680,
+        x: 980,
+        y: 1260,
       },
       edges: [
         "b5324cf1-e361-4a65-a20e-bc08bf3ecb9c",
@@ -749,12 +704,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "86737677-1950-403d-b909-f4aa1600315e",
-
       area: "NorthAmericaCave",
       name: "BattleField",
       position: {
-        x: -4100,
-        y: -1300,
+        x: 940,
+        y: 640,
       },
       edges: [
         "df045320-696a-4e2b-bc15-0a79cc85e2d3",
@@ -765,12 +719,11 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       id: "b822d8a9-a374-44d9-b8b9-c4e850f50302",
-
       area: "NorthAmericaCave",
       name: "CaveField",
       position: {
-        x: -3980,
-        y: -1900,
+        x: 1060,
+        y: 40,
       },
       edges: ["0bc8df66-67dc-4289-ae01-8606ee1d260a"],
       bottom: "86737677-1950-403d-b909-f4aa1600315e",
@@ -779,13 +732,13 @@ const northAmericaCaveMap: GraphJSON = {
   edges: [
     {
       start: {
-        x: 40,
-        y: 0,
+        x: 5080,
+        y: 1940,
       },
       startId: "198ed2de-4ec6-43d8-8a26-62cb81366583",
       end: {
-        x: 80,
-        y: -440,
+        x: 5120,
+        y: 1500,
       },
       endId: "773e3fb0-e470-42e0-93da-c214246bd3c3",
       name: "TwoWayVEdge",
@@ -793,13 +746,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 80,
-        y: -440,
+        x: 5120,
+        y: 1500,
       },
       startId: "773e3fb0-e470-42e0-93da-c214246bd3c3",
       end: {
-        x: 940,
-        y: -460,
+        x: 5980,
+        y: 1480,
       },
       endId: "89f81f54-47c9-4220-9bf3-a17511abedb3",
       name: "TwoWayHEdge",
@@ -807,13 +760,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 40,
-        y: 0,
+        x: 5080,
+        y: 1940,
       },
       startId: "198ed2de-4ec6-43d8-8a26-62cb81366583",
       end: {
-        x: -840,
-        y: 20,
+        x: 4200,
+        y: 1960,
       },
       endId: "bab1a948-3cdb-454d-91d4-830cfc0973e7",
       name: "TwoWayHEdge",
@@ -821,13 +774,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -840,
-        y: 20,
+        x: 4200,
+        y: 1960,
       },
       startId: "bab1a948-3cdb-454d-91d4-830cfc0973e7",
       end: {
-        x: -940,
-        y: 500,
+        x: 4100,
+        y: 2440,
       },
       endId: "ff0c10a0-1089-4307-a2d1-c1f2e09cd1ea",
       name: "TwoWayVEdge",
@@ -835,13 +788,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -940,
-        y: 500,
+        x: 4100,
+        y: 2440,
       },
       startId: "ff0c10a0-1089-4307-a2d1-c1f2e09cd1ea",
       end: {
-        x: -420,
-        y: 460,
+        x: 4620,
+        y: 2400,
       },
       endId: "d7acc9c3-7f0a-4392-924c-a31284292f2a",
       name: "TwoWayHEdge",
@@ -849,13 +802,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -420,
-        y: 460,
+        x: 4620,
+        y: 2400,
       },
       startId: "d7acc9c3-7f0a-4392-924c-a31284292f2a",
       end: {
-        x: 120,
-        y: 500,
+        x: 5160,
+        y: 2440,
       },
       endId: "7b613abf-b3fc-4adf-bdfe-1d4b52a9568d",
       name: "TwoWayHEdge",
@@ -863,13 +816,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 40,
-        y: 0,
+        x: 5080,
+        y: 1940,
       },
       startId: "198ed2de-4ec6-43d8-8a26-62cb81366583",
       end: {
-        x: 120,
-        y: 500,
+        x: 5160,
+        y: 2440,
       },
       endId: "7b613abf-b3fc-4adf-bdfe-1d4b52a9568d",
       name: "TwoWayVEdge",
@@ -877,13 +830,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 120,
-        y: 500,
+        x: 5160,
+        y: 2440,
       },
       startId: "7b613abf-b3fc-4adf-bdfe-1d4b52a9568d",
       end: {
-        x: 100,
-        y: 1020,
+        x: 5140,
+        y: 2960,
       },
       endId: "a0464df8-7ac1-4723-92fa-8fad47ed9214",
       name: "TwoWayVEdge",
@@ -891,13 +844,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 100,
-        y: 1020,
+        x: 5140,
+        y: 2960,
       },
       startId: "a0464df8-7ac1-4723-92fa-8fad47ed9214",
       end: {
-        x: -520,
-        y: 1000,
+        x: 4520,
+        y: 2940,
       },
       endId: "66fcb9d2-d411-4b2c-bad8-eb52fffff44e",
       name: "TwoWayHEdge",
@@ -905,13 +858,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -520,
-        y: 1000,
+        x: 4520,
+        y: 2940,
       },
       startId: "66fcb9d2-d411-4b2c-bad8-eb52fffff44e",
       end: {
-        x: -1200,
-        y: 1020,
+        x: 3840,
+        y: 2960,
       },
       endId: "d0727e13-5541-41ba-96ac-0b6a7b619064",
       name: "TwoWayHEdge",
@@ -919,13 +872,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1200,
-        y: 1020,
+        x: 3840,
+        y: 2960,
       },
       startId: "d0727e13-5541-41ba-96ac-0b6a7b619064",
       end: {
-        x: -1200,
-        y: 1420,
+        x: 3840,
+        y: 3360,
       },
       endId: "00f3432a-34a0-4542-a073-aa40c2328d88",
       name: "TwoWayVEdge",
@@ -933,13 +886,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1200,
-        y: 1420,
+        x: 3840,
+        y: 3360,
       },
       startId: "00f3432a-34a0-4542-a073-aa40c2328d88",
       end: {
-        x: -640,
-        y: 1400,
+        x: 4400,
+        y: 3340,
       },
       endId: "8ec96330-b237-48cb-9646-4ee77984bd63",
       name: "TwoWayHEdge",
@@ -947,13 +900,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -640,
-        y: 1400,
+        x: 4400,
+        y: 3340,
       },
       startId: "8ec96330-b237-48cb-9646-4ee77984bd63",
       end: {
-        x: -680,
-        y: 1800,
+        x: 4360,
+        y: 3740,
       },
       endId: "bd935092-ecf7-4ab9-882d-a608b4ed6ab9",
       name: "TwoWayVEdge",
@@ -961,13 +914,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1200,
-        y: 1420,
+        x: 3840,
+        y: 3360,
       },
       startId: "00f3432a-34a0-4542-a073-aa40c2328d88",
       end: {
-        x: -1740,
-        y: 1400,
+        x: 3300,
+        y: 3340,
       },
       endId: "c7aa53f0-7fb9-40dd-85d6-0eb339035574",
       name: "TwoWayHEdge",
@@ -975,13 +928,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1740,
-        y: 1400,
+        x: 3300,
+        y: 3340,
       },
       startId: "c7aa53f0-7fb9-40dd-85d6-0eb339035574",
       end: {
-        x: -1780,
-        y: 1800,
+        x: 3260,
+        y: 3740,
       },
       endId: "ec84d02b-8ee8-4401-b4ab-f70e1321b88f",
       name: "TwoWayVEdge",
@@ -989,13 +942,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -680,
-        y: 1800,
+        x: 4360,
+        y: 3740,
       },
       startId: "bd935092-ecf7-4ab9-882d-a608b4ed6ab9",
       end: {
-        x: 120,
-        y: 1840,
+        x: 5160,
+        y: 3780,
       },
       endId: "0c9f60cc-1586-420b-9d63-fdda06143c6e",
       name: "TwoWayHEdge",
@@ -1003,13 +956,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 120,
-        y: 1840,
+        x: 5160,
+        y: 3780,
       },
       startId: "0c9f60cc-1586-420b-9d63-fdda06143c6e",
       end: {
-        x: 720,
-        y: 1840,
+        x: 5760,
+        y: 3780,
       },
       endId: "4aad9e53-b86d-4610-b7dc-d03d71a535cd",
       name: "TwoWayHEdge",
@@ -1017,13 +970,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 120,
-        y: 1840,
+        x: 5160,
+        y: 3780,
       },
       startId: "0c9f60cc-1586-420b-9d63-fdda06143c6e",
       end: {
-        x: 100,
-        y: 2700,
+        x: 5140,
+        y: 4640,
       },
       endId: "492d0bc3-44a9-490a-9752-2e251e143fc5",
       name: "TwoWayVEdge",
@@ -1031,13 +984,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 100,
-        y: 2700,
+        x: 5140,
+        y: 4640,
       },
       startId: "492d0bc3-44a9-490a-9752-2e251e143fc5",
       end: {
-        x: 740,
-        y: 2680,
+        x: 5780,
+        y: 4620,
       },
       endId: "b1c2b54c-9e3d-441a-af0c-8a69cbcc7459",
       name: "TwoWayHEdge",
@@ -1045,13 +998,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 720,
-        y: 1840,
+        x: 5760,
+        y: 3780,
       },
       startId: "4aad9e53-b86d-4610-b7dc-d03d71a535cd",
       end: {
-        x: 780,
-        y: 2260,
+        x: 5820,
+        y: 4200,
       },
       endId: "954fe1e3-79c9-4ba2-b851-2b69248bb3bc",
       name: "TwoWayVEdge",
@@ -1059,13 +1012,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: 780,
-        y: 2260,
+        x: 5820,
+        y: 4200,
       },
       startId: "954fe1e3-79c9-4ba2-b851-2b69248bb3bc",
       end: {
-        x: 740,
-        y: 2680,
+        x: 5780,
+        y: 4620,
       },
       endId: "b1c2b54c-9e3d-441a-af0c-8a69cbcc7459",
       name: "TwoWayVEdge",
@@ -1073,13 +1026,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1780,
-        y: 1800,
+        x: 3260,
+        y: 3740,
       },
       startId: "ec84d02b-8ee8-4401-b4ab-f70e1321b88f",
       end: {
-        x: -2340,
-        y: 1780,
+        x: 2700,
+        y: 3720,
       },
       endId: "d62787b5-24da-49d3-9bdc-fdeeab14744b",
       name: "TwoWayHEdge",
@@ -1087,13 +1040,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2340,
-        y: 1780,
+        x: 2700,
+        y: 3720,
       },
       startId: "d62787b5-24da-49d3-9bdc-fdeeab14744b",
       end: {
-        x: -2400,
-        y: 2380,
+        x: 2640,
+        y: 4320,
       },
       endId: "9499e72b-efea-4936-8084-8c04746f3ac4",
       name: "TwoWayVEdge",
@@ -1101,13 +1054,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2400,
-        y: 2380,
+        x: 2640,
+        y: 4320,
       },
       startId: "9499e72b-efea-4936-8084-8c04746f3ac4",
       end: {
-        x: -3660,
-        y: 2380,
+        x: 1380,
+        y: 4320,
       },
       endId: "8bfe80c3-80f9-4bc0-a9fd-4366be4d3149",
       name: "TwoWayHEdge",
@@ -1115,13 +1068,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3660,
-        y: 2380,
+        x: 1380,
+        y: 4320,
       },
       startId: "8bfe80c3-80f9-4bc0-a9fd-4366be4d3149",
       end: {
-        x: -3680,
-        y: 1900,
+        x: 1360,
+        y: 3840,
       },
       endId: "805a80bf-e0f9-4fd3-977d-b8c16fb78cdb",
       name: "TwoWayVEdge",
@@ -1129,13 +1082,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3680,
-        y: 1900,
+        x: 1360,
+        y: 3840,
       },
       startId: "805a80bf-e0f9-4fd3-977d-b8c16fb78cdb",
       end: {
-        x: -3020,
-        y: 1860,
+        x: 2020,
+        y: 3800,
       },
       endId: "084f9749-63f1-4d92-8d15-e3d86a73e346",
       name: "TwoWayHEdge",
@@ -1143,13 +1096,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3020,
-        y: 1860,
+        x: 2020,
+        y: 3800,
       },
       startId: "084f9749-63f1-4d92-8d15-e3d86a73e346",
       end: {
-        x: -3080,
-        y: 1340,
+        x: 1960,
+        y: 3280,
       },
       endId: "4129fa7e-57de-4d77-9d86-fef76a3950fd",
       name: "TwoWayVEdge",
@@ -1157,13 +1110,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3080,
-        y: 1340,
+        x: 1960,
+        y: 3280,
       },
       startId: "4129fa7e-57de-4d77-9d86-fef76a3950fd",
       end: {
-        x: -4200,
-        y: 1340,
+        x: 840,
+        y: 3280,
       },
       endId: "fedd2aaf-b218-40d9-9b16-01471ab4bee1",
       name: "TwoWayHEdge",
@@ -1171,13 +1124,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -4200,
-        y: 1340,
+        x: 840,
+        y: 3280,
       },
       startId: "fedd2aaf-b218-40d9-9b16-01471ab4bee1",
       end: {
-        x: -4280,
-        y: 1860,
+        x: 760,
+        y: 3800,
       },
       endId: "05b2fff5-f5a1-47bf-a682-db75ba748f81",
       name: "TwoWayVEdge",
@@ -1185,13 +1138,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -4280,
-        y: 1860,
+        x: 760,
+        y: 3800,
       },
       startId: "05b2fff5-f5a1-47bf-a682-db75ba748f81",
       end: {
-        x: -3680,
-        y: 1900,
+        x: 1360,
+        y: 3840,
       },
       endId: "805a80bf-e0f9-4fd3-977d-b8c16fb78cdb",
       name: "TwoWayHEdge",
@@ -1199,13 +1152,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -4280,
-        y: 1860,
+        x: 760,
+        y: 3800,
       },
       startId: "05b2fff5-f5a1-47bf-a682-db75ba748f81",
       end: {
-        x: -5000,
-        y: 1880,
+        x: 40,
+        y: 3820,
       },
       endId: "fc5bc28f-1e7b-4e6d-b65f-eaf2bd5a6f79",
       name: "TwoWayHEdge",
@@ -1213,13 +1166,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -5000,
-        y: 1880,
+        x: 40,
+        y: 3820,
       },
       startId: "fc5bc28f-1e7b-4e6d-b65f-eaf2bd5a6f79",
       end: {
-        x: -4960,
-        y: 1300,
+        x: 80,
+        y: 3240,
       },
       endId: "aaded592-fc71-4e99-9b65-395b29b7e25c",
       name: "TwoWayVEdge",
@@ -1227,13 +1180,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -4960,
-        y: 1300,
+        x: 80,
+        y: 3240,
       },
       startId: "aaded592-fc71-4e99-9b65-395b29b7e25c",
       end: {
-        x: -5000,
-        y: 760,
+        x: 40,
+        y: 2700,
       },
       endId: "86debcd8-b59e-477b-9ec0-b330f9846644",
       name: "TwoWayVEdge",
@@ -1241,13 +1194,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -5000,
-        y: 760,
+        x: 40,
+        y: 2700,
       },
       startId: "86debcd8-b59e-477b-9ec0-b330f9846644",
       end: {
-        x: -4860,
-        y: 200,
+        x: 180,
+        y: 2140,
       },
       endId: "9e5e9ded-6e63-4fd2-8a8d-6e510b3aae71",
       name: "TwoWayVEdge",
@@ -1255,13 +1208,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -4860,
-        y: 200,
+        x: 180,
+        y: 2140,
       },
       startId: "9e5e9ded-6e63-4fd2-8a8d-6e510b3aae71",
       end: {
-        x: -4440,
-        y: -300,
+        x: 600,
+        y: 1640,
       },
       endId: "329498ba-4ce7-4dc0-ac24-917ebd8898c2",
       name: "TwoWayVEdge",
@@ -1269,13 +1222,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -4440,
-        y: -300,
+        x: 600,
+        y: 1640,
       },
       startId: "329498ba-4ce7-4dc0-ac24-917ebd8898c2",
       end: {
-        x: -3260,
-        y: -300,
+        x: 1780,
+        y: 1640,
       },
       endId: "dfdd77f7-ef6b-46d8-9ce8-e68dcfa5ad44",
       name: "TwoWayHEdge",
@@ -1283,13 +1236,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3260,
-        y: -300,
+        x: 1780,
+        y: 1640,
       },
       startId: "dfdd77f7-ef6b-46d8-9ce8-e68dcfa5ad44",
       end: {
-        x: -3300,
-        y: -720,
+        x: 1740,
+        y: 1220,
       },
       endId: "dd293679-46e4-425e-b1c0-c052469fecf3",
       name: "TwoWayVEdge",
@@ -1297,13 +1250,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3260,
-        y: -300,
+        x: 1780,
+        y: 1640,
       },
       startId: "dfdd77f7-ef6b-46d8-9ce8-e68dcfa5ad44",
       end: {
-        x: -2580,
-        y: -300,
+        x: 2460,
+        y: 1640,
       },
       endId: "049c91cd-c92f-411c-8ee3-a1e6f541e89a",
       name: "TwoWayHEdge",
@@ -1311,13 +1264,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2580,
-        y: -300,
+        x: 2460,
+        y: 1640,
       },
       startId: "049c91cd-c92f-411c-8ee3-a1e6f541e89a",
       end: {
-        x: -2620,
-        y: 40,
+        x: 2420,
+        y: 1980,
       },
       endId: "03033d7e-e97b-4cc1-9778-2edccc324155",
       name: "TwoWayVEdge",
@@ -1325,13 +1278,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2580,
-        y: -300,
+        x: 2460,
+        y: 1640,
       },
       startId: "049c91cd-c92f-411c-8ee3-a1e6f541e89a",
       end: {
-        x: -2600,
-        y: -1180,
+        x: 2440,
+        y: 760,
       },
       endId: "9cff4590-fb10-4e7f-a1d2-8e79e63b53c3",
       name: "TwoWayVEdge",
@@ -1339,13 +1292,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2620,
-        y: 40,
+        x: 2420,
+        y: 1980,
       },
       startId: "03033d7e-e97b-4cc1-9778-2edccc324155",
       end: {
-        x: -2000,
-        y: 20,
+        x: 3040,
+        y: 1960,
       },
       endId: "03722474-d675-4c16-8bb5-b4ace339dfd8",
       name: "TwoWayHEdge",
@@ -1353,13 +1306,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2000,
-        y: 20,
+        x: 3040,
+        y: 1960,
       },
       startId: "03722474-d675-4c16-8bb5-b4ace339dfd8",
       end: {
-        x: -1900,
-        y: -580,
+        x: 3140,
+        y: 1360,
       },
       endId: "4a990ade-9e0e-4d80-bf98-8ff0a9151c22",
       name: "TwoWayVEdge",
@@ -1367,13 +1320,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3300,
-        y: -720,
+        x: 1740,
+        y: 1220,
       },
       startId: "dd293679-46e4-425e-b1c0-c052469fecf3",
       end: {
-        x: -3220,
-        y: -1200,
+        x: 1820,
+        y: 740,
       },
       endId: "48772076-2562-4d65-a049-db9f64d715cb",
       name: "TwoWayVEdge",
@@ -1381,13 +1334,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3220,
-        y: -1200,
+        x: 1820,
+        y: 740,
       },
       startId: "48772076-2562-4d65-a049-db9f64d715cb",
       end: {
-        x: -2600,
-        y: -1180,
+        x: 2440,
+        y: 760,
       },
       endId: "9cff4590-fb10-4e7f-a1d2-8e79e63b53c3",
       name: "TwoWayHEdge",
@@ -1395,13 +1348,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1900,
-        y: -580,
+        x: 3140,
+        y: 1360,
       },
       startId: "4a990ade-9e0e-4d80-bf98-8ff0a9151c22",
       end: {
-        x: -2040,
-        y: -1160,
+        x: 3000,
+        y: 780,
       },
       endId: "be331816-0826-4f63-a193-5047d1cbdd2a",
       name: "TwoWayVEdge",
@@ -1409,13 +1362,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2040,
-        y: -1160,
+        x: 3000,
+        y: 780,
       },
       startId: "be331816-0826-4f63-a193-5047d1cbdd2a",
       end: {
-        x: -1980,
-        y: -1740,
+        x: 3060,
+        y: 200,
       },
       endId: "beef17f8-efb7-4890-be94-6d3b4f1a9156",
       name: "TwoWayVEdge",
@@ -1423,13 +1376,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -1980,
-        y: -1740,
+        x: 3060,
+        y: 200,
       },
       startId: "beef17f8-efb7-4890-be94-6d3b4f1a9156",
       end: {
-        x: -2600,
-        y: -1760,
+        x: 2440,
+        y: 180,
       },
       endId: "faa0285c-b497-4e1c-a23c-18eaf2f75237",
       name: "TwoWayHEdge",
@@ -1437,13 +1390,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -2600,
-        y: -1760,
+        x: 2440,
+        y: 180,
       },
       startId: "faa0285c-b497-4e1c-a23c-18eaf2f75237",
       end: {
-        x: -3220,
-        y: -1720,
+        x: 1820,
+        y: 220,
       },
       endId: "d5565a57-5654-4e89-bacd-81c19c0dd792",
       name: "TwoWayHEdge",
@@ -1451,13 +1404,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -3300,
-        y: -720,
+        x: 1740,
+        y: 1220,
       },
       startId: "dd293679-46e4-425e-b1c0-c052469fecf3",
       end: {
-        x: -4060,
-        y: -680,
+        x: 980,
+        y: 1260,
       },
       endId: "c629381d-8bf0-4148-ae12-bcaf2456beef",
       name: "TwoWayHEdge",
@@ -1465,13 +1418,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -4060,
-        y: -680,
+        x: 980,
+        y: 1260,
       },
       startId: "c629381d-8bf0-4148-ae12-bcaf2456beef",
       end: {
-        x: -4100,
-        y: -1300,
+        x: 940,
+        y: 640,
       },
       endId: "86737677-1950-403d-b909-f4aa1600315e",
       name: "TwoWayVEdge",
@@ -1479,13 +1432,13 @@ const northAmericaCaveMap: GraphJSON = {
     },
     {
       start: {
-        x: -4100,
-        y: -1300,
+        x: 940,
+        y: 640,
       },
       startId: "86737677-1950-403d-b909-f4aa1600315e",
       end: {
-        x: -3980,
-        y: -1900,
+        x: 1060,
+        y: 40,
       },
       endId: "b822d8a9-a374-44d9-b8b9-c4e850f50302",
       name: "TwoWayVEdge",

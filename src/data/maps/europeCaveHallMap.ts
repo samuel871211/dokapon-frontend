@@ -5,8 +5,8 @@ const europeCaveHallMap: GraphJSON = {
     {
       area: "EuropeCaveHall",
       position: {
-        x: 380,
-        y: 560,
+        x: 2120,
+        y: 3840,
       },
       name: "BattleField",
       id: "ae7077d7-6fc3-4676-80c4-2bb1e9e6c7d3",
@@ -22,12 +22,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "5beaaca7-2c41-4cf6-8516-7cf07477d0f4",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: 920,
-        y: 560,
+        x: 2660,
+        y: 3840,
       },
       edges: [
         "37d0441b-1002-4b4e-906d-b0c35b22f2d8",
@@ -39,12 +38,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "21ccb754-2f35-4c3f-8cde-41f54a42007e",
-
       area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
-        x: -660,
-        y: 560,
+        x: 1080,
+        y: 3840,
       },
       edges: [
         "738ee87a-17c1-448b-b00c-f6f74d94981e",
@@ -54,24 +52,22 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "b742acfb-fd17-4fe5-a54e-6d7a2f4de3e9",
-
       area: "EuropeCaveHall",
       name: "CaveField",
       position: {
-        x: 380,
-        y: 1000,
+        x: 2120,
+        y: 4280,
       },
       edges: ["1fe8ac31-a80a-4582-ab28-d85106df7371"],
       top: "ae7077d7-6fc3-4676-80c4-2bb1e9e6c7d3",
     },
     {
       id: "ecefbec2-7bd1-4c0b-9357-e3579daa678b",
-
       area: "EuropeCaveHall",
       name: "MagicBookField",
       position: {
-        x: 920,
-        y: 120,
+        x: 2660,
+        y: 3400,
       },
       edges: [
         "52de64fa-4fbf-48a8-b797-4762da94abc0",
@@ -83,12 +79,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "8b06a550-a40d-41fa-af35-78b95a2a25ca",
-
       area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
-        x: 380,
-        y: 120,
+        x: 2120,
+        y: 3400,
       },
       edges: [
         "f93c5042-9172-45de-9ab7-d09175128827",
@@ -103,12 +98,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "ab98343f-b6bb-4e65-99a2-bb4d8cb31125",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: -140,
-        y: 140,
+        x: 1600,
+        y: 3420,
       },
       edges: [
         "3a26d3e5-9deb-4528-bb10-f9720a1b40e0",
@@ -119,12 +113,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "82ee86b0-80ba-43d1-b7c0-1af4643fe22e",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: -660,
-        y: 120,
+        x: 1080,
+        y: 3400,
       },
       edges: [
         "e3f42f1a-e2ba-426d-824a-555bab6d55c0",
@@ -137,12 +130,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "0105fe2d-7ede-4cad-b9b9-5c80bf5db8ef",
-
       area: "EuropeCaveHall",
       name: "MagicBookField",
       position: {
-        x: -600,
-        y: -500,
+        x: 1140,
+        y: 2780,
       },
       edges: [
         "d6f487f2-0443-44a7-9a69-1eae213d1861",
@@ -155,12 +147,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "9f33b95e-d11f-4d39-8322-4fd4516ed0c7",
-
       area: "EuropeCaveHall",
       name: "DamageField",
       position: {
-        x: 280,
-        y: -500,
+        x: 2020,
+        y: 2780,
       },
       edges: [
         "b924067f-a619-4bfc-8aec-dbc73209bbdf",
@@ -173,12 +164,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "54c232e5-b23e-4c94-bad9-e4a7cd0e78ba",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: 1440,
-        y: 540,
+        x: 3180,
+        y: 3820,
       },
       edges: [
         "0e915e55-8412-4eaf-bd3b-d01f7f84a91a",
@@ -189,12 +179,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "5eb78328-5f2a-4d83-af98-53a06b124260",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: 780,
-        y: -280,
+        x: 2520,
+        y: 3000,
       },
       edges: [
         "82204fc8-ed24-43c1-ba28-922f1251351c",
@@ -205,12 +194,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "49eac2c9-ffa0-4581-ae86-c00537488b25",
-
       area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
-        x: 1480,
-        y: -240,
+        x: 3220,
+        y: 3040,
       },
       edges: [
         "b5ce8d27-fa39-4f53-bd69-8a817c79c001",
@@ -223,12 +211,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "5d1b5b1f-09c1-418d-a970-0b603466717d",
-
       area: "EuropeCaveHall",
       name: "DamageField",
       position: {
-        x: 1360,
-        y: -700,
+        x: 3100,
+        y: 2580,
       },
       edges: [
         "b282601d-70c9-4a57-86c1-7e417ee81003",
@@ -241,12 +228,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "69db8570-6b62-4883-ae55-fd4634f28af1",
-
       area: "EuropeCaveHall",
       name: "RedTreasureField",
       position: {
-        x: 1860,
-        y: -680,
+        x: 3600,
+        y: 2600,
       },
       edges: [
         "325db631-fc34-43bd-b232-e36fa02f5157",
@@ -259,12 +245,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "dda25ad0-965d-4866-86e4-4245febba1a7",
-
       area: "EuropeCaveHall",
       name: "RedTreasureField",
       position: {
-        x: 2240,
-        y: -700,
+        x: 3980,
+        y: 2580,
       },
       edges: [
         "eb38e7e5-4cbc-4950-9987-54c3a074af02",
@@ -275,12 +260,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "76439c5a-48f3-46aa-838f-e35df4eb3a7a",
-
       area: "EuropeCaveHall",
       name: "RedTreasureField",
       position: {
-        x: 2240,
-        y: -1280,
+        x: 3980,
+        y: 2000,
       },
       edges: [
         "56b3b23c-e580-48db-8761-066e63aa9c3f",
@@ -291,12 +275,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "7a3ed1f9-2526-4d5a-bea6-f87eace30550",
-
       area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
-        x: 1820,
-        y: -1320,
+        x: 3560,
+        y: 1960,
       },
       edges: [
         "26cb9b81-2fbf-4bb8-b485-665a3e34efb5",
@@ -307,12 +290,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "9b5f9dc0-d74c-4ed4-ab31-a559208dfca7",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: 1760,
-        y: -1020,
+        x: 3500,
+        y: 2260,
       },
       edges: [
         "05ea5433-d999-4b2a-836d-b09766f75fd4",
@@ -323,12 +305,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "4a14e719-872e-49e8-b9a0-c929eab417f0",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: 1280,
-        y: -1100,
+        x: 3020,
+        y: 2180,
       },
       edges: [
         "4662442d-3021-413f-be94-3d4f1ea7f58c",
@@ -341,12 +322,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "eabdc0a8-a8ce-436a-bcc4-fc45be47e029",
-
       area: "EuropeCaveHall",
       name: "GoldTreasureField",
       position: {
-        x: 880,
-        y: -1080,
+        x: 2620,
+        y: 2200,
       },
       edges: [
         "8129cd10-4208-49f9-bcfd-89ab0590bf1c",
@@ -358,12 +338,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "e281d79d-a476-406d-b933-ba0bcc8ab751",
-
       area: "EuropeCaveHall",
       name: "DamageField",
       position: {
-        x: 1340,
-        y: -1640,
+        x: 3080,
+        y: 1640,
       },
       edges: [
         "98ec52ac-85cf-4f52-abef-5b8c4c3ad3f9",
@@ -374,12 +353,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "e19bd0c0-7d6b-4c0c-ac7e-7b9657a2672e",
-
       area: "EuropeCaveHall",
       name: "DamageField",
       position: {
-        x: 900,
-        y: -1640,
+        x: 2640,
+        y: 1640,
       },
       edges: [
         "0f7fd7da-5096-4ea9-826a-843303463fa4",
@@ -392,12 +370,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "8abc85c3-7e27-42c4-80d5-285a759c2f76",
-
       area: "EuropeCaveHall",
       name: "RedTreasureField",
       position: {
-        x: 1260,
-        y: -2220,
+        x: 3000,
+        y: 1060,
       },
       edges: [
         "34b51a0b-2118-4a40-8032-2ae9797c148e",
@@ -408,12 +385,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "85b9fd88-1ff7-443f-8777-67a3e997302b",
-
       area: "EuropeCaveHall",
       name: "DamageField",
       position: {
-        x: 1780,
-        y: -2260,
+        x: 3520,
+        y: 1020,
       },
       edges: [
         "c9b0d350-4736-4cc6-8971-b57f8d5b0d05",
@@ -424,24 +400,22 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "31c40d6c-c329-4ce7-81aa-6da8232ce1c3",
-
       area: "EuropeCaveHall",
       name: "KeyTreasureField",
       position: {
-        x: 2340,
-        y: -2220,
+        x: 4080,
+        y: 1060,
       },
       edges: ["29779836-039e-459f-af15-90fdd0c5031b"],
       left: "85b9fd88-1ff7-443f-8777-67a3e997302b",
     },
     {
       id: "7e523595-c172-4256-9679-2f238ff26a66",
-
       area: "EuropeCaveHall",
       name: "MagicBookField",
       position: {
-        x: -200,
-        y: -1640,
+        x: 1540,
+        y: 1640,
       },
       edges: [
         "2b1434ac-50b6-4df5-815b-50fae4e646b8",
@@ -454,12 +428,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "b7f91dba-adf7-43a0-a840-8f6ff5dd9fd4",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: -180,
-        y: -1080,
+        x: 1560,
+        y: 2200,
       },
       edges: [
         "69c7625e-8f2c-4cf6-ab56-dca3e2321582",
@@ -469,12 +442,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "c4b57755-a1b4-40f0-b2f9-503f77cc45c9",
-
       area: "EuropeCaveHall",
       name: "WhiteTreasureField",
       position: {
-        x: 320,
-        y: -1120,
+        x: 2060,
+        y: 2160,
       },
       edges: [
         "90e359f2-c7c7-4a39-8c81-9aa3878348d4",
@@ -487,12 +459,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "6b636bd3-c5f1-46a3-8701-3fae0dce1728",
-
       area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
-        x: -140,
-        y: -2000,
+        x: 1600,
+        y: 1280,
       },
       edges: [
         "156184f3-3aeb-4dfb-89f5-bc276db5b781",
@@ -505,12 +476,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "b3c50da5-e4c3-462f-b23c-ba646ebbbecc",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: 280,
-        y: -2000,
+        x: 2020,
+        y: 1280,
       },
       edges: [
         "836b4c79-c516-4fc3-829f-625d0611eaa0",
@@ -521,12 +491,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "2bc7c638-64f5-487e-a192-6d0b5e0b0863",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: 780,
-        y: -2340,
+        x: 2520,
+        y: 940,
       },
       edges: [
         "5d70dcab-2677-4a08-a2f1-30de848bcb12",
@@ -537,12 +506,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "35d6d4c2-e182-4f55-a67e-85dddd43b362",
-
       area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
-        x: 320,
-        y: -2400,
+        x: 2060,
+        y: 880,
       },
       edges: [
         "82f31502-561b-45a9-82ab-2dac6c13626a",
@@ -555,12 +523,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "4b28d623-9d4f-4cb3-b5d0-52b4b434c9a4",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: -200,
-        y: -2380,
+        x: 1540,
+        y: 900,
       },
       edges: [
         "65a3c650-78dc-4bd6-93c8-f870148080a5",
@@ -573,12 +540,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "7b80b862-ac42-4774-a22b-e7fbc84da615",
-
       area: "EuropeCaveHall",
       name: "MagicBookField",
       position: {
-        x: -140,
-        y: -2780,
+        x: 1600,
+        y: 500,
       },
       edges: [
         "70093737-652e-491c-9108-630d2bd2c032",
@@ -589,12 +555,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "93e57c8b-a724-48e8-8b8c-0276b7c65b9d",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: 360,
-        y: -2780,
+        x: 2100,
+        y: 500,
       },
       edges: [
         "c6f8ec45-5f8c-4444-88de-65331c7f6c53",
@@ -607,12 +572,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "bb84ee52-aa76-494d-b1a0-e4a34852f35b",
-
       area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
-        x: 320,
-        y: -3200,
+        x: 2060,
+        y: 80,
       },
       edges: [
         "7dd7eb1b-4aad-4df1-841e-fd0afb02badf",
@@ -623,12 +587,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "ab15fe4a-a97a-43f3-a645-36d8b9852e12",
-
       area: "EuropeCaveHall",
       name: "DamageField",
       position: {
-        x: 960,
-        y: -3240,
+        x: 2700,
+        y: 40,
       },
       edges: [
         "40fb540b-eba4-48cf-932f-ae1a9bead8df",
@@ -639,12 +602,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "9af7fe94-93c2-4e03-b568-14ede868504c",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: 1560,
-        y: -3180,
+        x: 3300,
+        y: 100,
       },
       edges: [
         "1edbc4b8-84ca-446e-9f3d-157192e349d2",
@@ -655,12 +617,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "b53c7dc2-e0dd-4732-8ce8-2e0d0c638783",
-
       area: "EuropeCaveHall",
       name: "DamageField",
       position: {
-        x: 1560,
-        y: -2740,
+        x: 3300,
+        y: 540,
       },
       edges: [
         "e672638f-5bec-44d0-8b05-398a9b26659b",
@@ -671,24 +632,22 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "b59a2c3d-9203-4ecf-8e5d-910271e51446",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: 960,
-        y: -2740,
+        x: 2700,
+        y: 540,
       },
       edges: ["ec3374df-3164-433e-9828-9e7d0e0739d7"],
       right: "b53c7dc2-e0dd-4732-8ce8-2e0d0c638783",
     },
     {
       id: "beb09acf-c05c-4527-ad06-87c66173fafa",
-
       area: "EuropeCaveHall",
       name: "DamageField",
       position: {
-        x: -700,
-        y: -1320,
+        x: 1040,
+        y: 1960,
       },
       edges: [
         "22fa99c8-ef60-442b-8480-70c50e4a65fa",
@@ -701,12 +660,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "dffedfc6-ab65-4469-83a5-2ebbd268bf4d",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: -1220,
-        y: -1360,
+        x: 520,
+        y: 1920,
       },
       edges: [
         "f60b7528-d981-4130-ada1-0f657c782cbd",
@@ -717,12 +675,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "15b1af06-26c5-4c48-8fc3-57001782ffdd",
-
       area: "EuropeCaveHall",
       name: "GoldTreasureField",
       position: {
-        x: -580,
-        y: -2040,
+        x: 1160,
+        y: 1240,
       },
       edges: [
         "e59d4ce6-673e-4e30-96df-60e6aa8ed267",
@@ -735,12 +692,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "7f93126e-30da-45ad-9464-8a59b8a587a6",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: -660,
-        y: -2400,
+        x: 1080,
+        y: 880,
       },
       edges: [
         "ed6fa6c1-2cb5-455c-9531-d6ed2044fca2",
@@ -753,12 +709,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "a570e52d-8680-40ff-8df8-0af72810c162",
-
       area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
-        x: -1240,
-        y: -2080,
+        x: 500,
+        y: 1200,
       },
       edges: [
         "5b72b775-b4d1-4b66-85d4-3fc7ea85a3d3",
@@ -769,12 +724,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "8031e377-b46a-43e8-8138-594ceaeee66b",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: -1200,
-        y: -2820,
+        x: 540,
+        y: 460,
       },
       edges: [
         "7415e5b3-77e7-4fa5-9cef-e799d193b68d",
@@ -787,12 +741,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "95bf2652-6f20-44fb-8f5d-c2eaad6504fa",
-
       area: "EuropeCaveHall",
       name: "GoldTreasureField",
       position: {
-        x: -600,
-        y: -2840,
+        x: 1140,
+        y: 440,
       },
       edges: [
         "378986a7-79c1-4f91-9bcb-65cd60d009ea",
@@ -803,12 +756,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "cd05210f-4b04-455b-84fd-1560bdfc40b6",
-
       area: "EuropeCaveHall",
       name: "TreasureField",
       position: {
-        x: -1660,
-        y: -1300,
+        x: 80,
+        y: 1980,
       },
       edges: [
         "e8206ee9-dccd-4578-84f0-adbe13eb4f40",
@@ -819,12 +771,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "6ef35753-d9c9-4b12-8832-5b2f5d695674",
-
       area: "EuropeCaveHall",
       name: "GoldTreasureField",
       position: {
-        x: -1580,
-        y: -1940,
+        x: 160,
+        y: 1340,
       },
       edges: [
         "96a86061-2b3c-4c0e-af2e-728352f00df0",
@@ -835,12 +786,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "252e5871-5f5b-4fe3-adcf-f82de3b6ff28",
-
       area: "EuropeCaveHall",
       name: "BattleField",
       position: {
-        x: -1700,
-        y: -2400,
+        x: 40,
+        y: 880,
       },
       edges: [
         "7fec3359-2d03-4a5d-992b-19bc81b53b88",
@@ -851,12 +801,11 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       id: "23c56dc0-4265-4efc-93fc-090914d2dcd6",
-
       area: "EuropeCaveHall",
       name: "GoldTreasureField",
       position: {
-        x: -1680,
-        y: -2840,
+        x: 60,
+        y: 440,
       },
       edges: [
         "bea8d1e7-1e56-40e5-9964-4470cae5b2bc",
@@ -869,13 +818,13 @@ const europeCaveHallMap: GraphJSON = {
   edges: [
     {
       start: {
-        x: 380,
-        y: 560,
+        x: 2120,
+        y: 3840,
       },
       startId: "ae7077d7-6fc3-4676-80c4-2bb1e9e6c7d3",
       end: {
-        x: 920,
-        y: 560,
+        x: 2660,
+        y: 3840,
       },
       endId: "5beaaca7-2c41-4cf6-8516-7cf07477d0f4",
       name: "OneWayHEdge",
@@ -883,13 +832,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 380,
-        y: 560,
+        x: 2120,
+        y: 3840,
       },
       startId: "ae7077d7-6fc3-4676-80c4-2bb1e9e6c7d3",
       end: {
-        x: -660,
-        y: 560,
+        x: 1080,
+        y: 3840,
       },
       endId: "21ccb754-2f35-4c3f-8cde-41f54a42007e",
       name: "OneWayHEdge",
@@ -897,13 +846,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 380,
-        y: 560,
+        x: 2120,
+        y: 3840,
       },
       startId: "ae7077d7-6fc3-4676-80c4-2bb1e9e6c7d3",
       end: {
-        x: 380,
-        y: 1000,
+        x: 2120,
+        y: 4280,
       },
       endId: "b742acfb-fd17-4fe5-a54e-6d7a2f4de3e9",
       name: "TwoWayVEdge",
@@ -911,13 +860,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 920,
-        y: 560,
+        x: 2660,
+        y: 3840,
       },
       startId: "5beaaca7-2c41-4cf6-8516-7cf07477d0f4",
       end: {
-        x: 920,
-        y: 120,
+        x: 2660,
+        y: 3400,
       },
       endId: "ecefbec2-7bd1-4c0b-9357-e3579daa678b",
       name: "OneWayVEdge",
@@ -925,13 +874,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 920,
-        y: 120,
+        x: 2660,
+        y: 3400,
       },
       startId: "ecefbec2-7bd1-4c0b-9357-e3579daa678b",
       end: {
-        x: 380,
-        y: 120,
+        x: 2120,
+        y: 3400,
       },
       endId: "8b06a550-a40d-41fa-af35-78b95a2a25ca",
       name: "TwoWayHEdge",
@@ -939,13 +888,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 380,
-        y: 120,
+        x: 2120,
+        y: 3400,
       },
       startId: "8b06a550-a40d-41fa-af35-78b95a2a25ca",
       end: {
-        x: 380,
-        y: 560,
+        x: 2120,
+        y: 3840,
       },
       endId: "ae7077d7-6fc3-4676-80c4-2bb1e9e6c7d3",
       name: "OneWayVEdge",
@@ -953,13 +902,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 380,
-        y: 120,
+        x: 2120,
+        y: 3400,
       },
       startId: "8b06a550-a40d-41fa-af35-78b95a2a25ca",
       end: {
-        x: -140,
-        y: 140,
+        x: 1600,
+        y: 3420,
       },
       endId: "ab98343f-b6bb-4e65-99a2-bb4d8cb31125",
       name: "TwoWayHEdge",
@@ -967,13 +916,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -660,
-        y: 560,
+        x: 1080,
+        y: 3840,
       },
       startId: "21ccb754-2f35-4c3f-8cde-41f54a42007e",
       end: {
-        x: -660,
-        y: 120,
+        x: 1080,
+        y: 3400,
       },
       endId: "82ee86b0-80ba-43d1-b7c0-1af4643fe22e",
       name: "TwoWayVEdge",
@@ -981,13 +930,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -660,
-        y: 120,
+        x: 1080,
+        y: 3400,
       },
       startId: "82ee86b0-80ba-43d1-b7c0-1af4643fe22e",
       end: {
-        x: -140,
-        y: 140,
+        x: 1600,
+        y: 3420,
       },
       endId: "ab98343f-b6bb-4e65-99a2-bb4d8cb31125",
       name: "TwoWayHEdge",
@@ -995,13 +944,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -660,
-        y: 120,
+        x: 1080,
+        y: 3400,
       },
       startId: "82ee86b0-80ba-43d1-b7c0-1af4643fe22e",
       end: {
-        x: -600,
-        y: -500,
+        x: 1140,
+        y: 2780,
       },
       endId: "0105fe2d-7ede-4cad-b9b9-5c80bf5db8ef",
       name: "TwoWayVEdge",
@@ -1009,13 +958,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -600,
-        y: -500,
+        x: 1140,
+        y: 2780,
       },
       startId: "0105fe2d-7ede-4cad-b9b9-5c80bf5db8ef",
       end: {
-        x: 280,
-        y: -500,
+        x: 2020,
+        y: 2780,
       },
       endId: "9f33b95e-d11f-4d39-8322-4fd4516ed0c7",
       name: "TwoWayHEdge",
@@ -1023,13 +972,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 280,
-        y: -500,
+        x: 2020,
+        y: 2780,
       },
       startId: "9f33b95e-d11f-4d39-8322-4fd4516ed0c7",
       end: {
-        x: 380,
-        y: 120,
+        x: 2120,
+        y: 3400,
       },
       endId: "8b06a550-a40d-41fa-af35-78b95a2a25ca",
       name: "TwoWayVEdge",
@@ -1037,13 +986,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 920,
-        y: 560,
+        x: 2660,
+        y: 3840,
       },
       startId: "5beaaca7-2c41-4cf6-8516-7cf07477d0f4",
       end: {
-        x: 1440,
-        y: 540,
+        x: 3180,
+        y: 3820,
       },
       endId: "54c232e5-b23e-4c94-bad9-e4a7cd0e78ba",
       name: "TwoWayHEdge",
@@ -1051,13 +1000,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 920,
-        y: 120,
+        x: 2660,
+        y: 3400,
       },
       startId: "ecefbec2-7bd1-4c0b-9357-e3579daa678b",
       end: {
-        x: 780,
-        y: -280,
+        x: 2520,
+        y: 3000,
       },
       endId: "5eb78328-5f2a-4d83-af98-53a06b124260",
       name: "TwoWayVEdge",
@@ -1065,13 +1014,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 780,
-        y: -280,
+        x: 2520,
+        y: 3000,
       },
       startId: "5eb78328-5f2a-4d83-af98-53a06b124260",
       end: {
-        x: 1480,
-        y: -240,
+        x: 3220,
+        y: 3040,
       },
       endId: "49eac2c9-ffa0-4581-ae86-c00537488b25",
       name: "TwoWayHEdge",
@@ -1079,13 +1028,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1440,
-        y: 540,
+        x: 3180,
+        y: 3820,
       },
       startId: "54c232e5-b23e-4c94-bad9-e4a7cd0e78ba",
       end: {
-        x: 1480,
-        y: -240,
+        x: 3220,
+        y: 3040,
       },
       endId: "49eac2c9-ffa0-4581-ae86-c00537488b25",
       name: "TwoWayVEdge",
@@ -1093,13 +1042,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1480,
-        y: -240,
+        x: 3220,
+        y: 3040,
       },
       startId: "49eac2c9-ffa0-4581-ae86-c00537488b25",
       end: {
-        x: 1360,
-        y: -700,
+        x: 3100,
+        y: 2580,
       },
       endId: "5d1b5b1f-09c1-418d-a970-0b603466717d",
       name: "TwoWayVEdge",
@@ -1107,13 +1056,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1360,
-        y: -700,
+        x: 3100,
+        y: 2580,
       },
       startId: "5d1b5b1f-09c1-418d-a970-0b603466717d",
       end: {
-        x: 1860,
-        y: -680,
+        x: 3600,
+        y: 2600,
       },
       endId: "69db8570-6b62-4883-ae55-fd4634f28af1",
       name: "TwoWayHEdge",
@@ -1121,13 +1070,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1860,
-        y: -680,
+        x: 3600,
+        y: 2600,
       },
       startId: "69db8570-6b62-4883-ae55-fd4634f28af1",
       end: {
-        x: 2240,
-        y: -700,
+        x: 3980,
+        y: 2580,
       },
       endId: "dda25ad0-965d-4866-86e4-4245febba1a7",
       name: "TwoWayHEdge",
@@ -1135,13 +1084,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 2240,
-        y: -700,
+        x: 3980,
+        y: 2580,
       },
       startId: "dda25ad0-965d-4866-86e4-4245febba1a7",
       end: {
-        x: 2240,
-        y: -1280,
+        x: 3980,
+        y: 2000,
       },
       endId: "76439c5a-48f3-46aa-838f-e35df4eb3a7a",
       name: "TwoWayVEdge",
@@ -1149,13 +1098,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 2240,
-        y: -1280,
+        x: 3980,
+        y: 2000,
       },
       startId: "76439c5a-48f3-46aa-838f-e35df4eb3a7a",
       end: {
-        x: 1820,
-        y: -1320,
+        x: 3560,
+        y: 1960,
       },
       endId: "7a3ed1f9-2526-4d5a-bea6-f87eace30550",
       name: "TwoWayHEdge",
@@ -1163,13 +1112,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1820,
-        y: -1320,
+        x: 3560,
+        y: 1960,
       },
       startId: "7a3ed1f9-2526-4d5a-bea6-f87eace30550",
       end: {
-        x: 1760,
-        y: -1020,
+        x: 3500,
+        y: 2260,
       },
       endId: "9b5f9dc0-d74c-4ed4-ab31-a559208dfca7",
       name: "TwoWayVEdge",
@@ -1177,13 +1126,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1760,
-        y: -1020,
+        x: 3500,
+        y: 2260,
       },
       startId: "9b5f9dc0-d74c-4ed4-ab31-a559208dfca7",
       end: {
-        x: 1860,
-        y: -680,
+        x: 3600,
+        y: 2600,
       },
       endId: "69db8570-6b62-4883-ae55-fd4634f28af1",
       name: "TwoWayVEdge",
@@ -1191,13 +1140,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1360,
-        y: -700,
+        x: 3100,
+        y: 2580,
       },
       startId: "5d1b5b1f-09c1-418d-a970-0b603466717d",
       end: {
-        x: 1280,
-        y: -1100,
+        x: 3020,
+        y: 2180,
       },
       endId: "4a14e719-872e-49e8-b9a0-c929eab417f0",
       name: "TwoWayVEdge",
@@ -1205,13 +1154,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1280,
-        y: -1100,
+        x: 3020,
+        y: 2180,
       },
       startId: "4a14e719-872e-49e8-b9a0-c929eab417f0",
       end: {
-        x: 880,
-        y: -1080,
+        x: 2620,
+        y: 2200,
       },
       endId: "eabdc0a8-a8ce-436a-bcc4-fc45be47e029",
       name: "TwoWayHEdge",
@@ -1219,13 +1168,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1280,
-        y: -1100,
+        x: 3020,
+        y: 2180,
       },
       startId: "4a14e719-872e-49e8-b9a0-c929eab417f0",
       end: {
-        x: 1340,
-        y: -1640,
+        x: 3080,
+        y: 1640,
       },
       endId: "e281d79d-a476-406d-b933-ba0bcc8ab751",
       name: "TwoWayVEdge",
@@ -1233,13 +1182,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 880,
-        y: -1080,
+        x: 2620,
+        y: 2200,
       },
       startId: "eabdc0a8-a8ce-436a-bcc4-fc45be47e029",
       end: {
-        x: 900,
-        y: -1640,
+        x: 2640,
+        y: 1640,
       },
       endId: "e19bd0c0-7d6b-4c0c-ac7e-7b9657a2672e",
       name: "TwoWayVEdge",
@@ -1247,13 +1196,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1340,
-        y: -1640,
+        x: 3080,
+        y: 1640,
       },
       startId: "e281d79d-a476-406d-b933-ba0bcc8ab751",
       end: {
-        x: 1260,
-        y: -2220,
+        x: 3000,
+        y: 1060,
       },
       endId: "8abc85c3-7e27-42c4-80d5-285a759c2f76",
       name: "TwoWayVEdge",
@@ -1261,13 +1210,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1260,
-        y: -2220,
+        x: 3000,
+        y: 1060,
       },
       startId: "8abc85c3-7e27-42c4-80d5-285a759c2f76",
       end: {
-        x: 1780,
-        y: -2260,
+        x: 3520,
+        y: 1020,
       },
       endId: "85b9fd88-1ff7-443f-8777-67a3e997302b",
       name: "TwoWayHEdge",
@@ -1275,13 +1224,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1780,
-        y: -2260,
+        x: 3520,
+        y: 1020,
       },
       startId: "85b9fd88-1ff7-443f-8777-67a3e997302b",
       end: {
-        x: 2340,
-        y: -2220,
+        x: 4080,
+        y: 1060,
       },
       endId: "31c40d6c-c329-4ce7-81aa-6da8232ce1c3",
       name: "TwoWayHEdge",
@@ -1289,13 +1238,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 900,
-        y: -1640,
+        x: 2640,
+        y: 1640,
       },
       startId: "e19bd0c0-7d6b-4c0c-ac7e-7b9657a2672e",
       end: {
-        x: -200,
-        y: -1640,
+        x: 1540,
+        y: 1640,
       },
       endId: "7e523595-c172-4256-9679-2f238ff26a66",
       name: "TwoWayHEdge",
@@ -1303,13 +1252,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -200,
-        y: -1640,
+        x: 1540,
+        y: 1640,
       },
       startId: "7e523595-c172-4256-9679-2f238ff26a66",
       end: {
-        x: -180,
-        y: -1080,
+        x: 1560,
+        y: 2200,
       },
       endId: "b7f91dba-adf7-43a0-a840-8f6ff5dd9fd4",
       name: "TwoWayVEdge",
@@ -1317,13 +1266,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 280,
-        y: -500,
+        x: 2020,
+        y: 2780,
       },
       startId: "9f33b95e-d11f-4d39-8322-4fd4516ed0c7",
       end: {
-        x: 320,
-        y: -1120,
+        x: 2060,
+        y: 2160,
       },
       endId: "c4b57755-a1b4-40f0-b2f9-503f77cc45c9",
       name: "TwoWayVEdge",
@@ -1331,13 +1280,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 320,
-        y: -1120,
+        x: 2060,
+        y: 2160,
       },
       startId: "c4b57755-a1b4-40f0-b2f9-503f77cc45c9",
       end: {
-        x: 880,
-        y: -1080,
+        x: 2620,
+        y: 2200,
       },
       endId: "eabdc0a8-a8ce-436a-bcc4-fc45be47e029",
       name: "OneWayHEdge",
@@ -1345,13 +1294,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 320,
-        y: -1120,
+        x: 2060,
+        y: 2160,
       },
       startId: "c4b57755-a1b4-40f0-b2f9-503f77cc45c9",
       end: {
-        x: -180,
-        y: -1080,
+        x: 1560,
+        y: 2200,
       },
       endId: "b7f91dba-adf7-43a0-a840-8f6ff5dd9fd4",
       name: "OneWayHEdge",
@@ -1359,13 +1308,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -200,
-        y: -1640,
+        x: 1540,
+        y: 1640,
       },
       startId: "7e523595-c172-4256-9679-2f238ff26a66",
       end: {
-        x: -140,
-        y: -2000,
+        x: 1600,
+        y: 1280,
       },
       endId: "6b636bd3-c5f1-46a3-8701-3fae0dce1728",
       name: "TwoWayVEdge",
@@ -1373,13 +1322,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -140,
-        y: -2000,
+        x: 1600,
+        y: 1280,
       },
       startId: "6b636bd3-c5f1-46a3-8701-3fae0dce1728",
       end: {
-        x: 280,
-        y: -2000,
+        x: 2020,
+        y: 1280,
       },
       endId: "b3c50da5-e4c3-462f-b23c-ba646ebbbecc",
       name: "TwoWayHEdge",
@@ -1387,13 +1336,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 900,
-        y: -1640,
+        x: 2640,
+        y: 1640,
       },
       startId: "e19bd0c0-7d6b-4c0c-ac7e-7b9657a2672e",
       end: {
-        x: 780,
-        y: -2340,
+        x: 2520,
+        y: 940,
       },
       endId: "2bc7c638-64f5-487e-a192-6d0b5e0b0863",
       name: "TwoWayVEdge",
@@ -1401,13 +1350,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 280,
-        y: -2000,
+        x: 2020,
+        y: 1280,
       },
       startId: "b3c50da5-e4c3-462f-b23c-ba646ebbbecc",
       end: {
-        x: 320,
-        y: -2400,
+        x: 2060,
+        y: 880,
       },
       endId: "35d6d4c2-e182-4f55-a67e-85dddd43b362",
       name: "TwoWayVEdge",
@@ -1415,13 +1364,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 320,
-        y: -2400,
+        x: 2060,
+        y: 880,
       },
       startId: "35d6d4c2-e182-4f55-a67e-85dddd43b362",
       end: {
-        x: 780,
-        y: -2340,
+        x: 2520,
+        y: 940,
       },
       endId: "2bc7c638-64f5-487e-a192-6d0b5e0b0863",
       name: "TwoWayHEdge",
@@ -1429,13 +1378,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -140,
-        y: -2000,
+        x: 1600,
+        y: 1280,
       },
       startId: "6b636bd3-c5f1-46a3-8701-3fae0dce1728",
       end: {
-        x: -200,
-        y: -2380,
+        x: 1540,
+        y: 900,
       },
       endId: "4b28d623-9d4f-4cb3-b5d0-52b4b434c9a4",
       name: "TwoWayVEdge",
@@ -1443,13 +1392,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -200,
-        y: -2380,
+        x: 1540,
+        y: 900,
       },
       startId: "4b28d623-9d4f-4cb3-b5d0-52b4b434c9a4",
       end: {
-        x: -140,
-        y: -2780,
+        x: 1600,
+        y: 500,
       },
       endId: "7b80b862-ac42-4774-a22b-e7fbc84da615",
       name: "TwoWayVEdge",
@@ -1457,13 +1406,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -140,
-        y: -2780,
+        x: 1600,
+        y: 500,
       },
       startId: "7b80b862-ac42-4774-a22b-e7fbc84da615",
       end: {
-        x: 360,
-        y: -2780,
+        x: 2100,
+        y: 500,
       },
       endId: "93e57c8b-a724-48e8-8b8c-0276b7c65b9d",
       name: "TwoWayHEdge",
@@ -1471,13 +1420,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 360,
-        y: -2780,
+        x: 2100,
+        y: 500,
       },
       startId: "93e57c8b-a724-48e8-8b8c-0276b7c65b9d",
       end: {
-        x: 320,
-        y: -2400,
+        x: 2060,
+        y: 880,
       },
       endId: "35d6d4c2-e182-4f55-a67e-85dddd43b362",
       name: "TwoWayVEdge",
@@ -1485,13 +1434,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 360,
-        y: -2780,
+        x: 2100,
+        y: 500,
       },
       startId: "93e57c8b-a724-48e8-8b8c-0276b7c65b9d",
       end: {
-        x: 320,
-        y: -3200,
+        x: 2060,
+        y: 80,
       },
       endId: "bb84ee52-aa76-494d-b1a0-e4a34852f35b",
       name: "TwoWayVEdge",
@@ -1499,13 +1448,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 320,
-        y: -3200,
+        x: 2060,
+        y: 80,
       },
       startId: "bb84ee52-aa76-494d-b1a0-e4a34852f35b",
       end: {
-        x: 960,
-        y: -3240,
+        x: 2700,
+        y: 40,
       },
       endId: "ab15fe4a-a97a-43f3-a645-36d8b9852e12",
       name: "TwoWayHEdge",
@@ -1513,13 +1462,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 960,
-        y: -3240,
+        x: 2700,
+        y: 40,
       },
       startId: "ab15fe4a-a97a-43f3-a645-36d8b9852e12",
       end: {
-        x: 1560,
-        y: -3180,
+        x: 3300,
+        y: 100,
       },
       endId: "9af7fe94-93c2-4e03-b568-14ede868504c",
       name: "TwoWayHEdge",
@@ -1527,13 +1476,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1560,
-        y: -3180,
+        x: 3300,
+        y: 100,
       },
       startId: "9af7fe94-93c2-4e03-b568-14ede868504c",
       end: {
-        x: 1560,
-        y: -2740,
+        x: 3300,
+        y: 540,
       },
       endId: "b53c7dc2-e0dd-4732-8ce8-2e0d0c638783",
       name: "TwoWayVEdge",
@@ -1541,13 +1490,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: 1560,
-        y: -2740,
+        x: 3300,
+        y: 540,
       },
       startId: "b53c7dc2-e0dd-4732-8ce8-2e0d0c638783",
       end: {
-        x: 960,
-        y: -2740,
+        x: 2700,
+        y: 540,
       },
       endId: "b59a2c3d-9203-4ecf-8e5d-910271e51446",
       name: "TwoWayHEdge",
@@ -1555,13 +1504,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -600,
-        y: -500,
+        x: 1140,
+        y: 2780,
       },
       startId: "0105fe2d-7ede-4cad-b9b9-5c80bf5db8ef",
       end: {
-        x: -700,
-        y: -1320,
+        x: 1040,
+        y: 1960,
       },
       endId: "beb09acf-c05c-4527-ad06-87c66173fafa",
       name: "TwoWayVEdge",
@@ -1569,13 +1518,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -700,
-        y: -1320,
+        x: 1040,
+        y: 1960,
       },
       startId: "beb09acf-c05c-4527-ad06-87c66173fafa",
       end: {
-        x: -1220,
-        y: -1360,
+        x: 520,
+        y: 1920,
       },
       endId: "dffedfc6-ab65-4469-83a5-2ebbd268bf4d",
       name: "TwoWayHEdge",
@@ -1583,13 +1532,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -700,
-        y: -1320,
+        x: 1040,
+        y: 1960,
       },
       startId: "beb09acf-c05c-4527-ad06-87c66173fafa",
       end: {
-        x: -580,
-        y: -2040,
+        x: 1160,
+        y: 1240,
       },
       endId: "15b1af06-26c5-4c48-8fc3-57001782ffdd",
       name: "TwoWayVEdge",
@@ -1597,13 +1546,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -200,
-        y: -2380,
+        x: 1540,
+        y: 900,
       },
       startId: "4b28d623-9d4f-4cb3-b5d0-52b4b434c9a4",
       end: {
-        x: -660,
-        y: -2400,
+        x: 1080,
+        y: 880,
       },
       endId: "7f93126e-30da-45ad-9464-8a59b8a587a6",
       name: "TwoWayHEdge",
@@ -1611,13 +1560,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -580,
-        y: -2040,
+        x: 1160,
+        y: 1240,
       },
       startId: "15b1af06-26c5-4c48-8fc3-57001782ffdd",
       end: {
-        x: -660,
-        y: -2400,
+        x: 1080,
+        y: 880,
       },
       endId: "7f93126e-30da-45ad-9464-8a59b8a587a6",
       name: "TwoWayVEdge",
@@ -1625,13 +1574,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -580,
-        y: -2040,
+        x: 1160,
+        y: 1240,
       },
       startId: "15b1af06-26c5-4c48-8fc3-57001782ffdd",
       end: {
-        x: -1240,
-        y: -2080,
+        x: 500,
+        y: 1200,
       },
       endId: "a570e52d-8680-40ff-8df8-0af72810c162",
       name: "TwoWayHEdge",
@@ -1639,13 +1588,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -1240,
-        y: -2080,
+        x: 500,
+        y: 1200,
       },
       startId: "a570e52d-8680-40ff-8df8-0af72810c162",
       end: {
-        x: -1200,
-        y: -2820,
+        x: 540,
+        y: 460,
       },
       endId: "8031e377-b46a-43e8-8138-594ceaeee66b",
       name: "TwoWayVEdge",
@@ -1653,13 +1602,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -1200,
-        y: -2820,
+        x: 540,
+        y: 460,
       },
       startId: "8031e377-b46a-43e8-8138-594ceaeee66b",
       end: {
-        x: -600,
-        y: -2840,
+        x: 1140,
+        y: 440,
       },
       endId: "95bf2652-6f20-44fb-8f5d-c2eaad6504fa",
       name: "TwoWayHEdge",
@@ -1667,13 +1616,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -660,
-        y: -2400,
+        x: 1080,
+        y: 880,
       },
       startId: "7f93126e-30da-45ad-9464-8a59b8a587a6",
       end: {
-        x: -600,
-        y: -2840,
+        x: 1140,
+        y: 440,
       },
       endId: "95bf2652-6f20-44fb-8f5d-c2eaad6504fa",
       name: "TwoWayVEdge",
@@ -1681,13 +1630,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -1220,
-        y: -1360,
+        x: 520,
+        y: 1920,
       },
       startId: "dffedfc6-ab65-4469-83a5-2ebbd268bf4d",
       end: {
-        x: -1660,
-        y: -1300,
+        x: 80,
+        y: 1980,
       },
       endId: "cd05210f-4b04-455b-84fd-1560bdfc40b6",
       name: "TwoWayHEdge",
@@ -1695,13 +1644,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -1660,
-        y: -1300,
+        x: 80,
+        y: 1980,
       },
       startId: "cd05210f-4b04-455b-84fd-1560bdfc40b6",
       end: {
-        x: -1580,
-        y: -1940,
+        x: 160,
+        y: 1340,
       },
       endId: "6ef35753-d9c9-4b12-8832-5b2f5d695674",
       name: "TwoWayVEdge",
@@ -1709,13 +1658,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -1580,
-        y: -1940,
+        x: 160,
+        y: 1340,
       },
       startId: "6ef35753-d9c9-4b12-8832-5b2f5d695674",
       end: {
-        x: -1700,
-        y: -2400,
+        x: 40,
+        y: 880,
       },
       endId: "252e5871-5f5b-4fe3-adcf-f82de3b6ff28",
       name: "TwoWayVEdge",
@@ -1723,13 +1672,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -1200,
-        y: -2820,
+        x: 540,
+        y: 460,
       },
       startId: "8031e377-b46a-43e8-8138-594ceaeee66b",
       end: {
-        x: -1680,
-        y: -2840,
+        x: 60,
+        y: 440,
       },
       endId: "23c56dc0-4265-4efc-93fc-090914d2dcd6",
       name: "TwoWayHEdge",
@@ -1737,13 +1686,13 @@ const europeCaveHallMap: GraphJSON = {
     },
     {
       start: {
-        x: -1700,
-        y: -2400,
+        x: 40,
+        y: 880,
       },
       startId: "252e5871-5f5b-4fe3-adcf-f82de3b6ff28",
       end: {
-        x: -1680,
-        y: -2840,
+        x: 60,
+        y: 440,
       },
       endId: "23c56dc0-4265-4efc-93fc-090914d2dcd6",
       name: "TwoWayVEdge",

@@ -7,7 +7,7 @@ import YellowBlock from "layouts/YellowBlock";
 import styles from "./CastleFieldCheck.module.css";
 import BottomDialog from "components/BottomDialog";
 import { useContext } from "react";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 

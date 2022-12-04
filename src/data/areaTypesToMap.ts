@@ -15,12 +15,8 @@ import europeCaveCanteenMap from "./maps/europeCaveCanteenMap";
 import europeCaveHallMap from "./maps/europeCaveHallMap";
 import europeCaveLibraryMap from "./maps/europeCaveLibraryMap";
 import hawaiianIslandsCaveMap from "./maps/hawaiianIslandsCaveMap";
-import hawaiianIslandsCaveB2CenterMap from "./maps/hawaiianIslandsCaveB2CenterMap";
-import hawaiianIslandsCaveB2LeftMap from "./maps/hawaiianIslandsCaveB2LeftMap";
-import hawaiianIslandsCaveB2RightMap from "./maps/hawaiianIslandsCaveB2RightMap";
-import hawaiianIslandsCaveB3CenterMap from "./maps/hawaiianIslandsCaveB3CenterMap";
-import hawaiianIslandsCaveB3LeftMap from "./maps/hawaiianIslandsCaveB3LeftMap";
-import hawaiianIslandsCaveB3RightMap from "./maps/hawaiianIslandsCaveB3RightMap";
+import hawaiianIslandsCaveB2Map from "./maps/hawaiianIslandsCaveB2";
+import hawaiianIslandsCaveB3Map from "./maps/hawaiianIslandsCaveB3Map";
 import northAmericaCaveMap from "./maps/northAmericaCaveMap";
 import northAmericaCaveB2Map from "./maps/northAmericaCaveB2Map";
 import southAmericaCaveMap from "./maps/southAmericaCaveMap";
@@ -73,12 +69,12 @@ const areaTypesToMap: { [key in AreaTypes]: GraphJSON } = {
   AntarcticaCaveB3: antarcticaCaveB3Map,
   HawaiianIslands: dokaponTheWorldMap,
   HawaiianIslandsCave: hawaiianIslandsCaveMap,
-  HawaiianIslandsCaveB2Right: hawaiianIslandsCaveB2RightMap,
-  HawaiianIslandsCaveB2Left: hawaiianIslandsCaveB2LeftMap,
-  HawaiianIslandsCaveB2Center: hawaiianIslandsCaveB2CenterMap,
-  HawaiianIslandsCaveB3Right: hawaiianIslandsCaveB3RightMap,
-  HawaiianIslandsCaveB3Left: hawaiianIslandsCaveB3LeftMap,
-  HawaiianIslandsCaveB3Center: hawaiianIslandsCaveB3CenterMap,
+  HawaiianIslandsCaveB2Right: hawaiianIslandsCaveB2Map,
+  HawaiianIslandsCaveB2Left: hawaiianIslandsCaveB2Map,
+  HawaiianIslandsCaveB2Center: hawaiianIslandsCaveB2Map,
+  HawaiianIslandsCaveB3Right: hawaiianIslandsCaveB3Map,
+  HawaiianIslandsCaveB3Left: hawaiianIslandsCaveB3Map,
+  HawaiianIslandsCaveB3Center: hawaiianIslandsCaveB3Map,
   Atlantis: dokaponTheWorldMap,
   BetweenDimensions: betweenDimensionsMap,
 };

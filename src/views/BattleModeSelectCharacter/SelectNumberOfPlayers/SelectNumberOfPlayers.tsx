@@ -5,7 +5,7 @@ import { useContext } from "react";
 import styles from "./SelectNumberOfPlayers.module.css";
 import YellowBlock from "layouts/YellowBlock";
 import useTranslation from "hooks/useTranslation";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import SVGIcon from "layouts/SVGIcon";
 
 // Stateless vars declare.

@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 // Local application/library specific imports.
 import styles from "./Roulette.module.css";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 const stopAt = [

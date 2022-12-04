@@ -18,7 +18,7 @@ import ChurchFieldCheck from "./Check/ChurchFieldCheck";
 import VillageFieldCheck from "./Check/VillageFieldCheck";
 import CollectMoneyFieldCheck from "./Check/CollectMoneyFieldCheck";
 import OnlyBottomDialogFieldCheck from "./Check/OnlyBottomDialogFieldCheck";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import type { DokaponTheWorldComponentTypes } from "global";
 import type { TextsKeys } from "data/texts";
 import jobs from "data/jobs";

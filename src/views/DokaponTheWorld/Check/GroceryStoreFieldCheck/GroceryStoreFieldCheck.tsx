@@ -7,7 +7,7 @@ import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
 import styles from "./GroceryStoreFieldCheck.module.css";
 import groceryStores from "data/groceryStores";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import BottomDialog from "components/BottomDialog";
 
 // Stateless vars declare.

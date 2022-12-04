@@ -7,7 +7,7 @@ import { basicJobs } from "data/jobs";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
 import styles from "./SelectJob.module.css";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import topAreaStyles from "../TopArea/TopArea.module.css";
 
 // Stateless vars declare.

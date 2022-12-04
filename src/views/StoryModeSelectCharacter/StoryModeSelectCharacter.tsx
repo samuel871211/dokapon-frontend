@@ -18,7 +18,7 @@ import useTranslation from "hooks/useTranslation";
 import guide from "assets/images/guide.png";
 import topAreaStyles from "../BattleModeSelectCharacter/TopArea/TopArea.module.css";
 import styles from "./StoryModeSelectCharacter.module.css";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import type {
   BasicJobTypes,
   BottomDialogProps,

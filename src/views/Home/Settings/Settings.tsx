@@ -5,7 +5,7 @@ import classNames from "classnames";
 // Local application/library specific imports.
 import styles from "./Settings.module.css";
 import useTranslation from "hooks/useTranslation";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import KeyMappingDialog from "../KeyMappingDialog";
 
 // Stateless vars declare.

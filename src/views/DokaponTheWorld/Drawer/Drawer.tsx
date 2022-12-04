@@ -7,7 +7,7 @@ import SomeKindOfIcon from "components/icons";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import styles from "./Drawer.module.css";
 import useTranslation from "hooks/useTranslation";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import { PlayerAttrs } from "global";
 
 // Stateless vars declare.

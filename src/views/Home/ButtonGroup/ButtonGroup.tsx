@@ -5,7 +5,7 @@ import { useContext } from "react";
 import styles from "./ButtonGroup.module.css";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 

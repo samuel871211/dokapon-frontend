@@ -7,7 +7,7 @@ import BottomDialogConfirmCircle from "components/BottomDialogConfirmCircle";
 import { BottomDialogProps } from "global";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import styles from "./BottomDialog.module.css";
 
 // Stateless vars declare.

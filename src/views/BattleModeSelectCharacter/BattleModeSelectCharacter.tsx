@@ -20,7 +20,7 @@ import useTranslation from "hooks/useTranslation";
 import guide from "assets/images/guide.png";
 import topAreaStyles from "./TopArea/TopArea.module.css";
 import styles from "./BattleModeSelectCharacter.module.css";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 import type {
   BasicJobTypes,
   BattleModeSelectCharacterComponentTypes,

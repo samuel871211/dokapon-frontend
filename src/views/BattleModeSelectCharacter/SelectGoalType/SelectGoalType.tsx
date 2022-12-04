@@ -6,7 +6,7 @@ import styles from "./SelectGoalType.module.css";
 import YellowBlock from "layouts/YellowBlock";
 import SVGIcon from "layouts/SVGIcon";
 import useTranslation from "hooks/useTranslation";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 

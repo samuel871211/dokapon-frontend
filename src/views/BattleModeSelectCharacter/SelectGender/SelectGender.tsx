@@ -8,7 +8,7 @@ import YellowBlock from "layouts/YellowBlock";
 import useTranslation from "hooks/useTranslation";
 import SVGIcon from "layouts/SVGIcon";
 import { useContext } from "react";
-import { gameProgressCtx } from "reducers/gameProgress";
+import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;

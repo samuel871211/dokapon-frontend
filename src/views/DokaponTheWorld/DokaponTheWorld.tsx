@@ -24,7 +24,6 @@ import type { TextsKeys } from "data/texts";
 import jobs from "data/jobs";
 import magicStores from "data/magicStores";
 import useTranslation from "hooks/useTranslation";
-import areaTypesToCellsGroupBBox from "data/areaTypesToCellsGroupBBox";
 import ids from "./ids";
 
 // Stateless vars declare.
@@ -38,6 +37,10 @@ let curIntervalId: number;
  * SVG Element的寬度跟高度，會在`window.resize`觸發之後更新
  */
 const svgViewBox = { width: 0, height: 0 };
+/**
+ * G Element的BBox，會在地圖切換的時候更新
+ */
+let cellsGroupBBox = { x: 0, y: 0, width: 0, height: 0 };
 const text: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
   BattleFieldCheck: ["ザコモンスターとの戦闘や\nイベントが発生するマス。"],
   DamageFieldCheck: [
@@ -122,6 +125,12 @@ const Components: {
   SelectCharacterToCompare: () => <></>,
   PlayerVsCharacterDialogs: () => <></>,
 };
+function updateCellsGroupBBox() {
+  const cellsGroupEl = document.getElementById(ids.cellsGroup);
+  if (!(cellsGroupEl instanceof SVGGElement)) return console.error();
+
+  cellsGroupBBox = cellsGroupEl.getBBox();
+}
 
 export default DokaponTheWorld;
 
@@ -166,7 +175,6 @@ function useMetaData() {
     bottomDialogSentencesQueue,
   } = gameProgress;
   const currentPlayer = playersAttrs[currentPlayerIdx];
-  const curCellsGroupBBox = areaTypesToCellsGroupBBox[currentPlayer.area];
   const {
     curComponents,
     DrawerState,
@@ -604,14 +612,20 @@ function useMetaData() {
    * 只是不會去dispatch setState action，避免react頻繁觸發re-render
    */
   function moveMap(position: { deltaX: number; deltaY: number }) {
-    const { deltaX, deltaY } = position;
+    let { deltaX, deltaY } = position;
+    deltaX = parseInt(deltaX.toFixed(0));
+    deltaY = parseInt(deltaY.toFixed(0));
     const { curAreaPosition } = CheckState.miniMap;
-    const { x: bx, y: by, width: bWidth, height: bHeight } = curCellsGroupBBox;
+    const { x: bx, y: by, width: bWidth, height: bHeight } = cellsGroupBBox;
     const { width: vWidth, height: vHeight } = svgViewBox;
-    const SVGTranslateX1 = (bx - vWidth / 2) * -1;
-    const SVGTranslateX2 = (bx + bWidth) * -1 + vWidth / 2;
-    const SVGTranslateY1 = (by - vHeight / 2) * -1;
-    const SVGTranslateY2 = (by + bHeight) * -1 + vHeight / 2;
+    const SVGTranslateX1 = parseInt(((bx - vWidth / 2) * -1).toFixed(0));
+    const SVGTranslateX2 = parseInt(
+      ((bx + bWidth) * -1 + vWidth / 2).toFixed(0)
+    );
+    const SVGTranslateY1 = parseInt(((by - vHeight / 2) * -1).toFixed(0));
+    const SVGTranslateY2 = parseInt(
+      ((by + bHeight) * -1 + vHeight / 2).toFixed(0)
+    );
     const fullWidth = Math.abs(SVGTranslateX2 - SVGTranslateX1);
     const fullHeight = Math.abs(SVGTranslateY2 - SVGTranslateY1);
     const cellsGroupEl = document.getElementById(ids.cellsGroup);
@@ -645,6 +659,7 @@ function useMetaData() {
   }
   useEffect(handleMapMove, [keyDownArrows]);
   useEffect(handleBottomDialogQueue, [curComponents[0]]);
+  useEffect(updateCellsGroupBBox, [currentPlayer.area]);
   useEffect(() => {
     // AUTO FOCUS CONTAINER ELEMENT WHEN COMPONENT MOUNTED
     containerRefEl.current?.focus();

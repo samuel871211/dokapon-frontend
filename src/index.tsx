@@ -51,11 +51,11 @@ function App() {
 
   return (
     <gameProgressCtx.Provider value={{ gameProgress, setGameProgress }}>
-      {/* <div className={rootStyles[aspectRatio]}>
+      <div className={rootStyles[aspectRatio]}>
         <View />
       </div>
-      <GameProgressCtxMenu /> */}
-      <GraphEditor />
+      <GameProgressCtxMenu />
+      {/* <GraphEditor /> */}
     </gameProgressCtx.Provider>
   );
 }

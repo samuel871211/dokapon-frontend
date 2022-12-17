@@ -10,3 +10,19 @@
   height: 100%;
   background-color: #333333;
 }
+.graphSVG g[data-type="vertex"] circle {
+  transition: scale 0.25s;
+}
+.graphSVG g[data-type="vertex"] circle:hover {
+  scale: 1.5;
+}
+.centeredCircle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 10px solid #c2512b;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

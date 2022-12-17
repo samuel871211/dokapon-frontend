@@ -108,7 +108,7 @@ class GraphDSA {
   /**
    * 呼叫此method之前
    *
-   * 會先計算目前使用者所在位置，30步能到達的所有組合
+   * 會先計算目前使用者所在位置，N步能到達的所有組合
    *
    * 接下來只要從`traversedQueues`去尋找，就可以找到最短距離
    */
@@ -120,11 +120,11 @@ class GraphDSA {
   // eslint-disable-next-line
   #getResult() {
     return {
-      paths: this.#paths,
-      traversedQueues: this.#traversedQueues,
-      untraversedQueues: this.#untraversedQueues,
-      ends: this.#ends,
-      endPositions: this.#endPositions,
+      paths: [...this.#paths],
+      traversedQueues: [...this.#traversedQueues],
+      untraversedQueues: [...this.#untraversedQueues],
+      ends: [...this.#ends],
+      endPositions: [...this.#endPositions],
     };
   }
   #addResultAndGoBack(): void {
@@ -218,4 +218,3 @@ class GraphDSA {
 }
 
 export default GraphDSA;
-// const a: { [key: number]: string } = [''];

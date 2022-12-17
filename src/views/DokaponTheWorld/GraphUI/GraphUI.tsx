@@ -1,5 +1,12 @@
 // Related third party imports.
-import { createElement, useMemo, useContext } from "react";
+import {
+  createElement,
+  useMemo,
+  useContext,
+  useEffect,
+  PointerEvent,
+  MouseEvent,
+} from "react";
 
 // Local application/library specific imports.
 import type { GraphJSON, AreaTypes } from "global";
@@ -102,7 +109,10 @@ const Components = {
  * 紀錄SVG偏移的基準點，之後再加上滑鼠移動距離，就會是最新的偏移量
  */
 // const pointerDownTranslate = { x: -1, y: -1 };
-
+/**
+ * 預設未載入的`GraphDSA`，後續玩家進入該地圖才會載入
+ */
+const emptyGraphDSA = {};
 const dokaponTheWorldMapGraphDSA = new GraphDSA(dokaponTheWorldMap);
 /**
  * 僅先載入主地圖，其餘地圖等玩家有進入再載入
@@ -120,72 +130,73 @@ const GraphDSAs: { [key in AreaTypes]: GraphDSA } = {
   HawaiianIslands: dokaponTheWorldMapGraphDSA,
   Atlantis: dokaponTheWorldMapGraphDSA,
   //
-  AsiaCave: {} as GraphDSA,
+  AsiaCave: emptyGraphDSA as GraphDSA,
   //
-  EuropeCave: {} as GraphDSA,
-  EuropeCaveLibrary: {} as GraphDSA,
-  EuropeCaveCanteen: {} as GraphDSA,
-  EuropeCaveHall: {} as GraphDSA,
+  EuropeCave: emptyGraphDSA as GraphDSA,
+  EuropeCaveLibrary: emptyGraphDSA as GraphDSA,
+  EuropeCaveCanteen: emptyGraphDSA as GraphDSA,
+  EuropeCaveHall: emptyGraphDSA as GraphDSA,
   //
-  NorthAmericaCave: {} as GraphDSA,
-  NorthAmericaCaveB2: {} as GraphDSA,
+  NorthAmericaCave: emptyGraphDSA as GraphDSA,
+  NorthAmericaCaveB2: emptyGraphDSA as GraphDSA,
   //
-  SouthAmericaCave: {} as GraphDSA,
-  SouthAmericaCaveB2: {} as GraphDSA,
-  SouthAmericaCaveB3: {} as GraphDSA,
+  SouthAmericaCave: emptyGraphDSA as GraphDSA,
+  SouthAmericaCaveB2: emptyGraphDSA as GraphDSA,
+  SouthAmericaCaveB3: emptyGraphDSA as GraphDSA,
   //
-  OceaniaCave: {} as GraphDSA,
-  OceaniaCaveB1: {} as GraphDSA,
-  OceaniaCaveB2: {} as GraphDSA,
+  OceaniaCave: emptyGraphDSA as GraphDSA,
+  OceaniaCaveB1: emptyGraphDSA as GraphDSA,
+  OceaniaCaveB2: emptyGraphDSA as GraphDSA,
   //
-  AfricaCave: {} as GraphDSA,
-  AfricaCaveB2: {} as GraphDSA,
-  AfricaCaveB3Right: {} as GraphDSA,
-  AfricaCaveB3Left: {} as GraphDSA,
-  AfricaCaveB3Center: {} as GraphDSA,
+  AfricaCave: emptyGraphDSA as GraphDSA,
+  AfricaCaveB2: emptyGraphDSA as GraphDSA,
+  AfricaCaveB3Right: emptyGraphDSA as GraphDSA,
+  AfricaCaveB3Left: emptyGraphDSA as GraphDSA,
+  AfricaCaveB3Center: emptyGraphDSA as GraphDSA,
   //
-  ArcticCave: {} as GraphDSA,
-  ArcticCaveB2: {} as GraphDSA,
-  ArcticCaveB3: {} as GraphDSA,
+  ArcticCave: emptyGraphDSA as GraphDSA,
+  ArcticCaveB2: emptyGraphDSA as GraphDSA,
+  ArcticCaveB3: emptyGraphDSA as GraphDSA,
   //
-  AntarcticaCave: {} as GraphDSA,
-  AntarcticaCaveB2: {} as GraphDSA,
-  AntarcticaCaveB3: {} as GraphDSA,
+  AntarcticaCave: emptyGraphDSA as GraphDSA,
+  AntarcticaCaveB2: emptyGraphDSA as GraphDSA,
+  AntarcticaCaveB3: emptyGraphDSA as GraphDSA,
   //
-  HawaiianIslandsCave: {} as GraphDSA,
-  HawaiianIslandsCaveB2Right: {} as GraphDSA,
-  HawaiianIslandsCaveB2Left: {} as GraphDSA,
-  HawaiianIslandsCaveB2Center: {} as GraphDSA,
-  HawaiianIslandsCaveB3Right: {} as GraphDSA,
-  HawaiianIslandsCaveB3Left: {} as GraphDSA,
-  HawaiianIslandsCaveB3Center: {} as GraphDSA,
+  HawaiianIslandsCave: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB2Right: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB2Left: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB2Center: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB3Right: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB3Left: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB3Center: emptyGraphDSA as GraphDSA,
   //
-  BetweenDimensions: {} as GraphDSA,
+  BetweenDimensions: emptyGraphDSA as GraphDSA,
 };
 
 export default GraphUI;
 
 function GraphUI() {
   const {
-    // handlePointerOver,
-    // handleDoubleClick,
+    handlePointerOver,
+    handleDoubleClick,
     // handlePointerDown,
     // handleWheel,
     // SVGScale,
     SVGTranslate,
     Cells,
     PlayersChess,
-    HighLights,
+    // HighLights,
   } = useMetaData();
   return (
     <div className={styles.graphUIcontainer}>
+      {/* <div className={styles.centeredCircle}></div> */}
       <svg
         id={ids.graphSVG}
         className={styles.graphSVG}
         // onWheel={handleWheel}
         // onPointerDown={handlePointerDown}
-        // onDoubleClick={handleDoubleClick}
-        // onPointerOver={handlePointerOver}
+        onDoubleClick={handleDoubleClick}
+        onPointerOver={handlePointerOver}
       >
         <defs>
           <marker
@@ -204,9 +215,10 @@ function GraphUI() {
         >
           {Cells}
           {PlayersChess}
-          {HighLights}
+          {/* {HighLights} */}
         </g>
       </svg>
+      {/* <div className={styles.centeredCircle}></div> */}
     </div>
   );
 }
@@ -215,27 +227,38 @@ function GraphUI() {
  * @todo 當玩家座標or變動，重新計算30個點的所有路徑
  */
 function useMetaData() {
-  const { gameProgress } = useContext(gameProgressCtx);
+  const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
   const { DokaponTheWorldState, playersAttrs, currentPlayerIdx } = gameProgress;
-  const { GraphUIState } = DokaponTheWorldState;
+  const { GraphUIState, CheckState, curComponents } = DokaponTheWorldState;
   const { SVGTranslate } = GraphUIState;
   const showHighLight = true;
   const curPlayer = playersAttrs[currentPlayerIdx];
-  const curArea = curPlayer.area;
-  const curGraph = useMemo(() => areaTypesToMap[curArea], [curArea]);
-  const Cells = useMemo(() => renderCells(curGraph), [curGraph]);
+  const curGraph = areaTypesToMap[curPlayer.area];
   const curPlayerVertexId = curGraph.vertices[curPlayer.vertexIdx].id;
-  const resultDSA = useMemo(
-    () => dokaponTheWorldMapGraphDSA.getAllPaths(curPlayerVertexId, 30),
-    [curPlayerVertexId]
-  );
-  const HighLights = useMemo(
-    () =>
-      resultDSA.endPositions.map((position, index) => (
-        <HighLightVertex key={index} position={position} show={showHighLight} />
-      )),
-    [resultDSA.endPositions, showHighLight]
-  );
+  const Cells = useMemo(() => renderCells(curGraph), [curGraph]);
+
+  useEffect(() => {
+    const area = curPlayer.area;
+    // 被動載入新地圖
+    if (GraphDSAs[area] === emptyGraphDSA) {
+      GraphDSAs[area] = new GraphDSA(areaTypesToMap[area]);
+    }
+    // @todo 計算30步
+    GraphDSAs[area].getAllPaths(curPlayerVertexId, 30);
+
+    // @todo HighLight不用做啊
+  }, [curPlayer.area, curPlayerVertexId]);
+  // const resultDSA = useMemo(
+  //   () => dokaponTheWorldMapGraphDSA.getAllPaths(curPlayerVertexId, 30),
+  //   [curPlayerVertexId]
+  // );
+  // const HighLights = useMemo(
+  //   () =>
+  //     resultDSA.endPositions.map((position, index) => (
+  //       <HighLightVertex key={index} position={position} show={showHighLight} />
+  //     )),
+  //   [resultDSA.endPositions, showHighLight]
+  // );
   const PlayersChess = playersAttrs.map((playerAttrs, idx) => (
     <PlayerChess
       key={idx}
@@ -250,146 +273,147 @@ function useMetaData() {
   /**
    * `vertex.name`要轉成日文，要做一個mapping table
    */
-  // function handlePointerOver(e: PointerEvent<SVGSVGElement>) {
-  //   if (
-  //     !(e.target instanceof SVGCircleElement) &&
-  //     !(e.target instanceof SVGImageElement)
-  //   ) {
-  //     CheckState.showVertexNameAndDistance = false;
-  //     setGameProgress({ ...gameProgress });
-  //     return;
-  //   }
+  function handlePointerOver(e: PointerEvent<SVGSVGElement>) {
+    if (
+      !(e.target instanceof SVGCircleElement) &&
+      !(e.target instanceof SVGImageElement)
+    ) {
+      CheckState.showVertexNameAndDistance = false;
+      setGameProgress({ ...gameProgress });
+      return;
+    }
 
-  //   // get vertex id from <g> attribute
-  //   const isClickOnVertex = e.target instanceof SVGCircleElement;
-  //   const vertexId = isClickOnVertex
-  //     ? e.target.parentElement?.id
-  //     : e.target.parentElement?.getAttribute("data-vertex-id");
-  //   if (!vertexId) return console.error("no vertexId");
+    // get vertex id from <g> attribute
+    const isClickOnVertex = e.target instanceof SVGCircleElement;
+    const vertexId = isClickOnVertex
+      ? e.target.parentElement?.id
+      : e.target.parentElement?.getAttribute("data-vertex-id");
+    if (!vertexId) return console.error("no vertexId");
 
-  //   // get vertex from `curGraph.vertices`
-  //   const vertex = curGraph.vertices.find((item) => item.id === vertexId);
-  //   if (!vertex) return console.error("no clicked vertex");
+    // get vertex from `curGraph.vertices`
+    const vertex = curGraph.vertices.find((item) => item.id === vertexId);
+    if (!vertex) return console.error("no clicked vertex");
 
-  //   // show Vertex Name And Distance
-  //   const curPlayerVertex = curGraph.vertices[curPlayer.vertexIdx];
-  //   const distance = dokaponTheWorldMapGraphDSA.calMinDistanceTo(vertex.id);
-  //   CheckState.curHoverVertexDistance = distance;
-  //   CheckState.showVertexNameAndDistance = true;
-  //   CheckState.curHoverVertexName = vertex.name;
-  //   setGameProgress({ ...gameProgress });
-  // }
+    // show Vertex Name And Distance
+    const curPlayerVertex = curGraph.vertices[curPlayer.vertexIdx];
+    const distance = dokaponTheWorldMapGraphDSA.calMinDistanceTo(vertex.id);
+    CheckState.curHoverVertexDistance = distance;
+    CheckState.showVertexNameAndDistance = true;
+    CheckState.curHoverVertexName = vertex.name;
+    setGameProgress({ ...gameProgress });
+  }
   /**
    * @todo click on enemy
    * @todo click on monster
    * @todo 釐清 集金 跟 全集金 的差別
+   * @todo 改成 圈圈的keyUp
    */
-  // function handleDoubleClick(e: MouseEvent<SVGSVGElement>) {
-  //   if (
-  //     !(e.target instanceof SVGImageElement) &&
-  //     !(e.target instanceof SVGCircleElement)
-  //   ) {
-  //     return;
-  //   }
+  function handleDoubleClick(e: MouseEvent<SVGSVGElement>) {
+    if (
+      !(e.target instanceof SVGImageElement) &&
+      !(e.target instanceof SVGCircleElement)
+    ) {
+      return;
+    }
 
-  //   // get vertex id from <g> attribute
-  //   const isClickOnVertex = e.target instanceof SVGCircleElement;
-  //   const vertexId = isClickOnVertex
-  //     ? e.target.parentElement?.id
-  //     : e.target.parentElement?.getAttribute("data-vertex-id");
-  //   if (!vertexId) return console.error("no vertexId");
+    // get vertex id from <g> attribute
+    const isClickOnVertex = e.target instanceof SVGCircleElement;
+    const vertexId = isClickOnVertex
+      ? e.target.parentElement?.id
+      : e.target.parentElement?.getAttribute("data-vertex-id");
+    if (!vertexId) return console.error("no vertexId");
 
-  //   // get vertex from `curGraph.vertices`
-  //   const vertex = curGraph.vertices.find((item) => item.id === vertexId);
-  //   if (!vertex) return console.error("no clicked vertex");
+    // get vertex from `curGraph.vertices`
+    const vertex = curGraph.vertices.find((item) => item.id === vertexId);
+    if (!vertex) return console.error("no clicked vertex");
 
-  //   // reset `curComponents` and close `showVertexNameAndDistance`
-  //   CheckState.showVertexNameAndDistance = false;
-  //   curComponents.length = 0;
+    // reset `curComponents` and close `showVertexNameAndDistance`
+    CheckState.showVertexNameAndDistance = false;
+    curComponents.length = 0;
 
-  //   // check if player (self excluded), enemy or monster is clicked
-  //   const clickedPlayers = playersAttrs.filter(
-  //     (playerAttrs) =>
-  //       curGraph.vertices[playerAttrs.vertexIdx] === vertex &&
-  //       playerAttrs !== curPlayer
-  //   );
-  //   const clickedEnemies = [];
-  //   const clickedMonsters = [];
-  //   const totalClickedCharactersCount =
-  //     clickedPlayers.length + clickedEnemies.length + clickedMonsters.length;
-  //   if (totalClickedCharactersCount === 1) {
-  //     curComponents.push("PlayerVsCharacterDialogs");
-  //   } else if (totalClickedCharactersCount > 1) {
-  //     curComponents.push("SelectCharacterToCompare");
-  //   }
+    // check if player (self excluded), enemy or monster is clicked
+    const clickedPlayers = playersAttrs.filter(
+      (playerAttrs) =>
+        curGraph.vertices[playerAttrs.vertexIdx] === vertex &&
+        playerAttrs !== curPlayer
+    );
+    const clickedEnemies = [];
+    const clickedMonsters = [];
+    const totalClickedCharactersCount =
+      clickedPlayers.length + clickedEnemies.length + clickedMonsters.length;
+    if (totalClickedCharactersCount === 1) {
+      curComponents.push("PlayerVsCharacterDialogs");
+    } else if (totalClickedCharactersCount > 1) {
+      curComponents.push("SelectCharacterToCompare");
+    }
 
-  //   // handle click on vertex
-  //   DokaponTheWorldState.curClickVertex = vertex;
-  //   switch (vertex.name) {
-  //     case "BattleField":
-  //       curComponents.push("BattleFieldCheck");
-  //       break;
-  //     case "KeyTreasureField":
-  //       curComponents.push("TreasureFieldCheck");
-  //       break;
-  //     case "MagicBookField":
-  //       curComponents.push("MagicBookFieldCheck");
-  //       break;
-  //     case "RedTreasureField":
-  //       curComponents.push("RedTreasureFieldCheck");
-  //       break;
-  //     case "TreasureField":
-  //       curComponents.push("TreasureFieldCheck");
-  //       break;
-  //     case "WhiteTreasureField":
-  //       curComponents.push("WhiteTreasureFieldCheck");
-  //       break;
-  //     case "WorldTransferField":
-  //       curComponents.push("WorldTransferFieldCheck");
-  //       break;
-  //     case "GoldTreasureField":
-  //       curComponents.push("GoldTreasureFieldCheck");
-  //       break;
-  //     case "DamageField":
-  //       curComponents.push("DamageFieldCheck");
-  //       break;
-  //     case "CollectAllMoneyField":
-  //       curComponents.push("BeforeCollectMoneyFieldCheck");
-  //       break;
-  //     case "CollectMoneyField":
-  //       curComponents.push("BeforeCollectMoneyFieldCheck");
-  //       break;
-  //     case "CaveField":
-  //       curComponents.push("CastleFieldCheck");
-  //       break;
-  //     case "VillageField":
-  //       curComponents.push("VillageFieldCheck");
-  //       break;
-  //     case "CastleField":
-  //       curComponents.push("CastleFieldCheck");
-  //       break;
-  //     case "ChruchField":
-  //       curComponents.push("ChurchFieldCheck");
-  //       break;
-  //     case "GroceryStoreField":
-  //       curComponents.push("GroceryStoreFieldCheck");
-  //       break;
-  //     case "JobStoreField":
-  //       curComponents.push("JobStoreFieldCheck");
-  //       break;
-  //     case "MagicStoreField":
-  //       curComponents.push("MagicStoreFieldCheck");
-  //       break;
-  //     case "WeaponStoreField":
-  //       curComponents.push("WeaponStoreFieldCheck");
-  //       break;
-  //     default:
-  //       // 滑鼠hover上去`name`，型別應該要是`never`，才代表所有case都有涵蓋到
-  //       vertex.name;
-  //       break;
-  //   }
-  //   setGameProgress({ ...gameProgress });
-  // }
+    // handle click on vertex
+    DokaponTheWorldState.curClickVertex = vertex;
+    switch (vertex.name) {
+      case "BattleField":
+        curComponents.push("BattleFieldCheck");
+        break;
+      case "KeyTreasureField":
+        curComponents.push("TreasureFieldCheck");
+        break;
+      case "MagicBookField":
+        curComponents.push("MagicBookFieldCheck");
+        break;
+      case "RedTreasureField":
+        curComponents.push("RedTreasureFieldCheck");
+        break;
+      case "TreasureField":
+        curComponents.push("TreasureFieldCheck");
+        break;
+      case "WhiteTreasureField":
+        curComponents.push("WhiteTreasureFieldCheck");
+        break;
+      case "WorldTransferField":
+        curComponents.push("WorldTransferFieldCheck");
+        break;
+      case "GoldTreasureField":
+        curComponents.push("GoldTreasureFieldCheck");
+        break;
+      case "DamageField":
+        curComponents.push("DamageFieldCheck");
+        break;
+      case "CollectAllMoneyField":
+        curComponents.push("BeforeCollectMoneyFieldCheck");
+        break;
+      case "CollectMoneyField":
+        curComponents.push("BeforeCollectMoneyFieldCheck");
+        break;
+      case "CaveField":
+        curComponents.push("CastleFieldCheck");
+        break;
+      case "VillageField":
+        curComponents.push("VillageFieldCheck");
+        break;
+      case "CastleField":
+        curComponents.push("CastleFieldCheck");
+        break;
+      case "ChruchField":
+        curComponents.push("ChurchFieldCheck");
+        break;
+      case "GroceryStoreField":
+        curComponents.push("GroceryStoreFieldCheck");
+        break;
+      case "JobStoreField":
+        curComponents.push("JobStoreFieldCheck");
+        break;
+      case "MagicStoreField":
+        curComponents.push("MagicStoreFieldCheck");
+        break;
+      case "WeaponStoreField":
+        curComponents.push("WeaponStoreFieldCheck");
+        break;
+      default:
+        // 滑鼠hover上去`name`，型別應該要是`never`，才代表所有case都有涵蓋到
+        vertex.name;
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
   /**
    * POINTERDOWN註冊在SVG ELEMENT身上
    *
@@ -458,14 +482,14 @@ function useMetaData() {
   //   setGameProgress({ ...gameProgress });
   // }
   return {
-    // handlePointerOver,
-    // handleDoubleClick,
+    handlePointerOver,
+    handleDoubleClick,
     // handlePointerDown,
     // handleWheel,
     // SVGScale,
     SVGTranslate,
     Cells,
     PlayersChess,
-    HighLights,
+    // HighLights,
   };
 }

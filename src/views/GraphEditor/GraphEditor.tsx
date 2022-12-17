@@ -7,6 +7,7 @@ import {
   createElement,
   useMemo,
   useRef,
+  useEffect,
 } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -22,35 +23,7 @@ import type {
   AreaTypes,
   GraphJSON,
 } from "global";
-// import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
-// import africaCaveB2Map from 'data/maps/africaCaveB2Map';
-// import africaCaveB3CenterMap from 'data/maps/africaCaveB3CenterMap';
-// import africaCaveB3LeftMap from 'data/maps/africaCaveB3LeftMap';
-// import africaCaveB3RightMap from 'data/maps/africaCaveB3RightMap';
-// import africaCaveMap from 'data/maps/africaCaveMap';
-// import antarcticaCaveB2Map from 'data/maps/antarcticaCaveB2Map';
-// import antarcticaCaveB3Map from 'data/maps/antarcticaCaveB3Map';
-// import antarcticaCaveMap from 'data/maps/antarcticaCaveMap';
-// import arcticCaveMap from 'data/maps/arcticCaveMap';
-// import arcticCaveB2Map from 'data/maps/arcticCaveB2Map';
-// import arcticCaveB3Map from 'data/maps/arcticCaveB3Map';
-// import asiaCaveMap from 'data/maps/asiaCaveMap';
-// import betweenDimensionsMap from 'data/maps/betweenDimensionsMap';
-// import europeCaveMap from 'data/maps/europeCaveMap';
-// import europeCaveCanteenMap from 'data/maps/europeCaveCanteenMap';
-// import europeCaveHallMap from 'data/maps/europeCaveHallMap';
-// import europeCaveLibraryMap from 'data/maps/europeCaveLibraryMap';
-// import hawaiianIslandsCaveMap from 'data/maps/hawaiianIslandsCaveMap';
-// import hawaiianIslandsCaveB2Map from 'data/maps/hawaiianIslandsCaveB2';
-// import hawaiianIslandsCaveB3Map from 'data/maps/hawaiianIslandsCaveB3Map';
-// import northAmericaCaveMap from 'data/maps/northAmericaCaveMap';
-// import northAmericaCaveB2Map from 'data/maps/northAmericaCaveB2Map';
-// import oceaniaCaveMap from 'data/maps/oceaniaCaveMap';
-// import oceaniaCaveB1Map from 'data/maps/oceaniaCaveB1Map';
-// import oceaniaCaveB2Map from 'data/maps/oceaniaCaveB2Map';
-// import southAmericaCaveMap from 'data/maps/southAmericaCaveMap';
-// import southAmericaCaveB2Map from 'data/maps/southAmericaCaveB2Map';
-import southAmericaCaveB3Map from "data/maps/southAmericaCaveB3Map";
+import areaTypesToMap from "data/areaTypesToMap";
 import OneWayHEdge from "components/edges/OneWayHEdge";
 import OneWayVEdge from "components/edges/OneWayVEdge";
 import TwoWayHEdge from "components/edges/TwoWayHEdge";
@@ -74,12 +47,37 @@ import TreasureField from "components/vertices/TreasureField";
 import MagicBookField from "components/vertices/MagicBookField";
 import BattleField from "components/vertices/BattleField";
 import DamageField from "components/vertices/DamageField";
+import areas from "data/areas";
 import styles from "./GraphEditor.module.css";
 
 // Stateless vars declare
 type MouseMode = "edit" | "drag";
-const currentArea: AreaTypes = "AntarcticaCaveB3";
 const directions: Directions[] = ["top", "left", "right", "bottom"];
+/**
+ * 要先生成Edge，再生成Vertex，這樣Vertex才可以把Edge蓋住
+ */
+function renderCells(graph: GraphJSON) {
+  const vertices = graph.vertices.map((vertex) =>
+    createElement(Components.vertices[vertex.name], {
+      key: vertex.id,
+      ...vertex,
+    })
+  );
+  const edges = graph.edges.map((edge) => {
+    if (pointerDownVertex?.edges.includes(edge.id)) {
+      if (edge.startId === pointerDownVertex.id) {
+        edge.start = pointerDownVertex.position;
+      } else if (edge.endId === pointerDownVertex.id) {
+        edge.end = pointerDownVertex.position;
+      }
+    }
+    return createElement(Components.edges[edge.name], {
+      key: edge.id,
+      ...edge,
+    });
+  });
+  return [...edges, ...vertices];
+}
 
 // 透過cell.name mapping到react component的mapping table
 const Components = {
@@ -155,6 +153,7 @@ function GraphEditor(): JSX.Element {
     handlePointerDown,
     handlePointerMove,
     handlePointerUp,
+    mouseMode,
     toggleMouseMode,
     handleWheel,
     SVGScale,
@@ -174,14 +173,29 @@ function GraphEditor(): JSX.Element {
     areaSelectConfirm,
     printGraph,
     selectedArea,
+    selectedAreaType,
+    setSelectedAreaType,
   } = useMetaData();
   return (
     <>
       <header className={styles.header}>
         <button onClick={() => printGraph()}>打印</button>
-        <select onChange={(e) => toggleMouseMode(e.target.value as MouseMode)}>
+        <select
+          value={mouseMode}
+          onChange={(e) => toggleMouseMode(e.target.value as MouseMode)}
+        >
           <option value="edit">編輯</option>
           <option value="drag">拖曳</option>
+        </select>
+        <select
+          value={selectedAreaType}
+          onChange={(e) => setSelectedAreaType(e.target.value as AreaTypes)}
+        >
+          {areas.map((area) => (
+            <option value={area} key={area}>
+              {area}
+            </option>
+          ))}
         </select>
         <div className={styles.svgScale}>{(SVGScale * 100).toFixed(0)}%</div>
       </header>
@@ -367,9 +381,10 @@ function useMetaData() {
     x: -1,
     y: -1,
   });
-  const [curGraph, setCurGraph] = useState(southAmericaCaveB3Map);
-  const [mouseMode, toggleMouseMode] = useState<MouseMode>("edit");
   const [SVGScale, setSVGScale] = useState(1);
+  const [mouseMode, toggleMouseMode] = useState<MouseMode>("edit");
+  const [selectedAreaType, setSelectedAreaType] = useState<AreaTypes>("Asia");
+  const [curGraph, setCurGraph] = useState(areaTypesToMap.Asia);
   const [selectedArea, setSelectedArea] = useState({
     x: 0,
     y: 0,
@@ -381,20 +396,6 @@ function useMetaData() {
   const edgeSelectEl = useRef<HTMLSelectElement>(null);
   const selectedAreaSelectEl = useRef<HTMLSelectElement>(null);
   const Cells = useMemo(() => renderCells(curGraph), [curGraph]);
-  // const HighLights = useMemo(() =>
-  //     result.endPositions.map((position, index) =>
-  //         <rect
-  //             key={index}
-  //             width='100'
-  //             height='100'
-  //             x={position.x - 50}
-  //             y={position.y - 50}
-  //             fill='none'
-  //             stroke='#99e3b7'
-  //             strokeWidth='5'
-  //         />
-  //     )
-  // , [])
   function handlePointerDown(e: PointerEvent<SVGSVGElement>) {
     // if (e.button !== 0) return
     isPointerDown = true;
@@ -1074,7 +1075,7 @@ function useMetaData() {
       name: vertexName,
       position: { x: 0, y: 0 },
       edges: [pointerDownEdge.id],
-      area: currentArea,
+      area: selectedAreaType,
     };
     const { startId, endId, start, end } = pointerDownEdge;
 
@@ -1133,16 +1134,20 @@ function useMetaData() {
   function printGraph() {
     console.log(curGraph);
   }
+  useEffect(
+    () => setCurGraph(areaTypesToMap[selectedAreaType]),
+    [selectedAreaType]
+  );
   return {
     handlePointerDown,
     handlePointerMove,
     handlePointerUp,
+    mouseMode,
     toggleMouseMode,
     handleWheel,
     SVGScale,
     SVGTranslate,
     Cells,
-    // HighLights,
     handleContextMenu,
     vertexCtxMenuPos,
     edgeCtxMenuPos,
@@ -1157,30 +1162,7 @@ function useMetaData() {
     areaSelectConfirm,
     printGraph,
     selectedArea,
+    selectedAreaType,
+    setSelectedAreaType,
   };
-}
-/**
- * 要先生成Edge，再生成Vertex，這樣Vertex才可以把Edge蓋住
- */
-function renderCells(graph: GraphJSON) {
-  const vertices = graph.vertices.map((vertex) =>
-    createElement(Components.vertices[vertex.name], {
-      key: vertex.id,
-      ...vertex,
-    })
-  );
-  const edges = graph.edges.map((edge) => {
-    if (pointerDownVertex?.edges.includes(edge.id)) {
-      if (edge.startId === pointerDownVertex.id) {
-        edge.start = pointerDownVertex.position;
-      } else if (edge.endId === pointerDownVertex.id) {
-        edge.end = pointerDownVertex.position;
-      }
-    }
-    return createElement(Components.edges[edge.name], {
-      key: edge.id,
-      ...edge,
-    });
-  });
-  return [...edges, ...vertices];
 }

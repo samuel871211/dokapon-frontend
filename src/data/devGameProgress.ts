@@ -241,8 +241,8 @@ const devGameProgress: GameProgress = {
         "buffRatio": 1,
         "nerfRatio": 1
       },
-      "area": "Asia",
-      "vertexIdx": 36,
+      "area": "AfricaCave",
+      "vertexIdx": 0,
       "gender": "male",
       "name": "いいいいいいいい",
       "weapon": "swordNormal",

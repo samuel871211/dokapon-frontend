@@ -1,4 +1,4 @@
-import { GameProgress } from "global";
+import { GameProgress, Vertex } from "global";
 
 /**
  * 用來驗證匯出的`DokaponGameProgress.json`是否有符合型態
@@ -161,8 +161,10 @@ const devGameProgress: GameProgress = {
     "CheckState": {
       "showVertexNameAndDistance": false,
       "showCheckTip": true,
+      "showMiniMap": false,
       "curHoverVertexDistance": 0,
       "curHoverVertexName": "",
+      // "curHoverVertex": undefined,
       "miniMap": {
         "player1Position": { "x": 0, "y": 0 },
         "player2Position": { "x": 0, "y": 0 },
@@ -241,8 +243,8 @@ const devGameProgress: GameProgress = {
         "buffRatio": 1,
         "nerfRatio": 1
       },
-      "area": "AfricaCave",
-      "vertexIdx": 0,
+      "area": "Asia",
+      "vertexIdx": 36,
       "gender": "male",
       "name": "いいいいいいいい",
       "weapon": "swordNormal",

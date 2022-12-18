@@ -68,9 +68,7 @@ function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListPage } =
     gameProgress.DokaponTheWorldState.MagicStoreFieldCheckState;
-  const {
-    curClickVertex: { area },
-  } = gameProgress.DokaponTheWorldState;
+  const { area } = gameProgress.DokaponTheWorldState.curClickVertex;
   const curShowItems = magicStores[area].filter(
     (item, index) => index >= 6 * curListPage && index < 6 * (curListPage + 1)
   );

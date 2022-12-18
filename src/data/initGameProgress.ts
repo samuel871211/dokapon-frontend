@@ -1,4 +1,4 @@
-import type { GameProgress } from "global";
+import type { GameProgress, Vertex } from "global";
 
 const initGameProgress: GameProgress = {
   timeStamp: "",
@@ -98,8 +98,10 @@ const initGameProgress: GameProgress = {
     CheckState: {
       showVertexNameAndDistance: false,
       showCheckTip: true,
+      showMiniMap: false,
       curHoverVertexDistance: 0,
       curHoverVertexName: "",
+      // curHoverVertex: undefined,
       miniMap: {
         player1Position: { x: 0, y: 0 },
         player2Position: { x: 0, y: 0 },

@@ -294,11 +294,13 @@ export type GameProgress = {
     CheckState: {
       showVertexNameAndDistance: boolean;
       showCheckTip: boolean;
+      showMiniMap: boolean;
       /**
        * 0 ~ 30
        */
       curHoverVertexDistance: number;
       curHoverVertexName: string;
+      // curHoverVertex: Vertex | undefined;
       miniMap: {
         player1Position: { x: number; y: number };
         player2Position: { x: number; y: number };

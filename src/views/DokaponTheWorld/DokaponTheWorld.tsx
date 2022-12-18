@@ -19,14 +19,77 @@ import VillageFieldCheck from "./Check/VillageFieldCheck";
 import CollectMoneyFieldCheck from "./Check/CollectMoneyFieldCheck";
 import OnlyBottomDialogFieldCheck from "./Check/OnlyBottomDialogFieldCheck";
 import gameProgressCtx from "reducers/gameProgress";
-import type { DokaponTheWorldComponentTypes } from "global";
+import type { DokaponTheWorldComponentTypes, AreaTypes, Vertex } from "global";
 import type { TextsKeys } from "data/texts";
 import jobs from "data/jobs";
 import magicStores from "data/magicStores";
 import useTranslation from "hooks/useTranslation";
 import ids from "./ids";
+import areaTypesToMap from "data/areaTypesToMap";
+import GraphDSA from "utils/GraphDSA";
+import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
 
 // Stateless vars declare.
+const emptyGraphDSA = {};
+const dokaponTheWorldMapGraphDSA = new GraphDSA(dokaponTheWorldMap);
+/**
+ * 僅先載入主地圖，其餘地圖等玩家有進入再載入
+ */
+const GraphDSAs: { [key in AreaTypes]: GraphDSA } = {
+  Asia: dokaponTheWorldMapGraphDSA,
+  Europe: dokaponTheWorldMapGraphDSA,
+  Russia: dokaponTheWorldMapGraphDSA,
+  NorthAmerica: dokaponTheWorldMapGraphDSA,
+  SouthAmerica: dokaponTheWorldMapGraphDSA,
+  Oceania: dokaponTheWorldMapGraphDSA,
+  Africa: dokaponTheWorldMapGraphDSA,
+  Arctic: dokaponTheWorldMapGraphDSA,
+  Antarctica: dokaponTheWorldMapGraphDSA,
+  HawaiianIslands: dokaponTheWorldMapGraphDSA,
+  Atlantis: dokaponTheWorldMapGraphDSA,
+  //
+  AsiaCave: emptyGraphDSA as GraphDSA,
+  //
+  EuropeCave: emptyGraphDSA as GraphDSA,
+  EuropeCaveLibrary: emptyGraphDSA as GraphDSA,
+  EuropeCaveCanteen: emptyGraphDSA as GraphDSA,
+  EuropeCaveHall: emptyGraphDSA as GraphDSA,
+  //
+  NorthAmericaCave: emptyGraphDSA as GraphDSA,
+  NorthAmericaCaveB2: emptyGraphDSA as GraphDSA,
+  //
+  SouthAmericaCave: emptyGraphDSA as GraphDSA,
+  SouthAmericaCaveB2: emptyGraphDSA as GraphDSA,
+  SouthAmericaCaveB3: emptyGraphDSA as GraphDSA,
+  //
+  OceaniaCave: emptyGraphDSA as GraphDSA,
+  OceaniaCaveB1: emptyGraphDSA as GraphDSA,
+  OceaniaCaveB2: emptyGraphDSA as GraphDSA,
+  //
+  AfricaCave: emptyGraphDSA as GraphDSA,
+  AfricaCaveB2: emptyGraphDSA as GraphDSA,
+  AfricaCaveB3Right: emptyGraphDSA as GraphDSA,
+  AfricaCaveB3Left: emptyGraphDSA as GraphDSA,
+  AfricaCaveB3Center: emptyGraphDSA as GraphDSA,
+  //
+  ArcticCave: emptyGraphDSA as GraphDSA,
+  ArcticCaveB2: emptyGraphDSA as GraphDSA,
+  ArcticCaveB3: emptyGraphDSA as GraphDSA,
+  //
+  AntarcticaCave: emptyGraphDSA as GraphDSA,
+  AntarcticaCaveB2: emptyGraphDSA as GraphDSA,
+  AntarcticaCaveB3: emptyGraphDSA as GraphDSA,
+  //
+  HawaiianIslandsCave: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB2Right: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB2Left: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB2Center: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB3Right: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB3Left: emptyGraphDSA as GraphDSA,
+  HawaiianIslandsCaveB3Center: emptyGraphDSA as GraphDSA,
+  //
+  BetweenDimensions: emptyGraphDSA as GraphDSA,
+};
 /**
  * 使用`window.setInterval`來讓地圖平滑移動
  *
@@ -40,7 +103,7 @@ const svgViewBox = { width: 0, height: 0 };
 /**
  * G Element的BBox，會在地圖切換的時候更新
  */
-let cellsGroupBBox = { x: 0, y: 0, width: 0, height: 0 };
+const cellsGroupBBox = { x: 0, y: 0, width: 0, height: 0 };
 const text: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
   BattleFieldCheck: ["ザコモンスターとの戦闘や\nイベントが発生するマス。"],
   DamageFieldCheck: [
@@ -95,6 +158,7 @@ const text: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
   SelectCharacterToCompare: [],
   PlayerVsCharacterDialogs: [],
 };
+// const dokaponTheWorldGraphDSA = new GraphDSA(dokaponTheWorldMap);
 const Components: {
   [key in DokaponTheWorldComponentTypes]: () => JSX.Element;
 } = {
@@ -127,9 +191,13 @@ const Components: {
 };
 function updateCellsGroupBBox() {
   const cellsGroupEl = document.getElementById(ids.cellsGroup);
-  if (!(cellsGroupEl instanceof SVGGElement)) return console.error();
+  if (!(cellsGroupEl instanceof SVGGElement)) return;
 
-  cellsGroupBBox = cellsGroupEl.getBBox();
+  const newCellsGroupBBox = cellsGroupEl.getBBox();
+  cellsGroupBBox.x = newCellsGroupBBox.x;
+  cellsGroupBBox.y = newCellsGroupBBox.y;
+  cellsGroupBBox.width = newCellsGroupBBox.width;
+  cellsGroupBBox.height = newCellsGroupBBox.height;
 }
 
 export default DokaponTheWorld;
@@ -175,6 +243,9 @@ function useMetaData() {
     bottomDialogSentencesQueue,
   } = gameProgress;
   const currentPlayer = playersAttrs[currentPlayerIdx];
+  const currentMap = areaTypesToMap[currentPlayer.area];
+  const currentPlayerVertex = currentMap.vertices[currentPlayer.vertexIdx];
+  // const curGraphDSA
   const {
     curComponents,
     DrawerState,
@@ -270,6 +341,8 @@ function useMetaData() {
             break;
           case 2: // 查看
             DokaponTheWorldState.curComponents = ["Check"];
+            CheckState.showMiniMap = true;
+            CheckState.showCheckTip = true;
             break;
           case 3: // 特技
             break;
@@ -358,7 +431,13 @@ function useMetaData() {
         break;
     }
   }
+  /**
+   * @todo click on enemy
+   * @todo click on monster
+   * @todo 釐清 集金 跟 全集金 的差別
+   */
   function handleKeyUpForCheck(e: KeyboardEvent<HTMLDivElement>) {
+    const { curClickVertex } = DokaponTheWorldState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
         if (!keyDownArrows.up) break;
@@ -376,6 +455,100 @@ function useMetaData() {
         if (!keyDownArrows.right) break;
         setKeyDownArrows({ ...keyDownArrows, right: false });
         break;
+      case gamePadSetting.circle: {
+        if (Object.keys(curClickVertex).length === 0) return;
+
+        // 關閉所有小視窗
+        CheckState.showVertexNameAndDistance = false;
+        CheckState.showCheckTip = false;
+        CheckState.showMiniMap = false;
+        curComponents.length = 0;
+
+        // check if player (self excluded), enemy or monster is clicked
+        const clickedPlayers = playersAttrs.filter(
+          (playerAttrs) =>
+            currentMap.vertices[playerAttrs.vertexIdx] === curClickVertex &&
+            playerAttrs !== currentPlayer
+        );
+        const clickedEnemies = [];
+        const clickedMonsters = [];
+        const totalClickedCharactersCount =
+          clickedPlayers.length +
+          clickedEnemies.length +
+          clickedMonsters.length;
+        if (totalClickedCharactersCount === 1) {
+          curComponents.push("PlayerVsCharacterDialogs");
+        } else if (totalClickedCharactersCount > 1) {
+          curComponents.push("SelectCharacterToCompare");
+        }
+
+        // handle click on vertex
+        switch (curClickVertex.name) {
+          case "BattleField":
+            curComponents.push("BattleFieldCheck");
+            break;
+          case "KeyTreasureField":
+            curComponents.push("TreasureFieldCheck");
+            break;
+          case "MagicBookField":
+            curComponents.push("MagicBookFieldCheck");
+            break;
+          case "RedTreasureField":
+            curComponents.push("RedTreasureFieldCheck");
+            break;
+          case "TreasureField":
+            curComponents.push("TreasureFieldCheck");
+            break;
+          case "WhiteTreasureField":
+            curComponents.push("WhiteTreasureFieldCheck");
+            break;
+          case "WorldTransferField":
+            curComponents.push("WorldTransferFieldCheck");
+            break;
+          case "GoldTreasureField":
+            curComponents.push("GoldTreasureFieldCheck");
+            break;
+          case "DamageField":
+            curComponents.push("DamageFieldCheck");
+            break;
+          case "CollectAllMoneyField":
+            curComponents.push("BeforeCollectMoneyFieldCheck");
+            break;
+          case "CollectMoneyField":
+            curComponents.push("BeforeCollectMoneyFieldCheck");
+            break;
+          case "CaveField":
+            curComponents.push("CastleFieldCheck");
+            break;
+          case "VillageField":
+            curComponents.push("VillageFieldCheck");
+            break;
+          case "CastleField":
+            curComponents.push("CastleFieldCheck");
+            break;
+          case "ChruchField":
+            curComponents.push("ChurchFieldCheck");
+            break;
+          case "GroceryStoreField":
+            curComponents.push("GroceryStoreFieldCheck");
+            break;
+          case "JobStoreField":
+            curComponents.push("JobStoreFieldCheck");
+            break;
+          case "MagicStoreField":
+            curComponents.push("MagicStoreFieldCheck");
+            break;
+          case "WeaponStoreField":
+            curComponents.push("WeaponStoreFieldCheck");
+            break;
+          default:
+            // 滑鼠hover上去`name`，型別應該要是`never`，才代表所有case都有涵蓋到
+            curClickVertex.name;
+            break;
+        }
+        setGameProgress({ ...gameProgress });
+        return;
+      }
       case gamePadSetting.square:
         if (!keyDownArrows.square) break;
         setKeyDownArrows({ ...keyDownArrows, square: false });
@@ -609,7 +782,9 @@ function useMetaData() {
    *
    * 同時也會直接更新`SVGTranslate`
    *
-   * 只是不會去dispatch setState action，避免react頻繁觸發re-render
+   * 現在還多了會去更新`CheckState`
+   *
+   * @todo function重新命名，此function做了兩件事情，但function name只有提及一件事情
    */
   function moveMap(position: { deltaX: number; deltaY: number }) {
     let { deltaX, deltaY } = position;
@@ -655,11 +830,50 @@ function useMetaData() {
       miniMapCurAreaEl.style.top = `${curAreaPosition.y}%`;
       miniMapCurAreaEl.style.left = `${curAreaPosition.x}%`;
       cellsGroupEl.setAttribute("transform", `translate(${x}, ${y})`);
+
+      // 尋找最接近中心點的vertex
+      const centerX = -x + svgViewBox.width / 2;
+      const centerY = -y + svgViewBox.height / 2;
+      /**
+       * @todo 演算法效能優化(現在Big O = O(n / 2))
+       */
+      const centerVertex = currentMap.vertices.find(
+        (vertex) =>
+          Math.distanceBetween(
+            { x: vertex.position.x, y: vertex.position.y },
+            { x: centerX, y: centerY }
+          ) <= 100
+      );
+
+      // 更新`CheckState`
+      /**
+       * @todo `vertex.name`要轉成日文，要做一個mapping table
+       */
+      if (centerVertex) {
+        const distance = GraphDSAs[currentPlayer.area].calMinDistanceTo(
+          centerVertex.id
+        );
+        CheckState.curHoverVertexName = centerVertex.name;
+        CheckState.curHoverVertexDistance = distance;
+        // DokaponTheWorldState.curClickVertex = centerVertex;
+      }
+      DokaponTheWorldState.curClickVertex = centerVertex || ({} as Vertex);
+      CheckState.showVertexNameAndDistance = Boolean(centerVertex);
+      setGameProgress({ ...gameProgress });
     }, 1);
   }
   useEffect(handleMapMove, [keyDownArrows]);
   useEffect(handleBottomDialogQueue, [curComponents[0]]);
   useEffect(updateCellsGroupBBox, [currentPlayer.area]);
+  useEffect(() => {
+    const area = currentPlayer.area;
+    // 被動載入新地圖
+    if (GraphDSAs[area] === emptyGraphDSA) {
+      GraphDSAs[area] = new GraphDSA(areaTypesToMap[area]);
+    }
+    // 計算30步
+    GraphDSAs[area].getAllPaths(currentPlayerVertex.id, 30);
+  }, [currentPlayer.area, currentPlayerVertex]);
   useEffect(() => {
     // AUTO FOCUS CONTAINER ELEMENT WHEN COMPONENT MOUNTED
     containerRefEl.current?.focus();

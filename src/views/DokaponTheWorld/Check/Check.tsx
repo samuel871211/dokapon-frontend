@@ -21,6 +21,7 @@ function Check() {
   const {
     showVertexNameAndDistance,
     showCheckTip,
+    showMiniMap,
     curHoverVertexDistance,
     curHoverVertexName,
     player1Position,
@@ -32,34 +33,34 @@ function Check() {
 
   return (
     <div className={styles.checkContainer}>
-      {showCheckTip ? (
-        <div className={styles.checkTipContainer}>
-          <div className={styles.checkTipColumn}>
-            <div className={styles.checkTipIcon}>O</div>
-            <div className={styles.checkTipText}>{t("マスチェック")}</div>
-          </div>
-          <div className={styles.checkTipColumn}>
-            <div className={styles.checkTipIcon}>S</div>
-            <div className={styles.checkTipText}>MAP</div>
-          </div>
-          <div className={styles.checkTipColumn}>
-            <div className={styles.checkTipIcon}>X</div>
-            <div className={styles.checkTipText}>{t("戻る")}</div>
-          </div>
+      <div className={styles.centeredCircle}></div>
+      <div className={styles.checkTipContainer} data-show={showCheckTip}>
+        <div className={styles.checkTipColumn}>
+          <div className={styles.checkTipIcon}>O</div>
+          <div className={styles.checkTipText}>{t("マスチェック")}</div>
         </div>
-      ) : null}
-      {showVertexNameAndDistance ? (
-        <div className={styles.nodeAttrsAndDistance}>
-          <div className={styles.nodeType}>{curHoverVertexName}</div>
-          <div
-            className={styles.nodeDistance}
-            data-show={curHoverVertexDistance !== -1}
-          >
-            總共是 <b>{curHoverVertexDistance}</b> 步
-          </div>
+        <div className={styles.checkTipColumn}>
+          <div className={styles.checkTipIcon}>▷</div>
+          <div className={styles.checkTipText}>MAP</div>
         </div>
-      ) : null}
-      <div className={styles.minimap}>
+        <div className={styles.checkTipColumn}>
+          <div className={styles.checkTipIcon}>X</div>
+          <div className={styles.checkTipText}>{t("戻る")}</div>
+        </div>
+      </div>
+      <div
+        className={styles.nodeAttrsAndDistance}
+        data-show={showVertexNameAndDistance}
+      >
+        <div className={styles.nodeType}>{curHoverVertexName}</div>
+        <div
+          className={styles.nodeDistance}
+          data-show={curHoverVertexDistance !== -1}
+        >
+          總共是 <b>{curHoverVertexDistance}</b> 步
+        </div>
+      </div>
+      <div className={styles.minimap} data-show={showMiniMap}>
         <div
           id={ids.miniMapCurArea}
           className={styles.currentArea}
@@ -78,6 +79,7 @@ function useMetaData() {
   const {
     showVertexNameAndDistance,
     showCheckTip,
+    showMiniMap,
     curHoverVertexDistance,
     curHoverVertexName,
     miniMap: {
@@ -91,6 +93,7 @@ function useMetaData() {
   return {
     showVertexNameAndDistance,
     showCheckTip,
+    showMiniMap,
     curHoverVertexDistance,
     curHoverVertexName,
     player1Position,

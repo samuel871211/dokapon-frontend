@@ -12258,13 +12258,13 @@ const africaVertices: Vertex[] = [
     id: "0afc0ff8-dcab-43c3-9936-977ff129e5a5",
     bottom: "5bd23f50-67ac-467e-b6e5-91a30ee3493a",
     top: "a9daa7aa-9e32-4281-b0f6-8f3b5a713b2a",
-    left: "c8c22aa5-e5d5-43e1-ab26-0321cf780ac7",
     edges: [
       "5d4fe047-ce11-41b9-9a57-0a7aedd6fff8",
       "5f1b21f1-f524-4f82-aad6-19753f235c39",
-      "06758002-cca1-4a28-a9c5-86d0d591d556",
+      "011051ed-34de-43d7-91cd-65e6d4c948a2",
     ],
     area: "Africa",
+    left: "c8c22aa5-e5d5-43e1-ab26-0321cf780ac7",
   },
   {
     position: {
@@ -12299,13 +12299,12 @@ const africaVertices: Vertex[] = [
     },
     name: "ChruchField",
     id: "c8c22aa5-e5d5-43e1-ab26-0321cf780ac7",
-    right: "0afc0ff8-dcab-43c3-9936-977ff129e5a5",
     left: "9f020032-d80a-43c2-ae34-6ad401f810dd",
     bottom: "7d0cd4a7-12f7-4db2-b8f7-3d5b1375724d",
     edges: [
-      "06758002-cca1-4a28-a9c5-86d0d591d556",
       "10706ce2-fbfa-431d-adc4-341f140871c7",
       "ca48c34b-6cfc-4b48-a178-0b3a73369b1e",
+      "011051ed-34de-43d7-91cd-65e6d4c948a2",
     ],
     area: "Africa",
   },
@@ -21970,20 +21969,6 @@ const dokaponTheWorldMap: GraphJSON = {
       name: "TwoWayVEdge",
       startId: "a9daa7aa-9e32-4281-b0f6-8f3b5a713b2a",
       endId: "ce81e242-e552-4aa3-a2a7-d6f1f5983e3b",
-    },
-    {
-      start: {
-        x: 2720,
-        y: 6240,
-      },
-      end: {
-        x: 2500,
-        y: 6240,
-      },
-      id: "06758002-cca1-4a28-a9c5-86d0d591d556",
-      name: "TwoWayHEdge",
-      startId: "0afc0ff8-dcab-43c3-9936-977ff129e5a5",
-      endId: "c8c22aa5-e5d5-43e1-ab26-0321cf780ac7",
     },
     {
       start: {
@@ -32288,6 +32273,20 @@ const dokaponTheWorldMap: GraphJSON = {
       endId: "aae2494b-ca25-4d4f-baa3-d362ecc7c8c7",
       name: "TwoWayHEdge",
       id: "ea18713a-adb9-437a-9bdd-4b712889cdbc",
+    },
+    {
+      start: {
+        x: 2720,
+        y: 6240,
+      },
+      startId: "0afc0ff8-dcab-43c3-9936-977ff129e5a5",
+      end: {
+        x: 2500,
+        y: 6240,
+      },
+      endId: "c8c22aa5-e5d5-43e1-ab26-0321cf780ac7",
+      name: "OneWayHEdge",
+      id: "011051ed-34de-43d7-91cd-65e6d4c948a2",
     },
   ],
 };

@@ -31,6 +31,7 @@ import gameProgressCtx from "reducers/gameProgress";
 import styles from "./GraphUI.module.css";
 import areaTypesToMap from "data/areaTypesToMap";
 import ids from "../ids";
+import BossMonsterChess from "components/BossMonsterChess";
 
 // Stateless vars declare
 /**
@@ -87,7 +88,8 @@ const Components = {
 export default GraphUI;
 
 function GraphUI() {
-  const { SVGTranslate, Cells, PlayersChess } = useMetaData();
+  const { SVGTranslate, Cells, PlayersChess, BossMonstersChess } =
+    useMetaData();
   return (
     <div className={styles.graphUIcontainer}>
       <svg id={ids.graphSVG} className={styles.graphSVG}>
@@ -108,6 +110,7 @@ function GraphUI() {
         >
           {Cells}
           {PlayersChess}
+          {BossMonstersChess}
         </g>
       </svg>
     </div>
@@ -117,7 +120,7 @@ function GraphUI() {
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { DokaponTheWorldState, playersAttrs, currentPlayerIdx } = gameProgress;
-  const { GraphUIState } = DokaponTheWorldState;
+  const { GraphUIState, bossMonsters } = DokaponTheWorldState;
   const { SVGTranslate } = GraphUIState;
   const curPlayer = playersAttrs[currentPlayerIdx];
   const curGraph = areaTypesToMap[curPlayer.area];
@@ -133,6 +136,17 @@ function useMetaData() {
       color={playerAttrs.color}
     />
   ));
+  const BossMonstersChess = useMemo(
+    () =>
+      bossMonsters.map((bossMonster) => (
+        <BossMonsterChess
+          key={curGraph.vertices[bossMonster.vertexIdx].id}
+          position={curGraph.vertices[bossMonster.vertexIdx].position}
+          id={curGraph.vertices[bossMonster.vertexIdx].id}
+        />
+      )),
+    [bossMonsters]
+  );
 
   /**
    * POINTERDOWN註冊在SVG ELEMENT身上
@@ -184,5 +198,6 @@ function useMetaData() {
     SVGTranslate,
     Cells,
     PlayersChess,
+    BossMonstersChess,
   };
 }

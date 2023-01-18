@@ -1,3 +1,7 @@
+import { DecorationTypes } from "data/decorations";
+import { MagicAttackTypes } from "data/magicAttacks";
+import { MagicDefenseTypes } from "data/magicDefenses";
+import { MonsterTypes } from "data/monsters";
 import { shieldTypes } from "data/shields";
 import type { TextsKeys } from "data/texts";
 import { weaponTypes } from "data/weapons";
@@ -149,9 +153,7 @@ export type GameProgress = {
   bottomDialogSentencesQueue: string[];
   currentView: ViewTypes;
   playersAttrs: [PlayerAttrs, PlayerAttrs, PlayerAttrs, PlayerAttrs];
-  gamePadSetting: {
-    [key in GamePadKeyTypes]: string;
-  };
+  gamePadSetting: { [key in GamePadKeyTypes]: string };
   userPreference: {
     lang: LangTypes;
     aspectRatio: AspectRatioTypes;
@@ -288,6 +290,15 @@ export type GameProgress = {
   DokaponTheWorldState: {
     curComponents: DokaponTheWorldComponentTypes[];
     curClickVertex: Vertex;
+    // curClickedCharactersCount: number;
+    // curClickedBossMonsterIdx: number;
+    // curClickedEnemyIdx: number;
+    // curClickedPlayersIdx: number[],
+    // curClickedPlayers: PlayerAttrs[];
+    curClickedCharacters: (PlayerAttrs | MonsterAttrs)[];
+    // curClickedCharacterIdx: number;
+    bossMonsters: MonsterAttrs[];
+    enemies: PlayerAttrs[];
     GraphUIState: {
       SVGTranslate: { x: number; y: number };
     };
@@ -376,6 +387,22 @@ export type GameProgress = {
        * 退出的時候，要reset回0
        */
       curListPage: number;
+    };
+    PlayerVsCharacterDialogState: {
+      /**
+       * @default 0
+       *
+       * 退出的時候，要reset回0
+       */
+      curPage: number;
+    };
+    SelectCharacterToCompareState: {
+      /**
+       * @default 0
+       *
+       * 退出的時候，要reset回0
+       */
+      selectedIdx: number;
     };
   };
 };
@@ -558,12 +585,44 @@ export type GoalTypes = "period" | "money";
 /**
  * @todo 將 玩家、NPC玩家、敵人、同伴、Boss、Monster的屬性區分
  */
-export type CharacterTypes = "player" | "npcPlayer" | "enemy" | "allied";
-type CharacterAttrs = {
+export type CharacterTypes =
+  | "player"
+  | "npcPlayer"
+  | "enemy"
+  | "allied"
+  | "monster";
+type MonsterAttrs = {
+  name: MonsterTypes;
+  characterType: "monster";
+  attack: {
+    buffRatio: number;
+    nerfRatio: number;
+  };
+  defense: {
+    buffRatio: number;
+    nerfRatio: number;
+  };
+  magic: {
+    buffRatio: number;
+    nerfRatio: number;
+  };
+  speed: {
+    buffRatio: number;
+    nerfRatio: number;
+  };
+  hp: {
+    current: number;
+  };
+  area: AreaTypes;
+  /**
+   * 因為地圖的JSON資料不會變，所以可以直接用index當作reference
+   */
+  vertexIdx: number;
+};
+type PlayerAttrs = {
   name: string;
   isNPC: boolean;
-};
-type PlayerAttrs = CharacterAttrs & {
+  characterType: "player" | "npcPlayer";
   /**
    * 1 ~ 99
    */
@@ -637,6 +696,9 @@ type PlayerAttrs = CharacterAttrs & {
   job: JobTypes;
   weapon: weaponTypes;
   shield: shieldTypes;
+  magicAttack: MagicAttackTypes;
+  magicDefense: MagicDefenseTypes;
+  decoration: DecorationTypes;
   /**
    * 各職業master是5等
    *
@@ -655,19 +717,6 @@ type PlayerAttrs = CharacterAttrs & {
    * 1 ~ 4
    */
   controllerNumber: number;
-};
-/**
- * 忍者、海盜那些敵人
- */
-type EnemyAttrs = CharacterAttrs & {
-  job: JobTypes;
-  isNPC: true;
-};
-/**
- * 大洋洲的無尾熊
- */
-type AlliedAttrs = CharacterAttrs & {
-  isNPC: true;
 };
 export type Shield = {
   name: TextsKeys;
@@ -747,8 +796,8 @@ export type magicDefense = {
     vertexTypes: VertexTypes[];
   }[];
 };
-export type Monster = {
-  name: string;
+export type MonsterFixedAttrs = {
+  name: TextsKeys;
   level: number;
   attack: number;
   defense: number;
@@ -756,8 +805,8 @@ export type Monster = {
   speed: number;
   hp: number;
   trick?: string;
-  magicAttack?: string;
-  magicDefense?: string;
+  magicAttack?: MagicAttackTypes;
+  magicDefense?: MagicDefenseTypes;
   exp: number;
   money: number;
   isBoss: boolean;

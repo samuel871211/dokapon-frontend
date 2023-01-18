@@ -18,6 +18,7 @@ import ChurchFieldCheck from "./Check/ChurchFieldCheck";
 import VillageFieldCheck from "./Check/VillageFieldCheck";
 import CollectMoneyFieldCheck from "./Check/CollectMoneyFieldCheck";
 import OnlyBottomDialogFieldCheck from "./Check/OnlyBottomDialogFieldCheck";
+import PlayerVsCharacterDialogs from "./PlayerVsCharacterDialogs";
 import gameProgressCtx from "reducers/gameProgress";
 import type { DokaponTheWorldComponentTypes, AreaTypes, Vertex } from "global";
 import type { TextsKeys } from "data/texts";
@@ -28,6 +29,10 @@ import ids from "./ids";
 import areaTypesToMap from "data/areaTypesToMap";
 import GraphDSA from "utils/GraphDSA";
 import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
+import SelectCharacterToCompare from "./SelectCharacterToCompare";
+// import magicAttacks, { MagicAttackTypes } from "data/magicAttacks";
+// import magicDefenses from "data/magicDefenses";
+// import { monsterList } from "data/monsters";
 
 // Stateless vars declare.
 const emptyGraphDSA = {};
@@ -186,8 +191,8 @@ const Components: {
   WhiteTreasureFieldCheck: OnlyBottomDialogFieldCheck,
   WorldTransferFieldCheck: OnlyBottomDialogFieldCheck,
   BeforeCollectMoneyFieldCheck: OnlyBottomDialogFieldCheck,
-  SelectCharacterToCompare: () => <></>,
-  PlayerVsCharacterDialogs: () => <></>,
+  SelectCharacterToCompare,
+  PlayerVsCharacterDialogs,
 };
 function updateCellsGroupBBox() {
   const cellsGroupEl = document.getElementById(ids.cellsGroup);
@@ -248,6 +253,10 @@ function useMetaData() {
   // const curGraphDSA
   const {
     curComponents,
+    // curClickedPlayers,
+    curClickedCharacters,
+    bossMonsters,
+    enemies,
     DrawerState,
     GraphUIState,
     BagState,
@@ -258,6 +267,8 @@ function useMetaData() {
     MagicStoreFieldCheckState,
     WeaponStoreFieldCheckState,
     CollectMoneyFieldCheckState,
+    PlayerVsCharacterDialogState,
+    SelectCharacterToCompareState,
   } = DokaponTheWorldState;
   const { SVGTranslate } = GraphUIState;
   /**
@@ -307,10 +318,10 @@ function useMetaData() {
         return handleKeyUpForBeforeCollectMoneyFieldCheck(e);
       case "CollectMoneyFieldCheck":
         return handleKeyUpForCollectMoneyFieldCheck(e);
-      case "SelectCharacterToCompare":
-        return;
       case "PlayerVsCharacterDialogs":
-        return;
+        return handleKeyUpForPlayerVsCharacterDialogs(e);
+      case "SelectCharacterToCompare":
+        return handleKeyUpForSelectCharacterToCompare(e);
       case "GraphUI":
         return;
       default:
@@ -470,15 +481,21 @@ function useMetaData() {
             currentMap.vertices[playerAttrs.vertexIdx] === curClickVertex &&
             playerAttrs !== currentPlayer
         );
-        const clickedEnemies = [];
-        const clickedMonsters = [];
-        const totalClickedCharactersCount =
-          clickedPlayers.length +
-          clickedEnemies.length +
-          clickedMonsters.length;
-        if (totalClickedCharactersCount === 1) {
+        const clickedBossMonster = bossMonsters.find(
+          (bossMonster) =>
+            currentMap.vertices[bossMonster.vertexIdx] === curClickVertex
+        );
+        const clickedEnemy = enemies.find(
+          (enemy) => currentMap.vertices[enemy.vertexIdx] === curClickVertex
+        );
+        DokaponTheWorldState.curClickedCharacters = clickedPlayers;
+        if (clickedBossMonster)
+          DokaponTheWorldState.curClickedCharacters.push(clickedBossMonster);
+        if (clickedEnemy)
+          DokaponTheWorldState.curClickedCharacters.push(clickedEnemy);
+        if (DokaponTheWorldState.curClickedCharacters.length === 1) {
           curComponents.push("PlayerVsCharacterDialogs");
-        } else if (totalClickedCharactersCount > 1) {
+        } else if (DokaponTheWorldState.curClickedCharacters.length > 1) {
           curComponents.push("SelectCharacterToCompare");
         }
 
@@ -704,6 +721,58 @@ function useMetaData() {
     }
     setGameProgress({ ...gameProgress });
   }
+  function handleKeyUpForPlayerVsCharacterDialogs(
+    e: KeyboardEvent<HTMLDivElement>
+  ) {
+    const { curPage } = PlayerVsCharacterDialogState;
+    // const { curClickedCharactersCount } = DokaponTheWorldState;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.L1:
+      case gamePadSetting.L2:
+        PlayerVsCharacterDialogState.curPage = curPage === 0 ? 2 : curPage - 1;
+        setGameProgress({ ...gameProgress });
+        return;
+      case gamePadSetting.R1:
+      case gamePadSetting.R2:
+        PlayerVsCharacterDialogState.curPage = curPage === 2 ? 0 : curPage + 1;
+        setGameProgress({ ...gameProgress });
+        return;
+      case gamePadSetting.cross:
+        if (curClickedCharacters.length === 1) curComponents.shift();
+        else if (curClickedCharacters.length > 1)
+          curComponents[0] = "SelectCharacterToCompare";
+        PlayerVsCharacterDialogState.curPage = 0;
+        setGameProgress({ ...gameProgress });
+        return;
+    }
+  }
+  function handleKeyUpForSelectCharacterToCompare(
+    e: KeyboardEvent<HTMLDivElement>
+  ) {
+    const maxIdx = curClickedCharacters.length;
+    const { selectedIdx } = SelectCharacterToCompareState;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.arrowUp:
+        SelectCharacterToCompareState.selectedIdx =
+          selectedIdx === 0 ? maxIdx - 1 : selectedIdx - 1;
+        setGameProgress({ ...gameProgress });
+        return;
+      case gamePadSetting.arrowDown:
+        SelectCharacterToCompareState.selectedIdx =
+          selectedIdx === maxIdx - 1 ? 0 : selectedIdx + 1;
+        setGameProgress({ ...gameProgress });
+        return;
+      case gamePadSetting.circle:
+        curComponents[0] = "PlayerVsCharacterDialogs";
+        setGameProgress({ ...gameProgress });
+        return;
+      case gamePadSetting.cross:
+        curComponents.shift();
+        SelectCharacterToCompareState.selectedIdx = 0;
+        setGameProgress({ ...gameProgress });
+        return;
+    }
+  }
   function backToCheck(e: KeyboardEvent<HTMLDivElement>) {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
@@ -890,6 +959,17 @@ function useMetaData() {
     window.addEventListener("resize", updateSVGViewBox);
     return () => window.removeEventListener("resize", updateSVGViewBox);
   }, []);
+  useEffect(() => {
+    // console.log(DokaponTheWorldState.curClickedPlayers);
+    // console.log(DokaponTheWorldState.curClickedBossMonsterIdx);
+    // console.log(DokaponTheWorldState.curClickedEnemyIdx);
+    console.log(DokaponTheWorldState.curClickedCharacters);
+  }, [
+    DokaponTheWorldState.curClickedCharacters,
+    // DokaponTheWorldState.curClickedPlayers,
+    // DokaponTheWorldState.curClickedBossMonsterIdx,
+    // DokaponTheWorldState.curClickedEnemyIdx
+  ]);
   return {
     containerRefEl,
     handleKeyDown,

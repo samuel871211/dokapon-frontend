@@ -444,3 +444,4 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
   },
 });
 export default magicAttacks;
+export type MagicAttackTypes = keyof typeof magicAttacks;

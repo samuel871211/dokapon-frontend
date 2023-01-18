@@ -9,6 +9,7 @@ import styles from "./Drawer.module.css";
 import useTranslation from "hooks/useTranslation";
 import gameProgressCtx from "reducers/gameProgress";
 import { PlayerAttrs } from "global";
+import FullHpBar from "components/FullHpBar";
 
 // Stateless vars declare.
 // class Node {
@@ -132,20 +133,8 @@ function Drawer() {
                 <CustomBorderBottom />
               </div>
               <div className={styles.hpArea}>
-                <div>
-                  <div>
-                    <div>HP</div>
-                    <div
-                      className={styles.hpBar}
-                      style={{
-                        width: `${
-                          (currentPlayer.hp.current / currentPlayer.hp.total) *
-                          100
-                        }%`,
-                      }}
-                    ></div>
-                  </div>
-                  <div>{`${currentPlayer.hp.current} / ${currentPlayer.hp.total}`}</div>
+                <div style={{ width: "85%", height: "80%" }}>
+                  <FullHpBar hp={currentPlayer.hp} />
                 </div>
               </div>
             </div>

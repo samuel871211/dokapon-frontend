@@ -1,0 +1,30 @@
+.textWithBorderBottomContainer {
+  display: flex;
+  flex-direction: column;
+}
+.textContainer {
+  flex-grow: 1;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 var(--vh);
+  display: flex;
+  align-items: center;
+}
+.borderBottomContainer {
+  width: 95%;
+  margin: 0 auto;
+  height: var(--vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  aspect-ratio: 1 / 1;
+  width: var(--vh);
+  border-radius: 50%;
+  background-color: black;
+}
+.line {
+  border-bottom: calc(0.5 * var(--vh)) solid black;
+  width: calc(100% - var(--vh) * 2);
+}

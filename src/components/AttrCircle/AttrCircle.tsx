@@ -10,17 +10,18 @@ export default AttrCircle;
 function AttrCircle(props: {
   attr: string;
   value: number;
-  fontSize: string;
+  fontSize?: string;
   /**
    * color of value text
    */
   color?: string;
+  className?: string;
 }) {
-  const { attr, value, fontSize, color } = props;
+  const { attr, value, fontSize, color, className } = props;
 
   return (
     <div
-      className={styles.container}
+      className={`${styles.attrCircleContainer} ${className}`}
       style={{ fontSize, lineHeight: fontSize }}
     >
       <div>{attr}</div>

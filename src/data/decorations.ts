@@ -1380,3 +1380,4 @@ const decorations = satisfiesRecords<Decoration>()({
 });
 
 export default decorations;
+export type DecorationTypes = keyof typeof decorations;

@@ -307,3 +307,4 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
 });
 
 export default magicDefenses;
+export type MagicDefenseTypes = keyof typeof magicDefenses;

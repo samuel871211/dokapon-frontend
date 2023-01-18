@@ -20,6 +20,8 @@ export default BottomDialog;
  * It does not handle any keyboard event
  *
  * @todo 暫時沒有好的解法來處理特殊顏色字體，因為會牽扯到翻譯
+ *
+ * @todo `confirmDialog`也許可以拆成component
  */
 function BottomDialog(props: BottomDialogProps) {
   const { show, size, name, showConfirmCircle } = props;

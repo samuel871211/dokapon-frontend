@@ -74,7 +74,7 @@ function GroceryStoreFieldCheck() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { area } = gameProgress.DokaponTheWorldState.curClickVertex;
+  const { area } = gameProgress.DokaponTheWorldState.curCenterVertex;
   const { curListPage } =
     gameProgress.DokaponTheWorldState.GroceryStoreFieldCheckState;
   const curShowItems = groceryStores[area].filter(

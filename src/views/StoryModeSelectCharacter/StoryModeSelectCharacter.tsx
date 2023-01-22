@@ -52,7 +52,7 @@ const basicJobsDescriptions: { [key in BasicJobTypes]: TextsKeys } = {
 /**
  * TextsKeys若有包含{variable}，會在進入`bottomDialogSentencesQueue`的時候做轉換
  */
-const bottomDialogTexts: {
+const bottomDialogSentences: {
   [key in StoryModeSelectCharacterComponentTypes]: TextsKeys[];
 } = {
   SelectNumberOfPlayers: ["勇者様は何人いるんですか?"],
@@ -1114,7 +1114,7 @@ function useMetaData() {
   }
   function handleBottomDialogSentencesQueue() {
     bottomDialogSentencesQueue.length = 0;
-    for (const sentence of bottomDialogTexts[curComponent]) {
+    for (const sentence of bottomDialogSentences[curComponent]) {
       const translatedSentence = t(sentence)
         .replace("{playerNumber}", String(currentPlayerIdx + 1))
         .replace("{name}", currentPlayer.name)

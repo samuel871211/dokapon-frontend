@@ -63,6 +63,6 @@ function VillageFieldCheck() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { area } = gameProgress.DokaponTheWorldState.curClickVertex;
+  const { area } = gameProgress.DokaponTheWorldState.curCenterVertex;
   return { area };
 }

@@ -8,6 +8,7 @@ import Roulette from "./Roulette";
 import Bag from "./Bag";
 import Check from "./Check";
 import OverviewMap from "./OverviewMap";
+import UseFieldSpeciality from "./UseFieldSpeciality";
 import GroceryStoreFieldCheck from "./Check/GroceryStoreFieldCheck";
 import GraphUI from "views/DokaponTheWorld/GraphUI";
 import WeaponStoreFieldCheck from "./Check/WeaponStoreFieldCheck";
@@ -30,9 +31,7 @@ import areaTypesToMap from "data/areaTypesToMap";
 import GraphDSA from "utils/GraphDSA";
 import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
 import SelectCharacterToCompare from "./SelectCharacterToCompare";
-// import magicAttacks, { MagicAttackTypes } from "data/magicAttacks";
-// import magicDefenses from "data/magicDefenses";
-// import { monsterList } from "data/monsters";
+import vertexNameToComponentType from "data/vertexNameToComponentType";
 
 // Stateless vars declare.
 const emptyGraphDSA = {};
@@ -109,7 +108,9 @@ const svgViewBox = { width: 0, height: 0 };
  * G Element的BBox，會在地圖切換的時候更新
  */
 const cellsGroupBBox = { x: 0, y: 0, width: 0, height: 0 };
-const text: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
+const bottomDialogSentences: {
+  [key in DokaponTheWorldComponentTypes]: TextsKeys[];
+} = {
   BattleFieldCheck: ["ザコモンスターとの戦闘や\nイベントが発生するマス。"],
   DamageFieldCheck: [
     "止まると一定量のダメージを受けるマス。\n戦闘やイベントも起こる。",
@@ -135,6 +136,8 @@ const text: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
   Bag: [],
   Check: [],
   Roulette: [],
+  UseFieldSpeciality: ["{fieldSpecialityName}を使いますか?"],
+  CaveFieldCheck: [],
   BeforeCollectMoneyFieldCheck: [
     "持ち村の内1つから、上納金を集金するか、\nレベルアップさせるかを選べるマス。\n集金すると特産品もいっしょに回収できる。",
   ],
@@ -163,7 +166,6 @@ const text: { [key in DokaponTheWorldComponentTypes]: TextsKeys[] } = {
   SelectCharacterToCompare: [],
   PlayerVsCharacterDialogs: [],
 };
-// const dokaponTheWorldGraphDSA = new GraphDSA(dokaponTheWorldMap);
 const Components: {
   [key in DokaponTheWorldComponentTypes]: () => JSX.Element;
 } = {
@@ -173,6 +175,7 @@ const Components: {
   Bag,
   Check,
   Roulette,
+  UseFieldSpeciality,
   CastleFieldCheck,
   ChurchFieldCheck,
   VillageFieldCheck,
@@ -181,6 +184,7 @@ const Components: {
   JobStoreFieldCheck,
   MagicStoreFieldCheck,
   WeaponStoreFieldCheck,
+  CaveFieldCheck: OnlyBottomDialogFieldCheck,
   BattleFieldCheck: OnlyBottomDialogFieldCheck,
   DamageFieldCheck: OnlyBottomDialogFieldCheck,
   MagicBookFieldCheck: OnlyBottomDialogFieldCheck,
@@ -203,6 +207,17 @@ function updateCellsGroupBBox() {
   cellsGroupBBox.y = newCellsGroupBBox.y;
   cellsGroupBBox.width = newCellsGroupBBox.width;
   cellsGroupBBox.height = newCellsGroupBBox.height;
+}
+function updateSVGViewBox() {
+  const graphSVGEl = document.getElementById(ids.graphSVG);
+  if (!graphSVGEl) return console.error("no viewEl");
+
+  svgViewBox.width = graphSVGEl.clientWidth;
+  svgViewBox.height = graphSVGEl.clientHeight;
+}
+function windowResizeEffect() {
+  window.addEventListener("resize", updateSVGViewBox);
+  return () => window.removeEventListener("resize", updateSVGViewBox);
 }
 
 export default DokaponTheWorld;
@@ -250,10 +265,8 @@ function useMetaData() {
   const currentPlayer = playersAttrs[currentPlayerIdx];
   const currentMap = areaTypesToMap[currentPlayer.area];
   const currentPlayerVertex = currentMap.vertices[currentPlayer.vertexIdx];
-  // const curGraphDSA
   const {
     curComponents,
-    // curClickedPlayers,
     curClickedCharacters,
     bossMonsters,
     enemies,
@@ -293,6 +306,9 @@ function useMetaData() {
         return handleKeyUpForCheck(e);
       case "OverviewMap":
         return handleKeyUpForOverviewMap(e);
+      case "UseFieldSpeciality":
+        return handleKeyUpForUseFieldSpeciality(e);
+      case "CaveFieldCheck":
       case "BattleFieldCheck":
       case "DamageFieldCheck":
       case "TreasureFieldCheck":
@@ -330,6 +346,27 @@ function useMetaData() {
         return;
     }
   }
+  function handleKeyUpForUseFieldSpeciality(e: KeyboardEvent<HTMLDivElement>) {
+    const { isHoverOnConfirmBtn } = gameProgress;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.arrowUp:
+      case gamePadSetting.arrowDown:
+        gameProgress.isHoverOnConfirmBtn = !isHoverOnConfirmBtn;
+        break;
+      case gamePadSetting.circle:
+        if (!isHoverOnConfirmBtn) {
+          DokaponTheWorldState.curComponents = ["Drawer"];
+          break;
+        }
+        // @todo 使用技能
+        console.log("使用技能");
+        break;
+      case gamePadSetting.cross:
+        DokaponTheWorldState.curComponents = ["Drawer"];
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
   function handleKeyUpForDrawer(e: KeyboardEvent<HTMLDivElement>) {
     const { selectedIdx } = DrawerState;
     switch (e.key.toLowerCase()) {
@@ -356,6 +393,7 @@ function useMetaData() {
             CheckState.showCheckTip = true;
             break;
           case 3: // 特技
+            DokaponTheWorldState.curComponents = ["UseFieldSpeciality"];
             break;
           case 4: // 資訊
             break;
@@ -444,11 +482,10 @@ function useMetaData() {
   }
   /**
    * @todo click on enemy
-   * @todo click on monster
    * @todo 釐清 集金 跟 全集金 的差別
    */
   function handleKeyUpForCheck(e: KeyboardEvent<HTMLDivElement>) {
-    const { curClickVertex } = DokaponTheWorldState;
+    const { curCenterVertex } = DokaponTheWorldState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
         if (!keyDownArrows.up) break;
@@ -467,26 +504,35 @@ function useMetaData() {
         setKeyDownArrows({ ...keyDownArrows, right: false });
         break;
       case gamePadSetting.circle: {
-        if (Object.keys(curClickVertex).length === 0) return;
+        if (Object.keys(curCenterVertex).length === 0) return;
 
         // 關閉所有小視窗
         CheckState.showVertexNameAndDistance = false;
         CheckState.showCheckTip = false;
         CheckState.showMiniMap = false;
+
+        // 初始化
         curComponents.length = 0;
+        setKeyDownArrows({
+          up: false,
+          down: false,
+          left: false,
+          right: false,
+          square: false,
+        });
 
         // check if player (self excluded), enemy or monster is clicked
         const clickedPlayers = playersAttrs.filter(
           (playerAttrs) =>
-            currentMap.vertices[playerAttrs.vertexIdx] === curClickVertex &&
+            currentMap.vertices[playerAttrs.vertexIdx] === curCenterVertex &&
             playerAttrs !== currentPlayer
         );
         const clickedBossMonster = bossMonsters.find(
           (bossMonster) =>
-            currentMap.vertices[bossMonster.vertexIdx] === curClickVertex
+            currentMap.vertices[bossMonster.vertexIdx] === curCenterVertex
         );
         const clickedEnemy = enemies.find(
-          (enemy) => currentMap.vertices[enemy.vertexIdx] === curClickVertex
+          (enemy) => currentMap.vertices[enemy.vertexIdx] === curCenterVertex
         );
         DokaponTheWorldState.curClickedCharacters = clickedPlayers;
         if (clickedBossMonster)
@@ -500,69 +546,8 @@ function useMetaData() {
         }
 
         // handle click on vertex
-        switch (curClickVertex.name) {
-          case "BattleField":
-            curComponents.push("BattleFieldCheck");
-            break;
-          case "KeyTreasureField":
-            curComponents.push("TreasureFieldCheck");
-            break;
-          case "MagicBookField":
-            curComponents.push("MagicBookFieldCheck");
-            break;
-          case "RedTreasureField":
-            curComponents.push("RedTreasureFieldCheck");
-            break;
-          case "TreasureField":
-            curComponents.push("TreasureFieldCheck");
-            break;
-          case "WhiteTreasureField":
-            curComponents.push("WhiteTreasureFieldCheck");
-            break;
-          case "WorldTransferField":
-            curComponents.push("WorldTransferFieldCheck");
-            break;
-          case "GoldTreasureField":
-            curComponents.push("GoldTreasureFieldCheck");
-            break;
-          case "DamageField":
-            curComponents.push("DamageFieldCheck");
-            break;
-          case "CollectAllMoneyField":
-            curComponents.push("BeforeCollectMoneyFieldCheck");
-            break;
-          case "CollectMoneyField":
-            curComponents.push("BeforeCollectMoneyFieldCheck");
-            break;
-          case "CaveField":
-            curComponents.push("CastleFieldCheck");
-            break;
-          case "VillageField":
-            curComponents.push("VillageFieldCheck");
-            break;
-          case "CastleField":
-            curComponents.push("CastleFieldCheck");
-            break;
-          case "ChruchField":
-            curComponents.push("ChurchFieldCheck");
-            break;
-          case "GroceryStoreField":
-            curComponents.push("GroceryStoreFieldCheck");
-            break;
-          case "JobStoreField":
-            curComponents.push("JobStoreFieldCheck");
-            break;
-          case "MagicStoreField":
-            curComponents.push("MagicStoreFieldCheck");
-            break;
-          case "WeaponStoreField":
-            curComponents.push("WeaponStoreFieldCheck");
-            break;
-          default:
-            // 滑鼠hover上去`name`，型別應該要是`never`，才代表所有case都有涵蓋到
-            curClickVertex.name;
-            break;
-        }
+        curComponents.push(vertexNameToComponentType[curCenterVertex.name]);
+
         setGameProgress({ ...gameProgress });
         return;
       }
@@ -640,7 +625,7 @@ function useMetaData() {
   function handleKeyUpForMagicStoreFieldCheck(
     e: KeyboardEvent<HTMLDivElement>
   ) {
-    const { area } = DokaponTheWorldState.curClickVertex;
+    const { area } = DokaponTheWorldState.curCenterVertex;
     const magicStore = magicStores[area];
     const maxPage = Math.ceil(magicStore.length / 6);
     const { curListPage } = MagicStoreFieldCheckState;
@@ -780,10 +765,18 @@ function useMetaData() {
     DokaponTheWorldState.curComponents = ["Check"];
     setGameProgress({ ...gameProgress });
   }
-  function handleBottomDialogQueue() {
+  function handleBottomDialogSentencesQueue() {
+    const curComponent = curComponents[0];
+    const curPlayerJob = jobs[currentPlayer.job];
     bottomDialogSentencesQueue.length = 0;
-    for (const sentence of text[curComponents[0]]) {
-      bottomDialogSentencesQueue.push(t(sentence));
+    for (const sentence of bottomDialogSentences[curComponent]) {
+      const translatedSentence = t(sentence).replace(
+        "{fieldSpecialityName}",
+        t(curPlayerJob.fieldSpeciality.name)
+      );
+      // .replace("{name}", currentPlayer.name)
+      // .replace("{remainPlayerCount}", String(3 - currentPlayerIdx + 1));
+      bottomDialogSentencesQueue.push(translatedSentence);
     }
     setGameProgress({ ...gameProgress });
   }
@@ -924,52 +917,40 @@ function useMetaData() {
         );
         CheckState.curHoverVertexName = centerVertex.name;
         CheckState.curHoverVertexDistance = distance;
-        // DokaponTheWorldState.curClickVertex = centerVertex;
+        // DokaponTheWorldState.curCenterVertex = centerVertex;
       }
-      DokaponTheWorldState.curClickVertex = centerVertex || ({} as Vertex);
+      DokaponTheWorldState.curCenterVertex = centerVertex || ({} as Vertex);
       CheckState.showVertexNameAndDistance = Boolean(centerVertex);
       setGameProgress({ ...gameProgress });
     }, 1);
   }
-  useEffect(handleMapMove, [keyDownArrows]);
-  useEffect(handleBottomDialogQueue, [curComponents[0]]);
-  useEffect(updateCellsGroupBBox, [currentPlayer.area]);
-  useEffect(() => {
-    const area = currentPlayer.area;
-    // 被動載入新地圖
-    if (GraphDSAs[area] === emptyGraphDSA) {
-      GraphDSAs[area] = new GraphDSA(areaTypesToMap[area]);
-    }
-    // 計算30步
+  function moveMapToPlayerVertex() {
+    const curVertex = currentMap.vertices[currentPlayer.vertexIdx];
+    SVGTranslate.x = curVertex.position.x * -1 + svgViewBox.width / 2;
+    SVGTranslate.y = curVertex.position.y * -1 + svgViewBox.height / 2;
+    setGameProgress({ ...gameProgress });
+  }
+  function recalculate30Step() {
+    const { area } = currentPlayer;
     GraphDSAs[area].getAllPaths(currentPlayerVertex.id, 30);
-  }, [currentPlayer.area, currentPlayerVertex]);
-  useEffect(() => {
-    // AUTO FOCUS CONTAINER ELEMENT WHEN COMPONENT MOUNTED
+  }
+  function lazyLoadMap() {
+    const { area } = currentPlayer;
+    if (GraphDSAs[area] !== emptyGraphDSA) return;
+    GraphDSAs[area] = new GraphDSA(areaTypesToMap[area]);
+  }
+  function focusContainerElAfterLoaded() {
     containerRefEl.current?.focus();
-
-    // ADD WINDOW RESIZE EVENT HANDLER
-    function updateSVGViewBox() {
-      const graphSVGEl = document.getElementById(ids.graphSVG);
-      if (!graphSVGEl) return console.error("no viewEl");
-
-      svgViewBox.width = graphSVGEl.clientWidth;
-      svgViewBox.height = graphSVGEl.clientHeight;
-    }
-    updateSVGViewBox();
-    window.addEventListener("resize", updateSVGViewBox);
-    return () => window.removeEventListener("resize", updateSVGViewBox);
-  }, []);
-  useEffect(() => {
-    // console.log(DokaponTheWorldState.curClickedPlayers);
-    // console.log(DokaponTheWorldState.curClickedBossMonsterIdx);
-    // console.log(DokaponTheWorldState.curClickedEnemyIdx);
-    console.log(DokaponTheWorldState.curClickedCharacters);
-  }, [
-    DokaponTheWorldState.curClickedCharacters,
-    // DokaponTheWorldState.curClickedPlayers,
-    // DokaponTheWorldState.curClickedBossMonsterIdx,
-    // DokaponTheWorldState.curClickedEnemyIdx
-  ]);
+  }
+  useEffect(handleMapMove, [keyDownArrows]);
+  useEffect(handleBottomDialogSentencesQueue, [curComponents[0]]);
+  useEffect(updateCellsGroupBBox, [currentPlayer.area]);
+  useEffect(lazyLoadMap, [currentPlayer.area]);
+  useEffect(recalculate30Step, [currentPlayer.area, currentPlayerVertex]);
+  useEffect(updateSVGViewBox, []);
+  useEffect(windowResizeEffect, []);
+  useEffect(moveMapToPlayerVertex, [currentPlayerIdx]);
+  useEffect(focusContainerElAfterLoaded, []);
   return {
     containerRefEl,
     handleKeyDown,

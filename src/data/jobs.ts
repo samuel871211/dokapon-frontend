@@ -39,6 +39,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "職につかない自由人。\n仕事が無いのでお金も無い。\n無職を続けると⋯\n⋯引きこもりになる?",
     fieldSpeciality: {
+      type: "manual",
       name: "ひろう",
       briefExplanation: "自分の足元を探して\nアイテムか魔法か金をひろう。",
       fullExplanation:
@@ -81,6 +82,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "攻撃力でガンガン行く職業。\n物理攻撃が得意だが、魔力が\n上がらないので魔法には弱い。\n戦いに明けくれた戦士は、\n更なる地位に昇格するという。",
     fieldSpeciality: {
+      type: "auto",
       name: "気合い",
       briefExplanation: "ターン開始時に\nたまに攻撃力が上がる。",
       fullExplanation:
@@ -123,6 +125,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "高い魔力でビシビシ行く職業。\n魔法攻撃は強力だが、防御力が\n上がらないので打たれ弱い。\n魔道を追求すると、\n更なる地位に昇格するという。",
     fieldSpeciality: {
+      type: "auto",
       name: "連魔",
       briefExplanation: "魔法を2回連続で使用できる。",
       fullExplanation:
@@ -165,6 +168,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "HPが高い職業。\n打たれ強さはあるが、\n素早さが上がらないので\n攻撃をミスしやすい。\n神への信仰心を忘れねば、\n更なる地位に昇格するという。",
     fieldSpeciality: {
+      type: "auto",
       name: "神頼み",
       briefExplanation: "ターン開始時に\nたまにHPが回復する。",
       fullExplanation:
@@ -207,6 +211,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "素早さがピカイチの職業。\n攻撃をよけたりすることもある。\n盗賊のスキルがあると、\n他の職業にはば広く\n転職できるようになる。",
     fieldSpeciality: {
+      type: "manual",
       name: "盗む",
       briefExplanation: "他の誰かから\nアイテムか魔法を盗む。",
       fullExplanation:
@@ -249,6 +254,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "戦士の上級職。\n騎士道を重んじ、\n技と心をみがいた剣士。\n戦士とナイトを極めた者は、\n更なる地位に昇格するという。",
     fieldSpeciality: {
+      type: "auto",
       name: "騎士の魂",
       briefExplanation: "ターン開始時に\nたまに攻撃力か防御力が上がる。",
       fullExplanation:
@@ -291,6 +297,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "魔法使いの上級職。\n魔道を追求した最上位の魔導師。\n魔法使いと大魔導を極めた者は、\n更なる地位に昇格するという。",
     fieldSpeciality: {
+      type: "auto",
       name: "大連魔",
       briefExplanation: "魔法を3回連続で使用できる。",
       fullExplanation:
@@ -334,6 +341,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "僧侶の上級職。\nHPの他、ステータス異常も回復\nさせる力をさずかった神の使い。\n僧侶と神官を極めた者は、\n更なる地位に昇格するという。",
     fieldSpeciality: {
+      type: "auto",
       name: "天の声",
       briefExplanation:
         "ターン開始時に、たまにHPや\nステータス異常が回復する。",
@@ -378,6 +386,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "戦士系の最上級職。\n物理攻撃のエキスパートで、\n戦いを極めた最強の剣士。\n反撃不能な必殺技を覚え、\n究極の進化をとげた。",
     fieldSpeciality: {
+      type: "auto",
       name: "最強の証",
       briefExplanation:
         "ターン開始時に、たまに\n攻撃力、防御力、素早さが上がる。",
@@ -421,6 +430,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "魔法使い系の最上級職。\n魔法攻撃のエキスパートで、\n禁じられた呪文を使う闇の魔導師。\n古代より伝わる闇の邪法を使い、\n相手を戦闘不能な状態にする。",
     fieldSpeciality: {
+      type: "manual",
       name: "闇擊",
       briefExplanation:
         "フィールド魔法を持ってなくても、\n他の誰かを魔法で攻撃できる。",
@@ -465,6 +475,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "僧侶系の最上級職。\n奇跡をも操ることが可能な\n光の聖職者。\n神からさずかった偉大なる力は\n死さえも超越する。",
     fieldSpeciality: {
+      type: "auto",
       name: "奇跡",
       briefExplanation:
         "ターン開始時に、たまにHPと\nステータス異常が完全回復する。",
@@ -508,6 +519,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "盗賊の上級職の一つ。\n七つの海をかけ抜ける荒くれ者。\n盗賊の技と、戦士の攻撃力を\n極めていないと転職できない。\nいかなる状況からも、\n盗みを成功させる技術を持つ。\n船の上での戦闘は大の得意。",
     fieldSpeciality: {
+      type: "manual",
       name: "砲擊",
       briefExplanation: "他の誰かを大砲で攻撃する。",
       fullExplanation:
@@ -550,6 +562,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "盗賊の上級職の一つ。\n闇にひそみ密かに敵を狙う暗殺者。\n盗賊の技と、魔法使いの魔道を\n極めていないと転職できない。\n様々な忍術を使うことができる。",
     fieldSpeciality: {
+      type: "manual",
       name: "忍法",
       briefExplanation: "様々な忍法を使う。",
       fullExplanation:
@@ -592,6 +605,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "盗賊の上級職の一つ。\nいかさま技は天下一の\nさすらいのとばく師。\n盗賊の技を極め、無職の心を少し\n知っていないと転職できない。\nスリルを追い求め\n最強の博打技を身に付けた。",
     fieldSpeciality: {
+      type: "manual",
       name: "博打",
       briefExplanation:
         "カードをめくって出た数だけ、\nアイテムと魔法を使用できる。",
@@ -636,6 +650,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "世界中のモンスターの半分と\n出会った結果、モンスター達が\n友達になってくれた。\n戦いの時は、友情でむすばれた\nモンスター達が助けに来てくれる。\nでも弱いやつが助けに来るかも。\n呼ぶには体力をしょうもうする。",
     fieldSpeciality: {
+      type: "auto",
       name: "連続使用",
       briefExplanation: "アイテムとフィールド魔法を\n1回ずつ使用できる。",
       fullExplanation:
@@ -677,6 +692,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "全身を鋼鉄の機械に改造した\nデジタルな職業。\nナイト、大魔導、神官の3職業を\n極めた者が、改造してもらえる。\n相手の体をスキャンすることで、\nそのカを自分の物にできる。",
     fieldSpeciality: {
+      type: "manual",
       name: "プログラム",
       briefExplanation: "0〜6マスまでの好きな場所へ\n移動できる。",
       fullExplanation:
@@ -720,6 +736,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "特殊なアイテムを使うことにより\n転職可能になる男性車用職業。\nたくみの技で、建物の建造や修理、\n時には破壊などをする。\n大工のきたえ上げた肉体は、\nケンカが強くなるのに役立つ。",
     fieldSpeciality: {
+      type: "manual",
       name: "職人芸",
       briefExplanation:
         "自分の村を発展させたり、他人の\n村をさびれさせることができる。",
@@ -764,6 +781,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "特殊なアイテムを使うことにより\n転職可能になる女性専用職業。\n他人のちりょうは苦手だが、\n自分のちりょう術は心得ている。\nナースの優しさを知った者は、\n相手を痛めつける職業に就いても、\n優しさを忘れずにいられる。",
     fieldSpeciality: {
+      type: "manual",
       name: "入院",
       briefExplanation: "1日休んで、HPと特定の\nステータス異常を回復する。",
       fullExplanation:
@@ -805,6 +823,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "己の肉体を武器とし、\n高い攻撃カといやしのカを持つ\n男の修行僧。\n戦士、僧侶、大工の職業を\n少し熟練すれば、転職できる。\n武器を持たずに素手で戦うと、\n攻撃力がひやく的に上がる。",
     fieldSpeciality: {
+      type: "manual",
       name: "めいそう",
       briefExplanation: "HPを多少回復した上、\n素早さを上げる。",
       fullExplanation:
@@ -848,6 +867,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "色っぽい女性車用職業。\n様々なおどりで人々を魅了したり、\n自分の気分を盛り上げたりする。\n盗賊の身軽さと、\n僧侶と魔法使いの神秘の力を\n少し熟練すれば転職できる。",
     fieldSpeciality: {
+      type: "manual",
       name: "舞い",
       briefExplanation: "いろいろな舞いで自分に対して\n様々な良い効果を得る。",
       fullExplanation:
@@ -891,6 +911,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "宇宙からやって来たナゾの職業。\nどうやらオスらしい。\n不思議な力で人々をまどわす。\n無職でずっと\nプラプラしていた者が、\nUFOにさらわれ改造された姿。",
     fieldSpeciality: {
+      type: "auto",
       name: "ぞうしょく",
       briefExplanation: "ターン開始時に、たまに\nアイテムか魔法が増える。",
       fullExplanation:
@@ -934,6 +955,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "人をかわいがるのを仕事とする\nチョット大人なおネェさんの職業。\nおどり子のセクシーさと、\nナースの優しさと、\nナイトの攻撃の技を\n半分以上熟練した女性が\n愛に目覚めた姿。",
     fieldSpeciality: {
+      type: "manual",
       name: "かわいがる",
       briefExplanation:
         "他人の村で村長をかわいがり、\n上手くいくと自分の村になる。",
@@ -978,6 +1000,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "モンクの上級職。\n最強の格闘術と気功を極め、\n立ちふさがる者全てを倒す。\nモンク、ナイト、神官を\n極めて、格闘王に昇格した姿。\n武器を持たずに素手で戦うと、\n攻撃力がひやく的に上がる。",
     fieldSpeciality: {
+      type: "manual",
       name: "燃える魂",
       briefExplanation: "現HPを半分に減らし\n攻撃力、防御力、素早さを上げる。",
       fullExplanation:
@@ -1020,6 +1043,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "魔法使い系のもう一つの最上級職。\n精霊の声を聞き、その力を\n使うことができる職業。\n精霊の声が聞けるのは女性のみ。\n大魔導、神官、おどり子の\n職業を極めた女性の前に、\n精霊はその姿を現す。",
     fieldSpeciality: {
+      type: "manual",
       name: "精霊の召喚",
       briefExplanation: "精霊達の力を借りて\n他の誰かを攻撃する。",
       fullExplanation:
@@ -1063,6 +1087,7 @@ const jobs = satisfiesRecords<Job>()({
     fullExplanation:
       "全ての職業になれる者だけが\nドカポン王に転職をゆるされる\n究極の職業。\nその能力も究極といわれる。",
     fieldSpeciality: {
+      type: "auto",
       name: "特権",
       briefExplanation: "アイテムと魔法を\n持っているだけ使える。",
       fullExplanation:
@@ -1104,6 +1129,10 @@ const jobs = satisfiesRecords<Job>()({
     briefExplanation: "",
     fullExplanation: "",
     fieldSpeciality: {
+      /**
+       * @todo 待確認
+       */
+      type: "auto",
       name: "",
       briefExplanation: "",
       fullExplanation: "",
@@ -1143,6 +1172,10 @@ const jobs = satisfiesRecords<Job>()({
     briefExplanation: "",
     fullExplanation: "",
     fieldSpeciality: {
+      /**
+       * @todo 待確認
+       */
+      type: "auto",
       name: "",
       briefExplanation: "",
       fullExplanation: "",

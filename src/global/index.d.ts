@@ -97,9 +97,11 @@ export type DokaponTheWorldComponentTypes =
   | "Bag"
   | "Check"
   | "Roulette"
+  | "UseFieldSpeciality"
   | "BattleFieldCheck"
   | "CastleFieldCheck"
   | "ChurchFieldCheck"
+  | "CaveFieldCheck"
   | "BeforeCollectMoneyFieldCheck"
   | "CollectMoneyFieldCheck"
   | "DamageFieldCheck"
@@ -289,7 +291,7 @@ export type GameProgress = {
   };
   DokaponTheWorldState: {
     curComponents: DokaponTheWorldComponentTypes[];
-    curClickVertex: Vertex;
+    curCenterVertex: Vertex;
     // curClickedCharactersCount: number;
     // curClickedBossMonsterIdx: number;
     // curClickedEnemyIdx: number;
@@ -859,6 +861,7 @@ export type JobTypes =
   | "royal"
   | "devil"
   | "anotherDevil";
+export type FieldSpecialityTypes = "manual" | "auto";
 export type Job = {
   // type: JobTypes;
   name: TextsKeys;
@@ -886,17 +889,21 @@ export type Job = {
   briefExplanation: string;
   fullExplanation: string;
   fieldSpeciality: {
-    name: string;
-    briefExplanation: string;
-    fullExplanation: string;
+    name: TextsKeys;
+    briefExplanation: TextsKeys;
+    fullExplanation: TextsKeys;
+    type: FieldSpecialityTypes;
   };
   battleSpeciality: {
-    name: string;
-    briefExplanation: string;
-    fullExplanation: string;
+    name: TextsKeys;
+    briefExplanation: TextsKeys;
+    fullExplanation: TextsKeys;
   };
   allowMale: true;
   allowFemale: true;
   weeklyBonus?: unknown;
+  /**
+   * @todo 轉職條件
+   */
   condition?: unknown;
 };

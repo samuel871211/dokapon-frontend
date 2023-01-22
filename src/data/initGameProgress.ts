@@ -77,13 +77,7 @@ const initGameProgress: GameProgress = {
   },
   DokaponTheWorldState: {
     curComponents: ["Drawer"],
-    // curClickedBossMonsterIdx: -1,
-    // curClickedEnemyIdx: -1,
-    // curClickedPlayersIdx: [],
-    // curClickedPlayers: [],
-    // curClickedCharactersCount: 0,
     curClickedCharacters: [],
-    // curClickedCharacterIdx: -1,
     enemies: [],
     bossMonsters: [
       {
@@ -736,7 +730,7 @@ const initGameProgress: GameProgress = {
         vertexIdx: 867,
       },
     ],
-    curClickVertex: {
+    curCenterVertex: {
       position: {
         x: 4960,
         y: 2940,
@@ -760,7 +754,6 @@ const initGameProgress: GameProgress = {
       showMiniMap: false,
       curHoverVertexDistance: 0,
       curHoverVertexName: "",
-      // curHoverVertex: undefined,
       miniMap: {
         player1Position: { x: 0, y: 0 },
         player2Position: { x: 0, y: 0 },

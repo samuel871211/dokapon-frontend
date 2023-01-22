@@ -4,6 +4,19 @@ const texts = {
     en: "",
     cn: "",
   },
+  // DokaponTheWorld > UseFieldSpeciality
+  オート: {
+    en: "auto",
+    cn: "被動技能",
+  },
+  マニュアル: {
+    en: "manual",
+    cn: "主動技能",
+  },
+  "{fieldSpecialityName}を使いますか?": {
+    en: "Do yoy want to use {fieldSpecialityName}?",
+    cn: "要使用{fieldSpecialityName}嗎？",
+  },
   // monsters
   ヤタガラス: {
     en: "ヤタガラス",
@@ -1476,8 +1489,8 @@ const texts = {
       cn: "素早さがピカイチの職業。\n攻撃をよけたりすることもある。\n盗賊のスキルがあると、\n他の職業にはば広く\n転職できるようになる。",
     },
   盗む: {
-    en: "盗む",
-    cn: "盗む",
+    en: "steal",
+    cn: "偷盜",
   },
   "他の誰かから\nアイテムか魔法を盗む。": {
     en: "他の誰かから\nアイテムか魔法を盗む。",

@@ -2,6 +2,7 @@
 import { useContext } from "react";
 
 // Local application/library specific imports.
+import isPlayer from "utils/isPlayer";
 import type { MonsterAttrs, PlayerAttrs } from "global";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
@@ -32,10 +33,8 @@ function PlayerVsCharacterDialogs() {
   const currentPlayer = playersAttrs[currentPlayerIdx];
   const curClickedCharacter = curClickedCharacters[selectedIdx];
   const { characterType } = curClickedCharacter;
-  const isPlayerOrNPCPlayer =
-    characterType === "player" || characterType === "npcPlayer";
   const isMonsterOrEnemy = characterType === "monster";
-  curClickedCharacter.characterType;
+
   return (
     <div className={styles.playerVsCharacterDialogsContainer}>
       <div className={styles.playerVsCharacterDialogBlock}>
@@ -44,16 +43,16 @@ function PlayerVsCharacterDialogs() {
         {curPage === 2 && <MagicBooksPage playerAttrs={currentPlayer} />}
       </div>
       <div className={styles.playerVsCharacterDialogBlock}>
-        {curPage === 0 && isPlayerOrNPCPlayer && (
-          <PlayerPage playerAttrs={curClickedCharacter} />
-        )}
-        {curPage === 0 && isMonsterOrEnemy && (
+        {isMonsterOrEnemy && (
           <MonsterOrEnemyDialog attrs={curClickedCharacter} />
         )}
-        {curPage === 1 && isPlayerOrNPCPlayer && (
+        {curPage === 0 && isPlayer(curClickedCharacter) && (
+          <PlayerPage playerAttrs={curClickedCharacter} />
+        )}
+        {curPage === 1 && isPlayer(curClickedCharacter) && (
           <ItemsPage playerAttrs={curClickedCharacter} />
         )}
-        {curPage === 2 && isPlayerOrNPCPlayer && (
+        {curPage === 2 && isPlayer(curClickedCharacter) && (
           <MagicBooksPage playerAttrs={curClickedCharacter} />
         )}
       </div>

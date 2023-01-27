@@ -1,0 +1,65 @@
+.paginationContainer {
+  display: flex;
+}
+.topFloatingLeft,
+.topFloatingRight {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.leftTriangle {
+  border-top: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+  border-right: 2rem solid black;
+}
+.leftText {
+  color: white;
+  font-size: 2rem;
+  line-height: 2rem;
+  -webkit-text-stroke: 0.1rem black;
+  position: absolute;
+  right: -0.5rem;
+}
+.rightTriangle {
+  border-top: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+  border-left: 2rem solid black;
+}
+.rightText {
+  color: white;
+  font-size: 2rem;
+  line-height: 2rem;
+  -webkit-text-stroke: 0.1rem black;
+  position: absolute;
+  left: -0.5rem;
+}
+.topFloatingCenter {
+  flex-grow: 1;
+  display: flex;
+}
+.circle {
+  width: calc(100% / 7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle::after {
+  content: "";
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: black;
+  border-radius: 50%;
+}
+.circle[data-selected="true"]::after {
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
+  border: 0.2rem solid black;
+  transition: width 0.25s, height 0.25s;
+}
+.topFloatingRight {
+  color: white;
+  font-size: 2rem;
+  line-height: 2rem;
+  -webkit-text-stroke: 0.1rem black;
+}

@@ -12,6 +12,7 @@ import useTranslation from "hooks/useTranslation";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import YellowBlock from "layouts/YellowBlock";
 import gameProgressCtx from "reducers/gameProgress";
+import Pagination from "components/Pagination";
 
 // Stateless vars declare.
 const ArrOf7 = [0, 0, 0, 0, 0, 0, 0];
@@ -48,28 +49,7 @@ function CollectMoneyFieldCheck() {
             <CustomBorderBottom width="98%" />
           </div>
           <div className={styles.topFloating}>
-            <div className={styles.topFloatingLeft}>
-              <div className={styles.leftTriangle}></div>
-              <div className={styles.leftText}>L</div>
-            </div>
-            <div
-              className={classNames(
-                styles.topFloatingCenter,
-                globalStyles.hoverEffectGreenTransparent
-              )}
-            >
-              {ArrOf7.map((item, idx) => (
-                <div
-                  key={idx}
-                  className={styles.circle}
-                  data-selected={curListPage === idx}
-                />
-              ))}
-            </div>
-            <div className={styles.topFloatingRight}>
-              <div className={styles.rightText}>R</div>
-              <div className={styles.rightTriangle}></div>
-            </div>
+            <Pagination maxCount={7} curPage={curListPage} />
           </div>
         </div>
         <div className={styles.bottomArea}>

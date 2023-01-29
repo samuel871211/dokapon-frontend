@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { ReactNode } from "react";
 import styles from "./TextWithBorderBottom.module.css";
 
@@ -24,7 +25,7 @@ function TextWithBorderBottom(props: {
 }) {
   const { width, children, className, diameter } = props;
   return (
-    <div className={`${styles.textWithBorderBottomContainer} ${className}`}>
+    <div className={classNames(styles.textWithBorderBottomContainer, className)}>
       <div
         className={styles.textContainer}
         style={{ width, padding: `0 ${diameter}` }}

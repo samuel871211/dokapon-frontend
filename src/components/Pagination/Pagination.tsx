@@ -31,6 +31,7 @@ function Pagination(props: {
         {arrayOfMaxCount.map((item, idx) => (
           <div
             key={idx}
+            style={{ width: `${100 / maxCount}%`}}
             className={styles.circle}
             data-selected={curPage === idx}
           />

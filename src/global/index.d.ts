@@ -97,6 +97,7 @@ export type DokaponTheWorldComponentTypes =
   | "Bag"
   | "Check"
   | "Roulette"
+  | "Data"
   | "UseFieldSpeciality"
   | "BattleFieldCheck"
   | "CastleFieldCheck"
@@ -292,15 +293,23 @@ export type GameProgress = {
   DokaponTheWorldState: {
     curComponents: DokaponTheWorldComponentTypes[];
     curCenterVertex: Vertex;
-    // curClickedCharactersCount: number;
-    // curClickedBossMonsterIdx: number;
-    // curClickedEnemyIdx: number;
-    // curClickedPlayersIdx: number[],
-    // curClickedPlayers: PlayerAttrs[];
     curClickedCharacters: (PlayerAttrs | MonsterAttrs)[];
-    // curClickedCharacterIdx: number;
     bossMonsters: MonsterAttrs[];
     enemies: PlayerAttrs[];
+    DataState: {
+      /**
+       * 0 ~ 2
+       */
+      curLevel: number;
+      /**
+       * 0 ~ 3
+       */
+      level0Idx: number;
+      /**
+       * [0 ~ 5, 0 ~ 5, 0 ~ 2, 0 ~ 2]
+       */
+      level1Idxs: [number, number, number, number];
+    };
     GraphUIState: {
       SVGTranslate: { x: number; y: number };
     };

@@ -745,6 +745,11 @@ const initGameProgress: GameProgress = {
       ],
       area: "Asia",
     },
+    DataState: {
+      curLevel: 0,
+      level0Idx: 0,
+      level1Idxs: [0, 0, 0, 0],
+    },
     GraphUIState: {
       SVGTranslate: { x: 0, y: 0 },
     },
@@ -837,111 +842,111 @@ const initGameProgress: GameProgress = {
       controllerNumber: 1,
       jobsMasterStatus: {
         beginner: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         warrior: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         magician: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         cleric: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         thief: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         knight: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         archmage: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         priest: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         bladeMaster: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         necromancer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         exorcist: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         pirate: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         ninja: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         gamester: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         beastTamer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         robot: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         carpenter: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         nurse: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         monk: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         dancer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         alien: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         queen: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         gladiator: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         elves: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         royal: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         devil: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         anotherDevil: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
       },
@@ -1013,111 +1018,111 @@ const initGameProgress: GameProgress = {
       controllerNumber: 1,
       jobsMasterStatus: {
         beginner: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         warrior: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         magician: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         cleric: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         thief: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         knight: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         archmage: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         priest: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         bladeMaster: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         necromancer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         exorcist: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         pirate: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         ninja: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         gamester: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         beastTamer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         robot: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         carpenter: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         nurse: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         monk: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         dancer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         alien: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         queen: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         gladiator: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         elves: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         royal: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         devil: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         anotherDevil: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
       },
@@ -1189,111 +1194,111 @@ const initGameProgress: GameProgress = {
       controllerNumber: 1,
       jobsMasterStatus: {
         beginner: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         warrior: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         magician: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         cleric: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         thief: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         knight: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         archmage: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         priest: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         bladeMaster: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         necromancer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         exorcist: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         pirate: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         ninja: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         gamester: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         beastTamer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         robot: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         carpenter: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         nurse: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         monk: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         dancer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         alien: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         queen: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         gladiator: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         elves: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         royal: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         devil: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         anotherDevil: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
       },
@@ -1365,111 +1370,111 @@ const initGameProgress: GameProgress = {
       controllerNumber: 1,
       jobsMasterStatus: {
         beginner: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         warrior: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         magician: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         cleric: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         thief: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         knight: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         archmage: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         priest: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         bladeMaster: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         necromancer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         exorcist: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         pirate: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         ninja: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         gamester: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         beastTamer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         robot: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         carpenter: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         nurse: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         monk: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         dancer: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         alien: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         queen: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         gladiator: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         elves: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         royal: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         devil: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
         anotherDevil: {
-          level: 1,
+          level: 0,
           rounds: 0,
         },
       },

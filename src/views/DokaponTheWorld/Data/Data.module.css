@@ -1,0 +1,429 @@
+.dataContainer {
+  --button-group-width: 16%;
+  --level1-button-bg-color: #e9a23b;
+  --level2-button-bg-color: #facc34;
+  /* 多1%讓右邊有延伸感 */
+  width: calc(101% + var(--button-group-width));
+  height: 100%;
+  transform: translateY(-100%);
+  display: flex;
+  margin-left: 2.5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  overflow: hidden;
+  transition: transform 0.25s;
+}
+.dataContainer[data-slide-left="true"] {
+  transform: translate(calc(var(--button-group-width) * -1), -100%);
+}
+.level0ButtonGroup {
+  width: var(--button-group-width);
+}
+.level0Button {
+  font-size: 3rem;
+  line-height: 3rem;
+  border-radius: 9999px 0% 0% 9999px;
+  border-bottom: 0.25rem solid black;
+  text-align: center;
+  background-color: var(--level1-button-bg-color);
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.level0Button[data-selected="true"] > div {
+  animation: level0ButtonHoverFrom 500ms, level0ButtonHoverTo 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+.rightContainer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--level1-button-bg-color);
+  display: flex;
+  flex-direction: column;
+}
+.rightTop {
+  /* margin-top: 0.5rem; */
+  margin-left: 1rem;
+  position: relative;
+  padding-left: 7%;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  color: white;
+  -webkit-text-stroke: 0.1rem black;
+}
+/* .rightTop::before {
+  height: 50%;
+  width: 100%;
+  border-top: 0.25rem solid black;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 3%;
+  z-index: 1;
+} */
+.rightBottom {
+  display: flex;
+  flex-grow: 1;
+  min-height: 1px;
+  padding-bottom: 2.5%;
+}
+.rightBottomButtonGroup {
+  width: var(--button-group-width);
+}
+.level1Button {
+  font-size: 3rem;
+  line-height: 3rem;
+  border-radius: 9999px 0% 0% 9999px;
+  border-bottom: 0.25rem solid var(--bg-color);
+  border-left: 0.25rem solid black;
+  border-top: 0.25rem solid black;
+  text-align: center;
+  background-color: var(--level2-button-bg-color);
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.level1Button[data-selected="true"] {
+  background-color: var(--bg-color);
+  border-top: none;
+  border-left: none;
+}
+.level1Button[data-hovered="true"] > div {
+  animation: level2ButtonHoverFrom 500ms, level2ButtonHoverTo 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+.variableContent {
+  width: calc(100% - var(--button-group-width));
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: 0px 0px 0px 1.5rem;
+  border-bottom: 0.2rem solid black;
+}
+.strengthContainer {
+  --variable-content-padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 2fr 3fr;
+  padding: var(--variable-content-padding);
+  gap: 2rem;
+  position: relative;
+}
+.strengthTop {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  gap: 2rem;
+}
+.playerImageAndRanking {
+  /* grid item預設min-width跟min-height都是auto */
+  min-width: 0;
+  min-height: 0;
+  height: 90%;
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+}
+.playerImageContainer {
+  height: 90%;
+}
+.playerImageContainer > img {
+  width: 100%;
+  height: 100%;
+}
+.ranking {
+  height: 10%;
+  display: flex;
+  color: white;
+  align-items: flex-end;
+  justify-content: center;
+}
+.ranking div {
+  font-size: 2rem;
+  -webkit-text-stroke: 0.1rem black;
+}
+.ranking span {
+  font-size: 3.5rem;
+  line-height: 3.5rem;
+  padding-left: 0.5rem;
+  -webkit-text-stroke: 0.15rem black;
+}
+.basicAttrsArea {
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1.5fr 1.5fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+}
+.xyCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.levelBox {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.nameBox {
+  grid-column-start: 2;
+  grid-column-end: 6;
+  flex-direction: column;
+}
+.nameTitle {
+  color: white;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+  -webkit-text-stroke: 0.05rem black;
+}
+.playerName {
+  font-size: 2rem;
+}
+.attackBox {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.defenseBox {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.magicBox {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+.speedBox {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+.hpBox {
+  grid-column-start: 5;
+  grid-column-end: 8;
+}
+.strengthBottomRight {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+/* .strengthBottom {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+} */
+.expArea {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  padding: 1rem 0;
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+  display: flex;
+}
+.expAreaLeft {
+  font-size: 3rem;
+  width: 30%;
+  text-align: center;
+  padding-top: 1rem;
+}
+.expAreaRight {
+  width: 65%;
+}
+.numberTitle {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: white;
+  -webkit-text-stroke: 0.1rem black;
+}
+.expTextWithBorderBottom {
+  font-size: 3rem;
+  text-align: right;
+}
+.expTextarea {
+  flex-grow: 1;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.expTextarea > span {
+  font-size: 2rem;
+}
+.jobAndPayArea {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 5%;
+}
+.jobArea {
+  width: 50%;
+}
+.payArea {
+  width: 50%;
+}
+.jobAndPayText {
+  font-size: 2rem;
+  line-height: 2rem;
+  color: white;
+  -webkit-text-stroke: 0.1rem black;
+}
+.jobAndPayText > span {
+  padding-left: 1rem;
+}
+.jobText {
+  font-size: 3rem;
+  line-height: 3.25rem;
+}
+.payText {
+  font-size: 3rem;
+  line-height: 3.25rem;
+  flex-grow: 1;
+  text-align: right;
+}
+.equipmentArea {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+  padding: 1rem 0.5rem;
+}
+.equipmentRow {
+  height: 20%;
+}
+.equipmentIconAndName {
+  flex-grow: 1;
+  height: 100%;
+  font-size: 3rem;
+}
+.attrCircleArea {
+  width: 8%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+.equipmentNumber {
+  width: 22%;
+  height: 100%;
+  color: white;
+  font-size: 2rem;
+  -webkit-text-stroke: 0.1rem black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bagArea {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+  display: flex;
+  gap: 1rem;
+}
+.bagInfo {
+  width: 18%;
+}
+.bagName {
+  font-size: 2rem;
+  text-align: center;
+}
+.bagSpace {
+  color: white;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  -webkit-text-stroke: 0.1rem black;
+}
+.bagItems {
+  width: 82%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+.bagItem {
+  width: 50%;
+  height: calc(100% / 6);
+}
+.bagPaginationContainer {
+  position: absolute;
+  top: calc(var(--variable-content-padding) / 2);
+  right: 6.5%;
+  width: 18%;
+}
+.assetsArea {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-color: var(--sub-bg-color);
+  border-radius: 1.5rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  padding: 0.5rem 0;
+}
+.assetRow {
+  height: 25%;
+}
+.assetsTotalArea {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-color: var(--sub-bg-color);
+  border-radius: 1.5rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  padding: 0.5rem 0;
+}
+.assetsTitle {
+  flex-grow: 1;
+}
+.assetNumberAndUnit {
+  letter-spacing: 0.25rem;
+}
+.assetNumberAndUnit::after {
+  content: "Ð";
+  margin-right: 2rem;
+}
+.redText {
+  color: red;
+}
+@keyframes level0ButtonHoverFrom {
+  0% {
+    background-color: var(--hover-bg-color);
+  }
+  100% {
+    background-color: var(--level1-button-bg-color);
+  }
+}
+@keyframes level0ButtonHoverTo {
+  0% {
+    background-color: var(--level1-button-bg-color);
+  }
+  100% {
+    background-color: var(--hover-bg-color);
+  }
+}
+@keyframes level2ButtonHoverFrom {
+  0% {
+    background-color: var(--hover-bg-color);
+  }
+  100% {
+    background-color: var(--bg-color);
+  }
+}
+@keyframes level2ButtonHoverTo {
+  0% {
+    background-color: var(--bg-color);
+  }
+  100% {
+    background-color: var(--hover-bg-color);
+  }
+}

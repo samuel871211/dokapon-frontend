@@ -8,6 +8,7 @@ import Roulette from "./Roulette";
 import Bag from "./Bag";
 import Check from "./Check";
 import OverviewMap from "./OverviewMap";
+import Data from "./Data";
 import UseFieldSpeciality from "./UseFieldSpeciality";
 import GroceryStoreFieldCheck from "./Check/GroceryStoreFieldCheck";
 import GraphUI from "views/DokaponTheWorld/GraphUI";
@@ -108,6 +109,10 @@ const svgViewBox = { width: 0, height: 0 };
  * G Element的BBox，會在地圖切換的時候更新
  */
 const cellsGroupBBox = { x: 0, y: 0, width: 0, height: 0 };
+
+/**
+ * @todo 尚未定義 caveFieldCheck的pattern
+ */
 const bottomDialogSentences: {
   [key in DokaponTheWorldComponentTypes]: TextsKeys[];
 } = {
@@ -136,6 +141,7 @@ const bottomDialogSentences: {
   Bag: [],
   Check: [],
   Roulette: [],
+  Data: [],
   UseFieldSpeciality: ["{fieldSpecialityName}を使いますか?"],
   CaveFieldCheck: [],
   BeforeCollectMoneyFieldCheck: [
@@ -175,6 +181,7 @@ const Components: {
   Bag,
   Check,
   Roulette,
+  Data,
   UseFieldSpeciality,
   CastleFieldCheck,
   ChurchFieldCheck,
@@ -275,6 +282,7 @@ function useMetaData() {
     BagState,
     RouletteState,
     CheckState,
+    DataState,
     GroceryStoreFieldCheckState,
     JobStoreFieldCheckState,
     MagicStoreFieldCheckState,
@@ -304,6 +312,8 @@ function useMetaData() {
         return handleKeyUpForRoulette(e);
       case "Check":
         return handleKeyUpForCheck(e);
+      case "Data":
+        return handleKeyUpForData(e);
       case "OverviewMap":
         return handleKeyUpForOverviewMap(e);
       case "UseFieldSpeciality":
@@ -346,6 +356,487 @@ function useMetaData() {
         return;
     }
   }
+  function handleKeyUpForData(e: KeyboardEvent<HTMLDivElement>) {
+    const { curLevel } = DataState;
+    if (curLevel === 0) return handleKeyUpForDataLevel0(e);
+    if (curLevel === 1) return handleKeyUpForDataLevel1(e);
+    // switch (`${level1Idx}${level2Idx}`) {
+    //   case '00':
+    //     return handleKeyUpForDataStrength(e);
+    //   case '01':
+    //     return handleKeyUpForDataEquipment(e);
+    //   case '02':
+    //     return handleKeyUpForDataBag(e);
+    //   case '03':
+    //     return handleKeyUpForDataMoney(e);
+    //   case '04':
+    //     return handleKeyUpForDataVillages(e);
+    //   case '05':
+    //     return handleKeyUpForDataPlayersSort(e);
+    //   case '10':
+    //     return handleKeyUpForDataJob(e);
+    //   case '11':
+    //     return handleKeyUpForDataMonsters(e);
+    //   case '12':
+    //     return handleKeyUpForDataWeapons(e);
+    //   case '13':
+    //     return handleKeyUpForDataShields(e);
+    //   case '14':
+    //     return handleKeyUpForDataDecorations(e);
+    //   case '15':
+    //     return handleKeyUpForDataSpecialities(e);
+    //   case '20':
+    //     return handleKeyUpForDataMap(e);
+    //   case '21':
+    //     return handleKeyUpForDataBattle(e);
+    //   case '22':
+    //     return handleKeyUpForDataOther(e);
+    //   case '30':
+    //     return handleKeyUpForDataBasic(e);
+    //   case '31':
+    //     return handleKeyUpForDataControll(e);
+    //   case '32':
+    //     return handleKeyUpForDataMode(e);
+    // }
+  }
+  function handleKeyUpForDataLevel0(e: KeyboardEvent<HTMLDivElement>) {
+    const { level0Idx } = DataState;
+    const level0MaxIdx = 3;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.arrowUp:
+        DataState.level0Idx = level0Idx === 0 ? level0MaxIdx : level0Idx - 1;
+        break;
+      case gamePadSetting.arrowDown:
+        DataState.level0Idx = level0Idx === level0MaxIdx ? 0 : level0Idx + 1;
+        break;
+      case gamePadSetting.circle:
+        DataState.curLevel = 1;
+        break;
+      case gamePadSetting.cross:
+        DokaponTheWorldState.curComponents = ["Drawer"];
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  function handleKeyUpForDataLevel1(e: KeyboardEvent<HTMLDivElement>) {
+    const { level0Idx, level1Idxs } = DataState;
+    const level1Idx = level1Idxs[level0Idx];
+    const level1MaxIdx = level0Idx === 0 || level0Idx === 1 ? 5 : 2;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.arrowUp:
+        level1Idxs[level0Idx] = level1Idx === 0 ? level1MaxIdx : level1Idx - 1;
+        break;
+      case gamePadSetting.arrowDown:
+        level1Idxs[level0Idx] = level1Idx === level1MaxIdx ? 0 : level1Idx + 1;
+        break;
+      case gamePadSetting.circle:
+        /**
+         * @todo 根據不同level0 level1 決定是否跳到level2
+         */
+        DataState.curLevel = 2;
+        break;
+      case gamePadSetting.cross:
+        DataState.curLevel = 0;
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  // function handleKeyUpForDataEquipment(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataStrength(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataBag(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataMoney(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataVillages(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataPlayersSort(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataJob(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataMonsters(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataWeapons(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataShields(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataDecorations(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataSpecialities(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataMap(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataBattle(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataOther(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataBasic(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataControll(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
+  // function handleKeyUpForDataMode(e: KeyboardEvent<HTMLDivElement>) {
+  //   switch (e.key.toLowerCase()) {
+  //     case gamePadSetting.arrowUp:
+  //       break;
+  //     case gamePadSetting.arrowDown:
+  //       break;
+  //     case gamePadSetting.arrowRight:
+  //       break;
+  //     case gamePadSetting.arrowLeft:
+  //       break;
+  //     case gamePadSetting.L1:
+  //     case gamePadSetting.L2:
+  //       break;
+  //     case gamePadSetting.R1:
+  //     case gamePadSetting.R2:
+  //       break;
+  //     case gamePadSetting.circle:
+  //       break;
+  //     case gamePadSetting.cross:
+  //       break;
+  //   }
+  // }
   function handleKeyUpForUseFieldSpeciality(e: KeyboardEvent<HTMLDivElement>) {
     const { isHoverOnConfirmBtn } = gameProgress;
     switch (e.key.toLowerCase()) {
@@ -396,6 +887,7 @@ function useMetaData() {
             DokaponTheWorldState.curComponents = ["UseFieldSpeciality"];
             break;
           case 4: // 資訊
+            DokaponTheWorldState.curComponents = ["Data"];
             break;
         }
     }

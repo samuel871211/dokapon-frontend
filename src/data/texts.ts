@@ -4,6 +4,95 @@ const texts = {
     en: "",
     cn: "",
   },
+  // DokaponTheWorld > Data
+  情報: {
+    en: "Information",
+    cn: "情報",
+  },
+  図鑑: {
+    en: "Illustration",
+    cn: "圖鑑",
+  },
+  説明: {
+    en: "Description",
+    cn: "說明",
+  },
+  設定: {
+    en: "Setting",
+    cn: "設定",
+  },
+  強さ: {
+    en: "Strength",
+    cn: "力量",
+  },
+  装備: {
+    en: "Equipment",
+    cn: "裝備",
+  },
+  所持: {
+    en: "Bag",
+    cn: "包包",
+  },
+  資産: {
+    en: "Assets",
+    cn: "資產",
+  },
+  統治: {
+    en: "Villages",
+    cn: "統治",
+  },
+  順位: {
+    en: "Rank",
+    cn: "順位",
+  },
+  職業: {
+    en: "Job",
+    cn: "職業",
+  },
+  魔物: {
+    en: "Monsters",
+    cn: "魔物",
+  },
+  武器: {
+    en: "Weapon",
+    cn: "武器",
+  },
+  盾: {
+    en: "Shield",
+    cn: "盾",
+  },
+  装飾品: {
+    en: "Decoration",
+    cn: "裝飾品",
+  },
+  特產品: {
+    en: "Speciality",
+    cn: "特產品",
+  },
+  マップ: {
+    en: "Map",
+    cn: "地圖？",
+  },
+  戦闘: {
+    en: "Battle",
+    cn: "戰鬥",
+  },
+  その他: {
+    en: "Others",
+    cn: "其他",
+  },
+  基本: {
+    en: "Basic",
+    cn: "基本",
+  },
+  操作: {
+    en: "Setting",
+    cn: "操作",
+  },
+  モード: {
+    en: "Mode",
+    cn: "模式",
+  },
   // DokaponTheWorld > UseFieldSpeciality
   オート: {
     en: "auto",
@@ -755,14 +844,14 @@ const texts = {
     en: "Free match",
     cn: "自由對戰",
   },
-  図鑑: {
-    en: "Book",
-    cn: "圖鑑",
-  },
-  設定: {
-    en: "Setting",
-    cn: "設定",
-  },
+  // 図鑑: {
+  //   en: "Book",
+  //   cn: "圖鑑",
+  // },
+  // 設定: {
+  //   en: "Setting",
+  //   cn: "設定",
+  // },
   // DokaponTheWorld > Drawer > FloatingActionBtn
   移動: {
     en: "move",
@@ -1036,10 +1125,10 @@ const texts = {
     en: "treasury",
     cn: "金庫",
   },
-  特產品: {
-    en: "speciality",
-    cn: "特產品",
-  },
+  // 特產品: {
+  //   en: "speciality",
+  //   cn: "特產品",
+  // },
   "世界の中心、スタートマス。\n集めたお金をここにある世界平和金庫に戻そう!\n全てのステータス異常を無料で回復してくれる。":
     {
       en: "世界の中心、スタートマス。\n集めたお金をここにある世界平和金庫に戻そう!\n全てのステータス異常を無料で回復してくれる。",

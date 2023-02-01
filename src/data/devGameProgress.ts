@@ -774,6 +774,7 @@ const devGameProgress: GameProgress = {
     },
     DataState: {
       curLevel: 0,
+      curPage: 0,
       level0Idx: 0,
       level1Idxs: [0, 0, 0, 0],
     },

@@ -301,10 +301,12 @@ export type GameProgress = {
        * 0 ~ 2
        */
       curLevel: number;
+      curPage: number;
       /**
        * 0 ~ 3
        */
       level0Idx: number;
+
       /**
        * [0 ~ 5, 0 ~ 5, 0 ~ 2, 0 ~ 2]
        */

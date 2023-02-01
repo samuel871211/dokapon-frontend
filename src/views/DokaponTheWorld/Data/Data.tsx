@@ -41,6 +41,8 @@ function Data() {
       },
     },
   } = useContext(gameProgressCtx);
+  const curLevel1Idx = level1Idxs[level0Idx];
+  const levels = `${level0Idx}${curLevel1Idx}`;
   return (
     <div className={styles.dataContainer} data-slide-left={curLevel !== 0}>
       <div className={styles.level0ButtonGroup}>
@@ -77,20 +79,18 @@ function Data() {
               <div
                 key={btnText}
                 className={styles.level1Button}
-                data-selected={level1Idx === level1Idxs[level0Idx]}
-                data-hovered={
-                  curLevel === 1 && level1Idx === level1Idxs[level0Idx]
-                }
+                data-selected={level1Idx === curLevel1Idx}
+                data-hovered={curLevel === 1 && level1Idx === curLevel1Idx}
               >
                 <div>{t(btnText)}</div>
               </div>
             ))}
           </div>
           <div className={styles.variableContent}>
-            {/* <Strength/> */}
-            {/* <Equipment/> */}
-            {/* <Bag/> */}
-            <DataAssets />
+            {levels === "00" && <DataStrength />}
+            {levels === "01" && <DataEquipment />}
+            {levels === "02" && <DataBag />}
+            {levels === "03" && <DataAssets />}
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@ function Data() {
   );
 }
 
-function Strength() {
+function DataStrength() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
   const { playersAttrs, currentPlayerIdx } = gameProgress;
@@ -167,7 +167,7 @@ function Strength() {
   );
 }
 
-function Equipment() {
+function DataEquipment() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
   const { playersAttrs, currentPlayerIdx } = gameProgress;
@@ -213,18 +213,19 @@ function Equipment() {
   );
 }
 
-function Bag() {
-  const selectedBag = "items";
+function DataBag() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
   const { playersAttrs, currentPlayerIdx } = gameProgress;
   const currentPlayer = playersAttrs[currentPlayerIdx];
+  const { curPage } = gameProgress.DokaponTheWorldState.DataState;
+  const selectedBag = curPage === 0 ? "items" : "magicBooks";
   const maxSpace = jobs[currentPlayer.job].bagSpace[selectedBag];
   const usedSpace = currentPlayer.possession.items.length;
   return (
     <PlayerImgAndBasicAttrsArea>
       <div className={styles.bagPaginationContainer}>
-        <Pagination maxCount={2} curPage={selectedBag === "items" ? 0 : 1} />
+        <Pagination maxCount={2} curPage={curPage} />
       </div>
       <div className={styles.bagArea}>
         <div className={styles.bagInfo}>

@@ -775,6 +775,7 @@ const devGameProgress: GameProgress = {
     DataState: {
       curLevel: 0,
       curPage: 0,
+      curListIdx: -1,
       level0Idx: 0,
       level1Idxs: [0, 0, 0, 0],
     },
@@ -1535,7 +1536,7 @@ const devGameProgress: GameProgress = {
   ],
   userPreference: {
     lang: "cn",
-    aspectRatio: "16:9",
+    aspectRatio: "stretch",
   },
   gamePadSetting: {
     arrowUp: "arrowup",

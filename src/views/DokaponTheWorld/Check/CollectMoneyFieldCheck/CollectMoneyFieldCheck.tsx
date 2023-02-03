@@ -5,6 +5,7 @@ import { useContext } from "react";
 import styles from "./CollectMoneyFieldCheck.module.css";
 import gameProgressCtx from "reducers/gameProgress";
 import VillagesDialog from "components/VillagesDialog";
+// import YellowBlock from "layouts/YellowBlock";
 
 // Stateless vars declare.
 
@@ -14,7 +15,11 @@ function CollectMoneyFieldCheck() {
   const { curListPage } = useMetaData();
   return (
     <div className={styles.collectMoneyFieldCheckContainer}>
-      <VillagesDialog curPage={curListPage} curHoverIdx={-1} />
+      <VillagesDialog
+        curPage={curListPage}
+        curHoverIdx={-1}
+        className={styles.villagesDialog}
+      />
     </div>
   );
 }

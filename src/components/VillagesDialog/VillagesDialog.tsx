@@ -5,13 +5,13 @@ import villages from "data/villages";
 import sevenContinents from "data/sevenContinents";
 import areaTypesToJP from "data/areaTypesToJP";
 import Pagination from "components/Pagination";
-import YellowBlock from "layouts/YellowBlock";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import TextWithBorderBottom from "components/TextWithBorderBottom";
 import styles from "./VillagesDialog.module.css";
 import globalStyles from "assets/styles/globalStyles.module.css";
 import useTranslation from "hooks/useTranslation";
 import classNames from "classnames";
+import YellowBlock from "layouts/YellowBlock";
 
 // Stateless vars declare.
 
@@ -22,11 +22,18 @@ export default VillagesDialog;
  * @todo 字體有分紅、藍、黑色，黑色的邏輯尚不清楚，還沒實作
  * @todo Boss的ICON、角色的ICON
  */
-function VillagesDialog(props: { curPage: number; curHoverIdx: number }) {
+function VillagesDialog(props: {
+  curPage: number;
+  curHoverIdx: number;
+  className?: string;
+}) {
   const { t } = useTranslation();
-  const { curPage, curHoverIdx } = props;
+  const { curPage, curHoverIdx, className } = props;
   return (
-    <YellowBlock role="dialog" className={styles.collectMoneyFieldCheckDialog}>
+    <YellowBlock
+      role="dialog"
+      className={classNames(styles.villagesDialog, className)}
+    >
       <div className={styles.topArea}>
         <div className={styles.topLeft}>
           <div className={styles.topLeftTitle}>AREA</div>

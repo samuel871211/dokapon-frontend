@@ -18,6 +18,7 @@ import magicDefenses from "data/magicDefenses";
 import decorations from "data/decorations";
 import Pagination from "components/Pagination";
 import { TextsKeys } from "data/texts";
+import VillagesDialog from "components/VillagesDialog";
 
 // Stateless vars declare.
 const exp = 123456;
@@ -37,7 +38,7 @@ function Data() {
   const {
     gameProgress: {
       DokaponTheWorldState: {
-        DataState: { curLevel, level0Idx, level1Idxs },
+        DataState: { curLevel, level0Idx, level1Idxs, curPage, curListIdx },
       },
     },
   } = useContext(gameProgressCtx);
@@ -46,6 +47,7 @@ function Data() {
   return (
     <div className={styles.dataContainer} data-slide-left={curLevel !== 0}>
       <div className={styles.level0ButtonGroup}>
+        <span></span>
         <div
           className={styles.level0Button}
           data-selected={curLevel === 0 && level0Idx === 0}
@@ -91,6 +93,29 @@ function Data() {
             {levels === "01" && <DataEquipment />}
             {levels === "02" && <DataBag />}
             {levels === "03" && <DataAssets />}
+            {levels === "04" && (
+              <VillagesDialog
+                curPage={curPage}
+                curHoverIdx={curListIdx}
+                className={styles.villagesDialog}
+              />
+            )}
+            {levels === "05" && <DataRank />}
+
+            {levels === "10" && "職業"}
+            {levels === "11" && "魔物"}
+            {levels === "12" && "武器"}
+            {levels === "13" && "盾"}
+            {levels === "14" && "裝飾品"}
+            {levels === "15" && "特產品"}
+
+            {levels === "20" && "地圖"}
+            {levels === "21" && "戰鬥"}
+            {levels === "22" && "其他"}
+
+            {levels === "30" && "基本"}
+            {levels === "31" && "操作"}
+            {levels === "32" && "模式"}
           </div>
         </div>
       </div>
@@ -254,11 +279,12 @@ function DataBag() {
  * @todo assets有分 1. 所持金 2.金庫 3.特產品 4.村價值 5.總資產
  */
 function DataAssets() {
+  const { t } = useTranslation();
   return (
     <PlayerImgAndBasicAttrsArea>
       <div className={styles.assetsArea}>
         <TextWithBorderBottom diameter="1rem" className={styles.assetRow}>
-          <div className={styles.assetsTitle}>所持金</div>
+          <div className={styles.assetsTitle}>{t("所持金")}</div>
           <div
             className={classNames({
               [styles.assetNumberAndUnit]: true,
@@ -269,7 +295,7 @@ function DataAssets() {
           </div>
         </TextWithBorderBottom>
         <TextWithBorderBottom diameter="1rem" className={styles.assetRow}>
-          <div className={styles.assetsTitle}>金庫</div>
+          <div className={styles.assetsTitle}>{t("金庫")}</div>
           <div
             className={classNames({
               [styles.assetNumberAndUnit]: true,
@@ -280,7 +306,7 @@ function DataAssets() {
           </div>
         </TextWithBorderBottom>
         <TextWithBorderBottom diameter="1rem" className={styles.assetRow}>
-          <div className={styles.assetsTitle}>特產品</div>
+          <div className={styles.assetsTitle}>{t("特產品")}</div>
           <div
             className={classNames({
               [styles.assetNumberAndUnit]: true,
@@ -291,7 +317,7 @@ function DataAssets() {
           </div>
         </TextWithBorderBottom>
         <TextWithBorderBottom diameter="1rem" className={styles.assetRow}>
-          <div className={styles.assetsTitle}>村價值</div>
+          <div className={styles.assetsTitle}>{t("村價值")}</div>
           <div
             className={classNames({
               [styles.assetNumberAndUnit]: true,
@@ -304,7 +330,7 @@ function DataAssets() {
       </div>
       <div className={styles.assetsTotalArea}>
         <TextWithBorderBottom diameter="1rem">
-          <div className={styles.assetsTitle}>資產</div>
+          <div className={styles.assetsTitle}>{t("資産")}</div>
           <div
             className={classNames({
               [styles.assetNumberAndUnit]: true,
@@ -316,6 +342,45 @@ function DataAssets() {
         </TextWithBorderBottom>
       </div>
     </PlayerImgAndBasicAttrsArea>
+  );
+}
+
+/**
+ * @todo 根據所持金來決定rank順序
+ */
+function DataRank() {
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { t } = useTranslation();
+  const { playersAttrs } = gameProgress;
+  return (
+    <div className={styles.dataRankContainer}>
+      {playersAttrs.map((playerAttrs, idx) => (
+        <div className={styles.playerRankArea} key={idx}>
+          <div className={styles.rankNumber}>1</div>
+          <TextWithBorderBottom className={styles.rankLeft} diameter="1rem">
+            <div
+              style={{ backgroundColor: playerAttrs.color }}
+              className={styles.playerColorIcon}
+            ></div>
+            <div>{playerAttrs.name}</div>
+          </TextWithBorderBottom>
+          <TextWithBorderBottom className={styles.rankRightTop} diameter="1rem">
+            <div className={styles.rankRightTopText}>
+              {playerAttrs.possession.money}
+            </div>
+          </TextWithBorderBottom>
+          <TextWithBorderBottom
+            className={styles.rankRightBottom}
+            diameter="1rem"
+          >
+            <div className={styles.rankRightBottomText1}>{t("所持金")}</div>
+            <div className={styles.rankRightBottomText2}>
+              {playerAttrs.possession.money}
+            </div>
+          </TextWithBorderBottom>
+        </div>
+      ))}
+    </div>
   );
 }
 

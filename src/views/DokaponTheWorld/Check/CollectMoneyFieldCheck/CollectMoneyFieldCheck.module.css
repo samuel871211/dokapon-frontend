@@ -6,3 +6,7 @@
   align-items: center;
   justify-content: center;
 }
+.villagesDialog {
+  width: 85%;
+  height: 85%;
+}

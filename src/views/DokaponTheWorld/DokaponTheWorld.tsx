@@ -393,6 +393,8 @@ function useMetaData() {
     const level1Idx = level1Idxs[level0Idx];
     const maxPageIdx = level1ToMaxPageIdx[`${level0Idx}${level1Idx}`];
     const level1MaxIdx = level0Idx === 0 || level0Idx === 1 ? 5 : 2;
+    const isDataVillages = level0Idx === 0 && level1Idx === 4;
+    const isListOrOptions = level0Idx === 1 || level0Idx === 3;
 
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
@@ -404,7 +406,10 @@ function useMetaData() {
         DataState.curPage = 0;
         break;
       case gamePadSetting.circle:
-        if (level0Idx === 1 || level0Idx === 3) DataState.curLevel = 2;
+        if (isDataVillages || isListOrOptions) {
+          DataState.curLevel = 2;
+          DataState.curListIdx = 0;
+        }
         break;
       case gamePadSetting.cross:
         DataState.curLevel = 0;
@@ -425,16 +430,49 @@ function useMetaData() {
   function handleKeyUpForDataLevel2(e: KeyboardEvent<HTMLDivElement>) {
     const { level0Idx, level1Idxs } = DataState;
     const level1Idx = level1Idxs[level0Idx];
-    const levels = parseInt(`${level0Idx}${level1Idx}`);
-    if (levels === 10) return handleKeyUpForListJobs(e);
-    if (levels === 11) return handleKeyUpForListMonsters(e);
-    if (levels === 12) return handleKeyUpForListWeapons(e);
-    if (levels === 13) return handleKeyUpForListShields(e);
-    if (levels === 14) return handleKeyUpForListDecorations(e);
-    if (levels === 15) return handleKeyUpForListSpecialities(e);
-    if (levels === 30) return handleKeyUpForOptionBasic(e);
-    if (levels === 31) return handleKeyUpForOptionControll(e);
-    if (levels === 32) return handleKeyUpForOptionMode(e);
+    const levels = `${level0Idx}${level1Idx}`;
+    if (levels === "04") return handleKeyUpForDataVillages(e);
+    if (levels === "10") return handleKeyUpForListJobs(e);
+    if (levels === "11") return handleKeyUpForListMonsters(e);
+    if (levels === "12") return handleKeyUpForListWeapons(e);
+    if (levels === "13") return handleKeyUpForListShields(e);
+    if (levels === "14") return handleKeyUpForListDecorations(e);
+    if (levels === "15") return handleKeyUpForListSpecialities(e);
+    if (levels === "30") return handleKeyUpForOptionBasic(e);
+    if (levels === "31") return handleKeyUpForOptionControll(e);
+    if (levels === "32") return handleKeyUpForOptionMode(e);
+  }
+  function handleKeyUpForDataVillages(e: KeyboardEvent<HTMLDivElement>) {
+    const { curPage, curListIdx } = DataState;
+    const maxPageIdx = 6;
+    const isOceania = curPage === 5;
+    const maxListIdx = isOceania ? 4 : 8;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.L1:
+      case gamePadSetting.L2:
+        DataState.curPage = curPage === 0 ? maxPageIdx : curPage - 1;
+        DataState.curListIdx = 0;
+        break;
+      case gamePadSetting.R1:
+      case gamePadSetting.R2:
+        DataState.curPage = curPage === maxPageIdx ? 0 : curPage + 1;
+        DataState.curListIdx = 0;
+        break;
+      case gamePadSetting.arrowUp:
+        DataState.curListIdx = curListIdx === 0 ? maxListIdx : curListIdx - 1;
+        break;
+      case gamePadSetting.arrowDown:
+        DataState.curListIdx = curListIdx === maxListIdx ? 0 : curListIdx + 1;
+        break;
+      case gamePadSetting.circle:
+        // @todo 畫面切到該村莊，不可移動，只能按circle跟cross
+        break;
+      case gamePadSetting.cross:
+        DataState.curLevel = 1;
+        DataState.curListIdx = -1;
+        break;
+    }
+    setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForListJobs(e: KeyboardEvent<HTMLDivElement>) {
     switch (e.key.toLowerCase()) {

@@ -301,7 +301,14 @@ export type GameProgress = {
        * 0 ~ 2
        */
       curLevel: number;
+      /**
+       * 有pagination的Component會用到
+       */
       curPage: number;
+      /**
+       * @default -1
+       */
+      curListIdx: number;
       /**
        * 0 ~ 3
        */

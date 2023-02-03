@@ -93,6 +93,14 @@ const texts = {
     en: "Mode",
     cn: "模式",
   },
+  所持金: {
+    en: "money",
+    cn: "所持金",
+  },
+  村價值: {
+    en: "villagesPrice",
+    cn: "村價值",
+  },
   // DokaponTheWorld > UseFieldSpeciality
   オート: {
     en: "auto",

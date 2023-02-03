@@ -748,6 +748,7 @@ const initGameProgress: GameProgress = {
     DataState: {
       curLevel: 0,
       curPage: 0,
+      curListIdx: -1,
       level0Idx: 0,
       level1Idxs: [0, 0, 0, 0],
     },

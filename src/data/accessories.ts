@@ -1,4 +1,4 @@
-import { Decoration } from "global";
+import { Accessory } from "global";
 
 /**
  * https://stackoverflow.com/questions/70956050/how-do-i-declare-object-value-type-without-declaring-key-type
@@ -11,7 +11,7 @@ function satisfiesRecords<valueType>() {
   return <K extends PropertyKey>(record: Record<K, valueType>) => record;
 }
 
-const decorationList: Decoration[] = [
+const accessoryList: Accessory[] = [
   {
     name: "力のグローブ",
     price: 30000,
@@ -695,8 +695,8 @@ const decorationList: Decoration[] = [
   },
 ];
 
-const decorations = satisfiesRecords<Decoration>()({
-  decorationAttack1: {
+const accessories = satisfiesRecords<Accessory>()({
+  accessoryAttack1: {
     name: "力のグローブ",
     price: 30000,
     attack: 5,
@@ -713,7 +713,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationDefense1: {
+  accessoryDefense1: {
     name: "守のグローブ",
     price: 30000,
     attack: 0,
@@ -725,7 +725,7 @@ const decorations = satisfiesRecords<Decoration>()({
     fromMonsters: ["魔法の騎士"],
     fromVerticesQuery: [],
   },
-  decorationMagic1: {
+  accessoryMagic1: {
     name: "気のグローブ",
     price: 30000,
     attack: 0,
@@ -742,7 +742,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationSpeed1: {
+  accessorySpeed1: {
     name: "速のグローブ",
     price: 30000,
     attack: 0,
@@ -759,7 +759,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationHP1: {
+  accessoryHP1: {
     name: "体のグローブ",
     price: 30000,
     attack: 0,
@@ -776,7 +776,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationAttack2: {
+  accessoryAttack2: {
     name: "剛のグローブ",
     price: 50000,
     attack: 15,
@@ -793,7 +793,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationDefense2: {
+  accessoryDefense2: {
     name: "鉄のグローブ",
     price: 50000,
     attack: 0,
@@ -805,7 +805,7 @@ const decorations = satisfiesRecords<Decoration>()({
     fromMonsters: ["ヨロイエビ"],
     fromVerticesQuery: [],
   },
-  decorationMagic2: {
+  accessoryMagic2: {
     name: "法のグローブ",
     price: 50000,
     attack: 0,
@@ -822,7 +822,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationSpeed2: {
+  accessorySpeed2: {
     name: "忍のグローブ",
     price: 50000,
     attack: 0,
@@ -834,7 +834,7 @@ const decorations = satisfiesRecords<Decoration>()({
     fromMonsters: ["アサシン", "ガママル"],
     fromVerticesQuery: [],
   },
-  decorationHP2: {
+  accessoryHP2: {
     name: "命のグローブ",
     price: 80000,
     attack: 0,
@@ -851,7 +851,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationGoddess: {
+  accessoryGoddess: {
     name: "女神のリング",
     price: 50000,
     attack: 5,
@@ -868,7 +868,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationLord: {
+  accessoryLord: {
     name: "ロードオブリング",
     price: 500000,
     attack: 15,
@@ -889,7 +889,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationAttack3: {
+  accessoryAttack3: {
     name: "破壊のリング",
     price: 300000,
     attack: 30,
@@ -906,7 +906,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationSpeed3: {
+  accessorySpeed3: {
     name: "神速のリング",
     price: 300000,
     attack: 0,
@@ -927,7 +927,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationMagic3: {
+  accessoryMagic3: {
     name: "魔人リング",
     price: 300000,
     attack: -30,
@@ -944,7 +944,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationSuperMan: {
+  accessorySuperMan: {
     name: "超人リング",
     price: 0,
     attack: -10,
@@ -961,7 +961,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationFire: {
+  accessoryFire: {
     name: "炎のうでわ",
     price: 12000,
     attack: 0,
@@ -978,7 +978,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationIce: {
+  accessoryIce: {
     name: "氷のうでわ",
     price: 12000,
     attack: 0,
@@ -995,7 +995,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationThunder: {
+  accessoryThunder: {
     name: "雷のうでわ",
     price: 12000,
     attack: 0,
@@ -1012,7 +1012,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationWind: {
+  accessoryWind: {
     name: "風のうでわ",
     price: 12000,
     attack: 0,
@@ -1029,7 +1029,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationEarth: {
+  accessoryEarth: {
     name: "地のうでわ",
     price: 24000,
     attack: 0,
@@ -1046,7 +1046,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationMagicHitRate: {
+  accessoryMagicHitRate: {
     name: "ぼうえんゴーグル",
     price: 7000,
     attack: 0,
@@ -1063,7 +1063,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationMagicAvoidanceRate: {
+  accessoryMagicAvoidanceRate: {
     name: "みかわしゴーグル",
     price: 7000,
     attack: 0,
@@ -1080,7 +1080,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationCrystal: {
+  accessoryCrystal: {
     name: "水晶のネックレス",
     price: 8000,
     attack: 0,
@@ -1101,7 +1101,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationTransform: {
+  accessoryTransform: {
     name: "変化のネックレス",
     price: 0,
     attack: 0,
@@ -1118,7 +1118,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationMirror: {
+  accessoryMirror: {
     name: "鏡のネックレス",
     price: 200000,
     attack: 0,
@@ -1135,7 +1135,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationAvoidance: {
+  accessoryAvoidance: {
     name: "回避のネックレス",
     price: 0,
     attack: 0,
@@ -1152,7 +1152,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationAngel: {
+  accessoryAngel: {
     name: "天使のネックレス",
     price: 300000,
     attack: 0,
@@ -1177,7 +1177,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationHPPlus1: {
+  accessoryHPPlus1: {
     name: "ハートのくつ",
     price: 180000,
     attack: 0,
@@ -1194,7 +1194,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationHero: {
+  accessoryHero: {
     name: "勇者のくつ",
     price: 150000,
     attack: 0,
@@ -1211,7 +1211,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationMoney: {
+  accessoryMoney: {
     name: "金のくつ",
     price: 150000,
     attack: 0,
@@ -1228,7 +1228,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationDropMoreMoney: {
+  accessoryDropMoreMoney: {
     name: "ヒョウがら額当て",
     price: 1500,
     attack: 0,
@@ -1245,7 +1245,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationDropMoreItems: {
+  accessoryDropMoreItems: {
     name: "ゼブラがら額当て",
     price: 1500,
     attack: 0,
@@ -1262,7 +1262,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationCrimeDisapear: {
+  accessoryCrimeDisapear: {
     name: "ピーポのバッジ",
     price: 500000,
     attack: 3,
@@ -1274,7 +1274,7 @@ const decorations = satisfiesRecords<Decoration>()({
     fromMonsters: ["セルモン"],
     fromVerticesQuery: [],
   },
-  decorationBagItemsGrow: {
+  accessoryBagItemsGrow: {
     name: "ワルサーバッジ",
     price: 250000,
     attack: 0,
@@ -1291,7 +1291,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationVoice: {
+  accessoryVoice: {
     name: "ウイウイバッジ",
     price: 10,
     attack: 1,
@@ -1303,7 +1303,7 @@ const decorations = satisfiesRecords<Decoration>()({
     fromMonsters: ["ウィウィ"],
     fromVerticesQuery: [],
   },
-  decorationHonest: {
+  accessoryHonest: {
     name: "誠のピアス",
     price: 65000,
     attack: 0,
@@ -1320,7 +1320,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationLove: {
+  accessoryLove: {
     name: "愛のピアス",
     price: 65000,
     attack: 0,
@@ -1332,7 +1332,7 @@ const decorations = satisfiesRecords<Decoration>()({
     fromMonsters: [],
     fromVerticesQuery: [],
   },
-  decorationHeinous: {
+  accessoryHeinous: {
     name: "極悪ピアス",
     price: 100,
     attack: 30,
@@ -1344,7 +1344,7 @@ const decorations = satisfiesRecords<Decoration>()({
     fromMonsters: ["キィ"],
     fromVerticesQuery: [],
   },
-  decorationCrown: {
+  accessoryCrown: {
     name: "ドカポンクラウン",
     price: 2000000,
     attack: 30,
@@ -1365,7 +1365,7 @@ const decorations = satisfiesRecords<Decoration>()({
       },
     ],
   },
-  decorationKing: {
+  accessoryKing: {
     name: "魔王の王かん",
     price: 1444444,
     attack: 444,
@@ -1379,5 +1379,5 @@ const decorations = satisfiesRecords<Decoration>()({
   },
 });
 
-export default decorations;
-export type DecorationTypes = keyof typeof decorations;
+export default accessories;
+export type AccessoryTypes = keyof typeof accessories;

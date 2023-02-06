@@ -14,7 +14,7 @@ import weapons from "data/weapons";
 import shields from "data/shields";
 import magicAttacks from "data/magicAttacks";
 import magicDefenses from "data/magicDefenses";
-import decorations from "data/decorations";
+import accessories from "data/accessories";
 import jobs from "data/jobs";
 import gameProgressCtx from "reducers/gameProgress";
 import styles from "./PlayerVsCharacterDialogs.module.css";
@@ -150,7 +150,7 @@ function PlayerPage(props: { playerAttrs: PlayerAttrs }) {
           {magicDefenses[playerAttrs.magicDefense]?.name}
         </TextWithBorderBottom>
         <TextWithBorderBottom className={styles.bottomRow} diameter="1.5rem">
-          {decorations[playerAttrs.decoration]?.name}
+          {accessories[playerAttrs.accessory]?.name}
         </TextWithBorderBottom>
       </div>
     </YellowBlock>

@@ -8,33 +8,33 @@ import jobs from "data/jobs";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
 import gameProgressCtx from "reducers/gameProgress";
-import styles from "./UseFieldSpeciality.module.css";
-import fieldSpecialityTypesToJP from "data/fieldSpecialityTypesToJP";
+import styles from "./UseFieldSpecialty.module.css";
+import fieldSpecialtyTypesToJP from "data/fieldSpecialtyTypesToJP";
 
 // Stateless vars declare.
 
-export default UseFieldSpeciality;
+export default UseFieldSpecialty;
 
-function UseFieldSpeciality() {
+function UseFieldSpecialty() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
   const { playersAttrs, currentPlayerIdx } = gameProgress;
   const currentPlayer = playersAttrs[currentPlayerIdx];
   const curPlayerJob = jobs[currentPlayer.job];
-  const { name, type, briefExplanation } = curPlayerJob.fieldSpeciality;
+  const { name, type, briefExplanation } = curPlayerJob.fieldSpecialty;
 
   return (
-    <div className={styles.useFieldSpecialityContainer}>
+    <div className={styles.useFieldSpecialtyContainer}>
       <div className={styles.topArea}>
         <YellowBlock
           role="dialog"
           borderRadius="1.5rem"
-          className={styles.fieldSpecialityDialog}
+          className={styles.fieldSpecialtyDialog}
         >
           <div className={styles.line1}>
-            <div className={styles.fieldSpecialityName}>{name}</div>
-            <div className={styles.fieldSpecialityType}>
-              {`<${t(fieldSpecialityTypesToJP[type])}>`}
+            <div className={styles.fieldSpecialtyName}>{name}</div>
+            <div className={styles.fieldSpecialtyType}>
+              {`<${t(fieldSpecialtyTypesToJP[type])}>`}
             </div>
           </div>
           <CustomBorderBottom />

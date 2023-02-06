@@ -5,6 +5,30 @@ const texts = {
     cn: "",
   },
   // DokaponTheWorld > Data
+  職業リスト: {
+    en: "Job List",
+    cn: "職業列表",
+  },
+  魔物リスト: {
+    en: "Monster List",
+    cn: "怪物列表",
+  },
+  武器リスト: {
+    en: "Weapon List",
+    cn: "武器列表",
+  },
+  盾リスト: {
+    en: "Shield List",
+    cn: "盾牌列表",
+  },
+  装飾品リスト: {
+    en: "Accessory List",
+    cn: "裝飾品列表",
+  },
+  特産品リスト: {
+    en: "Specialty List",
+    cn: "特產品列表",
+  },
   情報: {
     en: "Information",
     cn: "情報",
@@ -62,11 +86,11 @@ const texts = {
     cn: "盾",
   },
   装飾品: {
-    en: "Decoration",
+    en: "Accessory",
     cn: "裝飾品",
   },
   特產品: {
-    en: "Speciality",
+    en: "Specialty",
     cn: "特產品",
   },
   マップ: {
@@ -101,7 +125,7 @@ const texts = {
     en: "villagesPrice",
     cn: "村價值",
   },
-  // DokaponTheWorld > UseFieldSpeciality
+  // DokaponTheWorld > UseFieldSpecialty
   オート: {
     en: "auto",
     cn: "被動技能",
@@ -110,9 +134,9 @@ const texts = {
     en: "manual",
     cn: "主動技能",
   },
-  "{fieldSpecialityName}を使いますか?": {
-    en: "Do yoy want to use {fieldSpecialityName}?",
-    cn: "要使用{fieldSpecialityName}嗎？",
+  "{fieldSpecialtyName}を使いますか?": {
+    en: "Do yoy want to use {fieldSpecialtyName}?",
+    cn: "要使用{fieldSpecialtyName}嗎？",
   },
   // monsters
   ヤタガラス: {
@@ -955,7 +979,7 @@ const texts = {
       en: "有料でステータス異常を回復できたり、\n金庫にお金、王様に特産品を送ったりできるマス。\n死んだ時は、最後に立ち寄った教会から復活する。",
       cn: "有料でステータス異常を回復できたり、\n金庫にお金、王様に特産品を送ったりできるマス。\n死んだ時は、最後に立ち寄った教会から復活する。",
     },
-  // decorations
+  // accessories
   力のグローブ: {
     en: "力のグローブ",
     cn: "力のグローブ",
@@ -1134,7 +1158,7 @@ const texts = {
     cn: "金庫",
   },
   // 特產品: {
-  //   en: "speciality",
+  //   en: "specialty",
   //   cn: "特產品",
   // },
   "世界の中心、スタートマス。\n集めたお金をここにある世界平和金庫に戻そう!\n全てのステータス異常を無料で回復してくれる。":

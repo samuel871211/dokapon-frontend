@@ -49,14 +49,14 @@ div[data-positive="true"] {
 div[data-negative="true"] {
   color: red;
 }
-.specialityList {
+.specialtyList {
   margin-right: 2%;
   text-align: end;
   letter-spacing: 0.25rem;
 }
 .nameList,
 .bankList,
-.specialityList {
+.specialtyList {
   width: 32%;
   font-size: 3rem;
   line-height: 4rem;
@@ -65,7 +65,7 @@ div[data-negative="true"] {
 }
 .nameList > div,
 .bankList > div,
-.specialityList > div {
+.specialtyList > div {
   height: 4rem;
 }
 .name {

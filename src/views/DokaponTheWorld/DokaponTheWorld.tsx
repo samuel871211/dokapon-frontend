@@ -9,7 +9,7 @@ import Bag from "./Bag";
 import Check from "./Check";
 import OverviewMap from "./OverviewMap";
 import Data from "./Data";
-import UseFieldSpeciality from "./UseFieldSpeciality";
+import UseFieldSpecialty from "./UseFieldSpecialty";
 import GroceryStoreFieldCheck from "./Check/GroceryStoreFieldCheck";
 import GraphUI from "views/DokaponTheWorld/GraphUI";
 import WeaponStoreFieldCheck from "./Check/WeaponStoreFieldCheck";
@@ -149,7 +149,7 @@ const bottomDialogSentences: {
   Check: [],
   Roulette: [],
   Data: [],
-  UseFieldSpeciality: ["{fieldSpecialityName}を使いますか?"],
+  UseFieldSpecialty: ["{fieldSpecialtyName}を使いますか?"],
   CaveFieldCheck: [],
   BeforeCollectMoneyFieldCheck: [
     "持ち村の内1つから、上納金を集金するか、\nレベルアップさせるかを選べるマス。\n集金すると特産品もいっしょに回収できる。",
@@ -189,7 +189,7 @@ const Components: {
   Check,
   Roulette,
   Data,
-  UseFieldSpeciality,
+  UseFieldSpecialty,
   CastleFieldCheck,
   ChurchFieldCheck,
   VillageFieldCheck,
@@ -323,8 +323,8 @@ function useMetaData() {
         return handleKeyUpForData(e);
       case "OverviewMap":
         return handleKeyUpForOverviewMap(e);
-      case "UseFieldSpeciality":
-        return handleKeyUpForUseFieldSpeciality(e);
+      case "UseFieldSpecialty":
+        return handleKeyUpForUseFieldSpecialty(e);
       case "CaveFieldCheck":
       case "BattleFieldCheck":
       case "DamageFieldCheck":
@@ -436,8 +436,8 @@ function useMetaData() {
     if (levels === "11") return handleKeyUpForListMonsters(e);
     if (levels === "12") return handleKeyUpForListWeapons(e);
     if (levels === "13") return handleKeyUpForListShields(e);
-    if (levels === "14") return handleKeyUpForListDecorations(e);
-    if (levels === "15") return handleKeyUpForListSpecialities(e);
+    if (levels === "14") return handleKeyUpForListAccessories(e);
+    if (levels === "15") return handleKeyUpForListSpecialties(e);
     if (levels === "30") return handleKeyUpForOptionBasic(e);
     if (levels === "31") return handleKeyUpForOptionControll(e);
     if (levels === "32") return handleKeyUpForOptionMode(e);
@@ -538,7 +538,7 @@ function useMetaData() {
         break;
     }
   }
-  function handleKeyUpForListDecorations(e: KeyboardEvent<HTMLDivElement>) {
+  function handleKeyUpForListAccessories(e: KeyboardEvent<HTMLDivElement>) {
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
         break;
@@ -554,7 +554,7 @@ function useMetaData() {
         break;
     }
   }
-  function handleKeyUpForListSpecialities(e: KeyboardEvent<HTMLDivElement>) {
+  function handleKeyUpForListSpecialties(e: KeyboardEvent<HTMLDivElement>) {
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
         break;
@@ -618,7 +618,7 @@ function useMetaData() {
         break;
     }
   }
-  function handleKeyUpForUseFieldSpeciality(e: KeyboardEvent<HTMLDivElement>) {
+  function handleKeyUpForUseFieldSpecialty(e: KeyboardEvent<HTMLDivElement>) {
     const { isHoverOnConfirmBtn } = gameProgress;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
@@ -665,7 +665,7 @@ function useMetaData() {
             CheckState.showCheckTip = true;
             break;
           case 3: // 特技
-            DokaponTheWorldState.curComponents = ["UseFieldSpeciality"];
+            DokaponTheWorldState.curComponents = ["UseFieldSpecialty"];
             break;
           case 4: // 資訊
             DokaponTheWorldState.curComponents = ["Data"];
@@ -1044,8 +1044,8 @@ function useMetaData() {
     bottomDialogSentencesQueue.length = 0;
     for (const sentence of bottomDialogSentences[curComponent]) {
       const translatedSentence = t(sentence).replace(
-        "{fieldSpecialityName}",
-        t(curPlayerJob.fieldSpeciality.name)
+        "{fieldSpecialtyName}",
+        t(curPlayerJob.fieldSpecialty.name)
       );
       // .replace("{name}", currentPlayer.name)
       // .replace("{remainPlayerCount}", String(3 - currentPlayerIdx + 1));

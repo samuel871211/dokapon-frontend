@@ -59,7 +59,7 @@ function ChurchFieldCheck() {
                 </div>
               ))}
             </div>
-            <div className={styles.specialityList}>
+            <div className={styles.specialtyList}>
               {playersAttrs.map((playerAttrs, idx) => (
                 <div
                   key={idx}

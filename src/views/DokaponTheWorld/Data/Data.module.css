@@ -460,6 +460,10 @@
   content: "Ð";
   margin-left: 0.25rem;
 }
+.listItem {
+  height: 10%;
+  margin: 0;
+}
 @keyframes level0ButtonHoverFrom {
   0% {
     background-color: var(--hover-bg-color);

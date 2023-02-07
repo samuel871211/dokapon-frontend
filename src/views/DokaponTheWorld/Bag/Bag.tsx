@@ -1,5 +1,4 @@
 // Related third party imports.
-import classNames from "classnames";
 import { useContext } from "react";
 
 // Local application/library specific imports.
@@ -8,6 +7,7 @@ import useTranslation from "hooks/useTranslation";
 import SomeKindOfIcon from "components/icons";
 import gameProgressCtx from "reducers/gameProgress";
 import jobs from "data/jobs";
+import ListItem from "components/ListItem";
 import BottomDialog from "components/BottomDialog";
 
 // Stateless vars declare.
@@ -16,6 +16,8 @@ export default Bag;
 
 function Bag() {
   const { possession, selectedIdx, currentBag, bagSpace } = useMetaData();
+  const arrOfMaxItem = Array(bagSpace.items).fill(0);
+  const arrOfMaxMagicBooks = Array(bagSpace.magicBooks).fill(0);
   const { t } = useTranslation();
   return (
     <div className={styles.bagContainer}>
@@ -36,52 +38,43 @@ function Bag() {
             style={{ zIndex: currentBag === "items" ? 2 : 1 }}
             className={styles.itemContainer}
           >
-            {Array(bagSpace.items)
-              .fill("")
-              .map((empty, idx) => (
-                <Item
-                  key={idx}
-                  selected={currentBag === "items" && selectedIdx === idx}
-                  text={possession.items[idx]?.description}
-                  icon={<SomeKindOfIcon />}
-                />
-              ))}
+            {arrOfMaxItem.map((empty, idx) => (
+              <ListItem
+                key={idx}
+                className={styles.listItem}
+                selected={currentBag === "items" && selectedIdx === idx}
+              >
+                <div className={styles.iconContainer}>
+                  <SomeKindOfIcon />
+                </div>
+                <div className={styles.itemText}>
+                  {possession.items[idx]?.description}
+                </div>
+              </ListItem>
+            ))}
           </div>
           <div
             style={{ zIndex: currentBag === "magicBooks" ? 2 : 1 }}
             className={styles.magicContainer}
           >
-            {Array(bagSpace.magicBooks)
-              .fill("")
-              .map((empty, idx) => (
-                <Item
-                  key={idx}
-                  selected={currentBag === "magicBooks" && selectedIdx === idx}
-                  text={possession.magicBooks[idx]?.explanation}
-                  icon={<SomeKindOfIcon />}
-                />
-              ))}
+            {arrOfMaxMagicBooks.map((empty, idx) => (
+              <ListItem
+                key={idx}
+                className={styles.listItem}
+                selected={currentBag === "magicBooks" && selectedIdx === idx}
+              >
+                <div className={styles.iconContainer}>
+                  <SomeKindOfIcon />
+                </div>
+                <div className={styles.itemText}>
+                  {possession.magicBooks[idx]?.explanation}
+                </div>
+              </ListItem>
+            ))}
           </div>
         </div>
       </div>
       <BottomDialog show />
-    </div>
-  );
-}
-
-function Item(props: { selected: boolean; text: string; icon: JSX.Element }) {
-  const { selected, text, icon } = props;
-  return (
-    <div className={styles.item}>
-      <div
-        className={classNames({
-          [styles.itemContent]: true,
-          [styles.hoverEffect]: selected,
-        })}
-      >
-        <div className={styles.iconContainer}>{icon}</div>
-        <div className={styles.itemText}>{text}</div>
-      </div>
     </div>
   );
 }

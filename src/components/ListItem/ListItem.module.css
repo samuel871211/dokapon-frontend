@@ -1,0 +1,25 @@
+.listItem {
+  font-size: 3rem;
+  line-height: 3rem;
+  min-height: 3rem;
+  width: 100%;
+  position: relative;
+}
+.listItem::after {
+  content: "";
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--sub-bg-color);
+  z-index: 0;
+}
+.listItemContent {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 1;
+}

@@ -487,8 +487,10 @@ function useMetaData() {
       case gamePadSetting.circle:
         break;
       case gamePadSetting.cross:
+        DataState.curLevel = 1;
         break;
     }
+    setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForListMonsters(e: KeyboardEvent<HTMLDivElement>) {
     switch (e.key.toLowerCase()) {

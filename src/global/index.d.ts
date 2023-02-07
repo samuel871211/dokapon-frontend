@@ -1,4 +1,4 @@
-import { DecorationTypes } from "data/decorations";
+import { AccessoryTypes } from "data/accessories";
 import { MagicAttackTypes } from "data/magicAttacks";
 import { MagicDefenseTypes } from "data/magicDefenses";
 import { MonsterTypes } from "data/monsters";
@@ -6,6 +6,13 @@ import { shieldTypes } from "data/shields";
 import type { TextsKeys } from "data/texts";
 import { weaponTypes } from "data/weapons";
 
+export type ListTopics =
+  | "job"
+  | "monster"
+  | "weapon"
+  | "shield"
+  | "accessory"
+  | "specialty";
 export type GraphJSON = {
   vertices: Vertex[];
   edges: Edge[];
@@ -98,7 +105,7 @@ export type DokaponTheWorldComponentTypes =
   | "Check"
   | "Roulette"
   | "Data"
-  | "UseFieldSpeciality"
+  | "UseFieldSpecialty"
   | "BattleFieldCheck"
   | "CastleFieldCheck"
   | "ChurchFieldCheck"
@@ -718,7 +725,7 @@ type PlayerAttrs = {
   shield: shieldTypes;
   magicAttack: MagicAttackTypes;
   magicDefense: MagicDefenseTypes;
-  decoration: DecorationTypes;
+  accessory: AccessoryTypes;
   /**
    * 各職業master是5等
    *
@@ -757,7 +764,7 @@ export type Shield = {
   }[];
 };
 export type Weapon = Shield & { additionalDamageJobs: JobTypes[] };
-export type Decoration = Shield;
+export type Accessory = Shield;
 export type MagicTypes =
   | "弱体系魔法"
   | "変化系魔法"
@@ -837,7 +844,7 @@ export type MonsterFixedAttrs = {
     isMagic?: true;
     isWeapon?: true;
     isShield?: true;
-    isDecoration?: true;
+    isAccessory?: true;
   };
 };
 export type Item = {
@@ -879,7 +886,7 @@ export type JobTypes =
   | "royal"
   | "devil"
   | "anotherDevil";
-export type FieldSpecialityTypes = "manual" | "auto";
+export type FieldSpecialtyTypes = "manual" | "auto";
 export type Job = {
   // type: JobTypes;
   name: TextsKeys;
@@ -906,13 +913,13 @@ export type Job = {
   pay: number;
   briefExplanation: string;
   fullExplanation: string;
-  fieldSpeciality: {
+  fieldSpecialty: {
     name: TextsKeys;
     briefExplanation: TextsKeys;
     fullExplanation: TextsKeys;
-    type: FieldSpecialityTypes;
+    type: FieldSpecialtyTypes;
   };
-  battleSpeciality: {
+  battleSpecialty: {
     name: TextsKeys;
     briefExplanation: TextsKeys;
     fullExplanation: TextsKeys;

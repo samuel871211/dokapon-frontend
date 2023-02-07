@@ -15,14 +15,17 @@ import weapons from "data/weapons";
 import shields from "data/shields";
 import magicAttacks from "data/magicAttacks";
 import magicDefenses from "data/magicDefenses";
-import decorations from "data/decorations";
+import accessories from "data/accessories";
 import Pagination from "components/Pagination";
 import { TextsKeys } from "data/texts";
 import VillagesDialog from "components/VillagesDialog";
+import ListDialog from "components/ListDialog";
+import ListItem from "components/ListItem";
 
 // Stateless vars declare.
 const exp = 123456;
 const arrayOf12 = Array(12).fill(0);
+const arrayOf10 = Array(10).fill(0);
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 const level1ButtonTexts: TextsKeys[][] = [
   ["強さ", "装備", "所持", "資産", "統治", "順位"],
@@ -102,12 +105,12 @@ function Data() {
             )}
             {levels === "05" && <DataRank />}
 
-            {levels === "10" && "職業"}
-            {levels === "11" && "魔物"}
-            {levels === "12" && "武器"}
-            {levels === "13" && "盾"}
-            {levels === "14" && "裝飾品"}
-            {levels === "15" && "特產品"}
+            {levels === "10" && <ListJobs />}
+            {levels === "11" && <ListMonsters />}
+            {levels === "12" && <ListWeapons />}
+            {levels === "13" && <ListShields />}
+            {levels === "14" && <ListAccessories />}
+            {levels === "15" && <ListSpecialty />}
 
             {levels === "20" && "地圖"}
             {levels === "21" && "戰鬥"}
@@ -230,7 +233,7 @@ function DataEquipment() {
         </TextWithBorderBottom>
         <TextWithBorderBottom diameter="1rem" className={styles.equipmentRow}>
           <div className={styles.equipmentIconAndName}>
-            {t(decorations[currentPlayer.decoration].name)}
+            {t(accessories[currentPlayer.accessory].name)}
           </div>
         </TextWithBorderBottom>
       </div>
@@ -462,5 +465,77 @@ function PlayerImgAndBasicAttrsArea(props: { children?: ReactNode }) {
       </div>
       {children}
     </div>
+  );
+}
+
+function ListJobs() {
+  return (
+    <ListDialog listTopic="job" showArrowUp showArrowDown>
+      {arrayOf10.map((zero, idx) => (
+        <ListItem key={idx} selected={false} className={styles.listItem}>
+          {idx}
+        </ListItem>
+      ))}
+    </ListDialog>
+  );
+}
+
+function ListMonsters() {
+  return (
+    <ListDialog listTopic="monster" showArrowUp showArrowDown>
+      {arrayOf10.map((zero, idx) => (
+        <ListItem key={idx} selected={false} className={styles.listItem}>
+          {idx}
+        </ListItem>
+      ))}
+    </ListDialog>
+  );
+}
+
+function ListWeapons() {
+  return (
+    <ListDialog listTopic="weapon" showArrowUp showArrowDown>
+      {arrayOf10.map((zero, idx) => (
+        <ListItem key={idx} selected={false} className={styles.listItem}>
+          {idx}
+        </ListItem>
+      ))}
+    </ListDialog>
+  );
+}
+
+function ListShields() {
+  return (
+    <ListDialog listTopic="shield" showArrowUp showArrowDown>
+      {arrayOf10.map((zero, idx) => (
+        <ListItem key={idx} selected={false} className={styles.listItem}>
+          {idx}
+        </ListItem>
+      ))}
+    </ListDialog>
+  );
+}
+
+function ListAccessories() {
+  return (
+    <ListDialog listTopic="accessory" showArrowUp showArrowDown>
+      {arrayOf10.map((zero, idx) => (
+        <ListItem key={idx} selected={false} className={styles.listItem}>
+          {idx}
+        </ListItem>
+      ))}
+    </ListDialog>
+  );
+}
+
+function ListSpecialty() {
+  return (
+    <ListDialog listTopic="specialty" showArrowUp showArrowDown>
+      {arrayOf10.map((zero, idx) => (
+        <ListItem key={idx} selected={false} className={styles.listItem}>
+          {idx}
+        </ListItem>
+      ))}
+    </ListDialog>
   );
 }

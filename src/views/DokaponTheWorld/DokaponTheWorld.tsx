@@ -475,19 +475,35 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForListJobs(e: KeyboardEvent<HTMLDivElement>) {
+    const maxListIdx = 45 - 1 - (10 - 1);
+    const { curListIdx, curListStartIdx } = DataState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
+        if (curListIdx !== 0) DataState.curListIdx -= 1;
+        if (curListIdx === 0 && curListStartIdx > 0)
+          DataState.curListStartIdx -= 1;
         break;
       case gamePadSetting.arrowDown:
+        if (curListIdx !== 9) DataState.curListIdx += 1;
+        if (curListIdx === 9 && curListStartIdx < maxListIdx)
+          DataState.curListStartIdx += 1;
         break;
       case gamePadSetting.arrowRight:
         break;
       case gamePadSetting.arrowLeft:
         break;
       case gamePadSetting.circle:
+        DataState.isCircleClicked = true;
         break;
       case gamePadSetting.cross:
         DataState.curLevel = 1;
+        DataState.curListIdx = -1;
+        DataState.curListStartIdx = 0;
+        break;
+      case gamePadSetting.L1:
+      case gamePadSetting.L2:
+      case gamePadSetting.R1:
+      case gamePadSetting.R2:
         break;
     }
     setGameProgress({ ...gameProgress });

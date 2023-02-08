@@ -24,6 +24,11 @@ import ListItem from "components/ListItem";
 import { jobListInRenderOrder } from "data/jobs";
 
 // Stateless vars declare.
+function getGenderColorByListIdx(listIdx: number) {
+  if (listIdx === 44) return "transparent";
+  if (listIdx % 2 === 0) return "red";
+  return "blue";
+}
 const exp = 123456;
 const arrayOf12 = Array(12).fill(0);
 const arrayOf10 = Array(10).fill(0);
@@ -468,10 +473,12 @@ function PlayerImgAndBasicAttrsArea(props: { children?: ReactNode }) {
 }
 
 function ListJobs() {
+  const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
   const { playersAttrs, currentPlayerIdx } = gameProgress;
-  const { availableJobs } = playersAttrs[currentPlayerIdx];
-  const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
+  const { availableJobs, gender } = playersAttrs[currentPlayerIdx];
+  const { curListIdx, curListStartIdx } =
+    gameProgress.DokaponTheWorldState.DataState;
   return (
     <ListDialog
       listTopic="job"
@@ -479,30 +486,40 @@ function ListJobs() {
       showArrowDown
       availableCounts={availableJobs.length}
     >
-      {arrayOf10.map((zero, idx) => (
-        <ListItem
-          key={idx}
-          selected={idx === curListIdx}
-          className={styles.listItem}
-        >
-          <div className={styles.listLeftArea}>{idx + 1}</div>
-          <div className={styles.listCenterArea}>
-            <span
-              style={{ backgroundColor: idx % 2 === 0 ? "red" : "blue" }}
-              className={styles.listJobColor}
-            />
-            Job
-          </div>
-          <div className={styles.listRightArea}>MASTER</div>
-        </ListItem>
-      ))}
+      {jobListInRenderOrder.map(
+        (jobType, idx) =>
+          idx >= curListStartIdx &&
+          idx < curListStartIdx + 10 && (
+            <ListItem
+              key={idx}
+              selected={idx - curListStartIdx === curListIdx}
+              className={styles.listItem}
+            >
+              <div className={styles.listLeftArea}>{idx + 1}</div>
+              <div className={styles.listCenterArea}>
+                <span
+                  style={{ backgroundColor: getGenderColorByListIdx(idx) }}
+                  className={styles.listJobColor}
+                />
+                {t(jobsToJP[jobType])}
+              </div>
+              <div className={styles.listRightArea}>
+                <span className={styles.listJobMaster}>
+                  {gender === "male" && idx % 2 === 0 && "MASTER"}
+                  {gender === "female" && idx % 2 === 1 && "MASTER"}
+                </span>
+              </div>
+            </ListItem>
+          )
+      )}
     </ListDialog>
   );
 }
 
 function ListMonsters() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
+  const { curListIdx, curListStartIdx } =
+    gameProgress.DokaponTheWorldState.DataState;
   return (
     <ListDialog
       listTopic="monster"
@@ -525,7 +542,8 @@ function ListMonsters() {
 
 function ListWeapons() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
+  const { curListIdx, curListStartIdx } =
+    gameProgress.DokaponTheWorldState.DataState;
   return (
     <ListDialog
       listTopic="weapon"
@@ -548,7 +566,8 @@ function ListWeapons() {
 
 function ListShields() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
+  const { curListIdx, curListStartIdx } =
+    gameProgress.DokaponTheWorldState.DataState;
   return (
     <ListDialog
       listTopic="shield"
@@ -571,7 +590,8 @@ function ListShields() {
 
 function ListAccessories() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
+  const { curListIdx, curListStartIdx } =
+    gameProgress.DokaponTheWorldState.DataState;
   return (
     <ListDialog
       listTopic="accessory"
@@ -594,7 +614,8 @@ function ListAccessories() {
 
 function ListSpecialty() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
+  const { curListIdx, curListStartIdx } =
+    gameProgress.DokaponTheWorldState.DataState;
   return (
     <ListDialog
       listTopic="specialty"

@@ -775,9 +775,11 @@ const devGameProgress: GameProgress = {
     DataState: {
       curLevel: 0,
       curPage: 0,
+      curListStartIdx: 0,
       curListIdx: -1,
       level0Idx: 0,
       level1Idxs: [0, 0, 0, 0],
+      isCircleClicked: false,
     },
     GraphUIState: {
       SVGTranslate: { x: 0, y: 0 },

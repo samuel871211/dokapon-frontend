@@ -485,6 +485,11 @@
   border-radius: 50%;
   margin-right: 3rem;
 }
+.listJobMaster {
+  font-size: 2rem;
+  color: white;
+  -webkit-text-stroke: 0.1rem black;
+}
 @keyframes level0ButtonHoverFrom {
   0% {
     background-color: var(--hover-bg-color);

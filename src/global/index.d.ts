@@ -313,6 +313,10 @@ export type GameProgress = {
        */
       curPage: number;
       /**
+       * @default 0
+       */
+      curListStartIdx: number;
+      /**
        * @default -1
        */
       curListIdx: number;
@@ -320,11 +324,14 @@ export type GameProgress = {
        * 0 ~ 3
        */
       level0Idx: number;
-
       /**
        * [0 ~ 5, 0 ~ 5, 0 ~ 2, 0 ~ 2]
        */
       level1Idxs: [number, number, number, number];
+      /**
+       * 根據此值，決定渲染list或是其他information
+       */
+      isCircleClicked: boolean;
     };
     GraphUIState: {
       SVGTranslate: { x: number; y: number };

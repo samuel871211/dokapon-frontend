@@ -1,17 +1,6 @@
 import type { JobTypes, Job } from "global";
 
-/**
- * https://stackoverflow.com/questions/70956050/how-do-i-declare-object-value-type-without-declaring-key-type
- *
- * 可以在不宣告key type的情況，宣告value的型別
- *
- * 如此一來，key就可以透過TS自動解析成union type
- */
-function satisfiesRecords<valueType>() {
-  return <K extends PropertyKey>(record: Record<K, valueType>) => record;
-}
-
-const jobs = satisfiesRecords<Job>()({
+const jobs: { [key in JobTypes]: Job } = {
   beginner: {
     name: "無職",
     levelUpPoint: {
@@ -1189,7 +1178,55 @@ const jobs = satisfiesRecords<Job>()({
     allowMale: true,
     allowFemale: true,
   },
-});
+};
+
+export const jobListInRenderOrder: JobTypes[] = [
+  "beginner",
+  "beginner",
+  "warrior",
+  "warrior",
+  "magician",
+  "magician",
+  "cleric",
+  "cleric",
+  "thief",
+  "thief",
+  "knight",
+  "knight",
+  "archmage",
+  "archmage",
+  "priest",
+  "priest",
+  "bladeMaster",
+  "bladeMaster",
+  "necromancer",
+  "necromancer",
+  "exorcist",
+  "exorcist",
+  "pirate",
+  "pirate",
+  "ninja",
+  "ninja",
+  "gamester",
+  "gamester",
+  "beastTamer",
+  "beastTamer",
+  "robot",
+  "robot",
+  "carpenter",
+  "nurse",
+  "monk",
+  "dancer",
+  "alien",
+  "queen",
+  "gladiator",
+  "elves",
+  "royal",
+  "royal",
+  "devil",
+  "devil",
+  "anotherDevil",
+];
 
 export const basicJobs: JobTypes[] = [
   "warrior",

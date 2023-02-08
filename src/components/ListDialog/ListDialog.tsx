@@ -50,8 +50,16 @@ function ListDialog(props: {
   showArrowUp: boolean;
   showArrowDown: boolean;
   listTopic: ListTopics;
+  availableCounts: number;
 }) {
-  const { children, className, showArrowUp, showArrowDown, listTopic } = props;
+  const {
+    children,
+    className,
+    showArrowUp,
+    showArrowDown,
+    listTopic,
+    availableCounts,
+  } = props;
   const { t } = useTranslation();
   return (
     <YellowBlock
@@ -64,7 +72,7 @@ function ListDialog(props: {
           {t(listTopicsInfo[listTopic].globalTitle)}
         </div>
         <div className={styles.counts}>
-          {`${1}／${listTopicsInfo[listTopic].maxCount}`}
+          {`${availableCounts}／${listTopicsInfo[listTopic].maxCount}`}
         </div>
       </div>
       <div className={styles.listArea}>

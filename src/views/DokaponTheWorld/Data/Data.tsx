@@ -21,6 +21,7 @@ import { TextsKeys } from "data/texts";
 import VillagesDialog from "components/VillagesDialog";
 import ListDialog from "components/ListDialog";
 import ListItem from "components/ListItem";
+import { jobListInRenderOrder } from "data/jobs";
 
 // Stateless vars declare.
 const exp = 123456;
@@ -169,7 +170,7 @@ function DataStrength() {
             <span>
               {currentPlayerJobMasterLevel === 5
                 ? "MASTER"
-                : Array(currentPlayerJobMasterLevel).fill('☆')}
+                : Array(currentPlayerJobMasterLevel).fill("☆")}
             </span>
           </div>
           <TextWithBorderBottom
@@ -468,16 +469,31 @@ function PlayerImgAndBasicAttrsArea(props: { children?: ReactNode }) {
 
 function ListJobs() {
   const { gameProgress } = useContext(gameProgressCtx);
+  const { playersAttrs, currentPlayerIdx } = gameProgress;
+  const { availableJobs } = playersAttrs[currentPlayerIdx];
   const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
   return (
-    <ListDialog listTopic="job" showArrowUp showArrowDown>
+    <ListDialog
+      listTopic="job"
+      showArrowUp
+      showArrowDown
+      availableCounts={availableJobs.length}
+    >
       {arrayOf10.map((zero, idx) => (
-        <ListItem 
+        <ListItem
           key={idx}
           selected={idx === curListIdx}
           className={styles.listItem}
         >
-          {idx}
+          <div className={styles.listLeftArea}>{idx + 1}</div>
+          <div className={styles.listCenterArea}>
+            <span
+              style={{ backgroundColor: idx % 2 === 0 ? "red" : "blue" }}
+              className={styles.listJobColor}
+            />
+            Job
+          </div>
+          <div className={styles.listRightArea}>MASTER</div>
         </ListItem>
       ))}
     </ListDialog>
@@ -488,9 +504,14 @@ function ListMonsters() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
   return (
-    <ListDialog listTopic="monster" showArrowUp showArrowDown>
+    <ListDialog
+      listTopic="monster"
+      showArrowUp
+      showArrowDown
+      availableCounts={1}
+    >
       {arrayOf10.map((zero, idx) => (
-        <ListItem 
+        <ListItem
           key={idx}
           selected={idx === curListIdx}
           className={styles.listItem}
@@ -506,9 +527,14 @@ function ListWeapons() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
   return (
-    <ListDialog listTopic="weapon" showArrowUp showArrowDown>
+    <ListDialog
+      listTopic="weapon"
+      showArrowUp
+      showArrowDown
+      availableCounts={1}
+    >
       {arrayOf10.map((zero, idx) => (
-        <ListItem 
+        <ListItem
           key={idx}
           selected={idx === curListIdx}
           className={styles.listItem}
@@ -524,9 +550,14 @@ function ListShields() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
   return (
-    <ListDialog listTopic="shield" showArrowUp showArrowDown>
+    <ListDialog
+      listTopic="shield"
+      showArrowUp
+      showArrowDown
+      availableCounts={1}
+    >
       {arrayOf10.map((zero, idx) => (
-        <ListItem 
+        <ListItem
           key={idx}
           selected={idx === curListIdx}
           className={styles.listItem}
@@ -542,9 +573,14 @@ function ListAccessories() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
   return (
-    <ListDialog listTopic="accessory" showArrowUp showArrowDown>
+    <ListDialog
+      listTopic="accessory"
+      showArrowUp
+      showArrowDown
+      availableCounts={1}
+    >
       {arrayOf10.map((zero, idx) => (
-        <ListItem 
+        <ListItem
           key={idx}
           selected={idx === curListIdx}
           className={styles.listItem}
@@ -560,9 +596,14 @@ function ListSpecialty() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx } = gameProgress.DokaponTheWorldState.DataState;
   return (
-    <ListDialog listTopic="specialty" showArrowUp showArrowDown>
+    <ListDialog
+      listTopic="specialty"
+      showArrowUp
+      showArrowDown
+      availableCounts={1}
+    >
       {arrayOf10.map((zero, idx) => (
-        <ListItem 
+        <ListItem
           key={idx}
           selected={idx === curListIdx}
           className={styles.listItem}

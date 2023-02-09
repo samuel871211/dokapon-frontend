@@ -476,7 +476,8 @@ function useMetaData() {
   }
   function handleKeyUpForListJobs(e: KeyboardEvent<HTMLDivElement>) {
     const maxListIdx = 45 - 1 - (10 - 1);
-    const { curListIdx, curListStartIdx } = DataState;
+    const { curListIdx, curListStartIdx, listJobCurPage, isCircleClicked } =
+      DataState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
         if (curListIdx !== 0) DataState.curListIdx -= 1;
@@ -488,14 +489,14 @@ function useMetaData() {
         if (curListIdx === 9 && curListStartIdx < maxListIdx)
           DataState.curListStartIdx += 1;
         break;
-      case gamePadSetting.arrowRight:
-        break;
-      case gamePadSetting.arrowLeft:
-        break;
       case gamePadSetting.circle:
         DataState.isCircleClicked = true;
         break;
       case gamePadSetting.cross:
+        if (isCircleClicked) {
+          DataState.isCircleClicked = false;
+          break;
+        }
         DataState.curLevel = 1;
         DataState.curListIdx = -1;
         DataState.curListStartIdx = 0;
@@ -504,6 +505,7 @@ function useMetaData() {
       case gamePadSetting.L2:
       case gamePadSetting.R1:
       case gamePadSetting.R2:
+        DataState.listJobCurPage = listJobCurPage === 0 ? 1 : 0;
         break;
     }
     setGameProgress({ ...gameProgress });

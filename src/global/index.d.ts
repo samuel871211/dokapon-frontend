@@ -332,6 +332,10 @@ export type GameProgress = {
        * 根據此值，決定渲染list或是其他information
        */
       isCircleClicked: boolean;
+      /**
+       * 0 ~ 1
+       */
+      listJobCurPage: number;
     };
     GraphUIState: {
       SVGTranslate: { x: number; y: number };

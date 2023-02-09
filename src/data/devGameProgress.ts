@@ -779,6 +779,7 @@ const devGameProgress: GameProgress = {
       curListIdx: -1,
       level0Idx: 0,
       level1Idxs: [0, 0, 0, 0],
+      listJobCurPage: 0,
       isCircleClicked: false,
     },
     GraphUIState: {

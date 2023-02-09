@@ -9,7 +9,7 @@ export default AttrCircle;
 
 function AttrCircle(props: {
   attr: string;
-  value: number;
+  value: number | string;
   fontSize?: string;
   /**
    * color of value text

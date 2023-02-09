@@ -285,6 +285,10 @@
   flex-grow: 1;
   text-align: right;
 }
+.payText::after {
+  content: "Ð";
+  margin-right: 2rem;
+}
 .equipmentArea {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -489,6 +493,84 @@
   font-size: 2rem;
   color: white;
   -webkit-text-stroke: 0.1rem black;
+}
+.listGridViewContainer {
+  padding: 2rem;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: repeat(6, 1fr);
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+}
+.listGridViewContainer .topLeftGridItem {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  min-width: 0px;
+  min-height: 0px;
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+}
+.listGridViewContainer .topRightGridItem {
+  position: relative;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+  padding: 2rem 1rem;
+}
+.whiteText {
+  font-size: 2rem;
+  line-height: 2rem;
+  color: white;
+  -webkit-text-stroke: 0.1rem black;
+}
+.topRightGridItem .textWithBorderBottom {
+  width: 80%;
+  margin: 0 auto;
+}
+.textWithBorderBottom[data-show="false"] {
+  display: none;
+}
+.levelUpPointArea {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+  gap: 1rem;
+}
+.levelUpPointArea > * {
+  width: 15%;
+}
+.bagSpaceArea {
+  display: flex;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.bagSpaceArea > :nth-child(3) {
+  margin-left: 2rem;
+}
+.bagSpaceArea > span {
+  color: white;
+  -webkit-text-stroke: 0.1rem black;
+}
+.jobExplanation {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  font-size: 3rem;
+  line-height: 3.25rem;
+}
+.listGridViewContainer .bottomRightGridItem {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 7;
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+  padding: 2rem 1rem;
 }
 @keyframes level0ButtonHoverFrom {
   0% {

@@ -47,7 +47,14 @@ function Data() {
   const {
     gameProgress: {
       DokaponTheWorldState: {
-        DataState: { curLevel, level0Idx, level1Idxs, curPage, curListIdx },
+        DataState: {
+          curLevel,
+          level0Idx,
+          level1Idxs,
+          curPage,
+          curListIdx,
+          isCircleClicked,
+        },
       },
     },
   } = useContext(gameProgressCtx);
@@ -111,7 +118,8 @@ function Data() {
             )}
             {levels === "05" && <DataRank />}
 
-            {levels === "10" && <ListJobs />}
+            {levels === "10" && !isCircleClicked && <JobListView />}
+            {levels === "10" && isCircleClicked && <JobGridView />}
             {levels === "11" && <ListMonsters />}
             {levels === "12" && <ListWeapons />}
             {levels === "13" && <ListShields />}
@@ -472,18 +480,18 @@ function PlayerImgAndBasicAttrsArea(props: { children?: ReactNode }) {
   );
 }
 
-function ListJobs() {
+function JobListView() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
   const { playersAttrs, currentPlayerIdx } = gameProgress;
   const { availableJobs, gender } = playersAttrs[currentPlayerIdx];
-  const { curListIdx, curListStartIdx } =
+  const { curListIdx, curListStartIdx, isCircleClicked } =
     gameProgress.DokaponTheWorldState.DataState;
   return (
     <ListDialog
       listTopic="job"
-      showArrowUp
-      showArrowDown
+      showArrowUp={!isCircleClicked}
+      showArrowDown={!isCircleClicked}
       availableCounts={availableJobs.length}
     >
       {jobListInRenderOrder.map(
@@ -513,6 +521,98 @@ function ListJobs() {
           )
       )}
     </ListDialog>
+  );
+}
+
+function JobGridView() {
+  const { t } = useTranslation();
+  const { gameProgress } = useContext(gameProgressCtx);
+  const { playersAttrs, currentPlayerIdx } = gameProgress;
+  const { job, gender, color } = playersAttrs[currentPlayerIdx];
+  const { listJobCurPage } = gameProgress.DokaponTheWorldState.DataState;
+  return (
+    <div className={styles.listGridViewContainer}>
+      <div className={styles.topLeftGridItem}>
+        <img
+          width="100%"
+          height="100%"
+          src={`${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`}
+        />
+      </div>
+      <div className={styles.topRightGridItem}>
+        <div className={styles.whiteText}>
+          {listJobCurPage === 0 ? "JOB" : "LEVEL UP POINT"}
+        </div>
+        <TextWithBorderBottom
+          className={styles.textWithBorderBottom}
+          data-show={listJobCurPage === 0}
+        >
+          <div className={styles.jobText}>{t(jobsToJP[job])}</div>
+        </TextWithBorderBottom>
+        <TextWithBorderBottom
+          className={styles.textWithBorderBottom}
+          data-show={listJobCurPage === 1}
+        >
+          <div className={styles.levelUpPointArea}>
+            <AttrCircle
+              fontSize="2rem"
+              attr="AT"
+              value={`+${jobs[job].levelUpPoint.attack}`}
+            />
+            <AttrCircle
+              fontSize="2rem"
+              attr="DF"
+              value={`+${jobs[job].levelUpPoint.defense}`}
+            />
+            <AttrCircle
+              fontSize="2rem"
+              attr="MG"
+              value={`+${jobs[job].levelUpPoint.magic}`}
+            />
+            <AttrCircle
+              fontSize="2rem"
+              attr="SP"
+              value={`+${jobs[job].levelUpPoint.speed}`}
+            />
+            <AttrCircle
+              fontSize="2rem"
+              attr="HP"
+              value={`+${jobs[job].levelUpPoint.hp}`}
+            />
+          </div>
+        </TextWithBorderBottom>
+        <div className={styles.whiteText}>
+          {listJobCurPage === 1 ? "PAY" : "BAG SPACE"}
+        </div>
+        <TextWithBorderBottom
+          className={styles.textWithBorderBottom}
+          data-show={listJobCurPage === 0}
+        >
+          <div className={styles.payText}>{jobs[job].pay.toLocaleString()}</div>
+        </TextWithBorderBottom>
+        <TextWithBorderBottom
+          className={styles.textWithBorderBottom}
+          data-show={listJobCurPage === 1}
+        >
+          <div className={styles.bagSpaceArea}>
+            <div>{t("アイテム")}：</div>
+            <span>{jobs[job].bagSpace.items}</span>
+            <div>{t("魔法")}：</div>
+            <span>{jobs[job].bagSpace.magicBooks}</span>
+          </div>
+        </TextWithBorderBottom>
+      </div>
+      <div className={styles.bottomRightGridItem}>
+        <div className={styles.whiteText}>EXPLNATION</div>
+        <div className={styles.jobExplanation}>
+          {jobs[job].fullExplanation.split("\n").map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+        </div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   );
 }
 

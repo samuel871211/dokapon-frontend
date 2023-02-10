@@ -5,6 +5,14 @@ const texts = {
     cn: "",
   },
   // DokaponTheWorld > Data
+  フィールド特技: {
+    en: "Field Specialty",
+    cn: "地圖特技",
+  },
+  バトル特技: {
+    en: "Battle Specialty",
+    cn: "戰鬥特技",
+  },
   職業リスト: {
     en: "Job List",
     cn: "職業列表",

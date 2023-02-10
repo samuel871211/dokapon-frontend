@@ -495,6 +495,7 @@ function useMetaData() {
       case gamePadSetting.cross:
         if (isCircleClicked) {
           DataState.isCircleClicked = false;
+          DataState.listJobCurPage = 0;
           break;
         }
         DataState.curLevel = 1;

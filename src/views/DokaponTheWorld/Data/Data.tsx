@@ -47,14 +47,7 @@ function Data() {
   const {
     gameProgress: {
       DokaponTheWorldState: {
-        DataState: {
-          curLevel,
-          level0Idx,
-          level1Idxs,
-          curPage,
-          curListIdx,
-          isCircleClicked,
-        },
+        DataState: { curLevel, level0Idx, level1Idxs, isCircleClicked },
       },
     },
   } = useContext(gameProgressCtx);
@@ -109,22 +102,21 @@ function Data() {
             {levels === "01" && <DataEquipment />}
             {levels === "02" && <DataBag />}
             {levels === "03" && <DataAssets />}
-            {levels === "04" && (
-              <VillagesDialog
-                curPage={curPage}
-                curHoverIdx={curListIdx}
-                className={styles.villagesDialog}
-              />
-            )}
+            {levels === "04" && <DataVillages />}
             {levels === "05" && <DataRank />}
 
             {levels === "10" && !isCircleClicked && <JobListView />}
             {levels === "10" && isCircleClicked && <JobGridView />}
-            {levels === "11" && <ListMonsters />}
-            {levels === "12" && <ListWeapons />}
-            {levels === "13" && <ListShields />}
-            {levels === "14" && <ListAccessories />}
-            {levels === "15" && <ListSpecialty />}
+            {levels === "11" && !isCircleClicked && <MonsterListView />}
+            {levels === "11" && isCircleClicked && <MonsterGridView />}
+            {levels === "12" && !isCircleClicked && <WeaponListView />}
+            {levels === "12" && isCircleClicked && <WeaponGridView />}
+            {levels === "13" && !isCircleClicked && <ShieldListView />}
+            {levels === "13" && isCircleClicked && <ShieldGridView />}
+            {levels === "14" && !isCircleClicked && <AccessoryListView />}
+            {levels === "14" && isCircleClicked && <AccessoryGridView />}
+            {levels === "15" && !isCircleClicked && <SpecialtyListView />}
+            {levels === "15" && isCircleClicked && <SpecialtyGridView />}
 
             {levels === "20" && "地圖"}
             {levels === "21" && "戰鬥"}
@@ -360,6 +352,23 @@ function DataAssets() {
   );
 }
 
+function DataVillages() {
+  const {
+    gameProgress: {
+      DokaponTheWorldState: {
+        DataState: { curPage, curListIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  return (
+    <VillagesDialog
+      curPage={curPage}
+      curHoverIdx={curListIdx}
+      className={styles.villagesDialog}
+    ></VillagesDialog>
+  );
+}
+
 /**
  * @todo 根據所持金來決定rank順序
  */
@@ -398,7 +407,6 @@ function DataRank() {
     </div>
   );
 }
-
 function PlayerImgAndBasicAttrsArea(props: { children?: ReactNode }) {
   const { children } = props;
   const { gameProgress } = useContext(gameProgressCtx);
@@ -479,7 +487,6 @@ function PlayerImgAndBasicAttrsArea(props: { children?: ReactNode }) {
     </div>
   );
 }
-
 function JobListView() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
@@ -523,7 +530,6 @@ function JobListView() {
     </ListDialog>
   );
 }
-
 function JobGridView() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
@@ -604,19 +610,35 @@ function JobGridView() {
       </div>
       <div className={styles.bottomRightGridItem}>
         <div className={styles.whiteText}>EXPLNATION</div>
-        <div className={styles.jobExplanation}>
+        <div className={styles.jobExplanation} data-show={listJobCurPage === 0}>
           {jobs[job].fullExplanation.split("\n").map((line) => (
             <div key={line}>{line}</div>
           ))}
         </div>
-        <div></div>
-        <div></div>
+        <div
+          className={styles.battleSpecialty}
+          data-show={listJobCurPage === 1}
+        >
+          <div>{`${t("フィールド特技")}:${
+            jobs[job].battleSpecialty.name
+          }`}</div>
+          {jobs[job].battleSpecialty.briefExplanation
+            .split("\n")
+            .map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+        </div>
+        <div className={styles.fieldSpecialty} data-show={listJobCurPage === 1}>
+          <div>{`${t("バトル特技")}:${jobs[job].fieldSpecialty.name}`}</div>
+          {jobs[job].fieldSpecialty.fullExplanation.split("\n").map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
-
-function ListMonsters() {
+function MonsterListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
@@ -639,8 +661,10 @@ function ListMonsters() {
     </ListDialog>
   );
 }
-
-function ListWeapons() {
+function MonsterGridView() {
+  return <div></div>;
+}
+function WeaponListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
@@ -663,8 +687,10 @@ function ListWeapons() {
     </ListDialog>
   );
 }
-
-function ListShields() {
+function WeaponGridView() {
+  return <div></div>;
+}
+function ShieldListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
@@ -687,8 +713,10 @@ function ListShields() {
     </ListDialog>
   );
 }
-
-function ListAccessories() {
+function ShieldGridView() {
+  return <div></div>;
+}
+function AccessoryListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
@@ -711,8 +739,10 @@ function ListAccessories() {
     </ListDialog>
   );
 }
-
-function ListSpecialty() {
+function AccessoryGridView() {
+  return <div></div>;
+}
+function SpecialtyListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
@@ -734,4 +764,7 @@ function ListSpecialty() {
       ))}
     </ListDialog>
   );
+}
+function SpecialtyGridView() {
+  return <div></div>;
 }

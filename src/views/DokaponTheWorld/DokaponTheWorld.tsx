@@ -446,7 +446,7 @@ function useMetaData() {
     const { curPage, curListIdx } = DataState;
     const maxPageIdx = 6;
     const isOceania = curPage === 5;
-    const maxListIdx = isOceania ? 4 : 8;
+    const maxListStartIdx = isOceania ? 4 : 8;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.L1:
       case gamePadSetting.L2:
@@ -459,10 +459,12 @@ function useMetaData() {
         DataState.curListIdx = 0;
         break;
       case gamePadSetting.arrowUp:
-        DataState.curListIdx = curListIdx === 0 ? maxListIdx : curListIdx - 1;
+        DataState.curListIdx =
+          curListIdx === 0 ? maxListStartIdx : curListIdx - 1;
         break;
       case gamePadSetting.arrowDown:
-        DataState.curListIdx = curListIdx === maxListIdx ? 0 : curListIdx + 1;
+        DataState.curListIdx =
+          curListIdx === maxListStartIdx ? 0 : curListIdx + 1;
         break;
       case gamePadSetting.circle:
         // @todo 畫面切到該村莊，不可移動，只能按circle跟cross
@@ -475,19 +477,33 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForListJobs(e: KeyboardEvent<HTMLDivElement>) {
-    const maxListIdx = 45 - 1 - (10 - 1);
+    const maxListStartIdx = 45 - 1 - (10 - 1);
     const { curListIdx, curListStartIdx, listJobCurPage, isCircleClicked } =
       DataState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
-        if (curListIdx !== 0) DataState.curListIdx -= 1;
-        if (curListIdx === 0 && curListStartIdx > 0)
+        if (curListIdx !== 0) {
+          DataState.curListIdx -= 1;
+        }
+        if (curListIdx === 0 && curListStartIdx > 0) {
           DataState.curListStartIdx -= 1;
+        }
+        if (curListIdx === 0 && curListStartIdx === 0) {
+          DataState.curListIdx = 9;
+          DataState.curListStartIdx = maxListStartIdx;
+        }
         break;
       case gamePadSetting.arrowDown:
-        if (curListIdx !== 9) DataState.curListIdx += 1;
-        if (curListIdx === 9 && curListStartIdx < maxListIdx)
+        if (curListIdx !== 9) {
+          DataState.curListIdx += 1;
+        }
+        if (curListIdx === 9 && curListStartIdx < maxListStartIdx) {
           DataState.curListStartIdx += 1;
+        }
+        if (curListIdx === 9 && curListStartIdx === maxListStartIdx) {
+          DataState.curListIdx = 0;
+          DataState.curListStartIdx = 0;
+        }
         break;
       case gamePadSetting.circle:
         DataState.isCircleClicked = true;
@@ -512,20 +528,47 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForListMonsters(e: KeyboardEvent<HTMLDivElement>) {
+    const maxListStartIdx = 171 - 1 - (10 - 1);
+    const { curListIdx, curListStartIdx, isCircleClicked } = DataState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
+        if (curListIdx !== 0) {
+          DataState.curListIdx -= 1;
+        }
+        if (curListIdx === 0 && curListStartIdx > 0) {
+          DataState.curListStartIdx -= 1;
+        }
+        if (curListIdx === 0 && curListStartIdx === 0) {
+          DataState.curListStartIdx = maxListStartIdx;
+          DataState.curListIdx = 9;
+        }
         break;
       case gamePadSetting.arrowDown:
-        break;
-      case gamePadSetting.arrowRight:
-        break;
-      case gamePadSetting.arrowLeft:
+        if (curListIdx !== 9) {
+          DataState.curListIdx += 1;
+        }
+        if (curListIdx === 9 && curListStartIdx < maxListStartIdx) {
+          DataState.curListStartIdx += 1;
+        }
+        if (curListIdx === 9 && curListStartIdx === maxListStartIdx) {
+          DataState.curListIdx = 0;
+          DataState.curListStartIdx = 0;
+        }
         break;
       case gamePadSetting.circle:
+        DataState.isCircleClicked = true;
         break;
       case gamePadSetting.cross:
+        if (isCircleClicked) {
+          DataState.isCircleClicked = false;
+          break;
+        }
+        DataState.curLevel = 1;
+        DataState.curListIdx = -1;
+        DataState.curListStartIdx = 0;
         break;
     }
+    setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForListWeapons(e: KeyboardEvent<HTMLDivElement>) {
     switch (e.key.toLowerCase()) {

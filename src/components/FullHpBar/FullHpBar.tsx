@@ -1,4 +1,3 @@
-import { PlayerAttrs } from "global";
 import styles from "./FullHpBar.module.css";
 
 export default FullHpBar;
@@ -17,7 +16,9 @@ function FullHpBar(props: {
           style={{ width: `${(hp.current / hp.total) * 100}%` }}
         ></div>
       </div>
-      <div className={styles.row2}>{`${hp.current} / ${hp.total}`}</div>
+      <div className={styles.row2}>
+        {`${hp.current || "?"} / ${hp.total || "?"}`}
+      </div>
     </div>
   );
 }

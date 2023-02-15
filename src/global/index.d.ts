@@ -842,13 +842,14 @@ export type MonsterFixedAttrs = {
   magic: number;
   speed: number;
   hp: number;
-  trick?: string;
+  specialty?: string;
   magicAttack?: MagicAttackTypes;
   magicDefense?: MagicDefenseTypes;
   exp: number;
   money: number;
   isBoss: boolean;
   fromAreas: AreaTypes[];
+  explanation: TextsKeys;
   possession: {
     name: string;
     isItem?: true;

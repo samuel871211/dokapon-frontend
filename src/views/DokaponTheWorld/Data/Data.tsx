@@ -21,6 +21,7 @@ import { TextsKeys } from "data/texts";
 import VillagesDialog from "components/VillagesDialog";
 import ListDialog from "components/ListDialog";
 import ListItem from "components/ListItem";
+import { monsterList } from "data/monsters";
 import { jobListInRenderOrder } from "data/jobs";
 
 // Stateless vars declare.
@@ -537,7 +538,7 @@ function JobGridView() {
   const { job, gender, color } = playersAttrs[currentPlayerIdx];
   const { listJobCurPage } = gameProgress.DokaponTheWorldState.DataState;
   return (
-    <div className={styles.listGridViewContainer}>
+    <div className={styles.listGridViewContainer} data-theme="job">
       <div className={styles.topLeftGridItem}>
         <img
           width="100%"
@@ -640,6 +641,7 @@ function JobGridView() {
 }
 function MonsterListView() {
   const { gameProgress } = useContext(gameProgressCtx);
+  const { t } = useTranslation();
   const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
   return (
@@ -649,20 +651,123 @@ function MonsterListView() {
       showArrowDown
       availableCounts={1}
     >
-      {arrayOf10.map((zero, idx) => (
-        <ListItem
-          key={idx}
-          selected={idx === curListIdx}
-          className={styles.listItem}
-        >
-          {idx}
-        </ListItem>
-      ))}
+      {monsterList.map(
+        (monsterFixedAttrs, idx) =>
+          idx >= curListStartIdx &&
+          idx < curListStartIdx + 10 && (
+            <ListItem
+              key={idx}
+              selected={idx - curListStartIdx === curListIdx}
+              className={styles.listItem}
+            >
+              <div className={styles.listLeftArea}>{idx + 1}</div>
+              <div className={styles.listCenterArea}>
+                {t(monsterFixedAttrs.name)}
+              </div>
+              <div className={`${styles.listRightArea} ${styles.flex}`}>
+                <div className={styles.levelCirlce}>LV</div>
+                <div className={styles.monsterLevel}>
+                  {monsterFixedAttrs.level}
+                </div>
+              </div>
+            </ListItem>
+          )
+      )}
     </ListDialog>
   );
 }
 function MonsterGridView() {
-  return <div></div>;
+  const {
+    gameProgress: {
+      DokaponTheWorldState: {
+        DataState: { curListIdx, curListStartIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  const { t } = useTranslation();
+  const curMonster = monsterList[curListIdx + curListStartIdx];
+  return (
+    <div className={styles.listGridViewContainer} data-theme="monster">
+      <div className={styles.topLeftGridItem}>還沒做圖</div>
+      <div className={styles.topRightGridItem}>
+        <div className={styles.line1}>
+          <AttrCircle
+            attr="LV"
+            value={curMonster.level || "?"}
+            width="15%"
+            fontSize="2rem"
+          />
+          <TextWithBorderBottom className={styles.monsterName}>
+            {t(curMonster.name)}
+          </TextWithBorderBottom>
+        </div>
+        <div className={styles.line2}>
+          <AttrCircle
+            attr="AT"
+            value={curMonster.attack || "?"}
+            width="15%"
+            fontSize="2rem"
+          />
+          <AttrCircle
+            attr="DF"
+            value={curMonster.defense || "?"}
+            width="15%"
+            fontSize="2rem"
+          />
+          <AttrCircle
+            attr="MG"
+            value={curMonster.magic || "?"}
+            width="15%"
+            fontSize="2rem"
+          />
+          <AttrCircle
+            attr="SP"
+            value={curMonster.speed || "?"}
+            width="15%"
+            fontSize="2rem"
+          />
+          <FullHpBar
+            hp={{ current: curMonster.hp, total: curMonster.hp }}
+            className={styles.monsterHpBar}
+          />
+        </div>
+      </div>
+      <div className={styles.centerRightGridItem}>
+        <div>
+          <span>{t("特技")}：</span>
+          <span className={styles.monsterSpecialty}>
+            {curMonster.specialty}
+          </span>
+        </div>
+        <div>
+          <span>{t("攻擊魔法")}：</span>
+          <span className={styles.monsterMagicAttack}>
+            {curMonster.magicAttack
+              ? t(magicAttacks[curMonster.magicAttack].name)
+              : null}
+          </span>
+        </div>
+        <div>
+          <span>{t("防御魔法")}：</span>
+          <span className={styles.monsterMagicDefense}>
+            {curMonster.magicDefense
+              ? t(magicDefenses[curMonster.magicDefense].name)
+              : null}
+          </span>
+        </div>
+      </div>
+      <div className={styles.bottomRightGridItem}>
+        <div className={styles.whiteText}>EXPLANATION</div>
+        <div className={styles.monsterExplanation}>
+          {t(curMonster.explanation)
+            .split("\n")
+            .map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 function WeaponListView() {
   const { gameProgress } = useContext(gameProgressCtx);
@@ -688,7 +793,14 @@ function WeaponListView() {
   );
 }
 function WeaponGridView() {
-  return <div></div>;
+  return (
+    <div className={styles.listGridViewContainer} data-theme="weapon">
+      <div className={styles.topLeftGridItem}></div>
+      <div className={styles.topRightGridItem}></div>
+      <div className={styles.centerRightGridItem}></div>
+      <div className={styles.bottomRightGridItem}></div>
+    </div>
+  );
 }
 function ShieldListView() {
   const { gameProgress } = useContext(gameProgressCtx);
@@ -714,7 +826,14 @@ function ShieldListView() {
   );
 }
 function ShieldGridView() {
-  return <div></div>;
+  return (
+    <div className={styles.listGridViewContainer} data-theme="shield">
+      <div className={styles.topLeftGridItem}></div>
+      <div className={styles.topRightGridItem}></div>
+      <div className={styles.centerRightGridItem}></div>
+      <div className={styles.bottomRightGridItem}></div>
+    </div>
+  );
 }
 function AccessoryListView() {
   const { gameProgress } = useContext(gameProgressCtx);
@@ -740,7 +859,14 @@ function AccessoryListView() {
   );
 }
 function AccessoryGridView() {
-  return <div></div>;
+  return (
+    <div className={styles.listGridViewContainer} data-theme="accessory">
+      <div className={styles.topLeftGridItem}></div>
+      <div className={styles.topRightGridItem}></div>
+      <div className={styles.centerRightGridItem}></div>
+      <div className={styles.bottomRightGridItem}></div>
+    </div>
+  );
 }
 function SpecialtyListView() {
   const { gameProgress } = useContext(gameProgressCtx);

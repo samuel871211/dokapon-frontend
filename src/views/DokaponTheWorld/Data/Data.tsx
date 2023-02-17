@@ -1,5 +1,5 @@
 // Related third party imports.
-import { ReactNode, useContext } from "react";
+import { ReactNode, useContext, useEffect } from "react";
 import classNames from "classnames";
 
 // Local application/library specific imports.
@@ -11,7 +11,7 @@ import TextWithBorderBottom from "components/TextWithBorderBottom";
 import jobs from "data/jobs";
 import jobsToJP from "data/jobsToJP";
 import useTranslation from "hooks/useTranslation";
-import weapons from "data/weapons";
+import { weaponList, weapons } from "data/weapons";
 import shields from "data/shields";
 import magicAttacks from "data/magicAttacks";
 import magicDefenses from "data/magicDefenses";
@@ -190,7 +190,7 @@ function DataStrength() {
         <div className={styles.payArea}>
           <div className={styles.jobAndPayText}>PAY</div>
           <TextWithBorderBottom width="100%" diameter="1rem">
-            <div className={styles.payText}>
+            <div className={styles.moneyText}>
               {jobs[currentPlayer.job].pay.toLocaleString()}
             </div>
           </TextWithBorderBottom>
@@ -498,8 +498,8 @@ function JobListView() {
   return (
     <ListDialog
       listTopic="job"
-      showArrowUp={!isCircleClicked}
-      showArrowDown={!isCircleClicked}
+      showArrowUp={curListStartIdx > 0}
+      showArrowDown={curListStartIdx < 45 - 10}
       availableCounts={availableJobs.length}
     >
       {jobListInRenderOrder.map(
@@ -595,7 +595,9 @@ function JobGridView() {
           className={styles.textWithBorderBottom}
           data-show={listJobCurPage === 0}
         >
-          <div className={styles.payText}>{jobs[job].pay.toLocaleString()}</div>
+          <div className={styles.moneyText}>
+            {jobs[job].pay.toLocaleString()}
+          </div>
         </TextWithBorderBottom>
         <TextWithBorderBottom
           className={styles.textWithBorderBottom}
@@ -620,9 +622,9 @@ function JobGridView() {
           className={styles.battleSpecialty}
           data-show={listJobCurPage === 1}
         >
-          <div>{`${t("フィールド特技")}:${
-            jobs[job].battleSpecialty.name
-          }`}</div>
+          <div>
+            {t("フィールド特技")}:{jobs[job].battleSpecialty.name}
+          </div>
           {jobs[job].battleSpecialty.briefExplanation
             .split("\n")
             .map((line) => (
@@ -647,8 +649,8 @@ function MonsterListView() {
   return (
     <ListDialog
       listTopic="monster"
-      showArrowUp
-      showArrowDown
+      showArrowUp={curListStartIdx > 0}
+      showArrowDown={curListStartIdx < 171 - 10}
       availableCounts={1}
     >
       {monsterList.map(
@@ -676,6 +678,10 @@ function MonsterListView() {
     </ListDialog>
   );
 }
+
+/**
+ * @todo Monster圖片尚未製作
+ */
 function MonsterGridView() {
   const {
     gameProgress: {
@@ -769,36 +775,96 @@ function MonsterGridView() {
     </div>
   );
 }
+
+/**
+ * @todo 根據不同weapon類型，顯示不同weapon icon
+ */
 function WeaponListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
+  const { t } = useTranslation();
+
   return (
     <ListDialog
       listTopic="weapon"
-      showArrowUp
-      showArrowDown
-      availableCounts={1}
+      showArrowUp={curListStartIdx > 0}
+      showArrowDown={curListStartIdx < 92 - 10}
+      availableCounts={weaponList.length}
     >
-      {arrayOf10.map((zero, idx) => (
-        <ListItem
-          key={idx}
-          selected={idx === curListIdx}
-          className={styles.listItem}
-        >
-          {idx}
-        </ListItem>
-      ))}
+      {weaponList.map(
+        (weapon, idx) =>
+          idx >= curListStartIdx &&
+          idx < curListStartIdx + 10 && (
+            <ListItem
+              key={idx}
+              selected={idx - curListStartIdx === curListIdx}
+              className={styles.listItem}
+            >
+              <div className={styles.listLeftArea}>{idx + 1}</div>
+              <div className={styles.listCenterArea}>
+                <span className={styles.listWeaponIcon} />
+                {t(weapon.name)}
+              </div>
+              <div className={styles.listRightArea}>
+                <span className={styles.listWeaponAT}>AT</span>
+                <span className={styles.whiteText}>{weapon.attack}</span>
+              </div>
+            </ListItem>
+          )
+      )}
     </ListDialog>
   );
 }
+
+/**
+ * @todo weapon圖片尚未製作
+ */
 function WeaponGridView() {
+  const {
+    gameProgress: {
+      DokaponTheWorldState: {
+        DataState: { curListIdx, curListStartIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  const { t } = useTranslation();
+  const curWeapon = weaponList[curListIdx + curListStartIdx];
   return (
     <div className={styles.listGridViewContainer} data-theme="weapon">
       <div className={styles.topLeftGridItem}></div>
-      <div className={styles.topRightGridItem}></div>
-      <div className={styles.centerRightGridItem}></div>
-      <div className={styles.bottomRightGridItem}></div>
+      <div className={styles.topRightGridItem}>
+        <div className={styles.whiteText}>NAME</div>
+        <TextWithBorderBottom>
+          <div className={styles.weaponName}>{t(curWeapon.name)}</div>
+        </TextWithBorderBottom>
+        <div className={styles.whiteText}>PRICE</div>
+        <TextWithBorderBottom>
+          <div className={styles.moneyText}>
+            {curWeapon.price.toLocaleString()}
+          </div>
+        </TextWithBorderBottom>
+      </div>
+      <div className={styles.centerRightGridItem}>
+        <div className={styles.whiteText}>POINT</div>
+        <div className={styles.attrsGroup}>
+          <AttrCircle attr="AT" value={curWeapon.attack} width="4rem" />
+          <AttrCircle attr="DF" value={curWeapon.defense} width="4rem" />
+          <AttrCircle attr="MG" value={curWeapon.magic} width="4rem" />
+          <AttrCircle attr="SP" value={curWeapon.speed} width="4rem" />
+          <AttrCircle attr="HP" value={curWeapon.hp} width="4rem" />
+        </div>
+      </div>
+      <div className={styles.bottomRightGridItem}>
+        <div className={styles.whiteText}>EXPLANATION</div>
+        <div className={styles.weaponExplanation}>
+          {t(curWeapon.explanation)
+            .split("\n")
+            .map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 }

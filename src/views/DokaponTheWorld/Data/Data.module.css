@@ -279,13 +279,17 @@
   font-size: 3rem;
   line-height: 3.25rem;
 }
-.payText {
+.weaponName {
+  font-size: 3rem;
+  line-height: 3.25rem;
+}
+.moneyText {
   font-size: 3rem;
   line-height: 3.25rem;
   flex-grow: 1;
   text-align: right;
 }
-.payText::after {
+.moneyText::after {
   content: "Ð";
   margin-right: 2rem;
 }
@@ -482,6 +486,15 @@
 .listRightArea {
   width: 20%;
 }
+.listWeaponAT {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  margin-right: 3rem;
+}
 .flex {
   display: flex;
 }
@@ -491,6 +504,15 @@
   height: 3rem;
   border-radius: 50%;
   margin-right: 3rem;
+  vertical-align: bottom;
+}
+.listWeaponIcon {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: black;
+  vertical-align: bottom;
 }
 .listJobMaster {
   font-size: 2rem;
@@ -620,32 +642,37 @@
   padding: 2rem 1rem;
 }
 .listGridViewContainer[data-theme="weapon"] .centerRightGridItem,
-.listGridViewContainer[data-theme="shield"]
-  .centerRightGridItem
-  .listGridViewContainer[data-theme="accessory"]
-  .centerRightGridItem {
+.listGridViewContainer[data-theme="shield"] .centerRightGridItem,
+.listGridViewContainer[data-theme="accessory"] .centerRightGridItem {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 5;
-  grid-row-end: 6;
+  grid-row-end: 7;
   border-radius: 1.5rem;
   background-color: var(--sub-bg-color);
   padding: 2rem 1rem;
+  display: flex;
+  font-size: 2rem;
 }
 .listGridViewContainer[data-theme="weapon"] .bottomRightGridItem,
-.listGridViewContainer[data-theme="shield"]
-  .bottomRightGridItem
-  .listGridViewContainer[data-theme="accessory"]
-  .bottomRightGridItem {
+.listGridViewContainer[data-theme="shield"] .bottomRightGridItem,
+.listGridViewContainer[data-theme="accessory"] .bottomRightGridItem {
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 6;
+  grid-row-start: 7;
   grid-row-end: 11;
   border-radius: 1.5rem;
   background-color: var(--sub-bg-color);
   padding: 2rem 1rem;
 }
-.jobExplanation {
+.attrsGroup {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  -webkit-text-stroke: 0.1rem black;
+}
+.jobExplanation,
+.weaponExplanation {
   padding-top: 2rem;
   padding-left: 2rem;
   font-size: 3rem;

@@ -571,20 +571,47 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForListWeapons(e: KeyboardEvent<HTMLDivElement>) {
+    const maxListStartIdx = 92 - 1 - (10 - 1);
+    const { curListIdx, curListStartIdx, isCircleClicked } = DataState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
+        if (curListIdx !== 0) {
+          DataState.curListIdx -= 1;
+        }
+        if (curListIdx === 0 && curListStartIdx > 0) {
+          DataState.curListStartIdx -= 1;
+        }
+        if (curListIdx === 0 && curListStartIdx === 0) {
+          DataState.curListStartIdx = maxListStartIdx;
+          DataState.curListIdx = 9;
+        }
         break;
       case gamePadSetting.arrowDown:
-        break;
-      case gamePadSetting.arrowRight:
-        break;
-      case gamePadSetting.arrowLeft:
+        if (curListIdx !== 9) {
+          DataState.curListIdx += 1;
+        }
+        if (curListIdx === 9 && curListStartIdx < maxListStartIdx) {
+          DataState.curListStartIdx += 1;
+        }
+        if (curListIdx === 9 && curListStartIdx === maxListStartIdx) {
+          DataState.curListIdx = 0;
+          DataState.curListStartIdx = 0;
+        }
         break;
       case gamePadSetting.circle:
+        DataState.isCircleClicked = true;
         break;
       case gamePadSetting.cross:
+        if (isCircleClicked) {
+          DataState.isCircleClicked = false;
+          break;
+        }
+        DataState.curLevel = 1;
+        DataState.curListIdx = -1;
+        DataState.curListStartIdx = 0;
         break;
     }
+    setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForListShields(e: KeyboardEvent<HTMLDivElement>) {
     switch (e.key.toLowerCase()) {

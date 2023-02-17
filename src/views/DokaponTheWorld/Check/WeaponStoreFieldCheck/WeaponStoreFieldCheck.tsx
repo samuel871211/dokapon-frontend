@@ -11,7 +11,7 @@ import YellowBlock from "layouts/YellowBlock";
 import styles from "./WeaponStoreFieldCheck.module.css";
 import gameProgressCtx from "reducers/gameProgress";
 import BottomDialog from "components/BottomDialog";
-import weapons from "data/weapons";
+import { weapons } from "data/weapons";
 import shields from "data/shields";
 
 // Stateless vars declare.

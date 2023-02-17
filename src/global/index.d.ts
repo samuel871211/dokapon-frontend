@@ -764,7 +764,7 @@ export type Shield = {
   magic: number;
   speed: number;
   hp: number;
-  explanation: string;
+  explanation: TextsKeys;
   /**
    * Monster可關聯到fromAreas
    */

@@ -1,5 +1,5 @@
 import { AreaTypes, Shield, Weapon } from "global";
-import shields from "./shields";
+import { shields } from "./shields";
 import { weapons } from "./weapons";
 
 const weaponStores: { [key in AreaTypes]: Array<Weapon | Shield> } = {

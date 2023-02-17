@@ -279,7 +279,8 @@
   font-size: 3rem;
   line-height: 3.25rem;
 }
-.weaponName {
+.weaponName,
+.shieldName {
   font-size: 3rem;
   line-height: 3.25rem;
 }
@@ -486,7 +487,8 @@
 .listRightArea {
   width: 20%;
 }
-.listWeaponAT {
+.listWeaponAT,
+.listShieldDF {
   width: 3rem;
   height: 3rem;
   font-size: 2rem;
@@ -506,7 +508,8 @@
   margin-right: 3rem;
   vertical-align: bottom;
 }
-.listWeaponIcon {
+.listWeaponIcon,
+.listShieldIcon {
   display: inline-block;
   width: 3rem;
   height: 3rem;
@@ -672,7 +675,8 @@
   -webkit-text-stroke: 0.1rem black;
 }
 .jobExplanation,
-.weaponExplanation {
+.weaponExplanation,
+.shieldExplanation {
   padding-top: 2rem;
   padding-left: 2rem;
   font-size: 3rem;

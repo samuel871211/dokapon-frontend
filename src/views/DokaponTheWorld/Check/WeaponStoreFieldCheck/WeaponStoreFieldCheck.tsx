@@ -12,7 +12,7 @@ import styles from "./WeaponStoreFieldCheck.module.css";
 import gameProgressCtx from "reducers/gameProgress";
 import BottomDialog from "components/BottomDialog";
 import { weapons } from "data/weapons";
-import shields from "data/shields";
+import { shields } from "data/shields";
 
 // Stateless vars declare.
 function dataRowIconText(item: Weapon | Shield | undefined) {

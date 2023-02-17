@@ -11,7 +11,7 @@ import CustomBorderBottom from "components/CustomBorderBottom";
 import TextWithBorderBottom from "components/TextWithBorderBottom";
 import FullHpBar from "components/FullHpBar";
 import { weapons } from "data/weapons";
-import shields from "data/shields";
+import { shields } from "data/shields";
 import magicAttacks from "data/magicAttacks";
 import magicDefenses from "data/magicDefenses";
 import accessories from "data/accessories";

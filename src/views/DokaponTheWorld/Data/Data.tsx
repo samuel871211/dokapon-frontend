@@ -12,7 +12,7 @@ import jobs from "data/jobs";
 import jobsToJP from "data/jobsToJP";
 import useTranslation from "hooks/useTranslation";
 import { weaponList, weapons } from "data/weapons";
-import shields from "data/shields";
+import { shieldList, shields } from "data/shields";
 import magicAttacks from "data/magicAttacks";
 import magicDefenses from "data/magicDefenses";
 import accessories from "data/accessories";
@@ -868,36 +868,89 @@ function WeaponGridView() {
     </div>
   );
 }
+
 function ShieldListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
+  const { t } = useTranslation();
+
   return (
     <ListDialog
       listTopic="shield"
-      showArrowUp
-      showArrowDown
-      availableCounts={1}
+      showArrowUp={curListStartIdx > 0}
+      showArrowDown={curListStartIdx < 52 - 10}
+      availableCounts={shieldList.length}
     >
-      {arrayOf10.map((zero, idx) => (
-        <ListItem
-          key={idx}
-          selected={idx === curListIdx}
-          className={styles.listItem}
-        >
-          {idx}
-        </ListItem>
-      ))}
+      {shieldList.map(
+        (shield, idx) =>
+          idx >= curListStartIdx &&
+          idx < curListStartIdx + 10 && (
+            <ListItem
+              key={idx}
+              selected={idx - curListStartIdx === curListIdx}
+              className={styles.listItem}
+            >
+              <div className={styles.listLeftArea}>{idx + 1}</div>
+              <div className={styles.listCenterArea}>
+                <span className={styles.listShieldIcon} />
+                {t(shield.name)}
+              </div>
+              <div className={styles.listRightArea}>
+                <span className={styles.listShieldDF}>DF</span>
+                <span className={styles.whiteText}>{shield.attack}</span>
+              </div>
+            </ListItem>
+          )
+      )}
     </ListDialog>
   );
 }
 function ShieldGridView() {
+  const {
+    gameProgress: {
+      DokaponTheWorldState: {
+        DataState: { curListIdx, curListStartIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  const { t } = useTranslation();
+  const curShield = shieldList[curListIdx + curListStartIdx];
   return (
     <div className={styles.listGridViewContainer} data-theme="shield">
       <div className={styles.topLeftGridItem}></div>
-      <div className={styles.topRightGridItem}></div>
-      <div className={styles.centerRightGridItem}></div>
-      <div className={styles.bottomRightGridItem}></div>
+      <div className={styles.topRightGridItem}>
+        <div className={styles.whiteText}>NAME</div>
+        <TextWithBorderBottom>
+          <div className={styles.shieldName}>{t(curShield.name)}</div>
+        </TextWithBorderBottom>
+        <div className={styles.whiteText}>PRICE</div>
+        <TextWithBorderBottom>
+          <div className={styles.moneyText}>
+            {curShield.price.toLocaleString()}
+          </div>
+        </TextWithBorderBottom>
+      </div>
+      <div className={styles.centerRightGridItem}>
+        <div className={styles.whiteText}>POINT</div>
+        <div className={styles.attrsGroup}>
+          <AttrCircle attr="AT" value={curShield.attack} width="4rem" />
+          <AttrCircle attr="DF" value={curShield.defense} width="4rem" />
+          <AttrCircle attr="MG" value={curShield.magic} width="4rem" />
+          <AttrCircle attr="SP" value={curShield.speed} width="4rem" />
+          <AttrCircle attr="HP" value={curShield.hp} width="4rem" />
+        </div>
+      </div>
+      <div className={styles.bottomRightGridItem}>
+        <div className={styles.whiteText}>EXPLANATION</div>
+        <div className={styles.shieldExplanation}>
+          {t(curShield.explanation)
+            .split("\n")
+            .map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 }

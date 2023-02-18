@@ -14,7 +14,7 @@ import { weapons } from "data/weapons";
 import { shields } from "data/shields";
 import magicAttacks from "data/magicAttacks";
 import magicDefenses from "data/magicDefenses";
-import accessories from "data/accessories";
+import { accessories } from "data/accessories";
 import jobs from "data/jobs";
 import gameProgressCtx from "reducers/gameProgress";
 import styles from "./PlayerVsCharacterDialogs.module.css";

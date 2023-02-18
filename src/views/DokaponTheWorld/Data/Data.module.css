@@ -482,10 +482,12 @@
   -webkit-text-stroke: 0.1rem black;
 }
 .listCenterArea {
-  width: 70%;
+  min-width: 70%;
+  flex-grow: 1;
 }
 .listRightArea {
-  width: 20%;
+  min-width: 20%;
+  flex-grow: 1;
 }
 .listWeaponAT,
 .listShieldDF {
@@ -509,7 +511,8 @@
   vertical-align: bottom;
 }
 .listWeaponIcon,
-.listShieldIcon {
+.listShieldIcon,
+.listAccessoryIcon {
   display: inline-block;
   width: 3rem;
   height: 3rem;

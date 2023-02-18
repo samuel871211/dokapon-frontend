@@ -1,5 +1,5 @@
 // Related third party imports.
-import { ReactNode, useContext, useEffect } from "react";
+import { ReactNode, useContext } from "react";
 import classNames from "classnames";
 
 // Local application/library specific imports.
@@ -15,7 +15,7 @@ import { weaponList, weapons } from "data/weapons";
 import { shieldList, shields } from "data/shields";
 import magicAttacks from "data/magicAttacks";
 import magicDefenses from "data/magicDefenses";
-import accessories from "data/accessories";
+import { accessories, accessoryList } from "data/accessories";
 import Pagination from "components/Pagination";
 import { TextsKeys } from "data/texts";
 import VillagesDialog from "components/VillagesDialog";
@@ -789,7 +789,7 @@ function WeaponListView() {
     <ListDialog
       listTopic="weapon"
       showArrowUp={curListStartIdx > 0}
-      showArrowDown={curListStartIdx < 92 - 10}
+      showArrowDown={curListStartIdx < weaponList.length - 10}
       availableCounts={weaponList.length}
     >
       {weaponList.map(
@@ -879,7 +879,7 @@ function ShieldListView() {
     <ListDialog
       listTopic="shield"
       showArrowUp={curListStartIdx > 0}
-      showArrowDown={curListStartIdx < 52 - 10}
+      showArrowDown={curListStartIdx < shieldList.length - 10}
       availableCounts={shieldList.length}
     >
       {shieldList.map(
@@ -958,22 +958,32 @@ function AccessoryListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
+  const { t } = useTranslation();
+
   return (
     <ListDialog
       listTopic="accessory"
-      showArrowUp
-      showArrowDown
-      availableCounts={1}
+      showArrowUp={curListStartIdx > 0}
+      showArrowDown={curListStartIdx < accessoryList.length - 10}
+      availableCounts={accessoryList.length}
     >
-      {arrayOf10.map((zero, idx) => (
-        <ListItem
-          key={idx}
-          selected={idx === curListIdx}
-          className={styles.listItem}
-        >
-          {idx}
-        </ListItem>
-      ))}
+      {accessoryList.map(
+        (accessory, idx) =>
+          idx >= curListStartIdx &&
+          idx < curListStartIdx + 10 && (
+            <ListItem
+              key={idx}
+              selected={idx - curListStartIdx === curListIdx}
+              className={styles.listItem}
+            >
+              <div className={styles.listLeftArea}>{idx + 1}</div>
+              <div className={styles.listCenterArea}>
+                <span className={styles.listAccessoryIcon} />
+                {t(accessory.name)}
+              </div>
+            </ListItem>
+          )
+      )}
     </ListDialog>
   );
 }

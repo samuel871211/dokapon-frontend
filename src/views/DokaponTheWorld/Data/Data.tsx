@@ -23,6 +23,7 @@ import ListDialog from "components/ListDialog";
 import ListItem from "components/ListItem";
 import { monsterList } from "data/monsters";
 import { jobListInRenderOrder } from "data/jobs";
+import { specialtyList } from "data/specialities";
 
 // Stateless vars declare.
 function getGenderColorByListIdx(listIdx: number) {
@@ -32,7 +33,6 @@ function getGenderColorByListIdx(listIdx: number) {
 }
 const exp = 123456;
 const arrayOf12 = Array(12).fill(0);
-const arrayOf10 = Array(10).fill(0);
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 const level1ButtonTexts: TextsKeys[][] = [
   ["強さ", "装備", "所持", "資産", "統治", "順位"],
@@ -488,12 +488,16 @@ function PlayerImgAndBasicAttrsArea(props: { children?: ReactNode }) {
     </div>
   );
 }
+/**
+ * @todo gender icon
+ */
 function JobListView() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
   const { playersAttrs, currentPlayerIdx } = gameProgress;
-  const { availableJobs, gender } = playersAttrs[currentPlayerIdx];
-  const { curListIdx, curListStartIdx, isCircleClicked } =
+  const { availableJobs, gender, jobsMasterStatus } =
+    playersAttrs[currentPlayerIdx];
+  const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
   return (
     <ListDialog
@@ -521,8 +525,14 @@ function JobListView() {
               </div>
               <div className={styles.listRightArea}>
                 <span className={styles.listJobMaster}>
-                  {gender === "male" && idx % 2 === 0 && "MASTER"}
-                  {gender === "female" && idx % 2 === 1 && "MASTER"}
+                  {gender === "male" &&
+                    idx % 2 === 0 &&
+                    jobsMasterStatus[jobType].level === 5 &&
+                    "MASTER"}
+                  {gender === "female" &&
+                    idx % 2 === 1 &&
+                    jobsMasterStatus[jobType].level === 5 &&
+                    "MASTER"}
                 </span>
               </div>
             </ListItem>
@@ -531,6 +541,10 @@ function JobListView() {
     </ListDialog>
   );
 }
+/**
+ * @todo specialty before icon
+ * @todo 切換page的時候，pagination會抖動
+ */
 function JobGridView() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
@@ -547,6 +561,9 @@ function JobGridView() {
         />
       </div>
       <div className={styles.topRightGridItem}>
+        <div className={styles.jobPagination}>
+          <Pagination maxCount={2} curPage={listJobCurPage} />
+        </div>
         <div className={styles.whiteText}>
           {listJobCurPage === 0 ? "JOB" : "LEVEL UP POINT"}
         </div>
@@ -641,6 +658,9 @@ function JobGridView() {
     </div>
   );
 }
+/**
+ * @todo monster availableCounts
+ */
 function MonsterListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { t } = useTranslation();
@@ -650,8 +670,8 @@ function MonsterListView() {
     <ListDialog
       listTopic="monster"
       showArrowUp={curListStartIdx > 0}
-      showArrowDown={curListStartIdx < 171 - 10}
-      availableCounts={1}
+      showArrowDown={curListStartIdx < monsterList.length - 10}
+      availableCounts={monsterList.length}
     >
       {monsterList.map(
         (monsterFixedAttrs, idx) =>
@@ -678,9 +698,8 @@ function MonsterListView() {
     </ListDialog>
   );
 }
-
 /**
- * @todo Monster圖片尚未製作
+ * @todo monster圖片尚未製作
  */
 function MonsterGridView() {
   const {
@@ -778,6 +797,7 @@ function MonsterGridView() {
 
 /**
  * @todo 根據不同weapon類型，顯示不同weapon icon
+ * @todo weapon availableCounts
  */
 function WeaponListView() {
   const { gameProgress } = useContext(gameProgressCtx);
@@ -832,7 +852,7 @@ function WeaponGridView() {
   const curWeapon = weaponList[curListIdx + curListStartIdx];
   return (
     <div className={styles.listGridViewContainer} data-theme="weapon">
-      <div className={styles.topLeftGridItem}></div>
+      <div className={styles.topLeftGridItem}>還沒做圖</div>
       <div className={styles.topRightGridItem}>
         <div className={styles.whiteText}>NAME</div>
         <TextWithBorderBottom>
@@ -868,7 +888,9 @@ function WeaponGridView() {
     </div>
   );
 }
-
+/**
+ * @todo shield availableCounts
+ */
 function ShieldListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx, curListStartIdx } =
@@ -906,6 +928,9 @@ function ShieldListView() {
     </ListDialog>
   );
 }
+/**
+ * @todo shield圖片尚未製作
+ */
 function ShieldGridView() {
   const {
     gameProgress: {
@@ -918,7 +943,7 @@ function ShieldGridView() {
   const curShield = shieldList[curListIdx + curListStartIdx];
   return (
     <div className={styles.listGridViewContainer} data-theme="shield">
-      <div className={styles.topLeftGridItem}></div>
+      <div className={styles.topLeftGridItem}>還沒做圖</div>
       <div className={styles.topRightGridItem}>
         <div className={styles.whiteText}>NAME</div>
         <TextWithBorderBottom>
@@ -954,6 +979,10 @@ function ShieldGridView() {
     </div>
   );
 }
+/**
+ * @todo 根據不同accessory，顯示不同accessory icon
+ * @todo accessory availableCounts
+ */
 function AccessoryListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx, curListStartIdx } =
@@ -988,38 +1017,112 @@ function AccessoryListView() {
   );
 }
 function AccessoryGridView() {
+  const {
+    gameProgress: {
+      DokaponTheWorldState: {
+        DataState: { curListIdx, curListStartIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  const { t } = useTranslation();
+  const curAccessory = accessoryList[curListIdx + curListStartIdx];
   return (
     <div className={styles.listGridViewContainer} data-theme="accessory">
-      <div className={styles.topLeftGridItem}></div>
-      <div className={styles.topRightGridItem}></div>
-      <div className={styles.centerRightGridItem}></div>
-      <div className={styles.bottomRightGridItem}></div>
+      <div className={styles.topRightGridItem}>
+        <div className={styles.whiteText}>NAME</div>
+        <TextWithBorderBottom>
+          <div className={styles.accessoryName}>{t(curAccessory.name)}</div>
+        </TextWithBorderBottom>
+        <div className={styles.whiteText}>PRICE</div>
+        <TextWithBorderBottom>
+          <div className={styles.moneyText}>
+            {curAccessory.price.toLocaleString()}
+          </div>
+        </TextWithBorderBottom>
+      </div>
+      <div className={styles.centerRightGridItem}>
+        <div className={styles.whiteText}>POINT</div>
+        <div className={styles.attrsGroup}>
+          <AttrCircle attr="AT" value={curAccessory.attack} width="4rem" />
+          <AttrCircle attr="DF" value={curAccessory.defense} width="4rem" />
+          <AttrCircle attr="MG" value={curAccessory.magic} width="4rem" />
+          <AttrCircle attr="SP" value={curAccessory.speed} width="4rem" />
+          <AttrCircle attr="HP" value={curAccessory.hp} width="4rem" />
+        </div>
+      </div>
+      <div className={styles.bottomRightGridItem}>
+        <div className={styles.whiteText}>EXPLANATION</div>
+        <div className={styles.accessoryExplanation}>
+          {t(curAccessory.explanation)
+            .split("\n")
+            .map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 }
+/**
+ * @todo 根據不同specialty，顯示不同specialty icon
+ * @todo specialty availableCounts
+ */
 function SpecialtyListView() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
+  const { t } = useTranslation();
+
   return (
     <ListDialog
       listTopic="specialty"
-      showArrowUp
-      showArrowDown
-      availableCounts={1}
+      showArrowUp={curListStartIdx > 0}
+      showArrowDown={curListStartIdx < specialtyList.length - 10}
+      availableCounts={specialtyList.length}
     >
-      {arrayOf10.map((zero, idx) => (
-        <ListItem
-          key={idx}
-          selected={idx === curListIdx}
-          className={styles.listItem}
-        >
-          {idx}
-        </ListItem>
-      ))}
+      {specialtyList.map(
+        (specialty, idx) =>
+          idx >= curListStartIdx &&
+          idx < curListStartIdx + 10 && (
+            <ListItem
+              key={idx}
+              selected={idx - curListStartIdx === curListIdx}
+              className={styles.listItem}
+            >
+              <div className={styles.listLeftArea}>{idx + 1}</div>
+              <div className={styles.listCenterArea}>
+                <span className={styles.listSpecialtyIcon} />
+                {t(specialty.name)}
+              </div>
+              <div className={styles.listRightArea}>{specialty.areaName}</div>
+            </ListItem>
+          )
+      )}
     </ListDialog>
   );
 }
 function SpecialtyGridView() {
-  return <div></div>;
+  const {
+    gameProgress: {
+      DokaponTheWorldState: {
+        DataState: { curListIdx, curListStartIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  const { t } = useTranslation();
+  const curSpecialty = specialtyList[curListIdx + curListStartIdx];
+  return (
+    <div className={styles.listGridViewContainer} data-theme="specialty">
+      <div className={styles.bottomRightGridItem}>
+        <div className={styles.whiteText}>EXPLANATION</div>
+        <div className={styles.specialtyExplanation}>
+          {t(curSpecialty.explanation)
+            .split("\n")
+            .map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+        </div>
+      </div>
+    </div>
+  );
 }

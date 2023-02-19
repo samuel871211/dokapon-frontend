@@ -38,7 +38,7 @@ const listTopicsInfo: {
   },
   specialty: {
     globalTitle: "特産品リスト",
-    maxCount: 41,
+    maxCount: 64,
   },
 };
 

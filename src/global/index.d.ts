@@ -776,6 +776,11 @@ export type Shield = {
 };
 export type Weapon = Shield & { additionalDamageJobs: JobTypes[] };
 export type Accessory = Shield;
+export type Specialty = {
+  name: TextsKeys;
+  areaName: TextsKeys;
+  explanation: TextsKeys;
+};
 export type MagicTypes =
   | "弱体系魔法"
   | "変化系魔法"

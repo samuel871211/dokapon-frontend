@@ -42,6 +42,8 @@
   background-color: var(--level1-button-bg-color);
   display: flex;
   flex-direction: column;
+  /* 才能讓特產品的BottomDialog寬度正常 */
+  /* position: relative; */
 }
 .rightTop {
   /* margin-top: 0.5rem; */
@@ -251,6 +253,12 @@
 .expTextarea > span {
   font-size: 2rem;
 }
+.jobPagination {
+  position: absolute;
+  right: 8%;
+  width: 30%;
+  top: -1rem;
+}
 .jobAndPayArea {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -280,7 +288,8 @@
   line-height: 3.25rem;
 }
 .weaponName,
-.shieldName {
+.shieldName,
+.accessoryName {
   font-size: 3rem;
   line-height: 3.25rem;
 }
@@ -512,7 +521,8 @@
 }
 .listWeaponIcon,
 .listShieldIcon,
-.listAccessoryIcon {
+.listAccessoryIcon,
+.listSpecialtyIcon {
   display: inline-block;
   width: 3rem;
   height: 3rem;
@@ -662,7 +672,8 @@
 }
 .listGridViewContainer[data-theme="weapon"] .bottomRightGridItem,
 .listGridViewContainer[data-theme="shield"] .bottomRightGridItem,
-.listGridViewContainer[data-theme="accessory"] .bottomRightGridItem {
+.listGridViewContainer[data-theme="accessory"] .bottomRightGridItem,
+.listGridViewContainer[data-theme="specialty"] .bottomRightGridItem {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 7;
@@ -679,7 +690,9 @@
 }
 .jobExplanation,
 .weaponExplanation,
-.shieldExplanation {
+.shieldExplanation,
+.accessoryExplanation,
+.specialtyExplanation {
   padding-top: 2rem;
   padding-left: 2rem;
   font-size: 3rem;
@@ -729,6 +742,17 @@
 .monsterExplanation {
   font-size: 3rem;
   line-height: 3.25rem;
+}
+.specialtyDialog {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.top70 {
+  width: 100%;
+  height: 70%;
 }
 @keyframes level0ButtonHoverFrom {
   0% {

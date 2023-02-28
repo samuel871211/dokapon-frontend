@@ -31,6 +31,40 @@ function getGenderColorByListIdx(listIdx: number) {
   if (listIdx % 2 === 0) return "red";
   return "blue";
 }
+const level1ToMaxPageIdx: { [key: string]: number } = Object.freeze({
+  "02": 1,
+  "04": 6,
+  "20": 7,
+  "21": 5,
+  "22": 6,
+});
+
+/**
+ * key = `${levelIdx}${curPage}`
+ */
+const explanationHelpTexts: { [key: string]: TextsKeys } = {
+  "00": "ドカポンの心得",
+  "01": "地形マスと宝箱マス",
+  "02": "いろいろな建物",
+  "03": "職安で就職活動",
+  "04": "アイテムってなに?",
+  "05": "フィールド魔法ってなに?",
+  "06": "フィールド特技(マニュアル)",
+  "07": "フィールド特技(オート)",
+  "10": "攻撃側のコマンドの選びかた",
+  "11": "防御側のコマンドの選びかた",
+  "12": "バトル特技ってなに?",
+  "13": "やったぜレベルアップ!",
+  "14": "やったぜ熟練度アップ!",
+  "15": "便利な機能を知っておこう!",
+  "20": "4つ合わせて総資産",
+  "21": "世界平和金庫を大切に⋯",
+  "22": "特産品で王様のハートGET!",
+  "23": "フィールドステータス異常",
+  "24": "戦闘ステータス異常",
+  "25": "パラメータステータス異常",
+  "26": "最後の手段は⋯",
+};
 const exp = 123456;
 const arrayOf12 = Array(12).fill(0);
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
@@ -119,9 +153,10 @@ function Data() {
             {levels === "15" && !isCircleClicked && <SpecialtyListView />}
             {levels === "15" && isCircleClicked && <SpecialtyGridView />}
 
-            {levels === "20" && "地圖"}
-            {levels === "21" && "戰鬥"}
-            {levels === "22" && "其他"}
+            {level0Idx === 2 && <Explanation />}
+            {/* {levels === "20" && <ExplanationMap/>}
+            {levels === "21" && <ExplanationBattle/>}
+            {levels === "22" && <ExplanationOther/>} */}
 
             {levels === "30" && "基本"}
             {levels === "31" && "操作"}
@@ -836,7 +871,6 @@ function WeaponListView() {
     </ListDialog>
   );
 }
-
 /**
  * @todo weapon圖片尚未製作
  */
@@ -1125,4 +1159,401 @@ function SpecialtyGridView() {
       </div>
     </div>
   );
+}
+function Explanation() {
+  const {
+    gameProgress: {
+      DokaponTheWorldState: {
+        DataState: { curPage, level0Idx, level1Idxs },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  const { t } = useTranslation();
+  const level1Idx = level1Idxs[level0Idx];
+  const levels = `${level1Idx}${curPage}`;
+  return (
+    <div className={styles.explanationContainer}>
+      <div className={styles.explanationTopArea}>
+        <div className={styles.whiteText}>HELP</div>
+        <TextWithBorderBottom
+          width="100%"
+          className={styles.explanationTopAreaText}
+        >
+          {t(explanationHelpTexts[`${level1Idx}${curPage}`])}
+        </TextWithBorderBottom>
+        <Pagination
+          maxCount={level1ToMaxPageIdx[`${level0Idx}${level1Idx}`] + 1}
+          curPage={curPage}
+          className={styles.explanationMapPagination}
+        />
+      </div>
+      {levels === "00" && <Explanation00Content />}
+      {levels === "01" && <Explanation01Content />}
+      {levels === "02" && <Explanation02Content />}
+      {levels === "03" && <Explanation03Content />}
+      {levels === "04" && <Explanation04Content />}
+      {levels === "05" && <Explanation05Content />}
+      {levels === "06" && <Explanation06Content />}
+      {levels === "07" && <Explanation07Content />}
+      {levels === "10" && <Explanation10Content />}
+      {levels === "11" && <Explanation11Content />}
+      {levels === "12" && <Explanation12Content />}
+      {levels === "13" && <Explanation13Content />}
+      {levels === "14" && <Explanation14Content />}
+      {levels === "15" && <Explanation15Content />}
+      {levels === "20" && <Explanation20Content />}
+      {levels === "21" && <Explanation21Content />}
+      {levels === "22" && <Explanation22Content />}
+      {levels === "23" && <Explanation23Content />}
+      {levels === "24" && <Explanation24Content />}
+      {levels === "25" && <Explanation25Content />}
+      {levels === "26" && <Explanation26Content />}
+    </div>
+  );
+}
+function Explanation00Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      {t(
+        "ゲームをクリアするまでに、\n最も多くらお金をかせいだ人が\nドカポンでは勝者だ!\n他の勇者は全員ライバルだ!\n思いっきり邢魔をして、\n自分の有利になるようにしよう!\n情けは禁物!\nそれがドカポンの鉄則だぞ!"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
+    </div>
+  );
+}
+function Explanation01Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div className={styles.blueText}>{t("地形マス")}⇨</div>
+      <div>
+        {t(
+          "ほとんどがモンスターとの戦闘になる。\nたま〜にイベントが起こり、\n変な人が現われるかも。"
+        )
+          .split("\n")
+          .map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+      </div>
+      <div className={styles.blueText}>{t("宝箱マス")}⇨</div>
+      <div>
+        {t(
+          "アイテムやフィールド魔法が\n手に入る。いろいろな宝箱があるから\n自分の欲しい物の入っている\n宝箱に止まろう。"
+        )
+          .split("\n")
+          .map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+      </div>
+    </div>
+  );
+}
+function Explanation02Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div className={styles.blueText}>{t("城マス")}⇨</div>
+      <div>{t("お金を入れたり、王様に贈り物ができる。")}</div>
+      <div className={styles.blueText}>{t("村マス")}⇨</div>
+      <div>{t("上納金や特産品がもらえる。")}</div>
+      <div className={styles.blueText}>{t("店マス")}⇨</div>
+      <div>{t("道具や装備など、いろいろな物が買える。")}</div>
+      <div className={styles.blueText}>{t("教会マス")}⇨</div>
+      <div>
+        {t(
+          "ステータス異常を治してくれたりする。\n死亡時は最後に立ち寄った教会で復活。"
+        )
+          .split("\n")
+          .map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+      </div>
+    </div>
+  );
+}
+function Explanation03Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div>
+        {t("職安マスでは転職ができる。\n職業によって異なることは以下の通り。")
+          .split("\n")
+          .map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+      </div>
+      <div>★{t("フィールド特技")}</div>
+      <div>★{t("バトル特技")}</div>
+      <div>★{t("持てる持ち物の数")}</div>
+      <div>★{t("給料")}</div>
+      <div>★{t("レベルUP時の上昇パラメータ")}</div>
+      <div>
+        {t("上昇するパラメータは特に重要!\nバランス良くパラメータを上げよう!")
+          .split("\n")
+          .map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+      </div>
+    </div>
+  );
+}
+function Explanation04Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      {t(
+        "アイテムを使うと、\nHPが回復したり、攻撃力が上がったりと、\n自分に対して良いことが起こる効果が多い。\n特にルーレットの数を増やせるバインは、\nいつも何個か持っておこう。\nドカポンでは目的地に\n早くたどり着くことが大切だ。\nライバル達より早く進むためには\nバインは欠かせないアイテムなのだ!"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
+    </div>
+  );
+}
+function Explanation05Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      {t(
+        "フィールド魔法は、\n相手にダメージを与えたり、\n相手をステータス異常にしたりするなど、\n相手に対して邢魔をする効果を持っている。\nフィールド魔法は\n魔力が高い人が使うほど、\nダメージが上がる。\n自分より素早さが高い相手には\n当たり難くなるので注意しよう。"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
+    </div>
+  );
+}
+function Explanation06Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div>
+        {t(
+          "フィールド特技とは、各職業が持つ、\nフィールド上で使える特別な技のこと。\n大きく分けて2つのタイプある。"
+        )
+          .split("\n")
+          .map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+      </div>
+      <br />
+      <div>{t("マニュアル特技")}</div>
+      <div>★{t("自分で使用して発動させるタイプの特技。")}</div>
+      <div>
+        {t(
+          "いつでも自由に使えるが、\n使用すると、カバンは使えなくなる。\n逆にカバンを使うと、特技は使えなくなる。"
+        )
+          .split("\n")
+          .map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+      </div>
+    </div>
+  );
+}
+function Explanation07Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div>{t("う1つのタイプは⋯。")}</div>
+      <br />
+      <div>{t("オート特技")}</div>
+      <div>★{t("自分で使用して発動させるタイプの特技。")}</div>
+      <div>
+        {t(
+          "自分で自由に使えないのは不便だが、\n特技が発動しても、カバンは使える。\nアイテムや フィールド魔法を\n複数回使えるオート特技もある。"
+        )
+          .split("\n")
+          .map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+      </div>
+    </div>
+  );
+}
+function Explanation10Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div>{t("防御側の裏を読んでコマンドを選べ!")}</div>
+      <div>
+        <span>{t("攻撃")}⇨</span>
+        <span>{t("防御に弱い")}</span>
+      </div>
+      <div>{t("相手に安全にダメージを与える!")}</div>
+      <div>
+        <span>{t("必殺")}⇨</span>
+        <span>{t("反撃に弱い")}</span>
+      </div>
+      <div>{t("一撃必殺! だが反撃されるとピンチ!")}</div>
+      <div>
+        <span>{t("攻擊魔法")}⇨</span>
+        <span>{t("防御魔法に弱い")}</span>
+      </div>
+      <div>{t("装備している攻撃魔法で攻撃!")}</div>
+      <div>
+        <span>{t("特技")}</span>
+      </div>
+      <div>{t("職業ごとのバトル特技を使う!")}</div>
+    </div>
+  );
+}
+function Explanation11Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div>{t("攻撃側のコマンドを予想して選べ!")}</div>
+      <div>
+        <span>{t("防御")}⇨</span>
+        <span>{t("攻撃に強い!")}</span>
+      </div>
+      <div>{t("攻撃のダメージを減らせる!")}</div>
+      <div>
+        <span>{t("反擊")}⇨</span>
+        <span>{t("必殺に強い!")}</span>
+      </div>
+      <div>{t("必殺をかわして、カウンター攻撃!")}</div>
+      <div>
+        <span>{t("防御魔法")}⇨</span>
+        <span>{t("攻撃魔法に強い!")}</span>
+      </div>
+      <div>{t("攻撃魔法を、防御魔法で防御!")}</div>
+      <div>
+        <span>{t("降参")}</span>
+      </div>
+      <div>{t("勝てない相手には迷わず降参!")}</div>
+    </div>
+  );
+}
+function Explanation12Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      {t(
+        "バトル特技とは、\n職業ごとに持っている\n戦闘で使える特別な技のこと。\n防御側に防がれることは無いが、\nたまにミスをするバトル特技もある。\n使いかたによっては、戦闘を有利に\nすすめることができるので、\n自分の バトル特技をしっかり覚えておこう!"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
+    </div>
+  );
+}
+function Explanation13Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      {t(
+        "戦闘に勝利して経験値がたまると、\nレベルアップするぞ!\nレベルアップすると、HPが完全回復して、\nさらにパラメータが上がる。\n上昇するパラメータは職業ごとに\n違うので要注意!\n同じ職業にずっとついていると\nパラメータがかたよってしまうので\n弱点ができないように気をつけよう!"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
+    </div>
+  );
+}
+function Explanation14Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      {t(
+        "戦闘で勝利していくと、\n職業の熟練度が上がる。\n熟練度は5段階あり、熟練度が上がると、\n給料も上がり、さらに他の職業に\n転職できるようになる場合もある。\n転職しても、一度上がった熟練度は\n下がらないので、安心して転職しよう!\nマスターになると、レベルUP時に追加で\n何らかのパラメータがUPするようになる!"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
+    </div>
+  );
+}
+function Explanation15Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div>{t("戦闘で知っておきたい便利な機能!")}</div>
+      <br />
+      <div>{t("説明")}</div>
+      <div>
+        {t("攻撃側の攻撃魔法、バトル特技、\n防御側の防御魔法の説明が読める。")
+          .split("\n")
+          .map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+      </div>
+      <div>{t("予測")}</div>
+      <div>
+        {t(
+          "お互いの選んだコマンドで\n結果がどうなるか予測してくれる。\n始めて出会ったモンスターは予測できない。"
+        )
+          .split("\n")
+          .map((line) => (
+            <div key={line}>{line}</div>
+          ))}
+      </div>
+    </div>
+  );
+}
+function Explanation20Content() {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div>{t("4種の資産を合わせて、総資産と言う。")}</div>
+      <br />
+      <div>
+        <span>{t("所持金")}⇨</span>
+        <span>{t("手持ちのお金。")}</span>
+      </div>
+      <div>
+        <span>{t("金庫")}⇨</span>
+        <span>{t("世界平和金庫に入れたお金。")}</span>
+      </div>
+      <div>
+        <span className={styles.inlineBlockVTop}>{t("特産品")}⇨</span>
+        <span className={styles.inlineBlockVTop}>
+          {t(
+            "プレゼントした特産品の\n価値の合計を、王様が\nこっそり資産に加えてくれる。"
+          )
+            .split("\n")
+            .map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+        </span>
+      </div>
+      <div>
+        <span>{t("村価値")}⇨</span>
+        <span>{t("統治している村の価値の合計。")}</span>
+      </div>
+    </div>
+  );
+}
+function Explanation21Content() {
+  const { t } = useTranslation();
+  return <div className={styles.explanationBottomArea}></div>;
+}
+function Explanation22Content() {
+  const { t } = useTranslation();
+  return <div className={styles.explanationBottomArea}></div>;
+}
+function Explanation23Content() {
+  const { t } = useTranslation();
+  return <div className={styles.explanationBottomArea}></div>;
+}
+function Explanation24Content() {
+  const { t } = useTranslation();
+  return <div className={styles.explanationBottomArea}></div>;
+}
+function Explanation25Content() {
+  const { t } = useTranslation();
+  return <div className={styles.explanationBottomArea}></div>;
+}
+function Explanation26Content() {
+  const { t } = useTranslation();
+  return <div className={styles.explanationBottomArea}></div>;
 }

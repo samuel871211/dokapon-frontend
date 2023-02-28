@@ -1539,7 +1539,7 @@ const devGameProgress: GameProgress = {
   ],
   userPreference: {
     lang: "cn",
-    aspectRatio: "stretch",
+    aspectRatio: "16:9",
   },
   gamePadSetting: {
     arrowUp: "arrowup",

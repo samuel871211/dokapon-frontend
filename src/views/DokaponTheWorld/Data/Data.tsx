@@ -154,13 +154,10 @@ function Data() {
             {levels === "15" && isCircleClicked && <SpecialtyGridView />}
 
             {level0Idx === 2 && <Explanation />}
-            {/* {levels === "20" && <ExplanationMap/>}
-            {levels === "21" && <ExplanationBattle/>}
-            {levels === "22" && <ExplanationOther/>} */}
 
-            {levels === "30" && "基本"}
-            {levels === "31" && "操作"}
-            {levels === "32" && "模式"}
+            {levels === "30" && <OptionBasic />}
+            {levels === "31" && <OptionSetting />}
+            {levels === "32" && <OptionMode />}
           </div>
         </div>
       </div>
@@ -1667,4 +1664,18 @@ function Explanation26Content() {
         ))}
     </div>
   );
+}
+/**
+ * @todo 暫時不做，因為很多聲音特效其實也做不到
+ */
+function OptionBasic() {
+  return (
+    <div style={{ fontSize: "3rem" }}>503 Service Temporarily Unavailable</div>
+  );
+}
+function OptionSetting() {
+  return <div>hello</div>;
+}
+function OptionMode() {
+  return <div>hello2</div>;
 }

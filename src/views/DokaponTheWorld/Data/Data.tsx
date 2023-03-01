@@ -1230,25 +1230,21 @@ function Explanation01Content() {
   return (
     <div className={styles.explanationBottomArea}>
       <div className={styles.blueText}>{t("地形マス")}⇨</div>
-      <div>
-        {t(
-          "ほとんどがモンスターとの戦闘になる。\nたま〜にイベントが起こり、\n変な人が現われるかも。"
-        )
-          .split("\n")
-          .map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-      </div>
+      {t(
+        "ほとんどがモンスターとの戦闘になる。\nたま〜にイベントが起こり、\n変な人が現われるかも。"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
       <div className={styles.blueText}>{t("宝箱マス")}⇨</div>
-      <div>
-        {t(
-          "アイテムやフィールド魔法が\n手に入る。いろいろな宝箱があるから\n自分の欲しい物の入っている\n宝箱に止まろう。"
-        )
-          .split("\n")
-          .map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-      </div>
+      {t(
+        "アイテムやフィールド魔法が\n手に入る。いろいろな宝箱があるから\n自分の欲しい物の入っている\n宝箱に止まろう。"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
     </div>
   );
 }
@@ -1263,15 +1259,13 @@ function Explanation02Content() {
       <div className={styles.blueText}>{t("店マス")}⇨</div>
       <div>{t("道具や装備など、いろいろな物が買える。")}</div>
       <div className={styles.blueText}>{t("教会マス")}⇨</div>
-      <div>
-        {t(
-          "ステータス異常を治してくれたりする。\n死亡時は最後に立ち寄った教会で復活。"
-        )
-          .split("\n")
-          .map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-      </div>
+      {t(
+        "ステータス異常を治してくれたりする。\n死亡時は最後に立ち寄った教会で復活。"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
     </div>
   );
 }
@@ -1279,25 +1273,21 @@ function Explanation03Content() {
   const { t } = useTranslation();
   return (
     <div className={styles.explanationBottomArea}>
-      <div>
-        {t("職安マスでは転職ができる。\n職業によって異なることは以下の通り。")
-          .split("\n")
-          .map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-      </div>
+      {t("職安マスでは転職ができる。\n職業によって異なることは以下の通り。")
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
       <div>★{t("フィールド特技")}</div>
       <div>★{t("バトル特技")}</div>
       <div>★{t("持てる持ち物の数")}</div>
       <div>★{t("給料")}</div>
       <div>★{t("レベルUP時の上昇パラメータ")}</div>
-      <div>
-        {t("上昇するパラメータは特に重要!\nバランス良くパラメータを上げよう!")
-          .split("\n")
-          .map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-      </div>
+      {t("上昇するパラメータは特に重要!\nバランス良くパラメータを上げよう!")
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
     </div>
   );
 }
@@ -1333,27 +1323,23 @@ function Explanation06Content() {
   const { t } = useTranslation();
   return (
     <div className={styles.explanationBottomArea}>
-      <div>
-        {t(
-          "フィールド特技とは、各職業が持つ、\nフィールド上で使える特別な技のこと。\n大きく分けて2つのタイプある。"
-        )
-          .split("\n")
-          .map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-      </div>
+      {t(
+        "フィールド特技とは、各職業が持つ、\nフィールド上で使える特別な技のこと。\n大きく分けて2つのタイプある。"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
       <br />
       <div>{t("マニュアル特技")}</div>
       <div>★{t("自分で使用して発動させるタイプの特技。")}</div>
-      <div>
-        {t(
-          "いつでも自由に使えるが、\n使用すると、カバンは使えなくなる。\n逆にカバンを使うと、特技は使えなくなる。"
-        )
-          .split("\n")
-          .map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-      </div>
+      {t(
+        "いつでも自由に使えるが、\n使用すると、カバンは使えなくなる。\n逆にカバンを使うと、特技は使えなくなる。"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
     </div>
   );
 }
@@ -1365,15 +1351,13 @@ function Explanation07Content() {
       <br />
       <div>{t("オート特技")}</div>
       <div>★{t("自分で使用して発動させるタイプの特技。")}</div>
-      <div>
-        {t(
-          "自分で自由に使えないのは不便だが、\n特技が発動しても、カバンは使える。\nアイテムや フィールド魔法を\n複数回使えるオート特技もある。"
-        )
-          .split("\n")
-          .map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-      </div>
+      {t(
+        "自分で自由に使えないのは不便だが、\n特技が発動しても、カバンは使える。\nアイテムや フィールド魔法を\n複数回使えるオート特技もある。"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
     </div>
   );
 }
@@ -1480,23 +1464,19 @@ function Explanation15Content() {
       <div>{t("戦闘で知っておきたい便利な機能!")}</div>
       <br />
       <div>{t("説明")}</div>
-      <div>
-        {t("攻撃側の攻撃魔法、バトル特技、\n防御側の防御魔法の説明が読める。")
-          .split("\n")
-          .map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-      </div>
+      {t("攻撃側の攻撃魔法、バトル特技、\n防御側の防御魔法の説明が読める。")
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
       <div>{t("予測")}</div>
-      <div>
-        {t(
-          "お互いの選んだコマンドで\n結果がどうなるか予測してくれる。\n始めて出会ったモンスターは予測できない。"
-        )
-          .split("\n")
-          .map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-      </div>
+      {t(
+        "お互いの選んだコマンドで\n結果がどうなるか予測してくれる。\n始めて出会ったモンスターは予測できない。"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
     </div>
   );
 }
@@ -1514,9 +1494,9 @@ function Explanation20Content() {
         <span>{t("金庫")}⇨</span>
         <span>{t("世界平和金庫に入れたお金。")}</span>
       </div>
-      <div>
-        <span className={styles.inlineBlockVTop}>{t("特産品")}⇨</span>
-        <span className={styles.inlineBlockVTop}>
+      <div className={styles.inlineBlockContainer}>
+        <span>{t("特産品")}⇨</span>
+        <span>
           {t(
             "プレゼントした特産品の\n価値の合計を、王様が\nこっそり資産に加えてくれる。"
           )
@@ -1535,25 +1515,156 @@ function Explanation20Content() {
 }
 function Explanation21Content() {
   const { t } = useTranslation();
-  return <div className={styles.explanationBottomArea}></div>;
+  return (
+    <div className={styles.explanationBottomArea}>
+      {t(
+        "世界平和金庫にお金を入れれば\n世界は少し平和になる(気がする)。\n金庫に入れたお金は資産として\nカウントされる。金庫に入れたお金は\n奪われることは無いので、所持金が\n貯まったら、金庫に入れるのが一番安全。\nしかし、金庫に入れたお金は一度入れたら\n二度と引き出せないので、\n入れる金額には注意しよう!"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
+    </div>
+  );
 }
 function Explanation22Content() {
   const { t } = useTranslation();
-  return <div className={styles.explanationBottomArea}></div>;
+  return (
+    <div className={styles.explanationBottomArea}>
+      {t(
+        "特産品は、統治された村でたまにもらえる。\n特産品は店で売ってもお金になるが、\n王様にあげると、喜んだ王様が\nこっそりと特産品の価値を\n資産に加えてくれる。\n特産品は、店で売るよりも、王様に\nあげたほうが何倍も価値が高い場合が多い。\nただし王様の嫌いな特産品をあげてしまうと、\n怒った王様が特産品の資産を下げてしまう。"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
+    </div>
+  );
 }
 function Explanation23Content() {
   const { t } = useTranslation();
-  return <div className={styles.explanationBottomArea}></div>;
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div>
+        <span>{t("毒")}⇨</span>
+        <span>{t("毎ターンHPが減る。")}</span>
+      </div>
+      <div>
+        <span>{t("コロリ")}⇨</span>
+        <span>{t("強力な毒。人に感染し死亡する。")}</span>
+      </div>
+      <div>
+        <span>{t("ピヨコタン")}⇨</span>
+        <span>{t("1マスしか歩けなくなる。")}</span>
+      </div>
+      <div>
+        <span>{t("おくびょう")}⇨</span>
+        <span>{t("人のいるマスに止まれない。")}</span>
+      </div>
+      <div>
+        <span>{t("封印")}⇨</span>
+        <span>{t("カバンコマンドが使えなくなる。")}</span>
+      </div>
+      <div>
+        <span>{t("プリオン")}⇨</span>
+        <span>{t("パラメータが下がり毒になる。")}</span>
+      </div>
+      <div>
+        <span>{t("死神")}⇨</span>
+        <span>{t("5ターンで死亡。かけた相手を倒せ!")}</span>
+      </div>
+      <div>
+        <span>{t("睡眠")}⇨</span>
+        <span>{t("眠ってしまって何もできない。")}</span>
+      </div>
+      <div>
+        <span>{t("犯罪者")}⇨</span>
+        <span>{t("賞金首になり、建物に入れない。")}</span>
+      </div>
+    </div>
+  );
 }
 function Explanation24Content() {
   const { t } = useTranslation();
-  return <div className={styles.explanationBottomArea}></div>;
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div>
+        <span>{t("呪い")}⇨</span>
+        <span>{t("たまに自分を攻撃してしまう。")}</span>
+      </div>
+      <div>
+        <span>{t("混乱")}⇨</span>
+        <span>{t("たまに違ったコマンドを選択する。")}</span>
+      </div>
+      <div>
+        <span>{t("暗闇")}⇨</span>
+        <span>{t("攻撃をミスしやすくなる。")}</span>
+      </div>
+      <div>
+        <span>{t("流血")}⇨</span>
+        <span>{t("ダメージを受けると追加ダメージ。")}</span>
+      </div>
+      <div>
+        <span>{t("禁止")}⇨</span>
+        <span>{t("何らかのコマンドが使えなくなる。")}</span>
+      </div>
+      <div>
+        <span>{t("魅了")}⇨</span>
+        <span>{t("攻撃側のコマンドが使えなくなる。")}</span>
+      </div>
+      <div>
+        <span>{t("石化")}⇨</span>
+        <span>{t("動けないが物理攻撃を受けない。")}</span>
+      </div>
+      <div>
+        <span>{t("マヒ")}⇨</span>
+        <span>{t("マヒして何もできなくなる。")}</span>
+      </div>
+      <div>
+        <span>{t("睡眠")}⇨</span>
+        <span>{t("眠ってしまって何もできない。")}</span>
+      </div>
+    </div>
+  );
 }
 function Explanation25Content() {
   const { t } = useTranslation();
-  return <div className={styles.explanationBottomArea}></div>;
+  return (
+    <div className={styles.explanationBottomArea}>
+      <div>
+        <span>{t("ATダウン")}⇨</span>
+        <span>{t("攻撃力が下がる。")}</span>
+      </div>
+      <div>
+        <span>{t("DFダウン")}⇨</span>
+        <span>{t("防御力が下がる。")}</span>
+      </div>
+      <div>
+        <span>{t("MGダウン")}⇨</span>
+        <span>{t("魔力が下がる。")}</span>
+      </div>
+      <div>
+        <span>{t("SPダウン")}⇨</span>
+        <span>{t("素早さが下がる。")}</span>
+      </div>
+      <div>
+        <span>{t("ALLダウン")}⇨</span>
+        <span>{t("4つのパラメータが下がる。")}</span>
+      </div>
+    </div>
+  );
 }
 function Explanation26Content() {
   const { t } = useTranslation();
-  return <div className={styles.explanationBottomArea}></div>;
+  return (
+    <div className={styles.explanationBottomArea}>
+      {t(
+        "ビリのまま数週間が経過すると\n体中に暗黒闘気が満ちてくる。\n暗黒闘気が体から放出されると\n魔界の住人が 闇のタマゴという\nアイテムを持ってきてくれるようになる。\n全てを捨てて 闇のタマゴを使えば、\n一定期間、強大な力を得られる。\nしかし、 闇のタマゴを使わずに\nビリのままで持ち続けると⋯"
+      )
+        .split("\n")
+        .map((line) => (
+          <div key={line}>{line}</div>
+        ))}
+    </div>
+  );
 }

@@ -804,6 +804,99 @@
 .inlineBlockContainer > span > div {
   height: 100%;
 }
+.optionContainer {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+}
+.optionTopArea {
+  display: flex;
+  align-items: center;
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+  height: 15%;
+}
+.optionCenterArea {
+  height: 70%;
+  font-size: 3rem;
+}
+.optionCenterArea .info {
+  font-size: 2rem;
+  color: crimson;
+}
+.optionCenterArea .playerRow {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  height: 25%;
+}
+.optionCenterArea .playerRowLeft {
+  width: 50%;
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+  padding: 1rem;
+}
+.optionCenterArea .playerRowRight {
+  width: 50%;
+}
+.optionCenterArea .weekTopArea {
+  height: 50%;
+  background-color: var(--sub-bg-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.optionCenterArea .weekNumberRow span {
+  display: inline-block;
+  font-size: 6rem;
+  line-height: 6rem;
+  letter-spacing: 0.2rem;
+  color: white;
+  -webkit-text-stroke: 0.2rem black;
+}
+.optionCenterArea .weekNumberRow div {
+  display: inline-block;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.optionCenterArea .weekBottomArea {
+  background-color: var(--sub-bg-color);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  font-size: 3rem;
+  line-height: 3.25rem;
+}
+.optionBottomArea {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 1.5rem;
+  background-color: var(--sub-bg-color);
+  height: 15%;
+  font-size: 3rem;
+  padding-right: 3rem;
+}
+.optionBottomArea > div:first-child {
+  padding-right: 3rem;
+}
+.setupText {
+  -webkit-text-stroke: 0.1rem black;
+  font-size: 2rem;
+  color: white;
+  padding-left: 1rem;
+}
+.optionTitle {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 3rem;
+}
+.moreInfoIcon {
+  font-size: 2.5rem;
+  margin-right: 2rem;
+}
 @keyframes level0ButtonHoverFrom {
   0% {
     background-color: var(--hover-bg-color);

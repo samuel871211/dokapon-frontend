@@ -395,6 +395,9 @@ function useMetaData() {
     const level1MaxIdx = level0Idx === 0 || level0Idx === 1 ? 5 : 2;
     const isDataVillages = level0Idx === 0 && level1Idx === 4;
     const isListOrOptions = level0Idx === 1 || level0Idx === 3;
+    const isOptionBasic = level0Idx === 3 && level1Idx === 0;
+    const isOptionSetting = level0Idx === 3 && level1Idx === 1;
+    const isOptionMode = level0Idx === 3 && level1Idx === 2;
 
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
@@ -410,6 +413,8 @@ function useMetaData() {
           DataState.curLevel = 2;
           DataState.curListIdx = 0;
         }
+        if (isOptionSetting) DataState.optionSettingSelectedIdx = 0;
+        if (isOptionMode) DataState.optionModeSelectedIdx = 0;
         break;
       case gamePadSetting.cross:
         DataState.curLevel = 0;
@@ -439,7 +444,7 @@ function useMetaData() {
     if (levels === "14") return handleKeyUpForListAccessories(e);
     if (levels === "15") return handleKeyUpForListSpecialties(e);
     if (levels === "30") return handleKeyUpForOptionBasic(e);
-    if (levels === "31") return handleKeyUpForOptionControll(e);
+    if (levels === "31") return handleKeyUpForOptionSetting(e);
     if (levels === "32") return handleKeyUpForOptionMode(e);
   }
   function handleKeyUpForDataVillages(e: KeyboardEvent<HTMLDivElement>) {
@@ -753,42 +758,71 @@ function useMetaData() {
       case gamePadSetting.arrowLeft:
         break;
       case gamePadSetting.circle:
+        DataState.curLevel = 1;
         break;
       case gamePadSetting.cross:
+        DataState.curLevel = 1;
         break;
     }
+    setGameProgress({ ...gameProgress });
   }
-  function handleKeyUpForOptionControll(e: KeyboardEvent<HTMLDivElement>) {
+  /**
+   * @todo 玩家切換成電腦，電腦切換成玩家
+   */
+  function handleKeyUpForOptionSetting(e: KeyboardEvent<HTMLDivElement>) {
+    const { optionSettingSelectedIdx } = DataState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
+        DataState.optionSettingSelectedIdx =
+          optionSettingSelectedIdx === 0 ? 3 : optionSettingSelectedIdx - 1;
         break;
       case gamePadSetting.arrowDown:
+        DataState.optionSettingSelectedIdx =
+          optionSettingSelectedIdx === 3 ? 0 : optionSettingSelectedIdx + 1;
         break;
       case gamePadSetting.arrowRight:
         break;
       case gamePadSetting.arrowLeft:
         break;
       case gamePadSetting.circle:
+        DataState.curLevel = 1;
+        DataState.optionSettingSelectedIdx = -1;
         break;
       case gamePadSetting.cross:
+        DataState.curLevel = 1;
+        DataState.optionSettingSelectedIdx = -1;
         break;
     }
+    setGameProgress({ ...gameProgress });
   }
+  /**
+   * @todo 切換週數，暫時不是很重要的功能
+   */
   function handleKeyUpForOptionMode(e: KeyboardEvent<HTMLDivElement>) {
+    const { optionModeSelectedIdx } = DataState;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.arrowUp:
         break;
       case gamePadSetting.arrowDown:
         break;
       case gamePadSetting.arrowRight:
+        DataState.optionModeSelectedIdx =
+          optionModeSelectedIdx === 2 ? 0 : optionModeSelectedIdx + 1;
         break;
       case gamePadSetting.arrowLeft:
+        DataState.optionModeSelectedIdx =
+          optionModeSelectedIdx === 0 ? 2 : optionModeSelectedIdx - 1;
         break;
       case gamePadSetting.circle:
+        DataState.curLevel = 1;
+        DataState.optionModeSelectedIdx = -1;
         break;
       case gamePadSetting.cross:
+        DataState.curLevel = 1;
+        DataState.optionModeSelectedIdx = -1;
         break;
     }
+    setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForUseFieldSpecialty(e: KeyboardEvent<HTMLDivElement>) {
     const { isHoverOnConfirmBtn } = gameProgress;

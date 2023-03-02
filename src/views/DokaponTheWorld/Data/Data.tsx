@@ -3,6 +3,7 @@ import { ReactNode, useContext } from "react";
 import classNames from "classnames";
 
 // Local application/library specific imports.
+import globalStyles from "assets/styles/globalStyles.module.css";
 import gameProgressCtx from "reducers/gameProgress";
 import styles from "./Data.module.css";
 import AttrCircle from "components/AttrCircle";
@@ -1669,13 +1670,119 @@ function Explanation26Content() {
  * @todo 暫時不做，因為很多聲音特效其實也做不到
  */
 function OptionBasic() {
+  const { t } = useTranslation();
   return (
-    <div style={{ fontSize: "3rem" }}>503 Service Temporarily Unavailable</div>
+    <div className={styles.optionContainer}>
+      <div className={styles.optionTopArea}>
+        <div className={styles.setupText}>SET UP</div>
+        <div className={styles.optionTitle}>{t("基本設定")}</div>
+        <div className={styles.moreInfoIcon}>▲{t("ヘルプ")}</div>
+      </div>
+      <div className={styles.optionCenterArea}></div>
+      <div className={styles.optionBottomArea}>
+        <div>O{t("決定")}</div>
+        <div>X{t("キャンセル")}</div>
+      </div>
+    </div>
   );
 }
 function OptionSetting() {
-  return <div>hello</div>;
+  const { t } = useTranslation();
+  const {
+    gameProgress: {
+      playersAttrs,
+      DokaponTheWorldState: {
+        DataState: { optionSettingSelectedIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+
+  return (
+    <div className={styles.optionContainer}>
+      <div className={styles.optionTopArea}>
+        <div className={styles.setupText}>SET UP</div>
+        <div className={styles.optionTitle}>{t("操作設定")}</div>
+        <div className={styles.moreInfoIcon}>▲{t("ヘルプ")}</div>
+      </div>
+      <div className={styles.optionCenterArea}>
+        {playersAttrs.map((playerAttr, idx) => (
+          <div className={styles.playerRow} key={playerAttr.name}>
+            <div className={styles.playerRowLeft}>{playerAttr.name}</div>
+            <ListItem
+              selected={optionSettingSelectedIdx === idx}
+              className={styles.playerRowRight}
+            ></ListItem>
+          </div>
+        ))}
+      </div>
+      <div className={styles.optionBottomArea}>
+        <div>O{t("決定")}</div>
+        <div>X{t("キャンセル")}</div>
+      </div>
+    </div>
+  );
 }
 function OptionMode() {
-  return <div>hello2</div>;
+  const { t } = useTranslation();
+  const {
+    gameProgress: {
+      DokaponTheWorldState: {
+        DataState: { optionModeSelectedIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  return (
+    <div className={styles.optionContainer}>
+      <div className={styles.optionTopArea}>
+        <div className={styles.setupText}>SET UP</div>
+        <div className={styles.optionTitle}>フリーモード設定</div>
+        <div className={styles.moreInfoIcon}>▲{t("ヘルプ")}</div>
+      </div>
+      <div className={styles.optionCenterArea}>
+        <div className={styles.weekTopArea}>
+          <div>{t("プレイする週数")}</div>
+          <div className={styles.weekNumberRow}>
+            <span
+              className={classNames({
+                [globalStyles.hoverEffectGreenTransparent]:
+                  optionModeSelectedIdx === 0,
+              })}
+            >
+              9
+            </span>
+            <span
+              className={classNames({
+                [globalStyles.hoverEffectGreenTransparent]:
+                  optionModeSelectedIdx === 1,
+              })}
+            >
+              9
+            </span>
+            <span
+              className={classNames({
+                [globalStyles.hoverEffectGreenTransparent]:
+                  optionModeSelectedIdx === 2,
+              })}
+            >
+              9
+            </span>
+            <div>週</div>
+          </div>
+        </div>
+        <div className={styles.weekBottomArea}>
+          {t(
+            "遊ぶ週数を設定できる。\n設定した週数になるとゲーム終了。\nその時、総資産が一番高い人の勝ち。"
+          )
+            .split("\n")
+            .map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+        </div>
+      </div>
+      <div className={styles.optionBottomArea}>
+        <div>O{t("決定")}</div>
+        <div>X{t("キャンセル")}</div>
+      </div>
+    </div>
+  );
 }

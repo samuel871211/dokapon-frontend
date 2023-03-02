@@ -336,6 +336,18 @@ export type GameProgress = {
        * 0 ~ 1
        */
       listJobCurPage: number;
+      /**
+       * @default -1
+       *
+       * -1 ~ 3
+       */
+      optionSettingSelectedIdx: number;
+      /**
+       * @default -1
+       *
+       * -1 ~ 2
+       */
+      optionModeSelectedIdx: number;
     };
     GraphUIState: {
       SVGTranslate: { x: number; y: number };

@@ -754,6 +754,8 @@ const initGameProgress: GameProgress = {
       level1Idxs: [0, 0, 0, 0],
       listJobCurPage: 0,
       isCircleClicked: false,
+      optionSettingSelectedIdx: -1,
+      optionModeSelectedIdx: -1,
     },
     GraphUIState: {
       SVGTranslate: { x: 0, y: 0 },

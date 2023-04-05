@@ -1,0 +1,26 @@
+.vsContainer {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.row1 {
+  height: calc(100% / 3);
+  background: linear-gradient(270deg, white, black);
+}
+.row1 img {
+  transform: rotateY(180deg);
+}
+.row2 {
+  height: calc(100% / 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19rem;
+}
+.row3 {
+  height: calc(100% / 3);
+  background: linear-gradient(270deg, black, white);
+  text-align: right;
+}

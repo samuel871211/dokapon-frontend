@@ -145,7 +145,7 @@ const bottomDialogSentences: {
   WorldTransferFieldCheck: [
     "別のエリアヘワープできるマス。\n有料だが簡単に移動できるので便利。",
   ],
-  Walk: [],
+  Walk: ["ここに止まりますか?"],
   WalkToAvailableVertices: [],
   Drawer: [],
   OverviewMap: [],
@@ -285,6 +285,7 @@ function useMetaData() {
   const currentMap = areaTypesToMap[currentPlayer.area];
   const currentPlayerVertex = currentMap.vertices[currentPlayer.vertexIdx];
   const {
+    curPath,
     curComponents,
     curClickedCharacters,
     bossMonsters,
@@ -371,10 +372,16 @@ function useMetaData() {
     }
   }
   function handleKeyUpForWalk(e: KeyboardEvent<HTMLDivElement>): void {
-    const { curPath, curStepCount } = DokaponTheWorldState;
+    const { curStepCount } = DokaponTheWorldState;
     const { top, bottom, left, right } = currentPlayerVertex;
-    if (curPath.length - 1 === curStepCount)
-      return handleKeyUpForWalkConfirm(e);
+    const noMoreStep = curPath.length - 1 === curStepCount;
+    const nextVertexIds = {
+      [gamePadSetting.arrowUp]: top,
+      [gamePadSetting.arrowDown]: bottom,
+      [gamePadSetting.arrowLeft]: left,
+      [gamePadSetting.arrowRight]: right,
+    };
+    if (noMoreStep) return handleKeyUpForWalkConfirm(e);
     switch (e.key.toLowerCase()) {
       case gamePadSetting.circle:
         curComponents.splice(0, 0, "Check");
@@ -391,72 +398,28 @@ function useMetaData() {
       case gamePadSetting.START:
         curComponents.splice(0, 0, "OverviewMap");
         break;
-      case gamePadSetting.arrowUp: {
-        if (!top) return;
-        const targetVertexIdx = currentMap.vertices.findIndex(
-          (vertex) => vertex.id === top
-        );
-        const targetVertex = currentMap.vertices[targetVertexIdx];
-        if (targetVertexIdx === -1) throw new Error("top vertex 404");
-        if (isGoBack(curPath, { id: targetVertex.id, idx: targetVertexIdx })) {
-          curPath.pop();
-          currentPlayer.vertexIdx = curPath[curPath.length - 1]?.idx;
-          break;
-        }
-        if (curPath.length - 1 >= curStepCount) return;
-        currentPlayer.vertexIdx = targetVertexIdx;
-        curPath.push({ id: targetVertex.id, idx: targetVertexIdx });
-        break;
-      }
-      case gamePadSetting.arrowDown: {
-        if (!bottom) return;
-        const targetVertexIdx = currentMap.vertices.findIndex(
-          (vertex) => vertex.id === bottom
-        );
-        const targetVertex = currentMap.vertices[targetVertexIdx];
-        if (targetVertexIdx === -1) throw new Error("bottom vertex 404");
-        if (isGoBack(curPath, { id: targetVertex.id, idx: targetVertexIdx })) {
-          curPath.pop();
-          currentPlayer.vertexIdx = curPath[curPath.length - 1]?.idx;
-          break;
-        }
-        if (curPath.length - 1 >= curStepCount) return;
-        currentPlayer.vertexIdx = targetVertexIdx;
-        curPath.push({ id: targetVertex.id, idx: targetVertexIdx });
-        break;
-      }
-      case gamePadSetting.arrowRight: {
-        if (!right) return;
-        const targetVertexIdx = currentMap.vertices.findIndex(
-          (vertex) => vertex.id === right
-        );
-        const targetVertex = currentMap.vertices[targetVertexIdx];
-        if (targetVertexIdx === -1) throw new Error("right vertex 404");
-        if (isGoBack(curPath, { id: targetVertex.id, idx: targetVertexIdx })) {
-          curPath.pop();
-          currentPlayer.vertexIdx = curPath[curPath.length - 1]?.idx;
-          break;
-        }
-        if (curPath.length - 1 >= curStepCount) return;
-        currentPlayer.vertexIdx = targetVertexIdx;
-        curPath.push({ id: targetVertex.id, idx: targetVertexIdx });
-        break;
-      }
+      case gamePadSetting.arrowUp:
+      case gamePadSetting.arrowDown:
+      case gamePadSetting.arrowRight:
       case gamePadSetting.arrowLeft: {
-        if (!left) return;
-        const targetVertexIdx = currentMap.vertices.findIndex(
-          (vertex) => vertex.id === left
+        const nextVertexId = nextVertexIds[e.key.toLowerCase()];
+        // 死路
+        if (!nextVertexId) return;
+
+        const nextVertexIdx = currentMap.vertices.findIndex(
+          (vertex) => vertex.id === nextVertexId
         );
-        const targetVertex = currentMap.vertices[targetVertexIdx];
-        if (targetVertexIdx === -1) throw new Error("left vertex 404");
-        if (isGoBack(curPath, { id: targetVertex.id, idx: targetVertexIdx })) {
+        const nextVertex = currentMap.vertices[nextVertexIdx];
+
+        // 地圖的JSON資料有錯
+        if (nextVertexIdx === -1) throw new Error(`${nextVertexId} 404`);
+        if (isGoBack(curPath, { id: nextVertex.id, idx: nextVertexIdx })) {
           curPath.pop();
           currentPlayer.vertexIdx = curPath[curPath.length - 1]?.idx;
           break;
         }
-        if (curPath.length - 1 >= curStepCount) return;
-        currentPlayer.vertexIdx = targetVertexIdx;
-        curPath.push({ id: targetVertex.id, idx: targetVertexIdx });
+        currentPlayer.vertexIdx = nextVertexIdx;
+        curPath.push({ id: nextVertex.id, idx: nextVertexIdx });
         break;
       }
     }
@@ -1114,9 +1077,7 @@ function useMetaData() {
           Math.getRandomIntInclusive(0, 3) + Math.getRandomIntInclusive(0, 3);
         const curVertexId = currentMap.vertices[currentPlayer.vertexIdx].id;
         DokaponTheWorldState.curStepCount = stepCount;
-        DokaponTheWorldState.curPath = [
-          { id: curVertexId, idx: currentPlayer.vertexIdx },
-        ];
+        curPath.push({ id: curVertexId, idx: currentPlayer.vertexIdx });
         curComponents[0] = "Walk";
         break;
       }
@@ -1595,6 +1556,7 @@ function useMetaData() {
   function focusContainerElAfterLoaded() {
     containerRefEl.current?.focus();
   }
+  // function
   useEffect(handleMapMove, [keyDownArrows]);
   useEffect(handleBottomDialogSentencesQueue, [curComponents[0]]);
   useEffect(updateCellsGroupBBox, [currentPlayer.area]);
@@ -1602,8 +1564,9 @@ function useMetaData() {
   useEffect(recalculate30Step, [currentPlayer.area, currentPlayerVertex]);
   useEffect(updateSVGViewBox, []);
   useEffect(windowResizeEffect, []);
-  useEffect(moveMapToPlayerVertex, [currentPlayerIdx]);
+  useEffect(moveMapToPlayerVertex, [currentPlayerIdx, currentPlayer.vertexIdx]);
   useEffect(focusContainerElAfterLoaded, []);
+  // useEffect(() => {}, [curPath.length]);
   return {
     containerRefEl,
     handleKeyDown,

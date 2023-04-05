@@ -130,7 +130,10 @@ export type DokaponTheWorldComponentTypes =
   | "WorldTransferFieldCheck"
   | "PlayerVsCharacterDialogs"
   | "SelectCharacterToCompare";
-export type NormalBattleComponentTypes = "VS" | "ShowVertexTypography";
+export type NormalBattleComponentTypes =
+  | "VS"
+  | "ShowVertexTypography"
+  | "SwapCards";
 export type HomeComponentTypes = "ButtonGroup" | "Settings" | "Book";
 export type GameProgress = {
   timeStamp: string;

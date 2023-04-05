@@ -39,7 +39,7 @@ export default Roulette;
  * 6 => 1/16
  */
 function Roulette() {
-  const { rouletteResult } = useMetaData();
+  const { curStepCount } = useMetaData();
   return (
     <div className={styles.rouletteContainer}>
       <div className={styles.roulette}>
@@ -251,8 +251,8 @@ function Roulette() {
             <path
               className={classNames({
                 [styles.arrow]: true,
-                [styles.arrowRotate]: rouletteResult === -1,
-                [stopAt[rouletteResult]]: rouletteResult !== -1,
+                [styles.arrowRotate]: curStepCount === -1,
+                [stopAt[curStepCount]]: curStepCount !== -1,
               })}
               fill="#ffffff"
               stroke="#000000"
@@ -269,7 +269,6 @@ function Roulette() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { result: rouletteResult } =
-    gameProgress.DokaponTheWorldState.RouletteState;
-  return { rouletteResult };
+  const { curStepCount } = gameProgress.DokaponTheWorldState;
+  return { curStepCount };
 }

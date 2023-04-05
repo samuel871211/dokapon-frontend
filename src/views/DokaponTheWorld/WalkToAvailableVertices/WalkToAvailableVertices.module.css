@@ -1,0 +1,15 @@
+.topLeftDialog {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  padding: 1rem;
+}
+.topLeftDialogRow {
+  font-size: 3rem;
+  line-height: 3.25rem;
+}
+.topLeftDialogRow > span {
+  display: inline-block;
+  width: 3rem;
+  text-align: center;
+}

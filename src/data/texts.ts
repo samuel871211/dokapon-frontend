@@ -4,6 +4,19 @@ const texts = {
     en: "",
     cn: "",
   },
+  // DokaponTheWorld > Walk
+  あと: {
+    en: "after",
+    cn: "尚餘",
+  },
+  步: {
+    en: "step",
+    cn: "步",
+  },
+  "ここに止まりますか?": {
+    en: "Do you want to stop here?",
+    cn: "你想在這裡停下來嗎？",
+  },
   // data > option
   基本設定: {
     en: "基本設定",

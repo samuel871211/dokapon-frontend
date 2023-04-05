@@ -78,6 +78,8 @@ const initGameProgress: GameProgress = {
   DokaponTheWorldState: {
     curComponents: ["Drawer"],
     curClickedCharacters: [],
+    curStepCount: -1,
+    curPath: [],
     enemies: [],
     bossMonsters: [
       {
@@ -779,7 +781,7 @@ const initGameProgress: GameProgress = {
       currentBag: "items",
       selectedIdx: 0,
     },
-    RouletteState: { result: -1 },
+    // RouletteState: { result: -1 },
     GroceryStoreFieldCheckState: { curListPage: 0 },
     JobStoreFieldCheckState: { curListPage: 0 },
     MagicStoreFieldCheckState: { curListPage: 0 },
@@ -787,6 +789,9 @@ const initGameProgress: GameProgress = {
     CollectMoneyFieldCheckState: { curListPage: 0 },
     PlayerVsCharacterDialogState: { curPage: 0 },
     SelectCharacterToCompareState: { selectedIdx: 0 },
+  },
+  NormalBattleState: {
+    curComponent: "VS",
   },
   playersAttrs: [
     {

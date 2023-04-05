@@ -98,7 +98,10 @@ export type StoryModeSelectCharacterComponentTypes =
   | "ShuffleOrderComplete"
   | "TakePlayerToDokaponTheWorld";
 export type DokaponTheWorldComponentTypes =
-  | "GraphUI"
+  // | "GraphUI"
+  | "Walk"
+  // | "WalkConfirm"
+  | "WalkToAvailableVertices"
   | "Drawer"
   | "OverviewMap"
   | "Bag"
@@ -127,6 +130,7 @@ export type DokaponTheWorldComponentTypes =
   | "WorldTransferFieldCheck"
   | "PlayerVsCharacterDialogs"
   | "SelectCharacterToCompare";
+export type NormalBattleComponentTypes = "VS" | "ShowVertexTypography";
 export type HomeComponentTypes = "ButtonGroup" | "Settings" | "Book";
 export type GameProgress = {
   timeStamp: string;
@@ -298,9 +302,17 @@ export type GameProgress = {
     };
   };
   DokaponTheWorldState: {
+    /**
+     * 顛倒的stack，進出都在開頭
+     */
     curComponents: DokaponTheWorldComponentTypes[];
     curCenterVertex: Vertex;
     curClickedCharacters: (PlayerAttrs | MonsterAttrs)[];
+    /**
+     * @default -1
+     */
+    curStepCount: number;
+    curPath: VertexBriefProps[];
     bossMonsters: MonsterAttrs[];
     enemies: PlayerAttrs[];
     DataState: {
@@ -350,7 +362,7 @@ export type GameProgress = {
       optionModeSelectedIdx: number;
     };
     GraphUIState: {
-      SVGTranslate: { x: number; y: number };
+      SVGTranslate: Position;
     };
     CheckState: {
       showVertexNameAndDistance: boolean;
@@ -363,11 +375,11 @@ export type GameProgress = {
       curHoverVertexName: string;
       // curHoverVertex: Vertex | undefined;
       miniMap: {
-        player1Position: { x: number; y: number };
-        player2Position: { x: number; y: number };
-        player3Position: { x: number; y: number };
-        player4Position: { x: number; y: number };
-        curAreaPosition: { x: number; y: number };
+        player1Position: Position;
+        player2Position: Position;
+        player3Position: Position;
+        player4Position: Position;
+        curAreaPosition: Position;
       };
     };
     DrawerState: {
@@ -389,12 +401,6 @@ export type GameProgress = {
     BagState: {
       currentBag: "items" | "magicBooks";
       selectedIdx: number;
-    };
-    RouletteState: {
-      /**
-       * @default -1
-       */
-      result: number;
     };
     GroceryStoreFieldCheckState: {
       /**
@@ -455,12 +461,16 @@ export type GameProgress = {
       selectedIdx: number;
     };
   };
+  NormalBattleState: {
+    curComponent: NormalBattleComponentTypes;
+  };
 };
 export type ViewTypes =
   | "Home"
   | "BattleModeSelectCharacter"
   | "StoryModeSelectCharacter"
-  | "DokaponTheWorld";
+  | "DokaponTheWorld"
+  | "NormalBattle";
 // | "Home"
 // | "SelectCharacter"
 // | "GameStartIndex"
@@ -494,6 +504,7 @@ export type Area = {
   width: number;
   height: number;
 };
+export type VertexBriefProps = { id: VertexId; idx: number };
 export type VertexId = string;
 export type VertexTypes =
   | "BattleField"

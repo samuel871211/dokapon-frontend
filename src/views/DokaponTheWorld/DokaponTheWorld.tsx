@@ -3,12 +3,14 @@ import { useEffect, useContext, KeyboardEvent, useRef, useState } from "react";
 
 // Local application/library specific imports.
 import styles from "./DokaponTheWorld.module.css";
+import Walk from "./Walk";
 import Drawer from "./Drawer";
 import Roulette from "./Roulette";
 import Bag from "./Bag";
 import Check from "./Check";
 import OverviewMap from "./OverviewMap";
 import Data from "./Data";
+import WalkToAvailableVertices from "./WalkToAvailableVertices";
 import UseFieldSpecialty from "./UseFieldSpecialty";
 import GroceryStoreFieldCheck from "./Check/GroceryStoreFieldCheck";
 import GraphUI from "views/DokaponTheWorld/GraphUI";
@@ -33,6 +35,7 @@ import GraphDSA from "utils/GraphDSA";
 import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
 import SelectCharacterToCompare from "./SelectCharacterToCompare";
 import vertexNameToComponentType from "data/vertexNameToComponentType";
+import isGoBack from "utils/isGoBack";
 
 // Stateless vars declare.
 const emptyGraphDSA = Object.freeze({});
@@ -142,7 +145,8 @@ const bottomDialogSentences: {
   WorldTransferFieldCheck: [
     "別のエリアヘワープできるマス。\n有料だが簡単に移動できるので便利。",
   ],
-  GraphUI: [],
+  Walk: [],
+  WalkToAvailableVertices: [],
   Drawer: [],
   OverviewMap: [],
   Bag: [],
@@ -182,7 +186,8 @@ const bottomDialogSentences: {
 const Components: {
   [key in DokaponTheWorldComponentTypes]: () => JSX.Element;
 } = {
-  GraphUI: () => <></>,
+  Walk,
+  WalkToAvailableVertices,
   Drawer,
   OverviewMap,
   Bag,
@@ -287,7 +292,7 @@ function useMetaData() {
     DrawerState,
     GraphUIState,
     BagState,
-    RouletteState,
+    // RouletteState,
     CheckState,
     DataState,
     GroceryStoreFieldCheckState,
@@ -321,6 +326,10 @@ function useMetaData() {
         return handleKeyUpForCheck(e);
       case "Data":
         return handleKeyUpForData(e);
+      case "Walk":
+        return handleKeyUpForWalk(e);
+      case "WalkToAvailableVertices":
+        return handleKeyUpForWalkToAvailableVertices(e);
       case "OverviewMap":
         return handleKeyUpForOverviewMap(e);
       case "UseFieldSpecialty":
@@ -355,13 +364,166 @@ function useMetaData() {
         return handleKeyUpForPlayerVsCharacterDialogs(e);
       case "SelectCharacterToCompare":
         return handleKeyUpForSelectCharacterToCompare(e);
-      case "GraphUI":
-        return;
       default:
         // 滑鼠hover上去，型別應該要是`never`，才代表所有的case都有涵蓋到
         curComponent;
         return;
     }
+  }
+  function handleKeyUpForWalk(e: KeyboardEvent<HTMLDivElement>): void {
+    const { curPath, curStepCount } = DokaponTheWorldState;
+    const { top, bottom, left, right } = currentPlayerVertex;
+    if (curPath.length - 1 === curStepCount)
+      return handleKeyUpForWalkConfirm(e);
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.circle:
+        curComponents.splice(0, 0, "Check");
+        CheckState.showMiniMap = true;
+        CheckState.showCheckTip = true;
+        break;
+      case gamePadSetting.square:
+        curComponents[0] = "WalkToAvailableVertices";
+        break;
+      case gamePadSetting.triangle:
+        curComponents.splice(0, 0, "Data");
+        DataState.curLevel = 1;
+        break;
+      case gamePadSetting.START:
+        curComponents.splice(0, 0, "OverviewMap");
+        break;
+      case gamePadSetting.arrowUp: {
+        if (!top) return;
+        const targetVertexIdx = currentMap.vertices.findIndex(
+          (vertex) => vertex.id === top
+        );
+        const targetVertex = currentMap.vertices[targetVertexIdx];
+        if (targetVertexIdx === -1) throw new Error("top vertex 404");
+        if (isGoBack(curPath, { id: targetVertex.id, idx: targetVertexIdx })) {
+          curPath.pop();
+          currentPlayer.vertexIdx = curPath[curPath.length - 1]?.idx;
+          break;
+        }
+        if (curPath.length - 1 >= curStepCount) return;
+        currentPlayer.vertexIdx = targetVertexIdx;
+        curPath.push({ id: targetVertex.id, idx: targetVertexIdx });
+        break;
+      }
+      case gamePadSetting.arrowDown: {
+        if (!bottom) return;
+        const targetVertexIdx = currentMap.vertices.findIndex(
+          (vertex) => vertex.id === bottom
+        );
+        const targetVertex = currentMap.vertices[targetVertexIdx];
+        if (targetVertexIdx === -1) throw new Error("bottom vertex 404");
+        if (isGoBack(curPath, { id: targetVertex.id, idx: targetVertexIdx })) {
+          curPath.pop();
+          currentPlayer.vertexIdx = curPath[curPath.length - 1]?.idx;
+          break;
+        }
+        if (curPath.length - 1 >= curStepCount) return;
+        currentPlayer.vertexIdx = targetVertexIdx;
+        curPath.push({ id: targetVertex.id, idx: targetVertexIdx });
+        break;
+      }
+      case gamePadSetting.arrowRight: {
+        if (!right) return;
+        const targetVertexIdx = currentMap.vertices.findIndex(
+          (vertex) => vertex.id === right
+        );
+        const targetVertex = currentMap.vertices[targetVertexIdx];
+        if (targetVertexIdx === -1) throw new Error("right vertex 404");
+        if (isGoBack(curPath, { id: targetVertex.id, idx: targetVertexIdx })) {
+          curPath.pop();
+          currentPlayer.vertexIdx = curPath[curPath.length - 1]?.idx;
+          break;
+        }
+        if (curPath.length - 1 >= curStepCount) return;
+        currentPlayer.vertexIdx = targetVertexIdx;
+        curPath.push({ id: targetVertex.id, idx: targetVertexIdx });
+        break;
+      }
+      case gamePadSetting.arrowLeft: {
+        if (!left) return;
+        const targetVertexIdx = currentMap.vertices.findIndex(
+          (vertex) => vertex.id === left
+        );
+        const targetVertex = currentMap.vertices[targetVertexIdx];
+        if (targetVertexIdx === -1) throw new Error("left vertex 404");
+        if (isGoBack(curPath, { id: targetVertex.id, idx: targetVertexIdx })) {
+          curPath.pop();
+          currentPlayer.vertexIdx = curPath[curPath.length - 1]?.idx;
+          break;
+        }
+        if (curPath.length - 1 >= curStepCount) return;
+        currentPlayer.vertexIdx = targetVertexIdx;
+        curPath.push({ id: targetVertex.id, idx: targetVertexIdx });
+        break;
+      }
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  function handleKeyUpForWalkConfirm(e: KeyboardEvent<HTMLDivElement>): void {
+    const { curPath } = DokaponTheWorldState;
+    const { isHoverOnConfirmBtn } = gameProgress;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.arrowUp:
+      case gamePadSetting.arrowDown:
+        gameProgress.isHoverOnConfirmBtn = !isHoverOnConfirmBtn;
+        break;
+      case gamePadSetting.circle:
+        if (!isHoverOnConfirmBtn) {
+          curPath.pop();
+          currentPlayer.vertexIdx = curPath[curPath.length - 1]?.idx;
+        } else if (isHoverOnConfirmBtn) handlePlayerLandingOnVertex();
+        break;
+      case gamePadSetting.cross:
+        curPath.pop();
+        currentPlayer.vertexIdx = curPath[curPath.length - 1]?.idx;
+        break;
+    }
+    setGameProgress({ ...gameProgress });
+  }
+  function handlePlayerLandingOnVertex(): void {
+    switch (currentPlayerVertex.name) {
+      case "BattleField":
+        curComponents.length = 0;
+        gameProgress.currentView = "NormalBattle";
+        break;
+      case "MagicBookField":
+      case "TreasureField":
+      case "CollectMoneyField":
+      case "CollectAllMoneyField":
+      case "GoldTreasureField":
+      case "RedTreasureField":
+      case "WhiteTreasureField":
+      case "KeyTreasureField":
+      case "WorldTransferField":
+      case "ChruchField":
+      case "WeaponStoreField":
+      case "JobStoreField":
+      case "GroceryStoreField":
+      case "MagicStoreField":
+      case "VillageField":
+      case "CaveField":
+      case "CastleField":
+      case "DamageField":
+        break;
+      default:
+        /**
+         * 滑鼠hover上去，型別應該要是`never`，才代表所有case都有涵蓋到
+         */
+        currentPlayerVertex.name;
+    }
+  }
+  function handleKeyUpForWalkToAvailableVertices(
+    e: KeyboardEvent<HTMLDivElement>
+  ) {
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.cross:
+        curComponents[0] = "Walk";
+        break;
+    }
+    setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForData(e: KeyboardEvent<HTMLDivElement>) {
     const { curLevel } = DataState;
@@ -383,7 +545,7 @@ function useMetaData() {
         DataState.curLevel = 1;
         break;
       case gamePadSetting.cross:
-        DokaponTheWorldState.curComponents = ["Drawer"];
+        curComponents[0] = "Drawer";
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -833,14 +995,14 @@ function useMetaData() {
         break;
       case gamePadSetting.circle:
         if (!isHoverOnConfirmBtn) {
-          DokaponTheWorldState.curComponents = ["Drawer"];
+          curComponents[0] = "Drawer";
           break;
         }
         // @todo 使用技能
         console.log("使用技能");
         break;
       case gamePadSetting.cross:
-        DokaponTheWorldState.curComponents = ["Drawer"];
+        curComponents[0] = "Drawer";
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -855,26 +1017,26 @@ function useMetaData() {
         DrawerState.selectedIdx = selectedIdx === 4 ? 0 : selectedIdx + 1;
         break;
       case gamePadSetting.square:
-        DokaponTheWorldState.curComponents = ["Check"];
+        curComponents[0] = "Check";
         break;
       case gamePadSetting.circle:
         switch (selectedIdx) {
           case 0: // 移動
-            DokaponTheWorldState.curComponents = ["Roulette"];
+            curComponents[0] = "Roulette";
             break;
           case 1: // 背包
-            DokaponTheWorldState.curComponents = ["Bag"];
+            curComponents[0] = "Bag";
             break;
           case 2: // 查看
-            DokaponTheWorldState.curComponents = ["Check"];
+            curComponents[0] = "Check";
             CheckState.showMiniMap = true;
             CheckState.showCheckTip = true;
             break;
           case 3: // 特技
-            DokaponTheWorldState.curComponents = ["UseFieldSpecialty"];
+            curComponents[0] = "UseFieldSpecialty";
             break;
           case 4: // 資訊
-            DokaponTheWorldState.curComponents = ["Data"];
+            curComponents[0] = "Data";
             break;
         }
     }
@@ -937,27 +1099,32 @@ function useMetaData() {
          */
         break;
       case gamePadSetting.cross:
-        DokaponTheWorldState.curComponents = ["Drawer"];
+        curComponents[0] = "Drawer";
         break;
     }
     setGameProgress({ ...gameProgress });
   }
+  /**
+   * @todo 輪盤結果需要顯示1秒，再跳到下一個component
+   */
   function handleKeyUpForRoulette(e: KeyboardEvent<HTMLDivElement>) {
     switch (e.key.toLowerCase()) {
-      case gamePadSetting.circle:
-        RouletteState.result =
+      case gamePadSetting.circle: {
+        const stepCount =
           Math.getRandomIntInclusive(0, 3) + Math.getRandomIntInclusive(0, 3);
-        setGameProgress({ ...gameProgress });
-        setTimeout(() => {
-          DokaponTheWorldState.curComponents = ["GraphUI"];
-          setGameProgress({ ...gameProgress });
-        }, 1000);
+        const curVertexId = currentMap.vertices[currentPlayer.vertexIdx].id;
+        DokaponTheWorldState.curStepCount = stepCount;
+        DokaponTheWorldState.curPath = [
+          { id: curVertexId, idx: currentPlayer.vertexIdx },
+        ];
+        curComponents[0] = "Walk";
         break;
+      }
       case gamePadSetting.cross:
-        DokaponTheWorldState.curComponents = ["Drawer"];
-        setGameProgress({ ...gameProgress });
+        curComponents[0] = "Drawer";
         break;
     }
+    setGameProgress({ ...gameProgress });
   }
   /**
    * @todo click on enemy
@@ -985,13 +1152,10 @@ function useMetaData() {
       case gamePadSetting.circle: {
         if (Object.keys(curCenterVertex).length === 0) return;
 
-        // 關閉所有小視窗
-        CheckState.showVertexNameAndDistance = false;
-        CheckState.showCheckTip = false;
-        CheckState.showMiniMap = false;
+        // 清除上一個動作
+        curComponents.shift();
 
-        // 初始化
-        curComponents.length = 0;
+        // 停止地圖移動
         setKeyDownArrows({
           up: false,
           down: false,
@@ -1019,13 +1183,17 @@ function useMetaData() {
         if (clickedEnemy)
           DokaponTheWorldState.curClickedCharacters.push(clickedEnemy);
         if (DokaponTheWorldState.curClickedCharacters.length === 1) {
-          curComponents.push("PlayerVsCharacterDialogs");
+          curComponents.splice(0, 0, "PlayerVsCharacterDialogs");
         } else if (DokaponTheWorldState.curClickedCharacters.length > 1) {
-          curComponents.push("SelectCharacterToCompare");
+          curComponents.splice(0, 0, "SelectCharacterToCompare");
         }
 
         // handle click on vertex
-        curComponents.push(vertexNameToComponentType[curCenterVertex.name]);
+        curComponents.splice(
+          0,
+          0,
+          vertexNameToComponentType[curCenterVertex.name]
+        );
 
         setGameProgress({ ...gameProgress });
         return;
@@ -1035,10 +1203,13 @@ function useMetaData() {
         setKeyDownArrows({ ...keyDownArrows, square: false });
         break;
       case gamePadSetting.START:
-        DokaponTheWorldState.curComponents = ["OverviewMap"];
+        curComponents.splice(0, 0, "OverviewMap");
         break;
       case gamePadSetting.cross:
-        DokaponTheWorldState.curComponents = ["Drawer"];
+        // walk 跟 drawer 都有可能接續到 check
+        curComponents.shift();
+        if (curComponents.length === 0) curComponents.push("Drawer");
+        moveMapToPlayerVertex();
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -1048,7 +1219,9 @@ function useMetaData() {
       case gamePadSetting.triangle:
         break;
       case gamePadSetting.cross:
-        DokaponTheWorldState.curComponents = ["Check"];
+        // overviewMap有可能回到 check, walk, WalkToAvailableVertices
+        curComponents.shift();
+        if (curComponents.length === 0) curComponents.push("Check");
         break;
     }
     setGameProgress({ ...gameProgress });
@@ -1062,7 +1235,7 @@ function useMetaData() {
       case gamePadSetting.cross:
       case gamePadSetting.square:
       case gamePadSetting.triangle:
-        DokaponTheWorldState.curComponents = ["Check"];
+        curComponents[0] = "Check";
         GroceryStoreFieldCheckState.curListPage = 0;
         break;
       case gamePadSetting.R1:
@@ -1083,7 +1256,7 @@ function useMetaData() {
       case gamePadSetting.cross:
       case gamePadSetting.square:
       case gamePadSetting.triangle:
-        DokaponTheWorldState.curComponents = ["Check"];
+        curComponents[0] = "Check";
         JobStoreFieldCheckState.curListPage = 0;
         break;
       case gamePadSetting.R1:
@@ -1114,7 +1287,7 @@ function useMetaData() {
       case gamePadSetting.cross:
       case gamePadSetting.square:
       case gamePadSetting.triangle:
-        DokaponTheWorldState.curComponents = ["Check"];
+        curComponents[0] = "Check";
         MagicStoreFieldCheckState.curListPage = 0;
         break;
       case gamePadSetting.R1:
@@ -1141,7 +1314,7 @@ function useMetaData() {
       case gamePadSetting.cross:
       case gamePadSetting.square:
       case gamePadSetting.triangle:
-        DokaponTheWorldState.curComponents = ["Check"];
+        curComponents[0] = "Check";
         WeaponStoreFieldCheckState.curListPage = 0;
         break;
       case gamePadSetting.R1:
@@ -1159,7 +1332,7 @@ function useMetaData() {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
 
-    DokaponTheWorldState.curComponents = ["CollectMoneyFieldCheck"];
+    curComponents[0] = "CollectMoneyFieldCheck";
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForCollectMoneyFieldCheck(
@@ -1169,7 +1342,7 @@ function useMetaData() {
     switch (e.key.toLowerCase()) {
       case gamePadSetting.circle:
       case gamePadSetting.cross:
-        DokaponTheWorldState.curComponents = ["Check"];
+        curComponents[0] = "Check";
         CollectMoneyFieldCheckState.curListPage = 0;
         break;
       case gamePadSetting.R1:
@@ -1241,7 +1414,8 @@ function useMetaData() {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
 
-    DokaponTheWorldState.curComponents = ["Check"];
+    curComponents.shift();
+    curComponents.splice(0, 0, "Check");
     setGameProgress({ ...gameProgress });
   }
   function handleBottomDialogSentencesQueue() {

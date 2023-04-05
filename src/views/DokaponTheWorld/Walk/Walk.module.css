@@ -1,0 +1,32 @@
+.topLeftDialog {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  padding: 1rem;
+}
+.topLeftDialogRow {
+  font-size: 3rem;
+  line-height: 3.25rem;
+}
+.topLeftDialogRow > span {
+  display: inline-block;
+  width: 3rem;
+  text-align: center;
+}
+.topBottomDialog {
+  position: absolute;
+  padding: 2rem 1rem;
+  bottom: 5%;
+  left: 2%;
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  line-height: 3.25rem;
+}
+.bottomDialogContainer {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  left: 0;
+}

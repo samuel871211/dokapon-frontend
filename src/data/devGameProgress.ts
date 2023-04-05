@@ -42,7 +42,7 @@ const devGameProgress: GameProgress = {
     },
   },
   BattleModeSelectCharacterState: {
-    curComponent: "TakePlayerToDokaponTheWorld",
+    curComponent: "SelectGoalType",
     GoalInputDialogState: {
       selectedIdx: 0,
     },
@@ -104,6 +104,8 @@ const devGameProgress: GameProgress = {
   },
   DokaponTheWorldState: {
     curClickedCharacters: [],
+    curStepCount: -1,
+    curPath: [],
     enemies: [],
     bossMonsters: [
       {
@@ -808,9 +810,9 @@ const devGameProgress: GameProgress = {
       currentBag: "items",
       selectedIdx: 0,
     },
-    RouletteState: {
-      result: -1,
-    },
+    // RouletteState: {
+    //   result: -1,
+    // },
     GroceryStoreFieldCheckState: {
       curListPage: 0,
     },
@@ -832,6 +834,9 @@ const devGameProgress: GameProgress = {
     SelectCharacterToCompareState: {
       selectedIdx: 0,
     },
+  },
+  NormalBattleState: {
+    curComponent: "VS",
   },
   playersAttrs: [
     {

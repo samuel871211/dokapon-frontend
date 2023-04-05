@@ -46,7 +46,8 @@ body,
   cursor: default;
 }
 g[data-type="dokapon.player"] {
-  transition: transform 0.5s;
+  transition: transform 0.2s;
+  transition-timing-function: linear;
 }
 .selectedEffectGreenYellow {
   animation: greenToYellow 500ms, yellowToGreen 500ms;

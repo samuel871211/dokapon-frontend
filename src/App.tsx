@@ -1,5 +1,4 @@
 // Related third party imports.
-import { createRoot } from "react-dom/client";
 import { useEffect, useState } from "react";
 
 // Local application/library specific imports.
@@ -11,6 +10,7 @@ import GraphEditor from "views/GraphEditor";
 import DokaponTheWorld from "views/DokaponTheWorld";
 import StoryModeSelectCharacter from "views/StoryModeSelectCharacter";
 import BattleModeSelectCharacter from "views/BattleModeSelectCharacter";
+import NormalBattle from "views/NormalBattle";
 import devGameProgress from "data/devGameProgress";
 import gameProgressCtx from "reducers/gameProgress";
 import type { ViewTypes } from "global";
@@ -32,6 +32,7 @@ const Views: { [key in ViewTypes]: () => JSX.Element } = {
   DokaponTheWorld,
   Home,
   StoryModeSelectCharacter,
+  NormalBattle,
 };
 function resizeEvtHandlerEffect() {
   window.addEventListener("resize", handleResize);

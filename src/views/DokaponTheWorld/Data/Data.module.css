@@ -417,14 +417,15 @@
   border: none;
 }
 .dataRankContainer {
+  --data-rank-container-gap: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--data-rank-container-gap);
   height: 100%;
   padding: 1rem;
 }
 .playerRankArea {
-  height: 25%;
+  height: calc((100% - 3 * var(--data-rank-container-gap)) / 4);
   border-radius: 1.5rem;
   background-color: var(--sub-bg-color);
   padding: 1rem;

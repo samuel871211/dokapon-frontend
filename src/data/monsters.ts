@@ -17,6 +17,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "なし",
     },
+    key: "crowPurple",
   },
   {
     name: "ノラ犬",
@@ -35,6 +36,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "なし",
     },
+    key: "dog",
   },
   {
     name: "スライミィ",
@@ -53,6 +55,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "バイン",
     },
+    key: "slimeBlue",
   },
   {
     name: "キノコこぞう",
@@ -71,6 +74,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "パワーキノコ",
     },
+    key: "mushroomBrown",
   },
   {
     name: "モンキーマン",
@@ -90,6 +94,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "バイン",
     },
+    key: "possessedCatRed",
   },
   {
     name: "シオガエル",
@@ -108,6 +113,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ピョコタンの書",
     },
+    key: "frogGreen",
   },
   {
     name: "人食いパンダ",
@@ -126,6 +132,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "回復ざい",
     },
+    key: "pandaWhite",
   },
   {
     name: "子供キョンシー",
@@ -145,6 +152,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "４のクリスタル",
     },
+    key: "zombie",
   },
   {
     name: "霊幻導師",
@@ -166,6 +174,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "asia2",
     },
+    key: "priest",
   },
   {
     name: "ムノチュワ",
@@ -186,6 +195,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "マグの書",
     },
+    key: "flameRed",
   },
   {
     name: "ハヌマーン",
@@ -201,10 +211,11 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1100,
     explanation: "もとは猿の神様だったが\n悪の波動で邪神になってしまった。",
     isBoss: false,
-    fromAreas: ["Asia"],
+    fromAreas: ["AsiaCave"],
     possession: {
       name: "力のグローブ",
     },
+    key: "tribalLemur",
   },
   {
     name: "マメコウモリ",
@@ -220,10 +231,11 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1000,
     explanation: "小さいが素早い動きで\n音もなく相手に近づき\n生命を吸い取る。",
     isBoss: false,
-    fromAreas: ["Asia"],
+    fromAreas: ["AsiaCave"],
     possession: {
       name: "回復ざい",
     },
+    key: "batGreen",
   },
   {
     name: "山賊ネズミ",
@@ -241,10 +253,11 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "ナワバリに迷い込んだ者を\nむれをなして襲う。\n見た目はかわいいが実は恐ろしい。",
     isBoss: false,
-    fromAreas: ["Asia"],
+    fromAreas: ["AsiaCave"],
     possession: {
       name: "マグの書",
     },
+    key: "mouseBlue",
   },
   {
     name: "ゴクウ",
@@ -266,6 +279,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "にょいぼう",
     },
+    key: "monkeyHero",
   },
   {
     name: "ハッカイ",
@@ -285,6 +299,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "アツアツおでん",
     },
+    key: "pigsy",
   },
   {
     name: "ゴジョー",
@@ -306,6 +321,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "おんみょうの盾",
     },
+    key: "kappa",
   },
   {
     name: "惨憎法師",
@@ -323,10 +339,11 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "アジアエリアのボス。\n大地を流れる龍脈の力を操り、\nアジアエリアを荒らし回る。",
     isBoss: true,
-    fromAreas: ["Asia"],
+    fromAreas: ["AsiaCave"],
     possession: {
       name: "しゃくじょう",
     },
+    key: "corruptPreist",
   },
   {
     name: "スナトカゲ",
@@ -346,6 +363,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "トーレナ岩",
     },
+    key: "lizardWarriorGreen",
   },
   {
     name: "砂漠の民",
@@ -366,6 +384,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "なし",
     },
+    key: "thiefWhite",
   },
   {
     name: "ボーンファイター",
@@ -385,6 +404,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ノロ～の書",
     },
+    key: "skeletonBrown",
   },
   {
     name: "インプ",
@@ -406,6 +426,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ビクビクの書",
     },
+    key: "gargoyleDevilRed",
   },
   {
     name: "フランケンハンド",
@@ -426,6 +447,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "モノキャッチャー",
     },
+    key: "handBlue",
   },
   {
     name: "コロボックル",
@@ -447,6 +469,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "クマタンガード",
     },
+    key: "rabbitPurple",
   },
   {
     name: "ゴブリン",
@@ -467,6 +490,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "トーサン像",
     },
+    key: "goblinBrown",
   },
   {
     name: "さまよう魂",
@@ -488,6 +512,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "気のグローブ",
     },
+    key: "flamePurple",
   },
   {
     name: "十字軍兵",
@@ -508,6 +533,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "４のクリスタル",
     },
+    key: "soldier",
   },
   {
     name: "ダークウィング",
@@ -528,6 +554,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ジャンプ",
     },
+    key: "batPurple",
   },
   {
     name: "ビクビクゴースト",
@@ -545,10 +572,16 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "いつもビクビクしている\n気の弱いオバケ。\nしかし、人をおどろかすのは好き。",
     isBoss: false,
-    fromAreas: ["Europe"],
+    fromAreas: [
+      "EuropeCave",
+      "EuropeCaveCanteen",
+      "EuropeCaveHall",
+      "EuropeCaveLibrary",
+    ],
     possession: {
       name: "ビクビクの書",
     },
+    key: "ghostsWhite",
   },
   {
     name: "オオカミ男",
@@ -566,10 +599,16 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "いつもは人間の姿をしているが、\n丸いものを見るとオオカミに\n変身してしまうクセがある。",
     isBoss: false,
-    fromAreas: ["Europe"],
+    fromAreas: [
+      "EuropeCave",
+      "EuropeCaveCanteen",
+      "EuropeCaveHall",
+      "EuropeCaveLibrary",
+    ],
     possession: {
       name: "３バイン",
     },
+    key: "werewolf",
   },
   {
     name: "フランケン",
@@ -584,10 +623,16 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1700,
     explanation: "人体実験により造られた人造人間。\n見かけによらず心は優しい。",
     isBoss: false,
-    fromAreas: ["Europe"],
+    fromAreas: [
+      "EuropeCave",
+      "EuropeCaveCanteen",
+      "EuropeCaveHall",
+      "EuropeCaveLibrary",
+    ],
     possession: {
       name: "ペロペロハンマー",
     },
+    key: "frankenstein",
   },
   {
     name: "ヴァンパイア",
@@ -605,10 +650,16 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "人の生き血を吸うと言われているが\n実は生き血より\nトマトジュースの方が好き。",
     isBoss: false,
-    fromAreas: ["Europe"],
+    fromAreas: [
+      "EuropeCave",
+      "EuropeCaveCanteen",
+      "EuropeCaveHall",
+      "EuropeCaveLibrary",
+    ],
     possession: {
       name: "ツカエンゾの書",
     },
+    key: "vampire",
   },
   {
     name: "魔法の騎士",
@@ -630,6 +681,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "守のグローブ",
     },
+    key: "knightBrown",
   },
   {
     name: "ソードナイト",
@@ -651,6 +703,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "聖騎士のたて",
     },
+    key: "knightPurple",
   },
   {
     name: "ブラックアーマー",
@@ -671,7 +724,11 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ナイトランス",
     },
+    key: "knightGray",
   },
+  /**
+   * @todo 忘記歐洲的boss是出現在洞窟的哪一層了
+   */
   {
     name: "レッドブリキン",
     level: 0,
@@ -688,10 +745,11 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "ある戦いで死亡した剣士が、\nその恨みをはらずために、\n魂を悪に染めてヨロイに宿った。",
     isBoss: true,
-    fromAreas: ["Europe"],
+    fromAreas: ["EuropeCaveLibrary"],
     possession: {
       name: "雷めいのつるぎ",
     },
+    key: "knightRed",
   },
   {
     name: "雪ガラス",
@@ -710,6 +768,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "６のクリスタル",
     },
+    key: "crowWhite",
   },
   {
     name: "シベリアオオカミ",
@@ -730,6 +789,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "３バイン",
     },
+    key: "wolfWhite",
   },
   {
     name: "石喰らい",
@@ -750,6 +810,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "トーサン像",
     },
+    key: "toadGreen",
   },
   {
     name: "雪だいふく",
@@ -771,6 +832,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "トーサン像",
     },
+    key: "slimePink",
   },
   {
     name: "ラスプーチン",
@@ -791,6 +853,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "エンジェルロッド",
     },
+    key: "wizardPurple",
   },
   {
     name: "スノーマン",
@@ -811,6 +874,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "体のグローブ",
     },
+    key: "snowman",
   },
   {
     name: "氷玉",
@@ -831,6 +895,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "フリーズ",
     },
+    key: "flameBlue",
   },
   {
     name: "クールデビル",
@@ -851,6 +916,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "コチリコの書",
     },
+    key: "gargoyleDevilWhite",
   },
   {
     name: "フリーズガスト",
@@ -870,6 +936,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "速のグローブ",
     },
+    key: "ghostCloudBlue",
   },
   {
     name: "マンモス",
@@ -888,6 +955,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "パワーキノコ",
     },
+    key: "mammothBrown",
   },
   {
     name: "アイスゴーレム",
@@ -908,6 +976,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "スパイクガード",
     },
+    key: "volcanoGray",
   },
   {
     name: "大王イカ",
@@ -927,6 +996,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "モノキャッチャー",
     },
+    key: "squidWhite",
   },
   {
     name: "雪原人キッズ",
@@ -948,6 +1018,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "タンバリン",
     },
+    key: "snowmanSmall",
   },
   {
     name: "雪原人",
@@ -967,6 +1038,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "お楽しみのタネ",
     },
+    key: "snowmanNormal",
   },
   {
     name: "雪原人ミチエーリ",
@@ -988,6 +1060,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "バール力",
     },
+    key: "snowmanBig",
   },
   {
     name: "ワンダーゴースト",
@@ -1008,6 +1081,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ムラデロンの書",
     },
+    key: "ghostsBrown",
   },
   {
     name: "ワタリコウモリ",
@@ -1028,6 +1102,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "カエロッカナ",
     },
+    key: "batRed",
   },
   {
     name: "ゾンビの手",
@@ -1046,6 +1121,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "なし",
     },
+    key: "handBrown",
   },
   {
     name: "マジックマッシュ",
@@ -1066,6 +1142,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "気のグローブ",
     },
+    key: "mushroomOrange",
   },
   {
     name: "コヨーテ",
@@ -1086,6 +1163,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ミセジャンプ",
     },
+    key: "wolfBrown",
   },
   {
     name: "グリズリー",
@@ -1105,6 +1183,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "５のクリスタル",
     },
+    key: "pandaBlack",
   },
   {
     name: "ビッグフット",
@@ -1124,6 +1203,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ラッキーベル",
     },
+    key: "possessedCatBrown",
   },
   {
     name: "プレーリーズ",
@@ -1145,6 +1225,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "力のグローブ",
     },
+    key: "mouseYellow",
   },
   {
     name: "ゴーゴンレプテル",
@@ -1165,6 +1246,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "トーサン像",
     },
+    key: "lizardWarriorBlue",
   },
   {
     name: "ゾンビ",
@@ -1181,10 +1263,11 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "くさったまま生きている死体。\nちなみに、くさりが進むと\nさまようムクロになる。",
     isBoss: false,
-    fromAreas: ["NorthAmerica"],
+    fromAreas: ["NorthAmericaCave", "NorthAmericaCaveB2"],
     possession: {
       name: "パワーキノコ",
     },
+    key: "mummyBrown",
   },
   {
     name: "ヘルシャーマン",
@@ -1205,6 +1288,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "マグファの書",
     },
+    key: "tribesmanYellow",
   },
   {
     name: "チーフイーグル",
@@ -1225,6 +1309,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "３バイン",
     },
+    key: "birdRed",
   },
   {
     name: "ブラッドジェル",
@@ -1245,6 +1330,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "回復ざいSP",
     },
+    key: "slimeRed",
   },
   {
     name: "マグマクラウド",
@@ -1262,10 +1348,11 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "体中から炎を吹き出す雲モンスター。\nその体につつまれたら\n大やけどではすまない。",
     isBoss: false,
-    fromAreas: ["NorthAmerica"],
+    fromAreas: ["NorthAmericaCave", "NorthAmericaCaveB2"],
     possession: {
       name: "バーニー",
     },
+    key: "ghostCloudRed",
   },
   {
     name: "さまようムクロ",
@@ -1282,10 +1369,11 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 5200,
     explanation: "ワンダーゴーストの体。\n魂を求めてさまよい歩く。",
     isBoss: false,
-    fromAreas: ["NorthAmerica"],
+    fromAreas: ["NorthAmericaCave", "NorthAmericaCaveB2"],
     possession: {
       name: "ドクロの盾",
     },
+    key: "skeletonGreen",
   },
   {
     name: "神の目",
@@ -1307,6 +1395,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "雷のうでわ",
     },
+    key: "eyeballGreen",
   },
   {
     name: "ケルベロス",
@@ -1323,10 +1412,11 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "2つの頭を持つ魔界の番犬。\n連続カミツキ攻撃はとても強力。\nでも頭の良さは2頭で1頭分もない。",
     isBoss: true,
-    fromAreas: ["NorthAmerica"],
+    fromAreas: ["NorthAmericaCave", "NorthAmericaCaveB2"],
     possession: {
       name: "マグファの書",
     },
+    key: "twoHeadedBeast",
   },
   {
     name: "ウッディアン",
@@ -1348,6 +1438,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "炎のうでわ",
     },
+    key: "indiantTotemBrown",
   },
   {
     name: "トーテマン",
@@ -1369,6 +1460,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ハヤブサの槍",
     },
+    key: "indiantTotemBlack",
   },
   {
     name: "族長タタンカ",
@@ -1390,6 +1482,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "バトルホーク",
     },
+    key: "indianBoss",
   },
   {
     name: "ヤドクガエル",
@@ -1410,6 +1503,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ドクラマグラの書",
     },
+    key: "frogYellow",
   },
   {
     name: "キラーフラワー",
@@ -1431,6 +1525,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ネムネムの書",
     },
+    key: "manEatingPlantPink",
   },
   {
     name: "森の精",
@@ -1452,6 +1547,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ばんのう薬",
     },
+    key: "rabbitGreen",
   },
   {
     name: "クビカリ族",
@@ -1473,6 +1569,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "メッセヨの書",
     },
+    key: "warriorBrown",
   },
   {
     name: "ウォーリザード",
@@ -1493,6 +1590,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ダウンの書",
     },
+    key: "lizardWarriorPurple",
   },
   {
     name: "フックの魂",
@@ -1514,6 +1612,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "シニガーミの書",
     },
+    key: "skeletonPurple",
   },
   {
     name: "ポイズンスモッグ",
@@ -1535,6 +1634,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ブリオンの書",
     },
+    key: "ghostCloudPurple",
   },
   {
     name: "ヨロイエビ",
@@ -1555,6 +1655,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "鉄のグローブ",
     },
+    key: "crawfishGray",
   },
   {
     name: "ケツアルコアトル",
@@ -1575,6 +1676,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "黄金の盾",
     },
+    key: "birdPurple",
   },
   {
     name: "テンタクルズ",
@@ -1595,6 +1697,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ゼニキャッチャー",
     },
+    key: "squidPink",
   },
   {
     name: "ククルカン",
@@ -1611,10 +1714,11 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 10200,
     explanation: "マヤの風の神。\n強力な風の魔法を持つ。",
     isBoss: false,
-    fromAreas: ["SouthAmerica"],
+    fromAreas: ["SouthAmericaCave", "SouthAmericaCaveB2", "SouthAmericaCaveB3"],
     possession: {
       name: "ヒュギューオの書",
     },
+    key: "wizardRed",
   },
   {
     name: "テスカポリトカ",
@@ -1632,10 +1736,11 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "魔王とも呼ばれた恐ろしい神。\n兄弟のケツアルコアトルとは\n仲が悪い。",
     isBoss: false,
-    fromAreas: ["SouthAmerica"],
+    fromAreas: ["SouthAmericaCave", "SouthAmericaCaveB2", "SouthAmericaCaveB3"],
     possession: {
       name: "黄金の杖",
     },
+    key: "gargoyleYellow",
   },
   {
     name: "レプリカ石像",
@@ -1657,7 +1762,11 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "コブタの貯金箱",
     },
+    key: "golemBrown",
   },
+  /**
+   * @todo 忘記南美的boss出現在哪裡了
+   */
   {
     name: "イマーヘン",
     level: 0,
@@ -1678,6 +1787,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "太陽の盾",
     },
+    key: "golemYellow",
   },
   {
     name: "ウォッチャー",
@@ -1699,6 +1809,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ネンドーリキの書",
     },
+    key: "eyeballRed",
   },
   {
     name: "コビトペンギン",
@@ -1719,6 +1830,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ポヨヨンシールド",
     },
+    key: "penguinBlue",
   },
   {
     name: "黒い妖精",
@@ -1740,6 +1852,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "マグファの書",
     },
+    key: "gargoyleDevilBlack",
   },
   {
     name: "ベロリンガ",
@@ -1761,6 +1874,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "お楽しみのタネ",
     },
+    key: "toadOrange",
   },
   {
     name: "ディンゴ",
@@ -1780,6 +1894,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "５のクリスタル",
     },
+    key: "wolfBlue",
   },
   {
     name: "ヤウイ",
@@ -1801,6 +1916,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ムラデロンの書",
     },
+    key: "possessedCatWhite",
   },
   {
     name: "モウセンゴケ",
@@ -1822,6 +1938,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ワナ",
     },
+    key: "manEatingPlantBrown",
   },
   {
     name: "マタンゴ",
@@ -1842,6 +1959,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ばんのう薬",
     },
+    key: "mushroomPurple",
   },
   {
     name: "ノラゴブリン",
@@ -1863,6 +1981,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "４バイン",
     },
+    key: "goblinRed",
   },
   {
     name: "サンドスイマー",
@@ -1883,6 +2002,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ミエるんです",
     },
+    key: "slimeYellow",
   },
   {
     name: "ドロウアーム",
@@ -1904,6 +2024,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "復活ざい",
     },
+    key: "handRed",
   },
   {
     name: "ケープクロウ",
@@ -1923,6 +2044,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ソトジャンプ",
     },
+    key: "crowRed",
   },
   {
     name: "アースドラゴン",
@@ -1944,6 +2066,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "グラズシーンの書",
     },
+    key: "dragonGreen",
   },
   {
     name: "オセアニアデビル",
@@ -1965,6 +2088,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "神速のリング",
     },
+    key: "weasel",
   },
   {
     name: "フリルドリザード",
@@ -1986,6 +2110,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "スネークロッド",
     },
+    key: "frillLizard",
   },
   {
     name: "ウンフーク",
@@ -2007,6 +2132,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "コアラのぼう",
     },
+    key: "koala",
   },
   {
     name: "サビトマトガエル",
@@ -2027,6 +2153,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ラストルズ",
     },
+    key: "frogOrange",
   },
   {
     name: "死の呼び子",
@@ -2048,6 +2175,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "よみのカマ",
     },
+    key: "ghostsRed",
   },
   {
     name: "呪われし者",
@@ -2069,6 +2197,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "4バイン",
     },
+    key: "skeletonRed",
   },
   {
     name: "マサイウォーリア",
@@ -2088,6 +2217,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "マモるんです",
     },
+    key: "warriorYellow",
   },
   {
     name: "みつりょう者",
@@ -2109,6 +2239,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ゼニキャッチャー",
     },
+    key: "thiefYellow",
   },
   {
     name: "ウツボカズラ",
@@ -2130,6 +2261,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "あま～い汁",
     },
+    key: "manEatingPlantPurple",
   },
   {
     name: "レイラケルタ",
@@ -2150,6 +2282,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "バイバイン",
     },
+    key: "lizardWarriorRed",
   },
   {
     name: "ビーストキング",
@@ -2171,6 +2304,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "マグファイアの書",
     },
+    key: "lionBrown",
   },
   {
     name: "グレートアニマル",
@@ -2192,6 +2326,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "グラズシーンの書",
     },
+    key: "elephant",
   },
   {
     name: "マサイハンター",
@@ -2212,6 +2347,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ウラミム",
     },
+    key: "warriorGray",
   },
   {
     name: "ネクロマンサー",
@@ -2233,6 +2369,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "リバイブ",
     },
+    key: "tribesmanRed",
   },
   {
     name: "アサシン",
@@ -2254,6 +2391,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "忍のグローブ",
     },
+    key: "assassin",
   },
   {
     name: "グランバザーミ",
@@ -2274,6 +2412,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ヒーリングベル",
     },
+    key: "crawfishRed",
   },
   {
     name: "海竜",
@@ -2295,6 +2434,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ドラゴンシールド",
     },
+    key: "dragonBlue",
   },
   {
     name: "ニセ宝箱",
@@ -2315,6 +2455,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "水晶のネックレス",
     },
+    key: "mimicBrown",
   },
   {
     name: "シビトコウモリ",
@@ -2331,10 +2472,17 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "しっ黒紅目のコウモリ。\n王家の墓の中に住みつき、\n死んだ人の魂を食らって生きる。",
     isBoss: false,
-    fromAreas: ["Africa"],
+    fromAreas: [
+      "AfricaCave",
+      "AfricaCaveB2",
+      "AfricaCaveB3Center",
+      "AfricaCaveB3Left",
+      "AfricaCaveB3Right",
+    ],
     possession: {
       name: "バキュムーンの書",
     },
+    key: "batBlack",
   },
   {
     name: "墓荒らし",
@@ -2352,10 +2500,17 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "古代王家の墓を荒らし回る\nトレジャーハンター。\n最後は呪われし者となるか⋯?",
     isBoss: false,
-    fromAreas: ["Africa"],
+    fromAreas: [
+      "AfricaCave",
+      "AfricaCaveB2",
+      "AfricaCaveB3Center",
+      "AfricaCaveB3Left",
+      "AfricaCaveB3Right",
+    ],
     possession: {
       name: "ゼニキャッチャー",
     },
+    key: "thiefBlue",
   },
   {
     name: "ミイラ",
@@ -2373,10 +2528,17 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "古代王のじゅう者。\n王復活の世話をするため\nともに眠りについた。",
     isBoss: false,
-    fromAreas: ["Africa"],
+    fromAreas: [
+      "AfricaCave",
+      "AfricaCaveB2",
+      "AfricaCaveB3Center",
+      "AfricaCaveB3Left",
+      "AfricaCaveB3Right",
+    ],
     possession: {
       name: "ソトジャンプ",
     },
+    key: "mummyWhite",
   },
   {
     name: "ファラオの兵",
@@ -2394,10 +2556,17 @@ const monsterList: MonsterFixedAttrs[] = [
     explanation:
       "古代王に仕えた兵士。\n王家の墓に入り込んだ者達を\nまっ殺するため歩き回る。",
     isBoss: false,
-    fromAreas: ["Africa"],
+    fromAreas: [
+      "AfricaCave",
+      "AfricaCaveB2",
+      "AfricaCaveB3Center",
+      "AfricaCaveB3Left",
+      "AfricaCaveB3Right",
+    ],
     possession: {
       name: "メカニカルガード",
     },
+    key: "mummyGray",
   },
   {
     name: "スフィンクス",
@@ -2414,10 +2583,17 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 20800,
     explanation: "王家の墓の番人。\n高い知能を持ち\n冒険者にナゾかけをする。",
     isBoss: false,
-    fromAreas: ["Africa"],
+    fromAreas: [
+      "AfricaCave",
+      "AfricaCaveB2",
+      "AfricaCaveB3Center",
+      "AfricaCaveB3Left",
+      "AfricaCaveB3Right",
+    ],
     possession: {
       name: "ばんのう薬",
     },
+    key: "lionYellow",
   },
   {
     name: "土の精",
@@ -2438,6 +2614,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "命のグローブ",
     },
+    key: "volcanoBrown",
   },
   {
     name: "ホルス神",
@@ -2459,6 +2636,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "おしおき棒",
     },
+    key: "birdYellow",
   },
   {
     name: "ゴーストレオ",
@@ -2479,6 +2657,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "法のグローブ",
     },
+    key: "lionPurple",
   },
   {
     name: "マコンデの分身",
@@ -2500,6 +2679,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ムラデロンの書",
     },
+    key: "evilMageClone",
   },
   {
     name: "マコンデ",
@@ -2521,6 +2701,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "めいふの杖",
     },
+    key: "evilMage",
   },
   {
     name: "船ユウレイ",
@@ -2541,6 +2722,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "シニガーミの書",
     },
+    key: "ghostsPurple",
   },
   {
     name: "闇の落とし子",
@@ -2561,6 +2743,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ヒュギューオの書",
     },
+    key: "gargoyleDevilPurple",
   },
   {
     name: "氷の刃",
@@ -2582,6 +2765,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "５バイン",
     },
+    key: "crawfishBlue",
   },
   {
     name: "オオアザラシ",
@@ -2601,6 +2785,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "復活ざい",
     },
+    key: "walrus",
   },
   {
     name: "キラーポーラズ",
@@ -2621,6 +2806,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ソトジャンプ",
     },
+    key: "gerbil",
   },
   {
     name: "ブリザード",
@@ -2642,6 +2828,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ヘイカモンの書",
     },
+    key: "ghostCloudWhite",
   },
   {
     name: "オーロラの民",
@@ -2663,6 +2850,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "コチコッチンの書",
     },
+    key: "rabbitBlue",
   },
   {
     name: "氷山マンモス",
@@ -2682,6 +2870,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "カメレオストーン",
     },
+    key: "mammothWhite",
   },
   {
     name: "チタノザウロス",
@@ -2703,6 +2892,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "破壊のリング",
     },
+    key: "dragonRed",
   },
   {
     name: "シロクマラ",
@@ -2724,6 +2914,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "氷河の盾",
     },
+    key: "polarBear",
   },
   {
     name: "アイストード",
@@ -2744,6 +2935,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "トレーナ岩",
     },
+    key: "frogBlue",
   },
   {
     name: "ピラニアペンギン",
@@ -2765,6 +2957,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "きせきのハリガネ",
     },
+    key: "penguinRed",
   },
   {
     name: "ビックエンペラー",
@@ -2786,6 +2979,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "魔法の薬",
     },
+    key: "fatPenguin",
   },
   {
     name: "ハーミット",
@@ -2806,6 +3000,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ポカドンの書",
     },
+    key: "wizardWhite",
   },
   {
     name: "ビホルダー",
@@ -2826,6 +3021,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ショバチェンの書",
     },
+    key: "eyeballGray",
   },
   {
     name: "ゴールドギドラ",
@@ -2847,6 +3043,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "魔人リング",
     },
+    key: "dragonYellow",
   },
   {
     name: "ペギゴン",
@@ -2868,6 +3065,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "吹雪の杖",
     },
+    key: "penguinDemon",
   },
   {
     name: "サンダーボール",
@@ -2889,6 +3087,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ゴロサンダーの書",
     },
+    key: "flameYellow",
   },
   {
     name: "クラーケン",
@@ -2910,6 +3109,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ケイタイ",
     },
+    key: "squidPurple",
   },
   {
     name: "ムーの使い",
@@ -2931,6 +3131,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ネムネムの書",
     },
+    key: "gargoylePurple",
   },
   {
     name: "パンドラの箱",
@@ -2951,6 +3152,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ヒーリングベル",
     },
+    key: "mimicGray",
   },
   {
     name: "ムーの心",
@@ -2972,6 +3174,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ダウンの書",
     },
+    key: "skeletonYellow",
   },
   {
     name: "ムーの戦士",
@@ -2993,6 +3196,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "マモるんです",
     },
+    key: "knightYellow",
   },
   {
     name: "ムーの番兵",
@@ -3014,6 +3218,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "マグファイアの書",
     },
+    key: "guardian",
   },
   {
     name: "ライディーン",
@@ -3035,6 +3240,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ロードオブリング",
     },
+    key: "thunder",
   },
   {
     name: "アイテムミミック",
@@ -3056,6 +3262,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "＊アイテム",
     },
+    key: "mimicYellow",
   },
   {
     name: "魔法ミミック",
@@ -3077,6 +3284,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "＊魔法",
     },
+    key: "mimicBlue",
   },
   {
     name: "？ミミック",
@@ -3098,6 +3306,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "＊貴重な物",
     },
+    key: "mimicRed",
   },
   {
     name: "白ミミック",
@@ -3119,6 +3328,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "＊良い物か悪い物",
     },
+    key: "mimicWhite",
   },
   {
     name: "金ミミック",
@@ -3139,6 +3349,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "＊お金(週数×5000）",
     },
+    key: "mimicGolden",
   },
   {
     name: "鍵ミミック",
@@ -3159,6 +3370,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "＊アクセサリー",
     },
+    key: "mimicKey",
   },
   {
     name: "モンモン",
@@ -3178,6 +3390,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "きせきのしずく",
     },
+    key: "monkey",
   },
   {
     name: "ウィウィ",
@@ -3199,6 +3412,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "＊ウィウィバッジなど",
     },
+    key: "wiwi",
   },
   {
     name: "ガママル",
@@ -3220,6 +3434,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "和銅一文字",
     },
+    key: "ninja",
   },
   {
     name: "パッチューズ",
@@ -3240,6 +3455,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ネムネムの書",
     },
+    key: "patches",
   },
   {
     name: "パッチー36号",
@@ -3260,6 +3476,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "きせきのはりがね",
     },
+    key: "patchy36",
   },
   {
     name: "パッチー１号",
@@ -3280,6 +3497,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ハートのくつ",
     },
+    key: "patchy1",
   },
   {
     name: "バイラル",
@@ -3301,6 +3519,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "バイラルフック",
     },
+    key: "pirate",
   },
   {
     name: "ペロ",
@@ -3321,6 +3540,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ゼブラがら額当て",
     },
+    key: "pero",
   },
   {
     name: "アリサ",
@@ -3342,6 +3562,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ヌイグルミ",
     },
+    key: "demonChild",
   },
   {
     name: "シャオロン",
@@ -3362,6 +3583,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "毒手",
     },
+    key: "monk",
   },
   {
     name: "グラディエーター",
@@ -3382,6 +3604,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "破壊のリング(戦闘後消失）",
     },
+    key: "gladiator",
   },
   {
     name: "キィ",
@@ -3403,6 +3626,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "極悪ピアス",
     },
+    key: "arabianGuard",
   },
   {
     name: "セルモン",
@@ -3424,6 +3648,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "ピーポバッジ",
     },
+    key: "hammerKnight",
   },
   {
     name: "スナッチ",
@@ -3445,6 +3670,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "",
     },
+    key: "fighter",
   },
   {
     name: "ワルサー",
@@ -3466,6 +3692,7 @@ const monsterList: MonsterFixedAttrs[] = [
     possession: {
       name: "＊ワルサーバッジなど",
     },
+    key: "evo",
   },
 ];
 
@@ -3533,7 +3760,7 @@ const monsters = satisfiesRecords<MonsterFixedAttrs>()({
   snowmanBig: monsterList[49],
   ghostsBrown: monsterList[50],
   batRed: monsterList[51],
-  handPurple: monsterList[52],
+  handBrown: monsterList[52],
   mushroomOrange: monsterList[53],
   wolfBrown: monsterList[54],
   pandaBlack: monsterList[55],
@@ -3546,7 +3773,7 @@ const monsters = satisfiesRecords<MonsterFixedAttrs>()({
   slimeRed: monsterList[62],
   ghostCloudRed: monsterList[63],
   skeletonGreen: monsterList[64],
-  eyeBallGreen: monsterList[65],
+  eyeballGreen: monsterList[65],
   twoHeadedBeast: monsterList[66],
   indiantTotemBrown: monsterList[67],
   indiantTotemBlack: monsterList[68],
@@ -3567,7 +3794,7 @@ const monsters = satisfiesRecords<MonsterFixedAttrs>()({
   golemYellow: monsterList[83],
   eyeballRed: monsterList[84],
   penguinBlue: monsterList[85],
-  gargoyleDevilGray: monsterList[86],
+  gargoyleDevilBlack: monsterList[86],
   toadOrange: monsterList[87],
   wolfBlue: monsterList[88],
   possessedCatWhite: monsterList[89],
@@ -3640,11 +3867,11 @@ const monsters = satisfiesRecords<MonsterFixedAttrs>()({
   monkey: monsterList[156],
   wiwi: monsterList[157],
   ninja: monsterList[158],
-  パッチューズ: monsterList[159],
-  パッチー36号: monsterList[160],
-  パッチー１号: monsterList[161],
+  patches: monsterList[159],
+  patchy36: monsterList[160],
+  patchy1: monsterList[161],
   pirate: monsterList[162],
-  ペロ: monsterList[163],
+  pero: monsterList[163],
   demonChild: monsterList[164],
   monk: monsterList[165],
   gladiator: monsterList[166],

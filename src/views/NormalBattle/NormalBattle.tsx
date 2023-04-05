@@ -7,13 +7,13 @@ import gameProgressCtx from "reducers/gameProgress";
 import styles from "./NormalBattle.module.css";
 import type { NormalBattleComponentTypes } from "global";
 import VS from "./VS";
-import ShowVertexTypography from "./ShowVertexTypography";
+import ShowVertexTerrain from "./ShowVertexTerrain";
 import SwapCards from "./SwapCards";
 
 // Stateless vars declare.
 const Components: { [key in NormalBattleComponentTypes]: () => JSX.Element } = {
   VS,
-  ShowVertexTypography,
+  ShowVertexTerrain,
   SwapCards,
 };
 
@@ -48,7 +48,7 @@ function useMetaData() {
     switch (curComponent) {
       case "VS":
         return;
-      case "ShowVertexTypography":
+      case "ShowVertexTerrain":
         return;
       case "SwapCards":
         return handleKeyUpForSwapCards(e);

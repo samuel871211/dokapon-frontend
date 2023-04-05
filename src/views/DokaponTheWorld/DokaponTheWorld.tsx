@@ -36,6 +36,7 @@ import dokaponTheWorldMap from "data/maps/dokaponTheWorldMap";
 import SelectCharacterToCompare from "./SelectCharacterToCompare";
 import vertexNameToComponentType from "data/vertexNameToComponentType";
 import isGoBack from "utils/isGoBack";
+import getRandomMonsterByArea from "utils/getRandomMonsterByArea";
 
 // Stateless vars declare.
 const emptyGraphDSA = Object.freeze({});
@@ -383,6 +384,11 @@ function useMetaData() {
     };
     if (noMoreStep) return handleKeyUpForWalkConfirm(e);
     switch (e.key.toLowerCase()) {
+      case gamePadSetting.cross:
+        if (curPath.length === 1) return;
+        curPath.pop();
+        currentPlayer.vertexIdx = curPath[curPath.length - 1]?.idx;
+        break;
       case gamePadSetting.circle:
         curComponents.splice(0, 0, "Check");
         CheckState.showMiniMap = true;
@@ -448,10 +454,32 @@ function useMetaData() {
   }
   function handlePlayerLandingOnVertex(): void {
     switch (currentPlayerVertex.name) {
-      case "BattleField":
+      case "BattleField": {
         curComponents.length = 0;
         gameProgress.currentView = "NormalBattle";
+        const playersOnMyVertex = playersAttrs.filter(
+          (playerAttrs, idx) =>
+            idx !== currentPlayerIdx &&
+            playerAttrs.area === currentPlayer.area &&
+            playerAttrs.vertexIdx === currentPlayer.vertexIdx
+        );
+        // @todo 需處理驚嘆號事件
+        if (playersOnMyVertex.length === 0) {
+          const randomEnemy = getRandomMonsterByArea(currentPlayer.area);
+          currentPlayer.battleEnemy = { type: "monster", name: randomEnemy };
+        }
+        // 只有一個人，就跟他戰鬥了
+        if (playersOnMyVertex.length === 1) {
+          currentPlayer.battleEnemy = {
+            name: playersOnMyVertex[0].name,
+            type: "player",
+          };
+          break;
+        }
+        // @todo player大於1人，需跳出dialog讓使用者選擇要先跟誰戰鬥
+        if (playersOnMyVertex.length > 1) break;
         break;
+      }
       case "MagicBookField":
       case "TreasureField":
       case "CollectMoneyField":
@@ -475,7 +503,7 @@ function useMetaData() {
         /**
          * 滑鼠hover上去，型別應該要是`never`，才代表所有case都有涵蓋到
          */
-        currentPlayerVertex.name;
+        currentPlayerVertex;
     }
   }
   function handleKeyUpForWalkToAvailableVertices(
@@ -1566,7 +1594,6 @@ function useMetaData() {
   useEffect(windowResizeEffect, []);
   useEffect(moveMapToPlayerVertex, [currentPlayerIdx, currentPlayer.vertexIdx]);
   useEffect(focusContainerElAfterLoaded, []);
-  // useEffect(() => {}, [curPath.length]);
   return {
     containerRefEl,
     handleKeyDown,

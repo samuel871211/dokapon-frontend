@@ -132,7 +132,7 @@ export type DokaponTheWorldComponentTypes =
   | "SelectCharacterToCompare";
 export type NormalBattleComponentTypes =
   | "VS"
-  | "ShowVertexTypography"
+  | "ShowVertexTerrain"
   | "SwapCards";
 export type HomeComponentTypes = "ButtonGroup" | "Settings" | "Book";
 export type GameProgress = {
@@ -546,7 +546,6 @@ export type Cell = {
   id: string;
 };
 export type Vertex = Cell & {
-  name: VertexTypes;
   position: Position;
   top?: string;
   left?: string;
@@ -555,7 +554,18 @@ export type Vertex = Cell & {
   edges: string[];
   area: AreaTypes;
   isHide?: true;
-};
+} & (
+    | {
+        name: "BattleField";
+        /**
+         * @todo `BattleField`需要細分地形
+         */
+        terrain?: TerrainTypes;
+      }
+    | {
+        name: Exclude<VertexTypes, "BattleField">;
+      }
+  );
 export type Edge = Cell & {
   name: EdgeTypes;
   start: Position;
@@ -564,6 +574,7 @@ export type Edge = Cell & {
   endId: string;
   isHide?: true;
 };
+export type TerrainTypes = string;
 export type AreaTypes =
   | "Asia"
   | "AsiaCave"
@@ -687,6 +698,15 @@ type PlayerAttrs = {
   name: string;
   isNPC: boolean;
   characterType: "player" | "npcPlayer";
+  battleEnemy?:
+    | {
+        type: "monster";
+        name: MonsterTypes;
+      }
+    | {
+        type: "player";
+        name: string;
+      };
   /**
    * 1 ~ 99
    */
@@ -866,6 +886,7 @@ export type magicDefense = {
   }[];
 };
 export type MonsterFixedAttrs = {
+  key: MonsterTypes;
   name: TextsKeys;
   level: number;
   attack: number;
@@ -880,6 +901,10 @@ export type MonsterFixedAttrs = {
   money: number;
   isBoss: boolean;
   fromAreas: AreaTypes[];
+  /**
+   * @todo 需等待vertex的地形都定義好
+   */
+  fromTerrains?: TerrainTypes[];
   explanation: TextsKeys;
   possession: {
     name: string;

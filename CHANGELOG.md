@@ -1,3 +1,11 @@
+## 0.3.0
+
+### added
+
+- component `VS` 跟 `ShowVertexTerrain` 為了開發方便，暫時設定為"點選鍵盤任意按鈕，跳到下一個步驟"
+- 輪盤結果需要顯示 1 秒，再跳到下一個 component
+- component `ShowVertexTerrain` 先完成皮，背景暫時沒有圖片
+
 ## 0.2.0
 
 ### added

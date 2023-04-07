@@ -39,6 +39,7 @@ import isGoBack from "utils/isGoBack";
 import getRandomMonsterByArea from "utils/getRandomMonsterByArea";
 
 // Stateless vars declare.
+const { getRandomIntInclusive } = Math;
 const emptyGraphDSA = Object.freeze({});
 const level1ToMaxPageIdx: { [key: string]: number } = Object.freeze({
   "02": 1,
@@ -287,6 +288,7 @@ function useMetaData() {
   const currentPlayerVertex = currentMap.vertices[currentPlayer.vertexIdx];
   const {
     curPath,
+    curStepCount,
     curComponents,
     curClickedCharacters,
     bossMonsters,
@@ -373,7 +375,6 @@ function useMetaData() {
     }
   }
   function handleKeyUpForWalk(e: KeyboardEvent<HTMLDivElement>): void {
-    const { curStepCount } = DokaponTheWorldState;
     const { top, bottom, left, right } = currentPlayerVertex;
     const noMoreStep = curPath.length - 1 === curStepCount;
     const nextVertexIds = {
@@ -1095,18 +1096,15 @@ function useMetaData() {
     }
     setGameProgress({ ...gameProgress });
   }
-  /**
-   * @todo 輪盤結果需要顯示1秒，再跳到下一個component
-   */
   function handleKeyUpForRoulette(e: KeyboardEvent<HTMLDivElement>) {
     switch (e.key.toLowerCase()) {
       case gamePadSetting.circle: {
         const stepCount =
-          Math.getRandomIntInclusive(0, 3) + Math.getRandomIntInclusive(0, 3);
+          getRandomIntInclusive(0, 3) + getRandomIntInclusive(0, 3);
         const curVertexId = currentMap.vertices[currentPlayer.vertexIdx].id;
         DokaponTheWorldState.curStepCount = stepCount;
         curPath.push({ id: curVertexId, idx: currentPlayer.vertexIdx });
-        curComponents[0] = "Walk";
+        // curComponents[0] = "Walk";
         break;
       }
       case gamePadSetting.cross:
@@ -1584,7 +1582,13 @@ function useMetaData() {
   function focusContainerElAfterLoaded() {
     containerRefEl.current?.focus();
   }
-  // function
+  function waitForRouletteStop() {
+    if (curStepCount === -1) return;
+    setTimeout(() => {
+      curComponents[0] = "Walk";
+      setGameProgress({ ...gameProgress });
+    }, 1000);
+  }
   useEffect(handleMapMove, [keyDownArrows]);
   useEffect(handleBottomDialogSentencesQueue, [curComponents[0]]);
   useEffect(updateCellsGroupBBox, [currentPlayer.area]);
@@ -1594,6 +1598,7 @@ function useMetaData() {
   useEffect(windowResizeEffect, []);
   useEffect(moveMapToPlayerVertex, [currentPlayerIdx, currentPlayer.vertexIdx]);
   useEffect(focusContainerElAfterLoaded, []);
+  useEffect(waitForRouletteStop, [curStepCount]);
   return {
     containerRefEl,
     handleKeyDown,

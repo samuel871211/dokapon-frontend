@@ -41,18 +41,25 @@ function useMetaData() {
   const { t } = useTranslation();
   const containerRefEl = useRef<HTMLDivElement>(null);
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
-  const {
-    NormalBattleState: { curComponent },
-  } = gameProgress;
+  const { NormalBattleState } = gameProgress;
+  const { curComponent } = NormalBattleState;
   function handleKeyUp(e: KeyboardEvent<HTMLDivElement>) {
     switch (curComponent) {
       case "VS":
-        return;
+        return handleKeyUpForVS(e);
       case "ShowVertexTerrain":
-        return;
+        return handleKeyUpForShowVertexTerrain(e);
       case "SwapCards":
         return handleKeyUpForSwapCards(e);
     }
+  }
+  function handleKeyUpForVS(e: KeyboardEvent<HTMLDivElement>) {
+    NormalBattleState.curComponent = "ShowVertexTerrain";
+    setGameProgress({ ...gameProgress });
+  }
+  function handleKeyUpForShowVertexTerrain(e: KeyboardEvent<HTMLDivElement>) {
+    NormalBattleState.curComponent = "SwapCards";
+    setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForSwapCards(e: KeyboardEvent<HTMLDivElement>) {
     return;

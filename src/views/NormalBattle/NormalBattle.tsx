@@ -1,5 +1,5 @@
 // Related third party imports.
-import { KeyboardEvent, useContext, useRef } from "react";
+import { KeyboardEvent, useContext, useEffect, useRef } from "react";
 
 // Local application/library specific imports.
 import useTranslation from "hooks/useTranslation";
@@ -64,6 +64,7 @@ function useMetaData() {
   function handleKeyUpForSwapCards(e: KeyboardEvent<HTMLDivElement>) {
     return;
   }
+  useEffect(() => containerRefEl.current?.focus(), []);
   return {
     containerRefEl,
     handleKeyUp,

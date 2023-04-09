@@ -1,6 +1,7 @@
 // Related third party imports.
 
 // Local application/library specific imports.
+import classNames from "classnames";
 import styles from "./AttrCircle.module.css";
 
 // Stateless vars declare.
@@ -9,7 +10,7 @@ export default AttrCircle;
 
 function AttrCircle(props: {
   attr: string;
-  value: number | string;
+  value?: number | string;
   fontSize?: string;
   /**
    * color of value text
@@ -29,7 +30,7 @@ function AttrCircle(props: {
 
   return (
     <div
-      className={`${styles.attrCircleContainer} ${className}`}
+      className={classNames(styles.attrCircleContainer, className)}
       style={{ fontSize, lineHeight: fontSize, width, height }}
     >
       <div>{attr}</div>

@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import styles from "./FullHpBar.module.css";
 
 export default FullHpBar;
@@ -8,7 +9,7 @@ function FullHpBar(props: {
 }) {
   const { hp, className } = props;
   return (
-    <div className={`${styles.fullHpBar} ${className}`}>
+    <div className={classNames(styles.fullHpBar, className)}>
       <div className={styles.row1}>
         <div>HP</div>
         <div

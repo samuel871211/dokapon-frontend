@@ -466,6 +466,9 @@ export type GameProgress = {
   };
   NormalBattleState: {
     curComponent: NormalBattleComponentTypes;
+    SwapCardState: {
+      isCardSwiched: boolean;
+    };
   };
 };
 export type ViewTypes =

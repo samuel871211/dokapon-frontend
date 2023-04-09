@@ -16,7 +16,13 @@ export default SwapCards;
 
 function SwapCards() {
   const {
-    gameProgress: { playersAttrs, currentPlayerIdx },
+    gameProgress: {
+      playersAttrs,
+      currentPlayerIdx,
+      NormalBattleState: {
+        SwapCardState: { isCardSwiched },
+      },
+    },
   } = useContext(gameProgressCtx);
   const currentPlayer = playersAttrs[currentPlayerIdx];
   const { job, gender, color } = currentPlayer;
@@ -105,16 +111,16 @@ function SwapCards() {
         </div>
       </div>
       <div className={styles.bottomArea}>
-        <div className={styles.card1Container}>
+        <div className={styles.card1Container} data-switched={isCardSwiched}>
           <div className={styles.card}></div>
         </div>
         <div className={styles.direction4}>
-          <div className={styles.directionTop}></div>
-          <div className={styles.directionLeft}></div>
-          <div className={styles.directionRight}></div>
-          <div className={styles.directionBottom}></div>
+          <div className={styles.directionTop}>▲</div>
+          <div className={styles.directionLeft}>◀</div>
+          <div className={styles.directionRight}>▶</div>
+          <div className={styles.directionBottom}>▼</div>
         </div>
-        <div className={styles.card2Container}>
+        <div className={styles.card2Container} data-switched={isCardSwiched}>
           <div className={styles.card}></div>
         </div>
       </div>

@@ -792,6 +792,9 @@ const initGameProgress: GameProgress = {
   },
   NormalBattleState: {
     curComponent: "VS",
+    SwapCardState: {
+      isCardSwiched: false,
+    },
   },
   playersAttrs: [
     {

@@ -41,8 +41,8 @@ function useMetaData() {
   const { t } = useTranslation();
   const containerRefEl = useRef<HTMLDivElement>(null);
   const { gameProgress, setGameProgress } = useContext(gameProgressCtx);
-  const { NormalBattleState } = gameProgress;
-  const { curComponent } = NormalBattleState;
+  const { NormalBattleState, gamePadSetting } = gameProgress;
+  const { curComponent, SwapCardState } = NormalBattleState;
   function handleKeyUp(e: KeyboardEvent<HTMLDivElement>) {
     switch (curComponent) {
       case "VS":
@@ -62,7 +62,13 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForSwapCards(e: KeyboardEvent<HTMLDivElement>) {
-    return;
+    switch (e.key.toLowerCase()) {
+      case gamePadSetting.arrowRight:
+      case gamePadSetting.arrowLeft:
+        SwapCardState.isCardSwiched = !SwapCardState.isCardSwiched;
+        break;
+    }
+    setGameProgress({ ...gameProgress });
   }
   useEffect(() => containerRefEl.current?.focus(), []);
   return {

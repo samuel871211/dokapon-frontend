@@ -37,7 +37,7 @@ function SelectJob() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, currentPlayerIdx } = gameProgress;
-  const currentPlayerJob = playersAttrs[currentPlayerIdx].job;
+  const { players, currentPlayerIdx } = gameProgress;
+  const currentPlayerJob = players[currentPlayerIdx].job;
   return { currentPlayerJob };
 }

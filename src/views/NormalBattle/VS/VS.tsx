@@ -4,6 +4,7 @@ import { useContext } from "react";
 // Local application/library specific imports.
 import styles from "./VS.module.css";
 import gameProgressCtx from "reducers/gameProgress";
+import useBattleCharacter from "hooks/useBattleCharacter";
 
 // Stateless vars declare.
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
@@ -12,16 +13,19 @@ export default VS;
 
 function VS() {
   const {
-    gameProgress: { playersAttrs, currentPlayerIdx },
+    gameProgress: { players, currentPlayerIdx },
   } = useContext(gameProgressCtx);
-  const currentPlayer = playersAttrs[currentPlayerIdx];
-  const { job, gender, color, battleEnemy } = currentPlayer;
-  const enemyPlayer = playersAttrs.find((p) => p.name === battleEnemy?.name);
+  const currentPlayer = players[currentPlayerIdx];
+  const { job, gender, color } = currentPlayer;
+  const battleCharacter = useBattleCharacter();
+  if (!battleCharacter) throw new Error("no battle character");
+  const { characterType } = battleCharacter;
+
   const src1 = `${backendBaseUrl}/imgs/${job}_${gender}_${color}_vs.png`;
   const src2 =
-    battleEnemy?.type === "monster"
-      ? `${backendBaseUrl}/imgs/${battleEnemy.name}_vs.png`
-      : `${backendBaseUrl}/imgs/${enemyPlayer?.job}_${enemyPlayer?.gender}_${enemyPlayer?.color}_vs.png`;
+    characterType === "monster"
+      ? `${backendBaseUrl}/imgs/${battleCharacter.key}_vs.png`
+      : `${backendBaseUrl}/imgs/${battleCharacter.job}_${battleCharacter.gender}_${battleCharacter.color}_vs.png`;
   return (
     <div className={styles.vsContainer}>
       <div className={styles.row1}>

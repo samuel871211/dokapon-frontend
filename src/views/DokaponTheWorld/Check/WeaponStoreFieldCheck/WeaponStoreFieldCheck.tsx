@@ -115,7 +115,7 @@ function useMetaData() {
   const { curListPage } =
     gameProgress.DokaponTheWorldState.WeaponStoreFieldCheckState;
   const { curCenterVertex } = gameProgress.DokaponTheWorldState;
-  const curPlayer = gameProgress.playersAttrs[gameProgress.currentPlayerIdx];
+  const curPlayer = gameProgress.players[gameProgress.currentPlayerIdx];
   const curPlayerWeapon = weapons[curPlayer.weapon];
   const curPlayerShield = shields[curPlayer.shield];
   const weaponStore = weaponStores[curCenterVertex.area];

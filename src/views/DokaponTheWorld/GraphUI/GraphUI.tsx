@@ -88,8 +88,13 @@ const Components = {
 export default GraphUI;
 
 function GraphUI() {
-  const { SVGTranslate, Cells, PlayersChess, BossMonstersChess } =
-    useMetaData();
+  const {
+    SVGTranslate,
+    Cells,
+    PlayersChess,
+    BossMonstersChess,
+    shouldTransition,
+  } = useMetaData();
   return (
     <div className={styles.graphUIcontainer}>
       <svg id={ids.graphSVG} className={styles.graphSVG}>
@@ -106,6 +111,8 @@ function GraphUI() {
         </defs>
         <g
           id={ids.cellsGroup}
+          // 主動移動地圖的時候（Check），transition動畫要移除
+          data-should-transition={shouldTransition}
           transform={`translate(${SVGTranslate.x}, ${SVGTranslate.y})`}
         >
           {Cells}
@@ -119,14 +126,15 @@ function GraphUI() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { DokaponTheWorldState, playersAttrs, currentPlayerIdx } = gameProgress;
-  const { GraphUIState, bossMonsters } = DokaponTheWorldState;
+  const { DokaponTheWorldState, players, bossMonsters, currentPlayerIdx } =
+    gameProgress;
+  const { GraphUIState, curComponents } = DokaponTheWorldState;
   const { SVGTranslate } = GraphUIState;
-  const curPlayer = playersAttrs[currentPlayerIdx];
+  const curPlayer = players[currentPlayerIdx];
   const curGraph = areaTypesToMap[curPlayer.area];
   const Cells = useMemo(() => renderCells(curGraph), [curGraph]);
 
-  const PlayersChess = playersAttrs.map((playerAttrs, idx) => (
+  const PlayersChess = players.map((playerAttrs, idx) => (
     <PlayerChess
       key={idx}
       id={curGraph.vertices[playerAttrs.vertexIdx].id}
@@ -199,5 +207,6 @@ function useMetaData() {
     Cells,
     PlayersChess,
     BossMonstersChess,
+    shouldTransition: curComponents[0] !== "Check",
   };
 }

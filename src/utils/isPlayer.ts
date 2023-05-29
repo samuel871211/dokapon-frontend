@@ -1,10 +1,10 @@
-import { MonsterAttrs, PlayerAttrs } from "global";
+import { MonsterInstance, PlayerInstance } from "global";
 
 export default isPlayer;
 
 function isPlayer(
-  character: PlayerAttrs | MonsterAttrs
-): character is PlayerAttrs {
+  character: PlayerInstance | MonsterInstance
+): character is PlayerInstance {
   const { characterType } = character;
   return characterType === "player" || characterType === "npcPlayer";
 }

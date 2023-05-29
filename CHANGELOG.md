@@ -1,3 +1,34 @@
+## unreleased
+
+## 0.4.0
+
+### todo
+
+- 對戰的對手，是否改成用 reference 的方式？
+- 對戰的對手如果是 player 以外，就直接跳過它的 `SelectGamePadButton` 回合
+
+### added
+
+- 新增 `MagicAttacks`、`MagicDefenses`、`MagicBooks` 的 `explanation` 到 `texts`
+- `MagicAttacks`、`MagicDefenses`、`MagicBooks` 的 `fullExplanation` 如果沒有，就先用 `briefExplanation` 替代
+- Component `BattleSpecialityIcon`
+- Component `MagicAttackIcon`
+- Component `MagicDefenseIcon`
+- Component `SwapCard` 左右按鈕的閃爍動畫
+- Component `SwapCard` 翻牌的動畫
+- Component `SwapCard` 翻牌之後，會自動跳到下一個步驟
+- Interface `MonsterInstance`，會從`MonsterFixedAttrs`去參照，並且生成一個怪物實例
+- `BattleField` 新增 `terrain` 屬性
+- `VillageField` 新增 `villageName` 屬性
+- `CaveField` 新增 `linkTo` 屬性
+- Component `SelectGamePadButton` 按下 R1 L1 之後，會跳出 Dialog 的邏輯
+
+### fixed
+
+- 輪盤已經選中數字之後，就不可以再骰出其他數字了
+- Component `Check` 期間，Component `GraphUI` 的 transition 動畫移除
+- Component `Check` 點選 Circle 之後，如該 vertex 上有 Character，會優先顯示 Component `PlayerVsCharacterDialogs`
+
 ## 0.3.0
 
 ### added

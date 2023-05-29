@@ -47,7 +47,7 @@ function SelectNPCLevel() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { currentPlayerIdx, playersAttrs } = gameProgress;
-  const currentPlayerNPCLevel = playersAttrs[currentPlayerIdx].npcLevel;
+  const { currentPlayerIdx, players } = gameProgress;
+  const currentPlayerNPCLevel = players[currentPlayerIdx].npcLevel;
   return { currentPlayerNPCLevel };
 }

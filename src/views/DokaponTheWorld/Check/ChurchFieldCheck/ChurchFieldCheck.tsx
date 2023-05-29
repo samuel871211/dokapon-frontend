@@ -16,7 +16,7 @@ export default ChurchFieldCheck;
 
 function ChurchFieldCheck() {
   const { t } = useTranslation();
-  const { playersAttrs } = useMetaData();
+  const { players } = useMetaData();
 
   return (
     <div className={styles.churchFieldCheckContainer}>
@@ -41,7 +41,7 @@ function ChurchFieldCheck() {
           <CustomBorderBottom width="97.5%" />
           <div className={styles.listBody}>
             <div className={styles.nameList}>
-              {playersAttrs.map((playerAttrs, idx) => (
+              {players.map((playerAttrs, idx) => (
                 <div className={styles.name} key={idx}>
                   <div className={styles.icon}></div>
                   <div>{playerAttrs.name}</div>
@@ -49,7 +49,7 @@ function ChurchFieldCheck() {
               ))}
             </div>
             <div className={styles.bankList}>
-              {playersAttrs.map((playerAttrs, idx) => (
+              {players.map((playerAttrs, idx) => (
                 <div
                   key={idx}
                   data-positive={playerAttrs.possession.money > 0}
@@ -60,7 +60,7 @@ function ChurchFieldCheck() {
               ))}
             </div>
             <div className={styles.specialtyList}>
-              {playersAttrs.map((playerAttrs, idx) => (
+              {players.map((playerAttrs, idx) => (
                 <div
                   key={idx}
                   data-positive={playerAttrs.possession.treasury > 0}
@@ -80,6 +80,6 @@ function ChurchFieldCheck() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs } = gameProgress;
-  return { playersAttrs };
+  const { players } = gameProgress;
+  return { players };
 }

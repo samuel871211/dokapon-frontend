@@ -28,7 +28,7 @@ export default SelectController;
 function SelectController() {
   const {
     currentPlayerIdx,
-    playersAttrs,
+    players,
     numberOfPlayers,
     shuffleIndexes,
     showOrderNumber,
@@ -39,7 +39,7 @@ function SelectController() {
   const { t } = useTranslation();
   return (
     <div className={styles.selectControllerContainer}>
-      {playersAttrs.map((playerAttrs, playerIdx) => (
+      {players.map((playerAttrs, playerIdx) => (
         <YellowBlock
           key={playerIdx}
           role="dialog"
@@ -129,7 +129,7 @@ function SelectController() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, numberOfPlayers, currentPlayerIdx, currentView } =
+  const { players, numberOfPlayers, currentPlayerIdx, currentView } =
     gameProgress;
   if (
     currentView !== "BattleModeSelectCharacter" &&
@@ -147,7 +147,7 @@ function useMetaData() {
   const shouldGatherToCenter = curComponent === "ShuffleOrder";
   return {
     currentPlayerIdx,
-    playersAttrs,
+    players,
     numberOfPlayers,
     shuffleIndexes,
     showOrderNumber,

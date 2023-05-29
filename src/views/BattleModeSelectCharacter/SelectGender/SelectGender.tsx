@@ -60,7 +60,7 @@ function SelectGender() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { currentPlayerIdx, playersAttrs } = gameProgress;
-  const currentPlayerGender = playersAttrs[currentPlayerIdx].gender;
+  const { currentPlayerIdx, players } = gameProgress;
+  const currentPlayerGender = players[currentPlayerIdx].gender;
   return { currentPlayerGender };
 }

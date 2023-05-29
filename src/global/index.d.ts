@@ -133,7 +133,8 @@ export type DokaponTheWorldComponentTypes =
 export type NormalBattleComponentTypes =
   | "VS"
   | "ShowVertexTerrain"
-  | "SwapCards";
+  | "SwapCards"
+  | "SelectGamePadButton";
 export type HomeComponentTypes = "ButtonGroup" | "Settings" | "Book";
 export type GameProgress = {
   timeStamp: string;
@@ -169,7 +170,10 @@ export type GameProgress = {
    */
   bottomDialogSentencesQueue: string[];
   currentView: ViewTypes;
-  playersAttrs: [PlayerAttrs, PlayerAttrs, PlayerAttrs, PlayerAttrs];
+  players: [PlayerInstance, PlayerInstance, PlayerInstance, PlayerInstance];
+  monsters: MonsterInstance[];
+  bossMonsters: MonsterInstance[];
+  enemies: PlayerInstance[];
   gamePadSetting: { [key in GamePadKeyTypes]: string };
   userPreference: {
     lang: LangTypes;
@@ -310,14 +314,12 @@ export type GameProgress = {
      */
     curComponents: DokaponTheWorldComponentTypes[];
     curCenterVertex: Vertex;
-    curClickedCharacters: (PlayerAttrs | MonsterAttrs)[];
+    curClickedCharacters: (PlayerInstance | MonsterInstance)[];
     /**
      * @default -1
      */
     curStepCount: number;
     curPath: VertexBriefProps[];
-    bossMonsters: MonsterAttrs[];
-    enemies: PlayerAttrs[];
     DataState: {
       /**
        * 0 ~ 2
@@ -466,8 +468,25 @@ export type GameProgress = {
   };
   NormalBattleState: {
     curComponent: NormalBattleComponentTypes;
+    /**
+     * 攻擊側、防禦側
+     */
+    isLeftPlayerCurAttack: boolean;
+    /**
+     * 左邊先選，之後換右邊
+     */
+    isLeftPlayerCurSelect: boolean;
+    /**
+     * 目前沒用到這個變數
+     */
+    battleRound: 1 | 2;
     SwapCardState: {
-      isCardSwiched: boolean;
+      isCardSwitch: boolean;
+      isCardOpen: boolean;
+    };
+    SelectGamePadButtonState: {
+      rightDialogOpen: boolean;
+      leftDialogOpen: boolean;
     };
   };
 };
@@ -557,18 +576,34 @@ export type Vertex = Cell & {
   edges: string[];
   area: AreaTypes;
   isHide?: true;
-} & (
-    | {
-        name: "BattleField";
-        /**
-         * @todo `BattleField`需要細分地形
-         */
-        terrain?: TerrainTypes;
-      }
-    | {
-        name: Exclude<VertexTypes, "BattleField">;
-      }
-  );
+} & (BattleFieldAttrs | VillageFieldAttrs | CaveFieldAttrs | OtherFieldAttrs);
+/**
+ * @todo 不是只有BattleField有分地形，寶物跟其他可能也有
+ */
+type BattleFieldAttrs = {
+  name: "BattleField";
+  /**
+   * @todo `BattleField`需要細分地形
+   */
+  terrain?: TerrainTypes;
+};
+type VillageFieldAttrs = {
+  name: "VillageField";
+  /**
+   * @todo 村子名稱
+   */
+  villageName?: string;
+};
+type CaveFieldAttrs = {
+  name: "CaveField";
+  /**
+   * @todo 還沒定義
+   */
+  linkTo?: AreaTypes;
+};
+type OtherFieldAttrs = {
+  name: Exclude<VertexTypes, "BattleField" | "VillageField" | "CaveField">;
+};
 export type Edge = Cell & {
   name: EdgeTypes;
   start: Position;
@@ -669,104 +704,62 @@ export type CharacterTypes =
   | "enemy"
   | "allied"
   | "monster";
-type MonsterAttrs = {
-  name: MonsterTypes;
-  characterType: "monster";
-  attack: {
-    buffRatio: number;
-    nerfRatio: number;
-  };
-  defense: {
-    buffRatio: number;
-    nerfRatio: number;
-  };
-  magic: {
-    buffRatio: number;
-    nerfRatio: number;
-  };
-  speed: {
-    buffRatio: number;
-    nerfRatio: number;
-  };
-  hp: {
-    current: number;
-  };
-  area: AreaTypes;
-  /**
-   * 因為地圖的JSON資料不會變，所以可以直接用index當作reference
-   */
-  vertexIdx: number;
-};
-type PlayerAttrs = {
+type PlayerInstance = {
   name: string;
   isNPC: boolean;
   characterType: "player" | "npcPlayer";
-  battleEnemy?:
+  /**
+   * @description 目前對戰中的角色類型，不儲存reference，而是根據`type`，從對應的陣列尋找該角色
+   */
+  battleCharacter?:
     | {
-        type: "monster";
-        name: MonsterTypes;
+        /**
+         * 理論上這三種，在地圖上不會有重疊的問題，所以可以透過`area`跟`vertexIdx`搜尋到唯一值
+         */
+        type: "monster" | "bossMonster" | "enemy";
       }
     | {
+        /**
+         * player因為在地圖上可能重疊，需要存`index`才能確保搜到唯一值
+         */
         type: "player";
-        name: string;
+        /**
+         * 0 ~ 3
+         */
+        index: number;
       };
   /**
    * 1 ~ 99
    */
   level: number;
   attack: {
-    /**
-     * 理想上的算法會是 (`base` + `weapon` + `shield`) * `buffRatio` * `nerfRatio`
-     */
     total: number;
     base: number;
-    weapon: number;
-    shield: number;
     buffRatio: number;
     nerfRatio: number;
   };
   defense: {
-    /**
-     * 理想上的算法會是 (`base` + `weapon` + `shield`) * `buffRatio` * `nerfRatio`
-     */
     total: number;
     base: number;
-    weapon: number;
-    shield: number;
     buffRatio: number;
     nerfRatio: number;
   };
   magic: {
-    /**
-     * 理想上的算法會是 (`base` + `weapon` + `shield`) * `buffRatio` * `nerfRatio`
-     */
     total: number;
     base: number;
-    weapon: number;
-    shield: number;
     buffRatio: number;
     nerfRatio: number;
   };
   speed: {
-    /**
-     * 理想上的算法會是 (`base` + `weapon` + `shield`) * `buffRatio` * `nerfRatio`
-     */
     total: number;
     base: number;
-    weapon: number;
-    shield: number;
     buffRatio: number;
     nerfRatio: number;
   };
   hp: {
     current: number;
-    /**
-     * 理想上的算法會是 (`base` + `weapon` + `shield`) * `buffRatio` * `nerfRatio`
-     */
     total: number;
     base: number;
-    weapon: number;
-    shield: number;
     buffRatio: number;
     nerfRatio: number;
   };
@@ -848,7 +841,7 @@ export type MagicBook = {
   type: MagicTypes;
   name: TextsKeys;
   price: number;
-  explanation: string;
+  explanation: TextsKeys;
   /**
    * Monster可關聯到fromAreas
    */
@@ -863,7 +856,7 @@ export type magicAttack = {
   name: TextsKeys;
   price: number;
   damage?: "small" | "medium" | "large";
-  explanation: string;
+  explanation: TextsKeys;
   /**
    * Monster可關聯到fromAreas
    */
@@ -878,8 +871,9 @@ export type magicDefense = {
   name: TextsKeys;
   price: number;
   defense: number;
-  explanation: string;
+  explanation: TextsKeys;
   /**
+   * @todo string type ?
    * Monster可關聯到fromAreas
    */
   fromMonsters: string[];
@@ -902,7 +896,7 @@ export type MonsterFixedAttrs = {
   magicDefense?: MagicDefenseTypes;
   exp: number;
   money: number;
-  isBoss: boolean;
+  isBoss?: true;
   fromAreas: AreaTypes[];
   /**
    * @todo 需等待vertex的地形都定義好
@@ -910,6 +904,9 @@ export type MonsterFixedAttrs = {
   fromTerrains?: TerrainTypes[];
   explanation: TextsKeys;
   possession: {
+    /**
+     * @todo 可能是`TextKeys`
+     */
     name: string;
     isItem?: true;
     isMagic?: true;
@@ -917,6 +914,51 @@ export type MonsterFixedAttrs = {
     isShield?: true;
     isAccessory?: true;
   };
+};
+export type MonsterInstance = Omit<
+  MonsterFixedAttrs,
+  "attack" | "defense" | "magic" | "speed" | "hp"
+> & {
+  characterType: "monster";
+  attack: {
+    total: number;
+    base: number;
+    buffRatio: number;
+    nerfRatio: number;
+  };
+  defense: {
+    total: number;
+    base: number;
+    buffRatio: number;
+    nerfRatio: number;
+  };
+  magic: {
+    total: number;
+    base: number;
+    buffRatio: number;
+    nerfRatio: number;
+  };
+  speed: {
+    total: number;
+    base: number;
+    buffRatio: number;
+    nerfRatio: number;
+  };
+  hp: {
+    current: number;
+    total: number;
+    base: number;
+    buffRatio: number;
+    nerfRatio: number;
+  };
+  /**
+   * use this to render map
+   */
+  area: AreaTypes;
+  /**
+   * 因為地圖的JSON資料不會變，所以可以直接用index當作reference
+   */
+  vertexIdx: number;
 };
 export type Item = {
   type:

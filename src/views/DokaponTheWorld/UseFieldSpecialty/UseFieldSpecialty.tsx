@@ -18,8 +18,8 @@ export default UseFieldSpecialty;
 function UseFieldSpecialty() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, currentPlayerIdx } = gameProgress;
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const { players, currentPlayerIdx } = gameProgress;
+  const currentPlayer = players[currentPlayerIdx];
   const curPlayerJob = jobs[currentPlayer.job];
   const { name, type, briefExplanation } = curPlayerJob.fieldSpecialty;
 

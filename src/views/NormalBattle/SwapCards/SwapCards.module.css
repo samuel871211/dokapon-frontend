@@ -4,95 +4,8 @@
   padding-top: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-bottom: 4rem;
-}
-.topArea {
-  height: 30%;
-  display: flex;
-}
-.characterInfoLeft,
-.characterInfoRight {
-  width: 40%;
-  height: 80%;
-  padding: 0.5rem 1rem;
-}
-.characterInfoLeft {
-  border-radius: 1.5rem 0 0 1.5rem;
-  border-right-width: 0px;
-}
-.characterInfoRight {
-  border-radius: 0 1.5rem 1.5rem 0;
-  border-left-width: 0px;
-}
-.characterInfoRow1 {
-  display: flex;
-  height: 50%;
-}
-.characterLevel {
-  aspect-ratio: 1 / 1;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.characterName {
-  height: 90%;
-  flex-grow: 1;
-  font-size: 2.5rem;
-}
-.characterInfoRow2 {
-  display: flex;
-  height: 50%;
-  align-items: center;
-}
-.attrs4 {
-  width: 20%;
-  height: 100%;
-  border-radius: 0 0 1.5rem 1.5rem;
-  padding: 0.5rem;
-}
-.attrRow {
-  display: flex;
-  height: 25%;
+  padding-bottom: 2rem;
   position: relative;
-}
-.attrRow::after {
-  content: " ";
-  display: block;
-  width: 100%;
-  height: 1rem;
-  background-color: black;
-  position: absolute;
-  bottom: 0;
-  z-index: 0;
-  border-radius: 1.5rem;
-}
-.attrText1,
-.attrText2 {
-  width: 40%;
-  color: white;
-  font-size: 2.5rem;
-  -webkit-text-stroke: 0.1rem black;
-  z-index: 1;
-  display: flex;
-  align-items: flex-end;
-}
-.attrText1 {
-  justify-content: flex-end;
-}
-.centerArea {
-  display: flex;
-  height: 35%;
-}
-.imgContainer1 {
-  width: 50%;
-  height: 100%;
-  text-align: center;
-  transform: rotateY(180deg);
-}
-.imgContainer2 {
-  width: 50%;
-  text-align: center;
 }
 .bottomArea {
   height: 35%;
@@ -120,10 +33,28 @@
 }
 .directionLeft {
   grid-row-start: 2;
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+@keyframes twinkle {
+  0% {
+    color: black;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: black;
+  }
 }
 .directionRight {
   grid-row-start: 2;
   grid-column-start: 3;
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
 }
 .directionBottom {
   grid-row-start: 3;
@@ -146,11 +77,46 @@
 .card {
   width: 30%;
   height: 100%;
-  border-radius: 1.5rem;
-  border: 0.3rem solid brown;
   margin: 0 auto;
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+.cardFront {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0.3rem solid brown;
   box-shadow: 0 0 0 0.5rem white;
   background-color: var(--bg-color);
+  border-radius: 1.5rem;
+  backface-visibility: hidden;
+}
+.cardBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0.3rem solid brown;
+  box-shadow: 0 0 0 0.5rem white;
+  background-color: var(--bg-color);
+  border-radius: 1.5rem;
+  backface-visibility: hidden;
+  font-size: 8rem;
+  line-height: 7.5rem;
+  display: flex;
+  align-items: center;
+  transform: rotateY(180deg);
+  color: #1d418f;
+}
+.cardBack[data-first="true"] {
+  color: #840c0c;
+}
+.card[data-opened="true"] {
+  transform: rotateY(180deg);
 }
 .card1Container,
 .card2Container {

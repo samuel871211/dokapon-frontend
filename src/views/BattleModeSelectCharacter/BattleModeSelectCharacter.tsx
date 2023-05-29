@@ -395,7 +395,7 @@ function useMetaData() {
     gamePadSetting,
     BattleModeSelectCharacterState,
     currentPlayerIdx,
-    playersAttrs,
+    players,
     bottomDialogSentencesQueue,
     goalInput,
   } = gameProgress;
@@ -408,7 +408,7 @@ function useMetaData() {
     gamePadSetting.triangle,
     gamePadSetting.square,
   ];
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const currentPlayer = players[currentPlayerIdx];
   const exampleCharacterImgSrc =
     backendBaseUrl +
     "/imgs/" +
@@ -428,14 +428,14 @@ function useMetaData() {
     ShuffleOrderState,
   } = BattleModeSelectCharacterState;
   /**
-   * 根據`playersAttrs`跟`currentPlayerIdx`的變動，重新計算剩餘可用的顏色
+   * 根據`players`跟`currentPlayerIdx`的變動，重新計算剩餘可用的顏色
    */
   const remainColors = useMemo(() => {
-    const usedColors = playersAttrs
+    const usedColors = players
       .slice(0, currentPlayerIdx)
       .map((playerAttrs) => playerAttrs.color);
     return colors.filter((color) => !usedColors.includes(color));
-  }, [playersAttrs, currentPlayerIdx]);
+  }, [players, currentPlayerIdx]);
   function handleKeyUp(e: KeyboardEvent<HTMLDivElement>) {
     switch (curComponent) {
       case "SelectGoalType":
@@ -573,7 +573,7 @@ function useMetaData() {
           numberOfPlayers === 1 ? "OnlyOnePlayer" : "SelectGender";
 
         // 重新assign每個玩家的isNPC
-        playersAttrs.forEach((playerAttrs, playerIdx) => {
+        players.forEach((playerAttrs, playerIdx) => {
           const isNPC = playerIdx >= numberOfPlayers;
           playerAttrs.isNPC = isNPC;
         });
@@ -923,7 +923,7 @@ function useMetaData() {
     BattleModeSelectCharacterState.curComponent = "NPCGenerateDialog";
 
     // shuffle nth NPC player
-    const npcPlayer = playersAttrs[currentPlayerIdx];
+    const npcPlayer = players[currentPlayerIdx];
     if (!npcPlayer) throw new Error("npcPlayer not exist");
     if (!npcPlayer.isNPC) throw new Error("npcPlayer is not NPC");
 
@@ -1169,11 +1169,11 @@ function useMetaData() {
 
     window.clearInterval(ShuffleOrderState.intervalId);
     const { shuffleIndexes } = ShuffleOrderState;
-    gameProgress.playersAttrs = [
-      playersAttrs[shuffleIndexes[0]],
-      playersAttrs[shuffleIndexes[1]],
-      playersAttrs[shuffleIndexes[2]],
-      playersAttrs[shuffleIndexes[3]],
+    gameProgress.players = [
+      players[shuffleIndexes[0]],
+      players[shuffleIndexes[1]],
+      players[shuffleIndexes[2]],
+      players[shuffleIndexes[3]],
     ];
     BattleModeSelectCharacterState.curComponent = "ShuffleOrderComplete";
     setGameProgress({ ...gameProgress });
@@ -1190,7 +1190,7 @@ function useMetaData() {
     if (!isMainFourKeys) return;
 
     gameProgress.currentView = "DokaponTheWorld";
-    playersAttrs.forEach((playerAttrs) => {
+    players.forEach((playerAttrs) => {
       playerAttrs.area = "Asia";
     });
     setGameProgress({ ...gameProgress });

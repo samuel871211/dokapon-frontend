@@ -1,4 +1,4 @@
-import { PlayerAttrs, Vertex } from "global";
+import { PlayerInstance, Vertex } from "global";
 
 const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 
@@ -7,9 +7,9 @@ export default PlayerChess;
 function PlayerChess(props: {
   id: Vertex["id"];
   position: Vertex["position"];
-  job: PlayerAttrs["job"];
-  gender: PlayerAttrs["gender"];
-  color: PlayerAttrs["color"];
+  job: PlayerInstance["job"];
+  gender: PlayerInstance["gender"];
+  color: PlayerInstance["color"];
 }) {
   const { id, position, job, gender, color } = props;
   const href = `${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`;

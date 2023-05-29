@@ -22,7 +22,7 @@ import { TextsKeys } from "data/texts";
 import VillagesDialog from "components/VillagesDialog";
 import ListDialog from "components/ListDialog";
 import ListItem from "components/ListItem";
-import { monsterList } from "data/monsters";
+import { MONSTERLIST } from "data/monsters";
 import { jobListInRenderOrder } from "data/jobs";
 import { specialtyList } from "data/specialities";
 
@@ -169,8 +169,8 @@ function Data() {
 function DataStrength() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, currentPlayerIdx } = gameProgress;
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const { players, currentPlayerIdx } = gameProgress;
+  const currentPlayer = players[currentPlayerIdx];
   const { job } = currentPlayer;
   const currentPlayerJobMasterLevel = currentPlayer.jobsMasterStatus[job].level;
   return (
@@ -236,8 +236,8 @@ function DataStrength() {
 function DataEquipment() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, currentPlayerIdx } = gameProgress;
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const { players, currentPlayerIdx } = gameProgress;
+  const currentPlayer = players[currentPlayerIdx];
   return (
     <PlayerImgAndBasicAttrsArea>
       <div className={styles.equipmentArea}>
@@ -282,8 +282,8 @@ function DataEquipment() {
 function DataBag() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, currentPlayerIdx } = gameProgress;
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const { players, currentPlayerIdx } = gameProgress;
+  const currentPlayer = players[currentPlayerIdx];
   const { curPage } = gameProgress.DokaponTheWorldState.DataState;
   const selectedBag = curPage === 0 ? "items" : "magicBooks";
   const maxSpace = jobs[currentPlayer.job].bagSpace[selectedBag];
@@ -409,10 +409,10 @@ function DataVillages() {
 function DataRank() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { t } = useTranslation();
-  const { playersAttrs } = gameProgress;
+  const { players } = gameProgress;
   return (
     <div className={styles.dataRankContainer}>
-      {playersAttrs.map((playerAttrs, idx) => (
+      {players.map((playerAttrs, idx) => (
         <div className={styles.playerRankArea} key={idx}>
           <div className={styles.rankNumber}>1</div>
           <TextWithBorderBottom className={styles.rankLeft} diameter="1rem">
@@ -444,8 +444,8 @@ function DataRank() {
 function PlayerImgAndBasicAttrsArea(props: { children?: ReactNode }) {
   const { children } = props;
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, currentPlayerIdx } = gameProgress;
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const { players, currentPlayerIdx } = gameProgress;
+  const currentPlayer = players[currentPlayerIdx];
   const { job, gender, color } = currentPlayer;
   return (
     <div className={styles.strengthContainer}>
@@ -527,9 +527,8 @@ function PlayerImgAndBasicAttrsArea(props: { children?: ReactNode }) {
 function JobListView() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, currentPlayerIdx } = gameProgress;
-  const { availableJobs, gender, jobsMasterStatus } =
-    playersAttrs[currentPlayerIdx];
+  const { players, currentPlayerIdx } = gameProgress;
+  const { availableJobs, gender, jobsMasterStatus } = players[currentPlayerIdx];
   const { curListIdx, curListStartIdx } =
     gameProgress.DokaponTheWorldState.DataState;
   return (
@@ -581,8 +580,8 @@ function JobListView() {
 function JobGridView() {
   const { t } = useTranslation();
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, currentPlayerIdx } = gameProgress;
-  const { job, gender, color } = playersAttrs[currentPlayerIdx];
+  const { players, currentPlayerIdx } = gameProgress;
+  const { job, gender, color } = players[currentPlayerIdx];
   const { listJobCurPage } = gameProgress.DokaponTheWorldState.DataState;
   return (
     <div className={styles.listGridViewContainer} data-theme="job">
@@ -703,10 +702,10 @@ function MonsterListView() {
     <ListDialog
       listTopic="monster"
       showArrowUp={curListStartIdx > 0}
-      showArrowDown={curListStartIdx < monsterList.length - 10}
-      availableCounts={monsterList.length}
+      showArrowDown={curListStartIdx < MONSTERLIST.length - 10}
+      availableCounts={MONSTERLIST.length}
     >
-      {monsterList.map(
+      {MONSTERLIST.map(
         (monsterFixedAttrs, idx) =>
           idx >= curListStartIdx &&
           idx < curListStartIdx + 10 && (
@@ -743,7 +742,7 @@ function MonsterGridView() {
     },
   } = useContext(gameProgressCtx);
   const { t } = useTranslation();
-  const curMonster = monsterList[curListIdx + curListStartIdx];
+  const curMonster = MONSTERLIST[curListIdx + curListStartIdx];
   return (
     <div className={styles.listGridViewContainer} data-theme="monster">
       <div className={styles.topLeftGridItem}>還沒做圖</div>
@@ -1690,7 +1689,7 @@ function OptionSetting() {
   const { t } = useTranslation();
   const {
     gameProgress: {
-      playersAttrs,
+      players,
       DokaponTheWorldState: {
         DataState: { optionSettingSelectedIdx },
       },
@@ -1705,7 +1704,7 @@ function OptionSetting() {
         <div className={styles.moreInfoIcon}>▲{t("ヘルプ")}</div>
       </div>
       <div className={styles.optionCenterArea}>
-        {playersAttrs.map((playerAttr, idx) => (
+        {players.map((playerAttr, idx) => (
           <div className={styles.playerRow} key={playerAttr.name}>
             <div className={styles.playerRowLeft}>{playerAttr.name}</div>
             <ListItem

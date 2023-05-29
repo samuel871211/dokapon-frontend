@@ -37,7 +37,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "土下座",
       briefExplanation: "土下座して小ゼニを払い、\n相手にゆるしてもらう。",
-      fullExplanation: "",
+      fullExplanation: "土下座して小ゼニを払い、\n相手にゆるしてもらう。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -80,7 +80,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "力ため",
       briefExplanation: "力をためて攻撃力を上げる。",
-      fullExplanation: "",
+      fullExplanation: "力をためて攻撃力を上げる。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -123,7 +123,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "魔力ため",
       briefExplanation: "精神を集中させて\n魔力を上げる。",
-      fullExplanation: "",
+      fullExplanation: "精神を集中させて\n魔力を上げる。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -166,7 +166,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "回復",
       briefExplanation: "聖なる祈りで\nHPを多少回復させる。",
-      fullExplanation: "",
+      fullExplanation: "聖なる祈りで\nHPを多少回復させる。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -209,7 +209,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "スリ",
       briefExplanation: "素早い動きで相手の\n所持品を盗む。",
-      fullExplanation: "",
+      fullExplanation: "素早い動きで相手の\n所持品を盗む。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -252,7 +252,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "騎士の魂",
       briefExplanation: "精神統一で攻撃力を上げる。\nたまに防御力も上がる。",
-      fullExplanation: "",
+      fullExplanation: "精神統一で攻撃力を上げる。\nたまに防御力も上がる。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -296,7 +296,8 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "禁呪",
       briefExplanation:
         "禁じられた呪文をとなえ、相手の\n攻撃と防御のコマンドを封印する。",
-      fullExplanation: "",
+      fullExplanation:
+        "禁じられた呪文をとなえ、相手の\n攻撃と防御のコマンドを封印する。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -341,7 +342,8 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "奇跡の祈り",
       briefExplanation:
         "神の加護によりHPとステータスを\n完全に回復し、防御カも上げる。",
-      fullExplanation: "",
+      fullExplanation:
+        "神の加護によりHPとステータスを\n完全に回復し、防御カも上げる。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -385,7 +387,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "超必殺",
       briefExplanation: "反撃不可能な必殺技を出す。\nHPが低いと命中率UP。",
-      fullExplanation: "",
+      fullExplanation: "反撃不可能な必殺技を出す。\nHPが低いと命中率UP。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -430,7 +432,8 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "邢法",
       briefExplanation:
         "古代より伝わる闇の呪文をとなえ、\n様々なステータス異常にする。",
-      fullExplanation: "",
+      fullExplanation:
+        "古代より伝わる闇の呪文をとなえ、\n様々なステータス異常にする。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -474,7 +477,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "復活の光",
       briefExplanation: "神へ祈りをささげ、\n死亡しても復活できるようにする。",
-      fullExplanation: "",
+      fullExplanation: "神へ祈りをささげ、\n死亡しても復活できるようにする。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -517,7 +520,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "とんずら",
       briefExplanation: "相手の所持品を盗み\n戦闘から離脱する。",
-      fullExplanation: "",
+      fullExplanation: "相手の所持品を盗み\n戦闘から離脱する。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -560,7 +563,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "暗殺",
       briefExplanation: "秘伝の奥義で相手を攻撃し、\nたまにそく死させる。",
-      fullExplanation: "",
+      fullExplanation: "秘伝の奥義で相手を攻撃し、\nたまにそく死させる。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -605,7 +608,8 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "いかさま",
       briefExplanation:
         "戦闘中、あらゆるいかさまをし、\n戦いが自分に有利になるようにする。",
-      fullExplanation: "",
+      fullExplanation:
+        "戦闘中、あらゆるいかさまをし、\n戦いが自分に有利になるようにする。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -648,7 +652,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "呼ぶ",
       briefExplanation: "モンスターを呼び出し\n代わりに戦わせる。",
-      fullExplanation: "",
+      fullExplanation: "モンスターを呼び出し\n代わりに戦わせる。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -691,7 +695,8 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "データコピー",
       briefExplanation:
         "相手をスキャニングし、自分より\n高いパラメータをコピーする。",
-      fullExplanation: "",
+      fullExplanation:
+        "相手をスキャニングし、自分より\n高いパラメータをコピーする。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -736,7 +741,7 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "べらんめえ!",
       briefExplanation:
         "自分に活を入れ攻撃力を上げる。\nしかし、魔力が下がる。",
-      fullExplanation: "",
+      fullExplanation: "自分に活を入れ攻撃力を上げる。\nしかし、魔力が下がる。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -779,7 +784,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "注射",
       briefExplanation: "怪しい注射で相手の\nパラメータの1つをガクっと下げる。",
-      fullExplanation: "",
+      fullExplanation: "怪しい注射で相手の\nパラメータの1つをガクっと下げる。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -822,7 +827,8 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "怒りの炎",
       briefExplanation:
         "気合いで、物理ダメージを受ける\nたびに攻撃力が上がるようにする。",
-      fullExplanation: "",
+      fullExplanation:
+        "気合いで、物理ダメージを受ける\nたびに攻撃力が上がるようにする。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -866,7 +872,8 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "魅了",
       briefExplanation:
         "妖しい視線で相手を魅了し、\n攻撃側のコマンドを全て禁止する。",
-      fullExplanation: "",
+      fullExplanation:
+        "妖しい視線で相手を魅了し、\n攻撃側のコマンドを全て禁止する。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -910,7 +917,7 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "????",
       briefExplanation:
         "他の職業の特技が使える。\n何が選ばれるかは分からない。",
-      fullExplanation: "",
+      fullExplanation: "他の職業の特技が使える。\n何が選ばれるかは分からない。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -955,7 +962,8 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "ヒートUP",
       briefExplanation:
         "攻撃力を上げ、さらにひっぱたく\nたびに攻撃力が上がるようにする。",
-      fullExplanation: "",
+      fullExplanation:
+        "攻撃力を上げ、さらにひっぱたく\nたびに攻撃力が上がるようにする。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -998,7 +1006,7 @@ const jobs: { [key in JobTypes]: Job } = {
     battleSpecialty: {
       name: "闘いの炎",
       briefExplanation: "闘志を燃やし、HP以外の\nパラメータを上げる。",
-      fullExplanation: "",
+      fullExplanation: "闘志を燃やし、HP以外の\nパラメータを上げる。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -1042,7 +1050,8 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "精霊の加護",
       briefExplanation:
         "光の精霊の加護を受けて、自分の\nパラメータをいくつか上げる。",
-      fullExplanation: "",
+      fullExplanation:
+        "光の精霊の加護を受けて、自分の\nパラメータをいくつか上げる。",
     },
     weeklyBonus: "",
     allowMale: true,
@@ -1086,7 +1095,8 @@ const jobs: { [key in JobTypes]: Job } = {
       name: "命令",
       briefExplanation:
         "王族の権力を最大限に利用して、\n魔物に去るように命令する。",
-      fullExplanation: "",
+      fullExplanation:
+        "王族の権力を最大限に利用して、\n魔物に去るように命令する。",
     },
     weeklyBonus: "",
     allowMale: true,

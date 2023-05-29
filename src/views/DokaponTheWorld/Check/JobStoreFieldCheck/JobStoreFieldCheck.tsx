@@ -86,8 +86,8 @@ function JobStoreFieldCheck() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { currentPlayerIdx, playersAttrs } = gameProgress;
-  const { availableJobs } = playersAttrs[currentPlayerIdx];
+  const { currentPlayerIdx, players } = gameProgress;
+  const { availableJobs } = players[currentPlayerIdx];
   const { curListPage } =
     gameProgress.DokaponTheWorldState.JobStoreFieldCheckState;
   const curShowJobs = availableJobs.filter(

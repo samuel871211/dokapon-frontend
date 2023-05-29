@@ -20,7 +20,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     name: "マホガド",
     price: 0,
     defense: 30,
-    explanation: "",
+    explanation: "魔力のカベを作り、\n魔法のダメージを減らす。\n魔法防御力30",
     fromMonsters: [],
     fromVerticesQuery: [],
   },

@@ -3,7 +3,7 @@ import { useContext } from "react";
 
 // Local application/library specific imports.
 import isPlayer from "utils/isPlayer";
-import type { MonsterAttrs, PlayerAttrs } from "global";
+import type { MonsterInstance, PlayerInstance } from "global";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
 import AttrCircle from "components/AttrCircle";
@@ -18,7 +18,6 @@ import { accessories } from "data/accessories";
 import jobs from "data/jobs";
 import gameProgressCtx from "reducers/gameProgress";
 import styles from "./PlayerVsCharacterDialogs.module.css";
-import { monsters } from "data/monsters";
 
 // Stateless vars declare.
 
@@ -26,11 +25,11 @@ export default PlayerVsCharacterDialogs;
 
 function PlayerVsCharacterDialogs() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, currentPlayerIdx, DokaponTheWorldState } = gameProgress;
+  const { players, currentPlayerIdx, DokaponTheWorldState } = gameProgress;
   const { curClickedCharacters } = DokaponTheWorldState;
   const { curPage } = DokaponTheWorldState.PlayerVsCharacterDialogState;
   const { selectedIdx } = DokaponTheWorldState.SelectCharacterToCompareState;
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const currentPlayer = players[currentPlayerIdx];
   const curClickedCharacter = curClickedCharacters[selectedIdx];
   const { characterType } = curClickedCharacter;
   const isMonsterOrEnemy = characterType === "monster";
@@ -60,7 +59,7 @@ function PlayerVsCharacterDialogs() {
   );
 }
 
-function PlayerPage(props: { playerAttrs: PlayerAttrs }) {
+function PlayerPage(props: { playerAttrs: PlayerInstance }) {
   const { playerAttrs } = props;
   return (
     <YellowBlock
@@ -157,9 +156,8 @@ function PlayerPage(props: { playerAttrs: PlayerAttrs }) {
   );
 }
 
-function MonsterOrEnemyDialog(props: { attrs: MonsterAttrs }) {
+function MonsterOrEnemyDialog(props: { attrs: MonsterInstance }) {
   const { attrs } = props;
-  const monsterRecord = monsters[attrs.name];
   return (
     <YellowBlock
       role="dialog"
@@ -170,7 +168,7 @@ function MonsterOrEnemyDialog(props: { attrs: MonsterAttrs }) {
         <div className={styles.flexRow}>
           <div className={styles.rowHead}>NAME</div>
           <div className={styles.rowRight}>
-            <div className={styles.nameArea}>{monsterRecord.name}</div>
+            <div className={styles.nameArea}>{attrs.name}</div>
             <CustomBorderBottom />
           </div>
         </div>
@@ -179,37 +177,34 @@ function MonsterOrEnemyDialog(props: { attrs: MonsterAttrs }) {
           <AttrCircle
             className={styles.attrCircle}
             attr="LV"
-            value={monsterRecord.level}
+            value={attrs.level}
             fontSize="2rem"
           />
-          <FullHpBar
-            hp={{ current: attrs.hp.current, total: monsterRecord.hp }}
-            className={styles.fullHpBar}
-          />
+          <FullHpBar hp={attrs.hp} className={styles.fullHpBar} />
         </div>
         <div className={`${styles.flexRow} ${styles.row4}`}>
           <AttrCircle
             className={styles.attrCircle}
             attr="AT"
-            value={monsterRecord.attack}
+            value={attrs.attack.total}
             fontSize="2rem"
           />
           <AttrCircle
             className={styles.attrCircle}
             attr="DF"
-            value={monsterRecord.defense}
+            value={attrs.defense.total}
             fontSize="2rem"
           />
           <AttrCircle
             className={styles.attrCircle}
             attr="MG"
-            value={monsterRecord.magic}
+            value={attrs.magic.total}
             fontSize="2rem"
           />
           <AttrCircle
             className={styles.attrCircle}
             attr="SP"
-            value={monsterRecord.speed}
+            value={attrs.speed.total}
             fontSize="2rem"
           />
         </div>
@@ -222,27 +217,25 @@ function MonsterOrEnemyDialog(props: { attrs: MonsterAttrs }) {
       <div className={styles.dialogBottomArea}>
         <TextWithBorderBottom className={styles.bottomRow} diameter="1.5rem">
           <div className={styles.td1Label}>EXP</div>
-          <div className={styles.td2Number}>
-            {monsterRecord.exp.toLocaleString()}
-          </div>
+          <div className={styles.td2Number}>{attrs.exp.toLocaleString()}</div>
           <div className={styles.td3Unit}>EXP</div>
         </TextWithBorderBottom>
         <TextWithBorderBottom className={styles.bottomRow} diameter="1.5rem">
           <div className={styles.td1Label}>MONEY</div>
           <div
             className={styles.td2Number}
-          >{`${monsterRecord.money.toLocaleString()}D`}</div>
+          >{`${attrs.money.toLocaleString()}D`}</div>
         </TextWithBorderBottom>
         <TextWithBorderBottom className={styles.bottomRow} diameter="1.5rem">
-          {monsterRecord.magicAttack ? (
-            magicAttacks[monsterRecord.magicAttack]?.name
+          {attrs.magicAttack ? (
+            magicAttacks[attrs.magicAttack]?.name
           ) : (
             <div className={styles.redLine}></div>
           )}
         </TextWithBorderBottom>
         <TextWithBorderBottom className={styles.bottomRow} diameter="1.5rem">
-          {monsterRecord.magicDefense ? (
-            magicDefenses[monsterRecord.magicDefense]?.name
+          {attrs.magicDefense ? (
+            magicDefenses[attrs.magicDefense]?.name
           ) : (
             <div className={styles.redLine}></div>
           )}
@@ -256,7 +249,7 @@ function MonsterOrEnemyDialog(props: { attrs: MonsterAttrs }) {
   );
 }
 
-function ItemsPage(props: { playerAttrs: PlayerAttrs }) {
+function ItemsPage(props: { playerAttrs: PlayerInstance }) {
   const { playerAttrs } = props;
   const { items } = playerAttrs.possession;
   const cur = items.length;
@@ -292,7 +285,7 @@ function ItemsPage(props: { playerAttrs: PlayerAttrs }) {
   );
 }
 
-function MagicBooksPage(props: { playerAttrs: PlayerAttrs }) {
+function MagicBooksPage(props: { playerAttrs: PlayerInstance }) {
   const { playerAttrs } = props;
   const { magicBooks } = playerAttrs.possession;
   const cur = magicBooks.length;

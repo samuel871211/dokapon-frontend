@@ -1,4 +1,3 @@
-import { monsters } from "data/monsters";
 import useTranslation from "hooks/useTranslation";
 import YellowBlock from "layouts/YellowBlock";
 import { useContext } from "react";
@@ -33,9 +32,7 @@ function SelectCharacterToCompare() {
             data-selected={selectedIdx === idx}
             className={styles.confirmDialogBtn}
           >
-            {isPlayer(character)
-              ? character.name
-              : t(monsters[character.name].name)}
+            {isPlayer(character) ? character.name : t(character.name)}
           </div>
         </div>
       ))}

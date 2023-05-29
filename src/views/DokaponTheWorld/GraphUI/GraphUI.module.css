@@ -10,6 +10,6 @@
   height: 100%;
   background-color: #333333;
 }
-.graphSVG > g {
+.graphSVG > g[data-should-transition="true"] {
   transition: transform 0.5s;
 }

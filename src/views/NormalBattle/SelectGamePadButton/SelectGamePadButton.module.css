@@ -1,0 +1,210 @@
+.gamePadContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.gamePadContainer[aria-disabled="true"] {
+  filter: brightness(75%);
+}
+.gamePadContainer[aria-disabled="false"] .attackNotice {
+  animation-name: twinkle;
+  animation-duration: 1.25s;
+  animation-iteration-count: infinite;
+}
+.attackNotice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+  color: white;
+  -webkit-text-stroke: 0.05rem blue;
+}
+.attackNotice[data-red="true"] {
+  -webkit-text-stroke: 0.05rem red;
+}
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.gamePadKeyArea {
+  font-size: 3rem;
+  line-height: 4.25rem;
+  min-height: 4.25rem;
+  text-align: center;
+  position: relative;
+  min-width: 40%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.gamePadKeyTitle {
+  position: absolute;
+  font-size: 1.5rem;
+  color: white;
+  -webkit-text-stroke: 0.1rem black;
+}
+.triangleKey .gamePadKeyTitle {
+  top: 0;
+  left: 1.5rem;
+  transform: translateY(-50%);
+}
+.squareKey .gamePadKeyTitle {
+  top: 0;
+  left: 1.5rem;
+  transform: translateY(-50%);
+}
+.circleKey .gamePadKeyTitle {
+  top: 0;
+  right: 1.5rem;
+  transform: translateY(-50%);
+}
+.crossKey .gamePadKeyTitle {
+  bottom: 0;
+  left: 1.5rem;
+  transform: translateY(50%);
+}
+/* .gamePadKeyContent */
+.gamePadKeyIcon {
+  position: absolute;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  background-color: black;
+  border: 0.2rem solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.triangleKey .gamePadKeyIcon {
+  color: green;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  font-size: 5rem;
+}
+.squareKey .gamePadKeyIcon {
+  color: pink;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.circleKey .gamePadKeyIcon {
+  color: red;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.crossKey .gamePadKeyIcon {
+  color: blue;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+.gamePadRow1 {
+  display: flex;
+  justify-content: center;
+}
+.gamePadRow2 {
+  display: flex;
+  justify-content: space-around;
+}
+.gamePadRow3 {
+  display: flex;
+  justify-content: center;
+}
+.rightDialogContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.rightDialogContainer[aria-haspopup="false"] {
+  display: none;
+}
+.leftDialogContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  --left-dialog-gap: 2rem;
+  gap: var(--left-dialog-gap);
+}
+.leftDialogTopArea {
+  width: 80%;
+  height: calc((100% - var(--left-dialog-gap)) / 3 * 2);
+  margin-inline: auto;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 25% 75%;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+}
+.textAndImage {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 0px;
+}
+.textAndImage > div:first-child {
+  text-align: center;
+  color: white;
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+  -webkit-text-stroke: 0.08rem red;
+}
+.textAndImage > .imgContainer {
+  flex-grow: 1;
+  min-height: 0px;
+}
+.textAndImage > .imgContainer > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.textAndImage > div:first-child[data-attack="false"] {
+  -webkit-text-stroke: 0.1rem blue;
+}
+.dialogContent {
+  background-color: var(--sub-bg-color);
+  border-radius: 1.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 3rem;
+  line-height: 3.25rem;
+  --diameter: 1rem;
+}
+.dialogContentExplanation {
+  padding-left: var(--diameter);
+}
+.leftDialogTopArea > .dialogContent:last-child {
+  grid-column-start: 2;
+}
+.leftDialogBottomArea {
+  width: 80%;
+  height: calc((100% - var(--left-dialog-gap)) / 3);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+}
+.leftDialogContainer[aria-haspopup="false"] {
+  display: none;
+}

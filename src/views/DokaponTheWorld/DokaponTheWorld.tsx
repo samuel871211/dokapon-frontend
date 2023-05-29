@@ -37,6 +37,8 @@ import SelectCharacterToCompare from "./SelectCharacterToCompare";
 import vertexNameToComponentType from "data/vertexNameToComponentType";
 import isGoBack from "utils/isGoBack";
 import getRandomMonsterByArea from "utils/getRandomMonsterByArea";
+import { MONSTERS } from "data/monsters";
+import createMonsterInstance from "utils/createMonsterInstance";
 
 // Stateless vars declare.
 const { getRandomIntInclusive } = Math;
@@ -280,10 +282,12 @@ function useMetaData() {
     DokaponTheWorldState,
     gamePadSetting,
     currentPlayerIdx,
-    playersAttrs,
+    players,
+    bossMonsters,
+    enemies,
     bottomDialogSentencesQueue,
   } = gameProgress;
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const currentPlayer = players[currentPlayerIdx];
   const currentMap = areaTypesToMap[currentPlayer.area];
   const currentPlayerVertex = currentMap.vertices[currentPlayer.vertexIdx];
   const {
@@ -291,12 +295,9 @@ function useMetaData() {
     curStepCount,
     curComponents,
     curClickedCharacters,
-    bossMonsters,
-    enemies,
     DrawerState,
     GraphUIState,
     BagState,
-    // RouletteState,
     CheckState,
     DataState,
     GroceryStoreFieldCheckState,
@@ -453,12 +454,15 @@ function useMetaData() {
     }
     setGameProgress({ ...gameProgress });
   }
+  /**
+   * @todo 還需要篩選`enemy` 跟 `bossMonsters` 跟 `monsters`
+   */
   function handlePlayerLandingOnVertex(): void {
     switch (currentPlayerVertex.name) {
       case "BattleField": {
         curComponents.length = 0;
         gameProgress.currentView = "NormalBattle";
-        const playersOnMyVertex = playersAttrs.filter(
+        const playersOnMyVertex = players.filter(
           (playerAttrs, idx) =>
             idx !== currentPlayerIdx &&
             playerAttrs.area === currentPlayer.area &&
@@ -466,16 +470,21 @@ function useMetaData() {
         );
         // @todo 需處理驚嘆號事件
         if (playersOnMyVertex.length === 0) {
-          const randomEnemy = getRandomMonsterByArea(currentPlayer.area);
-          currentPlayer.battleEnemy = { type: "monster", name: randomEnemy };
+          const randomMonsterName = getRandomMonsterByArea(currentPlayer.area);
+          const monsterInstance = createMonsterInstance({
+            monster: MONSTERS[randomMonsterName],
+            area: currentPlayer.area,
+            vertexIdx: currentPlayer.vertexIdx,
+          });
+          gameProgress.monsters.push(monsterInstance);
+          currentPlayer.battleCharacter = { type: "monster" };
         }
         // 只有一個人，就跟他戰鬥了
         if (playersOnMyVertex.length === 1) {
-          currentPlayer.battleEnemy = {
-            name: playersOnMyVertex[0].name,
-            type: "player",
-          };
-          break;
+          const idx = players.findIndex(
+            (p) => p.name === playersOnMyVertex[0].name
+          );
+          currentPlayer.battleCharacter = { type: "player", index: idx };
         }
         // @todo player大於1人，需跳出dialog讓使用者選擇要先跟誰戰鬥
         if (playersOnMyVertex.length > 1) break;
@@ -1097,6 +1106,7 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForRoulette(e: KeyboardEvent<HTMLDivElement>) {
+    if (curStepCount !== -1) return;
     switch (e.key.toLowerCase()) {
       case gamePadSetting.circle: {
         const stepCount =
@@ -1151,8 +1161,15 @@ function useMetaData() {
           square: false,
         });
 
+        // handle click on vertex
+        curComponents.splice(
+          0,
+          0,
+          vertexNameToComponentType[curCenterVertex.name]
+        );
+
         // check if player (self excluded), enemy or monster is clicked
-        const clickedPlayers = playersAttrs.filter(
+        const clickedPlayers = players.filter(
           (playerAttrs) =>
             currentMap.vertices[playerAttrs.vertexIdx] === curCenterVertex &&
             playerAttrs !== currentPlayer
@@ -1174,13 +1191,6 @@ function useMetaData() {
         } else if (DokaponTheWorldState.curClickedCharacters.length > 1) {
           curComponents.splice(0, 0, "SelectCharacterToCompare");
         }
-
-        // handle click on vertex
-        curComponents.splice(
-          0,
-          0,
-          vertexNameToComponentType[curCenterVertex.name]
-        );
 
         setGameProgress({ ...gameProgress });
         return;

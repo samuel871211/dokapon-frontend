@@ -3,12 +3,12 @@ import { useContext } from "react";
 
 // Local application/library specific imports.
 import AttrCircle from "components/AttrCircle";
-import SomeKindOfIcon from "components/icons";
+import { SomeKindOfIcon } from "components/Icons";
 import CustomBorderBottom from "components/CustomBorderBottom";
 import styles from "./Drawer.module.css";
 import useTranslation from "hooks/useTranslation";
 import gameProgressCtx from "reducers/gameProgress";
-import { PlayerAttrs } from "global";
+import { PlayerInstance } from "global";
 import FullHpBar from "components/FullHpBar";
 
 // Stateless vars declare.
@@ -174,21 +174,17 @@ function useMetaData() {
     currentWeek,
     currentDayOfWeek,
     currentPlayerIdx,
-    playersAttrs,
+    players,
   } = gameProgress;
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const currentPlayer = players[currentPlayerIdx];
   const { selectedIdx } = DokaponTheWorldState.DrawerState;
   function getNthNextPlayerByCurPlayerIdx(n: 1 | 2 | 3) {
-    if (n === 1) return playersAttrs[currentPlayerIdx + 1] || playersAttrs[0];
-    if (n === 2 && currentPlayerIdx <= 1)
-      return playersAttrs[currentPlayerIdx + 2];
-    if (n === 2 && currentPlayerIdx >= 2)
-      return playersAttrs[currentPlayerIdx - 2];
-    if (n === 3 && currentPlayerIdx === 0)
-      return playersAttrs[currentPlayerIdx + 3];
-    if (n === 3 && currentPlayerIdx > 0)
-      return playersAttrs[currentPlayerIdx - 1];
-    return playersAttrs[0];
+    if (n === 1) return players[currentPlayerIdx + 1] || players[0];
+    if (n === 2 && currentPlayerIdx <= 1) return players[currentPlayerIdx + 2];
+    if (n === 2 && currentPlayerIdx >= 2) return players[currentPlayerIdx - 2];
+    if (n === 3 && currentPlayerIdx === 0) return players[currentPlayerIdx + 3];
+    if (n === 3 && currentPlayerIdx > 0) return players[currentPlayerIdx - 1];
+    return players[0];
   }
   return {
     selectedIdx,
@@ -213,7 +209,7 @@ function FloatingActionBtn(props: { selected: boolean; children: string }) {
   );
 }
 
-function BriefPlayerInfos(props: { playerAttrs: PlayerAttrs }) {
+function BriefPlayerInfos(props: { playerAttrs: PlayerInstance }) {
   const { playerAttrs } = props;
   return (
     <div className={styles.briefPlayerInfos}>

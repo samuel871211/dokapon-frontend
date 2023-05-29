@@ -38,13 +38,13 @@ function SelectColor() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, currentPlayerIdx } = gameProgress;
+  const { players, currentPlayerIdx } = gameProgress;
   const remainColors = useMemo(() => {
-    const usedColors = playersAttrs
+    const usedColors = players
       .slice(0, currentPlayerIdx)
       .map((playerAttrs) => playerAttrs.color);
     return colors.filter((color) => !usedColors.includes(color));
-  }, [playersAttrs, currentPlayerIdx]);
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  }, [players, currentPlayerIdx]);
+  const currentPlayer = players[currentPlayerIdx];
   return { currentPlayer, remainColors };
 }

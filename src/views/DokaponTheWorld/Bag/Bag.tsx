@@ -4,7 +4,7 @@ import { useContext } from "react";
 // Local application/library specific imports.
 import styles from "./Bag.module.css";
 import useTranslation from "hooks/useTranslation";
-import SomeKindOfIcon from "components/icons";
+import { SomeKindOfIcon } from "components/Icons";
 import gameProgressCtx from "reducers/gameProgress";
 import jobs from "data/jobs";
 import ListItem from "components/ListItem";
@@ -81,8 +81,8 @@ function Bag() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { currentPlayerIdx, playersAttrs, DokaponTheWorldState } = gameProgress;
-  const currentPlayer = playersAttrs[currentPlayerIdx];
+  const { currentPlayerIdx, players, DokaponTheWorldState } = gameProgress;
+  const currentPlayer = players[currentPlayerIdx];
   const { selectedIdx, currentBag } = DokaponTheWorldState.BagState;
   const { possession } = currentPlayer;
   const { bagSpace } = jobs[currentPlayer.job];

@@ -1,6 +1,6 @@
 import { MonsterFixedAttrs } from "global";
 
-const monsterList: MonsterFixedAttrs[] = [
+const MONSTERLIST: MonsterFixedAttrs[] = [
   {
     name: "ヤタガラス",
     level: 1,
@@ -12,7 +12,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 4,
     money: 300,
     explanation: "現実世界とドカポン世界の\nはざまに住むカラス。",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "なし",
@@ -31,7 +30,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 400,
     explanation:
       "はざまに迷い込んでしまった犬。\nハラが減っているので\n動くものをエサとみて襲いかかる。",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "なし",
@@ -50,7 +48,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 6,
     money: 400,
     explanation: "ゼリー状の体を持つモンスター。\n見かけ通りで弱い。",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "バイン",
@@ -69,7 +66,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 20,
     money: 700,
     explanation: "キノコが悪しき力を受け\nモンスターと化した。",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "パワーキノコ",
@@ -89,7 +85,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 600,
     explanation:
       "様々なウクサが飛びかう\nナゾの生物。\nしたがって、その正体もナソだ!",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "バイン",
@@ -108,7 +103,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 600,
     explanation:
       "海に住むカエル。\n料理すると塩味がきいていて\n意外と美味らしい。",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "ピョコタンの書",
@@ -127,7 +121,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 800,
     explanation:
       "ササにあきて\n人間の味を覚えてしまった。\n1日に5人の人間を食う。",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "回復ざい",
@@ -147,7 +140,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 700,
     explanation:
       "アジアエリアにいるゾンビ。\nジャンピングボディアタックが\n得意技だ!",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "４のクリスタル",
@@ -169,7 +161,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1200,
     explanation:
       "キョンシー達を働かせて\n楽な生活をしようとする導師。\nしかし、あまり上手くいっていない。",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "asia2",
@@ -190,7 +181,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 800,
     explanation:
       "実体を持たない光のモンスター。\nそのせいで人によって見た目の\nイメージが違う。",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "マグの書",
@@ -210,7 +200,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 114,
     money: 1100,
     explanation: "もとは猿の神様だったが\n悪の波動で邪神になってしまった。",
-    isBoss: false,
     fromAreas: ["AsiaCave"],
     possession: {
       name: "力のグローブ",
@@ -230,7 +219,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 176,
     money: 1000,
     explanation: "小さいが素早い動きで\n音もなく相手に近づき\n生命を吸い取る。",
-    isBoss: false,
     fromAreas: ["AsiaCave"],
     possession: {
       name: "回復ざい",
@@ -252,7 +240,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1200,
     explanation:
       "ナワバリに迷い込んだ者を\nむれをなして襲う。\n見た目はかわいいが実は恐ろしい。",
-    isBoss: false,
     fromAreas: ["AsiaCave"],
     possession: {
       name: "マグの書",
@@ -274,7 +261,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 2900,
     explanation:
       "惨憎法師のしもべの1匹。\n攻撃力、素早さが高いが\n猿並の知能しか持っていない。",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "にょいぼう",
@@ -294,7 +280,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 2900,
     explanation:
       "惨憎法師のしもべの1匹。\nHPは高いが、1日に8回の食事を\n取らないと倒れてしまう。",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "アツアツおでん",
@@ -316,7 +301,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 2900,
     explanation:
       "惨憎法師のしもべの1匹。\nこうらを持ち防御力が高い。\nサラがひからびると弱くなる。",
-    isBoss: false,
     fromAreas: ["Asia"],
     possession: {
       name: "おんみょうの盾",
@@ -358,7 +342,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 258,
     money: 900,
     explanation: "砂漠に住むトカゲ族。\n砂漠の民とは対立している。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "トーレナ岩",
@@ -379,7 +362,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 344,
     money: 900,
     explanation: "盗賊を生業とする民。\nスナトカゲ達とは対立している。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "なし",
@@ -399,7 +381,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 258,
     money: 1000,
     explanation: "砂漠で死んだ人間が\n不思議な呪文HONEROCKで\n復活した姿。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "ノロ～の書",
@@ -421,7 +402,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1100,
     explanation:
       "下級の悪魔。\n人間を悪の道へと引き込むため\nつねにスキをうかがっている。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "ビクビクの書",
@@ -442,7 +422,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1400,
     explanation:
       "人体実験中に逃げ出した死体の一部。\n動くものに飛びかかる習性を持つ。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "モノキャッチャー",
@@ -464,7 +443,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1300,
     explanation:
       "イタズラ好きな妖精。\nゴブリンにイジメられた腹いせに\n人間をからかう。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "クマタンガード",
@@ -485,7 +463,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1700,
     explanation:
       "ヨーロッパエリアに出るホオニ。\n弱い者イジメが好きで、\nコロボックルをよくイジメる。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "トーサン像",
@@ -507,7 +484,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1400,
     explanation:
       "無念を残して死んだ人の魂。\n生ある者を恨んで\nとりつこうとする。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "気のグローブ",
@@ -528,7 +504,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1900,
     explanation:
       "騎士になれず落ちぶれた戦士\n見てくれはりっぱだが\nしょせんはザコ。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "４のクリスタル",
@@ -549,7 +524,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1100,
     explanation:
       "闇から生まれたコウモリ。\nその黒き羽を閉じ、ドリルのように\n回転する攻撃があるかどうかは不明。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "ジャンプ",
@@ -571,7 +545,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1500,
     explanation:
       "いつもビクビクしている\n気の弱いオバケ。\nしかし、人をおどろかすのは好き。",
-    isBoss: false,
     fromAreas: [
       "EuropeCave",
       "EuropeCaveCanteen",
@@ -598,7 +571,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 1900,
     explanation:
       "いつもは人間の姿をしているが、\n丸いものを見るとオオカミに\n変身してしまうクセがある。",
-    isBoss: false,
     fromAreas: [
       "EuropeCave",
       "EuropeCaveCanteen",
@@ -622,7 +594,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 1082,
     money: 1700,
     explanation: "人体実験により造られた人造人間。\n見かけによらず心は優しい。",
-    isBoss: false,
     fromAreas: [
       "EuropeCave",
       "EuropeCaveCanteen",
@@ -649,7 +620,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 3000,
     explanation:
       "人の生き血を吸うと言われているが\n実は生き血より\nトマトジュースの方が好き。",
-    isBoss: false,
     fromAreas: [
       "EuropeCave",
       "EuropeCaveCanteen",
@@ -676,7 +646,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 6600,
     explanation:
       "剣も魔法も使える万能型のヨロイ。\nだが、他のヨロイに比べると、\n攻撃力、防御力面ではおとる。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "守のグローブ",
@@ -698,7 +667,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 6600,
     explanation:
       "剣の攻撃を得意とするヨロイ。\nその姿からは想像できないくらい\n速い剣撃を出す。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "聖騎士のたて",
@@ -719,7 +687,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 6600,
     explanation:
       "もとはゆいしょ正しき聖騎士が\n着ていたといわれるヨロイ。\nそこへ悪の意志が宿った。",
-    isBoss: false,
     fromAreas: ["Europe"],
     possession: {
       name: "ナイトランス",
@@ -763,7 +730,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 1675,
     money: 2400,
     explanation: "冷気を発する白いカラス。\n時速600キロで飛ぶかどうかは不明。",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "６のクリスタル",
@@ -784,7 +750,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 2700,
     explanation:
       "絶滅の危機に立たされている獣。\nできることなら、\nそっとしておいてあげよう。",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "３バイン",
@@ -805,7 +770,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 3000,
     explanation:
       "石を食べて生きているモンスター。\n同種族に冒険者の持つ装備を\n食べるものもいる。",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "トーサン像",
@@ -848,7 +812,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 4930,
     money: 4400,
     explanation: "ロシアエリアの怪僧。\nコサックダンスとピロシキが好き。",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "エンジェルロッド",
@@ -869,7 +832,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 2500,
     explanation:
       "クールデビルによって\n魂を込められた雪ダルマ。\nハナはニンジン製だ!",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "体のグローブ",
@@ -911,7 +873,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 3926,
     money: 2500,
     explanation: "スノーマンや氷玉をしたがえ\n人々に悪さをする悪魔。",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "コチリコの書",
@@ -931,7 +892,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 3926,
     money: 3200,
     explanation: "雪雲に強い魔力が宿り\n生まれたモンスター。\n身も心も冷たい。",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "速のグローブ",
@@ -950,7 +910,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 2944,
     money: 2500,
     explanation: "何万年も生き続けて来た巨獣。\nその肉は超有名。",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "パワーキノコ",
@@ -971,7 +930,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 3600,
     explanation:
       "氷玉が組み合わさってできた人形。\n攻撃力、防御力は上がったが\n魔力、素早さが下がってしまった。",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "スパイクガード",
@@ -991,7 +949,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 2700,
     explanation:
       "ごつかんの海で人を襲う巨大イカ。\n巨大船をもしずめる力を持つ。",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "モノキャッチャー",
@@ -1013,7 +970,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 6000,
     explanation:
       "雪原人の子供。\n体は小さいがとにかくよく食う。\n最近体が丸くなってきた。",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "タンバリン",
@@ -1033,7 +989,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 9544,
     money: 6900,
     explanation: "雪原人の成人。\n長ほどではないが大食らい。",
-    isBoss: false,
     fromAreas: ["Russia"],
     possession: {
       name: "お楽しみのタネ",
@@ -1076,7 +1031,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 11052,
     money: 3900,
     explanation: "自分が死んだことにも気付かず\n荒野をさまようユウレイ。",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "ムラデロンの書",
@@ -1097,7 +1051,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 3900,
     explanation:
       "旅ガラスならぬ旅コウモリ。\nいったいどこを\n渡り歩いているのだろう?",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "カエロッカナ",
@@ -1116,7 +1069,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 5526,
     money: 4100,
     explanation: "ゾンビの手がくさって落ち、\nそのまま生き続けている。",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "なし",
@@ -1137,7 +1089,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 8479,
     money: 3600,
     explanation: "生きた毒キノコ。\nアイテムの\nマジックキノコの原料となる。",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "気のグローブ",
@@ -1158,7 +1109,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 6359,
     money: 3900,
     explanation: "ズルがしこい獣。\nプレーリーズが好物で、\n常に狙っている。",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "ミセジャンプ",
@@ -1178,7 +1128,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 6359,
     money: 4400,
     explanation: "肉食の巨獣。\n出会った時に死んだふり⋯\n⋯はしない方がいい。",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "５のクリスタル",
@@ -1198,7 +1147,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 7277,
     money: 4600,
     explanation: "北米の雪山に住むと言われる獣人。\n雪原人との関係はナゾ。",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "ラッキーベル",
@@ -1241,7 +1189,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 8284,
     money: 4900,
     explanation: "かたいウロコでおおわれた\n体を持つ好戦的なりザードマン。",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "トーサン像",
@@ -1262,7 +1209,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 4900,
     explanation:
       "くさったまま生きている死体。\nちなみに、くさりが進むと\nさまようムクロになる。",
-    isBoss: false,
     fromAreas: ["NorthAmericaCave", "NorthAmericaCaveB2"],
     possession: {
       name: "パワーキノコ",
@@ -1304,7 +1250,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 4100,
     explanation:
       "神の魂を宿した大ワシ。\nその羽は住民達のお守りとして\nありがたがられている。",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "３バイン",
@@ -1325,7 +1270,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 3600,
     explanation:
       "血のように紅いスライミイ。\nただのスライミイだと油断すると\n痛い目を見ることに⋯。",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "回復ざいSP",
@@ -1347,7 +1291,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 5400,
     explanation:
       "体中から炎を吹き出す雲モンスター。\nその体につつまれたら\n大やけどではすまない。",
-    isBoss: false,
     fromAreas: ["NorthAmericaCave", "NorthAmericaCaveB2"],
     possession: {
       name: "バーニー",
@@ -1368,7 +1311,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 10585,
     money: 5200,
     explanation: "ワンダーゴーストの体。\n魂を求めてさまよい歩く。",
-    isBoss: false,
     fromAreas: ["NorthAmericaCave", "NorthAmericaCaveB2"],
     possession: {
       name: "ドクロの盾",
@@ -1433,7 +1375,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 11600,
     explanation:
       "3匹の木の精霊が合体した姿。\n上が攻撃、真ん中がリーダーで作戦、\n下が移動をたんとうしている。",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "炎のうでわ",
@@ -1455,7 +1396,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 14500,
     explanation:
       "木の精霊の中でも戦闘力に\n長けている者がレベルアップした姿。\n3匹のチームワークはバツグン。",
-    isBoss: false,
     fromAreas: ["NorthAmerica"],
     possession: {
       name: "ハヤブサの槍",
@@ -1498,7 +1438,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 6400,
     explanation:
       "強い毒を持つ危険なカエル。\nその毒は1グラムで\n10万人を殺すことが可能。",
-    isBoss: false,
     fromAreas: ["SouthAmerica"],
     possession: {
       name: "ドクラマグラの書",
@@ -1520,7 +1459,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 7000,
     explanation:
       "自らエモノを求めてさまよう草。\n足が遅いので、毒液を飛ばして\nエモノを弱らせてつかまえる。",
-    isBoss: false,
     fromAreas: ["SouthAmerica"],
     possession: {
       name: "ネムネムの書",
@@ -1542,7 +1480,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 7000,
     explanation:
       "木の精霊の上位種。\n歌が好きだが上手くないので\n聞く者を混乱させてしまう。",
-    isBoss: false,
     fromAreas: ["SouthAmerica"],
     possession: {
       name: "ばんのう薬",
@@ -1564,7 +1501,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 8100,
     explanation:
       "古くからこの地に住む種族。\n暗殺術に長けており\n一撃で首をはねることもある。",
-    isBoss: false,
     fromAreas: ["SouthAmerica"],
     possession: {
       name: "メッセヨの書",
@@ -1585,7 +1521,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 7300,
     explanation:
       "リザードマン族では上位の種族。\n戦闘を好み誰彼構わず\nケンカを仕かけてくる。",
-    isBoss: false,
     fromAreas: ["SouthAmerica"],
     possession: {
       name: "ダウンの書",
@@ -1607,7 +1542,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 6700,
     explanation:
       "宝を求めて冒険をした海賊が、\n死してなお宝を求めさまよっている。",
-    isBoss: false,
     fromAreas: ["SouthAmerica"],
     possession: {
       name: "シニガーミの書",
@@ -1629,7 +1563,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 8000,
     explanation:
       "毒ガスが意志を持ったモンスター。\n装備を壊す魔法や\nパラメータを下げる特技を操る。",
-    isBoss: false,
     fromAreas: ["SouthAmerica"],
     possession: {
       name: "ブリオンの書",
@@ -1650,7 +1583,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 7000,
     explanation:
       "鉄の体を持つ巨大エビ。\nそのかたい体は\n盾作りに利用されることがある。",
-    isBoss: false,
     fromAreas: ["SouthAmerica"],
     possession: {
       name: "鉄のグローブ",
@@ -1671,7 +1603,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 22160,
     money: 9300,
     explanation: "羽を持つヘビの神。\nテスカポリトカとは兄弟。",
-    isBoss: false,
     fromAreas: ["SouthAmerica"],
     possession: {
       name: "黄金の盾",
@@ -1692,7 +1623,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 7600,
     explanation:
       "クジラをも食らう海の巨獣。\n一度しめ上げたエモノは\n相手が死ぬまで離さない。",
-    isBoss: false,
     fromAreas: ["SouthAmerica"],
     possession: {
       name: "ゼニキャッチャー",
@@ -1713,7 +1643,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 48657,
     money: 10200,
     explanation: "マヤの風の神。\n強力な風の魔法を持つ。",
-    isBoss: false,
     fromAreas: ["SouthAmericaCave", "SouthAmericaCaveB2", "SouthAmericaCaveB3"],
     possession: {
       name: "ヒュギューオの書",
@@ -1735,7 +1664,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 8300,
     explanation:
       "魔王とも呼ばれた恐ろしい神。\n兄弟のケツアルコアトルとは\n仲が悪い。",
-    isBoss: false,
     fromAreas: ["SouthAmericaCave", "SouthAmericaCaveB2", "SouthAmericaCaveB3"],
     possession: {
       name: "黄金の杖",
@@ -1757,7 +1685,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 15100,
     explanation:
       "イマーヘンにより生み出された石像。\nお金を集める役割を持ち、\n人々を見張る。",
-    isBoss: false,
     fromAreas: ["SouthAmerica"],
     possession: {
       name: "コブタの貯金箱",
@@ -1804,7 +1731,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 10000,
     explanation:
       "高い魔力を持つ魔導師の目から\n生まれた魔生物。\nその目でニラまれた者はいてつく。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "ネンドーリキの書",
@@ -1825,7 +1751,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 35520,
     money: 10800,
     explanation: "世界一小さなペンギン。\n敵に集団で襲いかかり\nフクロにする。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "ポヨヨンシールド",
@@ -1847,7 +1772,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 10900,
     explanation:
       "闇に取り込まれた妖精。\nすでに妖精のころの記憶はなく、\n憎悪に支配された目があるのみ。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "マグファの書",
@@ -1869,7 +1793,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 10000,
     explanation:
       "石食らいの同種族。\n生命体には関心がなく、\n冒険者の持つ装備を好んで食べる。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "お楽しみのタネ",
@@ -1889,7 +1812,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 26640,
     money: 10800,
     explanation: "犬の中でも古い種族の1つ。\nわりと人なつっこい。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "５のクリスタル",
@@ -1911,7 +1833,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 10900,
     explanation:
       "オセアニアに住む幻の生物。\n見た目ほど悪いやつではないらしい。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "ムラデロンの書",
@@ -1933,7 +1854,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 9100,
     explanation:
       "巨大な人食い草。\nねん液でエモノをからめ取り\nとかして食べる。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "ワナ",
@@ -1954,7 +1874,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 38802,
     money: 10000,
     explanation: "不思議な毒キノコを食べたため\n変身してしまった人間。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "ばんのう薬",
@@ -1976,7 +1895,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 9600,
     explanation:
       "ゴブリンが海を渡り帰化した。\n常に腹を空かしており\n動くものなら何でも食べる。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "４バイン",
@@ -1997,7 +1915,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 10200,
     explanation:
       "砂の中に住む液体モンスター。\n音でエモノを感知し、\n砂の中に引きずり込んで食べる。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "ミエるんです",
@@ -2019,7 +1936,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 11200,
     explanation:
       "ケーブクロウによって死の世界へ\n連れ去られた者のウデ。\n道連れを求めさまよう。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "復活ざい",
@@ -2039,7 +1955,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 40545,
     money: 11200,
     explanation: "返り血をあびた死のカラス。\n紅き羽が生者を死の世界へと導く。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "ソトジャンプ",
@@ -2061,7 +1976,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 17300,
     explanation:
       "大地の名を持つドラゴン。\n攻撃力がすさまじく、\nハイレベルの冒険者でも手をやく。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "グラズシーンの書",
@@ -2083,7 +1997,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 21500,
     explanation:
       "オセアニアのハイエナ。\n気性が荒く、死肉さえもむさぼる\nところからこの名が付いた。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "神速のリング",
@@ -2105,7 +2018,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 19900,
     explanation:
       "普段はおとなしいトカゲ。\n怒るとエリマキを広げ\n襲いかかってくる。",
-    isBoss: false,
     fromAreas: ["Oceania"],
     possession: {
       name: "スネークロッド",
@@ -2148,7 +2060,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 13200,
     explanation:
       "サビより生まれたカエル。\n体から発生する体液で\n装備品をサビさせる。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "ラストルズ",
@@ -2170,7 +2081,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 15500,
     explanation:
       "オシリス神の使い。\n生ある者を死の世界へと\n連れて行くのが仕事。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "よみのカマ",
@@ -2192,7 +2102,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 16400,
     explanation:
       "古代王家の墓を暴いた結果、\n呪われた体になった者。\n死して墓を守り続ける。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "4バイン",
@@ -2212,7 +2121,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 54809,
     money: 14440,
     explanation: "マサイ族の戦士。\nみつりょう者と戦っている。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "マモるんです",
@@ -2234,7 +2142,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 15400,
     explanation:
       "動物をみつりょうして\nお金をもうけている。\nマサイ族と敵対している。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "ゼニキャッチャー",
@@ -2256,7 +2163,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 13000,
     explanation:
       "ジャングル内にさく人食い草。\n人間が近づくと襲いかかるが、\n怪しいので誰も近づかない。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "あま～い汁",
@@ -2277,7 +2183,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 54809,
     money: 13600,
     explanation: "ドラゴンからはせいした\nトカグ族の中で最強の種族。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "バイバイン",
@@ -2299,7 +2204,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 14100,
     explanation:
       "世界中の獣の王。\n荒ぶるたてがみ、鋭いツメとキバ、\nどれもが獣王の名にふさわしい。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "マグファイアの書",
@@ -2321,7 +2225,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 14100,
     explanation:
       "地上最大の巨獣。\nその足にふみつぶされた者は\n肉片すら残らない。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "グラズシーンの書",
@@ -2342,7 +2245,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 58857,
     money: 15900,
     explanation: "マサイ族のエリート戦士。\nみつりょう者と戦っている。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "ウラミム",
@@ -2364,7 +2266,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 19800,
     explanation:
       "生死を操る死人使い。\nそのカは、己の死さえも\n操ることができると言う。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "リバイブ",
@@ -2386,7 +2287,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 15500,
     explanation:
       "一撃必殺を身上としてきた一族。\n殺しのプロで、狙ったエモノは\n逃さない。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "忍のグローブ",
@@ -2407,7 +2307,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 15000,
     explanation:
       "巨大なハサミを持つ古代エビ。\n太古よりそのハサミで\n海の巨獣達と戦ってきた。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "ヒーリングベル",
@@ -2429,7 +2328,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 21800,
     explanation:
       "海の名を持つドラゴン。\nはき出す氷のプレスは、北極や\n南極の氷を作ったと言われる。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "ドラゴンシールド",
@@ -2450,7 +2348,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 67570,
     money: 29000,
     explanation: "宝箱になりすまし、\n宝を求めて来る者を襲う。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "水晶のネックレス",
@@ -2471,7 +2368,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 16000,
     explanation:
       "しっ黒紅目のコウモリ。\n王家の墓の中に住みつき、\n死んだ人の魂を食らって生きる。",
-    isBoss: false,
     fromAreas: [
       "AfricaCave",
       "AfricaCaveB2",
@@ -2499,7 +2395,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 16900,
     explanation:
       "古代王家の墓を荒らし回る\nトレジャーハンター。\n最後は呪われし者となるか⋯?",
-    isBoss: false,
     fromAreas: [
       "AfricaCave",
       "AfricaCaveB2",
@@ -2527,7 +2422,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 16500,
     explanation:
       "古代王のじゅう者。\n王復活の世話をするため\nともに眠りについた。",
-    isBoss: false,
     fromAreas: [
       "AfricaCave",
       "AfricaCaveB2",
@@ -2555,7 +2449,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 19300,
     explanation:
       "古代王に仕えた兵士。\n王家の墓に入り込んだ者達を\nまっ殺するため歩き回る。",
-    isBoss: false,
     fromAreas: [
       "AfricaCave",
       "AfricaCaveB2",
@@ -2582,7 +2475,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 102859,
     money: 20800,
     explanation: "王家の墓の番人。\n高い知能を持ち\n冒険者にナゾかけをする。",
-    isBoss: false,
     fromAreas: [
       "AfricaCave",
       "AfricaCaveB2",
@@ -2609,7 +2501,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 25000,
     explanation:
       "土くれでできた大地の精霊。\n魔力と素早さは低いが\n高い防御力をほこる。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "命のグローブ",
@@ -2631,7 +2522,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 30000,
     explanation:
       "月と太陽の目を持つ天空の神。\n素早い身のこなしで空から敵を狙う。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "おしおき棒",
@@ -2652,7 +2542,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 175252,
     money: 14100,
     explanation: "闇の獣王。\n暗黒闘気を身にまとい\n生ある者の首を狙う。",
-    isBoss: false,
     fromAreas: ["Africa"],
     possession: {
       name: "法のグローブ",
@@ -2717,7 +2606,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 175252,
     money: 19100,
     explanation: "海で死んだ者の霊。\n仲間を増やそうと\n海を旅する者を狙う。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "シニガーミの書",
@@ -2738,7 +2626,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 116834,
     money: 20600,
     explanation: "人々の暗い心が集まってできた、\n闇から生まれた闇の子。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "ヒュギューオの書",
@@ -2760,7 +2647,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 19600,
     explanation:
       "両手から生えた白銀の刃で\n斬りつけられた者は\n身も心もこおると言われる。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "５バイン",
@@ -2801,7 +2687,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 20200,
     explanation:
       "小さいながらも凶暴で、\n高い攻撃力をほこる。\n先攻を取られたら死を待つのみ。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "ソトジャンプ",
@@ -2823,7 +2708,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 20700,
     explanation:
       "生きている冷気ガス。\n体内はー273度で全てのものを\nこおらせる。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "ヘイカモンの書",
@@ -2845,7 +2729,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 23100,
     explanation:
       "オーロラを自由に呼びよせ\n空を自由にかけ回る。\nサンタクロースと言う説もある。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "コチコッチンの書",
@@ -2865,7 +2748,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 93221,
     money: 21300,
     explanation: "何万年もの間、氷の中で\n生き続けているマンモス。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "カメレオストーン",
@@ -2887,7 +2769,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 31800,
     explanation:
       "古代のドラゴン。\n氷河期を生きのびるため、\nマグマの血を手に入れた。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "破壊のリング",
@@ -2952,7 +2833,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 19600,
     explanation:
       "氷上のピラニアと呼ばれる。\nテリトリーに入り込んだ者を襲い\n骨にしてしまう。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "きせきのハリガネ",
@@ -2974,7 +2854,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 22400,
     explanation:
       "高い知能を持コペンギン。\nお腹はフカフカしていて\n気持ちいい。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "魔法の薬",
@@ -2995,7 +2874,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 198121,
     money: 26600,
     explanation: "己を高めるために\n南極に隠れ住む魔導師。\n結構さみしがりや。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "ポカドンの書",
@@ -3016,7 +2894,6 @@ const monsterList: MonsterFixedAttrs[] = [
     exp: 198121,
     money: 23100,
     explanation: "時空のはざまから出現した\n魔力のかたまり。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "ショバチェンの書",
@@ -3038,7 +2915,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 31800,
     explanation:
       "王の名を持つドラゴン。\n金色に輝くその体からは\n金が無限に取れると言われる。",
-    isBoss: false,
     fromAreas: ["Arctic", "Antarctica"],
     possession: {
       name: "魔人リング",
@@ -3082,7 +2958,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 23400,
     explanation:
       "邪神によって生み出された\n電気エネルギーの生命体。\nふれるものを黒コゲにする。",
-    isBoss: false,
     fromAreas: ["HawaiianIslands"],
     possession: {
       name: "ゴロサンダーの書",
@@ -3104,7 +2979,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 24900,
     explanation:
       "世界最大級のイカ。\nすさまじい体力をほこり、\n倒すのにはかなりの時間を要する。",
-    isBoss: false,
     fromAreas: ["HawaiianIslands"],
     possession: {
       name: "ケイタイ",
@@ -3126,7 +3000,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 26500,
     explanation:
       "ムーの民によって作られた石像。\n番兵のテスト品のため\n性能は今一つ。",
-    isBoss: false,
     fromAreas: ["HawaiianIslands"],
     possession: {
       name: "ネムネムの書",
@@ -3147,7 +3020,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 42200,
     explanation:
       "開けてはならない禁断の箱。\n箱を開けた者は\nあらゆる災いを世に放つことに⋯。",
-    isBoss: false,
     fromAreas: ["HawaiianIslands"],
     possession: {
       name: "ヒーリングベル",
@@ -3169,7 +3041,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 26800,
     explanation:
       "邪神によって絶滅した民の姿。\nすでに意志はなく、ムーに来る者を\n悪と見なして戦う。",
-    isBoss: false,
     fromAreas: ["HawaiianIslands"],
     possession: {
       name: "ダウンの書",
@@ -3191,7 +3062,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 31700,
     explanation:
       "邪神と戦った兵士の姿。\nムーの心同様、絶滅してもなお、\n大陸を守るために戦い続ける。",
-    isBoss: false,
     fromAreas: ["HawaiianIslands"],
     possession: {
       name: "マモるんです",
@@ -3213,7 +3083,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 37800,
     explanation:
       "ムーの力を集結させて作られた\n無敵のロボット。\n対邪神兵器として開発された。",
-    isBoss: false,
     fromAreas: ["HawaiianIslands"],
     possession: {
       name: "マグファイアの書",
@@ -3385,7 +3254,6 @@ const monsterList: MonsterFixedAttrs[] = [
     money: 100,
     explanation:
       "コロリウィルスを持つ恐怖のサル。\n出会った者はコロリウィルスに\n恐怖することになる。",
-    isBoss: false,
     fromAreas: [],
     possession: {
       name: "きせきのしずく",
@@ -3707,179 +3575,179 @@ function satisfiesRecords<valueType>() {
   return <K extends PropertyKey>(record: Record<K, valueType>) => record;
 }
 
-const monsters = satisfiesRecords<MonsterFixedAttrs>()({
-  crowPurple: monsterList[0],
-  dog: monsterList[1],
-  slimeBlue: monsterList[2],
-  mushroomBrown: monsterList[3],
-  possessedCatRed: monsterList[4],
-  frogGreen: monsterList[5],
-  pandaWhite: monsterList[6],
-  zombie: monsterList[7],
-  priest: monsterList[8],
-  flameRed: monsterList[9],
-  tribalLemur: monsterList[10],
-  batGreen: monsterList[11],
-  mouseBlue: monsterList[12],
-  monkeyHero: monsterList[13],
-  pigsy: monsterList[14],
-  kappa: monsterList[15],
-  corruptPreist: monsterList[16],
-  lizardWarriorGreen: monsterList[17],
-  thiefWhite: monsterList[18],
-  skeletonBrown: monsterList[19],
-  gargoyleDevilRed: monsterList[20],
-  handBlue: monsterList[21],
-  rabbitPurple: monsterList[22],
-  goblinBrown: monsterList[23],
-  flamePurple: monsterList[24],
-  soldier: monsterList[25],
-  batPurple: monsterList[26],
-  ghostsWhite: monsterList[27],
-  werewolf: monsterList[28],
-  frankenstein: monsterList[29],
-  vampire: monsterList[30],
-  knightBrown: monsterList[31],
-  knightPurple: monsterList[32],
-  knightGray: monsterList[33],
-  knightRed: monsterList[34],
-  crowWhite: monsterList[35],
-  wolfWhite: monsterList[36],
-  toadGreen: monsterList[37],
-  slimePink: monsterList[38],
-  wizardPurple: monsterList[39],
-  snowman: monsterList[40],
-  flameBlue: monsterList[41],
-  gargoyleDevilWhite: monsterList[42],
-  ghostCloudBlue: monsterList[43],
-  mammothBrown: monsterList[44],
-  volcanoGray: monsterList[45],
-  squidWhite: monsterList[46],
-  snowmanSmall: monsterList[47],
-  snowmanNormal: monsterList[48],
-  snowmanBig: monsterList[49],
-  ghostsBrown: monsterList[50],
-  batRed: monsterList[51],
-  handBrown: monsterList[52],
-  mushroomOrange: monsterList[53],
-  wolfBrown: monsterList[54],
-  pandaBlack: monsterList[55],
-  possessedCatBrown: monsterList[56],
-  mouseYellow: monsterList[57],
-  lizardWarriorBlue: monsterList[58],
-  mummyBrown: monsterList[59],
-  tribesmanYellow: monsterList[60],
-  birdRed: monsterList[61],
-  slimeRed: monsterList[62],
-  ghostCloudRed: monsterList[63],
-  skeletonGreen: monsterList[64],
-  eyeballGreen: monsterList[65],
-  twoHeadedBeast: monsterList[66],
-  indiantTotemBrown: monsterList[67],
-  indiantTotemBlack: monsterList[68],
-  indianBoss: monsterList[69],
-  frogYellow: monsterList[70],
-  manEatingPlantPink: monsterList[71],
-  rabbitGreen: monsterList[72],
-  warriorBrown: monsterList[73],
-  lizardWarriorPurple: monsterList[74],
-  skeletonPurple: monsterList[75],
-  ghostCloudPurple: monsterList[76],
-  crawfishGray: monsterList[77],
-  birdPurple: monsterList[78],
-  squidPink: monsterList[79],
-  wizardRed: monsterList[80],
-  gargoyleYellow: monsterList[81],
-  golemBrown: monsterList[82],
-  golemYellow: monsterList[83],
-  eyeballRed: monsterList[84],
-  penguinBlue: monsterList[85],
-  gargoyleDevilBlack: monsterList[86],
-  toadOrange: monsterList[87],
-  wolfBlue: monsterList[88],
-  possessedCatWhite: monsterList[89],
-  manEatingPlantBrown: monsterList[90],
-  mushroomPurple: monsterList[91],
-  goblinRed: monsterList[92],
-  slimeYellow: monsterList[93],
-  handRed: monsterList[94],
-  crowRed: monsterList[95],
-  dragonGreen: monsterList[96],
-  weasel: monsterList[97],
-  frillLizard: monsterList[98],
-  koala: monsterList[99],
-  frogOrange: monsterList[100],
-  ghostsRed: monsterList[101],
-  skeletonRed: monsterList[102],
-  warriorYellow: monsterList[103],
-  thiefYellow: monsterList[104],
-  manEatingPlantPurple: monsterList[105],
-  lizardWarriorRed: monsterList[106],
-  lionBrown: monsterList[107],
-  elephant: monsterList[108],
-  warriorGray: monsterList[109],
-  tribesmanRed: monsterList[110],
-  assassin: monsterList[111],
-  crawfishRed: monsterList[112],
-  dragonBlue: monsterList[113],
-  mimicBrown: monsterList[114],
-  batBlack: monsterList[115],
-  thiefBlue: monsterList[116],
-  mummyWhite: monsterList[117],
-  mummyGray: monsterList[118],
-  lionYellow: monsterList[119],
-  volcanoBrown: monsterList[120],
-  birdYellow: monsterList[121],
-  lionPurple: monsterList[122],
-  evilMageClone: monsterList[123],
-  evilMage: monsterList[124],
-  ghostsPurple: monsterList[125],
-  gargoyleDevilPurple: monsterList[126],
-  crawfishBlue: monsterList[127],
-  walrus: monsterList[128],
-  gerbil: monsterList[129],
-  ghostCloudWhite: monsterList[130],
-  rabbitBlue: monsterList[131],
-  mammothWhite: monsterList[132],
-  dragonRed: monsterList[133],
-  polarBear: monsterList[134],
-  frogBlue: monsterList[135],
-  penguinRed: monsterList[136],
-  fatPenguin: monsterList[137],
-  wizardWhite: monsterList[138],
-  eyeballGray: monsterList[139],
-  dragonYellow: monsterList[140],
-  penguinDemon: monsterList[141],
-  flameYellow: monsterList[142],
-  squidPurple: monsterList[143],
-  gargoylePurple: monsterList[144],
-  mimicGray: monsterList[145],
-  skeletonYellow: monsterList[146],
-  knightYellow: monsterList[147],
-  guardian: monsterList[148],
-  thunder: monsterList[149],
-  mimicYellow: monsterList[150],
-  mimicBlue: monsterList[151],
-  mimicRed: monsterList[152],
-  mimicWhite: monsterList[153],
-  mimicGolden: monsterList[154],
-  mimicKey: monsterList[155],
-  monkey: monsterList[156],
-  wiwi: monsterList[157],
-  ninja: monsterList[158],
-  patches: monsterList[159],
-  patchy36: monsterList[160],
-  patchy1: monsterList[161],
-  pirate: monsterList[162],
-  pero: monsterList[163],
-  demonChild: monsterList[164],
-  monk: monsterList[165],
-  gladiator: monsterList[166],
-  arabianGuard: monsterList[167],
-  hammerKnight: monsterList[168],
-  fighter: monsterList[169],
-  evo: monsterList[170],
+const MONSTERS = satisfiesRecords<MonsterFixedAttrs>()({
+  crowPurple: MONSTERLIST[0],
+  dog: MONSTERLIST[1],
+  slimeBlue: MONSTERLIST[2],
+  mushroomBrown: MONSTERLIST[3],
+  possessedCatRed: MONSTERLIST[4],
+  frogGreen: MONSTERLIST[5],
+  pandaWhite: MONSTERLIST[6],
+  zombie: MONSTERLIST[7],
+  priest: MONSTERLIST[8],
+  flameRed: MONSTERLIST[9],
+  tribalLemur: MONSTERLIST[10],
+  batGreen: MONSTERLIST[11],
+  mouseBlue: MONSTERLIST[12],
+  monkeyHero: MONSTERLIST[13],
+  pigsy: MONSTERLIST[14],
+  kappa: MONSTERLIST[15],
+  corruptPreist: MONSTERLIST[16],
+  lizardWarriorGreen: MONSTERLIST[17],
+  thiefWhite: MONSTERLIST[18],
+  skeletonBrown: MONSTERLIST[19],
+  gargoyleDevilRed: MONSTERLIST[20],
+  handBlue: MONSTERLIST[21],
+  rabbitPurple: MONSTERLIST[22],
+  goblinBrown: MONSTERLIST[23],
+  flamePurple: MONSTERLIST[24],
+  soldier: MONSTERLIST[25],
+  batPurple: MONSTERLIST[26],
+  ghostsWhite: MONSTERLIST[27],
+  werewolf: MONSTERLIST[28],
+  frankenstein: MONSTERLIST[29],
+  vampire: MONSTERLIST[30],
+  knightBrown: MONSTERLIST[31],
+  knightPurple: MONSTERLIST[32],
+  knightGray: MONSTERLIST[33],
+  knightRed: MONSTERLIST[34],
+  crowWhite: MONSTERLIST[35],
+  wolfWhite: MONSTERLIST[36],
+  toadGreen: MONSTERLIST[37],
+  slimePink: MONSTERLIST[38],
+  wizardPurple: MONSTERLIST[39],
+  snowman: MONSTERLIST[40],
+  flameBlue: MONSTERLIST[41],
+  gargoyleDevilWhite: MONSTERLIST[42],
+  ghostCloudBlue: MONSTERLIST[43],
+  mammothBrown: MONSTERLIST[44],
+  volcanoGray: MONSTERLIST[45],
+  squidWhite: MONSTERLIST[46],
+  snowmanSmall: MONSTERLIST[47],
+  snowmanNormal: MONSTERLIST[48],
+  snowmanBig: MONSTERLIST[49],
+  ghostsBrown: MONSTERLIST[50],
+  batRed: MONSTERLIST[51],
+  handBrown: MONSTERLIST[52],
+  mushroomOrange: MONSTERLIST[53],
+  wolfBrown: MONSTERLIST[54],
+  pandaBlack: MONSTERLIST[55],
+  possessedCatBrown: MONSTERLIST[56],
+  mouseYellow: MONSTERLIST[57],
+  lizardWarriorBlue: MONSTERLIST[58],
+  mummyBrown: MONSTERLIST[59],
+  tribesmanYellow: MONSTERLIST[60],
+  birdRed: MONSTERLIST[61],
+  slimeRed: MONSTERLIST[62],
+  ghostCloudRed: MONSTERLIST[63],
+  skeletonGreen: MONSTERLIST[64],
+  eyeballGreen: MONSTERLIST[65],
+  twoHeadedBeast: MONSTERLIST[66],
+  indiantTotemBrown: MONSTERLIST[67],
+  indiantTotemBlack: MONSTERLIST[68],
+  indianBoss: MONSTERLIST[69],
+  frogYellow: MONSTERLIST[70],
+  manEatingPlantPink: MONSTERLIST[71],
+  rabbitGreen: MONSTERLIST[72],
+  warriorBrown: MONSTERLIST[73],
+  lizardWarriorPurple: MONSTERLIST[74],
+  skeletonPurple: MONSTERLIST[75],
+  ghostCloudPurple: MONSTERLIST[76],
+  crawfishGray: MONSTERLIST[77],
+  birdPurple: MONSTERLIST[78],
+  squidPink: MONSTERLIST[79],
+  wizardRed: MONSTERLIST[80],
+  gargoyleYellow: MONSTERLIST[81],
+  golemBrown: MONSTERLIST[82],
+  golemYellow: MONSTERLIST[83],
+  eyeballRed: MONSTERLIST[84],
+  penguinBlue: MONSTERLIST[85],
+  gargoyleDevilBlack: MONSTERLIST[86],
+  toadOrange: MONSTERLIST[87],
+  wolfBlue: MONSTERLIST[88],
+  possessedCatWhite: MONSTERLIST[89],
+  manEatingPlantBrown: MONSTERLIST[90],
+  mushroomPurple: MONSTERLIST[91],
+  goblinRed: MONSTERLIST[92],
+  slimeYellow: MONSTERLIST[93],
+  handRed: MONSTERLIST[94],
+  crowRed: MONSTERLIST[95],
+  dragonGreen: MONSTERLIST[96],
+  weasel: MONSTERLIST[97],
+  frillLizard: MONSTERLIST[98],
+  koala: MONSTERLIST[99],
+  frogOrange: MONSTERLIST[100],
+  ghostsRed: MONSTERLIST[101],
+  skeletonRed: MONSTERLIST[102],
+  warriorYellow: MONSTERLIST[103],
+  thiefYellow: MONSTERLIST[104],
+  manEatingPlantPurple: MONSTERLIST[105],
+  lizardWarriorRed: MONSTERLIST[106],
+  lionBrown: MONSTERLIST[107],
+  elephant: MONSTERLIST[108],
+  warriorGray: MONSTERLIST[109],
+  tribesmanRed: MONSTERLIST[110],
+  assassin: MONSTERLIST[111],
+  crawfishRed: MONSTERLIST[112],
+  dragonBlue: MONSTERLIST[113],
+  mimicBrown: MONSTERLIST[114],
+  batBlack: MONSTERLIST[115],
+  thiefBlue: MONSTERLIST[116],
+  mummyWhite: MONSTERLIST[117],
+  mummyGray: MONSTERLIST[118],
+  lionYellow: MONSTERLIST[119],
+  volcanoBrown: MONSTERLIST[120],
+  birdYellow: MONSTERLIST[121],
+  lionPurple: MONSTERLIST[122],
+  evilMageClone: MONSTERLIST[123],
+  evilMage: MONSTERLIST[124],
+  ghostsPurple: MONSTERLIST[125],
+  gargoyleDevilPurple: MONSTERLIST[126],
+  crawfishBlue: MONSTERLIST[127],
+  walrus: MONSTERLIST[128],
+  gerbil: MONSTERLIST[129],
+  ghostCloudWhite: MONSTERLIST[130],
+  rabbitBlue: MONSTERLIST[131],
+  mammothWhite: MONSTERLIST[132],
+  dragonRed: MONSTERLIST[133],
+  polarBear: MONSTERLIST[134],
+  frogBlue: MONSTERLIST[135],
+  penguinRed: MONSTERLIST[136],
+  fatPenguin: MONSTERLIST[137],
+  wizardWhite: MONSTERLIST[138],
+  eyeballGray: MONSTERLIST[139],
+  dragonYellow: MONSTERLIST[140],
+  penguinDemon: MONSTERLIST[141],
+  flameYellow: MONSTERLIST[142],
+  squidPurple: MONSTERLIST[143],
+  gargoylePurple: MONSTERLIST[144],
+  mimicGray: MONSTERLIST[145],
+  skeletonYellow: MONSTERLIST[146],
+  knightYellow: MONSTERLIST[147],
+  guardian: MONSTERLIST[148],
+  thunder: MONSTERLIST[149],
+  mimicYellow: MONSTERLIST[150],
+  mimicBlue: MONSTERLIST[151],
+  mimicRed: MONSTERLIST[152],
+  mimicWhite: MONSTERLIST[153],
+  mimicGolden: MONSTERLIST[154],
+  mimicKey: MONSTERLIST[155],
+  monkey: MONSTERLIST[156],
+  wiwi: MONSTERLIST[157],
+  ninja: MONSTERLIST[158],
+  patches: MONSTERLIST[159],
+  patchy36: MONSTERLIST[160],
+  patchy1: MONSTERLIST[161],
+  pirate: MONSTERLIST[162],
+  pero: MONSTERLIST[163],
+  demonChild: MONSTERLIST[164],
+  monk: MONSTERLIST[165],
+  gladiator: MONSTERLIST[166],
+  arabianGuard: MONSTERLIST[167],
+  hammerKnight: MONSTERLIST[168],
+  fighter: MONSTERLIST[169],
+  evo: MONSTERLIST[170],
 });
-export { monsterList, monsters };
+export { MONSTERLIST, MONSTERS };
 
-export type MonsterTypes = keyof typeof monsters;
+export type MonsterTypes = keyof typeof MONSTERS;

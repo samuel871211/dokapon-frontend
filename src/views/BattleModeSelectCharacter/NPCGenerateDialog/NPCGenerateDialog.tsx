@@ -87,7 +87,7 @@ function NPCGenerateDialog() {
 
 function useMetaData() {
   const { gameProgress } = useContext(gameProgressCtx);
-  const { playersAttrs, currentPlayerIdx, currentView } = gameProgress;
+  const { players, currentPlayerIdx, currentView } = gameProgress;
   if (
     currentView !== "BattleModeSelectCharacter" &&
     currentView !== "StoryModeSelectCharacter"
@@ -97,8 +97,8 @@ function useMetaData() {
 
   const { selectedIdx } =
     gameProgress[viewToViewStateMapping[currentView]].NPCGenerateDialogState;
-  const currentPlayer = playersAttrs[currentPlayerIdx];
-  const { job, gender, color } = playersAttrs[currentPlayerIdx];
+  const currentPlayer = players[currentPlayerIdx];
+  const { job, gender, color } = players[currentPlayerIdx];
   const imgSrc = `${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`;
   return { currentPlayer, imgSrc, selectedIdx };
 }

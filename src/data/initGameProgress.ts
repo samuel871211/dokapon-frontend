@@ -201,6 +201,11 @@ const initGameProgress: GameProgress = {
       characterType: "player",
       npcLevel: "weak",
       controllerNumber: 1,
+      ownedAccessoryIdxs: [],
+      ownedShieldIdxs: [],
+      ownedWeaponIdxs: [],
+      ownedSpecialtyIdxs: [],
+      battledMonsterIdxs: [],
       jobsMasterStatus: {
         beginner: {
           level: 0,
@@ -317,6 +322,9 @@ const initGameProgress: GameProgress = {
         magicBooks: [],
         money: 0,
         treasury: 0,
+        specialty: 0,
+        villages: [],
+        totalMoney: 0,
       },
     },
     {
@@ -367,6 +375,11 @@ const initGameProgress: GameProgress = {
       characterType: "npcPlayer",
       npcLevel: "weak",
       controllerNumber: 1,
+      ownedAccessoryIdxs: [],
+      ownedShieldIdxs: [],
+      ownedWeaponIdxs: [],
+      ownedSpecialtyIdxs: [],
+      battledMonsterIdxs: [],
       jobsMasterStatus: {
         beginner: {
           level: 0,
@@ -483,6 +496,9 @@ const initGameProgress: GameProgress = {
         magicBooks: [],
         money: 0,
         treasury: 0,
+        specialty: 0,
+        villages: [],
+        totalMoney: 0,
       },
     },
     {
@@ -533,6 +549,11 @@ const initGameProgress: GameProgress = {
       characterType: "npcPlayer",
       npcLevel: "weak",
       controllerNumber: 1,
+      ownedAccessoryIdxs: [],
+      ownedShieldIdxs: [],
+      ownedWeaponIdxs: [],
+      ownedSpecialtyIdxs: [],
+      battledMonsterIdxs: [],
       jobsMasterStatus: {
         beginner: {
           level: 0,
@@ -649,6 +670,9 @@ const initGameProgress: GameProgress = {
         magicBooks: [],
         money: 0,
         treasury: 0,
+        specialty: 0,
+        villages: [],
+        totalMoney: 0,
       },
     },
     {
@@ -699,6 +723,11 @@ const initGameProgress: GameProgress = {
       characterType: "npcPlayer",
       npcLevel: "weak",
       controllerNumber: 1,
+      ownedAccessoryIdxs: [],
+      ownedShieldIdxs: [],
+      ownedWeaponIdxs: [],
+      ownedSpecialtyIdxs: [],
+      battledMonsterIdxs: [],
       jobsMasterStatus: {
         beginner: {
           level: 0,
@@ -815,6 +844,9 @@ const initGameProgress: GameProgress = {
         magicBooks: [],
         money: 0,
         treasury: 0,
+        specialty: 0,
+        villages: [],
+        totalMoney: 0,
       },
     },
   ],

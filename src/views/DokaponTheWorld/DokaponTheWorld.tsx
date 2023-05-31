@@ -486,7 +486,7 @@ function useMetaData() {
           );
           currentPlayer.battleCharacter = { type: "player", index: idx };
         }
-        // @todo player大於1人，需跳出dialog讓使用者選擇要先跟誰戰鬥
+        // @todo character大於1人，需跳出dialog讓使用者選擇要先跟誰戰鬥
         if (playersOnMyVertex.length > 1) break;
         break;
       }

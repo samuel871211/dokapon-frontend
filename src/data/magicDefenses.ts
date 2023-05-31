@@ -21,7 +21,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 0,
     defense: 30,
     explanation: "魔力のカベを作り、\n魔法のダメージを減らす。\n魔法防御力30",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   asia1: {
@@ -31,7 +31,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     defense: 40,
     explanation:
       "魔法のダメージを減らし、\nステータスを1つ回復する。\n魔法防御力40",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -45,7 +45,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 6600,
     defense: 30,
     explanation: "魔法のダメージを減らし、\nHPを小回復する。\n魔法防御力30",
-    fromMonsters: ["霊幻導師"],
+    fromMonsterIdxs: [8],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -59,7 +59,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 10500,
     defense: 40,
     explanation: "魔法のダメージを減らし、\n素早さを上げる。\n魔法防御力40",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -74,7 +74,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     defense: 55,
     explanation:
       "魔法のダメージを減らし、\nステータスを全て回復する。\n魔法防御力55",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -88,7 +88,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 24800,
     defense: 40,
     explanation: "魔法のダメージを減らし、\n防御力を上げる。\n魔法防御力40",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -102,7 +102,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 24800,
     defense: 40,
     explanation: "魔法のダメージを減らし、\n魔力を上げる。\n魔法防御力40",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -116,7 +116,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 35000,
     defense: 60,
     explanation: "魔力のカベを作り、\n魔法のダメージを減らす。\n魔法防御力60",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -131,7 +131,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     defense: 50,
     explanation:
       "魔法のダメージを減らし、\nHPとステータスを小回復。\n魔法防御力50",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -146,7 +146,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     defense: 55,
     explanation:
       "魔法のダメージを減らし、\nどちらかの魔法を禁ずる。\n魔法防御力55",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -160,7 +160,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 63000,
     defense: 40,
     explanation: "魔法のダメージを減らし、\n攻撃力を上げる。\n魔法防御力40",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -177,7 +177,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 0,
     defense: 50,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   southAmerica1: {
@@ -186,7 +186,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 86500,
     defense: 85,
     explanation: "魔力のカベを作り、\n魔法のダメージを減らす。\n魔法防御力85",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -200,7 +200,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 214800,
     defense: 60,
     explanation: "魔法のダメージを減らし、\nHPを完全に回復する。\n魔法防御力60",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica", "Oceania"],
@@ -215,7 +215,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     defense: 65,
     explanation:
       "魔法のダメージを減らし、\n魔力を攻撃力に加える。\n魔法防御力65",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -230,7 +230,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     defense: 60,
     explanation:
       "魔法のダメージを減らし、\n死亡時に生き返る体にする。\n魔法防御力60",
-    fromMonsters: ["ネクロマンサー"],
+    fromMonsterIdxs: [110],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -245,7 +245,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     defense: 55,
     explanation:
       "魔法のダメージを減らし、\nHPとステータスを全回復。\n魔法防御力55",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -260,7 +260,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     defense: 60,
     explanation:
       "魔法のダメージを減らし、\n4つのパラメータを上げる。\n魔法防御力60",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -274,7 +274,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 1680000,
     defense: 100,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["ArcticCave"],
@@ -292,7 +292,7 @@ const magicDefenses = satisfiesRecords<magicDefense>()({
     price: 984000,
     defense: 60,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AntarcticaCave"],

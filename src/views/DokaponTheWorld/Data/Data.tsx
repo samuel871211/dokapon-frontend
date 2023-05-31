@@ -316,11 +316,19 @@ function DataBag() {
   );
 }
 
-/**
- * @todo assets有分 1. 所持金 2.金庫 3.特產品 4.村價值 5.總資產
- */
 function DataAssets() {
   const { t } = useTranslation();
+  const {
+    gameProgress: { players, currentPlayerIdx },
+  } = useContext(gameProgressCtx);
+  const { possession } = players[currentPlayerIdx];
+  const { accumulatedMoney } = possession.villages.reduce(
+    (v1, v2) => ({
+      ...v1,
+      accumulatedMoney: v1.accumulatedMoney + v2.accumulatedMoney,
+    }),
+    { area: "Asia", accumulatedMoney: 0, idx: 0 }
+  );
   return (
     <PlayerImgAndBasicAttrsArea>
       <div className={styles.assetsArea}>
@@ -332,7 +340,7 @@ function DataAssets() {
               [styles.redText]: exp < 0,
             })}
           >
-            {exp.toLocaleString()}
+            {possession.money.toLocaleString()}
           </div>
         </TextWithBorderBottom>
         <TextWithBorderBottom diameter="1rem" className={styles.assetRow}>
@@ -343,7 +351,7 @@ function DataAssets() {
               [styles.redText]: exp < 0,
             })}
           >
-            {exp.toLocaleString()}
+            {possession.treasury.toLocaleString()}
           </div>
         </TextWithBorderBottom>
         <TextWithBorderBottom diameter="1rem" className={styles.assetRow}>
@@ -354,7 +362,7 @@ function DataAssets() {
               [styles.redText]: exp < 0,
             })}
           >
-            {exp.toLocaleString()}
+            {possession.specialty.toLocaleString()}
           </div>
         </TextWithBorderBottom>
         <TextWithBorderBottom diameter="1rem" className={styles.assetRow}>
@@ -365,7 +373,7 @@ function DataAssets() {
               [styles.redText]: exp < 0,
             })}
           >
-            {exp.toLocaleString()}
+            {accumulatedMoney.toLocaleString()}
           </div>
         </TextWithBorderBottom>
       </div>
@@ -378,7 +386,12 @@ function DataAssets() {
               [styles.redText]: exp < 0,
             })}
           >
-            {exp.toLocaleString()}
+            {(
+              possession.money +
+              possession.specialty +
+              possession.treasury +
+              accumulatedMoney
+            ).toLocaleString()}
           </div>
         </TextWithBorderBottom>
       </div>
@@ -403,17 +416,21 @@ function DataVillages() {
   );
 }
 
-/**
- * @todo 根據所持金來決定rank順序
- */
 function DataRank() {
   const { gameProgress } = useContext(gameProgressCtx);
   const { t } = useTranslation();
   const { players } = gameProgress;
+  const sortedOrder = players
+    .map((p, idx) => ({ idx, totalMoney: p.possession.totalMoney }))
+    .sort((a, b) => a.totalMoney - b.totalMoney);
   return (
     <div className={styles.dataRankContainer}>
       {players.map((playerAttrs, idx) => (
-        <div className={styles.playerRankArea} key={idx}>
+        <div
+          className={styles.playerRankArea}
+          key={idx}
+          style={{ order: sortedOrder.findIndex((item) => item.idx === idx) }}
+        >
           <div className={styles.rankNumber}>1</div>
           <TextWithBorderBottom className={styles.rankLeft} diameter="1rem">
             <div
@@ -690,20 +707,25 @@ function JobGridView() {
     </div>
   );
 }
-/**
- * @todo monster availableCounts
- */
+
 function MonsterListView() {
-  const { gameProgress } = useContext(gameProgressCtx);
+  const {
+    gameProgress: {
+      players,
+      currentPlayerIdx,
+      DokaponTheWorldState: {
+        DataState: { curListIdx, curListStartIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  const currentPlayer = players[currentPlayerIdx];
   const { t } = useTranslation();
-  const { curListIdx, curListStartIdx } =
-    gameProgress.DokaponTheWorldState.DataState;
   return (
     <ListDialog
       listTopic="monster"
       showArrowUp={curListStartIdx > 0}
       showArrowDown={curListStartIdx < MONSTERLIST.length - 10}
-      availableCounts={MONSTERLIST.length}
+      availableCounts={currentPlayer.battledMonsterIdxs.length}
     >
       {MONSTERLIST.map(
         (monsterFixedAttrs, idx) =>
@@ -829,12 +851,18 @@ function MonsterGridView() {
 
 /**
  * @todo 根據不同weapon類型，顯示不同weapon icon
- * @todo weapon availableCounts
  */
 function WeaponListView() {
-  const { gameProgress } = useContext(gameProgressCtx);
-  const { curListIdx, curListStartIdx } =
-    gameProgress.DokaponTheWorldState.DataState;
+  const {
+    gameProgress: {
+      players,
+      currentPlayerIdx,
+      DokaponTheWorldState: {
+        DataState: { curListIdx, curListStartIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  const currentPlayer = players[currentPlayerIdx];
   const { t } = useTranslation();
 
   return (
@@ -842,7 +870,7 @@ function WeaponListView() {
       listTopic="weapon"
       showArrowUp={curListStartIdx > 0}
       showArrowDown={curListStartIdx < weaponList.length - 10}
-      availableCounts={weaponList.length}
+      availableCounts={currentPlayer.ownedWeaponIdxs.length}
     >
       {weaponList.map(
         (weapon, idx) =>
@@ -919,13 +947,18 @@ function WeaponGridView() {
     </div>
   );
 }
-/**
- * @todo shield availableCounts
- */
+
 function ShieldListView() {
-  const { gameProgress } = useContext(gameProgressCtx);
-  const { curListIdx, curListStartIdx } =
-    gameProgress.DokaponTheWorldState.DataState;
+  const {
+    gameProgress: {
+      players,
+      currentPlayerIdx,
+      DokaponTheWorldState: {
+        DataState: { curListIdx, curListStartIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  const currentPlayer = players[currentPlayerIdx];
   const { t } = useTranslation();
 
   return (
@@ -933,7 +966,7 @@ function ShieldListView() {
       listTopic="shield"
       showArrowUp={curListStartIdx > 0}
       showArrowDown={curListStartIdx < shieldList.length - 10}
-      availableCounts={shieldList.length}
+      availableCounts={currentPlayer.ownedShieldIdxs.length}
     >
       {shieldList.map(
         (shield, idx) =>
@@ -1012,12 +1045,18 @@ function ShieldGridView() {
 }
 /**
  * @todo 根據不同accessory，顯示不同accessory icon
- * @todo accessory availableCounts
  */
 function AccessoryListView() {
-  const { gameProgress } = useContext(gameProgressCtx);
-  const { curListIdx, curListStartIdx } =
-    gameProgress.DokaponTheWorldState.DataState;
+  const {
+    gameProgress: {
+      players,
+      currentPlayerIdx,
+      DokaponTheWorldState: {
+        DataState: { curListIdx, curListStartIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  const currentPlayer = players[currentPlayerIdx];
   const { t } = useTranslation();
 
   return (
@@ -1025,7 +1064,7 @@ function AccessoryListView() {
       listTopic="accessory"
       showArrowUp={curListStartIdx > 0}
       showArrowDown={curListStartIdx < accessoryList.length - 10}
-      availableCounts={accessoryList.length}
+      availableCounts={currentPlayer.ownedAccessoryIdxs.length}
     >
       {accessoryList.map(
         (accessory, idx) =>
@@ -1096,12 +1135,18 @@ function AccessoryGridView() {
 }
 /**
  * @todo 根據不同specialty，顯示不同specialty icon
- * @todo specialty availableCounts
  */
 function SpecialtyListView() {
-  const { gameProgress } = useContext(gameProgressCtx);
-  const { curListIdx, curListStartIdx } =
-    gameProgress.DokaponTheWorldState.DataState;
+  const {
+    gameProgress: {
+      currentPlayerIdx,
+      players,
+      DokaponTheWorldState: {
+        DataState: { curListIdx, curListStartIdx },
+      },
+    },
+  } = useContext(gameProgressCtx);
+  const currentPlayer = players[currentPlayerIdx];
   const { t } = useTranslation();
 
   return (
@@ -1109,7 +1154,7 @@ function SpecialtyListView() {
       listTopic="specialty"
       showArrowUp={curListStartIdx > 0}
       showArrowDown={curListStartIdx < specialtyList.length - 10}
-      availableCounts={specialtyList.length}
+      availableCounts={currentPlayer.ownedSpecialtyIdxs.length}
     >
       {specialtyList.map(
         (specialty, idx) =>

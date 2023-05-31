@@ -18,7 +18,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "マグの書",
     price: 500,
     explanation: "指定した相手を発火させ、\n小ダメージを与える。\n攻撃力:${}",
-    fromMonsters: ["ケルベロス"],
+    fromMonsterIdxs: [66],
     fromVerticesQuery: [
       {
         areas: ["Asia", "Europe"],
@@ -31,7 +31,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "マグファの書",
     price: 1,
     explanation: "指定した相手を炎でおおい、\n中ダメージを与える。\n攻撃力:${}",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   damageFire3: {
@@ -39,7 +39,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "マグファイアの書",
     price: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   damageIce1: {
@@ -48,7 +48,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 400,
     explanation:
       "指定したマス内の相手を冷気でこおらせ、\n小ダメージを与える。\n攻撃力:${}",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia", "Europe"],
@@ -62,7 +62,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 900,
     explanation:
       "指定したマス内の相手を足下からこおらせ、\n中ダメージを与える。\n攻撃力:${}",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   damageIce3: {
@@ -70,7 +70,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "コチコッチンの書",
     price: 2,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   damageThunder1: {
@@ -79,7 +79,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 300,
     explanation:
       "指定した相手の周りに雷を落とし、\nエリア内にいる全ての者に小ダメージを与える。\n攻撃力:${}",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia", "Europe"],
@@ -93,7 +93,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 800,
     explanation:
       "指定した相手の周りに雷柱を立て、\nエリア内にいる全ての者に中ダメージを与える。\n攻撃力:${}",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   damageThunder3: {
@@ -101,7 +101,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ゴロサンダーの書",
     price: 1500,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   damageWind1: {
@@ -110,7 +110,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 500,
     explanation:
       "同マップ内にカマイタチを発生させ、\n人間に小ダメージを与える。(まれに吹き飛ぶ)\n攻撃力:${}",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia", "Europe"],
@@ -124,7 +124,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 1,
     explanation:
       "同マップ内に小さな台風を発生させ、\n人間に中ダメージを与える。(まれに吹き飛ぶ)\n攻擊力:${}",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   damageWind3: {
@@ -132,7 +132,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ヒュギューオの書",
     price: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   damageEarth1: {
@@ -141,7 +141,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 1,
     explanation:
       "世界各地に小さな地震を起こし、\n人間に小ダメージを与える。\n攻撃力:${}",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   damageEarth2: {
@@ -150,7 +150,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 2,
     explanation:
       "世界各地に大地震を起こし、\n人間に中ダメージを与える。\n攻撃力:${}",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   damageEarth3: {
@@ -158,7 +158,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "グラズシーンの書",
     price: 4,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   damageMap: {
@@ -166,7 +166,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ポカドンの書",
     price: 9,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   statusAttackDown: {
@@ -175,7 +175,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 100,
     explanation:
       "指定した相手に力が抜けるオーラを当て、\nしばらくの間、攻撃力を下げる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -189,7 +189,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 100,
     explanation:
       "指定した相手に体がフニャフニャになるオーラを当て、\nしばらくの間、防御力を下げる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -203,7 +203,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 100,
     explanation:
       "指定した相手に頭がスカスカになるオーラを当て、\nしばらくの間、魔力を下げる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -217,7 +217,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 100,
     explanation:
       "指定した相手に重くまとわりつくオーラを当て、\nしばらくの間、素早さを下げる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia", "NorthAmerica"],
@@ -230,7 +230,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ダウンの書",
     price: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   /**
@@ -241,7 +241,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "バキュムーンの書",
     price: 64,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   statusPoison: {
@@ -250,7 +250,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 600,
     explanation:
       "指定した相手に毒ガスを吹き付け、\n${}毒状態にする。\n毎ターンHP減少。",
-    fromMonsters: ["ヤドクガエル"],
+    fromMonsterIdxs: [70],
     fromVerticesQuery: [],
   },
   statusStartled: {
@@ -258,7 +258,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ビクビクの書",
     price: 200,
     explanation: "指定した相手をビビらせて\n${}おくびょう状態にする。",
-    fromMonsters: ["ビクビクゴースト"],
+    fromMonsterIdxs: [27],
     fromVerticesQuery: [],
   },
   statusCurse: {
@@ -266,7 +266,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ピョコタンの書",
     price: 5,
     explanation: "指定した相手にカエルの呪いをかけ\n${}ピョコタン状態にする。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   statusSeal: {
@@ -274,7 +274,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ツカエンゾの書",
     price: 800,
     explanation: "指定した相手に封印をほどこし\n${}封印状態にする。",
-    fromMonsters: ["ヴァンパイア"],
+    fromMonsterIdxs: [30],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -287,7 +287,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "プリオンの書",
     price: 6,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   statusDeath: {
@@ -295,7 +295,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "シニガーミの書",
     price: 0,
     explanation: "",
-    fromMonsters: ["フックの魂"],
+    fromMonsterIdxs: [75],
     fromVerticesQuery: [],
   },
   /**
@@ -306,7 +306,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ネムネムの書",
     price: 0,
     explanation: "",
-    fromMonsters: ["キラーフラワー"],
+    fromMonsterIdxs: [71],
     fromVerticesQuery: [],
   },
   /**
@@ -317,7 +317,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "マビンの書",
     price: 8,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   summonMonster: {
@@ -326,7 +326,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 100,
     explanation:
       "モンスター召喚呪文で\n指定した相手のいるマスにモンスターを出現させる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -339,7 +339,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ムラデロンの書",
     price: 30,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: [],
@@ -352,7 +352,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ミナデロンの書",
     price: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: [],
@@ -366,7 +366,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     price: 150,
     explanation:
       "指定した相手かモンスターに回復の光を注ぎ、\nHPと${}を回復する。\nモンスターに使った場合、パラメータUP",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -379,7 +379,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "メッセヨの書",
     price: 2,
     explanation: "指定した相手のアイテムか魔法を\n1つ破壊する。",
-    fromMonsters: ["クビカリ族"],
+    fromMonsterIdxs: [73],
     fromVerticesQuery: [],
   },
   /**
@@ -390,7 +390,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ショバチェンの書",
     price: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: [],
@@ -406,7 +406,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ネンドリーキの書",
     price: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: [],
@@ -422,7 +422,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "バランバの書",
     price: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: areas,
@@ -438,7 +438,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "オールゼロの書",
     price: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Atlantis"],
@@ -454,7 +454,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ビビデブゥの書",
     price: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   /**
@@ -465,7 +465,7 @@ const magicBooks = satisfiesRecords<MagicBook>()({
     name: "ヘイカモンの書",
     price: 20,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
 });

@@ -1,11 +1,35 @@
 ## unreleased
 
-## 0.4.0
-
-### todo
-
 - 對戰的對手，是否改成用 reference 的方式？
 - 對戰的對手如果是 player 以外，就直接跳過它的 `SelectGamePadButton` 回合
+
+## 0.5.0
+
+### added
+
+- `PlayerInstance.possession.villages`
+- `PlayerInstance.ownedWeaponIdxs`
+- `PlayerInstance.ownedShieldIdxs`
+- `PlayerInstance.ownedAccessoryIdxs`
+- `PlayerInstance.ownedSpecialtyIdxs`
+- `PlayerInstance.battledMonsterIdxs`
+- `PlayerInstance.possession.specialty`
+- `PlayerInstance.possession.totalMoney`
+- Component `Data` 會去讀取使用者目前的 `availableCounts`
+- Component `VillageFieldCheck` 會讀取村莊資訊
+- Component `DataRank` 會根據總金額來決定排名順序
+
+### changed
+
+- `VillageFieldAttrs.villageName` 改成 `VillageFieldAttrs.villageIdx`
+- `MagicAttack.fromMonsters` 改成 `MagicAttack.fromMonsterIdxs`
+- `MagicDefense.fromMonsters` 改成 `MagicDefense.fromMonsterIdxs`
+- `MagicBook.fromMonsters` 改成 `MagicBook.fromMonsterIdxs`
+- `Shield.fromMonsters` 改成 `Shield.fromMonsterIdxs`
+- `Weapon.fromMonsters` 改成 `Weapon.fromMonsterIdxs`
+- `Accessory.fromMonsters` 改成 `Accessory.fromMonsterIdxs`
+
+## 0.4.0
 
 ### added
 

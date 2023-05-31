@@ -19,7 +19,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "カが抜けるオーラで\n小ダメージを与えた上、\n相手の攻撃力を下げる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -34,7 +34,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "体をほぐすオーラで\n小ダメージを与えた上、\n相手の防御力を下げる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -49,7 +49,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "頭がボケるオーラで\n小ダメージを与えた上、\n相手の魔力を下げる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -64,7 +64,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "まとわりつくオーラで\n小ダメージを与えた上、\n相手の素早さを下げる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -79,7 +79,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "相手を氷でつつみ\n小ダメージを与える。\n攻撃力を下げることもある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -94,7 +94,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "サイフから金を吹き出させ、\n小ダメージを与えた上、\n相手の所持金の1/5を奪う。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe", "Asia"],
@@ -109,7 +109,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "相手の周りにカマイタチを\n生み、小ダメージを与える。\n素早さを下げることもある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -124,7 +124,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "精神を超音波で崩壊させ\n小ダメージを与えた上、\n相手を${}混乱状態にする。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -139,7 +139,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "地から毒ガスをふき出させ\n小ダメージを与えた上、\n相手を${}毒状態にする。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -154,7 +154,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "相手の頭上に雷を落とし\n小ダメージを与える。\n魔力を下げることもある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -169,7 +169,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "相手の周りに炎を吹き出させ\n小ダメージを与える。\n防御力を下げることもある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -184,7 +184,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "魔カエネルギーを発射し\n小ダメージを与えた上、\n相手の防御魔法を消し去る。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -199,7 +199,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "medium",
     explanation:
       "相手の足下から氷を突き出し\n中ダメージを与える。\n攻撃力を下げることもある。",
-    fromMonsters: ["氷玉"],
+    fromMonsterIdxs: [41],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -214,7 +214,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "medium",
     explanation:
       "相手を竜巻でつつみ\n中ダメージを与える。\n素早さを下げることもある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -233,7 +233,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "まぶしい光で目をくらませ\n小ダメージを与えた上、\n相手を${}メもう目状態にする。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -248,7 +248,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "魔カエネルギーを発射し\n小ダメージを与えた上、\n相手の攻撃魔法を消し去る。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -263,7 +263,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "medium",
     explanation:
       "相手の頭上で放電現象を\n起こし、中ダメージを与える。\n魔力を下げることもある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -278,7 +278,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "medium",
     explanation:
       "相手を炎のドームでつつみ\n中ダメージを与える。\n防御力を下げることもある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -293,7 +293,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "small",
     explanation:
       "おん念エネルギーを集め\n小ダメージを与えた上、\n相手を${}呪い状態にする。",
-    fromMonsters: ["マサイハンター"],
+    fromMonsterIdxs: [109],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -308,7 +308,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "large",
     explanation:
       "相手の周りの大気をこおらせ\n大ダメージを与える。\n攻撃力を下げることもある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -323,7 +323,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "large",
     explanation:
       "相手を巨大な竜巻でつつみ\n込み、大ダメージを与える。\n素早さを下げることもある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -338,7 +338,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "medium",
     explanation:
       "強いさんの雨を降らせて\n中ダメージを与えた上、\n相手の装備を破壊する。",
-    fromMonsters: ["サビトマトガエル"],
+    fromMonsterIdxs: [100],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -353,7 +353,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "large",
     explanation:
       "相手に連続雷撃を加え\n大ダメージを与える。\n魔力を下げることもある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -372,7 +372,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     damage: "large",
     explanation:
       "相手の周りで大爆発を起こし\n大ダメージを与える。\n防御力を下げることもある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -392,7 +392,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     name: "ネムネム",
     price: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AfricaCave"],
@@ -406,7 +406,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     price: 1130000,
     damage: "small",
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["ArcticCave"],
@@ -419,7 +419,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     name: "ゴウトゥヘル",
     price: 1666000,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AntarcticaCave"],
@@ -439,7 +439,7 @@ const magicAttacks = satisfiesRecords<magicAttack>()({
     name: "エネゲット",
     price: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
 });

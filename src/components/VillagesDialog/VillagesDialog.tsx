@@ -18,7 +18,6 @@ import YellowBlock from "layouts/YellowBlock";
 export default VillagesDialog;
 
 /**
- * @todo 需要得知目前所有玩家各自擁有的村莊
  * @todo 字體有分紅、藍、黑色，黑色的邏輯尚不清楚，還沒實作
  * @todo Boss的ICON、角色的ICON
  */

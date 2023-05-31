@@ -11,7 +11,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "世界で一番安い盾。\nはりぼてで作られているので、\nほとんど役に立たない。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -28,7 +28,7 @@ const shieldList: Shield[] = [
     speed: 0,
     hp: 0,
     explanation: "固い木でできた盾。\n軽くて使いやすいが、\n防御力は低い。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -46,7 +46,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "石をけずって作った盾。\n安価だが重いため、\n素早さが下がるのが欠点。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -63,7 +63,7 @@ const shieldList: Shield[] = [
     speed: 0,
     hp: 0,
     explanation: "真の一文字が書かれた盾。\n不思議と勇気がわいてくる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -81,7 +81,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "光と影を表すもようが描かれた盾。\n装備すると魔力が上がる。\nたまに魔力を高めてくれる。",
-    fromMonsters: ["ゴジョー"],
+    fromMonsterIdxs: [15],
     fromVerticesQuery: [],
   },
   {
@@ -94,7 +94,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "うでに取り付けるタイプの盾。\n小くて軽いため、素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -111,7 +111,7 @@ const shieldList: Shield[] = [
     speed: 20,
     hp: 200,
     explanation: "",
-    fromMonsters: ["ウィウィ"],
+    fromMonsterIdxs: [157],
     fromVerticesQuery: [],
   },
   {
@@ -124,7 +124,7 @@ const shieldList: Shield[] = [
     hp: 10,
     explanation:
       "ウサギの形をしたキュートな盾。\nあまりのかわいさに、相手が\n攻撃しなくなる⋯ことは無い。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AsiaCave"],
@@ -141,7 +141,7 @@ const shieldList: Shield[] = [
     speed: 0,
     hp: 0,
     explanation: "下っぱの兵士が使う盾。\n防御力もそれなり。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -159,7 +159,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "忍者が持つ手裏剣の形をした盾。\nとがっているので攻撃力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AsiaCave"],
@@ -177,7 +177,7 @@ const shieldList: Shield[] = [
     hp: 10,
     explanation:
       "クマの形をしたかわいい盾。\n装備していると、ほんわか\n気分になって、いやされる?",
-    fromMonsters: ["コロボックル"],
+    fromMonsterIdxs: [22],
     fromVerticesQuery: [],
   },
   {
@@ -189,7 +189,7 @@ const shieldList: Shield[] = [
     speed: 0,
     hp: 0,
     explanation: "三日月のもようが描かれた盾。\n装備すると魔力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -206,7 +206,7 @@ const shieldList: Shield[] = [
     speed: -2,
     hp: 0,
     explanation: "鉄で作られた盾。\n重いので素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -224,7 +224,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "毛皮につつまれたフカフカの盾。\nこれさえあれば、さむくても安心。\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -242,7 +242,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "エルフが作った盾。\n装備すると素早さと魔力が上がる。\nたまに素早さを高めてくれる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe", "EuropeCave"],
@@ -260,7 +260,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "黒曜石で造られた盾。\n安価で防御力もあるが、\n素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -278,7 +278,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "聖騎士だけが持つことを\nゆるされる神聖な盾。\n重くて素早さが下がる。",
-    fromMonsters: ["ソードナイト"],
+    fromMonsterIdxs: [32],
     fromVerticesQuery: [],
   },
   {
@@ -291,7 +291,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "マンモスのキバがついてる\n巨大な盾。\nキバの重さで素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -309,7 +309,7 @@ const shieldList: Shield[] = [
     hp: 10,
     explanation:
       "トゲトゲのついている盾。\n重くて素早さが下がるが、\nトゲのおかげで攻撃力が上がる。",
-    fromMonsters: ["アイスゴーレム"],
+    fromMonsterIdxs: [45],
     fromVerticesQuery: [],
   },
   {
@@ -321,7 +321,7 @@ const shieldList: Shield[] = [
     speed: 0,
     hp: 0,
     explanation: "二つの頭を持つ、伝説の大ワシの\nレリーフがほられた盾。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -339,7 +339,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "赤い星が付いている盾。\n魔力を秘めた赤い星の力で\n装備者は魔力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -357,7 +357,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "5枚の刃を組み合わせて、\n花のような形に作った盾。\nその刃のおかげで、攻撃力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -375,7 +375,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "一つ目が描かれた妖しい盾。\n装備者の魔力を下げる代わりに、\n魔法のダメージを減らす力がある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -392,7 +392,7 @@ const shieldList: Shield[] = [
     speed: 0,
     hp: 0,
     explanation: "銀で作られた盾。\n銀の効果で魔力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -410,7 +410,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "黄金だけで作られた光り輝く盾。\n防御力はイマイチだが、魔力が上がり\nさらにとんでもない値段で売れる。",
-    fromMonsters: ["ケツアルコアトル"],
+    fromMonsterIdxs: [78],
     fromVerticesQuery: [],
   },
   {
@@ -422,7 +422,7 @@ const shieldList: Shield[] = [
     speed: 0,
     hp: 50,
     explanation: "ドカポン王国の伝説に残る\n英雄の持っていた盾。\n⋯に見える。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmericaCave"],
@@ -439,7 +439,7 @@ const shieldList: Shield[] = [
     speed: 0,
     hp: 0,
     explanation: "ナスカの地上絵が描かれた盾。\n芸術的価値も高い。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -457,7 +457,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "ツルツルにみがかれた\n軽量の特殊合金製の盾。\n軽量のため素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica", "NorthAmericaCave"],
@@ -474,7 +474,7 @@ const shieldList: Shield[] = [
     speed: 0,
     hp: 0,
     explanation: "魔法陣が描かれた\n破邪の力を持つ盾。\n魔力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -492,7 +492,7 @@ const shieldList: Shield[] = [
     hp: 20,
     explanation:
       "巨大な石の仮面の盾。\nちょっと笑っているのが不気味。\nあまりの重さに素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -510,7 +510,7 @@ const shieldList: Shield[] = [
     hp: 20,
     explanation:
       "ドクロの形をしたまがまがしい盾。\n装備すると生命力が上がるが、\nたまに戦闘から逃げ出すことがある。",
-    fromMonsters: ["さまようムクロ"],
+    fromMonsterIdxs: [64],
     fromVerticesQuery: [],
   },
   {
@@ -523,7 +523,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "ウロコがびっしりとはられている盾。\nそのウロコは、数万年も昔から姿が\n変わらない古代魚から取っている。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -540,7 +540,7 @@ const shieldList: Shield[] = [
     speed: 10,
     hp: 0,
     explanation: "チョウの形をした非常に美しい盾。\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica", "SouthAmericaCave"],
@@ -558,7 +558,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "1万年以上生きて、魔力を持った\nカメのこうらを使った盾。\n魔力が上がるが素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -576,7 +576,7 @@ const shieldList: Shield[] = [
     hp: 20,
     explanation:
       "思春期の男子に大人気の盾。\nマシュマロのようにやわらかく、\nさわり心地バツグン",
-    fromMonsters: ["コビトペンギン"],
+    fromMonsterIdxs: [85],
     fromVerticesQuery: [],
   },
   {
@@ -589,7 +589,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "重いジュラルミンを多用して\n造られた巨大な盾。\nそのため素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -607,7 +607,7 @@ const shieldList: Shield[] = [
     hp: 40,
     explanation:
       "神像イマーヘンが持っていた\n太陽の神からさずかった盾。\n大いなる生命力を秘めている。",
-    fromMonsters: ["神像イマーヘン"],
+    fromMonsterIdxs: [-1],
     fromVerticesQuery: [],
   },
   {
@@ -620,7 +620,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "カブトムシの形をした盾。\nカブトムシの角のおかげで、\n攻撃力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -638,7 +638,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "ドカポン王国伝説の戦士が\n使っていたメチャかっこいい盾。\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -656,7 +656,7 @@ const shieldList: Shield[] = [
     hp: 10,
     explanation:
       "ウォンバットが描かれた盾。\nオセアニアで大ヒット中のグッズ。\nコアラグッズはもう古い。",
-    fromMonsters: ["ファーファ"],
+    fromMonsterIdxs: [-1],
     fromVerticesQuery: [],
   },
   {
@@ -668,7 +668,7 @@ const shieldList: Shield[] = [
     speed: 0,
     hp: 50,
     explanation: "村長に勇者と認められた者に\n与えられる盾。\n生命力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa", "ArcticCave"],
@@ -686,7 +686,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "戦闘を科学的に計算しつくして\n作られた、機械仕かけの盾。\n非常に高い防御力をほこる。",
-    fromMonsters: ["ファラオの兵"],
+    fromMonsterIdxs: [118],
     fromVerticesQuery: [],
   },
   {
@@ -699,7 +699,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "悪魔が地上に落とした邪悪な盾。\n非常に強力だが、使用者の命を\n少しずつけずっていく。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -717,7 +717,7 @@ const shieldList: Shield[] = [
     hp: 50,
     explanation:
       "ドラゴンの顔がほられた盾。\n持ち主の生命力を上げてくれるが、\nあまりの重さに素早さが下がる。",
-    fromMonsters: ["海竜"],
+    fromMonsterIdxs: [113],
     fromVerticesQuery: [],
   },
   {
@@ -730,7 +730,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "ハートの形をしたかわいい盾。\n使用者は神に祝福されて、\nたまにHPを回復してくれる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -756,7 +756,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "巨大なダイヤで作った超高価な盾。\n魔法ダメージを減らすが、\n素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AfricaCave"],
@@ -774,7 +774,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "天使の羽をかたどった聖なる盾。\n聖なる天使の力で、たまに\nステータス異常を回復してくれる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Arctic", "Antarctica", "Atlantis"],
@@ -792,7 +792,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "氷河の中から生まれた\n重く冷たい盾。\nたまに攻撃力を高めてくれる。",
-    fromMonsters: ["シロクマラ"],
+    fromMonsterIdxs: [134],
     fromVerticesQuery: [
       {
         areas: ["Atlantis"],
@@ -810,7 +810,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "全ての者をふくじゅうさせる力を\n秘めた盾。目の前に立った者を\n強制的に降参させることがある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["HawaiianIslands"],
@@ -828,7 +828,7 @@ const shieldList: Shield[] = [
     hp: 100,
     explanation:
       "ドカポン王国の伝説に残る\n英雄の持っていた盾。\nたまに防御カを高めてくれる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["HawaiianIslandsCave"],
@@ -846,7 +846,7 @@ const shieldList: Shield[] = [
     hp: 120,
     explanation:
       "魔界の勇者ソロモンが、戦いの\n果てに、盾に変化してしまった姿。\n使用者の命を食いながら生きる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Atlantis"],
@@ -864,7 +864,7 @@ const shieldList: Shield[] = [
     hp: 0,
     explanation:
       "人々のおん念が集まってできた盾。\n悪魔とけいやくした者に与えられる。\nいつも真っ赤な血がしたたっている。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: [],

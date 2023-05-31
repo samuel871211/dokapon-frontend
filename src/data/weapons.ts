@@ -18,7 +18,7 @@ const weaponList: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "世界で一番安い武器。\nおもちゃ同然でほとんど斬れない。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -36,7 +36,7 @@ const weaponList: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "竹で作られたサオ。\nせんたく物もほせる優れもの。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -55,7 +55,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "フィギュアシリーズのシークレット。\n世界でも数個しかないゲキレア品。\n魅力的で生意気そうな小悪魔が最高!",
-    fromMonsters: ["白ミミック"],
+    fromMonsterIdxs: [153],
     fromVerticesQuery: [
       {
         areas: [],
@@ -74,7 +74,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "伝説のコメディアンが使っていたと\nされるステキなステッキ。\n魔力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -93,7 +93,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "肉切り用のほうちょう。\nよくとがれており、切れ味はいい。\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -112,7 +112,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: clericJobTypes,
     explanation:
       "木を削り出して作った武器。\n安価で攻撃力もあるが、\n素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -130,7 +130,7 @@ const weaponList: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "大振りの片刃の剣。\n刀身の重さで相手をたたき斬る。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Asia"],
@@ -149,7 +149,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["alien"],
     explanation:
       "アツアツのおでん。\nダシがしみこんでいておいしいが、\n急いで食べるとやけどするぞ!",
-    fromMonsters: ["ハッカイ"],
+    fromMonsterIdxs: [14],
     fromVerticesQuery: [],
   },
   {
@@ -163,7 +163,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "持ち主の意思によって、のびちぢみ\nすると言われている伝説の棒。\n素早さが上がる。",
-    fromMonsters: ["ゴクウ"],
+    fromMonsterIdxs: [13],
     fromVerticesQuery: [],
   },
   {
@@ -177,7 +177,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "聖水で清められたナイフ。\n破邪の力を持っている。\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -196,7 +196,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "騎士がぎしきなどで使う、\nとても細く軽い剣。\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -215,7 +215,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "下っぱの兵士が使う槍。\n攻撃力もそこそこしかなく、\nこれといった特徴もない。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -234,7 +234,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "長年魔法をけんきゅうしてきた、\n大魔導師が開発した杖。\n装備すると魔力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -253,7 +253,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["alien"],
     explanation:
       "でっかいキャンディ。\n食べるとオイシイが、\ns全部食べるとムシバになるので注意。",
-    fromMonsters: ["フランケン"],
+    fromMonsterIdxs: [29],
     fromVerticesQuery: [],
   },
   {
@@ -267,7 +267,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "魔法少女がよく使う魔法のステッキ。\nおもちゃっぽいが、武器にも使える。\n使うと変身できそうな気がする⋯。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AsiaCave"],
@@ -286,7 +286,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["dancer"],
     explanation:
       "その昔、流行していたおどりで\n使われていたドハデなせんす。\nたまに素早さを高めてくれる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -305,7 +305,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: clericJobTypes,
     explanation:
       "お坊さんが持っている\n金属製の長い杖。\nたまに魔力を高めてくれる。",
-    fromMonsters: ["惨憎法師"],
+    fromMonsterIdxs: [16],
     fromVerticesQuery: [],
   },
   {
@@ -319,7 +319,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: clericJobTypes,
     explanation:
       "僧侶達が戦闘の時に用いる武器。\n破壊力は大きいが、\n素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -338,7 +338,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "槍とオノが一つになった武器。\n斬っても突いても使えるので、\nいろいろな戦闘で役立つ。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -357,7 +357,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "のうふがイネをかる時に使うカマ。\nよくとがれており、収穫の時も安心。\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Europe"],
@@ -375,7 +375,7 @@ const weaponList: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "騎士が馬上で使用する槍。\n相手のヨロイごとつらぬく。",
-    fromMonsters: ["ブラックアーマー"],
+    fromMonsterIdxs: [33],
     fromVerticesQuery: [],
   },
   {
@@ -389,7 +389,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: gladiatorJobTypes,
     explanation:
       "トゲのついた鉄製のナックル。\n拳にはめて戦うので身軽になり\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -407,7 +407,7 @@ const weaponList: Weapon[] = [
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
     explanation: "魔族の血で真っ赤に染めた杖。\n魔族の血の効果で魔力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -426,7 +426,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "聖騎士だけが持つことを\nゆるされる神聖な剣。\n騎士達のあこがれの武器。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -445,7 +445,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "フイギュアシリーズ3種の内の1つ。\n優しいお姉さんのような天使が人気。\n他にシークレットが1種あるらしい。",
-    fromMonsters: ["ラスプーチン"],
+    fromMonsterIdxs: [39],
     fromVerticesQuery: [],
   },
   {
@@ -458,7 +458,7 @@ const weaponList: Weapon[] = [
     hp: 0,
     additionalDamageJobs: warriorJobTypes,
     explanation: "木こりが木を切る時に使うオ/。\nどんな太い木でも切り倒せる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -477,7 +477,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["dancer"],
     explanation:
       "振るとリンリン音がなる楽器。\nでも武器としても使える。\nノツノになると攻撃力が高まる。",
-    fromMonsters: ["雪原人キッズ"],
+    fromMonsterIdxs: [47],
     fromVerticesQuery: [],
   },
   {
@@ -491,7 +491,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["carpenter"],
     explanation:
       "家を壊す時などに使う\n木製の巨大なハンマー。\n強力だが素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -510,7 +510,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "スチール製の切れ味鋭いナイフ。\nとても軽いので素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -529,7 +529,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "剣士レッドブリキンが持っていた剣。\nその刀身は雷をおびていて、\n斬った相手に雷を落とすことがある。",
-    fromMonsters: ["レッドブリキン"],
+    fromMonsterIdxs: [34],
     fromVerticesQuery: [],
   },
   {
@@ -543,7 +543,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: clericJobTypes,
     explanation:
       "トゲトゲの鉄の玉が先についている、\n強力なハンマー。\n重いので素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -562,7 +562,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: clericJobTypes,
     explanation:
       "精霊の宿る木から削りだした棍棒。\nゴツゴツしていて、とても固い。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -581,7 +581,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["nurse"],
     explanation:
       "ピンク色のでっかい注射器。\nこれでさされると、かなり痛そう。\nたまに相手の攻撃力を落とす。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Russia"],
@@ -600,7 +600,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["carpenter"],
     explanation:
       "攻撃が当たると金を生み出す、\n夢のようなこづち。\nこれさえあればあなたも大金持ち!",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmericaCave", "Oceania"],
@@ -619,7 +619,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "チーフイーグルの頭がい骨を\nくつつけた杖。\n装備すると魔力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -638,7 +638,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["nurse"],
     explanation:
       "伝説の医者が使っていたというメス。\nものすごい切れ味を持つ。\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -657,7 +657,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "ハヤブサの素早さを持った槍。\n風を呼ぶ力もあり、相手を\nカマイタチで切りさくことがある。",
-    fromMonsters: ["トーテマン"],
+    fromMonsterIdxs: [68],
     fromVerticesQuery: [],
   },
   {
@@ -671,7 +671,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "忍者我魔丸が持っていた名刀。\nその刃は岩さえ斬ることができる。\nたまに素早さを高めてくれる。",
-    fromMonsters: ["ガママル"],
+    fromMonsterIdxs: [158],
     fromVerticesQuery: [],
   },
   {
@@ -685,7 +685,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "全て銀で作られた剣。\n銀の魔よけの効果によって、\n魔力と防御力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -704,7 +704,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "フィギュアシリーズ3種の内の1つ。\n元気で子供っぽいピクシーが人気。\n他にシークレットが1種あるらしい。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -723,7 +723,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "戦闘用に作られた片刃のオン。\n相手をヨロイごと斬る。\n重いので素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -742,7 +742,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["robot"],
     explanation:
       "デジタルなパワーで相手を斬る。\n電池が切れると使えなくなる?\n全てのパラメータが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -761,7 +761,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["carpenter"],
     explanation:
       "雪原人ミチエーリが持っていた、\n巨大な根棒。当たれば\nすごい破壊力だが、よく外れる。",
-    fromMonsters: ["雪原人ミチエーリ"],
+    fromMonsterIdxs: [49],
     fromVerticesQuery: [],
   },
   {
@@ -775,7 +775,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "黄金だけで作られた光り輝く杖。\nとんでもない値段で売れる。\n魔力が上がる。",
-    fromMonsters: ["テスカポリトカ"],
+    fromMonsterIdxs: [81],
     fromVerticesQuery: [],
   },
   {
@@ -788,7 +788,7 @@ const weaponList: Weapon[] = [
     hp: 0,
     additionalDamageJobs: magicianJobTypes,
     explanation: "花の香りただよう杖。\n装備すると魔力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -807,7 +807,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "ドカポン王国の伝説に残る\n勇者の持っていた剣。\n⋯のように見える。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmericaCave"],
@@ -826,7 +826,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["queen"],
     explanation:
       "鉄のトゲトゲがついた首わ。\nよく分からないが人間用らしい。\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmericaCave"],
@@ -845,7 +845,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "骨をけずりだして造ったダガー。\nとても軽いので、素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -864,7 +864,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "女海賊バイラルが持っていた\nフックのついたナックル。\n海賊なら誰でもあこがれる武器。",
-    fromMonsters: ["バイラル"],
+    fromMonsterIdxs: [162],
     fromVerticesQuery: [],
   },
   {
@@ -878,7 +878,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "歴戦の兵士が好んで装備する槍。\n攻撃力はあるがあつかいにくく、\n素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -897,7 +897,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["carpenter"],
     explanation:
       "何でもたたきつぶせる\n金属製の巨大な金づち。\n重いので、素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -916,7 +916,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["queen"],
     explanation:
       "大きな真紅のロウソク。\nロウがたれると、さらに痛い。\nなれると気持ちいい⋯人もいる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmericaCave"],
@@ -935,7 +935,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "犯罪者の首を斬る時に使われた\nしょけい用のオ/。\n重いので素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmerica"],
@@ -954,7 +954,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: [],
     explanation:
       "一族の長だけが持つことを\nゆるされる、一族の宝のオノ。\nたまに防御力を高めてくれる。",
-    fromMonsters: ["族長タタンカ"],
+    fromMonsterIdxs: [69],
     fromVerticesQuery: [],
   },
   {
@@ -968,7 +968,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "戦闘用に作られた兵士の持つナイフ。\n丈夫で切れ味も鋭い。\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -987,7 +987,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "天空の王者、タカのツメ。\nタカの力で素早さが上がり、\nたまにHPを回復してくれる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmericaCave"],
@@ -1006,7 +1006,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "いくつものしんじゅが\nはめ込まれた美しい杖。\n装備すると魔力が上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -1025,7 +1025,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["alien"],
     explanation:
       "怪物少女アリサが持っていた\nかわいい(?)ヌイグルミ。\nたまに相手を魅了する。",
-    fromMonsters: ["アリサ"],
+    fromMonsterIdxs: [164],
     fromVerticesQuery: [],
   },
   {
@@ -1039,7 +1039,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "羽のように軽い細身の剣。\nとても軽いので、装備すると\n素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -1058,7 +1058,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "古代文明の神官がぎしきで使う、\n波打った形のナイフ。\n太陽の力を呼ぶことがある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmericaCave"],
@@ -1077,7 +1077,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: gladiatorJobTypes,
     explanation:
       "ナックルのようにつかんで使う\n攻防一体の剣。\n防御力と素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -1096,7 +1096,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "暗殺者が使う暗殺用のダガー。\nその刀身にはもう毒がぬってあり、\nたまに一撃で相手の息の根を止める。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -1115,7 +1115,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["carpenter"],
     explanation:
       "大木でも魔物でも、何でも切れる\n山切りカットの巨大なノコギリ。\n重いので素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -1134,7 +1134,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["robot"],
     explanation:
       "先についたドリルが回転する\n機械仕かけの槍。\n破壊力が高く、素早さも上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -1153,7 +1153,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["nurse"],
     explanation:
       "恐ろしげな真っ黒の巨大な注射器。\nもしもその太い針でさされたら⋯。\nたまに相手の攻撃力を落とす。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -1172,7 +1172,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["dancer"],
     explanation:
       "鋭い刃で組まれたおうぎ。\n戦いのダンスの解説書付き。\n防御力と素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -1191,7 +1191,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "ヘビの形をしているまがまがしい杖。\n魔性の力で魔力が上がるが、\n勝手に攻撃魔法を選ぶことがある。",
-    fromMonsters: ["フリルドリザード"],
+    fromMonsterIdxs: [98],
     fromVerticesQuery: [],
   },
   {
@@ -1205,7 +1205,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "王家のもんしょうをかたどった、\n神聖な杖。\n魔力と素早さが上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -1224,7 +1224,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "フィギュアシリーズ3種の内の1つ。\n明るくキュートなマーメイドが人気。\n他にシークレットが1種あるらしい。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -1243,7 +1243,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: gladiatorJobTypes,
     explanation:
       "古来より暗殺具として伝えられ、\nシャオロンさえも封印した危険な拳。\nなぐられると毒になることがある。",
-    fromMonsters: ["シャオロン"],
+    fromMonsterIdxs: [165],
     fromVerticesQuery: [],
   },
   {
@@ -1257,7 +1257,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "何でも一刀両断にする\n破壊力バツグンの巨大なオ/。\n重いので、素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -1276,7 +1276,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["alien"],
     explanation:
       "なぐるとピコっといい音がなる\nおもちゃのハンマー。でも強い。\nたまに相手の全ての力を落とす。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AfricaCave"],
@@ -1295,7 +1295,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "海の神様が使っていたと言われる\n三またのモリ。\n海の男達のあこがれの武器。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["OceaniaCave"],
@@ -1314,7 +1314,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["alien"],
     explanation:
       "かわいいコアラがついている棒。\nオセアニアで大ヒットしたグッズ。\nたまに相手の防御力を落とす。",
-    fromMonsters: ["ウンフーク"],
+    fromMonsterIdxs: [99],
     fromVerticesQuery: [],
   },
   {
@@ -1328,7 +1328,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: clericJobTypes,
     explanation:
       "巨大な鉄とトゲのごっついハンマー。\nその破壊力はまるでいん石のごとし。\n重いので素早さがガクッと下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -1347,7 +1347,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["queen"],
     explanation:
       "ダメペットをペンペンするための棒。\n痛みをがまんすれば、そこは天国。\nたまに相手のボタンを禁止する。",
-    fromMonsters: ["ホルス神"],
+    fromMonsterIdxs: [121],
     fromVerticesQuery: [
       {
         areas: ["Africa", "AfricaCave"],
@@ -1366,7 +1366,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "ドラゴンを殺すために\n作られた超巨大な剣。\n防御カも上がるが素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa", "AntarcticaCave"],
@@ -1385,7 +1385,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "憎しみの門の門番が、死者の肉体と\n魂を分断する時に使うカマ。たまに\n斬った相手の血を止まらなくさせる。",
-    fromMonsters: ["死の呼び子"],
+    fromMonsterIdxs: [101],
     fromVerticesQuery: [],
   },
   {
@@ -1399,7 +1399,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: gladiatorJobTypes,
     explanation:
       "拳に炎の力を宿すことができる。\n炎につつまれた拳は、\n素早さと生命力を秘めている。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa", "AfricaCave"],
@@ -1418,7 +1418,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: clericJobTypes,
     explanation:
       "王家に伝わる超重量のハンマー。\n代々の王の魂が宿っていて、\nなぐった相手を呪うことがある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AfricaCave"],
@@ -1437,7 +1437,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "呪術師マコンデが持っていた杖。\nドクロが邪悪なオーラを放っている。\n相手を暗闇につつむことがある。",
-    fromMonsters: ["マコンデ"],
+    fromMonsterIdxs: [124],
     fromVerticesQuery: [],
   },
   {
@@ -1451,7 +1451,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["robot"],
     explanation:
       "刃を超振動させて、相手を切断する\n機械仕かけのオノ。\n幻の古代文明が造ったとされている。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AfricaCave"],
@@ -1470,7 +1470,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "魔界の狂犬野郎ジャブローの変わり\n果てた姿。斬らないとぐずりだす。\nきまぐれなので、切れ味が変わる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Antarctica", "Arctic"],
@@ -1489,7 +1489,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: magicianJobTypes,
     explanation:
       "雪の結晶と魔力を封じ込めた杖。\n冷気で相手の眠りを誘うことがある。\n寝たら死ぬぞ!",
-    fromMonsters: ["ペギゴン"],
+    fromMonsterIdxs: [141],
     fromVerticesQuery: [
       {
         areas: ["Atlantis"],
@@ -1508,7 +1508,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: clericJobTypes,
     explanation:
       "巨大な氷でできたハンマー。\nなぐった相手をこおらす時がある。\n重いので素早さが下がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Arctic", "Antarctica"],
@@ -1527,7 +1527,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: gladiatorJobTypes,
     explanation:
       "拳に神の力を宿すことができる。\nその拳は大地を割るほどの力を持つ。\nたまに相手の素早さを落とす。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["ArcticCave"],
@@ -1546,7 +1546,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: ["alien"],
     explanation:
       "グロテスクな生ける肉のかたまり。\n使用者は、魔力を吸い取られるが、\n生命力がグンと上がる。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AntarcticaCave"],
@@ -1565,7 +1565,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "世界を支配できる力を与えてくれる\nというナイフ。目の前に立った者を\n強制的に降参させることがある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["HawaiianIslands"],
@@ -1584,7 +1584,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "ドカポン王国の伝説に残る\n勇者の持っていた剣。\n相手の攻撃魔法を壊すことがある。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["HawaiianIslandsCave"],
@@ -1603,7 +1603,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: warriorJobTypes,
     explanation:
       "バケモノを滅ぼすために作られた槍。\n使用者は、呪いで狂う時がある。\nただし、その破壊力は最強に近い。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["HawaiianIslandsCave"],
@@ -1622,7 +1622,7 @@ const weaponList: Weapon[] = [
     additionalDamageJobs: thiefJobTypes,
     explanation:
       "使用者の生命を吸うかわりに、\n強大な力を与えてくれる呪われた刀。\n命とカ、貴方はどちらを選ぶ⋯?",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Atlantis"],
@@ -1640,7 +1640,7 @@ const weaponList: Weapon[] = [
     hp: 0,
     additionalDamageJobs: ["devil"],
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
 ];

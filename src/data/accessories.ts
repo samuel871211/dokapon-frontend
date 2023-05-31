@@ -21,7 +21,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "攻撃力が5上がる\nカの文字がほられた\n不思議なグローブ。",
-    fromMonsters: ["ハヌマーン"],
+    fromMonsterIdxs: [10],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -38,7 +38,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "防御力が5上がる\n守の文字がほられた\n不思議なグローブ。",
-    fromMonsters: ["魔法の騎士"],
+    fromMonsterIdxs: [31],
     fromVerticesQuery: [],
   },
   {
@@ -50,7 +50,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "魔力がら上がる\n気の文字がほられた\n不思議なグローブ。",
-    fromMonsters: ["さまよう魂", "マジックマッシュ"],
+    fromMonsterIdxs: [24, 53],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -67,7 +67,7 @@ const accessoryList: Accessory[] = [
     speed: 5,
     hp: 0,
     explanation: "素早さが5上がる\n速の文字がほられた\n不思議なグローブ。",
-    fromMonsters: ["フリーズガスト"],
+    fromMonsterIdxs: [43],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -84,7 +84,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 20,
     explanation: "HPが20上がる\n体の文字がほられた\n不思議なグローブ。",
-    fromMonsters: ["スノーマン"],
+    fromMonsterIdxs: [40],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -101,7 +101,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -118,7 +118,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "防御力が15上がる\n鉄の文字がほられた\n不思議なグローブ。",
-    fromMonsters: ["ヨロイエビ"],
+    fromMonsterIdxs: [77],
     fromVerticesQuery: [],
   },
   {
@@ -130,7 +130,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "魔力が15上がる\n法の文字がほられた\n不思議なグローブ。",
-    fromMonsters: ["ゴーストレオ"],
+    fromMonsterIdxs: [122],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica"],
@@ -147,7 +147,7 @@ const accessoryList: Accessory[] = [
     speed: 15,
     hp: 0,
     explanation: "素早さが15上がる\n忍の文字がほられた\n不思議なグローブ。",
-    fromMonsters: ["アサシン", "ガママル"],
+    fromMonsterIdxs: [111, 158],
     fromVerticesQuery: [],
   },
   {
@@ -159,7 +159,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 50,
     explanation: "HPが50上がる\n命の文字がほられた\n不思議なグローブ。",
-    fromMonsters: ["土の精"],
+    fromMonsterIdxs: [120],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -177,7 +177,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "攻撃力、防御力、魔力、\n素早さがらずつ上がる、\n女神の絵が描かれたリング。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Africa"],
@@ -195,7 +195,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "攻撃力、防御力、魔力、\n素早さが15上がる、\n選ばれし者が持つリング。",
-    fromMonsters: ["ライディーン"],
+    fromMonsterIdxs: [149],
     fromVerticesQuery: [
       {
         areas: ["Arctic"],
@@ -217,7 +217,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "魔力を30下げる代わりに、\n攻撃力を30上げる\nもろ刃の力を持つリング。",
-    fromMonsters: ["チタノザウロス", "グラディエーター"],
+    fromMonsterIdxs: [133, 166],
     fromVerticesQuery: [
       {
         areas: [],
@@ -235,7 +235,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "防御力を30下げる代わり\nに、素早さを30上げる\nもろ刃の力を持つリング。",
-    fromMonsters: ["オセアニアデビル"],
+    fromMonsterIdxs: [97],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -257,7 +257,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "攻撃力を30下げる代わり\nに、魔力を30上げる\nもろ刃の力を持つリング。",
-    fromMonsters: ["ゴールドギドラ"],
+    fromMonsterIdxs: [140],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -275,7 +275,7 @@ const accessoryList: Accessory[] = [
     hp: 300,
     explanation:
       "4つのパラメータが10\n下がるが、HPを300\n上げる、もろ刃のリング。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Antarctica"],
@@ -293,7 +293,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "炎系のフィールド魔法の\nダメージを半減する、\n不思議なうでね。",
-    fromMonsters: ["ウッディアン"],
+    fromMonsterIdxs: [67],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -310,7 +310,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -328,7 +328,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "雷系のフィールド魔法の\nダメージを半減する、\n不思議なうでね。",
-    fromMonsters: ["神の目"],
+    fromMonsterIdxs: [65],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave", "OceaniaCave"],
@@ -346,7 +346,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "風系のフィールド魔法の\nダメージを半減する、\n不思議なうでわ。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave", "SouthAmericaCave"],
@@ -363,7 +363,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -380,7 +380,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -397,7 +397,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -415,7 +415,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "たまに0〜6まで好きな\nマスに止まることのできる\n水晶のついたネックレス。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["NorthAmericaCave"],
@@ -436,7 +436,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -454,7 +454,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "たまに、フィールド魔法を\n防いでくれる\n鏡のついたネックレス。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["AfricaCave"],
@@ -471,7 +471,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave", "SouthAmericaCave"],
@@ -489,7 +489,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "たまに、死んでも生き返る\nことができる、天使の形を\nしたネックレス。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["SouthAmericaCave"],
@@ -514,7 +514,7 @@ const accessoryList: Accessory[] = [
     speed: 3,
     hp: 0,
     explanation: "1歩進むごとに\nHPが1回復する、\nかわいいくつ。",
-    fromMonsters: ["パッチー１号"],
+    fromMonsterIdxs: [161],
     fromVerticesQuery: [
       {
         areas: ["AsiaCave"],
@@ -531,7 +531,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "1歩進むごとに\n経験値が10上がる、\nかっこいいくつ。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Oceania", "EuropeCave"],
@@ -548,7 +548,7 @@ const accessoryList: Accessory[] = [
     speed: 3,
     hp: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -565,7 +565,7 @@ const accessoryList: Accessory[] = [
     speed: 3,
     hp: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["EuropeCave"],
@@ -583,7 +583,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "モンスターが持ち物を\n落としやすくなる\nシマシマがらの額当て。",
-    fromMonsters: ["ペロ"],
+    fromMonsterIdxs: [163],
     fromVerticesQuery: [
       {
         areas: ["NorthAmerica", "Europe"],
@@ -601,7 +601,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "装備していると罪がすぐに\n消えるポリスのキャラが\n描かれたレアなバッジ。",
-    fromMonsters: ["セルモン"],
+    fromMonsterIdxs: [168],
     fromVerticesQuery: [],
   },
   {
@@ -614,7 +614,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "クルサーの絵が描かれた\nバッジ。たまに持ち物を\n増やしてくれる。",
-    fromMonsters: ["ワルサー"],
+    fromMonsterIdxs: [170],
     fromVerticesQuery: [
       {
         areas: ["Oceania"],
@@ -631,7 +631,7 @@ const accessoryList: Accessory[] = [
     speed: 1,
     hp: 10,
     explanation: "",
-    fromMonsters: ["ウィウィ"],
+    fromMonsterIdxs: [157],
     fromVerticesQuery: [],
   },
   {
@@ -644,7 +644,7 @@ const accessoryList: Accessory[] = [
     hp: 0,
     explanation:
       "男性が装備すると、たまに\nHPが回復する。\n女性が装備しても効果無し。",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Atlantis"],
@@ -661,7 +661,7 @@ const accessoryList: Accessory[] = [
     speed: 0,
     hp: 0,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
   {
@@ -674,7 +674,7 @@ const accessoryList: Accessory[] = [
     hp: 44,
     explanation:
       "犯罪者が装備すると\nすさまじいカを得られる。\n普通の人には効果は無い。",
-    fromMonsters: ["キィ"],
+    fromMonsterIdxs: [167],
     fromVerticesQuery: [],
   },
   {
@@ -687,7 +687,7 @@ const accessoryList: Accessory[] = [
     hp: 300,
     explanation:
       "ドカポン王国伝説の勇者が\nかぶっていた光り輝く王かん。\n全てのパラメータが急上昇!",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [
       {
         areas: ["Arctic", "Antarctica"],
@@ -708,7 +708,7 @@ const accessoryList: Accessory[] = [
     speed: 44,
     hp: 444,
     explanation: "",
-    fromMonsters: [],
+    fromMonsterIdxs: [],
     fromVerticesQuery: [],
   },
 ];

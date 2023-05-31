@@ -590,9 +590,9 @@ type BattleFieldAttrs = {
 type VillageFieldAttrs = {
   name: "VillageField";
   /**
-   * @todo 村子名稱
+   * @todo `villageIdx`
    */
-  villageName?: string;
+  villageIdx?: number;
 };
 type CaveFieldAttrs = {
   name: "CaveField";
@@ -785,12 +785,24 @@ type PlayerInstance = {
    * 各職業，每升1等需要的回合數不一樣
    */
   jobsMasterStatus: { [key in JobTypes]: { level: number; rounds: number } };
+  ownedWeaponIdxs: number[];
+  ownedShieldIdxs: number[];
+  ownedAccessoryIdxs: number[];
+  ownedSpecialtyIdxs: number[];
+  battledMonsterIdxs: number[];
   availableJobs: JobTypes[];
   possession: {
     items: Item[];
     magicBooks: MagicBook[];
     money: number;
     treasury: number;
+    specialty: number;
+    villages: {
+      area: AreaTypes;
+      idx: number;
+      accumulatedMoney: number;
+    }[];
+    totalMoney: number;
   };
   npcLevel: NPCLevelTypes;
   /**
@@ -807,10 +819,7 @@ export type Shield = {
   speed: number;
   hp: number;
   explanation: TextsKeys;
-  /**
-   * Monster可關聯到fromAreas
-   */
-  fromMonsters: string[];
+  fromMonsterIdxs: number[];
   fromVerticesQuery: {
     areas: AreaTypes[];
     vertexTypes: VertexTypes[];
@@ -842,10 +851,7 @@ export type MagicBook = {
   name: TextsKeys;
   price: number;
   explanation: TextsKeys;
-  /**
-   * Monster可關聯到fromAreas
-   */
-  fromMonsters: string[];
+  fromMonsterIdxs: number[];
   fromVerticesQuery: {
     areas: AreaTypes[];
     vertexTypes: VertexTypes[];
@@ -857,10 +863,7 @@ export type magicAttack = {
   price: number;
   damage?: "small" | "medium" | "large";
   explanation: TextsKeys;
-  /**
-   * Monster可關聯到fromAreas
-   */
-  fromMonsters: string[];
+  fromMonsterIdxs: number[];
   fromVerticesQuery: {
     areas: AreaTypes[];
     vertexTypes: VertexTypes[];
@@ -872,11 +875,7 @@ export type magicDefense = {
   price: number;
   defense: number;
   explanation: TextsKeys;
-  /**
-   * @todo string type ?
-   * Monster可關聯到fromAreas
-   */
-  fromMonsters: string[];
+  fromMonsterIdxs: number[];
   fromVerticesQuery: {
     areas: AreaTypes[];
     vertexTypes: VertexTypes[];

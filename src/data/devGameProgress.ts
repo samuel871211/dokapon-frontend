@@ -246,6 +246,11 @@ const devGameProgress: GameProgress = {
       characterType: "player",
       npcLevel: "weak",
       controllerNumber: 1,
+      ownedAccessoryIdxs: [],
+      ownedShieldIdxs: [],
+      ownedWeaponIdxs: [],
+      ownedSpecialtyIdxs: [],
+      battledMonsterIdxs: [],
       jobsMasterStatus: {
         beginner: {
           level: 0,
@@ -360,8 +365,11 @@ const devGameProgress: GameProgress = {
       possession: {
         items: [],
         magicBooks: [],
-        money: 0,
+        money: 4,
         treasury: 0,
+        specialty: 0,
+        villages: [],
+        totalMoney: 4,
       },
     },
     {
@@ -412,6 +420,11 @@ const devGameProgress: GameProgress = {
       characterType: "player",
       npcLevel: "weak",
       controllerNumber: 1,
+      ownedAccessoryIdxs: [],
+      ownedShieldIdxs: [],
+      ownedWeaponIdxs: [],
+      ownedSpecialtyIdxs: [],
+      battledMonsterIdxs: [],
       jobsMasterStatus: {
         beginner: {
           level: 0,
@@ -526,8 +539,11 @@ const devGameProgress: GameProgress = {
       possession: {
         items: [],
         magicBooks: [],
-        money: 0,
+        money: 2,
         treasury: 0,
+        specialty: 0,
+        villages: [],
+        totalMoney: 2,
       },
     },
     {
@@ -578,6 +594,11 @@ const devGameProgress: GameProgress = {
       characterType: "player",
       npcLevel: "weak",
       controllerNumber: 1,
+      ownedAccessoryIdxs: [],
+      ownedShieldIdxs: [],
+      ownedWeaponIdxs: [],
+      ownedSpecialtyIdxs: [],
+      battledMonsterIdxs: [],
       jobsMasterStatus: {
         beginner: {
           level: 0,
@@ -692,8 +713,11 @@ const devGameProgress: GameProgress = {
       possession: {
         items: [],
         magicBooks: [],
-        money: 0,
+        money: 12,
         treasury: 0,
+        specialty: 0,
+        villages: [],
+        totalMoney: 12,
       },
     },
     {
@@ -744,6 +768,11 @@ const devGameProgress: GameProgress = {
       characterType: "player",
       npcLevel: "weak",
       controllerNumber: 1,
+      ownedAccessoryIdxs: [],
+      ownedShieldIdxs: [],
+      ownedWeaponIdxs: [],
+      ownedSpecialtyIdxs: [],
+      battledMonsterIdxs: [],
       jobsMasterStatus: {
         beginner: {
           level: 0,
@@ -858,8 +887,11 @@ const devGameProgress: GameProgress = {
       possession: {
         items: [],
         magicBooks: [],
-        money: 0,
+        money: 3,
         treasury: 0,
+        specialty: 0,
+        villages: [],
+        totalMoney: 3,
       },
     },
   ],

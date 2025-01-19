@@ -6,6 +6,20 @@ import { shieldTypes } from "data/shields";
 import type { TextsKeys } from "data/texts";
 import { weaponTypes } from "data/weapons";
 
+export type Movement =
+  | "vs"
+  | "attacked"
+  | "attackOne"
+  | "attackTwo"
+  | "back"
+  | "counterAttack"
+  | "danger"
+  | "die"
+  | "front"
+  | "guard"
+  | "magic"
+  | "prepare";
+export type BattleButtonTypes = "triangle" | "circle" | "cross" | "square";
 export type ListTopics =
   | "job"
   | "monster"
@@ -134,7 +148,8 @@ export type NormalBattleComponentTypes =
   | "VS"
   | "ShowVertexTerrain"
   | "SwapCards"
-  | "SelectGamePadButton";
+  | "SelectGamePadButton"
+  | "BattleAnimation";
 export type HomeComponentTypes = "ButtonGroup" | "Settings" | "Book";
 export type GameProgress = {
   timeStamp: string;
@@ -469,22 +484,35 @@ export type GameProgress = {
   NormalBattleState: {
     curComponent: NormalBattleComponentTypes;
     /**
-     * 攻擊側、防禦側
+     * 進入 Component `SwapCards` 之前，會先隨機生成此變數
      */
-    isLeftPlayerCurAttack: boolean;
+    isLeftPlayerInitAttack?: boolean;
+    /**
+     * 進入 Component `SwapCards` 之前，會先隨機生成此變數，後續會根據 `SwapCardState.isCardSwitch` 變動
+     *
+     * @description 攻擊側、防禦側
+     */
+    isLeftPlayerCurAttack?: boolean;
     /**
      * 左邊先選，之後換右邊
      */
-    isLeftPlayerCurSelect: boolean;
+    isLeftPlayerCurSelect?: boolean;
     /**
-     * 目前沒用到這個變數
+     * @deprecated 目前沒用到這個變數
      */
     battleRound: 1 | 2;
+    leftSelectedButton?: BattleButtonTypes;
+    rightSelectedButton?: BattleButtonTypes;
+    // selectedBattleButtons: [] | [BattleButtonTypes, BattleButtonTypes];
     SwapCardState: {
       isCardSwitch: boolean;
       isCardOpen: boolean;
     };
     SelectGamePadButtonState: {
+      /**
+       * 如果是 `player` vs `player`，選擇按鈕之前，會先跳出提示對話框（避免使用者誤選）
+       */
+      noticeDialogOpen: boolean;
       rightDialogOpen: boolean;
       leftDialogOpen: boolean;
     };

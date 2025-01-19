@@ -3,6 +3,16 @@
 - 對戰的對手，是否改成用 reference 的方式？
 - 對戰的對手如果是 player 以外，就直接跳過它的 `SelectGamePadButton` 回合
 
+## 0.6.0 (一年半沒維護，忘記之前寫到哪裡)
+
+### added
+
+- `SelectGamePagButton` 的 `rightDialog` 實作 UI layout
+
+### fixed
+
+- Component `SwapCards` `先攻` 跟 `後攻` 的顯示邏輯錯誤
+
 ## 0.5.0
 
 ### added

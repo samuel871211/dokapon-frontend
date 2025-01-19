@@ -16,6 +16,7 @@ function SwapCards() {
       players,
       currentPlayerIdx,
       NormalBattleState: {
+        isLeftPlayerInitAttack,
         isLeftPlayerCurAttack,
         SwapCardState: { isCardSwitch, isCardOpen },
       },
@@ -31,7 +32,7 @@ function SwapCards() {
           <div className={styles.card} data-opened={isCardOpen}>
             <div className={styles.cardFront}></div>
             <div className={styles.cardBack} data-first={isLeftPlayerCurAttack}>
-              {isLeftPlayerCurAttack ? "先攻" : "後攻"}
+              {isLeftPlayerInitAttack ? "先攻" : "後攻"}
             </div>
           </div>
         </div>
@@ -48,7 +49,7 @@ function SwapCards() {
               className={styles.cardBack}
               data-first={!isLeftPlayerCurAttack}
             >
-              {!isLeftPlayerCurAttack ? "先攻" : "後攻"}
+              {isLeftPlayerInitAttack ? "後攻" : "先攻"}
             </div>
           </div>
         </div>

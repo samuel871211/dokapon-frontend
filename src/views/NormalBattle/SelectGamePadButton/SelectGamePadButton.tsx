@@ -25,6 +25,10 @@ const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 
 export default SelectGamePadButton;
 
+/**
+ * @todo `rightDialog`
+ * @todo `isLeftPlayerCurSelect` 切換之後，真的要換人選
+ */
 function SelectGamePadButton() {
   const { t } = useTranslation();
   const {
@@ -38,7 +42,7 @@ function SelectGamePadButton() {
       },
     },
   } = useContext(gameProgressCtx);
-  const battleCharacter = useBattleCharacter();
+  // const battleCharacter = useBattleCharacter();
   const currentPlayer = players[currentPlayerIdx];
   return (
     <div className={swapCardStyles.swapCardContainer}>
@@ -262,7 +266,55 @@ function SelectGamePadButton() {
       <div
         className={styles.rightDialogContainer}
         aria-haspopup={rightDialogOpen}
-      ></div>
+      >
+        <div className={styles.rightDialogInner}>
+          <YellowBlock
+            role="dialog"
+            borderRadius="9999px"
+            className={styles.rightDialogRow}
+          ></YellowBlock>
+          <YellowBlock
+            role="dialog"
+            borderRadius="9999px"
+            className={styles.rightDialogRow}
+          ></YellowBlock>
+          <YellowBlock
+            role="dialog"
+            borderRadius="9999px"
+            className={styles.rightDialogRow}
+          ></YellowBlock>
+          <YellowBlock
+            role="dialog"
+            borderRadius="9999px"
+            className={styles.rightDialogRow}
+          ></YellowBlock>
+          <YellowBlock
+            role="dialog"
+            borderRadius="9999px"
+            className={styles.rightDialogRow}
+          ></YellowBlock>
+          <YellowBlock
+            role="dialog"
+            borderRadius="9999px"
+            className={styles.rightDialogRow}
+          ></YellowBlock>
+          <YellowBlock
+            role="dialog"
+            borderRadius="9999px"
+            className={styles.rightDialogRow}
+          ></YellowBlock>
+          <YellowBlock
+            role="dialog"
+            borderRadius="9999px"
+            className={styles.rightDialogRow}
+          ></YellowBlock>
+          <YellowBlock
+            role="dialog"
+            borderRadius="9999px"
+            className={styles.rightDialogRow}
+          ></YellowBlock>
+        </div>
+      </div>
     </div>
   );
 }

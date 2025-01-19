@@ -185,8 +185,10 @@ const devGameProgress: GameProgress = {
   },
   NormalBattleState: {
     curComponent: "VS",
-    isLeftPlayerCurAttack: false,
-    isLeftPlayerCurSelect: false,
+    // isLeftPlayerInitAttack: false,
+    // isLeftPlayerCurAttack: false,
+    // isLeftPlayerCurSelect: false,
+    // selectedBattleButtons: [],
     battleRound: 1,
     SwapCardState: {
       isCardSwitch: false,
@@ -195,6 +197,7 @@ const devGameProgress: GameProgress = {
     SelectGamePadButtonState: {
       leftDialogOpen: false,
       rightDialogOpen: false,
+      noticeDialogOpen: false,
     },
   },
   players: [

@@ -9,7 +9,10 @@ import gameProgressCtx from "reducers/gameProgress";
 
 export default useBattleCharacter;
 
-function useBattleCharacter(): PlayerInstance | MonsterInstance | void {
+/**
+ * @description throws an error if battleCharacter not exist.
+ */
+function useBattleCharacter(): PlayerInstance | MonsterInstance {
   const {
     gameProgress: {
       players,
@@ -21,18 +24,32 @@ function useBattleCharacter(): PlayerInstance | MonsterInstance | void {
   } = useContext(gameProgressCtx);
   const currentPlayer = players[currentPlayerIdx];
   const { battleCharacter, area, vertexIdx } = currentPlayer;
-  if (!battleCharacter) return;
+  if (!battleCharacter) throw new Error("no battle character");
 
   switch (battleCharacter.type) {
     case "player":
       return players[battleCharacter.index];
-    case "bossMonster":
-      return bossMonsters.find(
-        (b) => b.area === area && b.vertexIdx === vertexIdx
+    case "bossMonster": {
+      const result = bossMonsters.find(
+        (bossMonster) =>
+          bossMonster.area === area && bossMonster.vertexIdx === vertexIdx
       );
-    case "monster":
-      return monsters.find((m) => m.area === area && m.vertexIdx === vertexIdx);
-    case "enemy":
-      return enemies.find((e) => e.area === area && e.vertexIdx === vertexIdx);
+      if (!result) throw new Error("no battle character");
+      return result;
+    }
+    case "monster": {
+      const result = monsters.find(
+        (monster) => monster.area === area && monster.vertexIdx === vertexIdx
+      );
+      if (!result) throw new Error("no battle character");
+      return result;
+    }
+    case "enemy": {
+      const result = enemies.find(
+        (enemy) => enemy.area === area && enemy.vertexIdx === vertexIdx
+      );
+      if (!result) throw new Error("no battle character");
+      return result;
+    }
   }
 }

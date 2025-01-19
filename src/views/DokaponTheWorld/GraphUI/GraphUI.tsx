@@ -146,13 +146,16 @@ function useMetaData() {
   ));
   const BossMonstersChess = useMemo(
     () =>
-      bossMonsters.map((bossMonster) => (
-        <BossMonsterChess
-          key={curGraph.vertices[bossMonster.vertexIdx].id}
-          position={curGraph.vertices[bossMonster.vertexIdx].position}
-          id={curGraph.vertices[bossMonster.vertexIdx].id}
-        />
-      )),
+      bossMonsters.map(
+        (bossMonster) =>
+          curPlayer.area === bossMonster.area && (
+            <BossMonsterChess
+              key={curGraph.vertices[bossMonster.vertexIdx].id}
+              position={curGraph.vertices[bossMonster.vertexIdx].position}
+              id={curGraph.vertices[bossMonster.vertexIdx].id}
+            />
+          )
+      ),
     [bossMonsters]
   );
 

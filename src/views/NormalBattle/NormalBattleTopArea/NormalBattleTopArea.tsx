@@ -23,7 +23,6 @@ function NormalBattleTopArea(props: {
   const { currentPlayer, showTwinkleButtons } = props;
   const { job, gender, color } = currentPlayer;
   const battleCharacter = useBattleCharacter();
-  if (!battleCharacter) throw new Error("no battle character");
   const { characterType } = battleCharacter;
   const battleCharacterImgSrc =
     characterType === "monster"

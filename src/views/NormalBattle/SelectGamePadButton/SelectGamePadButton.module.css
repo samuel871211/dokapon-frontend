@@ -128,9 +128,25 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .rightDialogContainer[aria-haspopup="false"] {
   display: none;
+}
+.rightDialogInner {
+  width: 60%;
+}
+.rightDialogRow {
+  display: flex;
+  font-size: 3rem;
+  line-height: 4rem;
+  min-height: 4rem;
+}
+.rightDialogRow:nth-child(3),
+.rightDialogRow:nth-child(6) {
+  margin-bottom: 2rem;
 }
 .leftDialogContainer {
   position: absolute;

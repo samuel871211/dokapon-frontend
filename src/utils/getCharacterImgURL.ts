@@ -1,5 +1,4 @@
 import { MonsterInstance, Movement, PlayerInstance } from "global";
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 
 export default getCharacterImgURL;
 
@@ -11,8 +10,7 @@ function getCharacterImgURL(
   movement: Movement
 ) {
   const { characterType } = character;
-  if (characterType === "monster")
-    return `${backendBaseUrl}/${character.key}_vs.png`;
+  if (characterType === "monster") return `/${character.key}_vs.png`;
   const { job, color, gender } = character;
-  return `${backendBaseUrl}/${job}_${gender}_${color}_${movement}.png`;
+  return `/${job}_${gender}_${color}_${movement}.png`;
 }

@@ -8,7 +8,6 @@ import gameProgressCtx from "reducers/gameProgress";
 import getCharacterImgURL from "utils/getCharacterImgURL";
 
 // Stateless vars declare.
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 
 export default BattleAnimation;
 

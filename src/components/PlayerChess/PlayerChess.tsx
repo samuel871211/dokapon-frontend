@@ -1,7 +1,5 @@
 import { PlayerInstance, Vertex } from "global";
 
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
-
 export default PlayerChess;
 
 function PlayerChess(props: {
@@ -12,7 +10,7 @@ function PlayerChess(props: {
   color: PlayerInstance["color"];
 }) {
   const { id, position, job, gender, color } = props;
-  const href = `${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`;
+  const href = `/imgs/${job}_${gender}_${color}_front.png`;
   return (
     <g
       transform={`translate(${position.x}, ${position.y})`}

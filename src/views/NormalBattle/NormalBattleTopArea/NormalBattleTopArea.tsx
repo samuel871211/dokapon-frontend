@@ -11,7 +11,6 @@ import type { PlayerInstance } from "global";
 import useBattleCharacter from "hooks/useBattleCharacter";
 
 // Stateless vars declare.
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 
 export default NormalBattleTopArea;
 
@@ -26,8 +25,8 @@ function NormalBattleTopArea(props: {
   const { characterType } = battleCharacter;
   const battleCharacterImgSrc =
     characterType === "monster"
-      ? `${backendBaseUrl}/imgs/${battleCharacter.key}_vs.png`
-      : `${backendBaseUrl}/imgs/${battleCharacter.job}_${battleCharacter.gender}_${battleCharacter.color}_vs.png`;
+      ? `/imgs/${battleCharacter.key}_vs.png`
+      : `/imgs/${battleCharacter.job}_${battleCharacter.gender}_${battleCharacter.color}_vs.png`;
 
   return (
     <>
@@ -121,7 +120,7 @@ function NormalBattleTopArea(props: {
         <div className={styles.imgContainer1}>
           <img
             height="100%"
-            src={`${backendBaseUrl}/imgs/${job}_${gender}_${color}_prepare.png`}
+            src={`/imgs/${job}_${gender}_${color}_prepare.png`}
           />
         </div>
         <div className={styles.imgContainer2}>

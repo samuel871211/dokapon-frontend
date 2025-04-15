@@ -38,7 +38,7 @@ import { getRandomIntInclusive } from "utils/math";
 // Stateless vars declare.
 const emptyWord = "　";
 const defaultGoalInput = 1;
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
+
 const basicJobsDescriptions: { [key in BasicJobTypes]: TextsKeys } = {
   warrior:
     "攻撃力でガンガン行く職業ですぅ。\n物理攻撃が得意ですけど、\n魔力が上がらないので魔法には弱いですぅ。",
@@ -410,7 +410,6 @@ function useMetaData() {
   ];
   const currentPlayer = players[currentPlayerIdx];
   const exampleCharacterImgSrc =
-    backendBaseUrl +
     "/imgs/" +
     `${currentPlayer.job}_` +
     `${currentPlayer.gender}_` +

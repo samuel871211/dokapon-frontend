@@ -11,7 +11,6 @@ import { useContext } from "react";
 import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 
 export default SelectGender;
 
@@ -22,7 +21,7 @@ function SelectGender() {
     <div className={styles.topRightContentArea}>
       <div className={styles.genderBlock}>
         <img
-          src={`${backendBaseUrl}/imgs/beginner_male_red_front.png`}
+          src={`/imgs/beginner_male_red_front.png`}
           alt={t("男")}
           width="100%"
           data-selected={currentPlayerGender === "male"}
@@ -39,7 +38,7 @@ function SelectGender() {
       </div>
       <div className={styles.genderBlock}>
         <img
-          src={`${backendBaseUrl}/imgs/beginner_female_red_front.png`}
+          src={`/imgs/beginner_female_red_front.png`}
           alt={t("女")}
           width="100%"
           data-selected={currentPlayerGender === "female"}

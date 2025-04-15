@@ -21,7 +21,6 @@ import {
 } from "components/Icons";
 
 // Stateless vars declare.
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 
 export default SelectGamePadButton;
 
@@ -204,7 +203,7 @@ function SelectGamePadButton() {
             <div data-attack={true}>{t("攻擊側")}</div>
             <div className={styles.imgContainer}>
               <img
-                src={`${backendBaseUrl}/imgs/${currentPlayer.job}_${currentPlayer.gender}_${currentPlayer.color}_front.png`}
+                src={`/imgs/${currentPlayer.job}_${currentPlayer.gender}_${currentPlayer.color}_front.png`}
               />
             </div>
           </div>
@@ -244,7 +243,7 @@ function SelectGamePadButton() {
             <div data-attack={false}>{t("防禦側")}</div>
             <div className={styles.imgContainer}>
               <img
-                src={`${backendBaseUrl}/imgs/${currentPlayer.job}_${currentPlayer.gender}_${currentPlayer.color}_front.png`}
+                src={`/imgs/${currentPlayer.job}_${currentPlayer.gender}_${currentPlayer.color}_front.png`}
               />
             </div>
           </div>

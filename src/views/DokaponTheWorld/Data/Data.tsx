@@ -68,7 +68,7 @@ const explanationHelpTexts: { [key: string]: TextsKeys } = {
 };
 const exp = 123456;
 const arrayOf12 = Array(12).fill(0);
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
+
 const level1ButtonTexts: TextsKeys[][] = [
   ["強さ", "装備", "所持", "資産", "統治", "順位"],
   ["職業", "魔物", "武器", "盾", "装飾品", "特產品"],
@@ -468,9 +468,7 @@ function PlayerImgAndBasicAttrsArea(props: { children?: ReactNode }) {
     <div className={styles.strengthContainer}>
       <div className={styles.playerImageAndRanking}>
         <div className={styles.playerImageContainer}>
-          <img
-            src={`${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`}
-          />
+          <img src={`/imgs/${job}_${gender}_${color}_front.png`} />
         </div>
         <div className={styles.ranking}>
           <div>
@@ -606,7 +604,7 @@ function JobGridView() {
         <img
           width="100%"
           height="100%"
-          src={`${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`}
+          src={`/imgs/${job}_${gender}_${color}_front.png`}
         />
       </div>
       <div className={styles.topRightGridItem}>

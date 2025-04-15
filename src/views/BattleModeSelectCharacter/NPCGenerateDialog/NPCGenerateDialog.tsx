@@ -13,7 +13,7 @@ import YellowBlock from "layouts/YellowBlock";
 import gameProgressCtx from "reducers/gameProgress";
 
 // Stateless vars declare.
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
+
 const viewToViewStateMapping = {
   BattleModeSelectCharacter: "BattleModeSelectCharacterState" as const,
   StoryModeSelectCharacter: "StoryModeSelectCharacterState" as const,
@@ -99,6 +99,6 @@ function useMetaData() {
     gameProgress[viewToViewStateMapping[currentView]].NPCGenerateDialogState;
   const currentPlayer = players[currentPlayerIdx];
   const { job, gender, color } = players[currentPlayerIdx];
-  const imgSrc = `${backendBaseUrl}/imgs/${job}_${gender}_${color}_front.png`;
+  const imgSrc = `/imgs/${job}_${gender}_${color}_front.png`;
   return { currentPlayer, imgSrc, selectedIdx };
 }

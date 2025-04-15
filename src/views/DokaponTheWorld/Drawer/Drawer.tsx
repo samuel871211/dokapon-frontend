@@ -30,7 +30,6 @@ import FullHpBar from "components/FullHpBar";
 // three.next = zero;
 const weekToChinese = ["月", "火", "水", "木", "金", "土", "日"];
 const weekToEnglish = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 
 export default Drawer;
 
@@ -69,7 +68,7 @@ function Drawer() {
               <img
                 width="100%"
                 height="100%"
-                src={`${backendBaseUrl}/imgs/${currentPlayer.job}_${currentPlayer.gender}_${currentPlayer.color}_front.png`}
+                src={`/imgs/${currentPlayer.job}_${currentPlayer.gender}_${currentPlayer.color}_front.png`}
               />
             </div>
             <div className={styles.ranking}>
@@ -217,7 +216,7 @@ function BriefPlayerInfos(props: { playerAttrs: PlayerInstance }) {
         <img
           width="100%"
           height="100%"
-          src={`${backendBaseUrl}/imgs/${playerAttrs.job}_${playerAttrs.gender}_${playerAttrs.color}_front.png`}
+          src={`/imgs/${playerAttrs.job}_${playerAttrs.gender}_${playerAttrs.color}_front.png`}
         />
       </div>
       <div>

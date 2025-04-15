@@ -11,7 +11,7 @@ import gameProgressCtx from "reducers/gameProgress";
 import topAreaStyles from "../TopArea/TopArea.module.css";
 
 // Stateless vars declare.
-// const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
+//
 
 export default SelectJob;
 

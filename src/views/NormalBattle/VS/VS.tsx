@@ -7,7 +7,6 @@ import gameProgressCtx from "reducers/gameProgress";
 import useBattleCharacter from "hooks/useBattleCharacter";
 
 // Stateless vars declare.
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 
 export default VS;
 
@@ -20,11 +19,11 @@ function VS() {
   const battleCharacter = useBattleCharacter();
   const { characterType } = battleCharacter;
 
-  const src1 = `${backendBaseUrl}/imgs/${job}_${gender}_${color}_vs.png`;
+  const src1 = `/imgs/${job}_${gender}_${color}_vs.png`;
   const src2 =
     characterType === "monster"
-      ? `${backendBaseUrl}/imgs/${battleCharacter.key}_vs.png`
-      : `${backendBaseUrl}/imgs/${battleCharacter.job}_${battleCharacter.gender}_${battleCharacter.color}_vs.png`;
+      ? `/imgs/${battleCharacter.key}_vs.png`
+      : `/imgs/${battleCharacter.job}_${battleCharacter.gender}_${battleCharacter.color}_vs.png`;
   return (
     <div className={styles.vsContainer}>
       <div className={styles.row1}>

@@ -21,7 +21,6 @@ const viewToViewStateMapping = {
   BattleModeSelectCharacter: "BattleModeSelectCharacterState" as const,
   StoryModeSelectCharacter: "StoryModeSelectCharacterState" as const,
 };
-const backendBaseUrl = import.meta.env.VITE_BACKEND_BASEURL;
 
 export default SelectController;
 
@@ -52,7 +51,7 @@ function SelectController() {
             {playerIdx}
           </div>
           <img
-            src={`${backendBaseUrl}/imgs/${playerAttrs.job}_${playerAttrs.gender}_${playerAttrs.color}_front.png`}
+            src={`/imgs/${playerAttrs.job}_${playerAttrs.gender}_${playerAttrs.color}_front.png`}
           ></img>
           <div className={styles.nameContainer}>
             <span className={styles.nameArea}>{playerAttrs.name}</span>

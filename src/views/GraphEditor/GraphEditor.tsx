@@ -475,6 +475,18 @@ function useMetaData() {
   function handlePointerMove(e: PointerEvent<SVGSVGElement>) {
     if (!isPointerDown) return;
 
+    // mac 的 contextmenu 在 pointerDown 時就會觸發，此時 layer2 會蓋住 SVG，
+    // 導致 SVG 收不到 pointerUp，isPointerDown 會一直維持 true，
+    // 使得選單關閉後，Vertex 會跟著滑鼠移動。
+    // 所以當 pointerMove 發現沒有任何按鍵被按住，就把拖曳狀態重置。
+    if (e.buttons === 0) {
+      isPointerDown = false;
+      isPointerDownOnVertex = false;
+      isPointerDownOnBlank = false;
+      isPointerDownOnSelectedArea = false;
+      return;
+    }
+
     switch (mouseMode) {
       case "edit": {
         if (isPointerDownOnVertex) moveVertexAndConnectedEdges(e);

@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default GoldTreasureField;
 
-function GoldTreasureField(props: Vertex): JSX.Element {
+function GoldTreasureField(props: Vertex) {
   const { position, id } = props;
 
   return (

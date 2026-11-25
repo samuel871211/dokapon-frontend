@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default MagicStoreField;
 
-function MagicStoreField(props: Vertex): JSX.Element {
+function MagicStoreField(props: Vertex) {
   const { position, id } = props;
 
   return (

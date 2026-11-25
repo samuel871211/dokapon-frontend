@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default GroceryStoreField;
 
-function GroceryStoreField(props: Vertex): JSX.Element {
+function GroceryStoreField(props: Vertex) {
   const { position, id } = props;
 
   return (

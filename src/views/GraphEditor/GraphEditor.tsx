@@ -61,7 +61,7 @@ function renderCells(graph: GraphJSON) {
     createElement(Components.vertices[vertex.name], {
       key: vertex.id,
       ...vertex,
-    })
+    }),
   );
   const edges = graph.edges.map((edge) => {
     if (pointerDownVertex?.edges.includes(edge.id)) {
@@ -148,7 +148,7 @@ const selectedVerticesGroupOffsets: Position[] = [];
 
 export default GraphEditor;
 
-function GraphEditor(): JSX.Element {
+function GraphEditor() {
   const {
     handlePointerDown,
     handlePointerMove,
@@ -435,7 +435,7 @@ function useMetaData() {
       }
       case "edge": {
         const mayBePointerDownEdgeIdx = curGraph.edges.findIndex(
-          (edge) => edge.id === cellId
+          (edge) => edge.id === cellId,
         );
         if (mayBePointerDownEdgeIdx === -1) return;
         pointerDownEdge = curGraph.edges[mayBePointerDownEdgeIdx];
@@ -445,7 +445,7 @@ function useMetaData() {
       case "vertex": {
         isPointerDownOnVertex = true;
         const mayBePointerDownVertexIdx = curGraph.vertices.findIndex(
-          (vertex) => vertex.id === cellId
+          (vertex) => vertex.id === cellId,
         );
         if (mayBePointerDownVertexIdx === -1) return;
         pointerDownVertex = curGraph.vertices[mayBePointerDownVertexIdx];
@@ -455,7 +455,7 @@ function useMetaData() {
         pointerDownRelatedEdges.length = 0;
         pointerDownVertex.edges.forEach((edgeId) => {
           const edge = curGraph.edges.find(
-            (tempEdge) => tempEdge.id === edgeId
+            (tempEdge) => tempEdge.id === edgeId,
           );
           if (edge) pointerDownRelatedEdges.push(edge);
         });
@@ -536,13 +536,13 @@ function useMetaData() {
       if (edge.startId === pointerDownVertex.id) {
         edgeEl.setAttribute(
           "d",
-          `M ${newX} ${newY} L ${edge.end.x} ${edge.end.y}`
+          `M ${newX} ${newY} L ${edge.end.x} ${edge.end.y}`,
         );
       }
       if (edge.endId === pointerDownVertex.id) {
         edgeEl.setAttribute(
           "d",
-          `M ${edge.start.x} ${edge.start.y} L ${newX} ${newY}`
+          `M ${edge.start.x} ${edge.start.y} L ${newX} ${newY}`,
         );
       }
     }
@@ -624,7 +624,7 @@ function useMetaData() {
       vertex.position.y = newY + groupOffsetY;
       vertexEl.setAttribute(
         "transform",
-        `translate(${vertex.position.x}, ${vertex.position.y})`
+        `translate(${vertex.position.x}, ${vertex.position.y})`,
       );
 
       const connectedEdges: Edge[] = [];
@@ -644,7 +644,7 @@ function useMetaData() {
         }
         edgeEl.setAttribute(
           "d",
-          `M ${edge.start.x} ${edge.start.y} L ${edge.end.x} ${edge.end.y}`
+          `M ${edge.start.x} ${edge.start.y} L ${edge.end.x} ${edge.end.y}`,
         );
       }
     });
@@ -679,7 +679,7 @@ function useMetaData() {
       selectedVerticesGroupOffsets.push({
         x: vertex.position.x - left,
         y: vertex.position.y - top,
-      })
+      }),
     );
     if (left > right || top > bottom)
       setSelectedArea({ x: 0, y: 0, width: 0, height: 0 });
@@ -776,7 +776,7 @@ function useMetaData() {
    */
   function deleteVertex() {
     const edges = curGraph.edges.filter((temp) =>
-      pointerDownVertex.edges.includes(temp.id)
+      pointerDownVertex.edges.includes(temp.id),
     );
     const vertices: Vertex[] = [];
     for (const vertex of curGraph.vertices) {
@@ -798,7 +798,7 @@ function useMetaData() {
       for (const direction of directions) {
         if (vertex[direction] === pointerDownVertex.id) {
           const inersectionEdgeId = pointerDownVertex.edges.find((edgeId) =>
-            vertex.edges.includes(edgeId)
+            vertex.edges.includes(edgeId),
           );
           if (!inersectionEdgeId) throw new Error("no inersection edgeId");
           vertex[direction] = inersectionEdgeId;
@@ -893,10 +893,10 @@ function useMetaData() {
 
     const { startId, endId } = pointerDownEdge;
     const startVertex = curGraph.vertices.find(
-      (vertex) => vertex.id === pointerDownEdge.startId
+      (vertex) => vertex.id === pointerDownEdge.startId,
     );
     const endVertex = curGraph.vertices.find(
-      (vertex) => vertex.id === pointerDownEdge.endId
+      (vertex) => vertex.id === pointerDownEdge.endId,
     );
     const isTwoWayConnected = startId !== "" && endId !== "";
     const isStartConnected = startId !== "" && endId === "";
@@ -987,7 +987,7 @@ function useMetaData() {
 
     // 1. find connectedVertex
     const connectedVertex = curGraph.vertices.find(
-      (temp) => temp.id === startId || temp.id === endId
+      (temp) => temp.id === startId || temp.id === endId,
     );
     if (!connectedVertex) throw new Error("no connectedVertex");
 
@@ -1080,7 +1080,7 @@ function useMetaData() {
     const { startId, endId, start, end } = pointerDownEdge;
 
     const connectedVertex = curGraph.vertices.find(
-      (temp) => temp.id === startId || temp.id === endId
+      (temp) => temp.id === startId || temp.id === endId,
     );
     if (!connectedVertex) throw new Error("no connectedVertex");
 
@@ -1136,7 +1136,7 @@ function useMetaData() {
   }
   useEffect(
     () => setCurGraph(areaTypesToMap[selectedAreaType]),
-    [selectedAreaType]
+    [selectedAreaType],
   );
   return {
     handlePointerDown,

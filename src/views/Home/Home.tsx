@@ -10,7 +10,7 @@ import gameProgressCtx from "reducers/gameProgress";
 import type { GamePadKeyTypes, HomeComponentTypes } from "global";
 
 // Stateless vars declare.
-const Components: { [key in HomeComponentTypes]: () => JSX.Element } = {
+const Components: { [key in HomeComponentTypes]: () => React.ReactNode } = {
   ButtonGroup,
   Settings,
   Book: () => <></>,
@@ -43,7 +43,7 @@ function useMetaData() {
    * 有些可以hover的按鈕，但不是`gamePadKey`，透過此function來確定
    */
   function isGamePadKey(
-    key: typeof KEYBOARDMAP[number][number]
+    key: (typeof KEYBOARDMAP)[number][number],
   ): key is GamePadKeyTypes {
     return key in gamePadSetting;
   }

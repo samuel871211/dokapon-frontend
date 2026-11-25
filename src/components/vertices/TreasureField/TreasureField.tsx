@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default TreasureField;
 
-function TreasureField(props: Vertex): JSX.Element {
+function TreasureField(props: Vertex) {
   const { position, id } = props;
 
   return (

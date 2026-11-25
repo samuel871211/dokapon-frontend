@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default CollectMoneyField;
 
-function CollectMoneyField(props: Vertex): JSX.Element {
+function CollectMoneyField(props: Vertex) {
   const { position, id } = props;
 
   return (

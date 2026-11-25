@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default WeaponStoreField;
 
-function WeaponStoreField(props: Vertex): JSX.Element {
+function WeaponStoreField(props: Vertex) {
   const { position, id } = props;
 
   return (

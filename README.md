@@ -5,8 +5,8 @@
 ## Development Setup
 
 ```
-npm i
-npm run dev
+pnpm i
+pnpm dev
 ```
 
 ## 遊玩方式

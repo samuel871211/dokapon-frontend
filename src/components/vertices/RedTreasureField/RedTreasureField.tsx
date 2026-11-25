@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default RedTreasureField;
 
-function RedTreasureField(props: Vertex): JSX.Element {
+function RedTreasureField(props: Vertex) {
   const { position, id } = props;
 
   return (

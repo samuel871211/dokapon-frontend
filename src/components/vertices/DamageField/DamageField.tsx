@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default DamageField;
 
-function DamageField(props: Vertex): JSX.Element {
+function DamageField(props: Vertex) {
   const { position, id } = props;
 
   return (

@@ -19,7 +19,9 @@ const battleButtons: BattleButtonTypes[] = [
   "cross",
   "square",
 ];
-const Components: { [key in NormalBattleComponentTypes]: () => JSX.Element } = {
+const Components: {
+  [key in NormalBattleComponentTypes]: () => React.ReactNode;
+} = {
   VS,
   ShowVertexTerrain,
   SwapCards,
@@ -86,7 +88,7 @@ function useMetaData() {
     }
   }
   function handleKeyDownForSelectGamePadButton(
-    e: KeyboardEvent<HTMLDivElement>
+    e: KeyboardEvent<HTMLDivElement>,
   ) {
     switch (e.key.toLowerCase()) {
       case gamePadSetting.R1:

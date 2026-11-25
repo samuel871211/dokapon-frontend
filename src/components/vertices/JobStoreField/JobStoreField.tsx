@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default JobStoreField;
 
-function JobStoreField(props: Vertex): JSX.Element {
+function JobStoreField(props: Vertex) {
   const { position, id } = props;
 
   return (

@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default KeyTreasureField;
 
-function KeyTreasureField(props: Vertex): JSX.Element {
+function KeyTreasureField(props: Vertex) {
   const { position, id } = props;
 
   return (

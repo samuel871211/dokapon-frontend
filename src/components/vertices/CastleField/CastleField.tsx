@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default CastleField;
 
-function CastleField(props: Vertex): JSX.Element {
+function CastleField(props: Vertex) {
   const { position, id } = props;
 
   return (

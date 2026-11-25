@@ -7,7 +7,7 @@ import { Edge } from "global";
 
 export default TwoWayVEdge;
 
-function TwoWayVEdge(props: Edge): JSX.Element {
+function TwoWayVEdge(props: Edge) {
   const { start, end, id } = props;
 
   return (

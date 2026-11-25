@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default BattleField;
 
-function BattleField(props: Vertex): JSX.Element {
+function BattleField(props: Vertex) {
   const { position, id } = props;
 
   return (

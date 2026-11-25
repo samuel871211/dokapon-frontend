@@ -27,7 +27,7 @@ const rootStyles = {
   "4:3": styles.traditionalAspectRatio,
   stretch: styles.stretchAspectRatio,
 };
-const Views: { [key in ViewTypes]: () => JSX.Element } = {
+const Views: { [key in ViewTypes]: () => React.ReactNode } = {
   BattleModeSelectCharacter,
   DokaponTheWorld,
   Home,

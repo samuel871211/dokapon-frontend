@@ -110,7 +110,7 @@ const StepsProps: {
      * 目前只有`SelectColor`, `SelectJob`, `SelectNPCJob`, `SelectNPCColor`會顯示
      */
     showTopRightImg: boolean;
-    Component: () => JSX.Element;
+    Component: () => React.ReactNode;
     bottomDialogProps: BottomDialogProps;
   };
 } = {
@@ -591,7 +591,7 @@ function useMetaData() {
             if (selectedWordIdx % 5 === 0) {
               NameInputDialogState.selectedSectionIdx = 2;
               NameInputDialogState.selectedWordIdx = Math.floor(
-                selectedWordIdx / 5
+                selectedWordIdx / 5,
               );
             } else if (selectedWordIdx % 5 !== 0) {
               NameInputDialogState.selectedWordIdx = selectedWordIdx - 1;
@@ -629,7 +629,7 @@ function useMetaData() {
             if (selectedWordIdx % 5 === 4) {
               NameInputDialogState.selectedSectionIdx = 2;
               NameInputDialogState.selectedWordIdx = Math.floor(
-                selectedWordIdx / 5
+                selectedWordIdx / 5,
               );
             } else if (selectedWordIdx % 5 !== 4) {
               NameInputDialogState.selectedWordIdx = selectedWordIdx + 1;
@@ -706,7 +706,7 @@ function useMetaData() {
                 break;
               case "ＯＫ": {
                 const emptyWords = nameInputArray.filter(
-                  (word) => word === emptyWord
+                  (word) => word === emptyWord,
                 );
                 if (emptyWords.length === nameInputArray.length) break;
                 currentPlayer.name = nameInputArray.join("").trim();
@@ -788,7 +788,7 @@ function useMetaData() {
         currentPlayer.job = basicJobs[curJobIdx];
         bottomDialogSentencesQueue.length = 0;
         bottomDialogSentencesQueue.push(
-          t(basicJobsDescriptions[basicJobs[curJobIdx] as BasicJobTypes])
+          t(basicJobsDescriptions[basicJobs[curJobIdx] as BasicJobTypes]),
         );
         break;
       case gamePadSetting.arrowDown:
@@ -796,7 +796,7 @@ function useMetaData() {
         currentPlayer.job = basicJobs[curJobIdx];
         bottomDialogSentencesQueue.length = 0;
         bottomDialogSentencesQueue.push(
-          t(basicJobsDescriptions[currentPlayer.job as BasicJobTypes])
+          t(basicJobsDescriptions[currentPlayer.job as BasicJobTypes]),
         );
         break;
       case gamePadSetting.circle: {
@@ -1044,7 +1044,7 @@ function useMetaData() {
         }
         bottomDialogSentencesQueue.length = 0;
         bottomDialogSentencesQueue.push(
-          t("つながっていないコントローラが\n選ばれていますよ!")
+          t("つながっていないコントローラが\n選ばれていますよ!"),
         );
         break;
       }

@@ -8,7 +8,7 @@ import styles from "./ContextMenu.module.css";
 
 export default ContextMenu;
 
-function ContextMenu(): JSX.Element {
+function ContextMenu() {
   const ctxMenu = useRef<HTMLDivElement>(null);
   const menuItem = useRef<HTMLDivElement>(null);
   const writeFileMenu = useRef<HTMLDivElement>(null);

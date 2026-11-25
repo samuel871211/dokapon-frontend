@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default MagicBookField;
 
-function MagicBookField(props: Vertex): JSX.Element {
+function MagicBookField(props: Vertex) {
   const { position, id } = props;
 
   return (

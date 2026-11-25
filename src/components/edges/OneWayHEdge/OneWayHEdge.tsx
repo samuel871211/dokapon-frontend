@@ -7,7 +7,7 @@ import { Edge } from "global";
 
 export default OneWayHEdge;
 
-function OneWayHEdge(props: Edge): JSX.Element {
+function OneWayHEdge(props: Edge) {
   const { start, end, id } = props;
   return (
     <g id={id} data-type="edge">

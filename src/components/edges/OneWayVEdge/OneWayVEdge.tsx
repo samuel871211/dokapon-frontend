@@ -7,7 +7,7 @@ import { Edge } from "global";
 
 export default OneWayVEdge;
 
-function OneWayVEdge(props: Edge): JSX.Element {
+function OneWayVEdge(props: Edge) {
   const { start, end, id } = props;
   return (
     <g id={id} data-type="edge">

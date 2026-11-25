@@ -188,7 +188,7 @@ const bottomDialogSentences: {
   PlayerVsCharacterDialogs: [],
 };
 const Components: {
-  [key in DokaponTheWorldComponentTypes]: () => JSX.Element;
+  [key in DokaponTheWorldComponentTypes]: () => React.ReactNode;
 } = {
   Walk,
   WalkToAvailableVertices,
@@ -415,7 +415,7 @@ function useMetaData() {
         if (!nextVertexId) return;
 
         const nextVertexIdx = currentMap.vertices.findIndex(
-          (vertex) => vertex.id === nextVertexId
+          (vertex) => vertex.id === nextVertexId,
         );
         const nextVertex = currentMap.vertices[nextVertexIdx];
 
@@ -466,7 +466,7 @@ function useMetaData() {
           (playerAttrs, idx) =>
             idx !== currentPlayerIdx &&
             playerAttrs.area === currentPlayer.area &&
-            playerAttrs.vertexIdx === currentPlayer.vertexIdx
+            playerAttrs.vertexIdx === currentPlayer.vertexIdx,
         );
         // @todo 需處理驚嘆號事件
         if (playersOnMyVertex.length === 0) {
@@ -482,7 +482,7 @@ function useMetaData() {
         // 只有一個人，就跟他戰鬥了
         if (playersOnMyVertex.length === 1) {
           const idx = players.findIndex(
-            (p) => p.name === playersOnMyVertex[0].name
+            (p) => p.name === playersOnMyVertex[0].name,
           );
           currentPlayer.battleCharacter = { type: "player", index: idx };
         }
@@ -517,7 +517,7 @@ function useMetaData() {
     }
   }
   function handleKeyUpForWalkToAvailableVertices(
-    e: KeyboardEvent<HTMLDivElement>
+    e: KeyboardEvent<HTMLDivElement>,
   ) {
     switch (e.key.toLowerCase()) {
       case gamePadSetting.cross:
@@ -1165,21 +1165,21 @@ function useMetaData() {
         curComponents.splice(
           0,
           0,
-          vertexNameToComponentType[curCenterVertex.name]
+          vertexNameToComponentType[curCenterVertex.name],
         );
 
         // check if player (self excluded), enemy or monster is clicked
         const clickedPlayers = players.filter(
           (playerAttrs) =>
             currentMap.vertices[playerAttrs.vertexIdx] === curCenterVertex &&
-            playerAttrs !== currentPlayer
+            playerAttrs !== currentPlayer,
         );
         const clickedBossMonster = bossMonsters.find(
           (bossMonster) =>
-            currentMap.vertices[bossMonster.vertexIdx] === curCenterVertex
+            currentMap.vertices[bossMonster.vertexIdx] === curCenterVertex,
         );
         const clickedEnemy = enemies.find(
-          (enemy) => currentMap.vertices[enemy.vertexIdx] === curCenterVertex
+          (enemy) => currentMap.vertices[enemy.vertexIdx] === curCenterVertex,
         );
         DokaponTheWorldState.curClickedCharacters = clickedPlayers;
         if (clickedBossMonster)
@@ -1224,7 +1224,7 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForGroceryStoreFieldCheck(
-    e: KeyboardEvent<HTMLDivElement>
+    e: KeyboardEvent<HTMLDivElement>,
   ) {
     const { curListPage } = GroceryStoreFieldCheckState;
     switch (e.key.toLowerCase()) {
@@ -1272,7 +1272,7 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForMagicStoreFieldCheck(
-    e: KeyboardEvent<HTMLDivElement>
+    e: KeyboardEvent<HTMLDivElement>,
   ) {
     const { area } = DokaponTheWorldState.curCenterVertex;
     const magicStore = magicStores[area];
@@ -1303,7 +1303,7 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForWeaponStoreFieldCheck(
-    e: KeyboardEvent<HTMLDivElement>
+    e: KeyboardEvent<HTMLDivElement>,
   ) {
     const { curListPage } = WeaponStoreFieldCheckState;
     switch (e.key.toLowerCase()) {
@@ -1324,7 +1324,7 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForBeforeCollectMoneyFieldCheck(
-    e: KeyboardEvent<HTMLDivElement>
+    e: KeyboardEvent<HTMLDivElement>,
   ) {
     const isMainFourKeys = mainFourKeys.includes(e.key.toLowerCase());
     if (!isMainFourKeys) return;
@@ -1333,7 +1333,7 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForCollectMoneyFieldCheck(
-    e: KeyboardEvent<HTMLDivElement>
+    e: KeyboardEvent<HTMLDivElement>,
   ) {
     const { curListPage } = CollectMoneyFieldCheckState;
     switch (e.key.toLowerCase()) {
@@ -1356,7 +1356,7 @@ function useMetaData() {
     setGameProgress({ ...gameProgress });
   }
   function handleKeyUpForPlayerVsCharacterDialogs(
-    e: KeyboardEvent<HTMLDivElement>
+    e: KeyboardEvent<HTMLDivElement>,
   ) {
     const { curPage } = PlayerVsCharacterDialogState;
     // const { curClickedCharactersCount } = DokaponTheWorldState;
@@ -1381,7 +1381,7 @@ function useMetaData() {
     }
   }
   function handleKeyUpForSelectCharacterToCompare(
-    e: KeyboardEvent<HTMLDivElement>
+    e: KeyboardEvent<HTMLDivElement>,
   ) {
     const maxIdx = curClickedCharacters.length;
     const { selectedIdx } = SelectCharacterToCompareState;
@@ -1422,7 +1422,7 @@ function useMetaData() {
     for (const sentence of bottomDialogSentences[curComponent]) {
       const translatedSentence = t(sentence).replace(
         "{fieldSpecialtyName}",
-        t(curPlayerJob.fieldSpecialty.name)
+        t(curPlayerJob.fieldSpecialty.name),
       );
       // .replace("{name}", currentPlayer.name)
       // .replace("{remainPlayerCount}", String(3 - currentPlayerIdx + 1));
@@ -1507,11 +1507,11 @@ function useMetaData() {
     const { width: vWidth, height: vHeight } = svgViewBox;
     const SVGTranslateX1 = parseInt(((bx - vWidth / 2) * -1).toFixed(0));
     const SVGTranslateX2 = parseInt(
-      ((bx + bWidth) * -1 + vWidth / 2).toFixed(0)
+      ((bx + bWidth) * -1 + vWidth / 2).toFixed(0),
     );
     const SVGTranslateY1 = parseInt(((by - vHeight / 2) * -1).toFixed(0));
     const SVGTranslateY2 = parseInt(
-      ((by + bHeight) * -1 + vHeight / 2).toFixed(0)
+      ((by + bHeight) * -1 + vHeight / 2).toFixed(0),
     );
     const fullWidth = Math.abs(SVGTranslateX2 - SVGTranslateX1);
     const fullHeight = Math.abs(SVGTranslateY2 - SVGTranslateY1);
@@ -1534,10 +1534,10 @@ function useMetaData() {
       // 操作DOM
       const { x, y } = SVGTranslate;
       curAreaPosition.y = parseFloat(
-        ((Math.abs(y - SVGTranslateY1) / fullHeight) * 100).toFixed(1)
+        ((Math.abs(y - SVGTranslateY1) / fullHeight) * 100).toFixed(1),
       );
       curAreaPosition.x = parseFloat(
-        ((Math.abs(x - SVGTranslateX1) / fullWidth) * 100).toFixed(1)
+        ((Math.abs(x - SVGTranslateX1) / fullWidth) * 100).toFixed(1),
       );
       miniMapCurAreaEl.style.top = `${curAreaPosition.y}%`;
       miniMapCurAreaEl.style.left = `${curAreaPosition.x}%`;
@@ -1553,8 +1553,8 @@ function useMetaData() {
         (vertex) =>
           Math.distanceBetween(
             { x: vertex.position.x, y: vertex.position.y },
-            { x: centerX, y: centerY }
-          ) <= 100
+            { x: centerX, y: centerY },
+          ) <= 100,
       );
 
       // 更新`CheckState`
@@ -1563,7 +1563,7 @@ function useMetaData() {
        */
       if (centerVertex) {
         const distance = GraphDSAs[currentPlayer.area].calMinDistanceTo(
-          centerVertex.id
+          centerVertex.id,
         );
         CheckState.curHoverVertexName = centerVertex.name;
         CheckState.curHoverVertexDistance = distance;

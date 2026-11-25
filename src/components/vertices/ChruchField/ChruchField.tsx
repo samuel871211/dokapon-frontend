@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default ChruchField;
 
-function ChruchField(props: Vertex): JSX.Element {
+function ChruchField(props: Vertex) {
   const { position, id } = props;
 
   return (

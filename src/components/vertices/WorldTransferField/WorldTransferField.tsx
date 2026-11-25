@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default WorldTransferField;
 
-function WorldTransferField(props: Vertex): JSX.Element {
+function WorldTransferField(props: Vertex) {
   const { position, id } = props;
   return (
     <g

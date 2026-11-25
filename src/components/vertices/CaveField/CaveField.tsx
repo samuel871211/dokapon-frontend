@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default CaveField;
 
-function CaveField(props: Vertex): JSX.Element {
+function CaveField(props: Vertex) {
   const { position, id } = props;
 
   return (

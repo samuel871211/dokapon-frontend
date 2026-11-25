@@ -7,7 +7,7 @@ import { Vertex } from "global";
 
 export default VillageField;
 
-function VillageField(props: Vertex): JSX.Element {
+function VillageField(props: Vertex) {
   const { position, id } = props;
 
   return (
